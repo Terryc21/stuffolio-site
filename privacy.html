@@ -8,18 +8,28 @@
   <meta name="theme-color" content="#0b1220" />
 
   <style>
-    :root, html{
+    :root{
       --bg:#0b1220; --card:#111b2e; --muted:#a9b4c7; --text:#e7ecf6;
       --line:rgba(255,255,255,.12); --accent:#7dd3fc; --accent2:#a78bfa;
       --good:#86efac;
       --radius:18px; --shadow: 0 10px 30px rgba(0,0,0,.35);
       --max: 800px;
     }
-    html[data-theme="light"], html[data-theme="light"] *{
-      --bg:#f5f5f7; --card:#ffffff; --muted:#555; --text:#1a1a1a;
-      --line:rgba(0,0,0,.12); --accent:#0066cc; --accent2:#7c3aed;
-      --shadow: 0 4px 20px rgba(0,0,0,.08);
+    .light-mode{
+      --bg:#f5f5f7 !important; --card:#ffffff !important; --muted:#555 !important; --text:#1a1a1a !important;
+      --line:rgba(0,0,0,.12) !important; --accent:#0066cc !important; --accent2:#7c3aed !important;
+      --shadow: 0 4px 20px rgba(0,0,0,.08) !important;
     }
+    .light-mode body{background:#f5f5f7 !important; color:#1a1a1a !important}
+    .light-mode .card{background:#fff !important; border-color:rgba(0,0,0,.1) !important}
+    .light-mode p, .light-mode li, .light-mode .updated{color:#555 !important}
+    .light-mode h2{color:#0066cc !important}
+    .light-mode a{color:#0066cc !important}
+    .light-mode .highlight{background:rgba(0,102,204,.08) !important; border-color:rgba(0,102,204,.25) !important}
+    .light-mode .highlight p{color:#333 !important}
+    .light-mode .contact-box{background:rgba(124,58,237,.08) !important; border-color:rgba(124,58,237,.25) !important}
+    .light-mode nav a, .light-mode footer, .light-mode footer a{color:#666 !important}
+    .light-mode .theme-toggle{border-color:rgba(0,0,0,.15) !important; color:#666 !important}
     *{box-sizing:border-box}
     body{
       margin:0;
@@ -40,7 +50,7 @@
       opacity:1;
       transition: opacity .3s;
     }
-    [data-theme="light"] body::before{
+    .light-mode body::before{
       opacity:0;
     }
     a{color:var(--accent)}
@@ -259,18 +269,18 @@
     const theme = saved || (prefersDark ? 'dark' : 'light');
 
     if (theme === 'light') {
-      html.setAttribute('data-theme', 'light');
+      html.classList.add('light-mode');
       icon.textContent = '🌙';
     }
 
     toggle.addEventListener('click', () => {
-      const isLight = html.getAttribute('data-theme') === 'light';
+      const isLight = html.classList.contains('light-mode');
       if (isLight) {
-        html.removeAttribute('data-theme');
+        html.classList.remove('light-mode');
         icon.textContent = '☀️';
         localStorage.setItem('theme', 'dark');
       } else {
-        html.setAttribute('data-theme', 'light');
+        html.classList.add('light-mode');
         icon.textContent = '🌙';
         localStorage.setItem('theme', 'light');
       }
