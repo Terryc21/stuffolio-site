@@ -15,16 +15,33 @@
       --radius:18px; --shadow: 0 10px 30px rgba(0,0,0,.35);
       --max: 800px;
     }
+    [data-theme="light"]{
+      --bg:#f5f5f7; --card:#ffffff; --muted:#666; --text:#1a1a1a;
+      --line:rgba(0,0,0,.1); --accent:#0066cc; --accent2:#7c3aed;
+      --shadow: 0 10px 30px rgba(0,0,0,.1);
+    }
     *{box-sizing:border-box}
     body{
       margin:0;
       font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,Arial,sans-serif;
-      background:
-        radial-gradient(1200px 700px at 20% 0%, rgba(125,211,252,.18), transparent 55%),
-        radial-gradient(900px 600px at 85% 10%, rgba(167,139,250,.18), transparent 55%),
-        var(--bg);
+      background: var(--bg);
       color:var(--text);
       line-height:1.6;
+      transition: background .3s, color .3s;
+    }
+    body::before{
+      content:'';
+      position:fixed; top:0; left:0; right:0; bottom:0;
+      background:
+        radial-gradient(1200px 700px at 20% 0%, rgba(125,211,252,.18), transparent 55%),
+        radial-gradient(900px 600px at 85% 10%, rgba(167,139,250,.18), transparent 55%);
+      pointer-events:none;
+      z-index:-1;
+      opacity:1;
+      transition: opacity .3s;
+    }
+    [data-theme="light"] body::before{
+      opacity:0;
     }
     a{color:var(--accent)}
     a:hover{color:var(--text)}
@@ -95,6 +112,16 @@
     }
     footer a{color:var(--muted); text-decoration:none}
     footer a:hover{color:var(--text)}
+
+    .theme-toggle{
+      background:none; border:1px solid var(--line);
+      border-radius:10px; padding:8px 12px;
+      cursor:pointer; color:var(--muted);
+      font-size:1rem; display:flex; align-items:center; gap:6px;
+      transition: border-color .2s, color .2s;
+    }
+    .theme-toggle:hover{border-color:var(--accent); color:var(--text)}
+    .card, .highlight, .contact-box{transition: background .3s, border-color .3s}
   </style>
 </head>
 
@@ -108,6 +135,9 @@
       <nav>
         <a href="/">Home</a>
         <a href="/support.html">Support</a>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode">
+          <span id="themeIcon">☀️</span>
+        </button>
       </nav>
     </header>
 
@@ -217,6 +247,34 @@
 
   <script>
     document.getElementById("y").textContent = new Date().getFullYear();
+
+    // Theme toggle
+    const html = document.documentElement;
+    const toggle = document.getElementById('themeToggle');
+    const icon = document.getElementById('themeIcon');
+
+    // Check saved preference or system preference
+    const saved = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const theme = saved || (prefersDark ? 'dark' : 'light');
+
+    if (theme === 'light') {
+      html.setAttribute('data-theme', 'light');
+      icon.textContent = '🌙';
+    }
+
+    toggle.addEventListener('click', () => {
+      const isLight = html.getAttribute('data-theme') === 'light';
+      if (isLight) {
+        html.removeAttribute('data-theme');
+        icon.textContent = '☀️';
+        localStorage.setItem('theme', 'dark');
+      } else {
+        html.setAttribute('data-theme', 'light');
+        icon.textContent = '🌙';
+        localStorage.setItem('theme', 'light');
+      }
+    });
   </script>
 </body>
 </html>
