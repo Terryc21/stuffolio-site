@@ -206,6 +206,9 @@
         <a href="#features">Features</a>
         <a href="/support.html">Support</a>
         <a href="/privacy.html">Privacy</a>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode">
+          <span id="themeIcon">☀️</span>
+        </button>
       </nav>
     </header>
 
@@ -233,7 +236,7 @@
           <a class="btn" href="/privacy.html">Privacy Policy</a>
         </div>
 
-        <<div class="callout">
+        <div class="callout">
   <b>Optional AI help (opt-in):</b> Stuff Scout helps you find manuals, replacement parts, DIY videos, and other helpful info about your stuff — including answering “what is this thing?” when needed.
   <div style="margin-top:8px;">
     <b>Your data stays yours.</b> No ads, no tracking, no profiles — ever.
@@ -366,6 +369,34 @@
 
   <script>
     document.getElementById("y").textContent = new Date().getFullYear();
+
+    // Theme toggle
+    const html = document.documentElement;
+    const toggle = document.getElementById('themeToggle');
+    const icon = document.getElementById('themeIcon');
+
+    // Check saved preference or system preference
+    const saved = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const theme = saved || (prefersDark ? 'dark' : 'light');
+
+    if (theme === 'light') {
+      html.classList.add('light-mode');
+      icon.textContent = '🌙';
+    }
+
+    toggle.addEventListener('click', () => {
+      const isLight = html.classList.contains('light-mode');
+      if (isLight) {
+        html.classList.remove('light-mode');
+        icon.textContent = '☀️';
+        localStorage.setItem('theme', 'dark');
+      } else {
+        html.classList.add('light-mode');
+        icon.textContent = '🌙';
+        localStorage.setItem('theme', 'light');
+      }
+    });
   </script>
 </body>
 </html>
