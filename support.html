@@ -3,71 +3,314 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Stuffolio — Support</title>
-  <meta name="description" content="Support for Stuffolio." />
+  <title>Support — Stuffolio</title>
+  <meta name="description" content="Get help with Stuffolio. FAQs, troubleshooting, and contact support." />
+  <meta name="theme-color" content="#0b1220" />
+
   <style>
-    body{margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif; line-height:1.6; color:#111;}
-    .wrap{max-width:860px; margin:0 auto; padding:34px 18px 70px;}
-    a{color:#0a58ca}
-    h1{margin:0 0 8px}
-    .muted{color:#555}
-    .box{border:1px solid #e5e5e5; border-radius:14px; padding:14px 16px; background:#fafafa}
-    .grid{display:grid; grid-template-columns: 1fr 1fr; gap:14px; margin-top:14px}
-    @media (max-width:780px){ .grid{grid-template-columns:1fr} }
-    ul{margin:8px 0 0 18px}
+    :root{
+      --bg:#0b1220; --card:#111b2e; --muted:#a9b4c7; --text:#e7ecf6;
+      --line:rgba(255,255,255,.12); --accent:#7dd3fc; --accent2:#a78bfa;
+      --good:#86efac;
+      --radius:18px; --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --max: 900px;
+    }
+    .light-mode{
+      --bg:#f5f5f7 !important; --card:#ffffff !important; --muted:#555 !important; --text:#1a1a1a !important;
+      --line:rgba(0,0,0,.12) !important; --accent:#0066cc !important; --accent2:#7c3aed !important;
+      --shadow: 0 4px 20px rgba(0,0,0,.08) !important;
+    }
+    .light-mode body{background:#f5f5f7 !important; color:#1a1a1a !important}
+    .light-mode .card{background:#fff !important; border-color:rgba(0,0,0,.1) !important}
+    .light-mode p, .light-mode li, .light-mode .updated{color:#555 !important}
+    .light-mode h2, .light-mode h3{color:#0066cc !important}
+    .light-mode a{color:#0066cc !important}
+    .light-mode .highlight{background:rgba(0,102,204,.08) !important; border-color:rgba(0,102,204,.25) !important}
+    .light-mode .highlight p{color:#333 !important}
+    .light-mode .contact-box{background:rgba(124,58,237,.08) !important; border-color:rgba(124,58,237,.25) !important}
+    .light-mode nav a, .light-mode footer, .light-mode footer a{color:#666 !important}
+    .light-mode .theme-toggle{border-color:rgba(0,0,0,.15) !important; color:#666 !important}
+    .light-mode .faq-item summary{color:#1a1a1a !important}
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,Arial,sans-serif;
+      background: var(--bg);
+      color:var(--text);
+      line-height:1.6;
+      transition: background .3s, color .3s;
+    }
+    body::before{
+      content:'';
+      position:fixed; top:0; left:0; right:0; bottom:0;
+      background:
+        radial-gradient(1200px 700px at 20% 0%, rgba(125,211,252,.18), transparent 55%),
+        radial-gradient(900px 600px at 85% 10%, rgba(167,139,250,.18), transparent 55%);
+      pointer-events:none;
+      z-index:-1;
+      opacity:1;
+      transition: opacity .3s;
+    }
+    .light-mode body::before{
+      opacity:0;
+    }
+    a{color:var(--accent)}
+    a:hover{color:var(--text)}
+    .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 72px}
+
+    header{
+      display:flex; align-items:center; justify-content:space-between; gap:14px;
+      padding:14px 0 26px;
+    }
+    nav{display:flex; gap:14px; flex-wrap:wrap}
+    nav a{
+      text-decoration:none; color:var(--muted);
+      padding:8px 10px; border-radius:10px; border:1px solid transparent;
+    }
+    nav a:hover{border-color:var(--line); color:var(--text)}
+
+    .card{
+      background: rgba(17,27,46,.72);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding:28px;
+      backdrop-filter: blur(10px);
+      margin-bottom:18px;
+      transition: background .3s, border-color .3s;
+    }
+
+    h1{font-size:2.2rem; margin:0 0 8px}
+    h2{font-size:1.4rem; margin:28px 0 12px; color:var(--accent)}
+    h3{font-size:1.1rem; margin:0 0 8px; color:var(--accent)}
+    p{margin:0 0 14px; color:var(--muted)}
+    .lead{font-size:1.1rem; color:var(--text); margin-bottom:18px}
+
+    ul{margin:10px 0 14px 20px; color:var(--muted)}
     li{margin:6px 0}
-    code{background:#f2f2f2; padding:2px 6px; border-radius:8px}
+
+    .highlight{
+      background: rgba(125,211,252,.08);
+      border:1px solid rgba(125,211,252,.25);
+      border-radius:12px;
+      padding:16px;
+      margin:14px 0;
+      transition: background .3s, border-color .3s;
+    }
+    .highlight p{margin:0; color:var(--text)}
+
+    .grid{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:18px}
+    @media (max-width:700px){ .grid{grid-template-columns:1fr} }
+
+    .contact-box{
+      text-align:center;
+      padding:24px;
+      background: rgba(167,139,250,.08);
+      border:1px solid rgba(167,139,250,.25);
+      border-radius:12px;
+      margin-top:18px;
+      transition: background .3s, border-color .3s;
+    }
+    .contact-box a{font-size:1.2rem; font-weight:600}
+
+    .divider{height:1px; background:var(--line); margin:24px 0}
+
+    .faq-item{
+      border-bottom:1px solid var(--line);
+      padding:14px 0;
+    }
+    .faq-item:last-child{border-bottom:none}
+    .faq-item summary{
+      font-weight:600;
+      cursor:pointer;
+      color:var(--text);
+      padding:4px 0;
+    }
+    .faq-item summary:hover{color:var(--accent)}
+    .faq-item p{margin:12px 0 0; color:var(--muted)}
+
+    .theme-toggle{
+      background:none; border:1px solid var(--line);
+      border-radius:10px; padding:8px 12px;
+      cursor:pointer; color:var(--muted);
+      font-size:1rem; display:flex; align-items:center; gap:6px;
+      transition: border-color .2s, color .2s;
+    }
+    .theme-toggle:hover{border-color:var(--accent); color:var(--text)}
+
+    footer{
+      margin-top:28px; color:var(--muted);
+      display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center;
+      gap:14px;
+      font-size:.92rem;
+    }
+    footer a{color:var(--muted); text-decoration:none}
+    footer a:hover{color:var(--text)}
   </style>
 </head>
+
 <body>
   <div class="wrap">
-    <p><a href="/index.html">← Back to Stuffolio</a></p>
-    <h1>Support</h1>
-    <p class="muted">We’ll help you get your stuff together. (No judgment. We all have too much.)</p>
+    <header>
+      <a href="/" style="display:flex; align-items:center; gap:12px; text-decoration:none; color:var(--text);">
+        <img src="/assets/stuffolio-logo2.png" alt="Stuffolio" style="width:38px;height:38px;border-radius:12px;box-shadow:var(--shadow);" />
+        <b style="letter-spacing:.2px;">Stuffolio</b>
+      </a>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/privacy.html">Privacy</a>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode">
+          <span id="themeIcon">☀️</span>
+        </button>
+      </nav>
+    </header>
 
-    <div class="box">
-      <p style="margin:0;">
-        <b>Contact Support:</b>
-        <a href="mailto:support@stuffolio.app">support@stuffolio.app</a>
-        <br />
-        Please include: device type (iPhone/iPad/Mac), iOS/macOS version, and what you were trying to do.
-      </p>
+    <div class="card">
+      <h1>Support</h1>
+      <p class="lead">We'll help you get your stuff together. (No judgment — we all have too much.)</p>
+
+      <div class="highlight">
+        <p><strong>Need help?</strong> Email us at <a href="mailto:support@stuffolio.app">support@stuffolio.app</a> — we typically respond within 24 hours.</p>
+      </div>
     </div>
 
     <div class="grid">
-      <div class="box">
-        <h2 style="margin:0 0 6px;">Common Questions</h2>
+      <div class="card">
+        <h3>📱 Getting Started</h3>
         <ul>
-          <li><b>Do I need receipts?</b> No. Add what you know now.</li>
-          <li><b>Can I use AI?</b> Yes, but it’s optional and only runs when you tap an AI action.</li>
-          <li><b>Can I export?</b> If your build supports export, you’ll find it in the app’s export/share area.</li>
+          <li>Add your first item with just a name and photo</li>
+          <li>Fill in details later (or never — it's up to you)</li>
+          <li>Use categories and locations to stay organized</li>
+          <li>Set warranty dates to get reminders before they expire</li>
         </ul>
       </div>
 
-      <div class="box">
-        <h2 style="margin:0 0 6px;">Troubleshooting</h2>
+      <div class="card">
+        <h3>💡 Pro Tips</h3>
         <ul>
-          <li><b>Sync not updating?</b> Try force-quitting and reopening, then check connectivity.</li>
-          <li><b>AI results not loading?</b> Confirm you’re online, then try again.</li>
-          <li><b>Crashes?</b> Email us the steps to reproduce.</li>
+          <li>Scan barcodes to auto-fill product info</li>
+          <li>Take photos of receipts and attach them to items</li>
+          <li>Use Stuff Scout to identify items you can't remember</li>
+          <li>Export your inventory for insurance documentation</li>
         </ul>
       </div>
     </div>
 
-    <h2>Feature Requests</h2>
-    <p>
-      Send ideas to <a href="mailto:support@stuffolio.app">support@stuffolio.app</a>.
-      Tell us what problem you’re solving (e.g., “insurance claim inventory,” “donation tracking,” “warranty reminders”).
-    </p>
+    <div class="card">
+      <h2 style="margin-top:0">Frequently Asked Questions</h2>
 
-    <h2>Privacy</h2>
-    <p>
-      See our <a href="/privacy.html">Privacy Policy</a>.
-    </p>
+      <details class="faq-item">
+        <summary>Do I need to enter receipts for every item?</summary>
+        <p>No. Stuffolio works with whatever information you have. Add a name and photo now, fill in details later — or don't. It's designed for real life, not perfect record-keeping.</p>
+      </details>
 
-    <p class="muted" style="margin-top:28px;">
-      Tip: When you’re ready, we can add a “Press Kit” page (logo, screenshots, description) and App Store badge links.
-    </p>
+      <details class="faq-item">
+        <summary>What is Stuff Scout?</summary>
+        <p>Stuff Scout is an optional AI feature that helps identify items from photos. Point your camera at something and it'll tell you what it is, find manuals, suggest replacement parts, and more. It only runs when you ask it to.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Does Stuffolio sync across devices?</summary>
+        <p>Yes, if you enable iCloud sync. Your data syncs through your personal iCloud account — we never see it. You can also use Stuffolio completely offline with no sync.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Can I export my inventory?</summary>
+        <p>Yes. Export to CSV, PDF, or other formats from the Actions section. Great for insurance claims, moving, or just having a backup.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Is my data private?</summary>
+        <p>Yes. Your inventory stays on your device by default. Network features (sync, AI, barcode lookup) are all opt-in. See our <a href="/privacy.html">Privacy Policy</a> for details.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>How do warranty reminders work?</summary>
+        <p>Add a warranty expiration date to any item and Stuffolio will remind you before it expires. You can customize how far in advance you want to be notified in Settings.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Can I track items I've sold or donated?</summary>
+        <p>Yes. When you let go of something, you can mark it as sold, donated, recycled, or trashed. Stuffolio keeps a history so you know where everything went.</p>
+      </details>
+    </div>
+
+    <div class="card">
+      <h2 style="margin-top:0">Troubleshooting</h2>
+
+      <details class="faq-item">
+        <summary>iCloud sync isn't working</summary>
+        <p>Make sure iCloud is enabled in your device settings and you're signed in with the same Apple ID on all devices. Try force-quitting the app and reopening. If issues persist, check your iCloud storage isn't full.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>AI features aren't loading</summary>
+        <p>Stuff Scout and other AI features require an internet connection. Check your network connection and try again. If you're on a restricted network (work, school), the AI server might be blocked.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>The app crashed</summary>
+        <p>Sorry about that! Crash reports are sent automatically (no personal data included). If you can reproduce the crash, email us the steps — it helps us fix it faster.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Photos aren't saving</summary>
+        <p>Make sure Stuffolio has permission to access your photos. Go to Settings → Privacy & Security → Photos and check that Stuffolio has access.</p>
+      </details>
+    </div>
+
+    <div class="card">
+      <h2 style="margin-top:0">Feature Requests</h2>
+      <p>Have an idea for Stuffolio? We'd love to hear it. Tell us what problem you're trying to solve — "I need to track X for Y reason" helps us understand and prioritize.</p>
+      <p style="margin-bottom:0">Examples: insurance documentation, moving inventory, donation tracking, warranty management, decluttering progress.</p>
+    </div>
+
+    <div class="contact-box">
+      <p style="color:var(--muted); margin-bottom:10px;">Still need help?</p>
+      <a href="mailto:support@stuffolio.app">support@stuffolio.app</a>
+      <p style="margin-top:14px; margin-bottom:0; color:var(--muted); font-size:.9rem;">
+        Include your device type and what you were trying to do — it helps us help you faster.
+      </p>
+    </div>
+
+    <footer>
+      <div>© <span id="y"></span> Coffee & Code LLC</div>
+      <div style="display:flex; gap:12px;">
+        <a href="/">Home</a>
+        <a href="/privacy.html">Privacy</a>
+      </div>
+    </footer>
   </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+
+    // Theme toggle
+    const html = document.documentElement;
+    const toggle = document.getElementById('themeToggle');
+    const icon = document.getElementById('themeIcon');
+
+    const saved = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const theme = saved || (prefersDark ? 'dark' : 'light');
+
+    if (theme === 'light') {
+      html.classList.add('light-mode');
+      icon.textContent = '🌙';
+    }
+
+    toggle.addEventListener('click', () => {
+      const isLight = html.classList.contains('light-mode');
+      if (isLight) {
+        html.classList.remove('light-mode');
+        icon.textContent = '☀️';
+        localStorage.setItem('theme', 'dark');
+      } else {
+        html.classList.add('light-mode');
+        icon.textContent = '🌙';
+        localStorage.setItem('theme', 'light');
+      }
+    });
+  </script>
 </body>
 </html>
