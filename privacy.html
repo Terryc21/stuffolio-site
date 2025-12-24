@@ -3,114 +3,220 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Stuffolio — Privacy Policy</title>
-  <meta name="description" content="Privacy Policy for Stuffolio." />
+  <title>Privacy Policy — Stuffolio</title>
+  <meta name="description" content="How Stuffolio protects your data. Privacy-first, local-first." />
+  <meta name="theme-color" content="#0b1220" />
+
   <style>
-    body{margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif; line-height:1.6; color:#111;}
-    .wrap{max-width:860px; margin:0 auto; padding:34px 18px 70px;}
-    a{color:#0a58ca}
-    h1{margin:0 0 8px}
-    .muted{color:#555}
-    .box{border:1px solid #e5e5e5; border-radius:14px; padding:14px 16px; background:#fafafa}
-    ul{margin:8px 0 0 18px}
+    :root{
+      --bg:#0b1220; --card:#111b2e; --muted:#a9b4c7; --text:#e7ecf6;
+      --line:rgba(255,255,255,.12); --accent:#7dd3fc; --accent2:#a78bfa;
+      --good:#86efac;
+      --radius:18px; --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --max: 800px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,Arial,sans-serif;
+      background:
+        radial-gradient(1200px 700px at 20% 0%, rgba(125,211,252,.18), transparent 55%),
+        radial-gradient(900px 600px at 85% 10%, rgba(167,139,250,.18), transparent 55%),
+        var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+    a{color:var(--accent)}
+    a:hover{color:var(--text)}
+    .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 72px}
+
+    header{
+      display:flex; align-items:center; justify-content:space-between; gap:14px;
+      padding:14px 0 26px;
+    }
+    nav{display:flex; gap:14px; flex-wrap:wrap}
+    nav a{
+      text-decoration:none; color:var(--muted);
+      padding:8px 10px; border-radius:10px; border:1px solid transparent;
+    }
+    nav a:hover{border-color:var(--line); color:var(--text)}
+
+    .card{
+      background: rgba(17,27,46,.72);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding:28px;
+      backdrop-filter: blur(10px);
+      margin-bottom:18px;
+    }
+
+    h1{font-size:2.2rem; margin:0 0 8px}
+    h2{font-size:1.4rem; margin:28px 0 12px; color:var(--accent)}
+    h3{font-size:1.1rem; margin:18px 0 8px}
+    p{margin:0 0 14px; color:var(--muted)}
+    .lead{font-size:1.1rem; color:var(--text); margin-bottom:18px}
+
+    ul{margin:10px 0 14px 20px; color:var(--muted)}
     li{margin:6px 0}
-    code{background:#f2f2f2; padding:2px 6px; border-radius:8px}
+
+    .highlight{
+      background: rgba(125,211,252,.08);
+      border:1px solid rgba(125,211,252,.25);
+      border-radius:12px;
+      padding:16px;
+      margin:14px 0;
+    }
+    .highlight p{margin:0}
+
+    .updated{
+      font-size:.9rem;
+      color:var(--muted);
+      margin-bottom:18px;
+    }
+
+    .divider{height:1px; background:var(--line); margin:24px 0}
+
+    .contact-box{
+      text-align:center;
+      padding:20px;
+      background: rgba(167,139,250,.08);
+      border:1px solid rgba(167,139,250,.25);
+      border-radius:12px;
+      margin-top:18px;
+    }
+    .contact-box a{font-size:1.15rem; font-weight:600}
+
+    footer{
+      margin-top:28px; color:var(--muted);
+      display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center;
+      gap:14px;
+      font-size:.92rem;
+    }
+    footer a{color:var(--muted); text-decoration:none}
+    footer a:hover{color:var(--text)}
   </style>
 </head>
+
 <body>
   <div class="wrap">
-    <p><a href="/index.html">← Back to Stuffolio</a></p>
-    <h1>Privacy Policy</h1>
-    <p class="muted"><b>Effective date:</b> December 22, 2025</p>
+    <header>
+      <a href="/" style="display:flex; align-items:center; gap:12px; text-decoration:none; color:var(--text);">
+        <img src="/assets/stuffolio-logo2.png" alt="Stuffolio" style="width:38px;height:38px;border-radius:12px;box-shadow:var(--shadow);" />
+        <b style="letter-spacing:.2px;">Stuffolio</b>
+      </a>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/support.html">Support</a>
+      </nav>
+    </header>
 
-    <div class="box">
-      <p style="margin:0;">
-        Stuffolio is designed to be useful even when you don’t provide perfect data.
-        This policy explains what information is collected (if any), how it’s used, and your choices.
+    <div class="card">
+      <h1>Privacy Policy</h1>
+      <p class="updated">Last updated: December 2025</p>
+
+      <p class="lead">
+        <strong>The short version:</strong> Your stuff is your business. Stuffolio stores your data on your device by default. We don't see it, sell it, or share it.
       </p>
+
+      <div class="highlight">
+        <p><strong>Privacy-first means:</strong> We built Stuffolio so you don't have to trust us with your data. It stays on your device unless you choose otherwise.</p>
+      </div>
+
+      <h2>What stays on your device</h2>
+      <p>By default, everything:</p>
+      <ul>
+        <li>Product names, descriptions, and photos</li>
+        <li>Purchase dates, prices, and receipts</li>
+        <li>Warranty information and reminders</li>
+        <li>Locations, notes, and categories</li>
+        <li>Serial numbers and barcodes</li>
+      </ul>
+      <p>This data never leaves your iPhone, iPad, or Mac unless you turn on optional features.</p>
+
+      <h2>Optional features that use the internet</h2>
+      <p>These are all opt-in. You choose if and when to use them.</p>
+
+      <h3>iCloud Sync</h3>
+      <p>If you turn this on, your data syncs across your Apple devices using your personal iCloud account. Apple handles the encryption. We never see this data — it goes directly between your devices and Apple's servers.</p>
+
+      <h3>Stuff Scout (AI Features)</h3>
+      <p>When you use Stuff Scout to identify items or find product information:</p>
+      <ul>
+        <li>Photos you submit are sent to our server for analysis</li>
+        <li>We process the request and immediately discard it</li>
+        <li>We don't store your images or build a profile about you</li>
+      </ul>
+
+      <h3>Barcode Lookup</h3>
+      <p>When you scan a barcode and request product info, only the barcode number is sent. No personal information.</p>
+
+      <h3>Recall Checker</h3>
+      <p>Checking for product recalls sends only the manufacturer and model. No serial numbers or personal data.</p>
+
+      <h3>Crash Reports</h3>
+      <p>If the app crashes, we collect anonymous technical information to fix bugs:</p>
+      <ul>
+        <li>Device type and operating system version</li>
+        <li>What happened before the crash</li>
+        <li>App version</li>
+      </ul>
+      <p>We don't collect your name, email, inventory data, or photos in crash reports.</p>
+
+      <div class="divider"></div>
+
+      <h2>What we don't do</h2>
+      <ul>
+        <li><strong>Sell your data</strong> — Never have, never will</li>
+        <li><strong>Show you ads</strong> — Stuffolio has no advertising</li>
+        <li><strong>Track you across apps</strong> — We don't use tracking SDKs</li>
+        <li><strong>Build a profile about you</strong> — We don't know who you are</li>
+      </ul>
+
+      <h2>Your data, your control</h2>
+      <p>You can:</p>
+      <ul>
+        <li><strong>Use Stuffolio completely offline</strong> — No account required</li>
+        <li><strong>Export your data</strong> — CSV, PDF, and other formats</li>
+        <li><strong>Delete everything</strong> — Settings → Data Management → Reset All Data</li>
+        <li><strong>Turn off any network feature</strong> — At any time in Settings</li>
+      </ul>
+
+      <h2>Third-party services</h2>
+      <p>When you use optional features, these services may process data according to their own privacy policies:</p>
+      <ul>
+        <li><strong>Apple (iCloud)</strong> — <a href="https://www.apple.com/privacy/" target="_blank">apple.com/privacy</a></li>
+        <li><strong>Sentry (crash reports)</strong> — <a href="https://sentry.io/privacy/" target="_blank">sentry.io/privacy</a></li>
+        <li><strong>Anthropic (AI analysis)</strong> — <a href="https://www.anthropic.com/privacy" target="_blank">anthropic.com/privacy</a></li>
+      </ul>
+
+      <h2>Children's privacy</h2>
+      <p>Stuffolio isn't designed for children under 13. We don't knowingly collect information from children.</p>
+
+      <h2>California residents (CCPA)</h2>
+      <p>You have the right to know what data we collect, request deletion, and opt out of data sales. Since we don't sell data and store almost nothing about you, there's not much to request — but you're welcome to ask.</p>
+
+      <div class="divider"></div>
+
+      <h2>Questions?</h2>
+      <div class="contact-box">
+        <p style="color:var(--muted); margin-bottom:10px;">We're happy to explain anything.</p>
+        <a href="mailto:support@stuffolio.app">support@stuffolio.app</a>
+        <p style="margin-top:12px; margin-bottom:0; color:var(--muted); font-size:.9rem;">Coffee & Code LLC</p>
+      </div>
     </div>
 
-    <h2>Summary</h2>
-    <ul>
-      <li><b>Your inventory data</b> is created by you (items, photos, notes, etc.).</li>
-      <li><b>AI features are optional</b> and only used when you choose to run them.</li>
-      <li>We do not sell your personal information.</li>
-    </ul>
-
-    <h2>Information We Collect</h2>
-    <p><b>Information you provide in the app</b></p>
-    <ul>
-      <li>Item details you enter (names, categories, locations, notes, purchase info, warranty info, etc.).</li>
-      <li>Photos and attachments you add (e.g., item photos, receipts, manuals).</li>
-    </ul>
-
-    <p><b>Support communications</b></p>
-    <ul>
-      <li>If you contact support, we receive the information you send (such as your email address and message content).</li>
-    </ul>
-
-    <h2>AI Features (Optional)</h2>
-    <p>
-      Stuffolio may offer optional AI-assisted actions (for example: finding user manuals, parts, or how-to videos).
-      These features are <b>opt-in</b> and run only when you tap an AI button in the app.
-    </p>
-    <ul>
-      <li>When you run an AI action, the app may send relevant item information you’ve selected (such as item name, brand, model number, or an image) to an AI service to generate results.</li>
-      <li>We recommend you avoid including sensitive personal information in item notes or images you plan to submit to AI actions.</li>
-    </ul>
-
-    <h2>How We Use Information</h2>
-    <ul>
-      <li>To provide core app functionality (inventory tracking, warranty reminders, donation/sell tracking, exports).</li>
-      <li>To respond to support requests.</li>
-      <li>To provide AI results when you explicitly request them.</li>
-    </ul>
-
-    <h2>Data Storage & Sync</h2>
-    <p>
-      Stuffolio may store your data on your device and may offer optional sync features (depending on platform settings and the app configuration).
-      The specifics of storage/sync depend on the version of the app and features you enable.
-    </p>
-
-    <h2>Sharing</h2>
-    <p>We share information only in these cases:</p>
-    <ul>
-      <li><b>Service providers</b> used to deliver features you request (e.g., AI providers when you run an AI action).</li>
-      <li><b>Legal requirements</b> if we are required to comply with applicable law.</li>
-    </ul>
-
-    <h2>Data Retention</h2>
-    <ul>
-      <li>Your inventory data remains available in the app until you delete it.</li>
-      <li>Support messages are retained as needed to address your request and for basic recordkeeping.</li>
-    </ul>
-
-    <h2>Your Choices</h2>
-    <ul>
-      <li>You can choose not to use AI features.</li>
-      <li>You can delete items and content you’ve added within the app.</li>
-      <li>You can contact support to request help with privacy-related questions.</li>
-    </ul>
-
-    <h2>Children’s Privacy</h2>
-    <p>Stuffolio is not intended for children under 13, and we do not knowingly collect personal information from children under 13.</p>
-
-    <h2>Contact</h2>
-    <p>
-      Privacy questions? Contact:
-      <br />
-      <b>Email:</b> <a href="mailto:support@stuffolio.app">support@stuffolio.app</a>
-      <!-- If you prefer your iCloud address instead, swap it here. -->
-    </p>
-
-    <h2>Changes to this Policy</h2>
-    <p>
-      We may update this policy from time to time. We will post updates on this page with a revised effective date.
-    </p>
-
-    <p class="muted" style="margin-top:28px;">
-      Tip: If you want this to perfectly match your final architecture (CloudKit, analytics, etc.), tell me what you’re using and I’ll tighten the language.
-    </p>
+    <footer>
+      <div>© <span id="y"></span> Coffee & Code LLC</div>
+      <div style="display:flex; gap:12px;">
+        <a href="/">Home</a>
+        <a href="/support.html">Support</a>
+      </div>
+    </footer>
   </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
