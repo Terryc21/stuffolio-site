@@ -15,16 +15,46 @@
       --radius:18px; --shadow: 0 10px 30px rgba(0,0,0,.35);
       --max: 1040px;
     }
+    .light-mode{
+      --bg:#f5f5f7 !important; --card:#ffffff !important; --muted:#555 !important; --text:#1a1a1a !important;
+      --line:rgba(0,0,0,.12) !important; --accent:#0066cc !important; --accent2:#7c3aed !important;
+      --shadow: 0 4px 20px rgba(0,0,0,.08) !important;
+    }
+    .light-mode body{background:#f5f5f7 !important; color:#1a1a1a !important}
+    .light-mode .card{background:#fff !important; border-color:rgba(0,0,0,.1) !important}
+    .light-mode p, .light-mode li, .light-mode .lead{color:#555 !important}
+    .light-mode h2, .light-mode h3{color:#1a1a1a !important}
+    .light-mode a{color:#0066cc !important}
+    .light-mode .badge{color:#555 !important; border-color:rgba(0,0,0,.15) !important}
+    .light-mode .pill{color:#555 !important; border-color:rgba(0,0,0,.15) !important}
+    .light-mode .callout{background:rgba(0,102,204,.06) !important; border-color:rgba(0,102,204,.3) !important; color:#555 !important}
+    .light-mode .btn{background:rgba(0,0,0,.04) !important; border-color:rgba(0,0,0,.12) !important; color:#1a1a1a !important}
+    .light-mode .btn.primary{background:linear-gradient(135deg, rgba(0,102,204,.9), rgba(124,58,237,.9)) !important; color:#fff !important; border-color:transparent !important}
+    .light-mode nav a, .light-mode footer, .light-mode footer a{color:#666 !important}
+    .light-mode .llcMark span{color:#666 !important}
+    .light-mode .theme-toggle{border-color:rgba(0,0,0,.15) !important; color:#666 !important}
     *{box-sizing:border-box}
     body{
       margin:0;
       font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,Arial,sans-serif;
-      background:
-        radial-gradient(1200px 700px at 20% 0%, rgba(125,211,252,.18), transparent 55%),
-        radial-gradient(900px 600px at 85% 10%, rgba(167,139,250,.18), transparent 55%),
-        var(--bg);
+      background: var(--bg);
       color:var(--text);
       line-height:1.5;
+      transition: background .3s, color .3s;
+    }
+    body::before{
+      content:'';
+      position:fixed; top:0; left:0; right:0; bottom:0;
+      background:
+        radial-gradient(1200px 700px at 20% 0%, rgba(125,211,252,.18), transparent 55%),
+        radial-gradient(900px 600px at 85% 10%, rgba(167,139,250,.18), transparent 55%);
+      pointer-events:none;
+      z-index:-1;
+      opacity:1;
+      transition: opacity .3s;
+    }
+    .light-mode body::before{
+      opacity:0;
     }
     a{color:inherit}
     .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 72px}
@@ -149,6 +179,16 @@
     }
 
     .llcMark span{color:var(--muted)}
+
+    .theme-toggle{
+      background:none; border:1px solid var(--line);
+      border-radius:10px; padding:8px 12px;
+      cursor:pointer; color:var(--muted);
+      font-size:1rem; display:flex; align-items:center; gap:6px;
+      transition: border-color .2s, color .2s;
+    }
+    .theme-toggle:hover{border-color:var(--accent); color:var(--text)}
+    .card{transition: background .3s, border-color .3s}
   </style>
 </head>
 
