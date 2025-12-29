@@ -1,288 +1,311 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms of Service - Stuffolio</title>
-    <meta name="description" content="Terms of Service for Stuffolio inventory management app." />
-    <meta name="theme-color" content="#0b1220" />
-    <style>
-        :root {
-            --bg-color: #ffffff;
-            --text-color: #1d1d1f;
-            --secondary-text: #86868b;
-            --accent-color: #007aff;
-            --border-color: #d2d2d7;
-            --section-bg: #f5f5f7;
-        }
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --bg-color: #000000;
-                --text-color: #f5f5f7;
-                --secondary-text: #86868b;
-                --accent-color: #0a84ff;
-                --border-color: #424245;
-                --section-bg: #1d1d1f;
-            }
-        }
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-            padding: 20px;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-        h1 {
-            font-size: 2.5em;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-        .subtitle {
-            color: var(--secondary-text);
-            font-size: 1.1em;
-            margin-bottom: 30px;
-        }
-        .last-updated {
-            color: var(--secondary-text);
-            font-size: 0.9em;
-            margin-bottom: 40px;
-        }
-        h2 {
-            font-size: 1.5em;
-            font-weight: 600;
-            margin-top: 40px;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid var(--border-color);
-        }
-        h3 {
-            font-size: 1.2em;
-            font-weight: 600;
-            margin-top: 25px;
-            margin-bottom: 15px;
-        }
-        p {
-            margin-bottom: 15px;
-        }
-        ul, ol {
-            margin-left: 25px;
-            margin-bottom: 15px;
-        }
-        li {
-            margin-bottom: 8px;
-        }
-        .highlight-box {
-            background-color: var(--section-bg);
-            border-radius: 12px;
-            padding: 20px;
-            margin: 20px 0;
-        }
-        .summary-box {
-            border-left: 4px solid var(--accent-color);
-        }
-        strong {
-            font-weight: 600;
-        }
-        a {
-            color: var(--accent-color);
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        .contact-info {
-            background-color: var(--section-bg);
-            border-radius: 12px;
-            padding: 25px;
-            margin-top: 30px;
-        }
-        .footer {
-            margin-top: 60px;
-            padding-top: 20px;
-            border-top: 1px solid var(--border-color);
-            color: var(--secondary-text);
-            font-size: 0.9em;
-            text-align: center;
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Terms of Service — Stuffolio</title>
+  <meta name="description" content="Terms of Service for Stuffolio inventory management app." />
+  <meta name="theme-color" content="#0b1220" />
+
+  <style>
+    :root{
+      --bg:#0b1220; --card:#111b2e; --muted:#a9b4c7; --text:#e7ecf6;
+      --line:rgba(255,255,255,.12); --accent:#7dd3fc; --accent2:#a78bfa;
+      --good:#86efac;
+      --radius:18px; --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --max: 800px;
+    }
+    .light-mode{
+      --bg:#f5f5f7 !important; --card:#ffffff !important; --muted:#555 !important; --text:#1a1a1a !important;
+      --line:rgba(0,0,0,.12) !important; --accent:#0066cc !important; --accent2:#7c3aed !important;
+      --shadow: 0 4px 20px rgba(0,0,0,.08) !important;
+    }
+    .light-mode body{background:#f5f5f7 !important; color:#1a1a1a !important}
+    .light-mode .card{background:#fff !important; border-color:rgba(0,0,0,.1) !important}
+    .light-mode p, .light-mode li, .light-mode .updated{color:#555 !important}
+    .light-mode h2, .light-mode h3{color:#0066cc !important}
+    .light-mode a{color:#0066cc !important}
+    .light-mode .highlight{background:rgba(0,102,204,.08) !important; border-color:rgba(0,102,204,.25) !important}
+    .light-mode .highlight p, .light-mode .highlight li{color:#333 !important}
+    .light-mode .contact-box{background:rgba(124,58,237,.08) !important; border-color:rgba(124,58,237,.25) !important}
+    .light-mode nav a, .light-mode footer, .light-mode footer a{color:#666 !important}
+    .light-mode .theme-toggle{border-color:rgba(0,0,0,.15) !important; color:#666 !important}
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,Arial,sans-serif;
+      background: var(--bg);
+      color:var(--text);
+      line-height:1.6;
+      transition: background .3s, color .3s;
+    }
+    body::before{
+      content:'';
+      position:fixed; top:0; left:0; right:0; bottom:0;
+      background:
+        radial-gradient(1200px 700px at 20% 0%, rgba(125,211,252,.18), transparent 55%),
+        radial-gradient(900px 600px at 85% 10%, rgba(167,139,250,.18), transparent 55%);
+      pointer-events:none;
+      z-index:-1;
+      opacity:1;
+      transition: opacity .3s;
+    }
+    .light-mode body::before{
+      opacity:0;
+    }
+    a{color:var(--accent)}
+    a:hover{color:var(--text)}
+    .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 72px}
+
+    header{
+      display:flex; align-items:center; justify-content:space-between; gap:14px;
+      padding:14px 0 26px;
+    }
+    nav{display:flex; gap:14px; flex-wrap:wrap}
+    nav a{
+      text-decoration:none; color:var(--muted);
+      padding:8px 10px; border-radius:10px; border:1px solid transparent;
+    }
+    nav a:hover{border-color:var(--line); color:var(--text)}
+
+    .card{
+      background: rgba(17,27,46,.72);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding:28px;
+      backdrop-filter: blur(10px);
+      margin-bottom:18px;
+    }
+
+    h1{font-size:2.2rem; margin:0 0 8px}
+    h2{font-size:1.4rem; margin:28px 0 12px; color:var(--accent)}
+    h3{font-size:1.1rem; margin:18px 0 8px; color:var(--accent2)}
+    p{margin:0 0 14px; color:var(--muted)}
+    .lead{font-size:1.1rem; color:var(--text); margin-bottom:18px}
+
+    ul, ol{margin:10px 0 14px 20px; color:var(--muted)}
+    li{margin:6px 0}
+
+    .highlight{
+      background: rgba(125,211,252,.08);
+      border:1px solid rgba(125,211,252,.25);
+      border-radius:12px;
+      padding:16px;
+      margin:14px 0;
+    }
+    .highlight p{margin:0; color:var(--text)}
+    .highlight ul{margin-bottom:0}
+
+    .updated{
+      font-size:.9rem;
+      color:var(--muted);
+      margin-bottom:18px;
+    }
+
+    .divider{height:1px; background:var(--line); margin:24px 0}
+
+    .contact-box{
+      text-align:center;
+      padding:20px;
+      background: rgba(167,139,250,.08);
+      border:1px solid rgba(167,139,250,.25);
+      border-radius:12px;
+      margin-top:18px;
+    }
+    .contact-box a{font-size:1.15rem; font-weight:600}
+
+    footer{
+      margin-top:28px; color:var(--muted);
+      display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center;
+      gap:14px;
+      font-size:.92rem;
+    }
+    footer a{color:var(--muted); text-decoration:none}
+    footer a:hover{color:var(--text)}
+
+    .theme-toggle{
+      background:none; border:1px solid var(--line);
+      border-radius:10px; padding:8px 12px;
+      cursor:pointer; color:var(--muted);
+      font-size:1rem; display:flex; align-items:center; gap:6px;
+      transition: border-color .2s, color .2s;
+    }
+    .theme-toggle:hover{border-color:var(--accent); color:var(--text)}
+    .card, .highlight, .contact-box{transition: background .3s, border-color .3s}
+
+    .caps{text-transform:uppercase; font-size:.85rem; letter-spacing:.5px}
+  </style>
 </head>
+
 <body>
-    <div class="container">
-        <h1>Terms of Service</h1>
-        <p class="subtitle">Stuffolio - Inventory Management App</p>
-        <p class="last-updated">Last Updated: December 29, 2025</p>
+  <div class="wrap">
+    <header>
+      <a href="/" style="display:flex; align-items:center; gap:12px; text-decoration:none; color:var(--text);">
+        <img src="/assets/stuffolio-logo2.png" alt="Stuffolio" style="width:38px;height:38px;border-radius:12px;box-shadow:var(--shadow);" />
+        <b style="letter-spacing:.2px;">Stuffolio</b>
+      </a>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/support.html">Support</a>
+        <a href="/privacy.html">Privacy</a>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode">
+          <span id="themeIcon">☀️</span>
+        </button>
+      </nav>
+    </header>
 
-        <p>Welcome to Stuffolio! These Terms of Service ("Terms") govern your use of the Stuffolio mobile application (the "App") provided by Coffee & Code LLC ("we", "us", or "our"). By downloading, installing, or using the App, you agree to these Terms.</p>
+    <div class="card">
+      <h1>Terms of Service</h1>
+      <p class="updated">Last updated: December 2025</p>
 
-        <div class="highlight-box summary-box">
-            <h2 style="margin-top: 0; border: none; padding-bottom: 0;">Quick Summary</h2>
-            <ul style="margin-top: 15px; margin-bottom: 0;">
-                <li><strong>Your data is yours</strong> - We don't claim ownership of your inventory data</li>
-                <li><strong>Use responsibly</strong> - Don't misuse the app or AI features</li>
-                <li><strong>No warranties</strong> - The app is provided "as is"</li>
-                <li><strong>We can update these terms</strong> - We'll notify you of significant changes</li>
-            </ul>
-        </div>
+      <p class="lead">
+        <strong>The short version:</strong> Use Stuffolio responsibly. Your data is yours. The app is provided "as is."
+      </p>
 
-        <h2>1. Acceptance of Terms</h2>
-        <p>By accessing or using Stuffolio, you confirm that you:</p>
-        <ul>
-            <li>Are at least 13 years of age</li>
-            <li>Have the legal capacity to enter into these Terms</li>
-            <li>Agree to comply with all applicable laws and regulations</li>
+      <div class="highlight">
+        <p><strong>Quick Summary:</strong></p>
+        <ul style="margin-top:10px;">
+          <li><strong>Your data is yours</strong> — We don't claim ownership of your inventory data</li>
+          <li><strong>Use responsibly</strong> — Don't misuse the app or AI features</li>
+          <li><strong>No warranties</strong> — The app is provided "as is"</li>
+          <li><strong>We can update these terms</strong> — We'll notify you of significant changes</li>
         </ul>
-        <p>If you do not agree to these Terms, please do not use the App.</p>
+      </div>
 
-        <h2>2. Description of Service</h2>
-        <p>Stuffolio is a personal inventory management application that allows you to:</p>
-        <ul>
-            <li>Track and organize your personal belongings</li>
-            <li>Store warranty information and purchase records</li>
-            <li>Attach photos and documents to items</li>
-            <li>Sync data across devices using iCloud (optional)</li>
-            <li>Use AI-powered features for product research (optional)</li>
-            <li>Export your inventory data in various formats</li>
-        </ul>
+      <h2>1. Acceptance of Terms</h2>
+      <p>By accessing or using Stuffolio, you confirm that you:</p>
+      <ul>
+        <li>Are at least 13 years of age</li>
+        <li>Have the legal capacity to enter into these Terms</li>
+        <li>Agree to comply with all applicable laws and regulations</li>
+      </ul>
+      <p>If you do not agree to these Terms, please do not use the App.</p>
 
-        <h2>3. User Accounts and Data</h2>
+      <h2>2. Description of Service</h2>
+      <p>Stuffolio is a personal inventory management application that allows you to:</p>
+      <ul>
+        <li>Track and organize your personal belongings</li>
+        <li>Store warranty information and purchase records</li>
+        <li>Attach photos and documents to items</li>
+        <li>Sync data across devices using iCloud (optional)</li>
+        <li>Use AI-powered features for product research (optional)</li>
+        <li>Export your inventory data in various formats</li>
+      </ul>
 
-        <h3>Your Data Ownership</h3>
-        <p>You retain full ownership of all data you enter into Stuffolio, including but not limited to:</p>
-        <ul>
-            <li>Product names, descriptions, and categories</li>
-            <li>Photos, receipts, and documents</li>
-            <li>Warranty and purchase information</li>
-            <li>Notes and custom fields</li>
-        </ul>
+      <h2>3. User Accounts and Data</h2>
 
-        <h3>Data Storage</h3>
-        <p>Your data is stored locally on your device by default. If you enable iCloud sync, your data is also stored in your personal iCloud account, subject to Apple's terms of service.</p>
+      <h3>Your Data Ownership</h3>
+      <p>You retain full ownership of all data you enter into Stuffolio, including product names, descriptions, photos, receipts, documents, warranty information, and notes.</p>
 
-        <h3>Your Responsibilities</h3>
-        <p>You are responsible for:</p>
-        <ul>
-            <li>Maintaining backups of your important data</li>
-            <li>Keeping your device and iCloud account secure</li>
-            <li>Ensuring the accuracy of information you enter</li>
-        </ul>
+      <h3>Data Storage</h3>
+      <p>Your data is stored locally on your device by default. If you enable iCloud sync, your data is also stored in your personal iCloud account, subject to Apple's terms of service.</p>
 
-        <h2>4. Acceptable Use</h2>
-        <p>You agree NOT to use Stuffolio to:</p>
-        <ul>
-            <li>Store illegal, harmful, or offensive content</li>
-            <li>Violate any applicable laws or regulations</li>
-            <li>Infringe on intellectual property rights of others</li>
-            <li>Attempt to reverse engineer, decompile, or modify the App</li>
-            <li>Use automated systems to abuse the AI features</li>
-            <li>Circumvent any security measures or usage limits</li>
-        </ul>
+      <h3>Your Responsibilities</h3>
+      <p>You are responsible for maintaining backups of your important data, keeping your device and iCloud account secure, and ensuring the accuracy of information you enter.</p>
 
-        <h2>5. AI-Powered Features</h2>
-        <p>Stuffolio includes optional AI-powered features such as Stuff Scout and the AI Product Assistant. By using these features:</p>
-        <ul>
-            <li>You understand that AI responses are informational and may not be 100% accurate</li>
-            <li>You agree not to rely solely on AI for important decisions (insurance claims, valuations, etc.)</li>
-            <li>You acknowledge that images and queries are processed by third-party AI services</li>
-            <li>You accept that AI features require an internet connection and may have usage limits</li>
-        </ul>
-        <p><strong>AI Disclaimer:</strong> AI-generated content is provided for informational purposes only. We do not guarantee the accuracy, completeness, or reliability of AI responses. Always verify important information independently.</p>
+      <h2>4. Acceptable Use</h2>
+      <p>You agree NOT to use Stuffolio to:</p>
+      <ul>
+        <li>Store illegal, harmful, or offensive content</li>
+        <li>Violate any applicable laws or regulations</li>
+        <li>Infringe on intellectual property rights of others</li>
+        <li>Attempt to reverse engineer, decompile, or modify the App</li>
+        <li>Use automated systems to abuse the AI features</li>
+        <li>Circumvent any security measures or usage limits</li>
+      </ul>
 
-        <h2>6. Intellectual Property</h2>
+      <h2>5. AI-Powered Features</h2>
+      <p>Stuffolio includes optional AI-powered features such as Stuff Scout and the AI Product Assistant. By using these features:</p>
+      <ul>
+        <li>You understand that AI responses are informational and may not be 100% accurate</li>
+        <li>You agree not to rely solely on AI for important decisions (insurance claims, valuations, etc.)</li>
+        <li>You acknowledge that images and queries are processed by third-party AI services</li>
+        <li>You accept that AI features require an internet connection and may have usage limits</li>
+      </ul>
+      <p><strong>AI Disclaimer:</strong> AI-generated content is provided for informational purposes only. We do not guarantee the accuracy, completeness, or reliability of AI responses.</p>
 
-        <h3>Our Rights</h3>
-        <p>Stuffolio, including its design, code, features, and branding, is owned by Coffee & Code LLC and protected by copyright and other intellectual property laws.</p>
+      <h2>6. Intellectual Property</h2>
+      <p>Stuffolio, including its design, code, features, and branding, is owned by Coffee & Code LLC and protected by copyright and other intellectual property laws. We grant you a limited, non-exclusive, non-transferable, revocable license to use the App for personal, non-commercial purposes.</p>
 
-        <h3>License Grant</h3>
-        <p>We grant you a limited, non-exclusive, non-transferable, revocable license to use the App for personal, non-commercial purposes in accordance with these Terms.</p>
+      <h2>7. Third-Party Services</h2>
+      <p>Stuffolio integrates with third-party services including:</p>
+      <ul>
+        <li><strong>Apple iCloud:</strong> For data synchronization</li>
+        <li><strong>Sentry:</strong> For crash reporting and app stability</li>
+        <li><strong>AI Services:</strong> For product research features</li>
+      </ul>
+      <p>Your use of these integrations is subject to the respective third-party terms of service.</p>
 
-        <h3>Restrictions</h3>
-        <p>You may not:</p>
-        <ul>
-            <li>Copy, modify, or distribute the App</li>
-            <li>Use our trademarks without permission</li>
-            <li>Remove any copyright or proprietary notices</li>
-        </ul>
+      <h2>8. Disclaimers</h2>
+      <p class="caps"><strong>No Warranty</strong></p>
+      <p>The app is provided "as is" and "as available" without warranties of any kind, express or implied. We do not warrant that the app will be uninterrupted, error-free, or secure.</p>
 
-        <h2>7. Third-Party Services</h2>
-        <p>Stuffolio integrates with third-party services including:</p>
-        <ul>
-            <li><strong>Apple iCloud:</strong> For data synchronization (subject to Apple's terms)</li>
-            <li><strong>Sentry:</strong> For crash reporting and app stability</li>
-            <li><strong>AI Services:</strong> For product research features</li>
-        </ul>
-        <p>Your use of these integrations is subject to the respective third-party terms of service.</p>
+      <p class="caps"><strong>Limitation of Liability</strong></p>
+      <p>To the maximum extent permitted by law, Coffee & Code LLC shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including loss of data, loss of profits, or inaccurate AI-generated information.</p>
 
-        <h2>8. Disclaimers</h2>
+      <p class="caps"><strong>Insurance Disclaimer</strong></p>
+      <p>Stuffolio is not a substitute for professional insurance appraisals. Any values or estimates provided are for personal reference only.</p>
 
-        <h3>No Warranty</h3>
-        <p>THE APP IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED. WE DO NOT WARRANT THAT THE APP WILL BE UNINTERRUPTED, ERROR-FREE, OR SECURE.</p>
+      <h2>9. Termination</h2>
+      <p>We may terminate or suspend your access to the App at any time for conduct that violates these Terms. Upon termination, your locally stored data remains on your device.</p>
 
-        <h3>Limitation of Liability</h3>
-        <p>TO THE MAXIMUM EXTENT PERMITTED BY LAW, COFFEE & CODE LLC SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING BUT NOT LIMITED TO:</p>
-        <ul>
-            <li>Loss of data or data corruption</li>
-            <li>Loss of profits or business opportunities</li>
-            <li>Inaccurate AI-generated information</li>
-            <li>Service interruptions or downtime</li>
-        </ul>
+      <h2>10. Changes to Terms</h2>
+      <p>We may update these Terms from time to time. We will notify you of significant changes by posting the new Terms in the App and updating the "Last Updated" date.</p>
 
-        <h3>Insurance and Valuation Disclaimer</h3>
-        <p>Stuffolio is not a substitute for professional insurance appraisals or valuations. Any values, depreciation calculations, or estimates provided by the App are for personal reference only and should not be used for insurance claims, legal proceedings, or financial decisions without independent professional verification.</p>
+      <h2>11. Governing Law</h2>
+      <p>These Terms shall be governed by and construed in accordance with the laws of the State of Colorado, United States.</p>
 
-        <h2>9. Indemnification</h2>
-        <p>You agree to indemnify and hold harmless Coffee & Code LLC from any claims, damages, or expenses arising from your use of the App or violation of these Terms.</p>
+      <div class="divider"></div>
 
-        <h2>10. Termination</h2>
-        <p>We may terminate or suspend your access to the App at any time, without prior notice, for conduct that we believe:</p>
-        <ul>
-            <li>Violates these Terms</li>
-            <li>Is harmful to other users or third parties</li>
-            <li>Is fraudulent or illegal</li>
-        </ul>
-        <p>Upon termination, your right to use the App will immediately cease. Your locally stored data remains on your device.</p>
-
-        <h2>11. Changes to Terms</h2>
-        <p>We may update these Terms from time to time. We will notify you of significant changes by:</p>
-        <ul>
-            <li>Posting the new Terms in the App</li>
-            <li>Updating the "Last Updated" date</li>
-            <li>Displaying a notice within the App for material changes</li>
-        </ul>
-        <p>Continued use of the App after changes constitutes acceptance of the new Terms.</p>
-
-        <h2>12. Governing Law</h2>
-        <p>These Terms shall be governed by and construed in accordance with the laws of the United States, without regard to conflict of law principles.</p>
-
-        <h2>13. Dispute Resolution</h2>
-        <p>Any disputes arising from these Terms or your use of the App shall be resolved through good-faith negotiation. If negotiation fails, disputes shall be submitted to binding arbitration in accordance with applicable arbitration rules.</p>
-
-        <h2>14. Severability</h2>
-        <p>If any provision of these Terms is found to be unenforceable, the remaining provisions shall continue in full force and effect.</p>
-
-        <h2>15. Entire Agreement</h2>
-        <p>These Terms, together with our Privacy Policy, constitute the entire agreement between you and Coffee & Code LLC regarding your use of Stuffolio.</p>
-
-        <div class="contact-info">
-            <h2 style="margin-top: 0; border: none;">Contact Us</h2>
-            <p>If you have questions about these Terms of Service:</p>
-            <p><strong>Email:</strong> <a href="mailto:support@stuffolio.app">support@stuffolio.app</a></p>
-            <p><strong>Developer:</strong> Coffee & Code LLC</p>
-            <p style="margin-bottom: 0;"><strong>Privacy Policy:</strong> <a href="privacy.html">View Privacy Policy</a></p>
-        </div>
-
-        <div class="footer">
-            <p>&copy; 2025 Coffee & Code LLC. All rights reserved.</p>
-        </div>
+      <h2>Questions?</h2>
+      <div class="contact-box">
+        <p style="color:var(--muted); margin-bottom:10px;">We're happy to explain anything.</p>
+        <a href="mailto:support@stuffolio.app">support@stuffolio.app</a>
+        <p style="margin-top:12px; margin-bottom:0; color:var(--muted); font-size:.9rem;">Coffee & Code LLC</p>
+      </div>
     </div>
+
+    <footer>
+      <div>© <span id="y"></span> Coffee & Code LLC</div>
+      <div style="display:flex; gap:12px;">
+        <a href="/">Home</a>
+        <a href="/support.html">Support</a>
+        <a href="/privacy.html">Privacy</a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+
+    // Theme toggle
+    const html = document.documentElement;
+    const toggle = document.getElementById('themeToggle');
+    const icon = document.getElementById('themeIcon');
+
+    // Check saved preference or system preference
+    const saved = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const theme = saved || (prefersDark ? 'dark' : 'light');
+
+    if (theme === 'light') {
+      html.classList.add('light-mode');
+      icon.textContent = '🌙';
+    }
+
+    toggle.addEventListener('click', () => {
+      const isLight = html.classList.contains('light-mode');
+      if (isLight) {
+        html.classList.remove('light-mode');
+        icon.textContent = '☀️';
+        localStorage.setItem('theme', 'dark');
+      } else {
+        html.classList.add('light-mode');
+        icon.textContent = '🌙';
+        localStorage.setItem('theme', 'light');
+      }
+    });
+  </script>
 </body>
 </html>
