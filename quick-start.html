@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Quick Start Guide — Stuffolio</title>
+  <meta name="description" content="Get started with Stuffolio in minutes. Learn how to add items, track warranties, and organize your stuff." />
+  <meta name="theme-color" content="#0b1220" />
+
+  <style>
+    :root{
+      --bg:#0b1220; --card:#111b2e; --muted:#a9b4c7; --text:#e7ecf6;
+      --line:rgba(255,255,255,.12); --accent:#7dd3fc; --accent2:#a78bfa;
+      --good:#86efac;
+      --radius:18px; --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --max: 900px;
+    }
+    .light-mode{
+      --bg:#f5f5f7 !important; --card:#ffffff !important; --muted:#555 !important; --text:#1a1a1a !important;
+      --line:rgba(0,0,0,.12) !important; --accent:#0066cc !important; --accent2:#7c3aed !important;
+      --shadow: 0 4px 20px rgba(0,0,0,.08) !important;
+    }
+    .light-mode body{background:#f5f5f7 !important; color:#1a1a1a !important}
+    .light-mode .card{background:#fff !important; border-color:rgba(0,0,0,.1) !important}
+    .light-mode p, .light-mode li, .light-mode .step-num{color:#555 !important}
+    .light-mode h2, .light-mode h3{color:#0066cc !important}
+    .light-mode a{color:#0066cc !important}
+    .light-mode .highlight{background:rgba(0,102,204,.08) !important; border-color:rgba(0,102,204,.25) !important}
+    .light-mode .highlight p{color:#333 !important}
+    .light-mode .tip-box{background:rgba(134,239,172,.08) !important; border-color:rgba(134,239,172,.35) !important}
+    .light-mode .tip-box p{color:#333 !important}
+    .light-mode .phase-card{background:rgba(0,0,0,.03) !important; border-color:rgba(0,0,0,.1) !important}
+    .light-mode nav a, .light-mode footer, .light-mode footer a{color:#666 !important}
+    .light-mode .theme-toggle{border-color:rgba(0,0,0,.15) !important; color:#666 !important}
+    .light-mode .pill{color:#555 !important; border-color:rgba(0,0,0,.15) !important}
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,Arial,sans-serif;
+      background: var(--bg);
+      color:var(--text);
+      line-height:1.6;
+      transition: background .3s, color .3s;
+    }
+    body::before{
+      content:'';
+      position:fixed; top:0; left:0; right:0; bottom:0;
+      background:
+        radial-gradient(1200px 700px at 20% 0%, rgba(125,211,252,.18), transparent 55%),
+        radial-gradient(900px 600px at 85% 10%, rgba(167,139,250,.18), transparent 55%);
+      pointer-events:none;
+      z-index:-1;
+      opacity:1;
+      transition: opacity .3s;
+    }
+    .light-mode body::before{
+      opacity:0;
+    }
+    a{color:var(--accent)}
+    a:hover{color:var(--text)}
+    .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 72px}
+
+    header{
+      display:flex; align-items:center; justify-content:space-between; gap:14px;
+      padding:14px 0 26px;
+    }
+    nav{display:flex; gap:14px; flex-wrap:wrap}
+    nav a{
+      text-decoration:none; color:var(--muted);
+      padding:8px 10px; border-radius:10px; border:1px solid transparent;
+    }
+    nav a:hover{border-color:var(--line); color:var(--text)}
+
+    .card{
+      background: rgba(17,27,46,.72);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding:28px;
+      backdrop-filter: blur(10px);
+      margin-bottom:18px;
+      transition: background .3s, border-color .3s;
+    }
+
+    h1{font-size:2.2rem; margin:0 0 8px}
+    h2{font-size:1.4rem; margin:28px 0 12px; color:var(--accent)}
+    h3{font-size:1.1rem; margin:18px 0 8px; color:var(--accent2)}
+    p{margin:0 0 14px; color:var(--muted)}
+    .lead{font-size:1.1rem; color:var(--text); margin-bottom:18px}
+
+    ul{margin:10px 0 14px 20px; color:var(--muted)}
+    li{margin:6px 0}
+
+    .highlight{
+      background: rgba(125,211,252,.08);
+      border:1px solid rgba(125,211,252,.25);
+      border-radius:12px;
+      padding:16px;
+      margin:14px 0;
+      transition: background .3s, border-color .3s;
+    }
+    .highlight p{margin:0; color:var(--text)}
+
+    .tip-box{
+      background: rgba(134,239,172,.08);
+      border:1px solid rgba(134,239,172,.35);
+      border-radius:12px;
+      padding:16px;
+      margin:14px 0;
+      transition: background .3s, border-color .3s;
+    }
+    .tip-box p{margin:0; color:var(--text)}
+
+    .pill{
+      display:inline-block; font-size:.85rem; color:var(--muted);
+      padding:6px 10px; border-radius:999px; border:1px solid var(--line);
+      margin-bottom:10px;
+    }
+
+    .steps{
+      counter-reset: step-counter;
+      list-style:none;
+      margin:14px 0;
+      padding:0;
+    }
+    .steps li{
+      counter-increment: step-counter;
+      position:relative;
+      padding-left:48px;
+      margin-bottom:16px;
+      color:var(--muted);
+    }
+    .steps li::before{
+      content: counter(step-counter);
+      position:absolute;
+      left:0; top:0;
+      width:32px; height:32px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color:#07101f;
+      border-radius:50%;
+      display:flex; align-items:center; justify-content:center;
+      font-weight:700; font-size:.95rem;
+    }
+
+    .grid{display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:14px}
+    @media (max-width:800px){ .grid{grid-template-columns:1fr} }
+
+    .phase-card{
+      background: rgba(255,255,255,.04);
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:18px;
+      transition: background .3s, border-color .3s;
+    }
+    .phase-card h3{margin-top:0}
+
+    .feature-grid{display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:14px}
+    @media (max-width:600px){ .feature-grid{grid-template-columns:1fr} }
+
+    .feature-item{
+      background: rgba(255,255,255,.04);
+      border:1px solid var(--line);
+      border-radius:12px;
+      padding:16px;
+      transition: background .3s, border-color .3s;
+    }
+    .feature-item h3{margin-top:0; margin-bottom:6px}
+    .feature-item p{margin:0; font-size:.95rem}
+
+    .divider{height:1px; background:var(--line); margin:24px 0}
+
+    .theme-toggle{
+      background:none; border:1px solid var(--line);
+      border-radius:10px; padding:8px 12px;
+      cursor:pointer; color:var(--muted);
+      font-size:1rem; display:flex; align-items:center; gap:6px;
+      transition: border-color .2s, color .2s;
+    }
+    .theme-toggle:hover{border-color:var(--accent); color:var(--text)}
+
+    footer{
+      margin-top:28px; color:var(--muted);
+      display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center;
+      gap:14px;
+      font-size:.92rem;
+    }
+    footer a{color:var(--muted); text-decoration:none}
+    footer a:hover{color:var(--text)}
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <a href="/" style="display:flex; align-items:center; gap:12px; text-decoration:none; color:var(--text);">
+        <img src="/assets/stuffolio-logo2.png" alt="Stuffolio" style="width:38px;height:38px;border-radius:12px;box-shadow:var(--shadow);" />
+        <b style="letter-spacing:.2px;">Stuffolio</b>
+      </a>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/support.html">Support</a>
+        <a href="/privacy.html">Privacy</a>
+        <a href="/terms.html">Terms</a>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode">
+          <span id="themeIcon">☀️</span>
+        </button>
+      </nav>
+    </header>
+
+    <div class="card">
+      <h1>Quick Start Guide</h1>
+      <p class="lead">Get up and running with Stuffolio in minutes — no perfect records required.</p>
+
+      <div class="highlight">
+        <p><strong>The goal:</strong> Track what you own so you can find manuals, manage warranties, and make confident decisions about your stuff.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2 style="margin-top:0">Adding Your First Item</h2>
+      <p>Start simple. You can always add more details later.</p>
+
+      <ol class="steps">
+        <li><strong>Tap the + button</strong> in the top toolbar</li>
+        <li><strong>Choose how to add:</strong>
+          <ul>
+            <li><strong>Quick Add</strong> — Just a title to start</li>
+            <li><strong>Full Details</strong> — Complete form with all fields</li>
+            <li><strong>Scan Barcode</strong> — Auto-fill product info</li>
+            <li><strong>AI Assist</strong> — Let Stuff Scout help identify it</li>
+          </ul>
+        </li>
+        <li><strong>Fill in what you know:</strong>
+          <ul>
+            <li>Title — What is it?</li>
+            <li>Category — Electronics, Furniture, Tools, etc.</li>
+            <li>Purchase Date — When did you get it?</li>
+            <li>Price — How much did it cost? (optional)</li>
+          </ul>
+        </li>
+        <li><strong>Save it.</strong> Done! Add more details anytime.</li>
+      </ol>
+
+      <div class="tip-box">
+        <p><strong>💡 Tip:</strong> Don't have receipts? No problem. Stuffolio works with whatever information you have. Start with a name and photo — that's enough.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2 style="margin-top:0">The Three Stages</h2>
+      <p>Stuffolio organizes items by where they are in their lifecycle:</p>
+
+      <div class="grid">
+        <div class="phase-card">
+          <div class="pill">Stage 1</div>
+          <h3>🛒 Acquire</h3>
+          <p style="font-size:.95rem">Items being added. Capture basics now, details later.</p>
+        </div>
+
+        <div class="phase-card">
+          <div class="pill">Stage 2</div>
+          <h3>🏠 Own</h3>
+          <p style="font-size:.95rem">Active inventory. Track warranties, locations, and notes.</p>
+        </div>
+
+        <div class="phase-card">
+          <div class="pill">Stage 3</div>
+          <h3>📦 Let Go</h3>
+          <p style="font-size:.95rem">Sold, donated, recycled, or trashed. Keep a clean history.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2 style="margin-top:0">Key Features</h2>
+
+      <div class="feature-grid">
+        <div class="feature-item">
+          <h3>🛡️ Warranty Tracking</h3>
+          <p>Set expiration dates and get reminders before they expire.</p>
+        </div>
+
+        <div class="feature-item">
+          <h3>📄 Manuals & Docs</h3>
+          <p>Link to online manuals or let AI find them for you.</p>
+        </div>
+
+        <div class="feature-item">
+          <h3>🔍 Stuff Scout</h3>
+          <p>AI-powered identification for antiques, collectibles, and "what is this thing?"</p>
+        </div>
+
+        <div class="feature-item">
+          <h3>📊 Insurance Ready</h3>
+          <p>Export your inventory in PDF, CSV, or Excel format.</p>
+        </div>
+
+        <div class="feature-item">
+          <h3>🎁 Disposal Tracking</h3>
+          <p>Record donations with values for tax deductions.</p>
+        </div>
+
+        <div class="feature-item">
+          <h3>☁️ iCloud Sync</h3>
+          <p>Optional sync across iPhone, iPad, and Mac.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2 style="margin-top:0">Disposing of Items</h2>
+      <p>When you're ready to let something go:</p>
+
+      <ol class="steps">
+        <li>Open the item's detail view</li>
+        <li>Tap the <strong>action menu</strong> (•••)</li>
+        <li>Select <strong>Dispose of Item</strong></li>
+        <li>Choose how: <strong>Sold</strong>, <strong>Donated</strong>, <strong>Gifted</strong>, <strong>Recycled</strong>, or <strong>Returned</strong></li>
+      </ol>
+
+      <p>Disposed items move to your <strong>Archive</strong> — you can still view them for reference, insurance claims, or tax documentation.</p>
+    </div>
+
+    <div class="card">
+      <h2 style="margin-top:0">Privacy First</h2>
+      <p>Your data stays on your device by default. Network features are all opt-in:</p>
+      <ul>
+        <li><strong>iCloud Sync</strong> — Your iCloud account (we never see it)</li>
+        <li><strong>AI Features</strong> — Only runs when you use them</li>
+        <li><strong>Barcode Lookup</strong> — Optional auto-fill</li>
+      </ul>
+      <p>Configure everything in <strong>Settings → Privacy & Features</strong>.</p>
+    </div>
+
+    <div class="card">
+      <h2 style="margin-top:0">Tips for Success</h2>
+      <ul>
+        <li><strong>Start simple</strong> — Add items with just a title, enhance later</li>
+        <li><strong>Use categories</strong> — Makes searching and filtering easier</li>
+        <li><strong>Take photos</strong> — Visual reference helps identify items</li>
+        <li><strong>Set warranty dates</strong> — Get notified before coverage expires</li>
+        <li><strong>Review periodically</strong> — Update your inventory as things change</li>
+      </ul>
+
+      <div class="divider"></div>
+
+      <p style="margin-bottom:0"><strong>Need more help?</strong> Check out <a href="/support.html">Support</a> for FAQs and troubleshooting, or email <a href="mailto:support@stuffolio.app">support@stuffolio.app</a>.</p>
+    </div>
+
+    <footer>
+      <div>© <span id="y"></span> Coffee & Code LLC</div>
+      <div style="display:flex; gap:12px;">
+        <a href="/">Home</a>
+        <a href="/support.html">Support</a>
+        <a href="/privacy.html">Privacy</a>
+        <a href="/terms.html">Terms</a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+
+    // Theme toggle
+    const html = document.documentElement;
+    const toggle = document.getElementById('themeToggle');
+    const icon = document.getElementById('themeIcon');
+
+    const saved = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const theme = saved || (prefersDark ? 'dark' : 'light');
+
+    if (theme === 'light') {
+      html.classList.add('light-mode');
+      icon.textContent = '🌙';
+    }
+
+    toggle.addEventListener('click', () => {
+      const isLight = html.classList.contains('light-mode');
+      if (isLight) {
+        html.classList.remove('light-mode');
+        icon.textContent = '☀️';
+        localStorage.setItem('theme', 'dark');
+      } else {
+        html.classList.add('light-mode');
+        icon.textContent = '🌙';
+        localStorage.setItem('theme', 'light');
+      }
+    });
+  </script>
+</body>
+</html>
