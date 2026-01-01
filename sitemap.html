@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Site Map — Stuffolio</title>
+  <meta name="description" content="Navigate all pages on the Stuffolio website." />
+  <meta name="theme-color" content="#0b1220" />
+
+  <style>
+    :root{
+      --bg:#0b1220; --card:#111b2e; --muted:#a9b4c7; --text:#e7ecf6;
+      --line:rgba(255,255,255,.12); --accent:#7dd3fc; --accent2:#a78bfa;
+      --good:#86efac;
+      --radius:18px; --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --max: 900px;
+    }
+    .light-mode{
+      --bg:#f5f5f7 !important; --card:#ffffff !important; --muted:#555 !important; --text:#1a1a1a !important;
+      --line:rgba(0,0,0,.12) !important; --accent:#0066cc !important; --accent2:#7c3aed !important;
+      --shadow: 0 4px 20px rgba(0,0,0,.08) !important;
+    }
+    .light-mode body{background:#f5f5f7 !important; color:#1a1a1a !important}
+    .light-mode .card{background:#fff !important; border-color:rgba(0,0,0,.1) !important}
+    .light-mode p, .light-mode li{color:#555 !important}
+    .light-mode h2, .light-mode h3{color:#0066cc !important}
+    .light-mode a{color:#0066cc !important}
+    .light-mode .highlight{background:rgba(0,102,204,.08) !important; border-color:rgba(0,102,204,.25) !important}
+    .light-mode .highlight p{color:#333 !important}
+    .light-mode nav a, .light-mode footer, .light-mode footer a{color:#666 !important}
+    .light-mode .theme-toggle{border-color:rgba(0,0,0,.15) !important; color:#666 !important}
+    .light-mode .sitemap-section{background:rgba(0,0,0,.03) !important; border-color:rgba(0,0,0,.1) !important}
+    .light-mode .sitemap-item{border-color:rgba(0,0,0,.08) !important}
+    .light-mode .sitemap-item:hover{background:rgba(0,102,204,.05) !important}
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,Arial,sans-serif;
+      background: var(--bg);
+      color:var(--text);
+      line-height:1.6;
+      transition: background .3s, color .3s;
+    }
+    body::before{
+      content:'';
+      position:fixed; top:0; left:0; right:0; bottom:0;
+      background:
+        radial-gradient(1200px 700px at 20% 0%, rgba(125,211,252,.18), transparent 55%),
+        radial-gradient(900px 600px at 85% 10%, rgba(167,139,250,.18), transparent 55%);
+      pointer-events:none;
+      z-index:-1;
+      opacity:1;
+      transition: opacity .3s;
+    }
+    .light-mode body::before{
+      opacity:0;
+    }
+    a{color:var(--accent); text-decoration:none}
+    a:hover{color:var(--text)}
+    .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 72px}
+
+    header{
+      display:flex; align-items:center; justify-content:space-between; gap:14px;
+      padding:14px 0 26px;
+    }
+    nav{display:flex; gap:14px; flex-wrap:wrap}
+    nav a{
+      text-decoration:none; color:var(--muted);
+      padding:8px 10px; border-radius:10px; border:1px solid transparent;
+    }
+    nav a:hover{border-color:var(--line); color:var(--text)}
+
+    .card{
+      background: rgba(17,27,46,.72);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding:28px;
+      backdrop-filter: blur(10px);
+      margin-bottom:18px;
+      transition: background .3s, border-color .3s;
+    }
+
+    h1{font-size:2.2rem; margin:0 0 8px}
+    h2{font-size:1.4rem; margin:0 0 12px; color:var(--accent)}
+    h3{font-size:1.1rem; margin:0 0 8px; color:var(--accent2)}
+    p{margin:0 0 14px; color:var(--muted)}
+    .lead{font-size:1.1rem; color:var(--text); margin-bottom:18px}
+
+    .highlight{
+      background: rgba(125,211,252,.08);
+      border:1px solid rgba(125,211,252,.25);
+      border-radius:12px;
+      padding:16px;
+      margin:14px 0;
+      transition: background .3s, border-color .3s;
+    }
+    .highlight p{margin:0; color:var(--text)}
+
+    .sitemap-grid{
+      display:grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap:18px;
+      margin-top:14px;
+    }
+    @media (max-width:700px){ .sitemap-grid{grid-template-columns:1fr} }
+
+    .sitemap-section{
+      background: rgba(255,255,255,.04);
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:20px;
+      transition: background .3s, border-color .3s;
+    }
+    .sitemap-section h3{
+      margin-bottom:14px;
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    .sitemap-item{
+      display:block;
+      padding:12px 14px;
+      border:1px solid var(--line);
+      border-radius:10px;
+      margin-bottom:10px;
+      transition: background .2s, border-color .2s;
+    }
+    .sitemap-item:last-child{margin-bottom:0}
+    .sitemap-item:hover{
+      background: rgba(125,211,252,.08);
+      border-color: var(--accent);
+    }
+    .sitemap-item .page-title{
+      font-weight:600;
+      color:var(--text);
+      display:block;
+      margin-bottom:4px;
+    }
+    .sitemap-item .page-desc{
+      font-size:.9rem;
+      color:var(--muted);
+    }
+
+    .theme-toggle{
+      background:none; border:1px solid var(--line);
+      border-radius:10px; padding:8px 12px;
+      cursor:pointer; color:var(--muted);
+      font-size:1rem; display:flex; align-items:center; gap:6px;
+      transition: border-color .2s, color .2s;
+    }
+    .theme-toggle:hover{border-color:var(--accent); color:var(--text)}
+
+    footer{
+      margin-top:28px; color:var(--muted);
+      display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center;
+      gap:14px;
+      font-size:.92rem;
+    }
+    footer a{color:var(--muted); text-decoration:none}
+    footer a:hover{color:var(--text)}
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <a href="/" style="display:flex; align-items:center; gap:12px; text-decoration:none; color:var(--text);">
+        <img src="/assets/stuffolio-logo2.png" alt="Stuffolio" style="width:38px;height:38px;border-radius:12px;box-shadow:var(--shadow);" />
+        <b style="letter-spacing:.2px;">Stuffolio</b>
+      </a>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/quick-start.html">Quick Start</a>
+        <a href="/support.html">Support</a>
+        <a href="/privacy.html">Privacy</a>
+        <a href="/terms.html">Terms</a>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode">
+          <span id="themeIcon">☀️</span>
+        </button>
+      </nav>
+    </header>
+
+    <div class="card">
+      <h1>Site Map</h1>
+      <p class="lead">Find your way around the Stuffolio website.</p>
+    </div>
+
+    <div class="sitemap-grid">
+      <div class="sitemap-section">
+        <h3>📱 Getting Started</h3>
+
+        <a href="/" class="sitemap-item">
+          <span class="page-title">Home</span>
+          <span class="page-desc">Overview of Stuffolio features and the three stages of stuff</span>
+        </a>
+
+        <a href="/quick-start.html" class="sitemap-item">
+          <span class="page-title">Quick Start Guide</span>
+          <span class="page-desc">Get up and running in minutes — add items, track warranties, organize</span>
+        </a>
+      </div>
+
+      <div class="sitemap-section">
+        <h3>🆘 Help & Support</h3>
+
+        <a href="/support.html" class="sitemap-item">
+          <span class="page-title">Support</span>
+          <span class="page-desc">FAQs, troubleshooting, and contact information</span>
+        </a>
+
+        <a href="/support.html#troubleshooting" class="sitemap-item">
+          <span class="page-title">Troubleshooting</span>
+          <span class="page-desc">Solutions for common issues (sync, AI, photos, crashes)</span>
+        </a>
+      </div>
+
+      <div class="sitemap-section">
+        <h3>📋 Legal</h3>
+
+        <a href="/privacy.html" class="sitemap-item">
+          <span class="page-title">Privacy Policy</span>
+          <span class="page-desc">How we handle your data (spoiler: it stays on your device)</span>
+        </a>
+
+        <a href="/terms.html" class="sitemap-item">
+          <span class="page-title">Terms of Service</span>
+          <span class="page-desc">Usage terms, disclaimers, and your rights</span>
+        </a>
+      </div>
+
+      <div class="sitemap-section">
+        <h3>📧 Contact</h3>
+
+        <a href="mailto:support@stuffolio.app" class="sitemap-item">
+          <span class="page-title">General Support</span>
+          <span class="page-desc">support@stuffolio.app — Help with using Stuffolio</span>
+        </a>
+
+        <a href="mailto:dev@stuffolio.app" class="sitemap-item">
+          <span class="page-title">Feature Requests</span>
+          <span class="page-desc">dev@stuffolio.app — Ideas and suggestions</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:18px;">
+      <h2 style="margin-top:0">Quick Links</h2>
+      <div class="highlight">
+        <p style="display:flex; flex-wrap:wrap; gap:14px; align-items:center;">
+          <a href="/">Home</a>
+          <span style="color:var(--line);">•</span>
+          <a href="/quick-start.html">Quick Start</a>
+          <span style="color:var(--line);">•</span>
+          <a href="/support.html">Support</a>
+          <span style="color:var(--line);">•</span>
+          <a href="/privacy.html">Privacy</a>
+          <span style="color:var(--line);">•</span>
+          <a href="/terms.html">Terms</a>
+        </p>
+      </div>
+    </div>
+
+    <footer>
+      <div>© <span id="y"></span> Coffee & Code LLC</div>
+      <div style="display:flex; gap:12px;">
+        <a href="/">Home</a>
+        <a href="/support.html">Support</a>
+        <a href="/privacy.html">Privacy</a>
+        <a href="/terms.html">Terms</a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+
+    // Theme toggle
+    const html = document.documentElement;
+    const toggle = document.getElementById('themeToggle');
+    const icon = document.getElementById('themeIcon');
+
+    const saved = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const theme = saved || (prefersDark ? 'dark' : 'light');
+
+    if (theme === 'light') {
+      html.classList.add('light-mode');
+      icon.textContent = '🌙';
+    }
+
+    toggle.addEventListener('click', () => {
+      const isLight = html.classList.contains('light-mode');
+      if (isLight) {
+        html.classList.remove('light-mode');
+        icon.textContent = '☀️';
+        localStorage.setItem('theme', 'dark');
+      } else {
+        html.classList.add('light-mode');
+        icon.textContent = '🌙';
+        localStorage.setItem('theme', 'light');
+      }
+    });
+  </script>
+</body>
+</html>
