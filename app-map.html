@@ -1,0 +1,505 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Stuffolio App Map — Stuffolio</title>
+  <meta name="description" content="Navigate the Stuffolio app. See all screens and features at a glance." />
+  <meta name="theme-color" content="#0b1220" />
+
+  <style>
+    :root{
+      --bg:#0b1220; --card:#111b2e; --muted:#a9b4c7; --text:#e7ecf6;
+      --line:rgba(255,255,255,.12); --accent:#7dd3fc; --accent2:#a78bfa;
+      --good:#86efac; --warn:#fbbf24;
+      --radius:18px; --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --max: 1000px;
+    }
+    .light-mode{
+      --bg:#f5f5f7 !important; --card:#ffffff !important; --muted:#555 !important; --text:#1a1a1a !important;
+      --line:rgba(0,0,0,.12) !important; --accent:#0066cc !important; --accent2:#7c3aed !important;
+      --shadow: 0 4px 20px rgba(0,0,0,.08) !important;
+    }
+    .light-mode body{background:#f5f5f7 !important; color:#1a1a1a !important}
+    .light-mode .card{background:#fff !important; border-color:rgba(0,0,0,.1) !important}
+    .light-mode p, .light-mode li{color:#555 !important}
+    .light-mode h2, .light-mode h3{color:#0066cc !important}
+    .light-mode a{color:#0066cc !important}
+    .light-mode .screen-box{background:rgba(0,0,0,.03) !important; border-color:rgba(0,0,0,.12) !important}
+    .light-mode .screen-box:hover{border-color:#0066cc !important}
+    .light-mode .screen-title{color:#1a1a1a !important}
+    .light-mode .sub-screen{background:rgba(0,0,0,.02) !important; border-color:rgba(0,0,0,.08) !important}
+    .light-mode .section-header{background:rgba(0,102,204,.08) !important; border-color:rgba(0,102,204,.25) !important}
+    .light-mode .badge{background:rgba(0,0,0,.06) !important; color:#555 !important}
+    .light-mode .badge.optional{background:rgba(124,58,237,.1) !important; color:#7c3aed !important}
+    .light-mode nav a, .light-mode footer, .light-mode footer a{color:#666 !important}
+    .light-mode .theme-toggle{border-color:rgba(0,0,0,.15) !important; color:#666 !important}
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,Arial,sans-serif;
+      background: var(--bg);
+      color:var(--text);
+      line-height:1.6;
+      transition: background .3s, color .3s;
+    }
+    body::before{
+      content:'';
+      position:fixed; top:0; left:0; right:0; bottom:0;
+      background:
+        radial-gradient(1200px 700px at 20% 0%, rgba(125,211,252,.18), transparent 55%),
+        radial-gradient(900px 600px at 85% 10%, rgba(167,139,250,.18), transparent 55%);
+      pointer-events:none;
+      z-index:-1;
+      opacity:1;
+      transition: opacity .3s;
+    }
+    .light-mode body::before{
+      opacity:0;
+    }
+    a{color:var(--accent); text-decoration:none}
+    a:hover{color:var(--text)}
+    .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 72px}
+
+    header{
+      display:flex; align-items:center; justify-content:space-between; gap:14px;
+      padding:14px 0 26px;
+    }
+    nav{display:flex; gap:14px; flex-wrap:wrap}
+    nav a{
+      text-decoration:none; color:var(--muted);
+      padding:8px 10px; border-radius:10px; border:1px solid transparent;
+    }
+    nav a:hover{border-color:var(--line); color:var(--text)}
+
+    .card{
+      background: rgba(17,27,46,.72);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding:28px;
+      backdrop-filter: blur(10px);
+      margin-bottom:18px;
+      transition: background .3s, border-color .3s;
+    }
+
+    h1{font-size:2.2rem; margin:0 0 8px}
+    h2{font-size:1.4rem; margin:0 0 14px; color:var(--accent)}
+    h3{font-size:1.1rem; margin:0 0 8px; color:var(--accent2)}
+    p{margin:0 0 14px; color:var(--muted)}
+    .lead{font-size:1.1rem; color:var(--text); margin-bottom:18px}
+
+    .section-header{
+      background: rgba(125,211,252,.08);
+      border:1px solid rgba(125,211,252,.25);
+      border-radius:12px;
+      padding:14px 16px;
+      margin-bottom:14px;
+      display:flex;
+      align-items:center;
+      gap:12px;
+      transition: background .3s, border-color .3s;
+    }
+    .section-header h2{margin:0; font-size:1.2rem}
+    .section-icon{font-size:1.5rem}
+
+    .screen-grid{
+      display:grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap:14px;
+    }
+
+    .screen-box{
+      background: rgba(255,255,255,.04);
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:16px;
+      transition: background .2s, border-color .2s, transform .2s;
+    }
+    .screen-box:hover{
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .screen-title{
+      font-weight:600;
+      font-size:1.05rem;
+      color:var(--text);
+      display:flex;
+      align-items:center;
+      gap:8px;
+      margin-bottom:8px;
+    }
+    .screen-desc{
+      font-size:.9rem;
+      color:var(--muted);
+      margin-bottom:10px;
+    }
+
+    .sub-screens{
+      margin-top:10px;
+      padding-top:10px;
+      border-top:1px solid var(--line);
+    }
+    .sub-screen{
+      background: rgba(255,255,255,.03);
+      border:1px solid var(--line);
+      border-radius:8px;
+      padding:8px 10px;
+      margin-bottom:6px;
+      font-size:.85rem;
+      color:var(--muted);
+      transition: background .2s, border-color .2s;
+    }
+    .sub-screen:last-child{margin-bottom:0}
+    .sub-screen strong{color:var(--text); font-weight:500}
+
+    .badge{
+      display:inline-block;
+      font-size:.7rem;
+      font-weight:600;
+      text-transform:uppercase;
+      letter-spacing:.5px;
+      padding:3px 6px;
+      border-radius:4px;
+      background: rgba(255,255,255,.1);
+      color:var(--muted);
+    }
+    .badge.optional{
+      background: rgba(167,139,250,.15);
+      color:var(--accent2);
+    }
+    .badge.core{
+      background: rgba(134,239,172,.15);
+      color:var(--good);
+    }
+
+    .flow-note{
+      background: rgba(251,191,36,.08);
+      border:1px solid rgba(251,191,36,.25);
+      border-radius:10px;
+      padding:12px 14px;
+      margin-top:14px;
+      font-size:.9rem;
+      color:var(--muted);
+    }
+    .flow-note strong{color:var(--warn)}
+
+    .theme-toggle{
+      background:none; border:1px solid var(--line);
+      border-radius:10px; padding:8px 12px;
+      cursor:pointer; color:var(--muted);
+      font-size:1rem; display:flex; align-items:center; gap:6px;
+      transition: border-color .2s, color .2s;
+    }
+    .theme-toggle:hover{border-color:var(--accent); color:var(--text)}
+
+    footer{
+      margin-top:28px; color:var(--muted);
+      display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center;
+      gap:14px;
+      font-size:.92rem;
+    }
+    footer a{color:var(--muted); text-decoration:none}
+    footer a:hover{color:var(--text)}
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <a href="/" style="display:flex; align-items:center; gap:12px; text-decoration:none; color:var(--text);">
+        <img src="/assets/stuffolio-logo2.png" alt="Stuffolio" style="width:38px;height:38px;border-radius:12px;box-shadow:var(--shadow);" />
+        <b style="letter-spacing:.2px;">Stuffolio</b>
+      </a>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/quick-start.html">Quick Start</a>
+        <a href="/support.html">Support</a>
+        <a href="/privacy.html">Privacy</a>
+        <a href="/terms.html">Terms</a>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode">
+          <span id="themeIcon">☀️</span>
+        </button>
+      </nav>
+    </header>
+
+    <div class="card">
+      <h1>Stuffolio App Map</h1>
+      <p class="lead">Explore every screen and feature in Stuffolio.</p>
+      <p style="margin-bottom:0"><span class="badge core">Core</span> features work offline. <span class="badge optional">Optional</span> features require network/subscription.</p>
+    </div>
+
+    <!-- MAIN TABS -->
+    <div class="card">
+      <div class="section-header">
+        <span class="section-icon">🏠</span>
+        <h2>Main Navigation</h2>
+      </div>
+
+      <div class="screen-grid">
+        <div class="screen-box">
+          <div class="screen-title">📦 Items</div>
+          <div class="screen-desc">Your inventory at a glance. Browse, search, and filter all your stuff.</div>
+          <div class="sub-screens">
+            <div class="sub-screen"><strong>List View</strong> — See all items in a scrollable list</div>
+            <div class="sub-screen"><strong>Grid View</strong> — Visual thumbnail layout</div>
+            <div class="sub-screen"><strong>Search</strong> — Find items by name, brand, category, location</div>
+            <div class="sub-screen"><strong>Filters</strong> — By category, location, status, warranty</div>
+          </div>
+        </div>
+
+        <div class="screen-box">
+          <div class="screen-title">🗂️ Categories</div>
+          <div class="screen-desc">Organize items by type: Electronics, Furniture, Kitchen, Tools, etc.</div>
+          <div class="sub-screens">
+            <div class="sub-screen"><strong>Category List</strong> — All categories with item counts</div>
+            <div class="sub-screen"><strong>Edit Categories</strong> — Add, rename, or delete categories</div>
+          </div>
+        </div>
+
+        <div class="screen-box">
+          <div class="screen-title">📍 Locations</div>
+          <div class="screen-desc">Track where things are: Living Room, Garage, Storage, etc.</div>
+          <div class="sub-screens">
+            <div class="sub-screen"><strong>Location List</strong> — All locations with item counts</div>
+            <div class="sub-screen"><strong>Edit Locations</strong> — Add, rename, or delete locations</div>
+          </div>
+        </div>
+
+        <div class="screen-box">
+          <div class="screen-title">📁 Archive</div>
+          <div class="screen-desc">Items you've let go of — sold, donated, recycled, or trashed.</div>
+          <div class="sub-screens">
+            <div class="sub-screen"><strong>Disposed Items</strong> — History of what left your inventory</div>
+            <div class="sub-screen"><strong>Filter by Outcome</strong> — Sold, Donated, Gifted, etc.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ADD ITEM -->
+    <div class="card">
+      <div class="section-header">
+        <span class="section-icon">➕</span>
+        <h2>Add Product</h2>
+      </div>
+
+      <div class="screen-grid">
+        <div class="screen-box">
+          <div class="screen-title">⚡ Quick Add <span class="badge core">Core</span></div>
+          <div class="screen-desc">Capture essentials fast — title, category, and a few details. Fill in more later.</div>
+        </div>
+
+        <div class="screen-box">
+          <div class="screen-title">📝 Full Details <span class="badge core">Core</span></div>
+          <div class="screen-desc">Complete form with all fields: photos, price, warranty, serial number, notes.</div>
+        </div>
+
+        <div class="screen-box">
+          <div class="screen-title">📷 Scan Barcode <span class="badge optional">Optional</span></div>
+          <div class="screen-desc">Scan a UPC/barcode to auto-fill product info. Requires network opt-in.</div>
+        </div>
+
+        <div class="screen-box">
+          <div class="screen-title">🤖 AI Assist <span class="badge optional">Optional</span></div>
+          <div class="screen-desc">Let Stuff Scout identify the item from a photo. Requires AI subscription.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ITEM DETAIL -->
+    <div class="card">
+      <div class="section-header">
+        <span class="section-icon">📋</span>
+        <h2>Item Detail</h2>
+      </div>
+
+      <div class="screen-grid">
+        <div class="screen-box">
+          <div class="screen-title">ℹ️ Item Info</div>
+          <div class="screen-desc">View and edit all details about an item.</div>
+          <div class="sub-screens">
+            <div class="sub-screen"><strong>Photos</strong> — Product images, receipts, labels</div>
+            <div class="sub-screen"><strong>Details</strong> — Brand, model, serial number, price</div>
+            <div class="sub-screen"><strong>Warranty</strong> — Expiration date and reminders</div>
+            <div class="sub-screen"><strong>Location</strong> — Where it's stored</div>
+            <div class="sub-screen"><strong>Notes</strong> — Personal notes and comments</div>
+          </div>
+        </div>
+
+        <div class="screen-box">
+          <div class="screen-title">📎 Attachments</div>
+          <div class="screen-desc">Add receipts, manuals, warranty cards, and other documents.</div>
+        </div>
+
+        <div class="screen-box">
+          <div class="screen-title">🔧 Actions</div>
+          <div class="screen-desc">Things you can do with an item.</div>
+          <div class="sub-screens">
+            <div class="sub-screen"><strong>Edit</strong> — Modify any field</div>
+            <div class="sub-screen"><strong>Duplicate</strong> — Copy item as a starting point</div>
+            <div class="sub-screen"><strong>Dispose</strong> — Mark as sold, donated, etc.</div>
+            <div class="sub-screen"><strong>Delete</strong> — Permanently remove</div>
+          </div>
+        </div>
+
+        <div class="screen-box">
+          <div class="screen-title">🔍 Stuff Scout <span class="badge optional">Optional</span></div>
+          <div class="screen-desc">AI-powered research for this item.</div>
+          <div class="sub-screens">
+            <div class="sub-screen"><strong>Find Manual</strong> — Locate product documentation</div>
+            <div class="sub-screen"><strong>Find Parts</strong> — Replacement parts and accessories</div>
+            <div class="sub-screen"><strong>Get Value</strong> — Estimated current value</div>
+            <div class="sub-screen"><strong>Check Recalls</strong> — Safety recall information</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SETTINGS -->
+    <div class="card">
+      <div class="section-header">
+        <span class="section-icon">⚙️</span>
+        <h2>Settings</h2>
+      </div>
+
+      <div class="screen-grid">
+        <div class="screen-box">
+          <div class="screen-title">🌐 Network Features</div>
+          <div class="screen-desc">Opt in to internet-connected features (disabled by default).</div>
+          <div class="sub-screens">
+            <div class="sub-screen"><strong>Stuff Scout (AI)</strong> — Product identification and research</div>
+            <div class="sub-screen"><strong>Barcode Lookup</strong> — Auto-fill from UPC scans</div>
+            <div class="sub-screen"><strong>Recall Checker</strong> — Safety recall lookups</div>
+            <div class="sub-screen"><strong>Analytics</strong> — Anonymous usage data (opt-in)</div>
+          </div>
+        </div>
+
+        <div class="screen-box">
+          <div class="screen-title">☁️ iCloud Sync</div>
+          <div class="screen-desc">Sync your inventory across iPhone, iPad, and Mac.</div>
+          <div class="sub-screens">
+            <div class="sub-screen"><strong>Enable/Disable</strong> — Toggle sync on or off</div>
+            <div class="sub-screen"><strong>Sync Status</strong> — View last sync time</div>
+          </div>
+        </div>
+
+        <div class="screen-box">
+          <div class="screen-title">🔔 Notifications</div>
+          <div class="screen-desc">Configure warranty reminders and alerts.</div>
+          <div class="sub-screens">
+            <div class="sub-screen"><strong>Warranty Reminders</strong> — Days before expiration</div>
+            <div class="sub-screen"><strong>Notification Timing</strong> — When to alert you</div>
+          </div>
+        </div>
+
+        <div class="screen-box">
+          <div class="screen-title">💾 Data Management</div>
+          <div class="screen-desc">Export, backup, and manage your inventory data.</div>
+          <div class="sub-screens">
+            <div class="sub-screen"><strong>Export</strong> — CSV, PDF, Excel formats</div>
+            <div class="sub-screen"><strong>Reset All Data</strong> — Clear everything and start fresh</div>
+          </div>
+        </div>
+
+        <div class="screen-box">
+          <div class="screen-title">ℹ️ About</div>
+          <div class="screen-desc">App info and additional options.</div>
+          <div class="sub-screens">
+            <div class="sub-screen"><strong>Version Info</strong> — App version and build</div>
+            <div class="sub-screen"><strong>Restart Onboarding</strong> — See welcome tutorial again</div>
+            <div class="sub-screen"><strong>Support</strong> — Get help and contact info</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DISPOSE FLOW -->
+    <div class="card">
+      <div class="section-header">
+        <span class="section-icon">📦</span>
+        <h2>Dispose of Item</h2>
+      </div>
+
+      <div class="screen-grid">
+        <div class="screen-box">
+          <div class="screen-title">💰 Sold</div>
+          <div class="screen-desc">Record sale price, date, and buyer/platform.</div>
+        </div>
+
+        <div class="screen-box">
+          <div class="screen-title">🎁 Donated</div>
+          <div class="screen-desc">Track fair market value, organization, and date for tax purposes.</div>
+        </div>
+
+        <div class="screen-box">
+          <div class="screen-title">🎀 Gifted</div>
+          <div class="screen-desc">Record who received the item and when.</div>
+        </div>
+
+        <div class="screen-box">
+          <div class="screen-title">♻️ Recycled</div>
+          <div class="screen-desc">Mark as responsibly disposed of.</div>
+        </div>
+
+        <div class="screen-box">
+          <div class="screen-title">↩️ Returned</div>
+          <div class="screen-desc">Returned to store or seller. Track refund amount.</div>
+        </div>
+
+        <div class="screen-box">
+          <div class="screen-title">🗑️ Trashed</div>
+          <div class="screen-desc">Thrown away. Item moves to archive.</div>
+        </div>
+      </div>
+
+      <div class="flow-note">
+        <strong>Note:</strong> Disposed items move to the Archive. You can still view them for reference, insurance claims, or tax documentation.
+      </div>
+    </div>
+
+    <footer>
+      <div>© <span id="y"></span> Coffee & Code LLC</div>
+      <div style="display:flex; gap:12px;">
+        <a href="/">Home</a>
+        <a href="/support.html">Support</a>
+        <a href="/privacy.html">Privacy</a>
+        <a href="/terms.html">Terms</a>
+        <a href="/sitemap.html">Site Map</a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+
+    // Theme toggle
+    const html = document.documentElement;
+    const toggle = document.getElementById('themeToggle');
+    const icon = document.getElementById('themeIcon');
+
+    const saved = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const theme = saved || (prefersDark ? 'dark' : 'light');
+
+    if (theme === 'light') {
+      html.classList.add('light-mode');
+      icon.textContent = '🌙';
+    }
+
+    toggle.addEventListener('click', () => {
+      const isLight = html.classList.contains('light-mode');
+      if (isLight) {
+        html.classList.remove('light-mode');
+        icon.textContent = '☀️';
+        localStorage.setItem('theme', 'dark');
+      } else {
+        html.classList.add('light-mode');
+        icon.textContent = '🌙';
+        localStorage.setItem('theme', 'light');
+      }
+    });
+  </script>
+</body>
+</html>
