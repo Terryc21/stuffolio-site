@@ -172,6 +172,118 @@
     }
     .theme-toggle:hover{border-color:var(--accent); color:var(--text)}
     .card{transition: background .3s, border-color .3s}
+
+    /* Modal styles */
+    .modal-overlay{
+      display:none;
+      position:fixed;
+      top:0; left:0; right:0; bottom:0;
+      background:rgba(0,0,0,.7);
+      backdrop-filter:blur(4px);
+      z-index:1000;
+      align-items:center;
+      justify-content:center;
+      padding:20px;
+    }
+    .modal-overlay.active{display:flex}
+    .modal{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      max-width:440px;
+      width:100%;
+      padding:28px;
+      position:relative;
+      animation:modalIn .25s ease-out;
+    }
+    @keyframes modalIn{
+      from{opacity:0; transform:scale(.95) translateY(-10px)}
+      to{opacity:1; transform:scale(1) translateY(0)}
+    }
+    .modal-close{
+      position:absolute;
+      top:14px; right:14px;
+      background:none; border:none;
+      color:var(--muted);
+      font-size:1.5rem;
+      cursor:pointer;
+      line-height:1;
+      padding:4px;
+    }
+    .modal-close:hover{color:var(--text)}
+    .modal h2{margin:0 0 8px; font-size:1.4rem}
+    .modal .lead{font-size:1rem; margin-bottom:20px}
+    .form-group{margin-bottom:16px}
+    .form-group label{
+      display:block;
+      font-weight:600;
+      margin-bottom:6px;
+      color:var(--text);
+    }
+    .form-group input[type="email"]{
+      width:100%;
+      padding:12px 14px;
+      border:1px solid var(--line);
+      border-radius:10px;
+      background:rgba(255,255,255,.06);
+      color:var(--text);
+      font-size:1rem;
+      outline:none;
+      transition:border-color .2s;
+    }
+    .form-group input[type="email"]:focus{border-color:var(--accent)}
+    .form-group input[type="email"]::placeholder{color:var(--muted)}
+    .checkbox-group{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+    .checkbox-item{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      cursor:pointer;
+    }
+    .checkbox-item input[type="checkbox"]{
+      width:18px; height:18px;
+      accent-color:var(--accent);
+      cursor:pointer;
+    }
+    .checkbox-item span{color:var(--text)}
+    .form-footer{
+      margin-top:20px;
+      padding-top:16px;
+      border-top:1px solid var(--line);
+      font-size:.85rem;
+      color:var(--muted);
+      line-height:1.5;
+    }
+    .btn-submit{
+      width:100%;
+      padding:14px;
+      border:none;
+      border-radius:12px;
+      background:linear-gradient(135deg, rgba(125,211,252,.95), rgba(167,139,250,.95));
+      color:#07101f;
+      font-size:1rem;
+      font-weight:600;
+      cursor:pointer;
+      transition:transform .2s, opacity .2s;
+    }
+    .btn-submit:hover{transform:translateY(-1px)}
+    .btn-submit:disabled{opacity:.6; cursor:not-allowed; transform:none}
+    .success-message{
+      text-align:center;
+      padding:20px 0;
+    }
+    .success-message .icon{font-size:3rem; margin-bottom:12px}
+    .success-message h3{margin:0 0 8px; color:var(--good)}
+    .success-message p{color:var(--muted); margin:0}
+    .light-mode .modal{background:#fff !important; border-color:rgba(0,0,0,.1) !important}
+    .light-mode .form-group input[type="email"]{background:rgba(0,0,0,.04) !important; border-color:rgba(0,0,0,.15) !important; color:#1a1a1a !important}
+    .light-mode .checkbox-item span{color:#1a1a1a !important}
+    .light-mode .btn-submit{background:linear-gradient(135deg, rgba(0,102,204,.9), rgba(124,58,237,.9)) !important; color:#fff !important}
   </style>
 </head>
 
@@ -216,7 +328,7 @@
         </p>
 
         <div class="ctaRow">
-          <a class="btn primary" href="#" onclick="alert('Optional: add a waitlist form later.'); return false;">Join the waitlist</a>
+          <a class="btn primary" href="#" onclick="openWaitlistModal(); return false;">Join the waitlist</a>
           <a class="btn" href="/quick-start.html">Quick Start Guide</a>
           <a class="btn" href="/support.html">Get Support</a>
         </div>
@@ -379,6 +491,113 @@
         localStorage.setItem('theme', 'light');
       }
     });
+
+    // Waitlist Modal
+    function openWaitlistModal() {
+      document.getElementById('waitlistModal').classList.add('active');
+      document.getElementById('waitlistForm').style.display = 'block';
+      document.getElementById('waitlistSuccess').style.display = 'none';
+      document.getElementById('waitlistForm').reset();
+    }
+
+    function closeWaitlistModal() {
+      document.getElementById('waitlistModal').classList.remove('active');
+    }
+
+    // Close modal on overlay click
+    document.getElementById('waitlistModal').addEventListener('click', function(e) {
+      if (e.target === this) closeWaitlistModal();
+    });
+
+    // Close modal on Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeWaitlistModal();
+    });
+
+    // Handle form submission
+    document.getElementById('waitlistForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const email = document.getElementById('waitlistEmail').value;
+      const platforms = [];
+      if (document.getElementById('platformMac').checked) platforms.push('macOS');
+      if (document.getElementById('platformIPhone').checked) platforms.push('iPhone');
+      if (document.getElementById('platformIPad').checked) platforms.push('iPad');
+      const betaTester = document.getElementById('betaTester').checked ? 'Yes' : 'No';
+
+      // Build mailto link
+      const subject = encodeURIComponent('Stuffolio Waitlist Signup');
+      const body = encodeURIComponent(
+        `New waitlist signup:\n\n` +
+        `Email: ${email}\n` +
+        `Platforms: ${platforms.length > 0 ? platforms.join(', ') : 'None selected'}\n` +
+        `Interested in beta testing: ${betaTester}`
+      );
+
+      // Open mail client
+      window.location.href = `mailto:support@stuffolio.app?subject=${subject}&body=${body}`;
+
+      // Show success message
+      document.getElementById('waitlistForm').style.display = 'none';
+      document.getElementById('waitlistSuccess').style.display = 'block';
+    });
   </script>
+
+  <!-- Waitlist Modal -->
+  <div id="waitlistModal" class="modal-overlay">
+    <div class="modal">
+      <button class="modal-close" onclick="closeWaitlistModal()" aria-label="Close">&times;</button>
+
+      <form id="waitlistForm">
+        <h2>Join the Waitlist</h2>
+        <p class="lead">Be the first to know when Stuffolio launches.</p>
+
+        <div class="form-group">
+          <label for="waitlistEmail">Email Address</label>
+          <input type="email" id="waitlistEmail" name="email" placeholder="you@example.com" required />
+        </div>
+
+        <div class="form-group">
+          <label>Which platforms are you interested in?</label>
+          <div class="checkbox-group">
+            <label class="checkbox-item">
+              <input type="checkbox" id="platformMac" name="platform" value="macOS" />
+              <span>macOS</span>
+            </label>
+            <label class="checkbox-item">
+              <input type="checkbox" id="platformIPhone" name="platform" value="iPhone" />
+              <span>iPhone</span>
+            </label>
+            <label class="checkbox-item">
+              <input type="checkbox" id="platformIPad" name="platform" value="iPad" />
+              <span>iPad</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Beta Testing</label>
+          <div class="checkbox-group">
+            <label class="checkbox-item">
+              <input type="checkbox" id="betaTester" name="betaTester" value="yes" />
+              <span>I'd like to be a beta tester</span>
+            </label>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-submit">Join Waitlist</button>
+
+        <div class="form-footer">
+          Your email address will only be used to inform you about the status of Stuffolio and will never be shared or sold to anyone else.
+        </div>
+      </form>
+
+      <div id="waitlistSuccess" class="success-message" style="display:none;">
+        <div class="icon">✅</div>
+        <h3>You're on the list!</h3>
+        <p>Your email app should open to send your signup. If it doesn't, please email us directly at support@stuffolio.app</p>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
