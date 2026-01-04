@@ -1,0 +1,7 @@
+# Stuffolio - https://stuffolio.app
+# Allow all search engines to index all pages
+
+User-agent: *
+Allow: /
+
+Sitemap: https://stuffolio.app/sitemap.xml
