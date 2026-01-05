@@ -1,0 +1,1414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User's Manual for Mac — Stuffolio</title>
+    <meta name="description" content="Complete step-by-step guide for using Stuffolio on Mac." />
+    <link rel="icon" type="image/png" href="/assets/stuffolio-logo2.png" />
+    <link rel="apple-touch-icon" href="/assets/stuffolio-logo2.png" />
+    <style>
+        :root {
+            --primary: #007AFF;
+            --secondary: #5856D6;
+            --success: #34C759;
+            --warning: #FF9500;
+            --danger: #FF3B30;
+            --background: #f5f5f7;
+            --card-bg: #ffffff;
+            --text: #1d1d1f;
+            --text-secondary: #86868b;
+            --border: #d2d2d7;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --background: #1d1d1f;
+                --card-bg: #2d2d2d;
+                --text: #f5f5f7;
+                --text-secondary: #a1a1a6;
+                --border: #424245;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: var(--background);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 24px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 48px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        h1 {
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+        }
+
+        .version {
+            font-size: 0.9em;
+            color: var(--text-secondary);
+        }
+
+        .platform-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #1d1d1f 0%, #424245 100%);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 500;
+            margin-top: 12px;
+        }
+
+        nav {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 48px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        }
+
+        nav h2 {
+            font-size: 1.3em;
+            margin-bottom: 16px;
+            color: var(--primary);
+        }
+
+        nav ol {
+            columns: 2;
+            column-gap: 32px;
+            padding-left: 20px;
+        }
+
+        nav li {
+            margin-bottom: 8px;
+            break-inside: avoid;
+        }
+
+        nav a {
+            color: var(--text);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        section {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 32px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        }
+
+        h2 {
+            font-size: 1.8em;
+            font-weight: 600;
+            margin-bottom: 24px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--primary);
+            color: var(--text);
+        }
+
+        h3 {
+            font-size: 1.3em;
+            font-weight: 600;
+            margin: 28px 0 16px 0;
+            color: var(--secondary);
+        }
+
+        h4 {
+            font-size: 1.1em;
+            font-weight: 600;
+            margin: 20px 0 12px 0;
+            color: var(--text);
+        }
+
+        p {
+            margin-bottom: 16px;
+        }
+
+        ol, ul {
+            margin: 16px 0;
+            padding-left: 24px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        li ul, li ol {
+            margin-top: 8px;
+            margin-bottom: 8px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.95em;
+        }
+
+        th, td {
+            padding: 12px 16px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        th {
+            background: var(--background);
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        tr:hover td {
+            background: var(--background);
+        }
+
+        .tip {
+            background: linear-gradient(135deg, rgba(0,122,255,0.1) 0%, rgba(88,86,214,0.1) 100%);
+            border-left: 4px solid var(--primary);
+            padding: 16px 20px;
+            margin: 20px 0;
+            border-radius: 0 12px 12px 0;
+        }
+
+        .tip strong {
+            color: var(--primary);
+        }
+
+        .warning {
+            background: rgba(255,149,0,0.1);
+            border-left: 4px solid var(--warning);
+            padding: 16px 20px;
+            margin: 20px 0;
+            border-radius: 0 12px 12px 0;
+        }
+
+        .warning strong {
+            color: var(--warning);
+        }
+
+        .step-box {
+            background: var(--background);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 16px 0;
+        }
+
+        .step-box h4 {
+            margin-top: 0;
+            color: var(--primary);
+        }
+
+        code, kbd {
+            background: var(--background);
+            padding: 3px 8px;
+            border-radius: 6px;
+            font-family: 'SF Mono', Monaco, 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+
+        kbd {
+            border: 1px solid var(--border);
+            box-shadow: 0 2px 0 var(--border);
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.85em;
+            font-weight: 500;
+        }
+
+        .badge-active { background: var(--success); color: white; }
+        .badge-warning { background: var(--warning); color: white; }
+        .badge-expired { background: var(--danger); color: white; }
+        .badge-lifetime { background: var(--secondary); color: white; }
+
+        hr {
+            border: none;
+            border-top: 1px solid var(--border);
+            margin: 32px 0;
+        }
+
+        footer {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.9em;
+            padding: 32px 0;
+            border-top: 1px solid var(--border);
+            margin-top: 48px;
+        }
+
+        a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .back-to-top {
+            display: inline-block;
+            margin-top: 24px;
+            padding: 8px 16px;
+            background: var(--primary);
+            color: white;
+            border-radius: 8px;
+            font-size: 0.9em;
+        }
+
+        .back-to-top:hover {
+            text-decoration: none;
+            opacity: 0.9;
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+            .container {
+                padding: 0;
+            }
+            section {
+                box-shadow: none;
+                border: 1px solid #ddd;
+                break-inside: avoid;
+            }
+            nav {
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+            .back-to-top {
+                display: none;
+            }
+        }
+
+        @media (max-width: 600px) {
+            nav ol {
+                columns: 1;
+            }
+            h1 {
+                font-size: 2em;
+            }
+            section {
+                padding: 20px;
+            }
+            .site-nav {
+                flex-direction: column;
+                gap: 12px;
+            }
+            .site-nav-links {
+                justify-content: center;
+            }
+        }
+
+        /* Site Navigation */
+        .site-nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 24px;
+            background: var(--card-bg);
+            border-bottom: 1px solid var(--border);
+        }
+        .site-nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 600;
+        }
+        .site-nav-brand img {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+        }
+        .site-nav-links {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        .site-nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 0.9em;
+            transition: all 0.2s;
+        }
+        .site-nav-links a:hover {
+            background: var(--background);
+            color: var(--text);
+        }
+        .site-nav-links a.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Platform Selector */
+        .platform-selector {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        .platform-selector a {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 10px 20px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95em;
+            transition: all 0.2s;
+        }
+        .platform-selector a.all-platforms {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            color: var(--text);
+        }
+        .platform-selector a.all-platforms:hover {
+            border-color: var(--primary);
+            background: rgba(0,122,255,0.1);
+        }
+        .platform-selector a.ios {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            color: var(--text);
+        }
+        .platform-selector a.ios:hover {
+            border-color: var(--primary);
+            background: rgba(0,122,255,0.1);
+        }
+        .platform-selector a.macos {
+            background: linear-gradient(135deg, #1d1d1f 0%, #424245 100%);
+            color: white;
+        }
+
+        @media print {
+            .site-nav, .platform-selector {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Site Navigation -->
+    <nav class="site-nav">
+        <a href="/" class="site-nav-brand">
+            <img src="/assets/stuffolio-logo2.png" alt="Stuffolio">
+            <span>Stuffolio</span>
+        </a>
+        <div class="site-nav-links">
+            <a href="/">Home</a>
+            <a href="/quick-start.html">Quick Start</a>
+            <a href="/Stuffolio_Users_Manual.html" class="active">User Manual</a>
+            <a href="/support.html">Support</a>
+            <a href="/privacy.html">Privacy</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1>Stuffolio User's Manual</h1>
+            <p class="subtitle">Your Personal Product Manager</p>
+            <p class="version">Version 2.0 | January 2026</p>
+            <span class="platform-badge">macOS</span>
+
+            <!-- Platform Selector -->
+            <div class="platform-selector">
+                <a href="/Stuffolio_Users_Manual.html" class="all-platforms">All Platforms</a>
+                <a href="/Stuffolio_Users_Manual_iOS.html" class="ios">iPhone & iPad</a>
+                <a href="/Stuffolio_Users_Manual_macOS.html" class="macos">Mac</a>
+            </div>
+        </header>
+
+        <nav id="toc">
+            <h2>Table of Contents</h2>
+            <ol>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#getting-started">Getting Started</a></li>
+                <li><a href="#adding-products">Adding Your First Product</a></li>
+                <li><a href="#adding-photos">Adding Photos to Products</a></li>
+                <li><a href="#smart-scanner">Using the Smart Scanner</a></li>
+                <li><a href="#stuff-scout">Using Stuff Scout</a></li>
+                <li><a href="#browsing">Browsing Your Products</a></li>
+                <li><a href="#ai-assistant">Using the AI Assistant</a></li>
+                <li><a href="#warranties">Managing Warranties</a></li>
+                <li><a href="#maintenance">Scheduling Maintenance</a></li>
+                <li><a href="#loans">Tracking Loans</a></li>
+                <li><a href="#recalls">Checking for Recalls</a></li>
+                <li><a href="#exporting">Exporting Your Data</a></li>
+                <li><a href="#importing">Importing Products</a></li>
+                <li><a href="#icloud">Using iCloud Sync</a></li>
+                <li><a href="#settings">Configuring Settings</a></li>
+                <li><a href="#shortcuts">Keyboard Shortcuts</a></li>
+                <li><a href="#accessibility">Accessibility</a></li>
+                <li><a href="#troubleshooting">Troubleshooting</a></li>
+                <li><a href="#privacy">Privacy & Security</a></li>
+                <li><a href="#help">Getting Help</a></li>
+            </ol>
+        </nav>
+
+        <section id="introduction">
+            <h2>Introduction</h2>
+            <p>Stuffolio is a comprehensive product management app that helps you track everything you own. This manual provides step-by-step instructions for using every feature on your Mac.</p>
+
+            <h3>Requirements</h3>
+            <table>
+                <tr><th>Platform</th><th>Minimum Version</th></tr>
+                <tr><td>Mac</td><td>macOS 14.6 (Sonoma) or later</td></tr>
+            </table>
+
+            <h3>Navigation Overview</h3>
+            <p>Stuffolio on Mac uses a sidebar navigation layout:</p>
+            <ul>
+                <li>The <strong>sidebar</strong> on the left side of the window shows all sections</li>
+                <li>Click the sidebar icon (☰) or press <kbd>⌘⌃S</kbd> to show/hide the sidebar</li>
+                <li>Main sections include:
+                    <ul>
+                        <li><strong>Dashboard</strong> — Overview and quick access</li>
+                        <li><strong>My Products</strong> — Your inventory</li>
+                        <li><strong>Actions</strong> — Tools organized by Acquire, Own, Dispose</li>
+                        <li><strong>Insights</strong> — Reports and analytics</li>
+                        <li><strong>Settings</strong> — Preferences and configuration</li>
+                    </ul>
+                </li>
+            </ul>
+            <a href="#toc" class="back-to-top">↑ Back to Contents</a>
+        </section>
+
+        <section id="getting-started">
+            <h2>Getting Started</h2>
+
+            <h3>First Launch</h3>
+            <p>When you open Stuffolio for the first time:</p>
+            <ol>
+                <li><strong>Welcome Window</strong> appears with feature highlights</li>
+                <li>Click through the introduction screens or click <strong>Skip</strong></li>
+                <li><strong>Accessibility Options</strong> screen appears:
+                    <ul>
+                        <li>Review available accessibility features</li>
+                        <li>Click <strong>Continue</strong></li>
+                    </ul>
+                </li>
+                <li><strong>Permissions</strong> screen appears:
+                    <ul>
+                        <li>Click <strong>Allow Notifications</strong> if you want warranty and maintenance reminders</li>
+                        <li>You can skip this and enable it later in Settings</li>
+                    </ul>
+                </li>
+                <li>Click <strong>Get Started</strong> to enter the app</li>
+            </ol>
+
+            <h3>Understanding the Dashboard</h3>
+            <p>The Dashboard is your home screen. Here's what each section shows:</p>
+
+            <h4>Quick Stats Bar (at the top)</h4>
+            <ul>
+                <li>Scroll horizontally to see: Total Products, Purchase Cost, Current Value, Fun Fact</li>
+                <li>Click the chevron (⌄) to collapse this section</li>
+            </ul>
+
+            <h4>Needs Attention</h4>
+            <ul>
+                <li>Products with warranties expiring in 30 days</li>
+                <li>Overdue maintenance tasks</li>
+                <li>Items on loan that are due back</li>
+                <li>Products missing important information</li>
+            </ul>
+
+            <h4>Recently Added</h4>
+            <ul>
+                <li>Your most recently added products</li>
+                <li>Click any product to view its details</li>
+            </ul>
+
+            <h4>Feature Cards</h4>
+            <p>Quick access to: Stuff Scout, Smart Scanner, AI Assistant, Recall Check, Reports, Value Calculator</p>
+            <a href="#toc" class="back-to-top">↑ Back to Contents</a>
+        </section>
+
+        <section id="adding-products">
+            <h2>Adding Your First Product</h2>
+
+            <h3>Using the Toolbar</h3>
+            <ol>
+                <li>Click <strong>My Products</strong> in the sidebar</li>
+                <li>Click the <strong>+</strong> button in the toolbar (top of window)</li>
+                <li>A menu appears with options:
+                    <ul>
+                        <li><strong>Add Product</strong> — Manual entry</li>
+                        <li><strong>Smart Scanner</strong> — Scan barcode (requires iPhone with Continuity Camera)</li>
+                        <li><strong>Stuff Scout</strong> — AI identification</li>
+                    </ul>
+                </li>
+                <li>Click <strong>Add Product</strong></li>
+                <li>The Add Product form opens in a sheet</li>
+            </ol>
+
+            <h3>Using the Keyboard Shortcut</h3>
+            <ol>
+                <li>Press <kbd>⌘N</kbd> from anywhere in the app</li>
+                <li>The Add Product form opens directly</li>
+            </ol>
+
+            <h3>Using the Menu Bar</h3>
+            <ol>
+                <li>Go to <strong>File > New Product</strong> (or press <kbd>⌘N</kbd>)</li>
+                <li>The Add Product form opens</li>
+            </ol>
+
+            <h3>Filling Out the Product Form</h3>
+            <p>The form has these fields (only Product Name is required):</p>
+
+            <div class="step-box">
+                <h4>Step 1: Enter Basic Information</h4>
+                <ol>
+                    <li><strong>Product Name</strong> (Required) — Click the text field, type the product name (e.g., "Samsung 65-inch TV")</li>
+                    <li><strong>Manufacturer</strong> — Click the text field, type the brand name (e.g., "Samsung")</li>
+                    <li><strong>Model Number</strong> — Enter the model number from the product label (e.g., "QN65Q80CAFXZA")</li>
+                    <li><strong>Serial Number</strong> — Enter the serial number (important for warranty claims)</li>
+                </ol>
+            </div>
+
+            <div class="step-box">
+                <h4>Step 2: Choose a Category</h4>
+                <ol>
+                    <li>Click the <strong>Category</strong> dropdown menu</li>
+                    <li>A list appears with 20+ categories: Electronics, Appliances, Furniture, Tools, Automotive, Sports, etc.</li>
+                    <li>Click to select the appropriate category</li>
+                </ol>
+            </div>
+
+            <div class="step-box">
+                <h4>Step 3: Set Location</h4>
+                <ol>
+                    <li>Click the <strong>Location</strong> field</li>
+                    <li>Type where the product is stored (e.g., "Living Room", "Garage")</li>
+                </ol>
+            </div>
+
+            <div class="step-box">
+                <h4>Step 4: Enter Purchase Information</h4>
+                <ol>
+                    <li><strong>Purchase Date</strong> — Click the date field, use the picker or type directly (e.g., "1/15/2024")</li>
+                    <li><strong>Purchase Price</strong> — Enter the amount you paid (numbers only)</li>
+                    <li><strong>Retailer</strong> (Optional) — Enter where you bought it</li>
+                </ol>
+            </div>
+
+            <div class="step-box">
+                <h4>Step 5: Enter Warranty Information</h4>
+                <ol>
+                    <li><strong>Warranty Expiration Date</strong> — Select the date your warranty ends</li>
+                    <li><strong>Warranty Type</strong> — Click to select: Standard, Extended, or Lifetime</li>
+                    <li><strong>Warranty Notes</strong> (Optional) — Add any coverage details</li>
+                </ol>
+            </div>
+
+            <div class="step-box">
+                <h4>Step 6: Add Notes</h4>
+                <ol>
+                    <li>Click the <strong>Notes</strong> field</li>
+                    <li>Type any additional information (e.g., "Gift from Mom", "Bought on sale")</li>
+                </ol>
+            </div>
+
+            <div class="step-box">
+                <h4>Step 7: Save the Product</h4>
+                <ol>
+                    <li>Review all entered information</li>
+                    <li>Click the <strong>Save</strong> button in the toolbar</li>
+                    <li>Or press <kbd>⌘S</kbd> to save</li>
+                    <li>The product is added to your inventory</li>
+                </ol>
+            </div>
+            <a href="#toc" class="back-to-top">↑ Back to Contents</a>
+        </section>
+
+        <section id="adding-photos">
+            <h2>Adding Photos to Products</h2>
+            <p>Photos help identify products and serve as documentation for warranty claims.</p>
+
+            <h3>Method 1: Paste from Clipboard (Most Common on Mac)</h3>
+
+            <div class="warning">
+                <strong>Important:</strong> You must copy an image BEFORE clicking the Paste button. If nothing happens when you click Paste Image, no image is currently on your clipboard — go back and copy an image first.
+            </div>
+
+            <h4>Step 1: Copy an image to your clipboard</h4>
+
+            <p><strong>From the Photos app:</strong></p>
+            <ol>
+                <li>Open Photos</li>
+                <li>Find and select the image you want</li>
+                <li>Press <kbd>⌘C</kbd> to copy</li>
+            </ol>
+
+            <p><strong>From Finder:</strong></p>
+            <ol>
+                <li>Navigate to the image file</li>
+                <li>Click to select it</li>
+                <li>Press <kbd>⌘C</kbd> to copy</li>
+            </ol>
+
+            <p><strong>From a web browser:</strong></p>
+            <ol>
+                <li>Right-click on any image</li>
+                <li>Select <strong>Copy Image</strong> from the menu</li>
+            </ol>
+
+            <h4>Step 2: Paste into Stuffolio</h4>
+            <ol>
+                <li>Return to Stuffolio's Add/Edit Product window</li>
+                <li>In the Photos section, click the <strong>Paste Image</strong> button</li>
+                <li>The image appears in the Photos grid</li>
+            </ol>
+
+            <h3>Method 2: Drag and Drop</h3>
+            <ol>
+                <li>Open Finder or Photos app in a separate window</li>
+                <li>Arrange windows so you can see both Stuffolio and the source</li>
+                <li>Find the image you want to add</li>
+                <li>Click and hold the image file</li>
+                <li>Drag it over to Stuffolio's Photos section</li>
+                <li>When you see the drop zone highlight, release</li>
+            </ol>
+            <div class="tip">
+                <strong>Tip:</strong> You can drag multiple images at once by selecting several files in Finder (hold ⌘ while clicking), then dragging them all together.
+            </div>
+
+            <h3>Method 3: Choose File</h3>
+            <ol>
+                <li>In the Photos section, click the <strong>+</strong> button or <strong>Add Photo</strong></li>
+                <li>Click <strong>Choose File</strong> from the menu</li>
+                <li>A file browser window opens</li>
+                <li>Navigate to your image file (Recent, Documents, Downloads, or iCloud Drive)</li>
+                <li>Click the image file to select it</li>
+                <li>Click <strong>Open</strong></li>
+            </ol>
+
+            <h3>Managing Existing Photos</h3>
+            <p><strong>To view a photo full-size:</strong> Click any photo thumbnail. Scroll to zoom in/out. Click outside or press <kbd>Escape</kbd> to close.</p>
+            <p><strong>To delete a photo:</strong> Hover over the photo, click the <strong>X</strong> button. Or select the photo and press <kbd>Delete</kbd>.</p>
+            <p><strong>To reorder photos:</strong> Click and hold a photo thumbnail, drag to the new position. The first photo becomes the main product image.</p>
+
+            <h3>Photo Types to Add</h3>
+            <ul>
+                <li><strong>Product Photo</strong> — Main image showing the product</li>
+                <li><strong>Receipt</strong> — Proof of purchase for warranty claims</li>
+                <li><strong>Label/Nameplate</strong> — Shows model and serial numbers</li>
+                <li><strong>Warranty Card</strong> — Coverage documentation</li>
+                <li><strong>Packaging</strong> — UPC barcode and specifications</li>
+            </ul>
+            <a href="#toc" class="back-to-top">↑ Back to Contents</a>
+        </section>
+
+        <section id="smart-scanner">
+            <h2>Using the Smart Scanner</h2>
+            <p>The Smart Scanner reads barcodes to automatically fill in product information.</p>
+
+            <div class="tip">
+                <strong>Note:</strong> On Mac, the Smart Scanner uses Continuity Camera with your iPhone. Make sure your iPhone is nearby and signed into the same iCloud account.
+            </div>
+
+            <h3>Opening the Smart Scanner</h3>
+            <ol>
+                <li>Click <strong>Actions</strong> in the sidebar</li>
+                <li>Under <strong>Acquire</strong>, click <strong>Smart Scanner</strong></li>
+                <li>Or click the <strong>+</strong> button and select <strong>Smart Scanner</strong></li>
+            </ol>
+
+            <h3>Using Continuity Camera</h3>
+            <ol>
+                <li>When Smart Scanner opens, a camera view appears</li>
+                <li>Your nearby iPhone's camera activates automatically</li>
+                <li>Point your iPhone at the <strong>UPC barcode</strong> on the product packaging</li>
+                <li>Hold steady 6-12 inches away</li>
+                <li>When detected:
+                    <ul>
+                        <li>You hear a beep</li>
+                        <li>The barcode number appears on screen</li>
+                        <li>Product lookup begins automatically</li>
+                    </ul>
+                </li>
+            </ol>
+
+            <h3>Tips for Better Scanning</h3>
+            <ul>
+                <li>Ensure good lighting (avoid shadows on the barcode)</li>
+                <li>Make sure the barcode isn't wrinkled or damaged</li>
+                <li>Hold the phone parallel to the barcode (not at an angle)</li>
+            </ul>
+
+            <h3>Scanning Additional Barcodes (Optional)</h3>
+            <ol>
+                <li>Click <strong>Scan Model/Serial</strong></li>
+                <li>Point at barcodes on the product itself (not packaging)</li>
+                <li>The scanner identifies the barcode type</li>
+                <li>Information fills automatically</li>
+                <li>Click <strong>Done</strong> when finished, or <strong>Skip</strong> to continue</li>
+            </ol>
+
+            <h3>Review and Save</h3>
+            <ol>
+                <li>A form appears with auto-detected information</li>
+                <li>Review each field — click to edit if incorrect</li>
+                <li>Add purchase information (date, price, warranty)</li>
+                <li>Click <strong>Save</strong> or press <kbd>⌘S</kbd></li>
+            </ol>
+            <a href="#toc" class="back-to-top">↑ Back to Contents</a>
+        </section>
+
+        <section id="stuff-scout">
+            <h2>Using Stuff Scout (AI Identification)</h2>
+            <p>Stuff Scout uses AI to identify antiques, collectibles, and unknown items from photos.</p>
+
+            <h3>Opening Stuff Scout</h3>
+            <ol>
+                <li>Click <strong>Actions</strong> in the sidebar</li>
+                <li>Under <strong>Acquire</strong>, click <strong>Stuff Scout</strong></li>
+                <li>Or click the <strong>Stuff Scout</strong> card on the Dashboard</li>
+            </ol>
+
+            <h3>Adding Photos</h3>
+            <p>Since Mac doesn't have a built-in camera, you'll add existing photos:</p>
+
+            <p><strong>Option A: Drag and Drop</strong></p>
+            <ol>
+                <li>Open Finder and navigate to your photos</li>
+                <li>Drag image files onto the Stuff Scout window</li>
+                <li>Drop when you see the highlight</li>
+            </ol>
+
+            <p><strong>Option B: Choose File</strong></p>
+            <ol>
+                <li>Click <strong>Add Photo</strong></li>
+                <li>Click <strong>Choose File</strong></li>
+                <li>Navigate to and select your image</li>
+                <li>Click <strong>Open</strong></li>
+            </ol>
+
+            <p><strong>Option C: Paste from Clipboard</strong></p>
+            <ol>
+                <li>Copy an image (<kbd>⌘C</kbd> from Photos, Finder, or web)</li>
+                <li>Click <strong>Paste Image</strong></li>
+            </ol>
+
+            <h3>Add Multiple Photos (Recommended)</h3>
+            <p>For better identification, add photos showing:</p>
+            <ul>
+                <li><strong>Maker's Mark</strong> — Signatures, stamps, or labels</li>
+                <li><strong>Bottom/Back</strong> — Often has identifying marks</li>
+                <li><strong>Details</strong> — Close-ups of unique features</li>
+                <li><strong>Damage</strong> — Any wear or repairs</li>
+            </ul>
+            <p>You can add up to 5 photos.</p>
+
+            <h3>Identification Results</h3>
+            <p>Click the <strong>Identify</strong> button and wait 10-30 seconds. Results include:</p>
+            <ul>
+                <li><strong>What It Is</strong> — Description of the item</li>
+                <li><strong>Maker/Manufacturer</strong> — Who made it</li>
+                <li><strong>Era</strong> — Approximate age or period</li>
+                <li><strong>Estimated Value Range</strong> — Low to high market value</li>
+                <li><strong>Rarity</strong> — Common to Extremely Rare</li>
+            </ul>
+
+            <h3>Saving Results</h3>
+            <p><strong>Add to Inventory:</strong> Click to create a product with pre-filled information.</p>
+            <p><strong>Save to History:</strong> Bookmark results for later without adding to inventory.</p>
+            <a href="#toc" class="back-to-top">↑ Back to Contents</a>
+        </section>
+
+        <section id="browsing">
+            <h2>Browsing Your Products</h2>
+
+            <h3>Accessing My Products</h3>
+            <ul>
+                <li>Click <strong>My Products</strong> in the sidebar</li>
+                <li>Or press <kbd>⌘2</kbd></li>
+            </ul>
+
+            <h3>Understanding the Product List</h3>
+            <p>Each product row shows:</p>
+            <ul>
+                <li><strong>Photo thumbnail</strong> — Product image (or category icon)</li>
+                <li><strong>Product name</strong> — In bold</li>
+                <li><strong>Manufacturer</strong> — Below the name</li>
+                <li><strong>Warranty status badge:</strong>
+                    <ul>
+                        <li><span class="badge badge-active">Active</span> — Warranty currently valid</li>
+                        <li><span class="badge badge-warning">Warning</span> — Expiring within 30 days</li>
+                        <li><span class="badge badge-expired">Expired</span> — No longer covered</li>
+                        <li><span class="badge badge-lifetime">Lifetime</span> — Lifetime warranty</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3>Filtering Products</h3>
+            <ol>
+                <li>Click the filter dropdown or chips in the toolbar</li>
+                <li>Select: All, Active, Expiring, Expired, Lifetime, or No Warranty</li>
+                <li>Click the filter again to clear it</li>
+            </ol>
+
+            <h3>Sorting Products</h3>
+            <ol>
+                <li>Click the <strong>Sort</strong> button in the toolbar</li>
+                <li>Select: Date Added, Name, Purchase Date, Warranty Expiration, or Value</li>
+            </ol>
+
+            <h3>Searching for Products</h3>
+            <ol>
+                <li>Click the search field or press <kbd>⌘F</kbd></li>
+                <li>Type your search term</li>
+                <li>Results appear as you type</li>
+                <li>Press <kbd>Escape</kbd> to clear</li>
+            </ol>
+
+            <h3>Keyboard Navigation</h3>
+            <ul>
+                <li><kbd>↑</kbd> / <kbd>↓</kbd> — Move up/down in the list</li>
+                <li><kbd>Return</kbd> — Open selected product</li>
+                <li><kbd>Delete</kbd> — Delete selected product</li>
+                <li><kbd>Space</kbd> — Quick Look preview</li>
+            </ul>
+
+            <h3>Context Menu (Right-Click)</h3>
+            <p>Right-click any product for options: Edit, AI Assistant, Duplicate, Copy Information, Share, Delete</p>
+
+            <h3>Selecting Multiple Products</h3>
+            <ul>
+                <li>Hold <kbd>⌘</kbd> and click products to select multiple</li>
+                <li>Hold <kbd>⇧</kbd> and click to select a range</li>
+            </ul>
+            <a href="#toc" class="back-to-top">↑ Back to Contents</a>
+        </section>
+
+        <section id="ai-assistant">
+            <h2>Using the AI Product Assistant</h2>
+            <p>The AI Assistant provides instant help for any product.</p>
+
+            <h3>Opening the AI Assistant</h3>
+            <ul>
+                <li><strong>From a Product:</strong> Open the product, click <strong>AI Assistant</strong> in toolbar</li>
+                <li><strong>From My Products:</strong> Right-click a product, select <strong>AI Assistant</strong></li>
+                <li><strong>Using Keyboard:</strong> Select a product, press <kbd>⌘⇧A</kbd></li>
+            </ul>
+
+            <h3>Query Types</h3>
+            <table>
+                <tr><th>Query</th><th>What It Finds</th></tr>
+                <tr><td>Find Manual</td><td>Official product manual/user guide</td></tr>
+                <tr><td>Find Warranty Info</td><td>Warranty terms, registration page</td></tr>
+                <tr><td>Find Parts</td><td>Replacement parts and where to buy</td></tr>
+                <tr><td>Find Supplies</td><td>Consumables (filters, bags, batteries)</td></tr>
+                <tr><td>Troubleshoot</td><td>Solutions for common problems</td></tr>
+                <tr><td>Maintenance Tips</td><td>Care instructions and schedules</td></tr>
+                <tr><td>How-To Videos</td><td>Tutorial videos for using the product</td></tr>
+                <tr><td>DIY Repair Videos</td><td>Repair guides and videos</td></tr>
+                <tr><td>Maker Website</td><td>Manufacturer's official website</td></tr>
+                <tr><td>Register Product</td><td>Product registration page</td></tr>
+            </table>
+
+            <h3>Using Results</h3>
+            <ul>
+                <li>Click any blue link to open in your default browser</li>
+                <li>Select text and press <kbd>⌘C</kbd> to copy</li>
+            </ul>
+
+            <div class="tip">
+                <strong>Tip:</strong> Ensure <strong>Manufacturer</strong> and <strong>Model Number</strong> are filled in for better results.
+            </div>
+            <a href="#toc" class="back-to-top">↑ Back to Contents</a>
+        </section>
+
+        <section id="warranties">
+            <h2>Managing Warranties</h2>
+
+            <h3>Adding Warranty Information</h3>
+            <p><strong>When adding a new product:</strong></p>
+            <ol>
+                <li>In the Add Product form, scroll to <strong>Warranty</strong> section</li>
+                <li>Click <strong>Warranty Expiration Date</strong> and select the date</li>
+                <li>Click <strong>Warranty Type</strong>: Standard, Extended, or Lifetime</li>
+                <li>Optionally add <strong>Warranty Notes</strong></li>
+            </ol>
+
+            <p><strong>For existing products:</strong></p>
+            <ol>
+                <li>Open the product</li>
+                <li>Click <strong>Edit</strong> in the toolbar</li>
+                <li>Fill in the warranty fields</li>
+                <li>Click <strong>Save</strong> or press <kbd>⌘S</kbd></li>
+            </ol>
+
+            <h3>Warranty Status Badges</h3>
+            <ul>
+                <li><span class="badge badge-active">Active</span> — Warranty currently valid</li>
+                <li><span class="badge badge-warning">Warning</span> — Expiring within 30 days</li>
+                <li><span class="badge badge-expired">Expired</span> — No longer covered</li>
+                <li><span class="badge badge-lifetime">Lifetime</span> — Permanent coverage</li>
+            </ul>
+
+            <h3>Setting Warranty Reminders</h3>
+            <ol>
+                <li>Go to <strong>Settings</strong> (or press <kbd>⌘,</kbd>)</li>
+                <li>Click <strong>Notifications</strong></li>
+                <li>Toggle on <strong>Warranty Expiring</strong></li>
+                <li>Set <strong>Advance Notice</strong>: 7, 14, or 30 days before</li>
+            </ol>
+            <a href="#toc" class="back-to-top">↑ Back to Contents</a>
+        </section>
+
+        <section id="maintenance">
+            <h2>Scheduling Maintenance</h2>
+
+            <h3>Adding a Maintenance Schedule</h3>
+            <ol>
+                <li>Open a product's detail view</li>
+                <li>Click <strong>Edit</strong> in the toolbar</li>
+                <li>Scroll to <strong>Maintenance</strong> section</li>
+                <li>Click <strong>Add Maintenance Task</strong></li>
+                <li>Fill in:
+                    <ul>
+                        <li><strong>Task Name</strong> (e.g., "Replace filter")</li>
+                        <li><strong>Frequency</strong>: One-time, Weekly, Monthly, Quarterly, Annually</li>
+                        <li><strong>Next Due Date</strong></li>
+                        <li><strong>Notes</strong></li>
+                    </ul>
+                </li>
+                <li>Click <strong>Save</strong></li>
+            </ol>
+
+            <h3>Completing a Maintenance Task</h3>
+            <ol>
+                <li>Open the product</li>
+                <li>Scroll to <strong>Maintenance</strong> section</li>
+                <li>Click <strong>Mark Complete</strong></li>
+                <li>The next due date is calculated automatically for recurring tasks</li>
+            </ol>
+            <a href="#toc" class="back-to-top">↑ Back to Contents</a>
+        </section>
+
+        <section id="loans">
+            <h2>Tracking Loans</h2>
+
+            <h3>Recording a Loan</h3>
+            <ol>
+                <li>Open the product you're lending</li>
+                <li>Click <strong>Edit</strong> in the toolbar</li>
+                <li>Scroll to <strong>Loans</strong> section</li>
+                <li>Click <strong>Record Loan</strong></li>
+                <li>Fill in: Borrower Name, Date Loaned, Expected Return Date, Notes</li>
+                <li>Click <strong>Save</strong></li>
+            </ol>
+
+            <h3>Viewing Active Loans</h3>
+            <ul>
+                <li><strong>Dashboard:</strong> Needs Attention shows items due to be returned</li>
+                <li><strong>Loan Tracker:</strong> Click <strong>Actions > Own > Loan Tracker</strong></li>
+            </ul>
+
+            <h3>Marking a Loan as Returned</h3>
+            <ol>
+                <li>Open the loaned product</li>
+                <li>Find the active loan in the Loans section</li>
+                <li>Click <strong>Mark Returned</strong></li>
+            </ol>
+            <a href="#toc" class="back-to-top">↑ Back to Contents</a>
+        </section>
+
+        <section id="recalls">
+            <h2>Checking for Recalls</h2>
+
+            <h3>Performing a Recall Check</h3>
+            <ol>
+                <li>Click <strong>Insights > Recall Check</strong> in the sidebar</li>
+                <li>Enter: Manufacturer name, Product name, Model number</li>
+                <li>Click <strong>Search</strong> or press <kbd>Return</kbd></li>
+                <li>Wait for results from the CPSC database</li>
+            </ol>
+
+            <h3>Viewing Recall Details</h3>
+            <p>Click any recall to see:</p>
+            <ul>
+                <li><strong>Hazard</strong> — What the danger is</li>
+                <li><strong>Remedy</strong> — What to do (refund, repair, replacement)</li>
+                <li><strong>Contact</strong> — Manufacturer contact information</li>
+                <li><strong>Units Affected</strong> — How many products were recalled</li>
+            </ul>
+            <a href="#toc" class="back-to-top">↑ Back to Contents</a>
+        </section>
+
+        <section id="exporting">
+            <h2>Exporting Your Data</h2>
+
+            <h3>Exporting All Products</h3>
+            <ol>
+                <li>Go to <strong>Settings</strong> in the sidebar</li>
+                <li>Click <strong>Data</strong></li>
+                <li>Under <strong>Export</strong>, click <strong>Export All</strong></li>
+                <li>Choose format: CSV, PDF, or Excel</li>
+                <li>Choose save location</li>
+                <li>Click <strong>Export</strong></li>
+            </ol>
+
+            <h3>Exporting Selected Products</h3>
+            <ol>
+                <li>In <strong>My Products</strong>, select products (hold <kbd>⌘</kbd> to select multiple)</li>
+                <li>Right-click and select <strong>Export Selected</strong></li>
+                <li>Choose format and save location</li>
+            </ol>
+
+            <h3>Using the Menu Bar</h3>
+            <p>Go to <strong>File > Export</strong> and choose <strong>Export All</strong> or <strong>Export Selected</strong></p>
+            <a href="#toc" class="back-to-top">↑ Back to Contents</a>
+        </section>
+
+        <section id="importing">
+            <h2>Importing Products</h2>
+
+            <h3>Preparing Your CSV File</h3>
+            <p>Your CSV file should have a header row with column names. Supported columns:</p>
+            <ul>
+                <li>name (or title) — <strong>Required</strong></li>
+                <li>manufacturer, model, serial, category, location</li>
+                <li>purchase_date, purchase_price, warranty_expiration, notes</li>
+            </ul>
+
+            <h3>Importing the File</h3>
+            <ol>
+                <li>Go to <strong>Settings > Data</strong></li>
+                <li>Under <strong>Import</strong>, click <strong>Import from CSV</strong></li>
+                <li>Navigate to your CSV file and click <strong>Open</strong></li>
+                <li>Map columns to Stuffolio fields</li>
+                <li>Preview products and click <strong>Import</strong></li>
+            </ol>
+            <a href="#toc" class="back-to-top">↑ Back to Contents</a>
+        </section>
+
+        <section id="icloud">
+            <h2>Using iCloud Sync</h2>
+
+            <h3>Enabling iCloud Sync</h3>
+            <ol>
+                <li>Go to <strong>Settings</strong> (or press <kbd>⌘,</kbd>)</li>
+                <li>Click <strong>Data</strong></li>
+                <li>Toggle <strong>iCloud Sync</strong> on</li>
+            </ol>
+            <p><strong>Note:</strong> You must use the same Apple ID on all devices for sync to work.</p>
+
+            <h3>How Sync Works</h3>
+            <ul>
+                <li><strong>Automatic</strong> — Changes sync in the background</li>
+                <li><strong>Near-instant</strong> — Usually syncs within seconds</li>
+                <li><strong>Conflict resolution</strong> — Most recent change wins</li>
+            </ul>
+
+            <h3>Sync Status</h3>
+            <p>In <strong>Settings > Data</strong>, look for:</p>
+            <ul>
+                <li>✓ <strong>Synced</strong> — All data is up to date</li>
+                <li>↻ <strong>Syncing</strong> — Currently uploading/downloading</li>
+                <li>⚠️ <strong>Offline</strong> — No internet connection</li>
+            </ul>
+            <a href="#toc" class="back-to-top">↑ Back to Contents</a>
+        </section>
+
+        <section id="settings">
+            <h2>Configuring Settings</h2>
+
+            <h3>Accessing Settings</h3>
+            <ul>
+                <li>Click <strong>Settings</strong> in the sidebar</li>
+                <li>Or press <kbd>⌘,</kbd></li>
+                <li>Or go to <strong>Stuffolio > Settings</strong> in the menu bar</li>
+            </ul>
+
+            <h3>Appearance Settings</h3>
+            <p>Click <strong>Appearance</strong>, then <strong>Theme</strong> to select:</p>
+            <ul>
+                <li><strong>System</strong> — Matches your Mac's light/dark mode</li>
+                <li><strong>Light</strong> — Always light mode</li>
+                <li><strong>Dark</strong> — Always dark mode</li>
+            </ul>
+
+            <h3>Notification Settings</h3>
+            <p>Click <strong>Notifications</strong> and toggle on:</p>
+            <ul>
+                <li><strong>Warranty Expiring</strong> — Before warranties end</li>
+                <li><strong>Maintenance Due</strong> — When tasks are due</li>
+                <li><strong>Loan Due</strong> — When loaned items should return</li>
+            </ul>
+
+            <h3>Default Settings</h3>
+            <p>Click <strong>Defaults</strong> to set:</p>
+            <ul>
+                <li><strong>Default Category</strong> — Pre-selected for new products</li>
+                <li><strong>Default Location</strong> — Pre-filled for new products</li>
+                <li><strong>Depreciation Rate</strong> — Annual percentage for value calculation</li>
+                <li><strong>Currency</strong> — Display currency for prices</li>
+            </ul>
+            <a href="#toc" class="back-to-top">↑ Back to Contents</a>
+        </section>
+
+        <section id="shortcuts">
+            <h2>Keyboard Shortcuts</h2>
+            <p>Stuffolio on Mac supports extensive keyboard shortcuts for power users.</p>
+
+            <h3>Global Shortcuts</h3>
+            <table>
+                <tr><th>Shortcut</th><th>Action</th></tr>
+                <tr><td><kbd>⌘K</kbd></td><td>Open Quick Find</td></tr>
+                <tr><td><kbd>⌘N</kbd></td><td>Add New Product</td></tr>
+                <tr><td><kbd>⌘,</kbd></td><td>Open Settings</td></tr>
+                <tr><td><kbd>⌘W</kbd></td><td>Close Window</td></tr>
+                <tr><td><kbd>⌘Q</kbd></td><td>Quit Stuffolio</td></tr>
+            </table>
+
+            <h3>Navigation Shortcuts</h3>
+            <table>
+                <tr><th>Shortcut</th><th>Action</th></tr>
+                <tr><td><kbd>⌘1</kbd></td><td>Go to Dashboard</td></tr>
+                <tr><td><kbd>⌘2</kbd></td><td>Go to My Products</td></tr>
+                <tr><td><kbd>⌘3</kbd></td><td>Go to Reports</td></tr>
+                <tr><td><kbd>⌘4</kbd></td><td>Go to Tools</td></tr>
+                <tr><td><kbd>⌘5</kbd></td><td>Go to Stuff Scout</td></tr>
+                <tr><td><kbd>⌘⌃S</kbd></td><td>Toggle Sidebar</td></tr>
+            </table>
+
+            <h3>Product List Shortcuts</h3>
+            <table>
+                <tr><th>Shortcut</th><th>Action</th></tr>
+                <tr><td><kbd>↑</kbd> / <kbd>↓</kbd></td><td>Navigate up/down</td></tr>
+                <tr><td><kbd>Return</kbd></td><td>Open selected product</td></tr>
+                <tr><td><kbd>Delete</kbd></td><td>Delete selected product</td></tr>
+                <tr><td><kbd>Space</kbd></td><td>Quick Look preview</td></tr>
+                <tr><td><kbd>⌘F</kbd></td><td>Focus search field</td></tr>
+                <tr><td><kbd>⌘A</kbd></td><td>Select all products</td></tr>
+            </table>
+
+            <h3>Editing Shortcuts</h3>
+            <table>
+                <tr><th>Shortcut</th><th>Action</th></tr>
+                <tr><td><kbd>⌘S</kbd></td><td>Save changes</td></tr>
+                <tr><td><kbd>⌘Z</kbd></td><td>Undo</td></tr>
+                <tr><td><kbd>⌘⇧Z</kbd></td><td>Redo</td></tr>
+                <tr><td><kbd>⌘C</kbd></td><td>Copy</td></tr>
+                <tr><td><kbd>⌘V</kbd></td><td>Paste</td></tr>
+                <tr><td><kbd>Escape</kbd></td><td>Cancel / Close</td></tr>
+            </table>
+
+            <h3>Using Quick Find</h3>
+            <ol>
+                <li>Press <kbd>⌘K</kbd> anywhere in the app</li>
+                <li>A search overlay appears</li>
+                <li>Type your search term</li>
+                <li>Results show Products, Actions, and Settings</li>
+                <li>Use <kbd>↑</kbd> / <kbd>↓</kbd> to navigate</li>
+                <li>Press <kbd>Return</kbd> to open selected item</li>
+                <li>Press <kbd>Escape</kbd> to close</li>
+            </ol>
+            <a href="#toc" class="back-to-top">↑ Back to Contents</a>
+        </section>
+
+        <section id="accessibility">
+            <h2>Accessibility</h2>
+            <p>Stuffolio is designed to be accessible to everyone.</p>
+
+            <h3>VoiceOver</h3>
+            <p>Full VoiceOver support throughout the app. To enable: Press <kbd>⌘F5</kbd> or go to System Settings > Accessibility > VoiceOver.</p>
+
+            <h3>Keyboard Navigation</h3>
+            <ol>
+                <li>Go to System Settings > Accessibility > Keyboard</li>
+                <li>Enable <strong>Full Keyboard Access</strong></li>
+                <li>Use <kbd>Tab</kbd> to move between controls</li>
+                <li>Use <kbd>Space</kbd> to activate buttons</li>
+            </ol>
+
+            <h3>Dynamic Type</h3>
+            <p>Text scales with your system settings. Go to System Settings > Accessibility > Display and adjust <strong>Text size</strong>.</p>
+
+            <h3>Color Accessibility</h3>
+            <ul>
+                <li>No reliance on color alone — status uses color + icon + text</li>
+                <li>High contrast mode supported</li>
+            </ul>
+
+            <h3>Reduce Motion</h3>
+            <p>Go to System Settings > Accessibility > Display and toggle <strong>Reduce motion</strong> for simplified animations.</p>
+            <a href="#toc" class="back-to-top">↑ Back to Contents</a>
+        </section>
+
+        <section id="troubleshooting">
+            <h2>Troubleshooting</h2>
+
+            <h3>Products Not Syncing Between Devices</h3>
+            <ol>
+                <li><strong>Check iCloud is enabled in Stuffolio:</strong> Go to Settings > Data, verify iCloud Sync is on</li>
+                <li><strong>Verify iCloud in System Settings:</strong> Open System Settings > [Your Apple ID] > iCloud, ensure Stuffolio is enabled</li>
+                <li><strong>Check iCloud storage:</strong> Ensure you have available storage</li>
+                <li><strong>Try resetting sync:</strong> Toggle iCloud Sync off, wait 10 seconds, toggle back on</li>
+            </ol>
+
+            <h3>Smart Scanner Not Working</h3>
+            <ol>
+                <li>Ensure your iPhone is nearby and unlocked</li>
+                <li>Both devices must be signed into the same iCloud account</li>
+                <li>Ensure Bluetooth and Wi-Fi are enabled on both devices</li>
+                <li>Check Continuity Camera settings:
+                    <ul>
+                        <li>Mac: System Settings > General > AirDrop & Handoff</li>
+                        <li>iPhone: Settings > General > AirPlay & Handoff</li>
+                    </ul>
+                </li>
+            </ol>
+
+            <h3>AI Features Not Responding</h3>
+            <ol>
+                <li>Check internet connection</li>
+                <li>Wait 30 seconds and retry</li>
+                <li>If rate limited, wait a few minutes</li>
+                <li>Quit and reopen the app</li>
+            </ol>
+
+            <h3>App Running Slowly</h3>
+            <ol>
+                <li>Quit and reopen Stuffolio</li>
+                <li>Check available disk space (Apple menu > About This Mac > Storage)</li>
+                <li>Restart your Mac</li>
+                <li>Check for updates in the App Store</li>
+            </ol>
+
+            <h3>Notifications Not Appearing</h3>
+            <ol>
+                <li>Open <strong>System Settings</strong></li>
+                <li>Click <strong>Notifications</strong></li>
+                <li>Find <strong>Stuffolio</strong> and ensure notifications are allowed</li>
+                <li>Verify Focus mode isn't blocking notifications</li>
+            </ol>
+            <a href="#toc" class="back-to-top">↑ Back to Contents</a>
+        </section>
+
+        <section id="privacy">
+            <h2>Privacy & Security</h2>
+
+            <h3>Where Your Data Is Stored</h3>
+            <table>
+                <tr><th>Data Type</th><th>Storage Location</th></tr>
+                <tr><td>Products</td><td>Your Mac + iCloud (if enabled)</td></tr>
+                <tr><td>Photos</td><td>Your Mac + iCloud (if enabled)</td></tr>
+                <tr><td>App Settings</td><td>Your Mac only</td></tr>
+                <tr><td>AI Queries</td><td>Not stored (processed and discarded)</td></tr>
+            </table>
+
+            <h3>What Stuffolio Does NOT Do</h3>
+            <ul>
+                <li>❌ Sell your data to anyone</li>
+                <li>❌ Share data with advertisers</li>
+                <li>❌ Track your behavior or usage</li>
+                <li>❌ Require account creation</li>
+                <li>❌ Store your photos on our servers</li>
+            </ul>
+
+            <h3>AI Privacy</h3>
+            <ul>
+                <li>Images sent to Claude AI for processing</li>
+                <li>No personal information transmitted</li>
+                <li>Queries not linked to your identity</li>
+                <li>Data discarded after processing</li>
+            </ul>
+
+            <h3>Security Features</h3>
+            <ul>
+                <li>All data encrypted in transit (HTTPS)</li>
+                <li>iCloud data encrypted at rest</li>
+                <li>FileVault encryption supported</li>
+            </ul>
+
+            <p>Full privacy policy: <a href="https://stuffolio.app/privacy">https://stuffolio.app/privacy</a></p>
+            <a href="#toc" class="back-to-top">↑ Back to Contents</a>
+        </section>
+
+        <section id="help">
+            <h2>Getting Help</h2>
+
+            <h3>In-App Help</h3>
+            <p>Press <kbd>⌘?</kbd> or go to <strong>Help > Stuffolio Help</strong> for context-sensitive help.</p>
+
+            <h3>Contact Support</h3>
+            <p><strong>Email:</strong> <a href="mailto:support@stuffolio.app">support@stuffolio.app</a></p>
+            <p>To send feedback with diagnostics:</p>
+            <ol>
+                <li>Go to <strong>Help > Send Feedback</strong> in the menu bar</li>
+                <li>Or go to <strong>Settings > About > Send Feedback</strong></li>
+                <li>Describe your issue or suggestion</li>
+                <li>Diagnostic information is attached automatically</li>
+            </ol>
+
+            <h3>Website</h3>
+            <p>Visit <a href="https://stuffolio.app">https://stuffolio.app</a> for updates, FAQ, and knowledge base.</p>
+
+            <h3>Rate the App</h3>
+            <p>If you enjoy Stuffolio, please leave a review in the App Store.</p>
+            <a href="#toc" class="back-to-top">↑ Back to Contents</a>
+        </section>
+
+        <section>
+            <h2>Version History</h2>
+            <table>
+                <tr><th>Version</th><th>Date</th><th>Highlights</th></tr>
+                <tr><td>2.0</td><td>Jan 2026</td><td>Mac Excellence: Native experience, keyboard shortcuts, Continuity</td></tr>
+                <tr><td>1.0</td><td>Dec 2025</td><td>Initial release</td></tr>
+            </table>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 Coffee & Code LLC. All rights reserved.</p>
+            <p>Stuffolio is a trademark of Coffee & Code LLC.</p>
+        </footer>
+    </div>
+</body>
+</html>

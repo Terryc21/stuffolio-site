@@ -1,0 +1,1397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User's Manual — Stuffolio</title>
+    <meta name="description" content="Complete step-by-step guide for using Stuffolio on iPhone, iPad, and Mac." />
+    <link rel="icon" type="image/png" href="/assets/stuffolio-logo2.png" />
+    <link rel="apple-touch-icon" href="/assets/stuffolio-logo2.png" />
+    <style>
+        :root {
+            --primary: #007AFF;
+            --secondary: #5856D6;
+            --success: #34C759;
+            --warning: #FF9500;
+            --danger: #FF3B30;
+            --background: #f5f5f7;
+            --card-bg: #ffffff;
+            --text: #1d1d1f;
+            --text-secondary: #86868b;
+            --border: #d2d2d7;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --background: #1d1d1f;
+                --card-bg: #2d2d2d;
+                --text: #f5f5f7;
+                --text-secondary: #a1a1a6;
+                --border: #424245;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: var(--background);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 24px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 48px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        h1 {
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+        }
+
+        .version {
+            font-size: 0.9em;
+            color: var(--text-secondary);
+        }
+
+        nav {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 48px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        }
+
+        nav h2 {
+            font-size: 1.3em;
+            margin-bottom: 16px;
+            color: var(--primary);
+        }
+
+        nav ol {
+            columns: 2;
+            column-gap: 32px;
+            padding-left: 20px;
+        }
+
+        nav li {
+            margin-bottom: 8px;
+            break-inside: avoid;
+        }
+
+        nav a {
+            color: var(--text);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        section {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 32px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        }
+
+        h2 {
+            font-size: 1.8em;
+            font-weight: 600;
+            margin-bottom: 24px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--primary);
+            color: var(--text);
+        }
+
+        h3 {
+            font-size: 1.3em;
+            font-weight: 600;
+            margin: 28px 0 16px 0;
+            color: var(--secondary);
+        }
+
+        h4 {
+            font-size: 1.1em;
+            font-weight: 600;
+            margin: 20px 0 12px 0;
+            color: var(--text);
+        }
+
+        p {
+            margin-bottom: 16px;
+        }
+
+        ol, ul {
+            margin: 16px 0;
+            padding-left: 24px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        li ul, li ol {
+            margin-top: 8px;
+            margin-bottom: 8px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.95em;
+        }
+
+        th, td {
+            padding: 12px 16px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        th {
+            background: var(--background);
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        tr:hover td {
+            background: var(--background);
+        }
+
+        .tip {
+            background: linear-gradient(135deg, rgba(0,122,255,0.1) 0%, rgba(88,86,214,0.1) 100%);
+            border-left: 4px solid var(--primary);
+            padding: 16px 20px;
+            margin: 20px 0;
+            border-radius: 0 12px 12px 0;
+        }
+
+        .tip strong {
+            color: var(--primary);
+        }
+
+        .warning {
+            background: rgba(255,149,0,0.1);
+            border-left: 4px solid var(--warning);
+            padding: 16px 20px;
+            margin: 20px 0;
+            border-radius: 0 12px 12px 0;
+        }
+
+        .warning strong {
+            color: var(--warning);
+        }
+
+        .step-box {
+            background: var(--background);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 16px 0;
+        }
+
+        .step-box h4 {
+            margin-top: 0;
+            color: var(--primary);
+        }
+
+        code {
+            background: var(--background);
+            padding: 3px 8px;
+            border-radius: 6px;
+            font-family: 'SF Mono', Monaco, 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+
+        kbd {
+            background: var(--background);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 4px 8px;
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 0.85em;
+            box-shadow: 0 2px 0 var(--border);
+        }
+
+        .platform-note {
+            display: inline-block;
+            background: var(--secondary);
+            color: white;
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            font-weight: 500;
+            margin-right: 8px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.85em;
+            font-weight: 500;
+        }
+
+        .badge-active { background: var(--success); color: white; }
+        .badge-warning { background: var(--warning); color: white; }
+        .badge-expired { background: var(--danger); color: white; }
+        .badge-lifetime { background: var(--secondary); color: white; }
+
+        hr {
+            border: none;
+            border-top: 1px solid var(--border);
+            margin: 32px 0;
+        }
+
+        footer {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.9em;
+            padding: 32px 0;
+            border-top: 1px solid var(--border);
+            margin-top: 48px;
+        }
+
+        a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .back-to-top {
+            display: inline-block;
+            margin-top: 24px;
+            padding: 8px 16px;
+            background: var(--primary);
+            color: white;
+            border-radius: 8px;
+            font-size: 0.9em;
+        }
+
+        .back-to-top:hover {
+            text-decoration: none;
+            opacity: 0.9;
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+            .container {
+                padding: 0;
+            }
+            section {
+                box-shadow: none;
+                border: 1px solid #ddd;
+                break-inside: avoid;
+            }
+            nav {
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+            .back-to-top {
+                display: none;
+            }
+        }
+
+        @media (max-width: 600px) {
+            nav ol {
+                columns: 1;
+            }
+            h1 {
+                font-size: 2em;
+            }
+            section {
+                padding: 20px;
+            }
+            .site-nav {
+                flex-direction: column;
+                gap: 12px;
+            }
+            .site-nav-links {
+                justify-content: center;
+            }
+        }
+
+        /* Site Navigation */
+        .site-nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 24px;
+            background: var(--card-bg);
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 0;
+        }
+
+        .site-nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        .site-nav-brand img {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+        }
+
+        .site-nav-links {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .site-nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 0.9em;
+            transition: all 0.2s;
+        }
+
+        .site-nav-links a:hover {
+            background: var(--background);
+            color: var(--text);
+        }
+
+        .site-nav-links a.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Platform Selector */
+        .platform-selector {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .platform-selector a {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 10px 20px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95em;
+            transition: all 0.2s;
+        }
+
+        .platform-selector a.all-platforms {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+        }
+
+        .platform-selector a.ios {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            color: var(--text);
+        }
+
+        .platform-selector a.ios:hover {
+            border-color: var(--primary);
+            background: rgba(0,122,255,0.1);
+        }
+
+        .platform-selector a.macos {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            color: var(--text);
+        }
+
+        .platform-selector a.macos:hover {
+            border-color: var(--secondary);
+            background: rgba(88,86,214,0.1);
+        }
+
+        @media print {
+            .site-nav, .platform-selector {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Site Navigation -->
+    <nav class="site-nav">
+        <a href="/" class="site-nav-brand">
+            <img src="/assets/stuffolio-logo2.png" alt="Stuffolio">
+            <span>Stuffolio</span>
+        </a>
+        <div class="site-nav-links">
+            <a href="/">Home</a>
+            <a href="/quick-start.html">Quick Start</a>
+            <a href="/Stuffolio_Users_Manual.html" class="active">User Manual</a>
+            <a href="/support.html">Support</a>
+            <a href="/privacy.html">Privacy</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1>Stuffolio User's Manual</h1>
+            <p class="subtitle">Your Personal Product Manager for iOS, iPadOS, and macOS</p>
+            <p class="version">Version 2.0 | January 2026</p>
+
+            <!-- Platform Selector -->
+            <div class="platform-selector">
+                <a href="/Stuffolio_Users_Manual.html" class="all-platforms">All Platforms</a>
+                <a href="/Stuffolio_Users_Manual_iOS.html" class="ios">iPhone & iPad</a>
+                <a href="/Stuffolio_Users_Manual_macOS.html" class="macos">Mac</a>
+            </div>
+        </header>
+
+        <nav id="toc">
+            <h2>Table of Contents</h2>
+            <ol>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#getting-started">Getting Started</a></li>
+                <li><a href="#adding-products">Adding Your First Product</a></li>
+                <li><a href="#adding-photos">Adding Photos to Products</a></li>
+                <li><a href="#smart-scanner">Using the Smart Scanner</a></li>
+                <li><a href="#stuff-scout">Using Stuff Scout (AI Identification)</a></li>
+                <li><a href="#browsing">Browsing Your Products</a></li>
+                <li><a href="#ai-assistant">Using the AI Product Assistant</a></li>
+                <li><a href="#warranties">Managing Warranties</a></li>
+                <li><a href="#maintenance">Scheduling Maintenance</a></li>
+                <li><a href="#loans">Tracking Loans</a></li>
+                <li><a href="#recalls">Checking for Recalls</a></li>
+                <li><a href="#exporting">Exporting Your Data</a></li>
+                <li><a href="#importing">Importing Products</a></li>
+                <li><a href="#icloud">Using iCloud Sync</a></li>
+                <li><a href="#settings">Configuring Settings</a></li>
+                <li><a href="#shortcuts">Keyboard Shortcuts</a></li>
+                <li><a href="#troubleshooting">Troubleshooting</a></li>
+                <li><a href="#privacy">Privacy &amp; Security</a></li>
+                <li><a href="#help">Getting Help</a></li>
+            </ol>
+        </nav>
+
+        <section id="introduction">
+            <h2>Introduction</h2>
+            <p>Stuffolio is a comprehensive product management app that helps you track everything you own. This manual provides step-by-step instructions for using every feature.</p>
+
+            <h3>Supported Platforms</h3>
+            <table>
+                <tr><th>Platform</th><th>Minimum Version</th></tr>
+                <tr><td>iPhone</td><td>iOS 17.6+</td></tr>
+                <tr><td>iPad</td><td>iPadOS 17.6+</td></tr>
+                <tr><td>Mac</td><td>macOS 14.6+</td></tr>
+            </table>
+
+            <h3>Navigation Overview</h3>
+            <p><span class="platform-note">iPhone</span> Use the tab bar at the bottom of the screen with four tabs: Dashboard, My Products, Actions, Settings</p>
+            <p><span class="platform-note">iPad/Mac</span> Use the sidebar on the left side of the screen. Tap the sidebar icon to show or hide the sidebar. Sections include: Dashboard, My Products, Actions, Insights, Settings</p>
+            <a href="#toc" class="back-to-top">Back to Contents</a>
+        </section>
+
+        <section id="getting-started">
+            <h2>Getting Started</h2>
+
+            <h3>First Launch</h3>
+            <p>When you open Stuffolio for the first time:</p>
+            <ol>
+                <li><strong>Welcome Screen</strong> appears with feature highlights</li>
+                <li>Swipe through the introduction screens or tap <strong>Skip</strong></li>
+                <li><strong>Accessibility Options</strong> screen appears:
+                    <ul>
+                        <li>Review available accessibility features</li>
+                        <li>Tap <strong>Continue</strong></li>
+                    </ul>
+                </li>
+                <li><strong>Permissions</strong> screen appears:
+                    <ul>
+                        <li>Tap <strong>Allow Camera</strong> if you want to scan barcodes and take photos</li>
+                        <li>Tap <strong>Allow Notifications</strong> if you want warranty and maintenance reminders</li>
+                        <li>You can skip these and enable them later in Settings</li>
+                    </ul>
+                </li>
+                <li>Tap <strong>Get Started</strong> to enter the app</li>
+            </ol>
+
+            <h3>Understanding the Dashboard</h3>
+            <p>The Dashboard is your home screen. Here's what each section shows:</p>
+
+            <h4>Quick Stats Bar (at the top)</h4>
+            <ul>
+                <li>Swipe left/right to see: Total Products, Purchase Cost, Current Value, Fun Fact</li>
+                <li>Tap the chevron to collapse this section</li>
+            </ul>
+
+            <h4>Needs Attention</h4>
+            <ul>
+                <li>Products with warranties expiring in 30 days</li>
+                <li>Overdue maintenance tasks</li>
+                <li>Items on loan that are due back</li>
+                <li>Products missing important information</li>
+            </ul>
+
+            <h4>Recently Added</h4>
+            <ul>
+                <li>Your most recently added products</li>
+                <li>Tap any product to view its details</li>
+            </ul>
+
+            <h4>Feature Cards</h4>
+            <p>Quick access to: Stuff Scout, Smart Scanner, AI Assistant, Recall Check, Reports, Value Calculator</p>
+            <a href="#toc" class="back-to-top">Back to Contents</a>
+        </section>
+
+        <section id="adding-products">
+            <h2>Adding Your First Product</h2>
+
+            <h3>Method 1: Quick Add (Recommended for Beginners)</h3>
+
+            <div class="step-box">
+                <h4><span class="platform-note">iPhone</span></h4>
+                <ol>
+                    <li>Tap the <strong>My Products</strong> tab at the bottom</li>
+                    <li>Tap the blue <strong>+</strong> button in the bottom-right corner</li>
+                    <li>A menu appears with options: Add Product, Smart Scanner, Stuff Scout</li>
+                    <li>Tap <strong>Add Product</strong></li>
+                    <li>The Add Product form opens</li>
+                </ol>
+            </div>
+
+            <div class="step-box">
+                <h4><span class="platform-note">iPad/Mac</span></h4>
+                <ol>
+                    <li>Click <strong>My Products</strong> in the sidebar</li>
+                    <li>Click the <strong>+</strong> button in the toolbar (top of screen)</li>
+                    <li>Same options appear as iPhone</li>
+                    <li>Click <strong>Add Product</strong></li>
+                </ol>
+            </div>
+
+            <h3>Filling Out the Product Form</h3>
+            <p>The form has these fields (only Product Name is required):</p>
+
+            <h4>Step 1: Enter Basic Information</h4>
+            <ol>
+                <li><strong>Product Name</strong> (Required)
+                    <ul>
+                        <li>Tap the text field</li>
+                        <li>Type the product name (e.g., "Samsung 65-inch TV")</li>
+                        <li>This is how the product appears in your list</li>
+                    </ul>
+                </li>
+                <li><strong>Manufacturer</strong>
+                    <ul>
+                        <li>Tap the text field</li>
+                        <li>Type the brand name (e.g., "Samsung")</li>
+                    </ul>
+                </li>
+                <li><strong>Model Number</strong>
+                    <ul>
+                        <li>Tap the text field</li>
+                        <li>Enter the model number from the product label</li>
+                        <li>Example: "QN65Q80CAFXZA"</li>
+                    </ul>
+                </li>
+                <li><strong>Serial Number</strong>
+                    <ul>
+                        <li>Tap the text field</li>
+                        <li>Enter the serial number (important for warranty claims)</li>
+                        <li>Usually found on a sticker on the product</li>
+                    </ul>
+                </li>
+            </ol>
+
+            <h4>Step 2: Choose a Category</h4>
+            <ol>
+                <li>Tap the <strong>Category</strong> field</li>
+                <li>A picker appears with 20+ categories: Electronics, Appliances, Furniture, Tools, Automotive, Sports, etc.</li>
+                <li>Scroll and tap to select the appropriate category</li>
+                <li>The picker closes automatically</li>
+            </ol>
+
+            <h4>Step 3: Set Location</h4>
+            <ol>
+                <li>Tap the <strong>Location</strong> field</li>
+                <li>Type where the product is stored (e.g., "Living Room", "Garage")</li>
+                <li>This helps you find products later</li>
+            </ol>
+
+            <h4>Step 4: Enter Purchase Information</h4>
+            <ol>
+                <li><strong>Purchase Date</strong>
+                    <ul>
+                        <li>Tap the date field</li>
+                        <li>A date picker appears</li>
+                        <li>Scroll to select month, day, and year</li>
+                        <li>Tap <strong>Done</strong> (iOS) or click outside the picker (Mac)</li>
+                    </ul>
+                </li>
+                <li><strong>Purchase Price</strong>
+                    <ul>
+                        <li>Tap the price field</li>
+                        <li>Enter the amount you paid (numbers only)</li>
+                        <li>Currency symbol is added automatically</li>
+                    </ul>
+                </li>
+                <li><strong>Retailer</strong> (Optional)
+                    <ul>
+                        <li>Enter where you bought it (e.g., "Best Buy", "Amazon")</li>
+                    </ul>
+                </li>
+            </ol>
+
+            <h4>Step 5: Enter Warranty Information</h4>
+            <ol>
+                <li><strong>Warranty Expiration Date</strong> &mdash; Select the date your warranty ends</li>
+                <li><strong>Warranty Type</strong> &mdash; Tap to select: Standard, Extended, or Lifetime</li>
+                <li><strong>Warranty Notes</strong> (Optional) &mdash; Add any coverage details</li>
+            </ol>
+
+            <h4>Step 6: Add Notes</h4>
+            <ol>
+                <li>Tap the <strong>Notes</strong> field</li>
+                <li>Type any additional information</li>
+                <li>Examples: "Gift from Mom", "Bought on sale", "Repair history"</li>
+            </ol>
+
+            <h4>Step 7: Save the Product</h4>
+            <ol>
+                <li>Review all entered information</li>
+                <li>Tap the <strong>Save</strong> button (top-right on iOS, toolbar on Mac)</li>
+                <li>The product is added to your inventory</li>
+                <li>You return to the My Products list</li>
+            </ol>
+            <a href="#toc" class="back-to-top">Back to Contents</a>
+        </section>
+
+        <section id="adding-photos">
+            <h2>Adding Photos to Products</h2>
+            <p>Photos help identify products and serve as documentation for warranty claims.</p>
+
+            <h3>Adding Photos on iPhone/iPad</h3>
+            <p><strong>From the Add/Edit Product Screen:</strong></p>
+            <ol>
+                <li>Scroll to the <strong>Photos</strong> section</li>
+                <li>Tap the <strong>camera icon</strong> or <strong>Add Photo</strong> button</li>
+                <li>A menu appears with options</li>
+            </ol>
+
+            <div class="step-box">
+                <h4>Option A: Take a New Photo</h4>
+                <ol>
+                    <li>Tap <strong>Take Photo</strong></li>
+                    <li>The camera opens</li>
+                    <li>Point at your product</li>
+                    <li>Tap the shutter button to capture</li>
+                    <li>Review the photo:
+                        <ul>
+                            <li>Tap <strong>Retake</strong> to try again</li>
+                            <li>Tap <strong>Use Photo</strong> to add it</li>
+                        </ul>
+                    </li>
+                    <li>The photo appears in the Photos section</li>
+                </ol>
+            </div>
+
+            <div class="step-box">
+                <h4>Option B: Choose from Photo Library</h4>
+                <ol>
+                    <li>Tap <strong>Choose from Library</strong></li>
+                    <li>Your photo library opens</li>
+                    <li>Browse albums or use search:
+                        <ul>
+                            <li>Tap <strong>Albums</strong> to browse by album</li>
+                            <li>Tap the search icon and type to find photos</li>
+                        </ul>
+                    </li>
+                    <li>Tap a photo to select it</li>
+                    <li>Optionally crop the image:
+                        <ul>
+                            <li>Drag corners to adjust</li>
+                            <li>Tap <strong>Done</strong> when finished</li>
+                        </ul>
+                    </li>
+                    <li>The photo appears in the Photos section</li>
+                </ol>
+            </div>
+
+            <div class="step-box">
+                <h4>Option C: Scan a Document</h4>
+                <ol>
+                    <li>Tap <strong>Scan Document</strong></li>
+                    <li>The document scanner opens</li>
+                    <li>Position the receipt/document in view</li>
+                    <li>The scanner automatically detects edges</li>
+                    <li>Tap the shutter or wait for auto-capture</li>
+                    <li>Adjust corners if needed by dragging</li>
+                    <li>Tap <strong>Keep Scan</strong></li>
+                    <li>Tap <strong>Save</strong> when done scanning</li>
+                </ol>
+            </div>
+
+            <h3>Adding Photos on Mac</h3>
+
+            <div class="step-box">
+                <h4>Method 1: Paste from Clipboard (Required Step)</h4>
+                <ol>
+                    <li><strong>First, you must copy an image:</strong>
+                        <ul>
+                            <li>In Photos app: Select image, press <kbd>&#8984;C</kbd></li>
+                            <li>In Finder: Select image file, press <kbd>&#8984;C</kbd></li>
+                            <li>From web: Right-click image, select "Copy Image"</li>
+                        </ul>
+                    </li>
+                    <li>In Stuffolio, open the product for editing</li>
+                    <li>Click the <strong>Paste Image</strong> button in the Photos section</li>
+                    <li>The copied image appears</li>
+                </ol>
+                <div class="warning">
+                    <strong>Important:</strong> You must copy an image to your clipboard BEFORE clicking the Paste Image button. The button will not work if no image has been copied.
+                </div>
+            </div>
+
+            <div class="step-box">
+                <h4>Method 2: Drag and Drop</h4>
+                <ol>
+                    <li>Open Finder or Photos app alongside Stuffolio</li>
+                    <li>Drag an image file onto the Photos section</li>
+                    <li>Drop when you see the highlight</li>
+                    <li>The image is added</li>
+                </ol>
+            </div>
+
+            <div class="step-box">
+                <h4>Method 3: Choose File</h4>
+                <ol>
+                    <li>Click <strong>Add Photo</strong> or the <strong>+</strong> in the Photos section</li>
+                    <li>Click <strong>Choose File</strong></li>
+                    <li>Navigate to your image file</li>
+                    <li>Select it and click <strong>Open</strong></li>
+                </ol>
+            </div>
+
+            <h3>Managing Existing Photos</h3>
+            <ul>
+                <li><strong>To view full-screen:</strong> Tap/click any photo thumbnail. Pinch to zoom (iOS) or use scroll wheel (Mac).</li>
+                <li><strong>To delete:</strong> Tap/click the photo, then tap the trash icon or press Delete.</li>
+                <li><strong>To reorder:</strong> Touch and hold (iOS) or click and drag (Mac) to new position.</li>
+            </ul>
+
+            <h3>Photo Types to Add</h3>
+            <p>For complete documentation, consider adding:</p>
+            <ul>
+                <li><strong>Product Photo</strong> &mdash; Main image showing the product</li>
+                <li><strong>Receipt</strong> &mdash; Proof of purchase for warranty claims</li>
+                <li><strong>Label/Nameplate</strong> &mdash; Shows model and serial numbers</li>
+                <li><strong>Warranty Card</strong> &mdash; Coverage documentation</li>
+                <li><strong>Packaging</strong> &mdash; UPC barcode and specifications</li>
+            </ul>
+            <a href="#toc" class="back-to-top">Back to Contents</a>
+        </section>
+
+        <section id="smart-scanner">
+            <h2>Using the Smart Scanner</h2>
+            <p>The Smart Scanner reads barcodes to automatically fill in product information.</p>
+
+            <h3>Opening the Smart Scanner</h3>
+            <p><span class="platform-note">iPhone</span> Tap the <strong>+</strong> button on My Products, then tap <strong>Smart Scanner</strong></p>
+            <p><span class="platform-note">iPad/Mac</span> Go to <strong>Actions</strong> in the sidebar, under <strong>Acquire</strong>, tap <strong>Smart Scanner</strong></p>
+
+            <h3>Step 1: Scan the UPC Barcode</h3>
+            <ol>
+                <li>The camera view appears with a targeting rectangle</li>
+                <li>Point your camera at the <strong>UPC barcode</strong> on the product packaging</li>
+                <li>Hold steady 6-12 inches away</li>
+                <li>When detected:
+                    <ul>
+                        <li>You hear a beep</li>
+                        <li>The barcode number appears on screen</li>
+                        <li>Product lookup begins automatically</li>
+                    </ul>
+                </li>
+            </ol>
+
+            <div class="tip">
+                <strong>Tips for better scanning:</strong>
+                <ul>
+                    <li>Ensure good lighting (avoid shadows on the barcode)</li>
+                    <li>Make sure the barcode isn't wrinkled or damaged</li>
+                    <li>Hold the phone parallel to the barcode (not at an angle)</li>
+                    <li>Clean your camera lens if scanning fails repeatedly</li>
+                </ul>
+            </div>
+
+            <h3>Step 2: Scan Additional Barcodes (Optional)</h3>
+            <ol>
+                <li>Tap <strong>Scan Model/Serial</strong></li>
+                <li>Point at barcodes on the product itself (not packaging):
+                    <ul>
+                        <li>Model number barcode (often on nameplate)</li>
+                        <li>Serial number barcode</li>
+                    </ul>
+                </li>
+                <li>The scanner identifies the barcode type</li>
+                <li>Information fills automatically</li>
+                <li>Tap <strong>Done</strong> when finished, or <strong>Skip</strong> to continue without</li>
+            </ol>
+
+            <h3>Step 3: Review and Edit</h3>
+            <ol>
+                <li>A form appears with auto-detected information</li>
+                <li>Review each field and edit any incorrect information</li>
+                <li>Add purchase information: Purchase Date, Purchase Price, Warranty Expiration</li>
+            </ol>
+
+            <h3>Step 4: Save the Product</h3>
+            <ol>
+                <li>Verify all information is correct</li>
+                <li>Tap <strong>Save</strong> in the top-right corner</li>
+                <li>The product is added to your inventory</li>
+            </ol>
+
+            <h3>If the Barcode Isn't Found</h3>
+            <ol>
+                <li>A message appears: "Product not found in database"</li>
+                <li>Tap <strong>Enter Manually</strong></li>
+                <li>The barcode number is preserved</li>
+                <li>Fill in the remaining fields yourself</li>
+                <li>Save as usual</li>
+            </ol>
+            <a href="#toc" class="back-to-top">Back to Contents</a>
+        </section>
+
+        <section id="stuff-scout">
+            <h2>Using Stuff Scout (AI Identification)</h2>
+            <p>Stuff Scout uses AI to identify antiques, collectibles, and unknown items from photos.</p>
+
+            <h3>Opening Stuff Scout</h3>
+            <p><span class="platform-note">iPhone</span> Tap the <strong>+</strong> button on My Products, then tap <strong>Stuff Scout</strong></p>
+            <p><span class="platform-note">iPad/Mac</span> Go to <strong>Actions > Acquire > Stuff Scout</strong>, or tap the <strong>Stuff Scout</strong> feature card on the Dashboard</p>
+
+            <h3>Step 1: Capture Photos</h3>
+            <ol>
+                <li>The Stuff Scout screen opens with capture options</li>
+                <li><strong>Taking a New Photo:</strong> Tap <strong>Take Photo</strong>, position the item in good lighting, capture and tap <strong>Use Photo</strong></li>
+                <li><strong>Choosing from Library:</strong> Tap <strong>Choose from Library</strong>, select a clear photo of the item</li>
+            </ol>
+
+            <h3>Step 2: Add Additional Photos (Recommended)</h3>
+            <p>For better identification, add multiple photos:</p>
+            <ol>
+                <li>After the first photo, tap <strong>Add Another Photo</strong></li>
+                <li>Capture different angles:
+                    <ul>
+                        <li><strong>Maker's Mark</strong> &mdash; Signatures, stamps, or labels</li>
+                        <li><strong>Bottom/Back</strong> &mdash; Often has identifying marks</li>
+                        <li><strong>Details</strong> &mdash; Close-ups of unique features</li>
+                        <li><strong>Damage</strong> &mdash; Any wear or repairs</li>
+                    </ul>
+                </li>
+                <li>You can add up to 5 photos</li>
+            </ol>
+
+            <h3>Step 3: Start Identification</h3>
+            <ol>
+                <li>Review your photos at the bottom of the screen</li>
+                <li>Tap the <strong>Identify</strong> button</li>
+                <li>Wait while AI analyzes (10-30 seconds, requires internet)</li>
+            </ol>
+
+            <h3>Step 4: Review Results</h3>
+            <p>The results screen shows:</p>
+            <ul>
+                <li><strong>Identification</strong> &mdash; What It Is, Maker/Manufacturer, Era, Country of Origin</li>
+                <li><strong>Value</strong> &mdash; Estimated Value Range, Recent Sales, Classification</li>
+                <li><strong>Additional Info</strong> &mdash; Rarity, About, Collector Notes</li>
+            </ul>
+
+            <h3>Step 5: Save to Inventory</h3>
+            <ol>
+                <li>Tap <strong>Add to Inventory</strong></li>
+                <li>A pre-filled product form appears</li>
+                <li>Add any additional information (purchase price, location)</li>
+                <li>Tap <strong>Save</strong></li>
+            </ol>
+
+            <p>To bookmark results without adding to inventory, tap <strong>Save to History</strong>. Access later from <strong>Stuff Scout > History</strong>.</p>
+            <a href="#toc" class="back-to-top">Back to Contents</a>
+        </section>
+
+        <section id="browsing">
+            <h2>Browsing Your Products</h2>
+
+            <h3>Accessing My Products</h3>
+            <p><span class="platform-note">iPhone</span> Tap <strong>My Products</strong> in the bottom tab bar</p>
+            <p><span class="platform-note">iPad/Mac</span> Click <strong>My Products</strong> in the sidebar</p>
+
+            <h3>Understanding the Product List</h3>
+            <p>Each product row shows:</p>
+            <ul>
+                <li><strong>Photo thumbnail</strong> &mdash; Product image (or category icon if no photo)</li>
+                <li><strong>Product name</strong> &mdash; In bold</li>
+                <li><strong>Manufacturer</strong> &mdash; Below the name</li>
+                <li><strong>Warranty status badge:</strong>
+                    <ul>
+                        <li><span class="badge badge-active">Active</span> Warranty currently valid</li>
+                        <li><span class="badge badge-warning">Warning</span> Expiring within 30 days</li>
+                        <li><span class="badge badge-expired">Expired</span> No longer covered</li>
+                        <li><span class="badge badge-lifetime">Lifetime</span> Lifetime warranty</li>
+                    </ul>
+                </li>
+                <li><strong>Days remaining</strong> &mdash; Until warranty expires</li>
+            </ul>
+
+            <h3>Filtering Products</h3>
+            <ol>
+                <li>Swipe horizontally at the top to see all filter chips</li>
+                <li>Tap a filter to apply it: All, Active, Expiring, Expired, Lifetime, No Warranty</li>
+                <li>The active filter is highlighted</li>
+                <li>Tap again to remove the filter</li>
+            </ol>
+
+            <h3>Sorting Products</h3>
+            <ol>
+                <li>Tap the <strong>sort button</strong> in the toolbar</li>
+                <li>Select: Date Added, Name, Purchase Date, Warranty Expiration, Value</li>
+                <li>The list reorders immediately</li>
+            </ol>
+
+            <h3>Searching for Products</h3>
+            <ol>
+                <li>Pull down on the product list to reveal the search bar</li>
+                <li>Tap the search field and type your search term</li>
+                <li>Stuffolio searches: Product name, Manufacturer, Model number, Serial number, Notes</li>
+                <li>Results appear as you type</li>
+                <li>Tap a result to view the product</li>
+            </ol>
+
+            <h3>Using Quick Actions (Swipe)</h3>
+            <ul>
+                <li><strong>Swipe Left:</strong> Delete (red), Edit (blue)</li>
+                <li><strong>Swipe Right:</strong> AI Help (purple), View (teal)</li>
+            </ul>
+
+            <h3>Using the Context Menu (Long Press)</h3>
+            <ol>
+                <li>Touch and hold any product for 1 second</li>
+                <li>Menu appears: Edit, AI Assistant, Duplicate, Copy, Share, Delete</li>
+                <li>Tap your desired action</li>
+            </ol>
+
+            <h3>Selecting Multiple Products</h3>
+            <ol>
+                <li>Tap <strong>Select</strong> in the toolbar</li>
+                <li>Tap products to select them (checkmarks appear)</li>
+                <li>Use toolbar buttons: <strong>Delete</strong> or <strong>Export</strong></li>
+                <li>Tap <strong>Done</strong> when finished</li>
+            </ol>
+            <a href="#toc" class="back-to-top">Back to Contents</a>
+        </section>
+
+        <section id="ai-assistant">
+            <h2>Using the AI Product Assistant</h2>
+            <p>The AI Assistant provides instant help for any product.</p>
+
+            <h3>Opening the AI Assistant</h3>
+            <ul>
+                <li><strong>From a Product:</strong> Open any product's detail view, tap <strong>AI Assistant</strong></li>
+                <li><strong>From My Products List:</strong> Swipe right on a product, tap <strong>AI Help</strong></li>
+                <li>Or long-press a product and select <strong>AI Assistant</strong></li>
+            </ul>
+
+            <h3>Choosing a Query Type</h3>
+            <table>
+                <tr><th>Query</th><th>What It Finds</th></tr>
+                <tr><td>Find Manual</td><td>Official product manual/user guide</td></tr>
+                <tr><td>Find Warranty Info</td><td>Warranty terms, registration page</td></tr>
+                <tr><td>Find Parts</td><td>Replacement parts and where to buy</td></tr>
+                <tr><td>Find Supplies</td><td>Consumables (filters, bags, batteries)</td></tr>
+                <tr><td>Troubleshoot</td><td>Solutions for common problems</td></tr>
+                <tr><td>Maintenance Tips</td><td>Care instructions and schedules</td></tr>
+                <tr><td>How-To Videos</td><td>Tutorial videos for using the product</td></tr>
+                <tr><td>DIY Repair Videos</td><td>Repair guides and videos</td></tr>
+                <tr><td>Maker Website</td><td>Manufacturer's official website</td></tr>
+                <tr><td>Register Product</td><td>Product registration page</td></tr>
+            </table>
+
+            <h3>Getting Help</h3>
+            <ol>
+                <li>Select a query type by tapping it</li>
+                <li>The AI searches using your product information</li>
+                <li>Wait for results (5-15 seconds)</li>
+                <li>Results appear with direct links and relevant information</li>
+            </ol>
+
+            <h3>Using Results</h3>
+            <ul>
+                <li><strong>To open a link:</strong> Tap any blue link</li>
+                <li><strong>To search again:</strong> Scroll to bottom, tap <strong>Search Again</strong></li>
+                <li><strong>To copy:</strong> Touch and hold text, tap <strong>Copy</strong></li>
+            </ul>
+
+            <div class="tip">
+                <strong>Tips for Better Results:</strong>
+                <ul>
+                    <li>Ensure <strong>Manufacturer</strong> and <strong>Model Number</strong> are filled in</li>
+                    <li>The more specific your product info, the better the results</li>
+                    <li>Try different query types for comprehensive information</li>
+                </ul>
+            </div>
+            <a href="#toc" class="back-to-top">Back to Contents</a>
+        </section>
+
+        <section id="warranties">
+            <h2>Managing Warranties</h2>
+
+            <h3>Adding Warranty Information</h3>
+            <p><strong>When adding a new product:</strong></p>
+            <ol>
+                <li>In the Add Product form, scroll to <strong>Warranty</strong> section</li>
+                <li>Tap <strong>Warranty Expiration Date</strong> and select the date</li>
+                <li>Tap <strong>Warranty Type</strong>: Standard, Extended, or Lifetime</li>
+                <li>Optionally add <strong>Warranty Notes</strong></li>
+            </ol>
+
+            <p><strong>For existing products:</strong></p>
+            <ol>
+                <li>Open the product, tap <strong>Edit</strong></li>
+                <li>Scroll to Warranty section, fill in fields</li>
+                <li>Tap <strong>Save</strong></li>
+            </ol>
+
+            <h3>Viewing Warranty Status</h3>
+            <ul>
+                <li><strong>On the product list:</strong> Each product shows a status badge</li>
+                <li><strong>On the Dashboard:</strong> <strong>Needs Attention</strong> shows expiring warranties</li>
+                <li><strong>In Reports:</strong> Go to <strong>Insights > Reports > Warranty Report</strong></li>
+            </ul>
+
+            <h3>Setting Warranty Reminders</h3>
+            <ol>
+                <li>Go to <strong>Settings > Notifications</strong></li>
+                <li>Toggle on <strong>Warranty Expiring</strong></li>
+                <li>Set <strong>Advance Notice</strong>: 7, 14, or 30 days before</li>
+            </ol>
+
+            <h3>Using the Warranty Manager</h3>
+            <ol>
+                <li>Go to <strong>Actions > Own > Warranty Manager</strong></li>
+                <li>View tabs: <strong>Active</strong>, <strong>Expiring</strong>, <strong>Expired</strong></li>
+                <li>Tap any product to view details</li>
+            </ol>
+            <a href="#toc" class="back-to-top">Back to Contents</a>
+        </section>
+
+        <section id="maintenance">
+            <h2>Scheduling Maintenance</h2>
+
+            <h3>Adding a Maintenance Schedule</h3>
+            <ol>
+                <li>Open a product's detail view</li>
+                <li>Tap <strong>Edit</strong></li>
+                <li>Scroll to <strong>Maintenance</strong> section</li>
+                <li>Tap <strong>Add Maintenance Task</strong></li>
+                <li>Fill in:
+                    <ul>
+                        <li><strong>Task Name</strong> (e.g., "Replace filter")</li>
+                        <li><strong>Frequency</strong>: One-time, Weekly, Monthly, Quarterly, Annually</li>
+                        <li><strong>Next Due Date</strong></li>
+                        <li><strong>Notes</strong></li>
+                    </ul>
+                </li>
+                <li>Tap <strong>Save</strong></li>
+            </ol>
+
+            <h3>Completing a Maintenance Task</h3>
+            <ol>
+                <li>Open the product</li>
+                <li>Scroll to <strong>Maintenance</strong> section</li>
+                <li>Tap <strong>Mark Complete</strong></li>
+                <li>The next due date calculates automatically for recurring tasks</li>
+            </ol>
+            <a href="#toc" class="back-to-top">Back to Contents</a>
+        </section>
+
+        <section id="loans">
+            <h2>Tracking Loans</h2>
+
+            <h3>Recording a Loan</h3>
+            <ol>
+                <li>Open the product you're lending</li>
+                <li>Tap <strong>Edit</strong></li>
+                <li>Scroll to <strong>Loans</strong> section</li>
+                <li>Tap <strong>Record Loan</strong></li>
+                <li>Fill in: Borrower Name, Date Loaned, Expected Return Date, Notes</li>
+                <li>Tap <strong>Save</strong></li>
+            </ol>
+
+            <h3>Marking a Loan as Returned</h3>
+            <ol>
+                <li>Open the loaned product</li>
+                <li>Scroll to <strong>Loans</strong> section</li>
+                <li>Tap <strong>Mark Returned</strong></li>
+            </ol>
+            <a href="#toc" class="back-to-top">Back to Contents</a>
+        </section>
+
+        <section id="recalls">
+            <h2>Checking for Recalls</h2>
+
+            <h3>Performing a Recall Check</h3>
+            <ol>
+                <li>Go to <strong>Insights > Recall Check</strong></li>
+                <li>Enter: Manufacturer name, Product name, or Model number</li>
+                <li>Tap <strong>Search</strong></li>
+                <li>Wait for results from the CPSC database</li>
+            </ol>
+
+            <h3>Viewing Recall Results</h3>
+            <p>If matches are found, tap any recall for full details including:</p>
+            <ul>
+                <li><strong>Hazard</strong> &mdash; What the danger is</li>
+                <li><strong>Remedy</strong> &mdash; What to do (refund, repair, replacement)</li>
+                <li><strong>Contact</strong> &mdash; Manufacturer contact information</li>
+            </ul>
+            <a href="#toc" class="back-to-top">Back to Contents</a>
+        </section>
+
+        <section id="exporting">
+            <h2>Exporting Your Data</h2>
+
+            <h3>Exporting All Products</h3>
+            <ol>
+                <li>Go to <strong>Settings > Data > Export</strong></li>
+                <li>Choose format: <strong>CSV</strong>, <strong>PDF</strong>, or <strong>Excel</strong></li>
+                <li>Tap <strong>Export All Products</strong></li>
+                <li>Share via AirDrop, Mail, Files, etc.</li>
+            </ol>
+
+            <h3>Exporting Selected Products</h3>
+            <ol>
+                <li>Go to <strong>My Products</strong>, tap <strong>Select</strong></li>
+                <li>Tap products to select them</li>
+                <li>Tap <strong>Export</strong> in the toolbar</li>
+            </ol>
+            <a href="#toc" class="back-to-top">Back to Contents</a>
+        </section>
+
+        <section id="importing">
+            <h2>Importing Products</h2>
+
+            <h3>Preparing Your CSV File</h3>
+            <p>Your CSV needs: a header row, one product per row, and at minimum a <code>name</code> or <code>title</code> column.</p>
+            <p><strong>Supported columns:</strong> name, manufacturer, model, serial, category, location, purchase_date, purchase_price, warranty_expiration, notes</p>
+
+            <h3>Importing the File</h3>
+            <ol>
+                <li>Go to <strong>Settings > Data > Import</strong></li>
+                <li>Tap <strong>Select File</strong> and choose your CSV</li>
+                <li>Map columns to Stuffolio fields</li>
+                <li>Preview and tap <strong>Import</strong></li>
+            </ol>
+            <a href="#toc" class="back-to-top">Back to Contents</a>
+        </section>
+
+        <section id="icloud">
+            <h2>Using iCloud Sync</h2>
+
+            <h3>Enabling iCloud Sync</h3>
+            <ol>
+                <li>Go to <strong>Settings > Data</strong></li>
+                <li>Toggle <strong>iCloud Sync</strong> on</li>
+            </ol>
+            <p>Note: Use the same Apple ID on all devices for sync to work.</p>
+
+            <h3>How Sync Works</h3>
+            <ul>
+                <li><strong>Automatic</strong> &mdash; Changes sync in the background</li>
+                <li><strong>Near-instant</strong> &mdash; Usually syncs within seconds</li>
+                <li><strong>Conflict resolution</strong> &mdash; Most recent change wins</li>
+            </ul>
+            <a href="#toc" class="back-to-top">Back to Contents</a>
+        </section>
+
+        <section id="settings">
+            <h2>Configuring Settings</h2>
+
+            <h3>Appearance Settings</h3>
+            <ul>
+                <li><strong>Theme:</strong> System, Light, or Dark</li>
+                <li><strong>App Icon:</strong> Choose from available icons (iPhone/iPad only)</li>
+            </ul>
+
+            <h3>Notification Settings</h3>
+            <ul>
+                <li>Toggle: Warranty Expiring, Maintenance Due, Loan Due</li>
+                <li><strong>Advance Notice:</strong> 7, 14, or 30 days before</li>
+            </ul>
+
+            <h3>Default Settings</h3>
+            <ul>
+                <li><strong>Default Category:</strong> Pre-selected for new products</li>
+                <li><strong>Default Location:</strong> Pre-filled for new products</li>
+                <li><strong>Depreciation Rate:</strong> Annual percentage for value calculation</li>
+                <li><strong>Currency:</strong> Display currency for prices</li>
+            </ul>
+            <a href="#toc" class="back-to-top">Back to Contents</a>
+        </section>
+
+        <section id="shortcuts">
+            <h2>Keyboard Shortcuts</h2>
+            <p>Available on iPad with external keyboard and Mac.</p>
+
+            <h3>Global Shortcuts</h3>
+            <table>
+                <tr><th>Shortcut</th><th>Action</th></tr>
+                <tr><td><kbd>&#8984;K</kbd></td><td>Open Quick Find</td></tr>
+                <tr><td><kbd>&#8984;N</kbd></td><td>Add New Product</td></tr>
+                <tr><td><kbd>&#8984;,</kbd></td><td>Open Settings</td></tr>
+            </table>
+
+            <h3>Navigation Shortcuts</h3>
+            <table>
+                <tr><th>Shortcut</th><th>Action</th></tr>
+                <tr><td><kbd>&#8984;1</kbd></td><td>Dashboard</td></tr>
+                <tr><td><kbd>&#8984;2</kbd></td><td>My Products</td></tr>
+                <tr><td><kbd>&#8984;3</kbd></td><td>Reports</td></tr>
+                <tr><td><kbd>&#8984;4</kbd></td><td>Tools</td></tr>
+                <tr><td><kbd>&#8984;5</kbd></td><td>Stuff Scout</td></tr>
+            </table>
+
+            <h3>Using Quick Find</h3>
+            <ol>
+                <li>Press <kbd>&#8984;K</kbd> anywhere in the app</li>
+                <li>Type your search term</li>
+                <li>Use arrow keys to navigate results</li>
+                <li>Press Return to open, Escape to close</li>
+            </ol>
+            <a href="#toc" class="back-to-top">Back to Contents</a>
+        </section>
+
+        <section id="troubleshooting">
+            <h2>Troubleshooting</h2>
+
+            <h3>Products Not Syncing Between Devices</h3>
+            <ol>
+                <li>Check iCloud sync is enabled in Settings > Data</li>
+                <li>Verify same iCloud account on all devices</li>
+                <li>Check iCloud storage isn't full</li>
+                <li>Try toggling sync off, wait 10 seconds, toggle back on</li>
+            </ol>
+
+            <h3>Smart Scanner Not Detecting Barcodes</h3>
+            <ol>
+                <li>Move to well-lit area, avoid shadows</li>
+                <li>Hold phone 6-12 inches from barcode</li>
+                <li>Ensure barcode isn't damaged or wrinkled</li>
+                <li>Clean camera lens</li>
+            </ol>
+
+            <h3>AI Features Not Responding</h3>
+            <ol>
+                <li>Check internet connection</li>
+                <li>Wait 30 seconds and retry</li>
+                <li>If rate limited, wait a few minutes</li>
+                <li>Force quit and reopen the app</li>
+            </ol>
+
+            <h3>Notifications Not Appearing</h3>
+            <ol>
+                <li>Check iOS/Mac notification settings for Stuffolio</li>
+                <li>Verify notifications enabled in Stuffolio Settings</li>
+                <li>Ensure Do Not Disturb is off</li>
+            </ol>
+            <a href="#toc" class="back-to-top">Back to Contents</a>
+        </section>
+
+        <section id="privacy">
+            <h2>Privacy &amp; Security</h2>
+
+            <h3>Where Your Data Is Stored</h3>
+            <table>
+                <tr><th>Data Type</th><th>Storage Location</th></tr>
+                <tr><td>Products</td><td>Your device + iCloud (if enabled)</td></tr>
+                <tr><td>Photos</td><td>Your device + iCloud (if enabled)</td></tr>
+                <tr><td>App Settings</td><td>Your device only</td></tr>
+                <tr><td>AI Queries</td><td>Not stored (processed and discarded)</td></tr>
+            </table>
+
+            <h3>What Stuffolio Does NOT Do</h3>
+            <ul>
+                <li>Sell your data to anyone</li>
+                <li>Share data with advertisers</li>
+                <li>Track your behavior or usage</li>
+                <li>Require account creation</li>
+                <li>Store your photos on our servers</li>
+            </ul>
+
+            <h3>Security Features</h3>
+            <ul>
+                <li><strong>Encryption in transit</strong> &mdash; All data sent over HTTPS</li>
+                <li><strong>iCloud encryption</strong> &mdash; Data encrypted at rest</li>
+                <li><strong>Biometric support</strong> &mdash; Face ID / Touch ID for device security</li>
+            </ul>
+
+            <p>Full privacy policy: <a href="https://stuffolio.app/privacy">https://stuffolio.app/privacy</a></p>
+            <a href="#toc" class="back-to-top">Back to Contents</a>
+        </section>
+
+        <section id="help">
+            <h2>Getting Help</h2>
+
+            <h3>In-App Help</h3>
+            <p>Tap the <strong>?</strong> icon on any screen for contextual help.</p>
+
+            <h3>Contact Support</h3>
+            <p><strong>Email:</strong> <a href="mailto:support@stuffolio.app">support@stuffolio.app</a></p>
+            <p>To send feedback with diagnostics: Go to <strong>Settings > About > Send Feedback</strong></p>
+
+            <h3>Website</h3>
+            <p><a href="https://stuffolio.app">https://stuffolio.app</a></p>
+
+            <h3>Rate the App</h3>
+            <p>If you enjoy Stuffolio: <strong>Settings > About > Rate on App Store</strong></p>
+            <a href="#toc" class="back-to-top">Back to Contents</a>
+        </section>
+
+        <footer>
+            <p><strong>Stuffolio User's Manual</strong> | Version 2.0 | January 2026</p>
+            <p>&copy; 2025 Coffee &amp; Code LLC. All rights reserved.</p>
+            <p>Stuffolio is a trademark of Coffee &amp; Code LLC.</p>
+        </footer>
+    </div>
+</body>
+</html>
