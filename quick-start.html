@@ -21,15 +21,18 @@
 
   <style>
     :root{
+      /* SF3a Colorblind-Safe Palette */
       --bg:#0b1220; --card:#111b2e; --muted:#a9b4c7; --text:#e7ecf6;
-      --line:rgba(255,255,255,.12); --accent:#7dd3fc; --accent2:#a78bfa;
-      --good:#86efac;
+      --line:rgba(255,255,255,.12); --accent:#7dd3fc; --accent2:#007AFF;
+      --good:#007AFF; /* SF3a: Blue instead of green */
+      --warning:#FFCC00; /* SF3a: Yellow for warnings */
       --radius:18px; --shadow: 0 10px 30px rgba(0,0,0,.35);
       --max: 900px;
     }
     .light-mode{
       --bg:#f5f5f7 !important; --card:#ffffff !important; --muted:#555 !important; --text:#1a1a1a !important;
-      --line:rgba(0,0,0,.12) !important; --accent:#0066cc !important; --accent2:#7c3aed !important;
+      --line:rgba(0,0,0,.12) !important; --accent:#0066cc !important; --accent2:#007AFF !important;
+      --good:#007AFF !important; /* SF3a: Blue instead of green */
       --shadow: 0 4px 20px rgba(0,0,0,.08) !important;
     }
     .light-mode body{background:#f5f5f7 !important; color:#1a1a1a !important}
@@ -39,7 +42,7 @@
     .light-mode a{color:#0066cc !important}
     .light-mode .highlight{background:rgba(0,102,204,.08) !important; border-color:rgba(0,102,204,.25) !important}
     .light-mode .highlight p{color:#333 !important}
-    .light-mode .tip-box{background:rgba(134,239,172,.08) !important; border-color:rgba(134,239,172,.35) !important}
+    .light-mode .tip-box{background:rgba(0,122,255,.08) !important; border-color:rgba(0,122,255,.35) !important}
     .light-mode .tip-box p{color:#333 !important}
     .light-mode .phase-card{background:rgba(0,0,0,.03) !important; border-color:rgba(0,0,0,.1) !important}
     .light-mode nav a, .light-mode footer, .light-mode footer a{color:#666 !important}
@@ -114,8 +117,9 @@
     .highlight p{margin:0; color:var(--text)}
 
     .tip-box{
-      background: rgba(134,239,172,.08);
-      border:1px solid rgba(134,239,172,.35);
+      /* SF3a: Blue instead of green for colorblind accessibility */
+      background: rgba(0,122,255,.08);
+      border:1px solid rgba(0,122,255,.35);
       border-radius:12px;
       padding:16px;
       margin:14px 0;

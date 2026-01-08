@@ -9,10 +9,11 @@
     <link rel="apple-touch-icon" href="/assets/stuffolio-logo2.png" />
     <style>
         :root {
+            /* SF3a Colorblind-Safe Palette */
             --primary: #007AFF;
-            --secondary: #5856D6;
-            --success: #34C759;
-            --warning: #FF9500;
+            --secondary: #007AFF;
+            --success: #007AFF;  /* SF3a: Blue instead of green */
+            --warning: #FFCC00;  /* SF3a: Yellow instead of orange */
             --danger: #FF3B30;
             --background: #f5f5f7;
             --card-bg: #ffffff;
@@ -1272,7 +1273,7 @@
             <h3>Global Shortcuts</h3>
             <table>
                 <tr><th>Shortcut</th><th>Action</th></tr>
-                <tr><td><kbd>⌘K</kbd></td><td>Open Quick Find</td></tr>
+                <tr><td><kbd>⌘K</kbd></td><td>Open Go To (navigate features)</td></tr>
                 <tr><td><kbd>⌘N</kbd></td><td>Add New Product</td></tr>
                 <tr><td><kbd>⌘,</kbd></td><td>Open Settings</td></tr>
                 <tr><td><kbd>⌘W</kbd></td><td>Close Window</td></tr>
@@ -1312,12 +1313,13 @@
                 <tr><td><kbd>Escape</kbd></td><td>Cancel / Close</td></tr>
             </table>
 
-            <h3>Using Quick Find</h3>
+            <h3>Using Go To</h3>
+            <p>"Go To" helps you navigate to features, tools, and help within Stuffolio. To search your products, go to My Products.</p>
             <ol>
                 <li>Press <kbd>⌘K</kbd> anywhere in the app</li>
-                <li>A search overlay appears</li>
-                <li>Type your search term</li>
-                <li>Results show Products, Actions, and Settings</li>
+                <li>A navigation overlay appears</li>
+                <li>Type to find features, actions, or help topics</li>
+                <li>Results show Actions, Tools, and Settings</li>
                 <li>Use <kbd>↑</kbd> / <kbd>↓</kbd> to navigate</li>
                 <li>Press <kbd>Return</kbd> to open selected item</li>
                 <li>Press <kbd>Escape</kbd> to close</li>

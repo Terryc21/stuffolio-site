@@ -9,10 +9,11 @@
     <link rel="apple-touch-icon" href="/assets/stuffolio-logo2.png" />
     <style>
         :root {
+            /* SF3a Colorblind-Safe Palette */
             --primary: #007AFF;
-            --secondary: #5856D6;
-            --success: #34C759;
-            --warning: #FF9500;
+            --secondary: #007AFF;
+            --success: #007AFF;  /* SF3a: Blue instead of green */
+            --warning: #FFCC00;  /* SF3a: Yellow instead of orange */
             --danger: #FF3B30;
             --background: #f5f5f7;
             --card-bg: #ffffff;
@@ -1030,18 +1031,21 @@
             </ol>
 
             <h3>Searching for Products</h3>
+            <p>The search bar is always visible at the top of My Products.</p>
             <ol>
-                <li>Pull down on the product list to reveal the search bar</li>
                 <li>Tap the search field and type your search term</li>
                 <li>Stuffolio searches: Product name, Manufacturer, Model number, Serial number, Notes</li>
                 <li>Results appear as you type</li>
                 <li>Tap a result to view the product</li>
             </ol>
+            <div class="tip">
+                <strong>Pull to Refresh:</strong> Pull down on the list to refresh data, recalculate warranty statuses, and sync (if enabled).
+            </div>
 
             <h3>Using Quick Actions (Swipe)</h3>
             <ul>
-                <li><strong>Swipe Left:</strong> Delete (red), Edit (blue)</li>
-                <li><strong>Swipe Right:</strong> AI Help (purple), View (teal)</li>
+                <li><strong>Swipe Left:</strong> Delete (red), Archive (blue)</li>
+                <li><strong>Swipe Right:</strong> Edit (blue) — full swipe opens Edit directly</li>
             </ul>
 
             <h3>Using the Context Menu (Long Press)</h3>
@@ -1068,8 +1072,7 @@
             <h3>Opening the AI Assistant</h3>
             <ul>
                 <li><strong>From a Product:</strong> Open any product's detail view, tap <strong>AI Assistant</strong></li>
-                <li><strong>From My Products List:</strong> Swipe right on a product, tap <strong>AI Help</strong></li>
-                <li>Or long-press a product and select <strong>AI Assistant</strong></li>
+                <li><strong>From My Products List:</strong> Long-press a product and select <strong>AI Assistant</strong></li>
             </ul>
 
             <h3>Choosing a Query Type</h3>
@@ -1286,49 +1289,51 @@
 
         <section id="settings">
             <h2>Configuring Settings</h2>
+            <p>Settings is organized into 6 streamlined categories (plus Beta Testing during TestFlight):</p>
 
-            <h3>Your Opt-in Preferences (First Thing You See)</h3>
-            <p>The first section in Settings is <strong>Your Opt-in Preferences</strong> — a dashboard showing all features that require your explicit permission.</p>
-
+            <h3>1. Privacy &amp; Opt-Ins</h3>
+            <p>The first section — all optional features require your explicit permission.</p>
             <div class="tip">
-                <strong>Privacy First:</strong> All optional features (network access, AI features, system integrations) are <strong>OFF by default</strong>. You choose what to enable.
+                <strong>Privacy First:</strong> All optional features (network access, AI, system integrations) are <strong>OFF by default</strong>. You choose what to enable.
             </div>
-
-            <p><strong>The Dashboard Shows:</strong></p>
             <ul>
-                <li><strong>Network &amp; Online</strong> — Cloud sync, recall checker, UPC lookup, AI assistant (5 features)</li>
-                <li><strong>Search &amp; Siri</strong> — Spotlight Search, Handoff, Siri Shortcuts (3 features)</li>
-                <li><strong>Device Features</strong> — Focus Filters, Interactive Widgets (2 features)</li>
-                <li><strong>Activity &amp; Data</strong> — Activity history, crash reporting (2 features)</li>
+                <li><strong>Network &amp; Online</strong> — Cloud sync, recall checker, UPC lookup, AI assistant</li>
+                <li><strong>Search &amp; Siri</strong> — Spotlight Search, Handoff, Siri Shortcuts</li>
+                <li><strong>Device Features</strong> — Focus Filters, Interactive Widgets</li>
+                <li><strong>Activity &amp; Data</strong> — Activity history, crash reporting</li>
             </ul>
-            <p>Each category shows how many features are currently enabled (e.g., "2 of 5 enabled").</p>
 
-            <p><strong>To Configure:</strong></p>
-            <ol>
-                <li>Tap/click any category row</li>
-                <li>Review the features and their descriptions</li>
-                <li>Toggle ON only the features you want</li>
-                <li>Return to see your updated counts</li>
-            </ol>
+            <h3>2. Sync &amp; Account</h3>
+            <ul>
+                <li><strong>iCloud Sync:</strong> Toggle sync across your devices</li>
+                <li><strong>Hub Connection:</strong> Connect to Inventory Hub</li>
+                <li><strong>Sync Status:</strong> View last sync time and status</li>
+            </ul>
 
-            <h3>Appearance Settings</h3>
+            <h3>3. Appearance</h3>
             <ul>
                 <li><strong>Theme:</strong> System, Light, or Dark</li>
+                <li><strong>List Density:</strong> Auto, Compact, or Standard (NEW in SF3a)</li>
                 <li><strong>App Icon:</strong> Choose from available icons (iPhone/iPad only)</li>
             </ul>
 
-            <h3>Notification Settings</h3>
+            <h3>4. Notifications</h3>
             <ul>
                 <li>Toggle: Warranty Expiring, Maintenance Due, Loan Due</li>
                 <li><strong>Advance Notice:</strong> 7, 14, or 30 days before</li>
             </ul>
 
-            <h3>Default Settings</h3>
+            <h3>5. Data Management</h3>
             <ul>
-                <li><strong>Default Category:</strong> Pre-selected for new products</li>
-                <li><strong>Default Location:</strong> Pre-filled for new products</li>
-                <li><strong>Depreciation Rate:</strong> Annual percentage for value calculation</li>
-                <li><strong>Currency:</strong> Display currency for prices</li>
+                <li><strong>Import/Export:</strong> CSV, PDF, JSON formats</li>
+                <li><strong>Backup/Restore:</strong> Local backups</li>
+                <li><strong>Diagnostics:</strong> Advanced troubleshooting</li>
+            </ul>
+
+            <h3>6. About</h3>
+            <ul>
+                <li>Version info, updates, support, legal</li>
+                <li>Enhancements and feature requests</li>
             </ul>
             <a href="#toc" class="back-to-top">Back to Contents</a>
         </section>
@@ -1340,7 +1345,7 @@
             <h3>Global Shortcuts</h3>
             <table>
                 <tr><th>Shortcut</th><th>Action</th></tr>
-                <tr><td><kbd>&#8984;K</kbd></td><td>Open Quick Find</td></tr>
+                <tr><td><kbd>&#8984;K</kbd></td><td>Open Go To (navigate features)</td></tr>
                 <tr><td><kbd>&#8984;N</kbd></td><td>Add New Product</td></tr>
                 <tr><td><kbd>&#8984;,</kbd></td><td>Open Settings</td></tr>
             </table>
@@ -1355,13 +1360,17 @@
                 <tr><td><kbd>&#8984;5</kbd></td><td>Stuff Scout</td></tr>
             </table>
 
-            <h3>Using Quick Find</h3>
+            <h3>Using Go To</h3>
+            <p>"Go To" helps you quickly navigate to features, tools, and help within Stuffolio. To search your products, go to My Products.</p>
             <ol>
                 <li>Press <kbd>&#8984;K</kbd> anywhere in the app</li>
-                <li>Type your search term</li>
+                <li>Type to find features, actions, or help topics</li>
                 <li>Use arrow keys to navigate results</li>
                 <li>Press Return to open, Escape to close</li>
             </ol>
+            <div class="tip">
+                <strong>Tip:</strong> Go To is for navigating the app. To search your products, type "My Products" or go directly to the My Products tab.
+            </div>
             <a href="#toc" class="back-to-top">Back to Contents</a>
         </section>
 
