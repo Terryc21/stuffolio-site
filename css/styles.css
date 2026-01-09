@@ -524,6 +524,53 @@ footer a:hover { color: var(--text) }
   box-shadow: 0 12px 40px rgba(0,0,0,.4);
 }
 
+/* Screenshot container with expand overlay */
+.screenshot-container {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.screenshot-container::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,.5);
+  border-radius: 12px;
+  opacity: 0;
+  transition: opacity .25s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.screenshot-container::after {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%) scale(.8);
+  width: 48px; height: 48px;
+  background: rgba(255,255,255,.95);
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity .25s ease, transform .25s ease;
+  pointer-events: none;
+  z-index: 2;
+  /* Expand icon using CSS */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 24px;
+}
+
+.screenshot-container:hover::before {
+  opacity: 1;
+}
+
+.screenshot-container:hover::after {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
 /* ===== FAQ / Details Styles (Support Page) ===== */
 details {
   background: var(--card);
