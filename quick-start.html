@@ -19,94 +19,19 @@
   <link rel="icon" type="image/png" href="/assets/stuffolio-logo2.png" />
   <link rel="apple-touch-icon" href="/assets/stuffolio-logo2.png" />
 
+  <!-- Shared Styles -->
+  <link rel="stylesheet" href="/css/styles.css" />
+
+  <!-- Page-specific styles -->
   <style>
-    :root{
-      /* SF3a Colorblind-Safe Palette */
-      --bg:#0b1220; --card:#111b2e; --muted:#a9b4c7; --text:#e7ecf6;
-      --line:rgba(255,255,255,.12); --accent:#7dd3fc; --accent2:#007AFF;
-      --good:#007AFF; /* SF3a: Blue instead of green */
-      --warning:#FFCC00; /* SF3a: Yellow for warnings */
-      --radius:18px; --shadow: 0 10px 30px rgba(0,0,0,.35);
-      --max: 900px;
-    }
-    .light-mode{
-      --bg:#f5f5f7 !important; --card:#ffffff !important; --muted:#555 !important; --text:#1a1a1a !important;
-      --line:rgba(0,0,0,.12) !important; --accent:#0066cc !important; --accent2:#007AFF !important;
-      --good:#007AFF !important; /* SF3a: Blue instead of green */
-      --shadow: 0 4px 20px rgba(0,0,0,.08) !important;
-    }
-    .light-mode body{background:#f5f5f7 !important; color:#1a1a1a !important}
-    .light-mode .card{background:#fff !important; border-color:rgba(0,0,0,.1) !important}
-    .light-mode p, .light-mode li, .light-mode .step-num{color:#555 !important}
-    .light-mode h2, .light-mode h3{color:#0066cc !important}
-    .light-mode a{color:#0066cc !important}
-    .light-mode .highlight{background:rgba(0,102,204,.08) !important; border-color:rgba(0,102,204,.25) !important}
-    .light-mode .highlight p{color:#333 !important}
-    .light-mode .tip-box{background:rgba(0,122,255,.08) !important; border-color:rgba(0,122,255,.35) !important}
-    .light-mode .tip-box p{color:#333 !important}
-    .light-mode .phase-card{background:rgba(0,0,0,.03) !important; border-color:rgba(0,0,0,.1) !important}
-    .light-mode nav a, .light-mode footer, .light-mode footer a{color:#666 !important}
-    .light-mode .theme-toggle{border-color:rgba(0,0,0,.15) !important; color:#666 !important}
-    .light-mode .pill{color:#555 !important; border-color:rgba(0,0,0,.15) !important}
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,Arial,sans-serif;
-      background: var(--bg);
-      color:var(--text);
-      line-height:1.6;
-      transition: background .3s, color .3s;
-    }
-    body::before{
-      content:'';
-      position:fixed; top:0; left:0; right:0; bottom:0;
-      background:
-        radial-gradient(1200px 700px at 20% 0%, rgba(125,211,252,.18), transparent 55%),
-        radial-gradient(900px 600px at 85% 10%, rgba(167,139,250,.18), transparent 55%);
-      pointer-events:none;
-      z-index:-1;
-      opacity:1;
-      transition: opacity .3s;
-    }
-    .light-mode body::before{
-      opacity:0;
-    }
-    a{color:var(--accent)}
-    a:hover{color:var(--text)}
-    .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 72px}
+    :root { --max: 900px }
+    h2 { font-size:1.4rem; margin:28px 0 12px; color:var(--accent) }
+    h3 { font-size:1.1rem; margin:18px 0 8px; color:var(--accent2) }
+    p { margin:0 0 14px; color:var(--muted) }
+    a { color:var(--accent) }
+    a:hover { color:var(--text) }
 
-    header{
-      display:flex; align-items:center; justify-content:space-between; gap:14px;
-      padding:14px 0 26px;
-    }
-    nav{display:flex; gap:14px; flex-wrap:wrap}
-    nav a{
-      text-decoration:none; color:var(--muted);
-      padding:8px 10px; border-radius:10px; border:1px solid transparent;
-    }
-    nav a:hover{border-color:var(--line); color:var(--text)}
-
-    .card{
-      background: rgba(17,27,46,.72);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding:28px;
-      backdrop-filter: blur(10px);
-      margin-bottom:18px;
-      transition: background .3s, border-color .3s;
-    }
-
-    h1{font-size:2.2rem; margin:0 0 8px}
-    h2{font-size:1.4rem; margin:28px 0 12px; color:var(--accent)}
-    h3{font-size:1.1rem; margin:18px 0 8px; color:var(--accent2)}
-    p{margin:0 0 14px; color:var(--muted)}
-    .lead{font-size:1.1rem; color:var(--text); margin-bottom:18px}
-
-    ul{margin:10px 0 14px 20px; color:var(--muted)}
-    li{margin:6px 0}
-
-    .highlight{
+    .highlight {
       background: rgba(125,211,252,.08);
       border:1px solid rgba(125,211,252,.25);
       border-radius:12px;
@@ -114,10 +39,9 @@
       margin:14px 0;
       transition: background .3s, border-color .3s;
     }
-    .highlight p{margin:0; color:var(--text)}
+    .highlight p { margin:0; color:var(--text) }
 
-    .tip-box{
-      /* SF3a: Blue instead of green for colorblind accessibility */
+    .tip-box {
       background: rgba(0,122,255,.08);
       border:1px solid rgba(0,122,255,.35);
       border-radius:12px;
@@ -125,28 +49,22 @@
       margin:14px 0;
       transition: background .3s, border-color .3s;
     }
-    .tip-box p{margin:0; color:var(--text)}
+    .tip-box p { margin:0; color:var(--text) }
 
-    .pill{
-      display:inline-block; font-size:.85rem; color:var(--muted);
-      padding:6px 10px; border-radius:999px; border:1px solid var(--line);
-      margin-bottom:10px;
-    }
-
-    .steps{
+    .steps {
       counter-reset: step-counter;
       list-style:none;
       margin:14px 0;
       padding:0;
     }
-    .steps li{
+    .steps li {
       counter-increment: step-counter;
       position:relative;
       padding-left:48px;
       margin-bottom:16px;
       color:var(--muted);
     }
-    .steps li::before{
+    .steps li::before {
       content: counter(step-counter);
       position:absolute;
       left:0; top:0;
@@ -158,50 +76,34 @@
       font-weight:700; font-size:.95rem;
     }
 
-    .grid{display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:14px}
-    @media (max-width:800px){ .grid{grid-template-columns:1fr} }
-
-    .phase-card{
+    .phase-card {
       background: rgba(255,255,255,.04);
       border:1px solid var(--line);
       border-radius:14px;
       padding:18px;
       transition: background .3s, border-color .3s;
     }
-    .phase-card h3{margin-top:0}
+    .phase-card h3 { margin-top:0 }
 
-    .feature-grid{display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:14px}
-    @media (max-width:600px){ .feature-grid{grid-template-columns:1fr} }
+    .feature-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:14px }
+    @media (max-width:600px) { .feature-grid { grid-template-columns:1fr } }
 
-    .feature-item{
+    .feature-item {
       background: rgba(255,255,255,.04);
       border:1px solid var(--line);
       border-radius:12px;
       padding:16px;
       transition: background .3s, border-color .3s;
     }
-    .feature-item h3{margin-top:0; margin-bottom:6px}
-    .feature-item p{margin:0; font-size:.95rem}
+    .feature-item h3 { margin-top:0; margin-bottom:6px }
+    .feature-item p { margin:0; font-size:.95rem }
 
-    .divider{height:1px; background:var(--line); margin:24px 0}
-
-    .theme-toggle{
-      background:none; border:1px solid var(--line);
-      border-radius:10px; padding:8px 12px;
-      cursor:pointer; color:var(--muted);
-      font-size:1rem; display:flex; align-items:center; gap:6px;
-      transition: border-color .2s, color .2s;
-    }
-    .theme-toggle:hover{border-color:var(--accent); color:var(--text)}
-
-    footer{
-      margin-top:28px; color:var(--muted);
-      display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center;
-      gap:14px;
-      font-size:.92rem;
-    }
-    footer a{color:var(--muted); text-decoration:none}
-    footer a:hover{color:var(--text)}
+    /* Light mode overrides */
+    .light-mode .highlight { background:rgba(0,102,204,.08) !important; border-color:rgba(0,102,204,.25) !important }
+    .light-mode .highlight p { color:#333 !important }
+    .light-mode .tip-box { background:rgba(0,122,255,.08) !important; border-color:rgba(0,122,255,.35) !important }
+    .light-mode .tip-box p { color:#333 !important }
+    .light-mode .phase-card { background:rgba(0,0,0,.03) !important; border-color:rgba(0,0,0,.1) !important }
   </style>
 </head>
 
