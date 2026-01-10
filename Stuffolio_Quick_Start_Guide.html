@@ -15,6 +15,75 @@
             --border: #d2d2d7;
         }
 
+        @media (prefers-color-scheme: dark) {
+            :root:not([data-theme="light"]) {
+                --background: #1d1d1f;
+                --card-bg: #2d2d2d;
+                --text: #f5f5f7;
+                --text-secondary: #a1a1a6;
+                --border: #424245;
+            }
+        }
+
+        [data-theme="dark"] {
+            --background: #1d1d1f;
+            --card-bg: #2d2d2d;
+            --text: #f5f5f7;
+            --text-secondary: #a1a1a6;
+            --border: #424245;
+        }
+
+        /* Theme Toggle Switch */
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--card-bg);
+            padding: 8px 16px;
+            border-radius: 24px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+            border: 1px solid var(--border);
+        }
+
+        .theme-toggle-switch {
+            position: relative;
+            width: 50px;
+            height: 26px;
+            background: var(--border);
+            border-radius: 13px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .theme-toggle-switch::before {
+            content: '';
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            width: 20px;
+            height: 20px;
+            background: white;
+            border-radius: 50%;
+            transition: transform 0.3s;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .theme-toggle-switch.dark {
+            background: var(--primary);
+        }
+
+        .theme-toggle-switch.dark::before {
+            transform: translateX(24px);
+        }
+
+        .theme-icon {
+            font-size: 1.1em;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -144,6 +213,13 @@
     </style>
 </head>
 <body>
+    <!-- Theme Toggle -->
+    <div class="theme-toggle">
+        <span class="theme-icon">☀️</span>
+        <div class="theme-toggle-switch" id="themeToggle" onclick="toggleTheme()"></div>
+        <span class="theme-icon">🌙</span>
+    </div>
+
     <div class="container">
         <h1>Stuffolio Quick Start Guide</h1>
         <p class="subtitle">Your Personal Product Manager</p>
@@ -293,5 +369,32 @@
             <p>&copy; 2025 Coffee &amp; Code LLC. All rights reserved.</p>
         </div>
     </div>
+
+    <script>
+        function initTheme() {
+            const savedTheme = localStorage.getItem('stuffolio-docs-theme');
+            const toggle = document.getElementById('themeToggle');
+            if (savedTheme) {
+                document.documentElement.setAttribute('data-theme', savedTheme);
+                if (savedTheme === 'dark') toggle.classList.add('dark');
+            } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                toggle.classList.add('dark');
+            }
+        }
+        function toggleTheme() {
+            const toggle = document.getElementById('themeToggle');
+            const isDark = toggle.classList.contains('dark');
+            if (isDark) {
+                document.documentElement.setAttribute('data-theme', 'light');
+                toggle.classList.remove('dark');
+                localStorage.setItem('stuffolio-docs-theme', 'light');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                toggle.classList.add('dark');
+                localStorage.setItem('stuffolio-docs-theme', 'dark');
+            }
+        }
+        initTheme();
+    </script>
 </body>
 </html>
