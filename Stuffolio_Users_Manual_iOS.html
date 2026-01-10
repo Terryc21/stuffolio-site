@@ -3,17 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User's Manual for iPhone & iPad — Stuffolio</title>
-    <meta name="description" content="Complete step-by-step guide for using Stuffolio on iPhone and iPad." />
-    <link rel="icon" type="image/png" href="/assets/stuffolio-logo2.png" />
-    <link rel="apple-touch-icon" href="/assets/stuffolio-logo2.png" />
+    <title>Stuffolio User's Manual for iPhone & iPad</title>
     <style>
         :root {
-            /* SF3a Colorblind-Safe Palette */
             --primary: #007AFF;
-            --secondary: #007AFF;
-            --success: #007AFF;  /* SF3a: Blue instead of green */
-            --warning: #FFCC00;  /* SF3a: Yellow instead of orange */
+            --secondary: #5856D6;
+            --success: #34C759;
+            --warning: #FF9500;
             --danger: #FF3B30;
             --background: #f5f5f7;
             --card-bg: #ffffff;
@@ -30,43 +26,6 @@
                 --text-secondary: #a1a1a6;
                 --border: #424245;
             }
-        }
-
-        /* Light mode override (when manually selected) */
-        .light-mode {
-            --background: #f5f5f7;
-            --card-bg: #ffffff;
-            --text: #1d1d1f;
-            --text-secondary: #86868b;
-            --border: #d2d2d7;
-        }
-
-        /* Dark mode override (when manually selected) */
-        .dark-mode {
-            --background: #1d1d1f;
-            --card-bg: #2d2d2d;
-            --text: #f5f5f7;
-            --text-secondary: #a1a1a6;
-            --border: #424245;
-        }
-
-        /* Theme toggle button */
-        .theme-toggle {
-            background: none;
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 6px 10px;
-            cursor: pointer;
-            color: var(--text-secondary);
-            font-size: 1rem;
-            display: flex;
-            align-items: center;
-            transition: border-color 0.2s, color 0.2s;
-        }
-
-        .theme-toggle:hover {
-            border-color: var(--primary);
-            color: var(--text);
         }
 
         * {
@@ -381,127 +340,10 @@
             section {
                 padding: 20px;
             }
-            .site-nav {
-                flex-direction: column;
-                gap: 12px;
-            }
-            .site-nav-links {
-                justify-content: center;
-            }
-        }
-
-        /* Site Navigation */
-        .site-nav {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 16px 24px;
-            background: var(--card-bg);
-            border-bottom: 1px solid var(--border);
-        }
-        .site-nav-brand {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            text-decoration: none;
-            color: var(--text);
-            font-weight: 600;
-        }
-        .site-nav-brand img {
-            width: 32px;
-            height: 32px;
-            border-radius: 8px;
-        }
-        .site-nav-links {
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-        }
-        .site-nav-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            padding: 6px 12px;
-            border-radius: 8px;
-            font-size: 0.9em;
-            transition: all 0.2s;
-        }
-        .site-nav-links a:hover {
-            background: var(--background);
-            color: var(--text);
-        }
-        .site-nav-links a.active {
-            background: var(--primary);
-            color: white;
-        }
-
-        /* Platform Selector */
-        .platform-selector {
-            display: flex;
-            gap: 12px;
-            justify-content: center;
-            margin-top: 20px;
-            flex-wrap: wrap;
-        }
-        .platform-selector a {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 10px 20px;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.95em;
-            transition: all 0.2s;
-        }
-        .platform-selector a.all-platforms {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            color: var(--text);
-        }
-        .platform-selector a.all-platforms:hover {
-            border-color: var(--primary);
-            background: rgba(0,122,255,0.1);
-        }
-        .platform-selector a.ios {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-        }
-        .platform-selector a.macos {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            color: var(--text);
-        }
-        .platform-selector a.macos:hover {
-            border-color: var(--secondary);
-            background: rgba(88,86,214,0.1);
-        }
-
-        @media print {
-            .site-nav, .platform-selector {
-                display: none;
-            }
         }
     </style>
 </head>
 <body>
-    <!-- Site Navigation -->
-    <nav class="site-nav">
-        <a href="/" class="site-nav-brand">
-            <img src="/assets/stuffolio-logo2.png" alt="Stuffolio">
-            <span>Stuffolio</span>
-        </a>
-        <div class="site-nav-links">
-            <a href="/">Home</a>
-            <a href="/quick-start.html">Quick Start</a>
-            <a href="/Stuffolio_Users_Manual.html" class="active">User Manual</a>
-            <a href="/support.html">Support</a>
-            <a href="/privacy.html">Privacy</a>
-            <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode">
-                <span id="themeIcon">☀️</span>
-            </button>
-        </div>
-    </nav>
-
     <div class="container">
         <header>
             <h1>Stuffolio User's Manual</h1>
@@ -510,13 +352,6 @@
             <div class="platform-badges">
                 <span class="platform-badge">iPhone</span>
                 <span class="platform-badge">iPad</span>
-            </div>
-
-            <!-- Platform Selector -->
-            <div class="platform-selector">
-                <a href="/Stuffolio_Users_Manual.html" class="all-platforms">All Platforms</a>
-                <a href="/Stuffolio_Users_Manual_iOS.html" class="ios">iPhone & iPad</a>
-                <a href="/Stuffolio_Users_Manual_macOS.html" class="macos">Mac</a>
             </div>
         </header>
 
@@ -537,8 +372,10 @@
                 <li><a href="#recalls">Checking for Recalls</a></li>
                 <li><a href="#exporting">Exporting Your Data</a></li>
                 <li><a href="#importing">Importing Products</a></li>
+                <li><a href="#data-review">Reviewing Data Quality</a></li>
                 <li><a href="#icloud">Using iCloud Sync</a></li>
                 <li><a href="#settings">Configuring Settings</a></li>
+                <li><a href="#legacy-wishes">Legacy Wishes</a></li>
                 <li><a href="#ipad-features">iPad Features</a></li>
                 <li><a href="#accessibility">Accessibility</a></li>
                 <li><a href="#troubleshooting">Troubleshooting</a></li>
@@ -1226,6 +1063,65 @@
             <a href="#toc" class="back-to-top">↑ Back to Contents</a>
         </section>
 
+        <section id="data-review">
+            <h2>Reviewing Data Quality</h2>
+            <p>Keep your inventory complete and organized with the Data Review feature.</p>
+
+            <h3>Accessing Data Review</h3>
+            <ol>
+                <li>Go to <strong>Settings > Data Management</strong></li>
+                <li>Scroll to the <strong>Data Quality</strong> section</li>
+                <li>Tap <strong>Review Items</strong></li>
+            </ol>
+
+            <h3>What Data Review Shows</h3>
+            <p><strong>Items Without Photos:</strong></p>
+            <ul>
+                <li>Products that don't have any photos attached</li>
+                <li>Tap an item to open it and add photos</li>
+                <li>Items are sorted by most recent first</li>
+            </ul>
+
+            <p><strong>Potential Duplicates:</strong></p>
+            <ul>
+                <li>Products with the same title and manufacturer</li>
+                <li>Grouped together for easy comparison</li>
+                <li>Tap any item to view details and verify</li>
+            </ul>
+
+            <h3>Using Data Review</h3>
+            <p><strong>To add photos to an item:</strong></p>
+            <ol>
+                <li>Tap the item row (anywhere except the OK button)</li>
+                <li>The item detail view opens</li>
+                <li>Tap <strong>Add Image</strong> to attach photos</li>
+                <li>Navigate back to continue reviewing</li>
+            </ol>
+
+            <p><strong>To dismiss an item from future reviews:</strong></p>
+            <ol>
+                <li>Tap the <strong>OK</strong> button next to the item</li>
+                <li>The item is marked as reviewed</li>
+                <li>It won't appear in future Data Reviews</li>
+            </ol>
+
+            <p><strong>To reset dismissed items:</strong></p>
+            <ol>
+                <li>Scroll to the bottom of Data Review</li>
+                <li>Find "X items reviewed and hidden"</li>
+                <li>Tap <strong>Show Again</strong></li>
+                <li>Confirm to reset all dismissed items</li>
+            </ol>
+
+            <h3>Tips</h3>
+            <ul>
+                <li>Review your data periodically to keep it complete</li>
+                <li>Adding photos helps with insurance claims and identification</li>
+                <li>Dismissing an item doesn't delete it — just hides it from the review list</li>
+            </ul>
+            <a href="#toc" class="back-to-top">↑ Back to Contents</a>
+        </section>
+
         <section id="icloud">
             <h2>Using iCloud Sync</h2>
 
@@ -1261,38 +1157,6 @@
             <p><span class="device-note">iPhone</span> Tap <strong>Settings</strong> in the tab bar</p>
             <p><span class="device-note">iPad</span> Tap <strong>Settings</strong> in the sidebar</p>
 
-            <h3>Your Opt-in Preferences (First Thing You See)</h3>
-            <p>The first section you'll see in Settings is <strong>Your Opt-in Preferences</strong> — a dashboard showing all features that require your explicit permission.</p>
-
-            <div class="tip">
-                <strong>Privacy First:</strong> All optional features (network access, AI features, system integrations) are <strong>OFF by default</strong>. You choose what to enable.
-            </div>
-
-            <p><strong>The Dashboard Shows:</strong></p>
-            <ul>
-                <li><strong>Network &amp; Online</strong> — Cloud sync, recall checker, UPC lookup, AI assistant (5 features)</li>
-                <li><strong>Search &amp; Siri</strong> — Spotlight Search, Handoff, Siri Shortcuts (3 features)</li>
-                <li><strong>Device Features</strong> — Focus Filters, Interactive Widgets (2 features)</li>
-                <li><strong>Activity &amp; Data</strong> — Activity history, crash reporting (2 features)</li>
-            </ul>
-            <p>Each category shows how many features are currently enabled (e.g., "2 of 5 enabled").</p>
-
-            <p><strong>To Configure:</strong></p>
-            <ol>
-                <li>Tap any category row</li>
-                <li>Review the features and their descriptions</li>
-                <li>Toggle ON only the features you want</li>
-                <li>Return to see your updated counts</li>
-            </ol>
-
-            <p><strong>Example — Enabling Spotlight Search:</strong></p>
-            <ol>
-                <li>Tap <strong>Search &amp; Siri</strong></li>
-                <li>Read what Spotlight Search does (find your products in iOS search)</li>
-                <li>Toggle <strong>Spotlight Search</strong> ON</li>
-                <li>Your products become searchable via Spotlight</li>
-            </ol>
-
             <h3>Appearance Settings</h3>
             <p>Go to <strong>Settings > Appearance</strong></p>
             <p><strong>Theme:</strong> Select System (matches device), Light, or Dark</p>
@@ -1318,6 +1182,51 @@
             <a href="#toc" class="back-to-top">↑ Back to Contents</a>
         </section>
 
+        <section id="legacy-wishes">
+            <h2>Legacy Wishes</h2>
+            <p>Record who should receive your personal belongings. Legacy Wishes helps you document your preferences for family and loved ones.</p>
+
+            <div class="tip warning">
+                <strong>Important:</strong> Legacy Wishes is not a will or legal document. It simply records your wishes about personal belongings. For legally binding arrangements, consult an attorney.
+            </div>
+
+            <h3>Enabling Legacy Wishes</h3>
+            <ol>
+                <li>Go to <strong>Settings &gt; Legacy Planning</strong></li>
+                <li>Toggle on <strong>Enable Legacy Wishes</strong></li>
+                <li>Legacy Wishes appears in the navigation</li>
+            </ol>
+
+            <h3>Adding Recipients</h3>
+            <ol>
+                <li>Open <strong>Legacy Wishes</strong></li>
+                <li>Tap <strong>Recipients</strong></li>
+                <li>Tap <strong>+ Add Recipient</strong></li>
+                <li>Enter name, relationship, and optional details</li>
+                <li>Tap <strong>Save</strong></li>
+            </ol>
+
+            <h3>Assigning Items</h3>
+            <ol>
+                <li>Open any product's detail view</li>
+                <li>Scroll to <strong>Legacy Wishes</strong> section</li>
+                <li>Tap <strong>Assign This Item</strong></li>
+                <li>Select recipient(s) and fallback disposition</li>
+                <li>Tap <strong>Save</strong></li>
+            </ol>
+
+            <h3>Sharing Your Wishes</h3>
+            <ul>
+                <li><strong>Export as PDF</strong> — Create a document to print or email</li>
+                <li><strong>Share with Family</strong> — Let family view in-app (View Only or View &amp; Input)</li>
+            </ul>
+
+            <h3>Family Collaboration</h3>
+            <p>When enabled, family members can indicate preferences (Interested, No Preference, Declined). You always make final decisions.</p>
+
+            <a href="#toc" class="back-to-top">↑ Back to Contents</a>
+        </section>
+
         <section id="ipad-features">
             <h2>iPad Features</h2>
             <p>Stuffolio is optimized for iPad with additional features.</p>
@@ -1340,7 +1249,7 @@
             <h3>Keyboard Shortcuts (with external keyboard)</h3>
             <table>
                 <tr><th>Shortcut</th><th>Action</th></tr>
-                <tr><td><kbd>⌘K</kbd></td><td>Go To (navigate features)</td></tr>
+                <tr><td><kbd>⌘K</kbd></td><td>Go To</td></tr>
                 <tr><td><kbd>⌘N</kbd></td><td>Add New Product</td></tr>
                 <tr><td><kbd>⌘1</kbd></td><td>Dashboard</td></tr>
                 <tr><td><kbd>⌘2</kbd></td><td>My Products</td></tr>
@@ -1350,17 +1259,46 @@
                 <tr><td><kbd>⌘,</kbd></td><td>Settings</td></tr>
             </table>
 
-            <h3>Using Go To</h3>
-            <p>"Go To" helps you navigate to features, tools, and help. To search your products, go to My Products.</p>
+            <h3>Using Go To (⌘K)</h3>
+            <p>Go To is Stuffolio's command palette — a quick way to navigate anywhere in the app, launch actions, access tools, and get help without leaving your current screen.</p>
+
+            <h4>Opening Go To</h4>
+            <table>
+                <tr><th>Device</th><th>Method</th></tr>
+                <tr><td>iPad with keyboard</td><td>Press <kbd>⌘K</kbd> anywhere in the app</td></tr>
+                <tr><td>iPad</td><td>Tap <strong>Go To</strong> in the toolbar</td></tr>
+                <tr><td>iPhone</td><td>Tap <strong>Go To</strong> button in the toolbar</td></tr>
+            </table>
+
+            <h4>How to Use</h4>
             <ol>
-                <li>Press <kbd>⌘K</kbd> anywhere in the app</li>
-                <li>A navigation overlay appears</li>
-                <li>Type to find features, actions, or help</li>
-                <li>Results appear instantly</li>
-                <li>Use arrow keys to navigate results</li>
-                <li>Press Return to open selected item</li>
-                <li>Press Escape to close</li>
+                <li>Open Go To using your preferred method</li>
+                <li>Start typing to search — results filter instantly</li>
+                <li>Use <kbd>↑</kbd> / <kbd>↓</kbd> arrow keys to navigate (iPad with keyboard)</li>
+                <li>Tap or press <kbd>Return</kbd> to select an item</li>
+                <li>Tap outside or press <kbd>Escape</kbd> to close</li>
             </ol>
+            <div class="tip"><strong>Tip:</strong> You don't need to type exact names. Go To searches titles, subtitles, and keywords.</div>
+
+            <h4>Available Commands</h4>
+            <p>Go To provides access to 27 commands across 6 categories:</p>
+            <table>
+                <tr><th>Category</th><th>Items</th></tr>
+                <tr><td><strong>Actions</strong></td><td>Add Product, Scan Barcode, Import CSV, Export CSV, Export PDF, Backup, Restore, Bulk Operations</td></tr>
+                <tr><td><strong>Navigation</strong></td><td>Dashboard, My Products, Tools, Reports, Settings, Legacy Wishes</td></tr>
+                <tr><td><strong>Tools</strong></td><td>AI Product Assistant, Check Recalls, Audit Mode</td></tr>
+                <tr><td><strong>Reports</strong></td><td>Inventory Insights, Value Calculator, Depreciation Tracking</td></tr>
+                <tr><td><strong>Help</strong></td><td>Getting Started, Icon Guide, Filter & Sort Help</td></tr>
+                <tr><td><strong>Settings</strong></td><td>Cloud Sync, Notifications, Data Management, About Stuffolio</td></tr>
+            </table>
+
+            <h4>Search Tips</h4>
+            <ul>
+                <li><strong>Type any word</strong> — Search matches titles, descriptions, and keywords</li>
+                <li><strong>Use abbreviations</strong> — "AI" finds AI Product Assistant</li>
+                <li><strong>Partial words work</strong> — "back" finds Backup and Restore</li>
+            </ul>
+            <p><strong>Note:</strong> Go To helps you navigate to features, tools, and help within Stuffolio. To search your products, go to My Products.</p>
 
             <h3>Trackpad & Mouse</h3>
             <ul>
@@ -1548,47 +1486,5 @@
             <p>Stuffolio is a trademark of Coffee & Code LLC.</p>
         </footer>
     </div>
-
-    <script>
-        // Theme toggle
-        const html = document.documentElement;
-        const toggle = document.getElementById('themeToggle');
-        const icon = document.getElementById('themeIcon');
-
-        // Check saved preference or system preference
-        const saved = localStorage.getItem('theme');
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-        // Apply saved theme or use system preference
-        if (saved === 'light') {
-            html.classList.add('light-mode');
-            html.classList.remove('dark-mode');
-            icon.textContent = '🌙';
-        } else if (saved === 'dark') {
-            html.classList.add('dark-mode');
-            html.classList.remove('light-mode');
-            icon.textContent = '☀️';
-        } else {
-            // No saved preference - use system, show toggle for opposite
-            icon.textContent = prefersDark ? '☀️' : '🌙';
-        }
-
-        toggle.addEventListener('click', () => {
-            const isLight = html.classList.contains('light-mode') ||
-                           (!html.classList.contains('dark-mode') && !prefersDark);
-
-            if (isLight) {
-                html.classList.remove('light-mode');
-                html.classList.add('dark-mode');
-                icon.textContent = '☀️';
-                localStorage.setItem('theme', 'dark');
-            } else {
-                html.classList.add('light-mode');
-                html.classList.remove('dark-mode');
-                icon.textContent = '🌙';
-                localStorage.setItem('theme', 'light');
-            }
-        });
-    </script>
 </body>
 </html>

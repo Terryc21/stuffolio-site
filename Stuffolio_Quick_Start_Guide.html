@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stuffolio Quick Start Guide</title>
+    <style>
+        :root {
+            --primary: #007AFF;
+            --secondary: #5856D6;
+            --background: #f5f5f7;
+            --card-bg: #ffffff;
+            --text: #1d1d1f;
+            --text-secondary: #86868b;
+            --border: #d2d2d7;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: var(--background);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            padding: 48px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--primary);
+        }
+
+        .subtitle {
+            font-size: 1.25em;
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            font-weight: 600;
+            margin: 32px 0 16px 0;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--primary);
+        }
+
+        h3 {
+            font-size: 1.2em;
+            font-weight: 600;
+            margin: 24px 0 12px 0;
+            color: var(--secondary);
+        }
+
+        p {
+            margin-bottom: 16px;
+        }
+
+        ol, ul {
+            margin: 16px 0;
+            padding-left: 24px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+        }
+
+        th, td {
+            padding: 12px 16px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        th {
+            background: var(--background);
+            font-weight: 600;
+        }
+
+        .tip {
+            background: #e8f4fd;
+            border-left: 4px solid var(--primary);
+            padding: 16px;
+            margin: 16px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .tip strong {
+            color: var(--primary);
+        }
+
+        code {
+            background: var(--background);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'SF Mono', Monaco, monospace;
+            font-size: 0.9em;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid var(--border);
+            margin: 32px 0;
+        }
+
+        .footer {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.9em;
+            margin-top: 48px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+        }
+
+        @media print {
+            body {
+                padding: 0;
+                background: white;
+            }
+            .container {
+                box-shadow: none;
+                padding: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Stuffolio Quick Start Guide</h1>
+        <p class="subtitle">Your Personal Product Manager</p>
+
+        <hr>
+
+        <h2>What is Stuffolio?</h2>
+        <p>Stuffolio helps you track everything you own — warranties, purchase dates, manuals, and more. Never lose track of when a warranty expires or where you put that receipt again.</p>
+
+        <hr>
+
+        <h2>Getting Started (5 Minutes)</h2>
+
+        <h3>Step 1: Add Your First Product</h3>
+        <ol>
+            <li>Open Stuffolio</li>
+            <li>Tap the <strong>+</strong> button (bottom right on iPhone, toolbar on iPad/Mac)</li>
+            <li>Enter the <strong>Product Name</strong> (required)</li>
+            <li>Add optional details:
+                <ul>
+                    <li><strong>Manufacturer</strong> — Who made it</li>
+                    <li><strong>Model Number</strong> — Found on product label</li>
+                    <li><strong>Serial Number</strong> — For warranty claims</li>
+                    <li><strong>Purchase Date</strong> — When you bought it</li>
+                    <li><strong>Purchase Price</strong> — What you paid</li>
+                    <li><strong>Warranty Expiration</strong> — When coverage ends</li>
+                </ul>
+            </li>
+            <li>Tap <strong>Save</strong></li>
+        </ol>
+
+        <div class="tip">
+            <strong>Pro Tip:</strong> Use the camera icon to scan barcodes or take photos of receipts and labels.
+        </div>
+
+        <h3>Step 2: Organize with Categories</h3>
+        <p>Stuffolio includes 20+ categories to organize your products:</p>
+
+        <table>
+            <tr><th>Category</th><th>Examples</th></tr>
+            <tr><td>Electronics</td><td>TV, laptop, phone</td></tr>
+            <tr><td>Appliances</td><td>Refrigerator, washer, microwave</td></tr>
+            <tr><td>Furniture</td><td>Sofa, desk, bed frame</td></tr>
+            <tr><td>Tools</td><td>Drill, saw, lawn mower</td></tr>
+            <tr><td>Automotive</td><td>Car accessories, bike</td></tr>
+            <tr><td>Sports</td><td>Gym equipment, golf clubs</td></tr>
+        </table>
+
+        <h3>Step 3: Check Your Dashboard</h3>
+        <p>The <strong>Dashboard</strong> shows at-a-glance:</p>
+        <ul>
+            <li><strong>Expiring Soon</strong> — Warranties ending in the next 30 days</li>
+            <li><strong>Needs Attention</strong> — Products missing key info or overdue for maintenance</li>
+            <li><strong>Recently Added</strong> — Your latest additions</li>
+            <li><strong>Quick Stats</strong> — Total products, total value, purchase costs</li>
+        </ul>
+
+        <hr>
+
+        <h2>Key Features</h2>
+
+        <h3>My Products</h3>
+        <p>Browse, search, and filter all your products. Tap any product to view details, edit, or access AI assistance.</p>
+
+        <h3>Smart Scanner</h3>
+        <p>Scan barcodes to auto-fill product information:</p>
+        <ol>
+            <li>Go to <strong>Actions &gt; Smart Scanner</strong></li>
+            <li>Point camera at UPC barcode</li>
+            <li>Review auto-detected product info</li>
+            <li>Save to your inventory</li>
+        </ol>
+
+        <h3>Stuff Scout (AI Identification)</h3>
+        <p>Identify antiques, collectibles, and unknown items:</p>
+        <ol>
+            <li>Go to <strong>Actions &gt; Stuff Scout</strong></li>
+            <li>Take a photo of the item</li>
+            <li>AI analyzes and provides identification, era, maker, and estimated value</li>
+        </ol>
+
+        <h3>AI Product Assistant</h3>
+        <p>Get instant help for any product:</p>
+        <ol>
+            <li>Open a product's detail view</li>
+            <li>Tap <strong>AI Assistant</strong></li>
+            <li>Choose from: Find Manual, Find Warranty Info, Find Parts, Troubleshoot Problems, Maintenance Tips, How-To Videos</li>
+        </ol>
+
+        <h3>Recall Alerts</h3>
+        <p>Check if any of your products have been recalled:</p>
+        <ol>
+            <li>Go to <strong>Insights &gt; Recall Check</strong></li>
+            <li>View active recalls from CPSC database</li>
+            <li>Tap any recall for details and remedy instructions</li>
+        </ol>
+
+        <h3>Legacy Wishes (Optional)</h3>
+        <p>Record who should receive your belongings:</p>
+        <ol>
+            <li>Enable in <strong>Settings &gt; Legacy Planning</strong></li>
+            <li>Add <strong>Recipients</strong> (family, friends, charities)</li>
+            <li>Assign items to recipients from any product's detail view</li>
+            <li>Share as PDF or let family view in-app</li>
+        </ol>
+        <div class="note">
+            <strong>Note:</strong> This is not a legal will — just a way to document your preferences. Consult an attorney for legally binding arrangements.
+        </div>
+
+        <hr>
+
+        <h2>Quick Tips</h2>
+
+        <table>
+            <tr><th>Want to...</th><th>Do this</th></tr>
+            <tr><td>Find a product fast</td><td>Use <strong>Go To</strong> (<code>⌘K</code> on Mac/iPad)</td></tr>
+            <tr><td>See expiring warranties</td><td>Check Dashboard or <strong>Insights &gt; Reports</strong></td></tr>
+            <tr><td>Export your data</td><td>Go to <strong>Settings &gt; Export</strong> (CSV, PDF, Excel)</td></tr>
+            <tr><td>Back up to iCloud</td><td>Enabled by default — syncs across devices</td></tr>
+            <tr><td>Add photos</td><td>Tap camera icon when adding/editing a product</td></tr>
+        </table>
+
+        <hr>
+
+        <h2>Keyboard Shortcuts (iPad &amp; Mac)</h2>
+
+        <table>
+            <tr><th>Shortcut</th><th>Action</th></tr>
+            <tr><td><code>⌘K</code></td><td>Go To</td></tr>
+            <tr><td><code>⌘N</code></td><td>Add New Product</td></tr>
+            <tr><td><code>⌘1</code></td><td>Dashboard</td></tr>
+            <tr><td><code>⌘2</code></td><td>My Products</td></tr>
+            <tr><td><code>⌘3</code></td><td>Reports</td></tr>
+            <tr><td><code>⌘,</code></td><td>Settings</td></tr>
+        </table>
+
+        <hr>
+
+        <h2>Need Help?</h2>
+        <ul>
+            <li><strong>In-App Help:</strong> Tap the <strong>?</strong> icon on any screen</li>
+            <li><strong>Support:</strong> support@stuffolio.app</li>
+            <li><strong>Website:</strong> <a href="https://stuffolio.app">https://stuffolio.app</a></li>
+        </ul>
+
+        <div class="footer">
+            <p>&copy; 2025 Coffee &amp; Code LLC. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>
