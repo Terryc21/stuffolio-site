@@ -84,6 +84,46 @@
             font-size: 1.1em;
         }
 
+        /* Documentation Navigation */
+        .doc-nav {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin: 24px 0;
+            padding: 16px;
+            background: var(--background);
+            border-radius: 12px;
+        }
+
+        .doc-nav a {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 10px 16px;
+            background: var(--card-bg);
+            color: var(--text);
+            text-decoration: none;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            font-size: 0.9em;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .doc-nav a:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            transform: translateY(-1px);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .doc-nav a.current {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -223,6 +263,16 @@
     <div class="container">
         <h1>Stuffolio Quick Start Guide</h1>
         <p class="subtitle">Your Personal Product Manager</p>
+
+        <!-- Documentation Navigation -->
+        <div class="doc-nav">
+            <a href="index.html">🏠 Home</a>
+            <a href="Stuffolio_Quick_Start_Guide.html" class="current">📋 Quick Start</a>
+            <a href="Stuffolio_Users_Manual.html">📖 Full Manual</a>
+            <a href="Stuffolio_Users_Manual_iOS.html">📱 iOS / iPad</a>
+            <a href="Stuffolio_Users_Manual_macOS.html">💻 macOS</a>
+            <a href="support.html">🆘 Support</a>
+        </div>
 
         <hr>
 
