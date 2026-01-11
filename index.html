@@ -147,7 +147,7 @@
 
     </section>
 
-    <!-- Screenshot Showcase -->
+    <!-- Screenshot Carousel -->
     <section id="screenshots" style="margin-top:18px;">
       <div class="card">
         <h2 style="margin-top:0; text-align:center;">See Stuffolio in Action</h2>
@@ -155,190 +155,45 @@
           Beautiful on Mac, iPhone, and iPad — in light or dark mode.
         </p>
 
-        <!-- Hero Screenshot: iPhone + iPad Dashboard -->
-        <div style="margin-bottom:24px;">
-          <div class="screenshot-container">
-            <picture>
-              <source srcset="/assets/thumbs/screenshot-iOS-dashboard-thumb.webp" type="image/webp">
-              <img
-                src="/assets/thumbs/screenshot-iOS-dashboard-thumb.png"
-                alt="Stuffolio Dashboard on iPhone and iPad showing the responsive design"
-                class="screenshot-thumb"
-                style="width:100%; border-radius:12px; box-shadow:var(--shadow);"
-                width="800" height="652"
-                loading="lazy"
-                decoding="async"
-                onclick="openLightbox(0)"
-              />
-            </picture>
-          </div>
-          <p style="text-align:center; color:var(--muted); font-size:.9rem; margin-top:8px;">
-            Dashboard — iPhone &amp; iPad
-          </p>
+        <!-- Platform Tabs -->
+        <div class="platform-tabs" role="tablist">
+          <button class="platform-tab active" role="tab" aria-selected="true" data-platform="ios" id="tab-ios" aria-controls="carousel-ios">
+            <span class="tab-icon">📱</span> iPhone &amp; iPad
+          </button>
+          <button class="platform-tab" role="tab" aria-selected="false" data-platform="mac" id="tab-mac" aria-controls="carousel-mac">
+            <span class="tab-icon">💻</span> Mac
+          </button>
         </div>
 
-        <!-- Screenshot Grid -->
-        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:16px;">
-          <div>
-            <div class="screenshot-container">
-              <picture>
-                <source srcset="/assets/thumbs/screenshot-mystuff-thumb.webp" type="image/webp">
-                <img
-                  src="/assets/thumbs/screenshot-mystuff-thumb.png"
-                  alt="Stuffolio My Stuff view on iPhone and iPad showing inventory management"
-                  class="screenshot-thumb"
-                  style="width:100%; border-radius:12px; box-shadow:var(--shadow);"
-                  width="800" height="652"
-                  loading="lazy" decoding="async"
-                  onclick="openLightbox(1)"
-                />
-              </picture>
+        <!-- iOS Carousel -->
+        <div id="carousel-ios" class="carousel" role="tabpanel" aria-labelledby="tab-ios">
+          <div class="carousel-container">
+            <button class="carousel-nav carousel-prev" onclick="carouselPrev('ios')" aria-label="Previous screenshot">&#10094;</button>
+            <div class="carousel-slide">
+              <img id="ios-carousel-img" src="/assets/screenshots/ios/thumbs/ios-dashboard-light-thumb.webp" alt="" class="carousel-img" onclick="openLightbox(0)">
             </div>
-            <p style="text-align:center; color:var(--muted); font-size:.9rem; margin-top:8px;">
-              My Stuff — iPhone &amp; iPad
-            </p>
+            <button class="carousel-nav carousel-next" onclick="carouselNext('ios')" aria-label="Next screenshot">&#10095;</button>
           </div>
-
-          <div>
-            <div class="screenshot-container">
-              <picture>
-                <source srcset="/assets/thumbs/Screenshoot-dashboard-light-dark-thumb.webp" type="image/webp">
-                <img
-                  src="/assets/thumbs/Screenshoot-dashboard-light-dark-thumb.png"
-                  alt="Stuffolio Dashboard showing light and dark mode side by side"
-                  class="screenshot-thumb"
-                  style="width:100%; border-radius:12px; box-shadow:var(--shadow);"
-                  width="800" height="571"
-                  loading="lazy" decoding="async"
-                  onclick="openLightbox(2)"
-                />
-              </picture>
-            </div>
-            <p style="text-align:center; color:var(--muted); font-size:.9rem; margin-top:8px;">
-              Dashboard — Light &amp; Dark modes
-            </p>
-          </div>
-
-          <div>
-            <div class="screenshot-container">
-              <picture>
-                <source srcset="/assets/thumbs/screenshot-products-light-thumb.webp" type="image/webp">
-                <img
-                  src="/assets/thumbs/screenshot-products-light-thumb.png"
-                  alt="Stuffolio product inventory list with details panel"
-                  class="screenshot-thumb"
-                  style="width:100%; border-radius:12px; box-shadow:var(--shadow);"
-                  width="800" height="663"
-                  loading="lazy" decoding="async"
-                  onclick="openLightbox(3)"
-                />
-              </picture>
-            </div>
-            <p style="text-align:center; color:var(--muted); font-size:.9rem; margin-top:8px;">
-              My Products — Track everything you own
-            </p>
-          </div>
-
-          <div>
-            <div class="screenshot-container">
-              <picture>
-                <source srcset="/assets/thumbs/screenshot-stuffscout-thumb.webp" type="image/webp">
-                <img
-                  src="/assets/thumbs/screenshot-stuffscout-thumb.png"
-                  alt="Stuff Scout AI identifying a vintage dinner plate with value estimate"
-                  class="screenshot-thumb"
-                  style="width:100%; border-radius:12px; box-shadow:var(--shadow);"
-                  width="800" height="559"
-                  loading="lazy" decoding="async"
-                  onclick="openLightbox(4)"
-                />
-              </picture>
-            </div>
-            <p style="text-align:center; color:var(--muted); font-size:.9rem; margin-top:8px;">
-              Stuff Scout — AI-powered identification &amp; valuation
-            </p>
-          </div>
-
-          <div>
-            <div class="screenshot-container">
-              <picture>
-                <source srcset="/assets/thumbs/screenshot-tools-dark-thumb.webp" type="image/webp">
-                <img
-                  src="/assets/thumbs/screenshot-tools-dark-thumb.png"
-                  alt="Stuffolio tools and actions menu"
-                  class="screenshot-thumb"
-                  style="width:100%; border-radius:12px; box-shadow:var(--shadow);"
-                  width="800" height="559"
-                  loading="lazy" decoding="async"
-                  onclick="openLightbox(5)"
-                />
-              </picture>
-            </div>
-            <p style="text-align:center; color:var(--muted); font-size:.9rem; margin-top:8px;">
-              Tools — Reports, backups, recalls &amp; more
-            </p>
-          </div>
-
-          <div>
-            <div class="screenshot-container">
-              <picture>
-                <source srcset="/assets/thumbs/screenshot-Insights-thumb.webp" type="image/webp">
-                <img
-                  src="/assets/thumbs/screenshot-Insights-thumb.png"
-                  alt="Stuffolio inventory insights and analytics"
-                  class="screenshot-thumb"
-                  style="width:100%; border-radius:12px; box-shadow:var(--shadow);"
-                  width="800" height="559"
-                  loading="lazy" decoding="async"
-                  onclick="openLightbox(6)"
-                />
-              </picture>
-            </div>
-            <p style="text-align:center; color:var(--muted); font-size:.9rem; margin-top:8px;">
-              Insights — Analytics &amp; reports
-            </p>
-          </div>
-
-          <div>
-            <div class="screenshot-container">
-              <picture>
-                <source srcset="/assets/thumbs/screenshot-donate-thumb.webp" type="image/webp">
-                <img
-                  src="/assets/thumbs/screenshot-donate-thumb.png"
-                  alt="Stuffolio donation tracking for tax records"
-                  class="screenshot-thumb"
-                  style="width:100%; border-radius:12px; box-shadow:var(--shadow);"
-                  width="800" height="559"
-                  loading="lazy" decoding="async"
-                  onclick="openLightbox(7)"
-                />
-              </picture>
-            </div>
-            <p style="text-align:center; color:var(--muted); font-size:.9rem; margin-top:8px;">
-              Donate — Track charitable giving
-            </p>
-          </div>
-
-          <div>
-            <div class="screenshot-container">
-              <picture>
-                <source srcset="/assets/thumbs/screenshot-Ai-agents-thumb.webp" type="image/webp">
-                <img
-                  src="/assets/thumbs/screenshot-Ai agents-thumb.png"
-                  alt="Stuffolio AI agents providing smart assistance"
-                  class="screenshot-thumb"
-                  style="width:100%; border-radius:12px; box-shadow:var(--shadow);"
-                  width="800" height="559"
-                  loading="lazy" decoding="async"
-                  onclick="openLightbox(8)"
-                />
-              </picture>
-            </div>
-            <p style="text-align:center; color:var(--muted); font-size:.9rem; margin-top:8px;">
-              AI Agents — Smart assistance
-            </p>
-          </div>
+          <p id="ios-carousel-caption" class="carousel-caption">Dashboard — Light Mode</p>
+          <div id="ios-carousel-dots" class="carousel-dots"></div>
         </div>
+
+        <!-- Mac Carousel -->
+        <div id="carousel-mac" class="carousel" role="tabpanel" aria-labelledby="tab-mac" hidden>
+          <div class="carousel-container">
+            <button class="carousel-nav carousel-prev" onclick="carouselPrev('mac')" aria-label="Previous screenshot">&#10094;</button>
+            <div class="carousel-slide">
+              <img id="mac-carousel-img" src="/assets/screenshots/mac/thumbs/mac-dashboard-dark-thumb.webp" alt="" class="carousel-img" onclick="openLightbox(100)">
+            </div>
+            <button class="carousel-nav carousel-next" onclick="carouselNext('mac')" aria-label="Next screenshot">&#10095;</button>
+          </div>
+          <p id="mac-carousel-caption" class="carousel-caption">Dashboard — Dark Mode</p>
+          <div id="mac-carousel-dots" class="carousel-dots"></div>
+        </div>
+
+        <p style="text-align:center; color:var(--muted); font-size:.85rem; margin-top:16px;">
+          Click any image to view full size
+        </p>
       </div>
     </section>
 
@@ -529,33 +384,116 @@
   </div>
 
   <script>
-    // Lightbox functionality
-    const screenshots = [
-      { src: '/assets/screenshot-iOS-dashboard.png', caption: 'Dashboard — iPhone & iPad' },
-      { src: '/assets/screenshot-mystuff.png', caption: 'My Stuff — iPhone & iPad' },
-      { src: '/assets/Screenshoot-dashboard-light-dark.png', caption: 'Dashboard — Light & Dark modes' },
-      { src: '/assets/screenshot-products-light.png', caption: 'My Products — Track everything you own' },
-      { src: '/assets/screenshot-stuffscout.png', caption: 'Stuff Scout — AI-powered identification & valuation' },
-      { src: '/assets/screenshot-tools-dark.png', caption: 'Tools — Reports, backups, recalls & more' },
-      { src: '/assets/screenshot-Insights.png', caption: 'Insights — Analytics & inventory reports' },
-      { src: '/assets/screenshot-donate.png', caption: 'Donate — Track charitable giving for tax records' },
-      { src: '/assets/screenshot-Ai%20agents.png', caption: 'AI Agents — Smart assistance for your stuff' },
-      { src: '/assets/screenshot-sell-item.png', caption: 'Sell — Turn items into cash' },
-      { src: '/assets/screenshot-sell-item(b).png', caption: 'Sell Details — Pricing & listing info' },
-      { src: '/assets/screenshot-Actions.png', caption: 'Actions — Quick tasks & utilities' },
-      { src: '/assets/screenshot-privacy.png', caption: 'Privacy — Your data stays yours' },
-      { src: '/assets/Screenshot-inventory.png', caption: 'Inventory — Complete overview of your stuff' }
+    // Screenshot data for carousels
+    const iosScreenshots = [
+      { thumb: '/assets/screenshots/ios/thumbs/ios-dashboard-light-thumb.webp', full: '/assets/screenshots/ios/ios-dashboard-light.png', caption: 'Dashboard — Light Mode' },
+      { thumb: '/assets/screenshots/ios/thumbs/ios-dashboard-dark-thumb.webp', full: '/assets/screenshots/ios/ios-dashboard-dark.png', caption: 'Dashboard — Dark Mode' },
+      { thumb: '/assets/screenshots/ios/thumbs/ios-dashboard-scrolled-thumb.webp', full: '/assets/screenshots/ios/ios-dashboard-scrolled.png', caption: 'Dashboard with AI Assistant' },
+      { thumb: '/assets/screenshots/ios/thumbs/ios-dashboard-inventory-thumb.webp', full: '/assets/screenshots/ios/ios-dashboard-inventory.png', caption: 'Inventory Overview' },
+      { thumb: '/assets/screenshots/ios/thumbs/ios-welcome-thumb.webp', full: '/assets/screenshots/ios/ios-welcome.png', caption: 'Welcome Screen' },
+      { thumb: '/assets/screenshots/ios/thumbs/ios-features-thumb.webp', full: '/assets/screenshots/ios/ios-features.png', caption: 'AI-Powered Features' }
     ];
+
+    const macScreenshots = [
+      { thumb: '/assets/screenshots/mac/thumbs/mac-dashboard-dark-thumb.webp', full: '/assets/screenshots/mac/mac-dashboard-dark.png', caption: 'Dashboard — Dark Mode' },
+      { thumb: '/assets/screenshots/mac/thumbs/mac-dashboard-light-thumb.webp', full: '/assets/screenshots/mac/mac-dashboard-light.png', caption: 'Dashboard — Light Mode' },
+      { thumb: '/assets/screenshots/mac/thumbs/mac-products-dark-thumb.webp', full: '/assets/screenshots/mac/mac-products-dark.png', caption: 'My Products — Dark Mode' },
+      { thumb: '/assets/screenshots/mac/thumbs/mac-products-light-thumb.webp', full: '/assets/screenshots/mac/mac-products-light.png', caption: 'My Products — Light Mode' },
+      { thumb: '/assets/screenshots/mac/thumbs/mac-ai-assistant-thumb.webp', full: '/assets/screenshots/mac/mac-ai-assistant.png', caption: 'AI Product Assistant' },
+      { thumb: '/assets/screenshots/mac/thumbs/mac-donate-item-thumb.webp', full: '/assets/screenshots/mac/mac-donate-item.png', caption: 'Donate Item Form' },
+      { thumb: '/assets/screenshots/mac/thumbs/mac-donate-vs-sell-thumb.webp', full: '/assets/screenshots/mac/mac-donate-vs-sell.png', caption: 'Donate vs Sell Decision' },
+      { thumb: '/assets/screenshots/mac/thumbs/mac-settings-data-thumb.webp', full: '/assets/screenshots/mac/mac-settings-data.png', caption: 'Settings — Data Management' }
+    ];
+
+    // Carousel state
+    const carouselState = { ios: 0, mac: 0 };
+    let currentPlatform = 'ios';
+
+    // Initialize carousels
+    function initCarousels() {
+      createDots('ios', iosScreenshots.length);
+      createDots('mac', macScreenshots.length);
+      updateCarousel('ios');
+      updateCarousel('mac');
+    }
+
+    function createDots(platform, count) {
+      const dotsContainer = document.getElementById(platform + '-carousel-dots');
+      dotsContainer.innerHTML = '';
+      for (let i = 0; i < count; i++) {
+        const dot = document.createElement('button');
+        dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+        dot.setAttribute('aria-label', 'Go to screenshot ' + (i + 1));
+        dot.onclick = () => goToSlide(platform, i);
+        dotsContainer.appendChild(dot);
+      }
+    }
+
+    function updateCarousel(platform) {
+      const screenshots = platform === 'ios' ? iosScreenshots : macScreenshots;
+      const index = carouselState[platform];
+      const img = document.getElementById(platform + '-carousel-img');
+      const caption = document.getElementById(platform + '-carousel-caption');
+
+      img.src = screenshots[index].thumb;
+      img.alt = screenshots[index].caption;
+      img.onclick = () => openLightbox(platform, index);
+      caption.textContent = screenshots[index].caption;
+
+      // Update dots
+      const dots = document.querySelectorAll('#' + platform + '-carousel-dots .carousel-dot');
+      dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
+    }
+
+    function carouselPrev(platform) {
+      const screenshots = platform === 'ios' ? iosScreenshots : macScreenshots;
+      carouselState[platform] = (carouselState[platform] - 1 + screenshots.length) % screenshots.length;
+      updateCarousel(platform);
+    }
+
+    function carouselNext(platform) {
+      const screenshots = platform === 'ios' ? iosScreenshots : macScreenshots;
+      carouselState[platform] = (carouselState[platform] + 1) % screenshots.length;
+      updateCarousel(platform);
+    }
+
+    function goToSlide(platform, index) {
+      carouselState[platform] = index;
+      updateCarousel(platform);
+    }
+
+    // Platform tab switching
+    document.querySelectorAll('.platform-tab').forEach(tab => {
+      tab.addEventListener('click', function() {
+        const platform = this.dataset.platform;
+        currentPlatform = platform;
+
+        // Update tab states
+        document.querySelectorAll('.platform-tab').forEach(t => {
+          t.classList.remove('active');
+          t.setAttribute('aria-selected', 'false');
+        });
+        this.classList.add('active');
+        this.setAttribute('aria-selected', 'true');
+
+        // Show/hide carousels
+        document.getElementById('carousel-ios').hidden = platform !== 'ios';
+        document.getElementById('carousel-mac').hidden = platform !== 'mac';
+      });
+    });
+
+    // Lightbox functionality
+    let lightboxScreenshots = [];
     let currentIndex = 0;
 
-    function openLightbox(index) {
+    function openLightbox(platform, index) {
+      lightboxScreenshots = platform === 'ios' ? iosScreenshots : macScreenshots;
       currentIndex = index;
       updateLightboxImage();
       const lightbox = document.getElementById('lightbox');
       lightbox.hidden = false;
       lightbox.classList.add('active');
       document.body.style.overflow = 'hidden';
-      // Focus close button for accessibility
       document.querySelector('.lightbox-close').focus();
     }
 
@@ -569,32 +507,36 @@
 
     function prevImage(event) {
       event.stopPropagation();
-      currentIndex = (currentIndex - 1 + screenshots.length) % screenshots.length;
+      currentIndex = (currentIndex - 1 + lightboxScreenshots.length) % lightboxScreenshots.length;
       updateLightboxImage();
     }
 
     function nextImage(event) {
       event.stopPropagation();
-      currentIndex = (currentIndex + 1) % screenshots.length;
+      currentIndex = (currentIndex + 1) % lightboxScreenshots.length;
       updateLightboxImage();
     }
 
     function updateLightboxImage() {
       const img = document.getElementById('lightbox-img');
       const caption = document.getElementById('lightbox-caption');
-      img.src = screenshots[currentIndex].src;
-      img.alt = screenshots[currentIndex].caption;
-      caption.textContent = screenshots[currentIndex].caption;
+      img.src = lightboxScreenshots[currentIndex].full;
+      img.alt = lightboxScreenshots[currentIndex].caption;
+      caption.textContent = lightboxScreenshots[currentIndex].caption;
     }
 
-    // Keyboard navigation for lightbox
+    // Keyboard navigation
     document.addEventListener('keydown', function(e) {
       const lightbox = document.getElementById('lightbox');
-      if (!lightbox.classList.contains('active')) return;
-
-      if (e.key === 'Escape') closeLightbox();
-      if (e.key === 'ArrowLeft') prevImage(e);
-      if (e.key === 'ArrowRight') nextImage(e);
+      if (lightbox.classList.contains('active')) {
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowLeft') prevImage(e);
+        if (e.key === 'ArrowRight') nextImage(e);
+      } else {
+        // Carousel keyboard nav when lightbox not open
+        if (e.key === 'ArrowLeft') carouselPrev(currentPlatform);
+        if (e.key === 'ArrowRight') carouselNext(currentPlatform);
+      }
     });
 
     // Focus trap for lightbox
@@ -613,8 +555,8 @@
       }
     });
 
-    // Make screenshot images keyboard accessible
-    document.querySelectorAll('.screenshot-thumb[onclick]').forEach(function(img) {
+    // Make carousel images keyboard accessible
+    document.querySelectorAll('.carousel-img').forEach(function(img) {
       img.setAttribute('tabindex', '0');
       img.setAttribute('role', 'button');
       img.addEventListener('keydown', function(e) {
@@ -624,6 +566,9 @@
         }
       });
     });
+
+    // Initialize on load
+    initCarousels();
   </script>
 </body>
 </html>

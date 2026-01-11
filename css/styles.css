@@ -604,6 +604,196 @@ footer a:hover { color: var(--text) }
   transform: translate(-50%, -50%) scale(1);
 }
 
+/* ===== Platform Tabs ===== */
+.platform-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.platform-tab {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border: 1px solid var(--line);
+  border-radius: 25px;
+  background: rgba(255,255,255,.04);
+  color: var(--muted);
+  font-size: .95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all .2s ease;
+}
+
+.platform-tab:hover {
+  border-color: var(--accent);
+  color: var(--text);
+}
+
+.platform-tab.active {
+  background: linear-gradient(135deg, rgba(125,211,252,.2), rgba(167,139,250,.2));
+  border-color: var(--accent);
+  color: var(--text);
+}
+
+.platform-tab .tab-icon {
+  font-size: 1.1rem;
+}
+
+.light-mode .platform-tab {
+  background: rgba(0,0,0,.04) !important;
+  border-color: rgba(0,0,0,.12) !important;
+  color: #666 !important;
+}
+
+.light-mode .platform-tab:hover,
+.light-mode .platform-tab.active {
+  border-color: var(--accent) !important;
+  color: #1a1a1a !important;
+}
+
+.light-mode .platform-tab.active {
+  background: linear-gradient(135deg, rgba(0,102,204,.1), rgba(124,58,237,.1)) !important;
+}
+
+/* ===== Screenshot Carousel ===== */
+.carousel {
+  position: relative;
+}
+
+.carousel[hidden] {
+  display: none;
+}
+
+.carousel-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 300px;
+}
+
+.carousel-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  max-width: 400px;
+}
+
+.carousel-img {
+  max-width: 100%;
+  max-height: 500px;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.carousel-img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 15px 45px rgba(0,0,0,.4);
+}
+
+.carousel-img:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.carousel-nav {
+  background: rgba(255,255,255,.1);
+  border: 1px solid var(--line);
+  color: var(--text);
+  font-size: 1.5rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all .2s ease;
+  flex-shrink: 0;
+}
+
+.carousel-nav:hover {
+  background: rgba(255,255,255,.2);
+  border-color: var(--accent);
+}
+
+.light-mode .carousel-nav {
+  background: rgba(0,0,0,.05) !important;
+  border-color: rgba(0,0,0,.15) !important;
+  color: #333 !important;
+}
+
+.light-mode .carousel-nav:hover {
+  background: rgba(0,0,0,.1) !important;
+  border-color: var(--accent) !important;
+}
+
+.carousel-caption {
+  text-align: center;
+  color: var(--muted);
+  font-size: .95rem;
+  margin: 12px 0 8px;
+}
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.carousel-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  transition: all .2s ease;
+}
+
+.carousel-dot:hover {
+  border-color: var(--accent);
+}
+
+.carousel-dot.active {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.light-mode .carousel-dot {
+  border-color: rgba(0,0,0,.2) !important;
+}
+
+.light-mode .carousel-dot.active {
+  background: var(--accent) !important;
+  border-color: var(--accent) !important;
+}
+
+@media (max-width: 600px) {
+  .carousel-container {
+    gap: 8px;
+  }
+  .carousel-nav {
+    width: 36px;
+    height: 36px;
+    font-size: 1.2rem;
+  }
+  .carousel-slide {
+    max-width: 280px;
+  }
+  .platform-tab {
+    padding: 8px 14px;
+    font-size: .85rem;
+  }
+}
+
 /* ===== FAQ / Details Styles (Support Page) ===== */
 details {
   background: var(--card);
