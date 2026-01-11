@@ -25,12 +25,12 @@
   <link rel="canonical" href="https://stuffolio.app/quick-start.html" />
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
 
   <!-- Shared Styles -->
-  <link rel="stylesheet" href="/css/styles.css" />
+  <link rel="stylesheet" href="css/styles.css" />
 
   <!-- Page-specific styles -->
   <style>
@@ -118,25 +118,27 @@
 </head>
 
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
   <div class="wrap">
     <header>
-      <a href="/" style="display:flex; align-items:center; gap:12px; text-decoration:none; color:var(--text);">
-        <img src="/assets/logo-64.png" alt="Stuffolio" width="38" height="38" style="border-radius:12px;box-shadow:var(--shadow);" />
-        <b style="letter-spacing:.2px;">Stuffolio</b>
-      </a>
-      <nav>
-        <a href="/">Home</a>
-        <a href="/Stuffolio_Users_Manual.html">User Manual</a>
-        <a href="/support.html">Support</a>
-        <a href="/privacy.html">Privacy</a>
-        <a href="/terms.html">Terms</a>
-        <a href="/app-map.html">App Map</a>
-        <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode">
-          <span id="themeIcon">☀️</span>
-        </button>
-      </nav>
+      <a href="index.html" class="site-title">Stuffolio</a>
+      <div class="header-right">
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="quick-start.html" aria-current="page">Quick Start</a>
+          <a href="support.html">Support</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="app-map.html">App Map</a>
+        </nav>
+        <div class="theme-toggle">
+          <span class="theme-icon">☀️</span>
+          <button class="theme-toggle-switch" id="themeToggle" aria-label="Toggle light/dark mode"></button>
+          <span class="theme-icon">🌙</span>
+        </div>
+      </div>
     </header>
 
+    <main id="main">
     <div class="card">
       <h1>Quick Start Guide</h1>
       <p class="lead">Get up and running with Stuffolio in minutes — no perfect records required.</p>
@@ -275,17 +277,18 @@
 
       <div class="divider"></div>
 
-      <p style="margin-bottom:0"><strong>Need more help?</strong> Check out <a href="/support.html">Support</a> for FAQs and troubleshooting, or email <a href="mailto:support@stuffolio.app">support@stuffolio.app</a>.</p>
+      <p style="margin-bottom:0"><strong>Need more help?</strong> Check out <a href="support.html">Support</a> for FAQs and troubleshooting, or email <a href="mailto:support@stuffolio.app">support@stuffolio.app</a>.</p>
     </div>
+    </main>
 
     <footer>
       <div>© <span id="y"></span> Coffee & Code LLC</div>
       <div style="display:flex; gap:12px;">
-        <a href="/">Home</a>
-        <a href="/support.html">Support</a>
-        <a href="/privacy.html">Privacy</a>
-        <a href="/terms.html">Terms</a>
-        <a href="/app-map.html">App Map</a>
+        <a href="index.html">Home</a>
+        <a href="support.html">Support</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="app-map.html">App Map</a>
       </div>
     </footer>
   </div>
@@ -296,7 +299,6 @@
     // Theme toggle
     const html = document.documentElement;
     const toggle = document.getElementById('themeToggle');
-    const icon = document.getElementById('themeIcon');
 
     const saved = localStorage.getItem('theme');
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -304,18 +306,19 @@
 
     if (theme === 'light') {
       html.classList.add('light-mode');
-      icon.textContent = '🌙';
+    } else {
+      toggle.classList.add('dark');
     }
 
     toggle.addEventListener('click', () => {
       const isLight = html.classList.contains('light-mode');
       if (isLight) {
         html.classList.remove('light-mode');
-        icon.textContent = '☀️';
+        toggle.classList.add('dark');
         localStorage.setItem('theme', 'dark');
       } else {
         html.classList.add('light-mode');
-        icon.textContent = '🌙';
+        toggle.classList.remove('dark');
         localStorage.setItem('theme', 'light');
       }
     });

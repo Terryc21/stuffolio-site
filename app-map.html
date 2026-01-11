@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Stuffolio App Map — Stuffolio</title>
+  <title>App Map — Stuffolio</title>
   <meta name="description" content="Navigate the Stuffolio app. See all screens and features at a glance." />
   <meta name="theme-color" content="#0b1220" />
 
@@ -25,12 +25,12 @@
   <link rel="canonical" href="https://stuffolio.app/app-map.html" />
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
 
   <!-- Shared Styles -->
-  <link rel="stylesheet" href="/css/styles.css" />
+  <link rel="stylesheet" href="css/styles.css" />
 
   <!-- Page-specific styles -->
   <style>
@@ -134,39 +134,325 @@
     .light-mode .sub-screen { background:rgba(0,0,0,.02) !important; border-color:rgba(0,0,0,.08) !important }
     .light-mode .section-header { background:rgba(0,102,204,.08) !important; border-color:rgba(0,102,204,.25) !important }
     .light-mode .badge.optional { background:rgba(124,58,237,.1) !important; color:#7c3aed !important }
+
+    /* ===== Interactive Journey Map ===== */
+    .journey-map {
+      padding: 30px 20px;
+      margin-bottom: 20px;
+    }
+    .journey-map h2 {
+      text-align: center;
+      margin-bottom: 8px;
+    }
+    .journey-map .subtitle {
+      text-align: center;
+      color: var(--muted);
+      margin-bottom: 30px;
+    }
+
+    .journey-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+      position: relative;
+    }
+
+    /* The connecting line */
+    .journey-line {
+      width: 3px;
+      height: 30px;
+      background: linear-gradient(to bottom, var(--accent), var(--accent2));
+      border-radius: 2px;
+    }
+
+    /* Stage cards */
+    .journey-stage {
+      width: 100%;
+      max-width: 400px;
+      background: rgba(125,211,252,.06);
+      border: 2px solid rgba(125,211,252,.3);
+      border-radius: 16px;
+      padding: 20px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    .journey-stage:hover {
+      border-color: var(--accent);
+      transform: scale(1.02);
+      box-shadow: 0 8px 30px rgba(125,211,252,.15);
+    }
+    .journey-stage.expanded {
+      border-color: var(--accent);
+      background: rgba(125,211,252,.1);
+    }
+
+    .stage-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .stage-icon {
+      font-size: 2.2rem;
+      line-height: 1;
+    }
+    .stage-info {
+      flex: 1;
+    }
+    .stage-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+    .stage-tagline {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+    .stage-arrow {
+      font-size: 1.2rem;
+      color: var(--accent);
+      transition: transform 0.3s ease;
+    }
+    .journey-stage.expanded .stage-arrow {
+      transform: rotate(180deg);
+    }
+
+    /* Expandable features */
+    .stage-features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, margin-top 0.3s ease, opacity 0.3s ease;
+      opacity: 0;
+      margin-top: 0;
+    }
+    .journey-stage.expanded .stage-features {
+      max-height: 300px;
+      opacity: 1;
+      margin-top: 16px;
+    }
+
+    .feature-chip {
+      background: rgba(255,255,255,.06);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 10px 12px;
+      font-size: 0.85rem;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .feature-chip:hover {
+      background: rgba(255,255,255,.1);
+      border-color: var(--accent);
+    }
+    .feature-chip .chip-icon {
+      font-size: 1.1rem;
+    }
+    .feature-chip.optional {
+      border-style: dashed;
+    }
+
+    /* Pulse animation on stage icons */
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+    .journey-stage:hover .stage-icon {
+      animation: pulse 0.6s ease;
+    }
+
+    /* Mobile adjustments */
+    @media (max-width: 600px) {
+      .journey-stage {
+        padding: 16px;
+      }
+      .stage-icon {
+        font-size: 1.8rem;
+      }
+      .stage-title {
+        font-size: 1.1rem;
+      }
+      .stage-features {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Light mode journey overrides */
+    .light-mode .journey-stage {
+      background: rgba(0,102,204,.06) !important;
+      border-color: rgba(0,102,204,.25) !important;
+    }
+    .light-mode .journey-stage:hover,
+    .light-mode .journey-stage.expanded {
+      background: rgba(0,102,204,.1) !important;
+      border-color: #0066cc !important;
+      box-shadow: 0 8px 30px rgba(0,102,204,.12);
+    }
+    .light-mode .feature-chip {
+      background: rgba(0,0,0,.04) !important;
+      border-color: rgba(0,0,0,.12) !important;
+    }
+    .light-mode .feature-chip:hover {
+      background: rgba(0,0,0,.08) !important;
+      border-color: #0066cc !important;
+    }
   </style>
 </head>
 
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
   <div class="wrap">
     <header>
-      <a href="/" style="display:flex; align-items:center; gap:12px; text-decoration:none; color:var(--text);">
-        <img src="/assets/logo-64.png" alt="Stuffolio" width="38" height="38" style="border-radius:12px;box-shadow:var(--shadow);" />
-        <b style="letter-spacing:.2px;">Stuffolio</b>
-      </a>
-      <nav>
-        <a href="/">Home</a>
-        <a href="/quick-start.html">Quick Start</a>
-        <a href="/Stuffolio_Users_Manual.html">User Manual</a>
-        <a href="/support.html">Support</a>
-        <a href="/privacy.html">Privacy</a>
-        <a href="/terms.html">Terms</a>
-        <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode">
-          <span id="themeIcon">☀️</span>
-        </button>
-      </nav>
+      <a href="index.html" class="site-title">Stuffolio</a>
+      <div class="header-right">
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="quick-start.html">Quick Start</a>
+          <a href="support.html">Support</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="app-map.html" aria-current="page">App Map</a>
+        </nav>
+        <div class="theme-toggle">
+          <span class="theme-icon">☀️</span>
+          <button class="theme-toggle-switch" id="themeToggle" aria-label="Toggle light/dark mode"></button>
+          <span class="theme-icon">🌙</span>
+        </div>
+      </div>
     </header>
 
+    <main id="main">
     <div class="card">
       <h1>Stuffolio App Map</h1>
       <p class="lead">Explore every screen and feature in Stuffolio.</p>
-      <p style="margin-bottom:0"><span class="badge core">Core</span> features work offline. <span class="badge optional">Optional</span> features require network/subscription.</p>
+      <p><span class="badge core">Core</span> features work offline. <span class="badge optional">Optional</span> features require network/subscription.</p>
+
+      <!-- Table of Contents -->
+      <nav aria-label="Page sections" style="margin-top:16px; padding-top:16px; border-top:1px solid var(--line);">
+        <p style="margin-bottom:10px; font-weight:600; color:var(--text);">Jump to section:</p>
+        <div style="display:flex; flex-wrap:wrap; gap:8px;">
+          <a href="#dashboard" class="badge" style="text-decoration:none;">📊 Dashboard</a>
+          <a href="#navigation" class="badge" style="text-decoration:none;">🏠 Navigation</a>
+          <a href="#add-product" class="badge" style="text-decoration:none;">➕ Add Product</a>
+          <a href="#item-detail" class="badge" style="text-decoration:none;">📋 Item Detail</a>
+          <a href="#settings" class="badge" style="text-decoration:none;">⚙️ Settings</a>
+          <a href="#tools" class="badge" style="text-decoration:none;">🛠️ Tools</a>
+          <a href="#dispose" class="badge" style="text-decoration:none;">📦 Dispose</a>
+        </div>
+      </nav>
+    </div>
+
+    <!-- INTERACTIVE JOURNEY MAP -->
+    <div class="card journey-map">
+      <h2>The Life of Your Stuff</h2>
+      <p class="subtitle">Click each stage to explore features</p>
+
+      <div class="journey-container">
+        <!-- STAGE 1: ADD IT -->
+        <div class="journey-stage" onclick="toggleStage(this)" role="button" tabindex="0" aria-expanded="false">
+          <div class="stage-header">
+            <span class="stage-icon" aria-hidden="true">📥</span>
+            <div class="stage-info">
+              <div class="stage-title">Add It</div>
+              <div class="stage-tagline">Capture what you own — fast or detailed</div>
+            </div>
+            <span class="stage-arrow" aria-hidden="true">▼</span>
+          </div>
+          <div class="stage-features">
+            <div class="feature-chip"><span class="chip-icon">⚡</span> Quick Add</div>
+            <div class="feature-chip"><span class="chip-icon">📝</span> Full Details</div>
+            <div class="feature-chip optional"><span class="chip-icon">📷</span> Scan Barcode</div>
+            <div class="feature-chip optional"><span class="chip-icon">🔍</span> Stuff Scout</div>
+          </div>
+        </div>
+
+        <div class="journey-line" aria-hidden="true"></div>
+
+        <!-- STAGE 2: TRACK IT -->
+        <div class="journey-stage" onclick="toggleStage(this)" role="button" tabindex="0" aria-expanded="false">
+          <div class="stage-header">
+            <span class="stage-icon" aria-hidden="true">📋</span>
+            <div class="stage-info">
+              <div class="stage-title">Track It</div>
+              <div class="stage-tagline">Warranties, locations, values & more</div>
+            </div>
+            <span class="stage-arrow" aria-hidden="true">▼</span>
+          </div>
+          <div class="stage-features">
+            <div class="feature-chip"><span class="chip-icon">🗂️</span> Categories</div>
+            <div class="feature-chip"><span class="chip-icon">📍</span> Locations</div>
+            <div class="feature-chip"><span class="chip-icon">🔔</span> Warranty Alerts</div>
+            <div class="feature-chip"><span class="chip-icon">📎</span> Attachments</div>
+            <div class="feature-chip"><span class="chip-icon">💰</span> Values</div>
+            <div class="feature-chip"><span class="chip-icon">🏷️</span> Serial Numbers</div>
+          </div>
+        </div>
+
+        <div class="journey-line" aria-hidden="true"></div>
+
+        <!-- STAGE 3: FIND IT -->
+        <div class="journey-stage" onclick="toggleStage(this)" role="button" tabindex="0" aria-expanded="false">
+          <div class="stage-header">
+            <span class="stage-icon" aria-hidden="true">🔍</span>
+            <div class="stage-info">
+              <div class="stage-title">Find It</div>
+              <div class="stage-tagline">Search, browse & get AI help</div>
+            </div>
+            <span class="stage-arrow" aria-hidden="true">▼</span>
+          </div>
+          <div class="stage-features">
+            <div class="feature-chip"><span class="chip-icon">🔎</span> Search</div>
+            <div class="feature-chip"><span class="chip-icon">📊</span> Dashboard</div>
+            <div class="feature-chip"><span class="chip-icon">🗃️</span> Filters</div>
+            <div class="feature-chip optional"><span class="chip-icon">🤖</span> AI Assistant</div>
+            <div class="feature-chip optional"><span class="chip-icon">🔍</span> Stuff Scout</div>
+            <div class="feature-chip optional"><span class="chip-icon">⚠️</span> Recall Check</div>
+          </div>
+        </div>
+
+        <div class="journey-line" aria-hidden="true"></div>
+
+        <!-- STAGE 4: LET GO -->
+        <div class="journey-stage" onclick="toggleStage(this)" role="button" tabindex="0" aria-expanded="false">
+          <div class="stage-header">
+            <span class="stage-icon" aria-hidden="true">📦</span>
+            <div class="stage-info">
+              <div class="stage-title">Let Go</div>
+              <div class="stage-tagline">Sell, donate, recycle — and remember</div>
+            </div>
+            <span class="stage-arrow" aria-hidden="true">▼</span>
+          </div>
+          <div class="stage-features">
+            <div class="feature-chip"><span class="chip-icon">💰</span> Sold</div>
+            <div class="feature-chip"><span class="chip-icon">🎁</span> Donated</div>
+            <div class="feature-chip"><span class="chip-icon">🎀</span> Gifted</div>
+            <div class="feature-chip"><span class="chip-icon">♻️</span> Recycled</div>
+            <div class="feature-chip"><span class="chip-icon">↩️</span> Returned</div>
+            <div class="feature-chip"><span class="chip-icon">🗄️</span> Archive</div>
+          </div>
+        </div>
+      </div>
+
+      <p style="text-align:center; margin-top:24px; margin-bottom:0; font-size:0.85rem; color:var(--muted);">
+        <span style="border:1px dashed var(--line); padding:2px 8px; border-radius:4px;">Dashed border</span> = optional network feature
+      </p>
+    </div>
+
+    <!-- Detailed sections below -->
+    <div class="card" style="text-align:center; padding:16px;">
+      <p style="margin:0; color:var(--muted);">👇 <strong>Scroll down</strong> for detailed feature breakdown</p>
     </div>
 
     <!-- DASHBOARD -->
-    <div class="card">
+    <div class="card" id="dashboard">
       <div class="section-header">
-        <span class="section-icon">📊</span>
+        <span class="section-icon" aria-hidden="true">📊</span>
         <h2>Dashboard</h2>
       </div>
 
@@ -214,9 +500,9 @@
     </div>
 
     <!-- MAIN TABS -->
-    <div class="card">
+    <div class="card" id="navigation">
       <div class="section-header">
-        <span class="section-icon">🏠</span>
+        <span class="section-icon" aria-hidden="true">🏠</span>
         <h2>Main Navigation</h2>
       </div>
 
@@ -262,9 +548,9 @@
     </div>
 
     <!-- ADD ITEM -->
-    <div class="card">
+    <div class="card" id="add-product">
       <div class="section-header">
-        <span class="section-icon">➕</span>
+        <span class="section-icon" aria-hidden="true">➕</span>
         <h2>Add Product</h2>
       </div>
 
@@ -285,16 +571,16 @@
         </div>
 
         <div class="screen-box">
-          <div class="screen-title">🤖 AI Assist <span class="badge optional">Optional</span></div>
-          <div class="screen-desc">Let Stuff Scout identify the item from a photo. Requires AI subscription.</div>
+          <div class="screen-title">🔍 Stuff Scout <span class="badge optional">Optional</span></div>
+          <div class="screen-desc">Identify unknown items from photos. Get name, maker, date, and value estimate.</div>
         </div>
       </div>
     </div>
 
     <!-- ITEM DETAIL -->
-    <div class="card">
+    <div class="card" id="item-detail">
       <div class="section-header">
-        <span class="section-icon">📋</span>
+        <span class="section-icon" aria-hidden="true">📋</span>
         <h2>Item Detail</h2>
       </div>
 
@@ -328,22 +614,27 @@
         </div>
 
         <div class="screen-box">
-          <div class="screen-title">🔍 Stuff Scout <span class="badge optional">Optional</span></div>
-          <div class="screen-desc">AI-powered research for this item.</div>
+          <div class="screen-title">🤖 AI Product Assistant <span class="badge optional">Optional</span></div>
+          <div class="screen-desc">Research tools for items already in your inventory. Powered by Tavily.</div>
           <div class="sub-screens">
+            <div class="sub-screen"><strong>Maker Website</strong> — Go to manufacturer's site</div>
+            <div class="sub-screen"><strong>Register Product</strong> — Find product registration</div>
+            <div class="sub-screen"><strong>Find Warranty Info</strong> — Warranty details and terms</div>
             <div class="sub-screen"><strong>Find Manual</strong> — Locate product documentation</div>
             <div class="sub-screen"><strong>Find Parts</strong> — Replacement parts and accessories</div>
-            <div class="sub-screen"><strong>Get Value</strong> — Estimated current value</div>
-            <div class="sub-screen"><strong>Check Recalls</strong> — Safety recall information</div>
+            <div class="sub-screen"><strong>Maintenance Tips</strong> — Care and upkeep advice</div>
+            <div class="sub-screen"><strong>Troubleshoot</strong> — Fix common problems</div>
+            <div class="sub-screen"><strong>Find Supplies</strong> — Consumables and accessories</div>
+            <div class="sub-screen"><strong>How To / DIY Videos</strong> — Video tutorials and guides</div>
           </div>
         </div>
       </div>
     </div>
 
     <!-- SETTINGS -->
-    <div class="card">
+    <div class="card" id="settings">
       <div class="section-header">
-        <span class="section-icon">⚙️</span>
+        <span class="section-icon" aria-hidden="true">⚙️</span>
         <h2>Settings</h2>
       </div>
 
@@ -352,7 +643,8 @@
           <div class="screen-title">🌐 Network Features</div>
           <div class="screen-desc">Opt in to internet-connected features (disabled by default).</div>
           <div class="sub-screens">
-            <div class="sub-screen"><strong>Stuff Scout (AI)</strong> — Product identification and research</div>
+            <div class="sub-screen"><strong>Stuff Scout</strong> — Identify unknown items from photos</div>
+            <div class="sub-screen"><strong>AI Product Assistant</strong> — Research tools for inventory items</div>
             <div class="sub-screen"><strong>Barcode Lookup</strong> — Auto-fill from UPC scans</div>
             <div class="sub-screen"><strong>Recall Checker</strong> — Safety recall lookups</div>
             <div class="sub-screen"><strong>Analytics</strong> — Anonymous usage data (opt-in)</div>
@@ -399,9 +691,9 @@
     </div>
 
     <!-- TOOLS/ACTIONS -->
-    <div class="card">
+    <div class="card" id="tools">
       <div class="section-header">
-        <span class="section-icon">🛠️</span>
+        <span class="section-icon" aria-hidden="true">🛠️</span>
         <h2>Tools & Actions</h2>
       </div>
 
@@ -438,13 +730,15 @@
 
         <div class="screen-box">
           <div class="screen-title">🔍 Stuff Scout <span class="badge optional">Optional</span></div>
-          <div class="screen-desc">AI-powered product research and identification.</div>
+          <div class="screen-desc">Identify and value antiques, collectibles, and curiosities from photos.</div>
           <div class="sub-screens">
-            <div class="sub-screen"><strong>Identify Item</strong> — "What is this thing?"</div>
-            <div class="sub-screen"><strong>Find Manual</strong> — Locate product documentation</div>
-            <div class="sub-screen"><strong>Find Parts</strong> — Replacement parts and accessories</div>
-            <div class="sub-screen"><strong>Get Value</strong> — Estimated current market value</div>
-            <div class="sub-screen"><strong>DIY Help</strong> — How-to videos and repair guides</div>
+            <div class="sub-screen"><strong>Photo Analysis</strong> — Upload photos for AI identification</div>
+            <div class="sub-screen"><strong>Identification</strong> — Name, maker, date, origin</div>
+            <div class="sub-screen"><strong>Value Estimate</strong> — Price range with confidence %</div>
+            <div class="sub-screen"><strong>About This Item</strong> — Detailed description</div>
+            <div class="sub-screen"><strong>Historical Context</strong> — Era and background info</div>
+            <div class="sub-screen"><strong>Collector Notes</strong> — Tips for collectors</div>
+            <div class="sub-screen"><strong>Save to Inventory</strong> — Add identified item directly</div>
           </div>
         </div>
 
@@ -470,9 +764,9 @@
     </div>
 
     <!-- DISPOSE FLOW -->
-    <div class="card">
+    <div class="card" id="dispose">
       <div class="section-header">
-        <span class="section-icon">📦</span>
+        <span class="section-icon" aria-hidden="true">📦</span>
         <h2>Dispose of Item</h2>
       </div>
 
@@ -512,15 +806,16 @@
         <strong>Note:</strong> Disposed items move to the Archive. You can still view them for reference, insurance claims, or tax documentation.
       </div>
     </div>
+    </main>
 
     <footer>
       <div>© <span id="y"></span> Coffee & Code LLC</div>
       <div style="display:flex; gap:12px;">
-        <a href="/">Home</a>
-        <a href="/support.html">Support</a>
-        <a href="/privacy.html">Privacy</a>
-        <a href="/terms.html">Terms</a>
-        <a href="/sitemap.html">Site Map</a>
+        <a href="index.html">Home</a>
+        <a href="support.html">Support</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="app-map.html">App Map</a>
       </div>
     </footer>
   </div>
@@ -531,7 +826,6 @@
     // Theme toggle
     const html = document.documentElement;
     const toggle = document.getElementById('themeToggle');
-    const icon = document.getElementById('themeIcon');
 
     const saved = localStorage.getItem('theme');
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -539,20 +833,48 @@
 
     if (theme === 'light') {
       html.classList.add('light-mode');
-      icon.textContent = '🌙';
+    } else {
+      toggle.classList.add('dark');
     }
 
     toggle.addEventListener('click', () => {
       const isLight = html.classList.contains('light-mode');
       if (isLight) {
         html.classList.remove('light-mode');
-        icon.textContent = '☀️';
+        toggle.classList.add('dark');
         localStorage.setItem('theme', 'dark');
       } else {
         html.classList.add('light-mode');
-        icon.textContent = '🌙';
+        toggle.classList.remove('dark');
         localStorage.setItem('theme', 'light');
       }
+    });
+
+    // Journey map stage toggle
+    function toggleStage(element) {
+      const isExpanded = element.classList.contains('expanded');
+
+      // Close all stages first (accordion behavior)
+      document.querySelectorAll('.journey-stage').forEach(stage => {
+        stage.classList.remove('expanded');
+        stage.setAttribute('aria-expanded', 'false');
+      });
+
+      // Open clicked stage if it wasn't already open
+      if (!isExpanded) {
+        element.classList.add('expanded');
+        element.setAttribute('aria-expanded', 'true');
+      }
+    }
+
+    // Keyboard support for journey stages
+    document.querySelectorAll('.journey-stage').forEach(stage => {
+      stage.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          toggleStage(stage);
+        }
+      });
     });
   </script>
 </body>

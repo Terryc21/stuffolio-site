@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Stuffolio — Track what you buy, manage what you own, let go with confidence</title>
-  <meta name="description" content="Stuffolio helps you track what you buy, manage what you own, and decide what to keep, sell, donate, recycle, or trash—without perfect records." />
+  <meta name="description" content="Home inventory app for iPhone, iPad, and Mac. Track warranties, document belongings for insurance, identify items with AI. Your data stays private." />
   <meta name="theme-color" content="#0b1220" />
 
   <!-- Open Graph / Social Sharing -->
@@ -49,37 +49,34 @@
   </script>
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
 
   <!-- Shared Styles -->
-  <link rel="stylesheet" href="/css/styles.css" />
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
 
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
   <div class="wrap">
     <header>
-      <div style="display:flex; align-items:center; gap:12px;">
-        <!-- Small header mark uses optimized logo -->
-        <img src="/assets/logo-64.png" alt="Stuffolio app icon" width="38" height="38" style="border-radius:12px;box-shadow:var(--shadow);" />
-        <b style="letter-spacing:.2px;">Stuffolio</b>
+      <a href="index.html" class="site-title">Stuffolio</a>
+      <div class="header-right">
+        <nav>
+          <a href="#stages">Stages</a>
+          <a href="#features">Features</a>
+          <a href="quick-start.html">Quick Start</a>
+          <a href="support.html">Support</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="app-map.html">App Map</a>
+        </nav>
+        <div class="theme-toggle">
+          <span class="theme-icon">☀️</span>
+          <button class="theme-toggle-switch" id="themeToggle" aria-label="Toggle light/dark mode"></button>
+          <span class="theme-icon">🌙</span>
+        </div>
       </div>
-
-      <nav>
-        <a href="#stages">Three Stages</a>
-        <a href="#features">Features</a>
-        <a href="/quick-start.html">Quick Start</a>
-        <a href="/Stuffolio_Users_Manual.html">User Manual</a>
-        <a href="/support.html">Support</a>
-        <a href="/privacy.html">Privacy</a>
-        <a href="/terms.html">Terms</a>
-        <a href="/app-map.html">App Map</a>
-        <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode">
-          <span id="themeIcon">☀️</span>
-        </button>
-      </nav>
     </header>
 
     <main id="main">
@@ -88,7 +85,7 @@
         <div class="badge"><span class="dot" aria-hidden="true"></span> Beta Testing Now • iPhone / iPad / Mac</div>
 
         <div class="heroLogoRow">
-          <img class="stuffolioLogo" src="/assets/logo-256.png" alt="Stuffolio logo" width="120" height="120" />
+          <img class="stuffolioLogo" src="assets/logo-256.png" alt="Stuffolio logo" width="120" height="120" />
           <div>
             <h1 style="margin-top:0;">
               Because one day you look around and think,<br/>“Where did we get so much stuff?”
@@ -102,9 +99,9 @@
         </p>
 
         <div class="ctaRow">
-          <a class="btn primary" href="/testflight-invite.html">Become a Beta Tester</a>
-          <a class="btn" href="/quick-start.html">Quick Start Guide</a>
-          <a class="btn" href="/support.html">Get Support</a>
+          <a class="btn primary" href="testflight-invite.html">Become a Beta Tester</a>
+          <a class="btn" href="quick-start.html">Quick Start Guide</a>
+          <a class="btn" href="support.html">Get Support</a>
         </div>
 
         <div class="callout">
@@ -147,6 +144,78 @@
 
     </section>
 
+    <!-- Why It Matters - Statistics -->
+    <section id="why-it-matters" style="margin-top:18px;">
+      <div class="card">
+        <h2 style="margin-top:0; text-align:center;">Why It Matters</h2>
+        <p style="color:var(--muted); text-align:center; margin-bottom:24px;">
+          Your home contains thousands of items — from electronics to heirlooms.<br/>
+          Could you list them from memory?
+        </p>
+
+        <div class="stats-grid">
+          <div class="stat-item">
+            <div class="stat-number">2/3</div>
+            <div class="stat-label">of homeowners are underinsured</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">&lt;50%</div>
+            <div class="stat-label">of homeowners have a home inventory</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">$300+</div>
+            <div class="stat-label">average cost to repair a refrigerator</div>
+          </div>
+        </div>
+
+        <p class="sources">
+          Sources: <a href="https://www.myknowledgebroker.com/blog/personal-insurance/total-home-loss-67-of-homeowners-are-underinsured/" target="_blank" rel="noopener">United Policyholders</a>,
+          <a href="https://www.iii.org/fact-statistic/facts-statistics-homeowners-and-renters-insurance" target="_blank" rel="noopener">Insurance Information Institute</a>,
+          <a href="https://www.libertyhomeguard.com/blog/home-maintenance/average-appliance-repair-costs-with-prices/" target="_blank" rel="noopener">Liberty Home Guard</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- Who Uses Stuffolio -->
+    <section id="who-its-for" style="margin-top:18px;">
+      <div class="card">
+        <h2 style="margin-top:0; text-align:center;">Who Uses Stuffolio</h2>
+        <p style="color:var(--muted); text-align:center; margin-bottom:20px;">
+          Whether you're protecting your home, tracking warranties, or preserving family history.
+        </p>
+
+        <div class="use-cases-grid">
+          <div class="use-case">
+            <div class="use-case-icon">🏠</div>
+            <h3>Homeowners &amp; Renters</h3>
+            <p class="use-case-quote">"If my house burned down, could I list everything I own?"</p>
+            <p class="use-case-desc">Document your belongings for insurance — even without receipts.</p>
+          </div>
+
+          <div class="use-case">
+            <div class="use-case-icon">⏰</div>
+            <h3>Warranty Trackers</h3>
+            <p class="use-case-quote">"My dishwasher died. Was it still under warranty?"</p>
+            <p class="use-case-desc">Get reminders before warranties expire. Average appliance repair: $175–350.</p>
+          </div>
+
+          <div class="use-case">
+            <div class="use-case-icon">🔍</div>
+            <h3>Collectors &amp; Thrifters</h3>
+            <p class="use-case-quote">"What IS this thing? What's it worth?"</p>
+            <p class="use-case-desc">Stuff Scout identifies items and estimates values from a photo.</p>
+          </div>
+
+          <div class="use-case">
+            <div class="use-case-icon">👨‍👩‍👧</div>
+            <h3>Families &amp; Estate Planning</h3>
+            <p class="use-case-quote">"I want specific people to have specific things."</p>
+            <p class="use-case-desc">Record your wishes so your family isn't left guessing.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Screenshot Carousel -->
     <section id="screenshots" style="margin-top:18px;">
       <div class="card">
@@ -170,7 +239,7 @@
           <div class="carousel-container">
             <button class="carousel-nav carousel-prev" onclick="carouselPrev('ios')" aria-label="Previous screenshot">&#10094;</button>
             <div class="carousel-slide">
-              <img id="ios-carousel-img" src="/assets/screenshots/ios/thumbs/ios-dashboard-light-thumb.webp" alt="" class="carousel-img" onclick="openLightbox(0)">
+              <img id="ios-carousel-img" src="assets/screenshots/ios/thumbs/ios-dashboard-light-thumb.webp" alt="" class="carousel-img" onclick="openLightbox(0)">
             </div>
             <button class="carousel-nav carousel-next" onclick="carouselNext('ios')" aria-label="Next screenshot">&#10095;</button>
           </div>
@@ -183,7 +252,7 @@
           <div class="carousel-container">
             <button class="carousel-nav carousel-prev" onclick="carouselPrev('mac')" aria-label="Previous screenshot">&#10094;</button>
             <div class="carousel-slide">
-              <img id="mac-carousel-img" src="/assets/screenshots/mac/thumbs/mac-dashboard-dark-thumb.webp" alt="" class="carousel-img" onclick="openLightbox(100)">
+              <img id="mac-carousel-img" src="assets/screenshots/mac/thumbs/mac-dashboard-dark-thumb.webp" alt="" class="carousel-img" onclick="openLightbox(100)">
             </div>
             <button class="carousel-nav carousel-next" onclick="carouselNext('mac')" aria-label="Next screenshot">&#10095;</button>
           </div>
@@ -332,11 +401,11 @@
       <div>© <span id="y"></span> Coffee & Code LLC</div>
 
       <div style="display:flex; gap:12px; flex-wrap:wrap;">
-        <a href="/Stuffolio_Users_Manual.html">User Manual</a>
-        <a href="/support.html">Support</a>
-        <a href="/privacy.html">Privacy</a>
-        <a href="/terms.html">Terms</a>
-        <a href="/app-map.html">App Map</a>
+        <a href="Stuffolio_Users_Manual.html">User Manual</a>
+        <a href="support.html">Support</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="app-map.html">App Map</a>
       </div>
     </footer>
   </div>
@@ -347,7 +416,6 @@
     // Theme toggle
     const html = document.documentElement;
     const toggle = document.getElementById('themeToggle');
-    const icon = document.getElementById('themeIcon');
 
     // Check saved preference or system preference
     const saved = localStorage.getItem('theme');
@@ -356,18 +424,19 @@
 
     if (theme === 'light') {
       html.classList.add('light-mode');
-      icon.textContent = '🌙';
+    } else {
+      toggle.classList.add('dark');
     }
 
     toggle.addEventListener('click', () => {
       const isLight = html.classList.contains('light-mode');
       if (isLight) {
         html.classList.remove('light-mode');
-        icon.textContent = '☀️';
+        toggle.classList.add('dark');
         localStorage.setItem('theme', 'dark');
       } else {
         html.classList.add('light-mode');
-        icon.textContent = '🌙';
+        toggle.classList.remove('dark');
         localStorage.setItem('theme', 'light');
       }
     });
