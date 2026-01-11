@@ -15,6 +15,39 @@
   <meta property="og:image" content="https://stuffolio.app/assets/og-image.png" />
   <meta property="og:site_name" content="Stuffolio" />
 
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Stuffolio — Track what you buy, manage what you own" />
+  <meta name="twitter:description" content="Stuffolio helps you track what you buy, manage what you own, and decide what to keep, sell, donate, recycle, or trash." />
+  <meta name="twitter:image" content="https://stuffolio.app/assets/og-image.png" />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://stuffolio.app/" />
+
+  <!-- Apple Smart App Banner (uncomment when app is live) -->
+  <!-- <meta name="apple-itunes-app" content="app-id=YOUR_APP_ID"> -->
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Stuffolio",
+    "operatingSystem": "iOS, iPadOS, macOS",
+    "applicationCategory": "UtilitiesApplication",
+    "description": "Track what you buy, manage what you own, and decide what to keep, sell, donate, recycle, or trash.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "Coffee & Code LLC"
+    }
+  }
+  </script>
+
   <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
@@ -487,7 +520,7 @@
   </script>
 
   <!-- Screenshot Lightbox -->
-  <div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Screenshot viewer" hidden onclick="closeLightbox(event)">
     <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close">&times;</button>
     <button class="lightbox-nav lightbox-prev" onclick="prevImage(event)" aria-label="Previous">&#10094;</button>
     <img id="lightbox-img" class="lightbox-img" src="" alt="" />
@@ -518,13 +551,19 @@
     function openLightbox(index) {
       currentIndex = index;
       updateLightboxImage();
-      document.getElementById('lightbox').classList.add('active');
+      const lightbox = document.getElementById('lightbox');
+      lightbox.hidden = false;
+      lightbox.classList.add('active');
       document.body.style.overflow = 'hidden';
+      // Focus close button for accessibility
+      document.querySelector('.lightbox-close').focus();
     }
 
     function closeLightbox(event) {
       if (event && event.target !== event.currentTarget && !event.target.classList.contains('lightbox-close')) return;
-      document.getElementById('lightbox').classList.remove('active');
+      const lightbox = document.getElementById('lightbox');
+      lightbox.classList.remove('active');
+      lightbox.hidden = true;
       document.body.style.overflow = '';
     }
 
@@ -556,6 +595,34 @@
       if (e.key === 'Escape') closeLightbox();
       if (e.key === 'ArrowLeft') prevImage(e);
       if (e.key === 'ArrowRight') nextImage(e);
+    });
+
+    // Focus trap for lightbox
+    document.getElementById('lightbox').addEventListener('keydown', function(e) {
+      if (e.key === 'Tab') {
+        const focusable = this.querySelectorAll('button');
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
+    });
+
+    // Make screenshot images keyboard accessible
+    document.querySelectorAll('.screenshot-thumb[onclick]').forEach(function(img) {
+      img.setAttribute('tabindex', '0');
+      img.setAttribute('role', 'button');
+      img.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          this.click();
+        }
+      });
     });
   </script>
 </body>
