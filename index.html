@@ -16,19 +16,21 @@
   <meta property="og:site_name" content="Stuffolio" />
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="/assets/stuffolio-logo2.png" />
-  <link rel="apple-touch-icon" href="/assets/stuffolio-logo2.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
 
   <!-- Shared Styles -->
   <link rel="stylesheet" href="/css/styles.css" />
 </head>
 
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
   <div class="wrap">
     <header>
       <div style="display:flex; align-items:center; gap:12px;">
-        <!-- Small header mark uses the same Stuffolio logo but NOT huge -->
-        <img src="/assets/stuffolio-logo2.png" alt="Stuffolio app icon" style="width:38px;height:38px;border-radius:12px;box-shadow:var(--shadow);" />
+        <!-- Small header mark uses optimized logo -->
+        <img src="/assets/logo-64.png" alt="Stuffolio app icon" width="38" height="38" style="border-radius:12px;box-shadow:var(--shadow);" />
         <b style="letter-spacing:.2px;">Stuffolio</b>
       </div>
 
@@ -47,12 +49,13 @@
       </nav>
     </header>
 
+    <main id="main">
     <section class="hero">
       <div class="card">
         <div class="badge"><span class="dot" aria-hidden="true"></span> Beta Testing Now • iPhone / iPad / Mac</div>
 
         <div class="heroLogoRow">
-          <img class="stuffolioLogo" src="/assets/stuffolio-logo2.png" alt="Stuffolio logo" />
+          <img class="stuffolioLogo" src="/assets/logo-256.png" alt="Stuffolio logo" width="120" height="120" />
           <div>
             <h1 style="margin-top:0;">
               Because one day you look around and think,<br/>“Where did we get so much stuff?”
@@ -66,7 +69,7 @@
         </p>
 
         <div class="ctaRow">
-          <a class="btn primary" href="/testflight%20invite.html">Become a Beta Tester</a>
+          <a class="btn primary" href="/testflight-invite.html">Become a Beta Tester</a>
           <a class="btn" href="/quick-start.html">Quick Start Guide</a>
           <a class="btn" href="/support.html">Get Support</a>
         </div>
@@ -122,13 +125,19 @@
         <!-- Hero Screenshot: iPhone + iPad Dashboard -->
         <div style="margin-bottom:24px;">
           <div class="screenshot-container">
-            <img
-              src="/assets/screenshot-iOS-dashboard.png"
-              alt="Stuffolio Dashboard on iPhone and iPad showing the responsive design"
-              class="screenshot-thumb"
-              style="width:100%; border-radius:12px; box-shadow:var(--shadow);"
-              onclick="openLightbox(0)"
-            />
+            <picture>
+              <source srcset="/assets/thumbs/screenshot-iOS-dashboard-thumb.webp" type="image/webp">
+              <img
+                src="/assets/thumbs/screenshot-iOS-dashboard-thumb.png"
+                alt="Stuffolio Dashboard on iPhone and iPad showing the responsive design"
+                class="screenshot-thumb"
+                style="width:100%; border-radius:12px; box-shadow:var(--shadow);"
+                width="800" height="652"
+                loading="lazy"
+                decoding="async"
+                onclick="openLightbox(0)"
+              />
+            </picture>
           </div>
           <p style="text-align:center; color:var(--muted); font-size:.9rem; margin-top:8px;">
             Dashboard — iPhone &amp; iPad
@@ -139,13 +148,18 @@
         <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:16px;">
           <div>
             <div class="screenshot-container">
-              <img
-                src="/assets/screenshot-mystuff.png"
-                alt="Stuffolio My Stuff view on iPhone and iPad showing inventory management"
-                class="screenshot-thumb"
-                style="width:100%; border-radius:12px; box-shadow:var(--shadow);"
-                onclick="openLightbox(1)"
-              />
+              <picture>
+                <source srcset="/assets/thumbs/screenshot-mystuff-thumb.webp" type="image/webp">
+                <img
+                  src="/assets/thumbs/screenshot-mystuff-thumb.png"
+                  alt="Stuffolio My Stuff view on iPhone and iPad showing inventory management"
+                  class="screenshot-thumb"
+                  style="width:100%; border-radius:12px; box-shadow:var(--shadow);"
+                  width="800" height="652"
+                  loading="lazy" decoding="async"
+                  onclick="openLightbox(1)"
+                />
+              </picture>
             </div>
             <p style="text-align:center; color:var(--muted); font-size:.9rem; margin-top:8px;">
               My Stuff — iPhone &amp; iPad
@@ -154,13 +168,18 @@
 
           <div>
             <div class="screenshot-container">
-              <img
-                src="/assets/Screenshoot-dashboard-light-dark.png"
-                alt="Stuffolio Dashboard showing light and dark mode side by side"
-                class="screenshot-thumb"
-                style="width:100%; border-radius:12px; box-shadow:var(--shadow);"
-                onclick="openLightbox(2)"
-              />
+              <picture>
+                <source srcset="/assets/thumbs/Screenshoot-dashboard-light-dark-thumb.webp" type="image/webp">
+                <img
+                  src="/assets/thumbs/Screenshoot-dashboard-light-dark-thumb.png"
+                  alt="Stuffolio Dashboard showing light and dark mode side by side"
+                  class="screenshot-thumb"
+                  style="width:100%; border-radius:12px; box-shadow:var(--shadow);"
+                  width="800" height="571"
+                  loading="lazy" decoding="async"
+                  onclick="openLightbox(2)"
+                />
+              </picture>
             </div>
             <p style="text-align:center; color:var(--muted); font-size:.9rem; margin-top:8px;">
               Dashboard — Light &amp; Dark modes
@@ -169,13 +188,18 @@
 
           <div>
             <div class="screenshot-container">
-              <img
-                src="/assets/screenshot-products-light.png"
-                alt="Stuffolio product inventory list with details panel"
-                class="screenshot-thumb"
-                style="width:100%; border-radius:12px; box-shadow:var(--shadow);"
-                onclick="openLightbox(3)"
-              />
+              <picture>
+                <source srcset="/assets/thumbs/screenshot-products-light-thumb.webp" type="image/webp">
+                <img
+                  src="/assets/thumbs/screenshot-products-light-thumb.png"
+                  alt="Stuffolio product inventory list with details panel"
+                  class="screenshot-thumb"
+                  style="width:100%; border-radius:12px; box-shadow:var(--shadow);"
+                  width="800" height="663"
+                  loading="lazy" decoding="async"
+                  onclick="openLightbox(3)"
+                />
+              </picture>
             </div>
             <p style="text-align:center; color:var(--muted); font-size:.9rem; margin-top:8px;">
               My Products — Track everything you own
@@ -184,13 +208,18 @@
 
           <div>
             <div class="screenshot-container">
-              <img
-                src="/assets/screenshot-stuffscout.png"
-                alt="Stuff Scout AI identifying a vintage dinner plate with value estimate"
-                class="screenshot-thumb"
-                style="width:100%; border-radius:12px; box-shadow:var(--shadow);"
-                onclick="openLightbox(4)"
-              />
+              <picture>
+                <source srcset="/assets/thumbs/screenshot-stuffscout-thumb.webp" type="image/webp">
+                <img
+                  src="/assets/thumbs/screenshot-stuffscout-thumb.png"
+                  alt="Stuff Scout AI identifying a vintage dinner plate with value estimate"
+                  class="screenshot-thumb"
+                  style="width:100%; border-radius:12px; box-shadow:var(--shadow);"
+                  width="800" height="559"
+                  loading="lazy" decoding="async"
+                  onclick="openLightbox(4)"
+                />
+              </picture>
             </div>
             <p style="text-align:center; color:var(--muted); font-size:.9rem; margin-top:8px;">
               Stuff Scout — AI-powered identification &amp; valuation
@@ -199,13 +228,18 @@
 
           <div>
             <div class="screenshot-container">
-              <img
-                src="/assets/screenshot-tools-dark.png"
-                alt="Stuffolio tools and actions menu"
-                class="screenshot-thumb"
-                style="width:100%; border-radius:12px; box-shadow:var(--shadow);"
-                onclick="openLightbox(5)"
-              />
+              <picture>
+                <source srcset="/assets/thumbs/screenshot-tools-dark-thumb.webp" type="image/webp">
+                <img
+                  src="/assets/thumbs/screenshot-tools-dark-thumb.png"
+                  alt="Stuffolio tools and actions menu"
+                  class="screenshot-thumb"
+                  style="width:100%; border-radius:12px; box-shadow:var(--shadow);"
+                  width="800" height="559"
+                  loading="lazy" decoding="async"
+                  onclick="openLightbox(5)"
+                />
+              </picture>
             </div>
             <p style="text-align:center; color:var(--muted); font-size:.9rem; margin-top:8px;">
               Tools — Reports, backups, recalls &amp; more
@@ -214,13 +248,18 @@
 
           <div>
             <div class="screenshot-container">
-              <img
-                src="/assets/screenshot-Insights.png"
-                alt="Stuffolio inventory insights and analytics"
-                class="screenshot-thumb"
-                style="width:100%; border-radius:12px; box-shadow:var(--shadow);"
-                onclick="openLightbox(6)"
-              />
+              <picture>
+                <source srcset="/assets/thumbs/screenshot-Insights-thumb.webp" type="image/webp">
+                <img
+                  src="/assets/thumbs/screenshot-Insights-thumb.png"
+                  alt="Stuffolio inventory insights and analytics"
+                  class="screenshot-thumb"
+                  style="width:100%; border-radius:12px; box-shadow:var(--shadow);"
+                  width="800" height="559"
+                  loading="lazy" decoding="async"
+                  onclick="openLightbox(6)"
+                />
+              </picture>
             </div>
             <p style="text-align:center; color:var(--muted); font-size:.9rem; margin-top:8px;">
               Insights — Analytics &amp; reports
@@ -229,13 +268,18 @@
 
           <div>
             <div class="screenshot-container">
-              <img
-                src="/assets/screenshot-donate.png"
-                alt="Stuffolio donation tracking for tax records"
-                class="screenshot-thumb"
-                style="width:100%; border-radius:12px; box-shadow:var(--shadow);"
-                onclick="openLightbox(7)"
-              />
+              <picture>
+                <source srcset="/assets/thumbs/screenshot-donate-thumb.webp" type="image/webp">
+                <img
+                  src="/assets/thumbs/screenshot-donate-thumb.png"
+                  alt="Stuffolio donation tracking for tax records"
+                  class="screenshot-thumb"
+                  style="width:100%; border-radius:12px; box-shadow:var(--shadow);"
+                  width="800" height="559"
+                  loading="lazy" decoding="async"
+                  onclick="openLightbox(7)"
+                />
+              </picture>
             </div>
             <p style="text-align:center; color:var(--muted); font-size:.9rem; margin-top:8px;">
               Donate — Track charitable giving
@@ -244,13 +288,18 @@
 
           <div>
             <div class="screenshot-container">
-              <img
-                src="/assets/screenshot-Ai%20agents.png"
-                alt="Stuffolio AI agents providing smart assistance"
-                class="screenshot-thumb"
-                style="width:100%; border-radius:12px; box-shadow:var(--shadow);"
-                onclick="openLightbox(8)"
-              />
+              <picture>
+                <source srcset="/assets/thumbs/screenshot-Ai-agents-thumb.webp" type="image/webp">
+                <img
+                  src="/assets/thumbs/screenshot-Ai agents-thumb.png"
+                  alt="Stuffolio AI agents providing smart assistance"
+                  class="screenshot-thumb"
+                  style="width:100%; border-radius:12px; box-shadow:var(--shadow);"
+                  width="800" height="559"
+                  loading="lazy" decoding="async"
+                  onclick="openLightbox(8)"
+                />
+              </picture>
             </div>
             <p style="text-align:center; color:var(--muted); font-size:.9rem; margin-top:8px;">
               AI Agents — Smart assistance
@@ -389,6 +438,7 @@
         </div>
       </div>
     </section>
+    </main>
 
     <footer>
       <div>© <span id="y"></span> Coffee & Code LLC</div>
