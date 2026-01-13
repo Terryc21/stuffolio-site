@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Stuffolio — Home inventory + the life-of-stuff system (warranties, repairs, legacy)</title>
+  <meta name="description" content="Stuffolio is a home inventory + life-of-stuff system: track what you own, real-world warranties (phases + coverage), manuals and repair help, and what you sell/donate/gift — privacy-first and offline by default." />
+  <meta name="theme-color" content="#0b1220" />
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://stuffolio.app/" />
+  <meta property="og:title" content="Stuffolio — Home inventory + life-of-stuff system" />
+  <meta property="og:description" content="Inventory, warranties (phases + coverage), repair-ready manuals, and move-on outcomes — privacy-first and offline by default." />
+  <meta property="og:image" content="https://stuffolio.app/assets/og-image.png" />
+  <meta property="og:site_name" content="Stuffolio" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Stuffolio — Home inventory + life-of-stuff system" />
+  <meta name="twitter:description" content="Track what you own, real-world warranties, repair info, and what happens when items leave your home — privacy-first and offline by default." />
+  <meta name="twitter:image" content="https://stuffolio.app/assets/og-image.png" />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://stuffolio.app/" />
+
+  <!-- Apple Smart App Banner (uncomment when app is live) -->
+  <!-- <meta name="apple-itunes-app" content="app-id=YOUR_APP_ID"> -->
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Stuffolio",
+    "operatingSystem": "iOS, iPadOS, macOS",
+    "applicationCategory": "UtilitiesApplication",
+    "description": "Home inventory + life-of-stuff system: track what you own, real-world warranties (phases + coverage), manuals and repair help, and what you sell/donate/gift — privacy-first and offline by default.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "Coffee & Code LLC"
+    }
+  }
+  </script>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png" />
+
+  <!-- Shared Styles -->
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="wrap">
+    <header>
+      <a href="index.html" class="site-title">Stuffolio</a>
+
+      <div class="header-right">
+        <nav>
+          <a href="#different">Why different</a>
+          <a href="#stages">Stages</a>
+          <a href="#features">Features</a>
+          <a href="quick-start.html">Quick Start</a>
+          <a href="Stuffolio_Users_Manual.html">User Manual</a>
+          <a href="support.html">Support</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="app-map.html">App Map</a>
+        </nav>
+
+        <div class="theme-toggle">
+          <span class="theme-icon">☀️</span>
+          <button class="theme-toggle-switch" id="themeToggle" aria-label="Toggle light/dark mode"></button>
+          <span class="theme-icon">🌙</span>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- HERO -->
+      <section class="hero">
+        <div class="card">
+          <div class="badge"><span class="dot" aria-hidden="true"></span> Beta Testing Now • iPhone / iPad / Mac</div>
+
+          <div class="heroLogoRow">
+            <img class="stuffolioLogo" src="../assets/logo-256.png" alt="Stuffolio logo" width="120" height="120" />
+            <div>
+              <!-- KEEP HEADLINE -->
+              <h1 style="margin-top:0;">
+                Because one day you look around and think,<br />“Where did we get so much stuff?”
+              </h1>
+
+              <!-- REFINED SUBHEADLINE -->
+              <p class="hero-subtitle">
+                Stuffolio isn’t just about listing your belongings.
+                It’s a life-of-stuff system for buying, owning, repairing, and moving things on — on purpose.
+              </p>
+            </div>
+          </div>
+
+          <div class="ctaRow">
+            <a class="btn primary" href="testflight-invite.html">Become a Beta Tester</a>
+            <a class="btn" href="#different">See what makes it different</a>
+            <a class="btn" href="quick-start.html">Quick Start Guide</a>
+          </div>
+
+          <div class="callout">
+            <b>Optional AI help (opt-in):</b>
+            Identify an item from a photo, find manuals, parts, and DIY videos, and get value estimates — only when you ask.
+            <div style="margin-top:8px;">
+              <b>Privacy by default.</b> Offline-first. No ads, no tracking, no profiles — ever.
+            </div>
+          </div>
+
+          <!-- DIFFERENTIATOR STRIP -->
+          <div class="differentiator-strip" style="margin-top:14px;">
+            Acquire → Own → Move On
+            <span>Inventory, warranties, repairs, and legacy — in one place.</span>
+          </div>
+        </div>
+
+        <!-- WHAT IT IS -->
+        <div class="card">
+          <h2 style="margin-top:0;">What Stuffolio is</h2>
+
+          <p>
+            Stuffolio helps you capture what you own — and what happens to it over time.
+            From manuals and warranties, to repairs, donations, sales, and legacy wishes,
+            everything stays connected to the item itself.
+          </p>
+
+          <div class="divider"></div>
+
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px;">
+            <div>
+              <div class="pill">For normal humans</div>
+              <ul>
+                <li>Capture the basics now. Fill in details later (or never).</li>
+                <li>Add items individually or in groups.</li>
+                <li>Useful even if you don’t know price, model, or serial number.</li>
+              </ul>
+            </div>
+
+            <div>
+              <div class="pill">For real-life outcomes</div>
+              <ul>
+                <li>Track warranty coverage the way it actually works (phases + types).</li>
+                <li>Keep repair-ready info: manuals, parts, and videos.</li>
+                <li>Record move-on outcomes: donate, sell, gift, recycle, or trash.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- WHY DIFFERENT (MERGED) -->
+      <section id="different" style="margin-top:18px;">
+        <!-- quick bullets (fast scan) -->
+        <div class="card">
+          <h2>What makes Stuffolio different</h2>
+          <ul>
+            <li><strong>Lifecycle, not just lists.</strong> Track items from purchase through ownership and beyond.</li>
+            <li><strong>Real-world warranty tracking.</strong> Coverage phases, deductibles, and reminders.</li>
+            <li><strong>Repair-ready memory.</strong> Manuals, parts, and DIY help when something breaks.</li>
+            <li><strong>Privacy by default.</strong> Offline-first. AI and network features are opt-in.</li>
+          </ul>
+        </div>
+
+        <!-- pillars (benefit framing) -->
+        <div class="card" style="margin-top:14px;">
+          <h2>Track • Protect • Plan</h2>
+          <p style="color:var(--muted); margin-top:8px;">
+            A simple way to remember what you own, keep it covered, and make better decisions over time.
+          </p>
+
+          <div class="grid" style="margin-top:14px;">
+            <div class="card" style="padding:18px;">
+              <h3>Track</h3>
+              <p style="color:var(--muted); margin:0;">
+                Capture items fast with photos, notes, locations, and categories — even if you don’t have every detail.
+              </p>
+            </div>
+
+            <div class="card" style="padding:18px;">
+              <h3>Protect</h3>
+              <p style="color:var(--muted); margin:0;">
+                Keep receipts, manuals, serial numbers, and warranty coverage connected to each item — ready for repairs or insurance.
+              </p>
+            </div>
+
+            <div class="card" style="padding:18px;">
+              <h3>Plan</h3>
+              <p style="color:var(--muted); margin:0;">
+                Track what happens when items leave your home: donate, sell, gift, recycle, or trash — plus Legacy Wishes for meaningful items.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- gentle comparison (clarifies differentiation) -->
+        <div class="card" style="margin-top:14px;">
+          <h2>Inventory apps vs. Stuffolio</h2>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:14px;">
+            <div class="card" style="padding:18px;">
+              <h3>Many inventory apps</h3>
+              <ul>
+                <li>Focus on lists and photos</li>
+                <li>Stop at “cataloging”</li>
+                <li>Warranties are usually just an expiration date</li>
+                <li>Move-on history is often missing</li>
+              </ul>
+            </div>
+            <div class="card" style="padding:18px;">
+              <h3>Stuffolio</h3>
+              <ul>
+                <li>Lifecycle model: Acquire → Own → Move On</li>
+                <li>Real-world warranty coverage (phases + types + deductibles)</li>
+                <li>Repair-ready memory (manuals, parts, DIY)</li>
+                <li>Move-on outcomes + Legacy Wishes (non-legal)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- scenarios (emotional proof) -->
+        <div class="card" style="margin-top:14px;">
+          <h2>When it matters most</h2>
+          <div class="grid" style="margin-top:14px;">
+            <div class="card" style="padding:18px;">
+              <h3>Something breaks</h3>
+              <p style="color:var(--muted); margin:0;">
+                You’ve got the manual, warranty coverage, serial number, and repair videos — all attached to the item.
+              </p>
+            </div>
+
+            <div class="card" style="padding:18px;">
+              <h3>Insurance claim</h3>
+              <p style="color:var(--muted); margin:0;">
+                Quickly generate a searchable inventory and exports — even if you never filled in every field perfectly.
+              </p>
+            </div>
+
+            <div class="card" style="padding:18px;">
+              <h3>Donation season</h3>
+              <p style="color:var(--muted); margin:0;">
+                Track quantities and estimated values so you can document donations without turning your weekend into a spreadsheet.
+              </p>
+            </div>
+
+            <div class="card" style="padding:18px;">
+              <h3>Passing things on</h3>
+              <p style="color:var(--muted); margin:0;">
+                Record Legacy Wishes for meaningful items, so family isn’t left guessing. (Not legal advice — just clarity.)
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- STAGES -->
+      <section id="stages" style="margin-top:18px;">
+        <div class="card">
+          <h2>The 3 Stages of Stuff</h2>
+          <p style="color:var(--muted); margin-top:8px;">
+            Stuffolio is built around how things actually move through your life — not just where they sit on a shelf.
+          </p>
+
+          <div class="grid" style="margin-top:14px;">
+            <div class="card" style="padding:18px;">
+              <div class="pill">Stage 1</div>
+              <h3>Acquire 🛒</h3>
+              <ul>
+                <li>Capture basics fast (name, brand, photo)</li>
+                <li>Warranty start dates + reminders</li>
+                <li>Receipts optional (but supported)</li>
+                <li>Optional AI help for manuals/parts/IDs</li>
+              </ul>
+            </div>
+
+            <div class="card" style="padding:18px;">
+              <div class="pill">Stage 2</div>
+              <h3>Own 🏠</h3>
+              <ul>
+                <li>Inventory for insurance (without perfection)</li>
+                <li>Locations, categories, notes</li>
+                <li>Serial numbers when you have them</li>
+                <li>Smart search for “where did I put that?”</li>
+              </ul>
+            </div>
+
+            <div class="card" style="padding:18px;">
+              <div class="pill">Stage 3</div>
+              <h3>Move On 📦</h3>
+              <ul>
+                <li>Track donations with quantities + estimated values</li>
+                <li>Sell / gift / recycle / trash outcomes</li>
+                <li>Group items: move on some, keep the rest</li>
+                <li>Keep a clean, searchable “stuff history”</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FEATURES -->
+      <section id="features" style="margin-top:18px;">
+        <div class="card">
+          <h2>Features (the practical kind)</h2>
+
+          <div class="grid" style="margin-top:14px;">
+            <div class="card" style="padding:18px;">
+              <h3>Fast capture</h3>
+              <ul>
+                <li>Add an item with a photo + a few fields</li>
+                <li>Fill in details later (or never)</li>
+                <li>Scan barcodes to auto-fill product info</li>
+              </ul>
+            </div>
+
+            <div class="card" style="padding:18px;">
+              <h3>Warranty tracking</h3>
+              <ul>
+                <li>Set expiration dates &amp; coverage phases</li>
+                <li>Track coverage types (Full, Parts Only, Labor Only, Limited)</li>
+                <li>Get reminders before coverage changes</li>
+                <li>Record deductibles &amp; attach receipts</li>
+              </ul>
+            </div>
+
+            <div class="card" style="padding:18px;">
+              <h3>Insurance-ready</h3>
+              <ul>
+                <li>Searchable inventory</li>
+                <li>Export to PDF, CSV, or Excel</li>
+                <li>Useful even with incomplete info</li>
+              </ul>
+            </div>
+
+            <div class="card" style="padding:18px;">
+              <h3>Stuff Scout (AI)</h3>
+              <ul>
+                <li>"What is this thing?" — photo identification</li>
+                <li>Find manuals, parts, and DIY videos</li>
+                <li>Get estimated values for selling or donating</li>
+              </ul>
+            </div>
+
+            <div class="card" style="padding:18px;">
+              <h3>Organize your way</h3>
+              <ul>
+                <li>Categories: Electronics, Furniture, Tools...</li>
+                <li>Locations: Living Room, Garage, Storage...</li>
+                <li>Filter and search to find anything fast</li>
+              </ul>
+            </div>
+
+            <div class="card" style="padding:18px;">
+              <h3>Sync across devices</h3>
+              <ul>
+                <li>Optional iCloud sync (iPhone, iPad, Mac)</li>
+                <li>Your data stays in <b>your</b> iCloud account</li>
+                <li>Works fully offline — sync when you want</li>
+              </ul>
+            </div>
+
+            <div class="card" style="padding:18px;">
+              <h3>Privacy first</h3>
+              <ul>
+                <li>Data stored locally by default</li>
+                <li>All network features are opt-in</li>
+                <li>No ads, no tracking, no profiles — ever</li>
+              </ul>
+            </div>
+
+            <div class="card" style="padding:18px;">
+              <h3>Reports &amp; insights</h3>
+              <ul>
+                <li>Inventory summaries by category or location</li>
+                <li>Move-on reports for donations and sales</li>
+                <li>Tax-ready documentation for deductions</li>
+              </ul>
+            </div>
+
+            <div class="card" style="padding:18px;">
+              <h3><a href="family-sharing.html" style="text-decoration:none;">Legacy Wishes &amp; Family Sharing</a></h3>
+              <ul>
+                <li>Record who should receive meaningful items (non-legal)</li>
+                <li>Share wishes with family via iCloud</li>
+                <li>Family Sharing: buy once, family uses free (when enabled)</li>
+                <li><a href="family-sharing.html">Learn more →</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="divider" style="margin-top:16px;"></div>
+
+          <div class="ctaRow" style="margin-top:14px;">
+            <a class="btn primary" href="testflight-invite.html">Become a Beta Tester</a>
+            <a class="btn" href="support.html">Get Support</a>
+            <a class="btn" href="privacy.html">Read Privacy</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div>© <span id="y"></span> Coffee &amp; Code LLC</div>
+
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="Stuffolio_Users_Manual.html">User Manual</a>
+        <a href="family-sharing.html">Family Sharing</a>
+        <a href="support.html">Support</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="app-map.html">App Map</a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+
+    // Theme toggle (kept from your existing approach)
+    const html = document.documentElement;
+    const toggle = document.getElementById('themeToggle');
+
+    const saved = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const theme = saved || (prefersDark ? 'dark' : 'light');
+
+    if (theme === 'light') {
+      html.classList.add('light-mode');
+    } else {
+      toggle.classList.add('dark');
+    }
+
+    toggle?.addEventListener('click', () => {
+      const isLight = html.classList.toggle('light-mode');
+      toggle.classList.toggle('dark', !isLight);
+      localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,956 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Stuffolio — Track. Protect. Plan. Your stuff, your way.</title>
+  <meta name="description" content="More than inventory. Track warranties with coverage phases, document for insurance, and plan who gets your treasured belongings. Privacy-first. Family Sharing included." />
+  <meta name="theme-color" content="#0b1220" />
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://stuffolio.app/" />
+  <meta property="og:title" content="Stuffolio — Track. Protect. Plan." />
+  <meta property="og:description" content="More than inventory. Track warranties, protect your purchases, plan what happens to treasured belongings. Privacy-first for iPhone, iPad, and Mac." />
+  <meta property="og:image" content="https://stuffolio.app/assets/og-image.png" />
+  <meta property="og:site_name" content="Stuffolio" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Stuffolio — Track. Protect. Plan." />
+  <meta name="twitter:description" content="More than inventory. Track warranties, protect your purchases, plan what happens to treasured belongings. Privacy-first for iPhone, iPad, and Mac." />
+  <meta name="twitter:image" content="https://stuffolio.app/assets/og-image.png" />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://stuffolio.app/" />
+
+  <!-- Apple Smart App Banner (uncomment when app is live) -->
+  <!-- <meta name="apple-itunes-app" content="app-id=YOUR_APP_ID"> -->
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Stuffolio",
+    "operatingSystem": "iOS, iPadOS, macOS",
+    "applicationCategory": "UtilitiesApplication",
+    "description": "Track what you own, protect your purchases with smart warranty tracking, and plan who gets your treasured belongings.",
+    "offers": {
+      "@type": "Offer",
+      "price": "9.99",
+      "priceCurrency": "USD"
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "Coffee & Code LLC"
+    }
+  }
+  </script>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png" />
+
+  <!-- Shared Styles -->
+  <link rel="stylesheet" href="../css/styles.css" />
+
+  <!-- Page-specific styles for new sections -->
+  <style>
+    /* Why Stuffolio pillars */
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin: 24px 0;
+    }
+    @media (max-width: 768px) {
+      .pillars-grid { grid-template-columns: 1fr; }
+    }
+    .pillar {
+      text-align: center;
+      padding: 24px 16px;
+      background: rgba(125,211,252,.05);
+      border: 1px solid rgba(125,211,252,.15);
+      border-radius: 16px;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .pillar:hover {
+      transform: translateY(-2px);
+      border-color: rgba(125,211,252,.35);
+    }
+    .pillar-icon {
+      font-size: 2.5rem;
+      margin-bottom: 12px;
+    }
+    .pillar h3 {
+      color: var(--accent);
+      margin: 0 0 8px;
+      font-size: 1.3rem;
+    }
+    .pillar p {
+      color: var(--muted);
+      margin: 0;
+      font-size: 0.95rem;
+    }
+    .pillar ul {
+      text-align: left;
+      margin: 12px 0 0;
+      padding-left: 20px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    .pillar li { margin: 6px 0; }
+
+    /* Differentiator section */
+    .diff-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 20px 0;
+    }
+    @media (max-width: 600px) {
+      .diff-grid { grid-template-columns: 1fr; }
+    }
+    .diff-card {
+      padding: 20px;
+      border-radius: 12px;
+    }
+    .diff-card.others {
+      background: rgba(239,68,68,.08);
+      border: 1px solid rgba(239,68,68,.2);
+    }
+    .diff-card.stuffolio {
+      background: rgba(34,197,94,.08);
+      border: 1px solid rgba(34,197,94,.2);
+    }
+    .diff-card h4 {
+      margin: 0 0 12px;
+      font-size: 1rem;
+    }
+    .diff-card.others h4 { color: #ef4444; }
+    .diff-card.stuffolio h4 { color: #22c55e; }
+    .diff-card ul {
+      margin: 0;
+      padding-left: 20px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    .diff-card li { margin: 6px 0; }
+
+    /* Scenario cards */
+    .scenario-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+      margin: 20px 0;
+    }
+    .scenario {
+      padding: 20px;
+      background: rgba(167,139,250,.06);
+      border: 1px solid rgba(167,139,250,.15);
+      border-radius: 12px;
+    }
+    .scenario-quote {
+      font-style: italic;
+      color: var(--text);
+      margin: 0 0 12px;
+      font-size: 1.05rem;
+    }
+    .scenario-result {
+      color: var(--accent);
+      font-weight: 600;
+      margin: 0;
+      font-size: 0.95rem;
+    }
+
+    /* Light mode */
+    .light-mode .pillar { background: rgba(0,102,204,.05); border-color: rgba(0,102,204,.15); }
+    .light-mode .pillar:hover { border-color: rgba(0,102,204,.35); }
+    .light-mode .diff-card.others { background: rgba(220,38,38,.06); border-color: rgba(220,38,38,.2); }
+    .light-mode .diff-card.stuffolio { background: rgba(22,163,74,.06); border-color: rgba(22,163,74,.2); }
+    .light-mode .scenario { background: rgba(124,58,237,.06); border-color: rgba(124,58,237,.15); }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="wrap">
+    <header>
+      <a href="index.html" class="site-title">Stuffolio</a>
+      <div class="header-right">
+        <nav>
+          <a href="#why-stuffolio">Why Stuffolio</a>
+          <a href="#features">Features</a>
+          <a href="quick-start.html">Quick Start</a>
+          <a href="Stuffolio_Users_Manual.html">User Manual</a>
+          <a href="support.html">Support</a>
+          <a href="privacy.html">Privacy</a>
+        </nav>
+        <div class="theme-toggle">
+          <span class="theme-icon">☀️</span>
+          <button class="theme-toggle-switch" id="themeToggle" aria-label="Toggle light/dark mode"></button>
+          <span class="theme-icon">🌙</span>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <div class="card">
+        <div class="badge"><span class="dot" aria-hidden="true"></span> Beta Testing Now • iPhone / iPad / Mac</div>
+
+        <div class="heroLogoRow">
+          <img class="stuffolioLogo" src="../assets/logo-256.png" alt="Stuffolio logo" width="120" height="120" />
+          <div>
+            <h1 style="margin-top:0;">
+              Because one day you look around and think,<br/>"Where did we get so much stuff?"
+            </h1>
+          </div>
+        </div>
+
+        <p class="lead">
+          <strong>Track</strong> what you own. <strong>Protect</strong> it with smart warranty tracking.
+          <strong>Plan</strong> who gets your treasured belongings — all without needing perfect records.
+        </p>
+
+        <div class="ctaRow">
+          <a class="btn primary" href="testflight-invite.html">Become a Beta Tester</a>
+          <a class="btn" href="quick-start.html">Quick Start Guide</a>
+          <a class="btn" href="family-sharing.html">Family Sharing</a>
+        </div>
+
+        <div class="callout">
+          <b>More than inventory.</b> Stuffolio follows your stuff through its entire lifecycle — from purchase to protection to passing it on.
+          <div style="margin-top:8px;">
+            <b>Your data stays yours.</b> Stored in your iCloud, not our servers. No ads, no tracking, no profiles — ever.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY STUFFOLIO - THE 3 PILLARS -->
+    <section id="why-stuffolio" style="margin-top:18px;">
+      <div class="card">
+        <h2 style="margin-top:0; text-align:center;">Why Stuffolio?</h2>
+        <p style="color:var(--muted); text-align:center; margin-bottom:8px; font-size:1.1rem;">
+          Most inventory apps stop at "list your stuff." Stuffolio goes further.
+        </p>
+
+        <div class="pillars-grid">
+          <div class="pillar">
+            <div class="pillar-icon">📋</div>
+            <h3>Track</h3>
+            <p>Know what you own</p>
+            <ul>
+              <li>Fast capture with photos</li>
+              <li>Barcode scanning</li>
+              <li>Categories & locations</li>
+              <li>Works with incomplete info</li>
+            </ul>
+          </div>
+
+          <div class="pillar">
+            <div class="pillar-icon">🛡️</div>
+            <h3>Protect</h3>
+            <p>Safeguard your purchases</p>
+            <ul>
+              <li>Warranty phase tracking</li>
+              <li>Coverage change alerts</li>
+              <li>Deductible tracking</li>
+              <li>Insurance-ready exports</li>
+            </ul>
+          </div>
+
+          <div class="pillar">
+            <div class="pillar-icon">💝</div>
+            <h3>Plan</h3>
+            <p>Decide what happens next</p>
+            <ul>
+              <li>Legacy Wishes for family</li>
+              <li>Donation & sale tracking</li>
+              <li>Tax documentation</li>
+              <li>Share wishes via iCloud</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NOT JUST ANOTHER INVENTORY APP -->
+    <section id="differentiator" style="margin-top:18px;">
+      <div class="card">
+        <h2 style="margin-top:0; text-align:center;">Not Just Another Inventory App</h2>
+        <p style="color:var(--muted); text-align:center; margin-bottom:8px;">
+          Here's what makes Stuffolio different.
+        </p>
+
+        <div class="diff-grid">
+          <div class="diff-card others">
+            <h4>❌ Typical Inventory Apps</h4>
+            <ul>
+              <li>List items with photos</li>
+              <li>Warranty = just an expiration date</li>
+              <li>No coverage phase tracking</li>
+              <li>No deductible tracking</li>
+              <li>No support interaction history</li>
+              <li>No inheritance planning</li>
+              <li>Data on company servers</li>
+              <li>Per-seat family pricing</li>
+            </ul>
+          </div>
+
+          <div class="diff-card stuffolio">
+            <h4>✓ Stuffolio</h4>
+            <ul>
+              <li>Full lifecycle tracking</li>
+              <li>Warranty phases: Full → Parts Only → Limited</li>
+              <li>Alerts before coverage changes</li>
+              <li>Track deductibles per tier</li>
+              <li>Log support calls & reference numbers</li>
+              <li><strong>Legacy Wishes</strong> — plan who gets what</li>
+              <li>Your data in YOUR iCloud</li>
+              <li>Family Sharing: buy once, family free</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REAL-WORLD SCENARIOS -->
+    <section id="scenarios" style="margin-top:18px;">
+      <div class="card">
+        <h2 style="margin-top:0; text-align:center;">When It Matters Most</h2>
+        <p style="color:var(--muted); text-align:center; margin-bottom:8px;">
+          Real situations where Stuffolio makes the difference.
+        </p>
+
+        <div class="scenario-grid">
+          <div class="scenario">
+            <p class="scenario-quote">"After the flood, we had to list everything we lost for insurance."</p>
+            <p class="scenario-result">→ Photos, receipts, and values — already documented.</p>
+          </div>
+
+          <div class="scenario">
+            <p class="scenario-quote">"The dishwasher broke. I had no idea if it was still under warranty."</p>
+            <p class="scenario-result">→ Alert: "Warranty changes to Parts Only in 30 days."</p>
+          </div>
+
+          <div class="scenario">
+            <p class="scenario-quote">"When Mom passed, we didn't know what she wanted us to have."</p>
+            <p class="scenario-result">→ Her Legacy Wishes were already shared. No guessing.</p>
+          </div>
+
+          <div class="scenario">
+            <p class="scenario-quote">"I called Samsung three times. Who did I talk to? What was my case number?"</p>
+            <p class="scenario-result">→ Support history: Rep name, reference #, follow-up date.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why It Matters - Statistics -->
+    <section id="why-it-matters" style="margin-top:18px;">
+      <div class="card">
+        <h2 style="margin-top:0; text-align:center;">The Numbers Don't Lie</h2>
+        <p style="color:var(--muted); text-align:center; margin-bottom:24px;">
+          Your home contains thousands of items — from electronics to heirlooms.<br/>
+          Could you list them from memory?
+        </p>
+
+        <div class="stats-grid">
+          <div class="stat-item">
+            <div class="stat-number">2/3</div>
+            <div class="stat-label">of homeowners are underinsured</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">&lt;50%</div>
+            <div class="stat-label">of homeowners have a home inventory</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">$300+</div>
+            <div class="stat-label">average cost to repair a refrigerator</div>
+          </div>
+        </div>
+
+        <p class="sources">
+          Sources: <a href="https://www.myknowledgebroker.com/blog/personal-insurance/total-home-loss-67-of-homeowners-are-underinsured/" target="_blank" rel="noopener">United Policyholders</a>,
+          <a href="https://www.iii.org/fact-statistic/facts-statistics-homeowners-and-renters-insurance" target="_blank" rel="noopener">Insurance Information Institute</a>,
+          <a href="https://www.libertyhomeguard.com/blog/home-maintenance/average-appliance-repair-costs-with-prices/" target="_blank" rel="noopener">Liberty Home Guard</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- Who Uses Stuffolio -->
+    <section id="who-its-for" style="margin-top:18px;">
+      <div class="card">
+        <h2 style="margin-top:0; text-align:center;">Who Uses Stuffolio</h2>
+        <p style="color:var(--muted); text-align:center; margin-bottom:20px;">
+          Whether you're protecting your home, tracking warranties, or preserving family history.
+        </p>
+
+        <div class="use-cases-grid">
+          <div class="use-case">
+            <div class="use-case-icon">🏠</div>
+            <h3>Homeowners &amp; Renters</h3>
+            <p class="use-case-quote">"If my house burned down, could I list everything I own?"</p>
+            <p class="use-case-desc">Document your belongings for insurance — even without receipts.</p>
+          </div>
+
+          <div class="use-case">
+            <div class="use-case-icon">⏰</div>
+            <h3>Warranty Trackers</h3>
+            <p class="use-case-quote">"My dishwasher died. Was it still under warranty?"</p>
+            <p class="use-case-desc">Know when coverage changes — not just when it expires.</p>
+          </div>
+
+          <div class="use-case">
+            <div class="use-case-icon">🔍</div>
+            <h3>Collectors &amp; Thrifters</h3>
+            <p class="use-case-quote">"What IS this thing? What's it worth?"</p>
+            <p class="use-case-desc">Stuff Scout identifies items and estimates values from a photo.</p>
+          </div>
+
+          <div class="use-case">
+            <div class="use-case-icon">👨‍👩‍👧</div>
+            <h3>Families &amp; Planning Ahead</h3>
+            <p class="use-case-quote">"I want specific people to have specific things."</p>
+            <p class="use-case-desc">Legacy Wishes lets you record your intentions — not a legal doc, just clarity.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Screenshot Carousel -->
+    <section id="screenshots" style="margin-top:18px;">
+      <div class="card">
+        <h2 style="margin-top:0; text-align:center;">See Stuffolio in Action</h2>
+        <p style="color:var(--muted); text-align:center; margin-bottom:20px;">
+          Beautiful on Mac, iPhone, and iPad — in light or dark mode.
+        </p>
+
+        <!-- Platform Tabs -->
+        <div class="platform-tabs" role="tablist">
+          <button class="platform-tab active" role="tab" aria-selected="true" data-platform="ios" id="tab-ios" aria-controls="carousel-ios">
+            <span class="tab-icon">📱</span> iPhone &amp; iPad
+          </button>
+          <button class="platform-tab" role="tab" aria-selected="false" data-platform="mac" id="tab-mac" aria-controls="carousel-mac">
+            <span class="tab-icon">💻</span> Mac
+          </button>
+        </div>
+
+        <!-- iOS Carousel -->
+        <div id="carousel-ios" class="carousel" role="tabpanel" aria-labelledby="tab-ios">
+          <div class="carousel-container">
+            <button class="carousel-nav carousel-prev" onclick="carouselPrev('ios')" aria-label="Previous screenshot">&#10094;</button>
+            <div class="carousel-slide">
+              <img id="ios-carousel-img" src="../assets/screenshots/ios/thumbs/ios-dashboard-light-thumb.webp" alt="" class="carousel-img" onclick="openLightbox(0)">
+            </div>
+            <button class="carousel-nav carousel-next" onclick="carouselNext('ios')" aria-label="Next screenshot">&#10095;</button>
+          </div>
+          <p id="ios-carousel-caption" class="carousel-caption">Dashboard — Light Mode</p>
+          <div id="ios-carousel-dots" class="carousel-dots"></div>
+        </div>
+
+        <!-- Mac Carousel -->
+        <div id="carousel-mac" class="carousel" role="tabpanel" aria-labelledby="tab-mac" hidden>
+          <div class="carousel-container">
+            <button class="carousel-nav carousel-prev" onclick="carouselPrev('mac')" aria-label="Previous screenshot">&#10094;</button>
+            <div class="carousel-slide">
+              <img id="mac-carousel-img" src="../assets/screenshots/mac/thumbs/mac-dashboard-dark-thumb.webp" alt="" class="carousel-img" onclick="openLightbox(100)">
+            </div>
+            <button class="carousel-nav carousel-next" onclick="carouselNext('mac')" aria-label="Next screenshot">&#10095;</button>
+          </div>
+          <p id="mac-carousel-caption" class="carousel-caption">Dashboard — Dark Mode</p>
+          <div id="mac-carousel-dots" class="carousel-dots"></div>
+        </div>
+
+        <p style="text-align:center; color:var(--muted); font-size:.85rem; margin-top:16px;">
+          Click any image to view full size
+        </p>
+      </div>
+    </section>
+
+    <!-- Stages Section (Condensed) -->
+    <section id="stages" style="margin-top:18px;">
+      <div class="card">
+        <h2 style="margin-top:0;">Stuff has stages. Stuffolio matches how life actually works.</h2>
+        <p style="color:var(--muted); font-size:1.05rem;">The same item matters in different ways, at different times.</p>
+
+        <div class="grid" style="margin-top:14px;">
+          <div class="card" style="padding:18px;">
+            <div class="pill">Stage 1</div>
+            <h3>Acquire 🛒</h3>
+            <ul>
+              <li>Capture basics fast (name, brand, photo)</li>
+              <li>Warranty start dates + coverage phases</li>
+              <li>Receipts optional (but supported)</li>
+              <li>AI assist finds manuals & parts</li>
+            </ul>
+          </div>
+
+          <div class="card" style="padding:18px;">
+            <div class="pill">Stage 2</div>
+            <h3>Own 🏠</h3>
+            <ul>
+              <li>Inventory for insurance</li>
+              <li>Track warranty phase changes</li>
+              <li>Log support interactions</li>
+              <li>Schedule maintenance reminders</li>
+            </ul>
+          </div>
+
+          <div class="card" style="padding:18px;">
+            <div class="pill">Stage 3</div>
+            <h3>Let Go 📦</h3>
+            <ul>
+              <li>Sell, donate, gift, or recycle</li>
+              <li>Record values for tax docs</li>
+              <li>Legacy Wishes: who gets what</li>
+              <li>Keep a clean "stuff history"</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES - Organized by Pillar -->
+    <section id="features" style="margin-top:18px;">
+      <div class="card">
+        <h2>Features (the practical kind)</h2>
+        <p style="color:var(--muted); margin-bottom:20px;">Everything you need to track, protect, and plan.</p>
+
+        <!-- TRACK Features -->
+        <h3 style="color:var(--accent); margin-top:20px; margin-bottom:12px;">📋 Track — Know What You Own</h3>
+        <div class="grid">
+          <div class="card" style="padding:18px;">
+            <h3>Fast capture</h3>
+            <ul>
+              <li>Add an item with a photo + a few fields</li>
+              <li>Fill in details later (or never)</li>
+              <li>Scan barcodes to auto-fill product info</li>
+            </ul>
+          </div>
+
+          <div class="card" style="padding:18px;">
+            <h3>Organize your way</h3>
+            <ul>
+              <li>Categories: Electronics, Furniture, Tools...</li>
+              <li>Locations: Living Room, Garage, Storage...</li>
+              <li>Filter and search to find anything fast</li>
+            </ul>
+          </div>
+
+          <div class="card" style="padding:18px;">
+            <h3>Stuff Scout (AI)</h3>
+            <ul>
+              <li>"What is this thing?" — photo identification</li>
+              <li>Find manuals, parts, and DIY videos</li>
+              <li>Get estimated values for selling or donating</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- PROTECT Features -->
+        <h3 style="color:var(--accent); margin-top:28px; margin-bottom:12px;">🛡️ Protect — Safeguard Your Purchases</h3>
+        <div class="grid">
+          <div class="card" style="padding:18px;">
+            <h3>Smart warranty tracking</h3>
+            <ul>
+              <li>Coverage phases: Full → Parts Only → Limited</li>
+              <li>Get alerts before coverage changes</li>
+              <li>Track deductibles per tier</li>
+              <li>Attach receipts & documentation</li>
+            </ul>
+          </div>
+
+          <div class="card" style="padding:18px;">
+            <h3>Support interaction history</h3>
+            <ul>
+              <li>Log calls, chats, and emails</li>
+              <li>Track rep names & reference numbers</li>
+              <li>Set follow-up reminders</li>
+              <li>Never repeat your story twice</li>
+            </ul>
+          </div>
+
+          <div class="card" style="padding:18px;">
+            <h3>Insurance-ready exports</h3>
+            <ul>
+              <li>Searchable inventory anytime</li>
+              <li>Export to PDF, CSV, or Excel</li>
+              <li>Useful even with incomplete info</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- PLAN Features -->
+        <h3 style="color:var(--accent); margin-top:28px; margin-bottom:12px;">💝 Plan — Decide What Happens Next</h3>
+        <div class="grid">
+          <div class="card" style="padding:18px;">
+            <h3><a href="family-sharing.html" style="text-decoration:none;">Legacy Wishes</a></h3>
+            <ul>
+              <li>Plan who gets your treasured belongings</li>
+              <li>Add notes about why items are meaningful</li>
+              <li>Share wishes with family via iCloud</li>
+              <li>Not a legal doc — just clarity for your family</li>
+            </ul>
+          </div>
+
+          <div class="card" style="padding:18px;">
+            <h3>Disposal & tax tracking</h3>
+            <ul>
+              <li>Track sold, donated, gifted, or recycled items</li>
+              <li>Record values for tax documentation</li>
+              <li>Keep a clean history of what left</li>
+            </ul>
+          </div>
+
+          <div class="card" style="padding:18px;">
+            <h3>Reports & insights</h3>
+            <ul>
+              <li>Inventory summaries by category or location</li>
+              <li>Disposal reports for donations and sales</li>
+              <li>Tax reports for deduction documentation</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- FOUNDATION Features -->
+        <h3 style="color:var(--accent); margin-top:28px; margin-bottom:12px;">🔒 Foundation — Privacy & Sync</h3>
+        <div class="grid">
+          <div class="card" style="padding:18px;">
+            <h3>Privacy first</h3>
+            <ul>
+              <li>Data stored in YOUR iCloud account</li>
+              <li>Not on our servers — ever</li>
+              <li>No ads, no tracking, no profiles</li>
+            </ul>
+          </div>
+
+          <div class="card" style="padding:18px;">
+            <h3>Sync across devices</h3>
+            <ul>
+              <li>Optional iCloud sync (iPhone, iPad, Mac)</li>
+              <li>Works fully offline — sync when you want</li>
+              <li>All network features are opt-in</li>
+            </ul>
+          </div>
+
+          <div class="card" style="padding:18px;">
+            <h3><a href="family-sharing.html" style="text-decoration:none;">Family Sharing</a></h3>
+            <ul>
+              <li>Buy once — up to 6 family members use free</li>
+              <li>Each person gets their own private inventory</li>
+              <li>AI subscriptions are per-person</li>
+              <li><a href="family-sharing.html">Learn more →</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section id="pricing" style="margin-top:18px;">
+      <div class="card">
+        <h2 style="margin-top:0; text-align:center;">Simple Pricing</h2>
+        <p style="color:var(--muted); text-align:center; margin-bottom:20px;">
+          Stuffolio works great standalone. AI features are optional.
+        </p>
+
+        <div class="grid" style="max-width:700px; margin:0 auto;">
+          <div class="card" style="padding:20px; text-align:center; border:2px solid var(--accent);">
+            <h3 style="margin-top:0;">Stuffolio</h3>
+            <div style="font-size:2rem; font-weight:700; color:var(--accent);">$9.99</div>
+            <div style="color:var(--muted); margin-bottom:16px;">one-time purchase</div>
+            <ul style="text-align:left; margin:0; padding-left:20px; color:var(--muted);">
+              <li>Full inventory management</li>
+              <li>Smart warranty tracking</li>
+              <li>Legacy Wishes</li>
+              <li>Insurance-ready exports</li>
+              <li>iCloud sync</li>
+              <li><strong>Family Sharing included</strong></li>
+            </ul>
+          </div>
+
+          <div class="card" style="padding:20px; text-align:center;">
+            <h3 style="margin-top:0;">AI Enhancements</h3>
+            <div style="font-size:2rem; font-weight:700; color:var(--accent);">$2.99<span style="font-size:1rem; font-weight:400;">/mo</span></div>
+            <div style="color:var(--muted); margin-bottom:16px;">or $19.99/year (5 months free)</div>
+            <ul style="text-align:left; margin:0; padding-left:20px; color:var(--muted);">
+              <li>Stuff Scout: "What is this?"</li>
+              <li>Smart categorization</li>
+              <li>Value estimates</li>
+              <li>Maintenance suggestions</li>
+              <li>Find manuals & parts</li>
+              <li>Per-person subscription</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section id="cta" style="margin-top:18px;">
+      <div class="card" style="text-align:center; padding:32px;">
+        <h2 style="margin-top:0;">Ready to Take Control of Your Stuff?</h2>
+        <p style="color:var(--muted); font-size:1.1rem; margin-bottom:24px;">
+          Track what you own. Protect your purchases. Plan what matters.
+        </p>
+        <div class="ctaRow" style="justify-content:center;">
+          <a class="btn primary" href="testflight-invite.html">Join the Beta</a>
+          <a class="btn" href="quick-start.html">Quick Start Guide</a>
+        </div>
+      </div>
+    </section>
+
+    </main>
+
+    <footer>
+      <div>© <span id="y"></span> Coffee & Code LLC</div>
+
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="Stuffolio_Users_Manual.html">User Manual</a>
+        <a href="family-sharing.html">Family Sharing</a>
+        <a href="support.html">Support</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="app-map.html">App Map</a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+
+    // Theme toggle
+    const html = document.documentElement;
+    const toggle = document.getElementById('themeToggle');
+
+    // Check saved preference or system preference
+    const saved = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const theme = saved || (prefersDark ? 'dark' : 'light');
+
+    if (theme === 'light') {
+      html.classList.add('light-mode');
+    } else {
+      toggle.classList.add('dark');
+    }
+
+    toggle.addEventListener('click', () => {
+      const isLight = html.classList.contains('light-mode');
+      if (isLight) {
+        html.classList.remove('light-mode');
+        toggle.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        html.classList.add('light-mode');
+        toggle.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+      }
+    });
+
+  </script>
+
+  <!-- Screenshot Lightbox -->
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Screenshot viewer" hidden onclick="closeLightbox(event)">
+    <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close">&times;</button>
+    <button class="lightbox-nav lightbox-prev" onclick="prevImage(event)" aria-label="Previous">&#10094;</button>
+    <img id="lightbox-img" class="lightbox-img" src="" alt="" />
+    <button class="lightbox-nav lightbox-next" onclick="nextImage(event)" aria-label="Next">&#10095;</button>
+    <div id="lightbox-caption" class="lightbox-caption"></div>
+  </div>
+
+  <script>
+    // Screenshot data for carousels
+    const iosScreenshots = [
+      { thumb: '../assets/screenshots/ios/thumbs/ios-dashboard-light-thumb.webp', full: '../assets/screenshots/ios/ios-dashboard-light.png', caption: 'Dashboard — Light Mode' },
+      { thumb: '../assets/screenshots/ios/thumbs/ios-dashboard-dark-thumb.webp', full: '../assets/screenshots/ios/ios-dashboard-dark.png', caption: 'Dashboard — Dark Mode' },
+      { thumb: '../assets/screenshots/ios/thumbs/ios-dashboard-scrolled-thumb.webp', full: '../assets/screenshots/ios/ios-dashboard-scrolled.png', caption: 'Dashboard with AI Assistant' },
+      { thumb: '../assets/screenshots/ios/thumbs/ios-dashboard-inventory-thumb.webp', full: '../assets/screenshots/ios/ios-dashboard-inventory.png', caption: 'Inventory Overview' },
+      { thumb: '../assets/screenshots/ios/thumbs/ios-welcome-thumb.webp', full: '../assets/screenshots/ios/ios-welcome.png', caption: 'Welcome Screen' },
+      { thumb: '../assets/screenshots/ios/thumbs/ios-features-thumb.webp', full: '../assets/screenshots/ios/ios-features.png', caption: 'AI-Powered Features' }
+    ];
+
+    const macScreenshots = [
+      { thumb: '../assets/screenshots/mac/thumbs/mac-dashboard-dark-thumb.webp', full: '../assets/screenshots/mac/mac-dashboard-dark.png', caption: 'Dashboard — Dark Mode' },
+      { thumb: '../assets/screenshots/mac/thumbs/mac-dashboard-light-thumb.webp', full: '../assets/screenshots/mac/mac-dashboard-light.png', caption: 'Dashboard — Light Mode' },
+      { thumb: '../assets/screenshots/mac/thumbs/mac-products-dark-thumb.webp', full: '../assets/screenshots/mac/mac-products-dark.png', caption: 'My Products — Dark Mode' },
+      { thumb: '../assets/screenshots/mac/thumbs/mac-products-light-thumb.webp', full: '../assets/screenshots/mac/mac-products-light.png', caption: 'My Products — Light Mode' },
+      { thumb: '../assets/screenshots/mac/thumbs/mac-ai-assistant-thumb.webp', full: '../assets/screenshots/mac/mac-ai-assistant.png', caption: 'AI Product Assistant' },
+      { thumb: '../assets/screenshots/mac/thumbs/mac-donate-item-thumb.webp', full: '../assets/screenshots/mac/mac-donate-item.png', caption: 'Donate Item Form' },
+      { thumb: '../assets/screenshots/mac/thumbs/mac-donate-vs-sell-thumb.webp', full: '../assets/screenshots/mac/mac-donate-vs-sell.png', caption: 'Donate vs Sell Decision' },
+      { thumb: '../assets/screenshots/mac/thumbs/mac-settings-data-thumb.webp', full: '../assets/screenshots/mac/mac-settings-data.png', caption: 'Settings — Data Management' }
+    ];
+
+    // Carousel state
+    const carouselState = { ios: 0, mac: 0 };
+    let currentPlatform = 'ios';
+
+    // Initialize carousels
+    function initCarousels() {
+      createDots('ios', iosScreenshots.length);
+      createDots('mac', macScreenshots.length);
+      updateCarousel('ios');
+      updateCarousel('mac');
+    }
+
+    function createDots(platform, count) {
+      const dotsContainer = document.getElementById(platform + '-carousel-dots');
+      dotsContainer.innerHTML = '';
+      for (let i = 0; i < count; i++) {
+        const dot = document.createElement('button');
+        dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+        dot.setAttribute('aria-label', 'Go to screenshot ' + (i + 1));
+        dot.onclick = () => goToSlide(platform, i);
+        dotsContainer.appendChild(dot);
+      }
+    }
+
+    function updateCarousel(platform) {
+      const screenshots = platform === 'ios' ? iosScreenshots : macScreenshots;
+      const index = carouselState[platform];
+      const img = document.getElementById(platform + '-carousel-img');
+      const caption = document.getElementById(platform + '-carousel-caption');
+
+      img.src = screenshots[index].thumb;
+      img.alt = screenshots[index].caption;
+      img.onclick = () => openLightbox(platform, index);
+      caption.textContent = screenshots[index].caption;
+
+      // Update dots
+      const dots = document.querySelectorAll('#' + platform + '-carousel-dots .carousel-dot');
+      dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
+    }
+
+    function carouselPrev(platform) {
+      const screenshots = platform === 'ios' ? iosScreenshots : macScreenshots;
+      carouselState[platform] = (carouselState[platform] - 1 + screenshots.length) % screenshots.length;
+      updateCarousel(platform);
+    }
+
+    function carouselNext(platform) {
+      const screenshots = platform === 'ios' ? iosScreenshots : macScreenshots;
+      carouselState[platform] = (carouselState[platform] + 1) % screenshots.length;
+      updateCarousel(platform);
+    }
+
+    function goToSlide(platform, index) {
+      carouselState[platform] = index;
+      updateCarousel(platform);
+    }
+
+    // Platform tab switching
+    document.querySelectorAll('.platform-tab').forEach(tab => {
+      tab.addEventListener('click', function() {
+        const platform = this.dataset.platform;
+        currentPlatform = platform;
+
+        // Update tab states
+        document.querySelectorAll('.platform-tab').forEach(t => {
+          t.classList.remove('active');
+          t.setAttribute('aria-selected', 'false');
+        });
+        this.classList.add('active');
+        this.setAttribute('aria-selected', 'true');
+
+        // Show/hide carousels
+        document.getElementById('carousel-ios').hidden = platform !== 'ios';
+        document.getElementById('carousel-mac').hidden = platform !== 'mac';
+      });
+    });
+
+    // Lightbox functionality
+    let lightboxScreenshots = [];
+    let currentIndex = 0;
+
+    function openLightbox(platform, index) {
+      lightboxScreenshots = platform === 'ios' ? iosScreenshots : macScreenshots;
+      currentIndex = index;
+      updateLightboxImage();
+      const lightbox = document.getElementById('lightbox');
+      lightbox.hidden = false;
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
+      document.querySelector('.lightbox-close').focus();
+    }
+
+    function closeLightbox(event) {
+      if (event && event.target !== event.currentTarget && !event.target.classList.contains('lightbox-close')) return;
+      const lightbox = document.getElementById('lightbox');
+      lightbox.classList.remove('active');
+      lightbox.hidden = true;
+      document.body.style.overflow = '';
+    }
+
+    function prevImage(event) {
+      event.stopPropagation();
+      currentIndex = (currentIndex - 1 + lightboxScreenshots.length) % lightboxScreenshots.length;
+      updateLightboxImage();
+    }
+
+    function nextImage(event) {
+      event.stopPropagation();
+      currentIndex = (currentIndex + 1) % lightboxScreenshots.length;
+      updateLightboxImage();
+    }
+
+    function updateLightboxImage() {
+      const img = document.getElementById('lightbox-img');
+      const caption = document.getElementById('lightbox-caption');
+      img.src = lightboxScreenshots[currentIndex].full;
+      img.alt = lightboxScreenshots[currentIndex].caption;
+      caption.textContent = lightboxScreenshots[currentIndex].caption;
+    }
+
+    // Keyboard navigation
+    document.addEventListener('keydown', function(e) {
+      const lightbox = document.getElementById('lightbox');
+      if (lightbox.classList.contains('active')) {
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowLeft') prevImage(e);
+        if (e.key === 'ArrowRight') nextImage(e);
+      } else {
+        // Carousel keyboard nav when lightbox not open
+        if (e.key === 'ArrowLeft') carouselPrev(currentPlatform);
+        if (e.key === 'ArrowRight') carouselNext(currentPlatform);
+      }
+    });
+
+    // Focus trap for lightbox
+    document.getElementById('lightbox').addEventListener('keydown', function(e) {
+      if (e.key === 'Tab') {
+        const focusable = this.querySelectorAll('button');
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
+    });
+
+    // Make carousel images keyboard accessible
+    document.querySelectorAll('.carousel-img').forEach(function(img) {
+      img.setAttribute('tabindex', '0');
+      img.setAttribute('role', 'button');
+      img.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          this.click();
+        }
+      });
+    });
+
+    // Initialize on load
+    initCarousels();
+  </script>
+</body>
+</html>
