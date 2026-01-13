@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Family Sharing & Legacy Wishes — Stuffolio</title>
+  <meta name="description" content="Share Stuffolio with your family and plan who gets your treasured belongings with Legacy Wishes." />
+  <meta name="theme-color" content="#0b1220" />
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://stuffolio.app/family-sharing.html" />
+  <meta property="og:title" content="Family Sharing & Legacy Wishes — Stuffolio" />
+  <meta property="og:description" content="Share Stuffolio with your family and plan who gets your treasured belongings with Legacy Wishes." />
+  <meta property="og:image" content="https://stuffolio.app/assets/og-image.png" />
+  <meta property="og:site_name" content="Stuffolio" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Family Sharing & Legacy Wishes — Stuffolio" />
+  <meta name="twitter:description" content="Share Stuffolio with your family and plan who gets your treasured belongings with Legacy Wishes." />
+  <meta name="twitter:image" content="https://stuffolio.app/assets/og-image.png" />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://stuffolio.app/family-sharing.html" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
+
+  <!-- Shared Styles -->
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- Page-specific styles -->
+  <style>
+    :root { --max: 900px }
+    h1 { font-size:2.2rem; margin:0 0 8px }
+    h2 { font-size:1.4rem; margin:28px 0 12px; color:var(--accent) }
+    h3 { font-size:1.1rem; margin:0 0 8px; color:var(--accent) }
+    p { margin:0 0 14px; color:var(--muted) }
+    a { color:var(--accent) }
+    a:hover { color:var(--text) }
+
+    .lead { font-size:1.1rem; color:var(--muted); margin-bottom:20px }
+
+    .highlight {
+      background: rgba(125,211,252,.08);
+      border:1px solid rgba(125,211,252,.25);
+      border-radius:12px;
+      padding:16px;
+      margin:14px 0;
+      transition: background .3s, border-color .3s;
+    }
+    .highlight p { margin:0; color:var(--text) }
+
+    .highlight-purple {
+      background: rgba(167,139,250,.08);
+      border:1px solid rgba(167,139,250,.25);
+      border-radius:12px;
+      padding:16px;
+      margin:14px 0;
+      transition: background .3s, border-color .3s;
+    }
+    .highlight-purple p { margin:0; color:var(--text) }
+
+    .highlight-yellow {
+      background: rgba(250,204,21,.08);
+      border:1px solid rgba(250,204,21,.25);
+      border-radius:12px;
+      padding:16px;
+      margin:14px 0;
+      transition: background .3s, border-color .3s;
+    }
+    .highlight-yellow p { margin:0; color:var(--text) }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+      margin: 20px 0;
+    }
+
+    .feature-item {
+      background: rgba(125,211,252,.05);
+      border: 1px solid rgba(125,211,252,.15);
+      border-radius: 12px;
+      padding: 16px;
+      transition: background .3s, border-color .3s;
+    }
+    .feature-item h4 {
+      font-size: 1rem;
+      margin: 0 0 8px;
+      color: var(--text);
+    }
+    .feature-item p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+    .feature-item .icon {
+      font-size: 1.5rem;
+      margin-bottom: 8px;
+    }
+
+    .pricing-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+    }
+    .pricing-table th,
+    .pricing-table td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid var(--line);
+    }
+    .pricing-table th {
+      color: var(--accent);
+      font-weight: 600;
+    }
+    .pricing-table td {
+      color: var(--muted);
+    }
+    .pricing-table .check {
+      color: #34c759;
+      font-weight: bold;
+    }
+    .pricing-table .badge {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      font-size: 0.75rem;
+      padding: 2px 8px;
+      border-radius: 4px;
+      margin-left: 4px;
+    }
+
+    .faq-item {
+      border-bottom:1px solid var(--line);
+      padding:14px 0;
+    }
+    .faq-item:last-child { border-bottom:none }
+    .faq-item summary {
+      font-weight:600;
+      cursor:pointer;
+      color:var(--text);
+      padding:4px 0;
+    }
+    .faq-item summary:hover { color:var(--accent) }
+    .faq-item p { margin:12px 0 0; color:var(--muted) }
+
+    /* Light mode overrides */
+    .light-mode .highlight { background:rgba(0,102,204,.08) !important; border-color:rgba(0,102,204,.25) !important }
+    .light-mode .highlight p { color:#333 !important }
+    .light-mode .highlight-purple { background:rgba(124,58,237,.08) !important; border-color:rgba(124,58,237,.25) !important }
+    .light-mode .highlight-purple p { color:#333 !important }
+    .light-mode .highlight-yellow { background:rgba(234,179,8,.08) !important; border-color:rgba(234,179,8,.25) !important }
+    .light-mode .highlight-yellow p { color:#333 !important }
+    .light-mode .feature-item { background:rgba(0,102,204,.05) !important; border-color:rgba(0,102,204,.15) !important }
+    .light-mode .feature-item h4 { color:#1a1a1a !important }
+    .light-mode .faq-item summary { color:#1a1a1a !important }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="wrap">
+    <header>
+      <a href="index.html" class="site-title">Stuffolio</a>
+      <div class="header-right">
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="quick-start.html">Quick Start</a>
+          <a href="Stuffolio_Users_Manual.html">User Manual</a>
+          <a href="support.html">Support</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="app-map.html">App Map</a>
+        </nav>
+        <div class="theme-toggle">
+          <span class="theme-icon">☀️</span>
+          <button class="theme-toggle-switch" id="themeToggle" aria-label="Toggle light/dark mode"></button>
+          <span class="theme-icon">🌙</span>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+
+    <!-- Hero Section -->
+    <div class="card">
+      <h1>Family Sharing & Legacy Wishes</h1>
+      <p class="lead">One purchase. Whole family covered. Plan who gets your treasured belongings — your way.</p>
+
+      <div class="highlight">
+        <p><strong>Buy once, share with family.</strong> Stuffolio supports Apple Family Sharing — purchase once and up to 6 family members can use it on their own devices.</p>
+      </div>
+    </div>
+
+    <!-- Family Sharing Section -->
+    <div class="card">
+      <h2 style="margin-top:0">👨‍👩‍👧‍👦 Apple Family Sharing</h2>
+      <p>When you purchase Stuffolio, everyone in your Apple Family Sharing group can download and use it — at no extra cost.</p>
+
+      <div class="feature-grid">
+        <div class="feature-item">
+          <div class="icon">🔒</div>
+          <h4>Private by Default</h4>
+          <p>Each family member has their own inventory. Your items, warranties, and notes are visible only to you.</p>
+        </div>
+        <div class="feature-item">
+          <div class="icon">📱</div>
+          <h4>Separate Apps</h4>
+          <p>Everyone gets their own Stuffolio installation on their own devices with their own iCloud storage.</p>
+        </div>
+        <div class="feature-item">
+          <div class="icon">🤝</div>
+          <h4>Share When You Choose</h4>
+          <p>Sharing is always explicit and intentional — through Legacy Wishes when you're ready.</p>
+        </div>
+        <div class="feature-item">
+          <div class="icon">✨</div>
+          <h4>Full Features</h4>
+          <p>Every family member gets complete inventory management, warranty tracking, and Legacy Wishes.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Legacy Wishes Section -->
+    <div class="card">
+      <h2 style="margin-top:0">💝 Legacy Wishes</h2>
+      <p>Plan what happens to your meaningful belongings. Reduce confusion and stress for the people you love.</p>
+
+      <div class="highlight-purple">
+        <p><strong>What is Legacy Wishes?</strong> A thoughtful way to record who should receive your treasured items — your grandmother's ring, your vintage guitar, the family photo albums. It's not a legal document, it's a conversation starter.</p>
+      </div>
+
+      <h3>How It Works</h3>
+      <div class="feature-grid">
+        <div class="feature-item">
+          <div class="icon">👤</div>
+          <h4>Add Beneficiaries</h4>
+          <p>Create a list of people who might receive your belongings — family members, friends, or organizations.</p>
+        </div>
+        <div class="feature-item">
+          <div class="icon">🏷️</div>
+          <h4>Assign Items</h4>
+          <p>Choose which items go to which people. Add notes about why an item is meaningful or special instructions.</p>
+        </div>
+        <div class="feature-item">
+          <div class="icon">📤</div>
+          <h4>Share Your Wishes</h4>
+          <p>When you're ready, share your Legacy Wishes with family through secure iCloud collaboration.</p>
+        </div>
+        <div class="feature-item">
+          <div class="icon">✏️</div>
+          <h4>Update Anytime</h4>
+          <p>Life changes. Your wishes can too. Add, remove, or reassign items whenever you want.</p>
+        </div>
+      </div>
+
+      <div class="highlight-yellow">
+        <p><strong>Important:</strong> Legacy Wishes are not legal instructions — they are personal intentions meant to reduce confusion and stress. For estate planning, please consult an attorney.</p>
+      </div>
+    </div>
+
+    <!-- Pricing Section -->
+    <div class="card">
+      <h2 style="margin-top:0">💰 Simple Pricing</h2>
+      <p>Stuffolio works great as a standalone app. AI features are optional.</p>
+
+      <table class="pricing-table">
+        <tr>
+          <th>What You Get</th>
+          <th>Price</th>
+          <th>Family Sharing</th>
+        </tr>
+        <tr>
+          <td>
+            <strong>Stuffolio Purchase</strong><br>
+            Full inventory • Warranties • Legacy Wishes • Exports
+          </td>
+          <td>$9.99 <small>(one-time)</small></td>
+          <td><span class="check">✓</span> Shared <span class="badge">Family</span></td>
+        </tr>
+        <tr>
+          <td>
+            <strong>AI Enhancements</strong><br>
+            Smart categorization • Value estimates • Maintenance tips
+          </td>
+          <td>$2.99/month<br><small>or $19.99/year (5 months free)</small></td>
+          <td>Per person</td>
+        </tr>
+      </table>
+
+      <p style="font-size:0.9rem; margin-top:16px;">AI-powered features are based on individual usage, so each family member who wants AI features subscribes separately. This keeps the service fair and sustainable.</p>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="card">
+      <h2 style="margin-top:0">Frequently Asked Questions</h2>
+
+      <details class="faq-item">
+        <summary>Does Stuffolio support Family Sharing?</summary>
+        <p>Yes! Purchase Stuffolio once and up to 6 family members can download it free through Apple's Family Sharing. Each person gets their own private inventory.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Will my family see my inventory?</summary>
+        <p>No. Each family member has their own private inventory. Your data stays yours. Sharing is always optional and explicit — only through Legacy Wishes when you choose.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>How do I share my Legacy Wishes with family?</summary>
+        <p>In Stuffolio, go to Legacy Wishes and tap "Share with Family." This creates a secure iCloud share that you control. You can stop sharing at any time.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Is Legacy Wishes a legal document?</summary>
+        <p>No. Legacy Wishes are not legal instructions — they are personal intentions meant to reduce confusion and stress. They help start conversations and reduce uncertainty. For estate planning, please consult an attorney.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Are subscriptions shared with family?</summary>
+        <p>No. AI-powered features are based on individual usage, so each family member who wants AI features subscribes separately. The app itself (inventory, warranties, Legacy Wishes) is fully shared through Family Sharing.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>What if I don't subscribe to AI features?</summary>
+        <p>Stuffolio works great as a standalone app! The subscription adds AI-powered convenience features (smart categorization, value estimates, maintenance tips) but isn't required for full inventory management, warranty tracking, or Legacy Wishes.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Can I change my Legacy Wishes later?</summary>
+        <p>Absolutely. Life changes, and your wishes can too. You can add, remove, or reassign items to different people at any time. Sharing updates automatically when you make changes.</p>
+      </details>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="card" style="text-align:center;">
+      <h2 style="margin-top:0">Ready to Get Started?</h2>
+      <p>Track your stuff. Protect your purchases. Plan your legacy.</p>
+      <div class="highlight" style="display:inline-block; margin-top:16px;">
+        <p><a href="https://testflight.apple.com/join/YOUR_LINK" style="font-size:1.1rem; font-weight:600;">Join the Beta on TestFlight →</a></p>
+      </div>
+    </div>
+
+    </main>
+
+    <footer>
+      <p>© 2026 Coffee and Code. <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="support.html">Support</a></p>
+    </footer>
+  </div>
+
+  <!-- Theme Toggle Script -->
+  <script>
+    (function() {
+      const toggle = document.getElementById('themeToggle');
+      const root = document.documentElement;
+      const stored = localStorage.getItem('theme');
+      if (stored === 'light') root.classList.add('light-mode');
+
+      toggle?.addEventListener('click', () => {
+        root.classList.toggle('light-mode');
+        localStorage.setItem('theme', root.classList.contains('light-mode') ? 'light' : 'dark');
+      });
+    })();
+  </script>
+</body>
+</html>
