@@ -472,6 +472,7 @@
                 <li><a href="#importing">Importing Products</a></li>
                 <li><a href="#data-review">Reviewing Data Quality</a></li>
                 <li><a href="#icloud">Using iCloud Sync</a></li>
+                <li><a href="#apple-integration">Apple Integration Features</a></li>
                 <li><a href="#settings">Configuring Settings</a></li>
                 <li><a href="#legacy-wishes">Legacy Wishes</a></li>
                 <li><a href="#shortcuts">Keyboard Shortcuts</a></li>
@@ -501,8 +502,10 @@
                     <ul>
                         <li><strong>Dashboard</strong> — Overview and quick access</li>
                         <li><strong>My Products</strong> — Your inventory</li>
-                        <li><strong>Actions</strong> — Tools organized by Acquire, Own, Dispose</li>
+                        <li><strong>Actions</strong> — Import, export, and utilities organized by Acquire, Own, Dispose</li>
                         <li><strong>Insights</strong> — Reports and analytics</li>
+                        <li><strong>Stuff Scout</strong> — AI-powered identification and research</li>
+                        <li><strong>Legacy Wishes</strong> — Record who gets what</li>
                         <li><strong>Settings</strong> — Preferences and configuration</li>
                     </ul>
                 </li>
@@ -1259,6 +1262,84 @@
             <a href="#toc" class="back-to-top">↑ Back to Contents</a>
         </section>
 
+        <section id="apple-integration">
+            <h2>Apple Integration Features</h2>
+            <p>Stuffolio integrates deeply with macOS to help you work faster.</p>
+
+            <h3>Spotlight Search</h3>
+            <p>Search your inventory from anywhere on your Mac:</p>
+            <ul>
+                <li>Press <kbd>⌘Space</kbd> to open Spotlight</li>
+                <li>Type a product name (e.g., "vacuum", "laptop")</li>
+                <li>Click a result to open it directly in Stuffolio</li>
+            </ul>
+            <p><em>Example: Find your MacBook Pro by typing "macbook" without opening Stuffolio.</em></p>
+
+            <h3>Handoff</h3>
+            <p>Start on one device, continue on your Mac:</p>
+            <ul>
+                <li>When viewing a product on iPhone/iPad, a Stuffolio icon appears in your Dock</li>
+                <li>Click the Handoff icon to continue exactly where you left off</li>
+                <li><strong>Requirements:</strong> Same Apple ID, Bluetooth and Wi-Fi enabled, Handoff enabled in System Settings</li>
+            </ul>
+
+            <h3>Desktop Widgets</h3>
+            <p>Access your inventory from Notification Center or the Desktop.</p>
+
+            <h4>Available Widgets</h4>
+            <table>
+                <tr><th>Widget</th><th>Sizes</th><th>What It Shows</th></tr>
+                <tr><td><strong>Quick Add</strong></td><td>Small, Medium</td><td>Click to add a new product instantly</td></tr>
+                <tr><td><strong>Expiring Soon</strong></td><td>Small, Medium, Large</td><td>Warranties expiring in the next 30 days</td></tr>
+                <tr><td><strong>Recent Items</strong></td><td>Medium, Large</td><td>Your most recently added products</td></tr>
+                <tr><td><strong>Inventory Stats</strong></td><td>Small</td><td>Total items and value at a glance</td></tr>
+            </table>
+
+            <h4>Adding Widgets to Desktop</h4>
+            <ol>
+                <li>Right-click on your Desktop</li>
+                <li>Select <strong>Edit Widgets...</strong></li>
+                <li>Search for "Stuffolio"</li>
+                <li>Drag a widget to your Desktop</li>
+            </ol>
+
+            <h4>Adding Widgets to Notification Center</h4>
+            <ol>
+                <li>Click the date/time in the menu bar to open Notification Center</li>
+                <li>Click <strong>Edit Widgets</strong> at the bottom</li>
+                <li>Find Stuffolio and add widgets</li>
+            </ol>
+
+            <h3>Siri Shortcuts</h3>
+            <p>Use voice commands to interact with your inventory:</p>
+            <ul>
+                <li>"Hey Siri, add a product to Stuffolio"</li>
+                <li>"Hey Siri, show my expiring warranties"</li>
+                <li>"Hey Siri, open Stuffolio"</li>
+            </ul>
+
+            <h3>Menu Bar Commands</h3>
+            <p>Stuffolio integrates with the standard Mac menu bar:</p>
+            <ul>
+                <li><strong>Stuffolio > Settings</strong> — Open preferences</li>
+                <li><strong>File > New Product</strong> — Add a new item</li>
+                <li><strong>File > Import</strong> — Import from CSV</li>
+                <li><strong>File > Export</strong> — Export your data</li>
+                <li><strong>View > Sidebar</strong> — Show/hide sidebar</li>
+                <li><strong>Help</strong> — Access documentation</li>
+            </ul>
+
+            <h3>Privacy Controls</h3>
+            <p>Control which Apple features are enabled in Settings > Integrations:</p>
+            <ul>
+                <li><strong>Spotlight Search:</strong> Index products in system search</li>
+                <li><strong>Handoff:</strong> Continue on other devices</li>
+                <li><strong>Siri Shortcuts:</strong> Enable voice commands</li>
+            </ul>
+            <p>All features are opt-in and can be disabled at any time.</p>
+            <a href="#toc" class="back-to-top">↑ Back to Contents</a>
+        </section>
+
         <section id="settings">
             <h2>Configuring Settings</h2>
 
@@ -1361,9 +1442,10 @@
                 <tr><th>Shortcut</th><th>Action</th></tr>
                 <tr><td><kbd>⌘1</kbd></td><td>Go to Dashboard</td></tr>
                 <tr><td><kbd>⌘2</kbd></td><td>Go to My Products</td></tr>
-                <tr><td><kbd>⌘3</kbd></td><td>Go to Reports</td></tr>
-                <tr><td><kbd>⌘4</kbd></td><td>Go to Tools</td></tr>
+                <tr><td><kbd>⌘3</kbd></td><td>Go to Actions</td></tr>
+                <tr><td><kbd>⌘4</kbd></td><td>Go to Insights</td></tr>
                 <tr><td><kbd>⌘5</kbd></td><td>Go to Stuff Scout</td></tr>
+                <tr><td><kbd>⌘6</kbd></td><td>Go to Legacy Wishes</td></tr>
                 <tr><td><kbd>⌘⌃S</kbd></td><td>Toggle Sidebar</td></tr>
             </table>
 
@@ -1429,13 +1511,13 @@
                 <tr><th>Item</th><th>Description</th><th>Keywords</th></tr>
                 <tr><td><strong>Dashboard</strong></td><td>Overview of your inventory</td><td>home, summary, main</td></tr>
                 <tr><td><strong>My Products</strong></td><td>Browse and manage your inventory</td><td>items, list, browse, stuff</td></tr>
-                <tr><td><strong>Tools</strong></td><td>Import, export, and utilities</td><td>utilities, scanner</td></tr>
-                <tr><td><strong>Reports</strong></td><td>Analytics and insights</td><td>analytics, stats</td></tr>
+                <tr><td><strong>Actions</strong></td><td>Import, export, and utilities</td><td>utilities, scanner, tools</td></tr>
+                <tr><td><strong>Insights</strong></td><td>Analytics and reports</td><td>analytics, stats, reports</td></tr>
                 <tr><td><strong>Settings</strong></td><td>App settings and configuration</td><td>preferences, config</td></tr>
                 <tr><td><strong>Legacy Wishes</strong></td><td>Record who gets what</td><td>inheritance, recipient, estate, will</td></tr>
             </table>
 
-            <h5>Tools (3 items)</h5>
+            <h5>Utilities (3 items)</h5>
             <table>
                 <tr><th>Item</th><th>Description</th><th>Keywords</th></tr>
                 <tr><td><strong>AI Product Assistant</strong></td><td>Get AI-powered help with products</td><td>assistant, manual, troubleshoot</td></tr>
@@ -1511,7 +1593,9 @@
             <h3>Color Accessibility</h3>
             <ul>
                 <li>No reliance on color alone — status uses color + icon + text</li>
+                <li>Blue/Yellow/Red palette (avoids green/orange confusion for colorblind users)</li>
                 <li>High contrast mode supported</li>
+                <li>WCAG 2.1 Level AA compliant</li>
             </ul>
 
             <h3>Reduce Motion</h3>

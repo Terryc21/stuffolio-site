@@ -490,6 +490,7 @@
                 <li><a href="#importing">Importing Products</a></li>
                 <li><a href="#data-review">Reviewing Data Quality</a></li>
                 <li><a href="#icloud">Using iCloud Sync</a></li>
+                <li><a href="#apple-integration">Apple Integration Features</a></li>
                 <li><a href="#settings">Configuring Settings</a></li>
                 <li><a href="#legacy-wishes">Legacy Wishes</a></li>
                 <li><a href="#ipad-features">iPad Features</a></li>
@@ -516,14 +517,15 @@
             <p><span class="device-note">iPhone</span></p>
             <ul>
                 <li>Use the tab bar at the bottom of the screen</li>
-                <li>Four tabs: Dashboard, My Products, Actions, Settings</li>
+                <li>Five tabs: Dashboard, My Products, Actions, Stuff Scout, Settings</li>
+                <li>Access Legacy Wishes and Insights from the More menu</li>
             </ul>
 
             <p><span class="device-note">iPad</span></p>
             <ul>
                 <li>Use the sidebar on the left side of the screen</li>
                 <li>Tap the sidebar icon (☰) to show or hide the sidebar</li>
-                <li>Sections include: Dashboard, My Products, Actions, Insights, Settings</li>
+                <li>Sections include: Dashboard, My Products, Actions, Insights, Stuff Scout, Legacy Wishes, Settings</li>
             </ul>
             <a href="#toc" class="back-to-top">↑ Back to Contents</a>
         </section>
@@ -1315,6 +1317,96 @@
             <a href="#toc" class="back-to-top">↑ Back to Contents</a>
         </section>
 
+        <section id="apple-integration">
+            <h2>Apple Integration Features</h2>
+            <p>Stuffolio integrates deeply with iOS and iPadOS to help you work faster.</p>
+
+            <h3>Spotlight Search</h3>
+            <p>Search your inventory from anywhere on your device:</p>
+            <ul>
+                <li>Swipe down on your Home Screen to open Spotlight</li>
+                <li>Type a product name (e.g., "vacuum", "laptop")</li>
+                <li>Tap a result to open it directly in Stuffolio</li>
+            </ul>
+            <p><em>Example: Find your Dyson vacuum by typing "vacuum" without opening the app.</em></p>
+
+            <h3>Handoff</h3>
+            <p>Start on one device, continue on another:</p>
+            <ul>
+                <li>When viewing a product on iPhone, a Stuffolio icon appears on your iPad's Dock</li>
+                <li>Tap the Handoff icon to continue exactly where you left off</li>
+                <li><strong>Requirements:</strong> Same Apple ID, Bluetooth and Wi-Fi enabled</li>
+            </ul>
+
+            <h3>Interactive Widgets</h3>
+            <p>Access your inventory from your Lock Screen or Home Screen.</p>
+
+            <h4>Available Widgets</h4>
+            <table>
+                <tr><th>Widget</th><th>Sizes</th><th>What It Shows</th></tr>
+                <tr><td><strong>Quick Add</strong></td><td>Small, Medium</td><td>Tap to add a new product instantly</td></tr>
+                <tr><td><strong>Expiring Soon</strong></td><td>Small, Medium, Large</td><td>Warranties expiring in the next 30 days</td></tr>
+                <tr><td><strong>Recent Items</strong></td><td>Medium, Large</td><td>Your most recently added products</td></tr>
+                <tr><td><strong>Inventory Stats</strong></td><td>Small</td><td>Total items and value at a glance</td></tr>
+            </table>
+
+            <h4>Adding a Widget</h4>
+            <ol>
+                <li>Long-press on your Home Screen until icons wiggle</li>
+                <li>Tap the <strong>+</strong> in the top-left corner</li>
+                <li>Search for "Stuffolio"</li>
+                <li>Choose a widget size and tap <strong>Add Widget</strong></li>
+            </ol>
+
+            <h4>Lock Screen Widgets</h4>
+            <ol>
+                <li>Long-press on your Lock Screen</li>
+                <li>Tap <strong>Customize</strong></li>
+                <li>Tap the widget area</li>
+                <li>Find Stuffolio and add a widget</li>
+            </ol>
+
+            <h3>Focus Filters</h3>
+            <p>Show or hide items based on your current Focus mode:</p>
+            <ul>
+                <li>Go to iOS <strong>Settings > Focus</strong></li>
+                <li>Select a Focus (e.g., Work, Personal)</li>
+                <li>Tap <strong>Add Filter</strong></li>
+                <li>Select <strong>Stuffolio</strong></li>
+                <li>Choose which categories to show during this Focus</li>
+            </ul>
+            <p><em>Example: In Work Focus, show only office equipment. In Personal Focus, show home items.</em></p>
+
+            <h3>Siri Shortcuts</h3>
+            <p>Use voice commands to interact with your inventory:</p>
+
+            <h4>Built-in Commands</h4>
+            <ul>
+                <li>"Hey Siri, add a product to Stuffolio"</li>
+                <li>"Hey Siri, show my expiring warranties"</li>
+                <li>"Hey Siri, open Stuffolio"</li>
+            </ul>
+
+            <h4>Creating Custom Shortcuts</h4>
+            <ol>
+                <li>Open the <strong>Shortcuts</strong> app</li>
+                <li>Tap <strong>+</strong> to create a new shortcut</li>
+                <li>Search for "Stuffolio" actions</li>
+                <li>Add actions like "Add Product" or "Show Products"</li>
+                <li>Name your shortcut (e.g., "Add to my stuff")</li>
+            </ol>
+
+            <h3>Privacy Controls</h3>
+            <p>Control which Apple features are enabled in Settings > Integrations:</p>
+            <ul>
+                <li><strong>Spotlight Search:</strong> Index products in system search</li>
+                <li><strong>Handoff:</strong> Continue on other devices</li>
+                <li><strong>Siri Shortcuts:</strong> Enable voice commands</li>
+            </ul>
+            <p>All features are opt-in and can be disabled at any time.</p>
+            <a href="#toc" class="back-to-top">↑ Back to Contents</a>
+        </section>
+
         <section id="settings">
             <h2>Configuring Settings</h2>
 
@@ -1419,9 +1511,10 @@
                 <tr><td><kbd>⌘N</kbd></td><td>Add New Product</td></tr>
                 <tr><td><kbd>⌘1</kbd></td><td>Dashboard</td></tr>
                 <tr><td><kbd>⌘2</kbd></td><td>My Products</td></tr>
-                <tr><td><kbd>⌘3</kbd></td><td>Reports</td></tr>
-                <tr><td><kbd>⌘4</kbd></td><td>Tools</td></tr>
+                <tr><td><kbd>⌘3</kbd></td><td>Actions</td></tr>
+                <tr><td><kbd>⌘4</kbd></td><td>Insights</td></tr>
                 <tr><td><kbd>⌘5</kbd></td><td>Stuff Scout</td></tr>
+                <tr><td><kbd>⌘6</kbd></td><td>Legacy Wishes</td></tr>
                 <tr><td><kbd>⌘,</kbd></td><td>Settings</td></tr>
             </table>
 
@@ -1451,8 +1544,8 @@
             <table>
                 <tr><th>Category</th><th>Items</th></tr>
                 <tr><td><strong>Actions</strong></td><td>Add Product, Scan Barcode, Import CSV, Export CSV, Export PDF, Backup, Restore, Bulk Operations</td></tr>
-                <tr><td><strong>Navigation</strong></td><td>Dashboard, My Products, Tools, Reports, Settings, Legacy Wishes</td></tr>
-                <tr><td><strong>Tools</strong></td><td>AI Product Assistant, Check Recalls, Audit Mode</td></tr>
+                <tr><td><strong>Navigation</strong></td><td>Dashboard, My Products, Actions, Insights, Settings, Legacy Wishes</td></tr>
+                <tr><td><strong>Utilities</strong></td><td>AI Product Assistant, Check Recalls, Audit Mode</td></tr>
                 <tr><td><strong>Reports</strong></td><td>Inventory Insights, Value Calculator, Depreciation Tracking</td></tr>
                 <tr><td><strong>Help</strong></td><td>Getting Started, Icon Guide, Filter & Sort Help</td></tr>
                 <tr><td><strong>Settings</strong></td><td>Cloud Sync, Notifications, Data Management, About Stuffolio</td></tr>
@@ -1506,8 +1599,9 @@
             <h3>Color Accessibility</h3>
             <ul>
                 <li>No reliance on color alone — status uses color + icon + text</li>
-                <li>Blue/Yellow/Red palette (deuteranopia-friendly)</li>
+                <li>Blue/Yellow/Red palette (avoids green/orange confusion for colorblind users)</li>
                 <li>High contrast supported</li>
+                <li>WCAG 2.1 Level AA compliant</li>
             </ul>
 
             <h3>Reduce Motion</h3>

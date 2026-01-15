@@ -339,12 +339,12 @@
         <p style="margin-bottom:10px; font-weight:600; color:var(--text);">Jump to section:</p>
         <div style="display:flex; flex-wrap:wrap; gap:8px;">
           <a href="#dashboard" class="badge" style="text-decoration:none;">📊 Dashboard</a>
-          <a href="#navigation" class="badge" style="text-decoration:none;">🏠 Navigation</a>
-          <a href="#add-product" class="badge" style="text-decoration:none;">➕ Add Product</a>
-          <a href="#item-detail" class="badge" style="text-decoration:none;">📋 Item Detail</a>
+          <a href="#my-products" class="badge" style="text-decoration:none;">📦 My Products</a>
+          <a href="#actions" class="badge" style="text-decoration:none;">🛠️ Actions</a>
+          <a href="#insights" class="badge" style="text-decoration:none;">💡 Insights</a>
+          <a href="#stuff-scout" class="badge" style="text-decoration:none;">🔍 Stuff Scout</a>
+          <a href="#legacy-wishes" class="badge" style="text-decoration:none;">💝 Legacy Wishes</a>
           <a href="#settings" class="badge" style="text-decoration:none;">⚙️ Settings</a>
-          <a href="#tools" class="badge" style="text-decoration:none;">🛠️ Tools</a>
-          <a href="#dispose" class="badge" style="text-decoration:none;">📦 Dispose</a>
         </div>
       </nav>
     </div>
@@ -500,11 +500,11 @@
       </div>
     </div>
 
-    <!-- MAIN TABS -->
-    <div class="card" id="navigation">
+    <!-- MY PRODUCTS -->
+    <div class="card" id="my-products">
       <div class="section-header">
-        <span class="section-icon" aria-hidden="true">🏠</span>
-        <h2>Main Navigation</h2>
+        <span class="section-icon" aria-hidden="true">📦</span>
+        <h2>My Products</h2>
       </div>
 
       <div class="screen-grid">
@@ -632,6 +632,159 @@
       </div>
     </div>
 
+    <!-- INSIGHTS -->
+    <div class="card" id="insights">
+      <div class="section-header">
+        <span class="section-icon" aria-hidden="true">💡</span>
+        <h2>Insights</h2>
+      </div>
+
+      <div class="screen-grid">
+        <div class="screen-box">
+          <div class="screen-title">📊 Dashboard Stats</div>
+          <div class="screen-desc">At-a-glance metrics about your inventory.</div>
+          <div class="sub-screens">
+            <div class="sub-screen"><strong>Total Value</strong> — Combined worth of your stuff</div>
+            <div class="sub-screen"><strong>Item Count</strong> — How many things you own</div>
+            <div class="sub-screen"><strong>Fun Facts</strong> — "Your stuff equals 47 lattes"</div>
+          </div>
+        </div>
+
+        <div class="screen-box">
+          <div class="screen-title">📈 Reports <span class="badge core">Core</span></div>
+          <div class="screen-desc">Generate summaries for insurance, taxes, or estate planning.</div>
+          <div class="sub-screens">
+            <div class="sub-screen"><strong>Inventory Summary</strong> — Full list with values</div>
+            <div class="sub-screen"><strong>Category Report</strong> — Breakdown by category</div>
+            <div class="sub-screen"><strong>Donation Tax Report</strong> — IRS-ready with fair market values</div>
+          </div>
+        </div>
+
+        <div class="screen-box">
+          <div class="screen-title">🔔 Warranty Timeline</div>
+          <div class="screen-desc">See coverage changes over time.</div>
+          <div class="sub-screens">
+            <div class="sub-screen"><strong>Expiring Soon</strong> — Warranties ending in 30/60/90 days</div>
+            <div class="sub-screen"><strong>Phase Changes</strong> — When Full Coverage becomes Parts Only</div>
+            <div class="sub-screen"><strong>Coverage Alerts</strong> — Notifications before changes</div>
+          </div>
+        </div>
+
+        <div class="screen-box">
+          <div class="screen-title">⚠️ Recall Checker <span class="badge optional">Optional</span></div>
+          <div class="screen-desc">Check CPSC database for product safety recalls.</div>
+          <div class="sub-screens">
+            <div class="sub-screen"><strong>Check Item</strong> — Look up recalls for one item</div>
+            <div class="sub-screen"><strong>Scan All</strong> — Check your entire inventory</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STUFF SCOUT -->
+    <div class="card" id="stuff-scout">
+      <div class="section-header">
+        <span class="section-icon" aria-hidden="true">🔍</span>
+        <h2>Stuff Scout</h2>
+      </div>
+
+      <div class="screen-grid">
+        <div class="screen-box">
+          <div class="screen-title">📷 Identify from Photo <span class="badge optional">Optional</span></div>
+          <div class="screen-desc">Point your camera at antiques, collectibles, or curiosities. AI identifies what it is.</div>
+          <div class="sub-screens">
+            <div class="sub-screen"><strong>Take Photo</strong> — Use camera or photo library</div>
+            <div class="sub-screen"><strong>AI Analysis</strong> — Powered by Claude Vision</div>
+            <div class="sub-screen"><strong>Identification</strong> — Name, maker, date, origin</div>
+          </div>
+        </div>
+
+        <div class="screen-box">
+          <div class="screen-title">💰 Value Estimate</div>
+          <div class="screen-desc">Get price ranges with confidence scores.</div>
+          <div class="sub-screens">
+            <div class="sub-screen"><strong>Price Range</strong> — Low/mid/high estimates</div>
+            <div class="sub-screen"><strong>Confidence Score</strong> — How certain the AI is</div>
+            <div class="sub-screen"><strong>Recent Sales</strong> — Links to comparable sold items</div>
+          </div>
+        </div>
+
+        <div class="screen-box">
+          <div class="screen-title">📚 Historical Context</div>
+          <div class="screen-desc">Learn about what you've found.</div>
+          <div class="sub-screens">
+            <div class="sub-screen"><strong>About This Item</strong> — Detailed description</div>
+            <div class="sub-screen"><strong>Era & Background</strong> — Historical context</div>
+            <div class="sub-screen"><strong>Collector Notes</strong> — Tips for collectors</div>
+          </div>
+        </div>
+
+        <div class="screen-box">
+          <div class="screen-title">📥 Save to Inventory</div>
+          <div class="screen-desc">Add identified items directly to your collection.</div>
+          <div class="sub-screens">
+            <div class="sub-screen"><strong>Auto-Fill Details</strong> — Pre-populate from AI results</div>
+            <div class="sub-screen"><strong>Add Photos</strong> — Include the identification photo</div>
+            <div class="sub-screen"><strong>Edit & Save</strong> — Review before adding</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LEGACY WISHES -->
+    <div class="card" id="legacy-wishes">
+      <div class="section-header">
+        <span class="section-icon" aria-hidden="true">💝</span>
+        <h2>Legacy Wishes</h2>
+      </div>
+
+      <div class="screen-grid">
+        <div class="screen-box">
+          <div class="screen-title">👤 Beneficiaries</div>
+          <div class="screen-desc">People who might receive your belongings.</div>
+          <div class="sub-screens">
+            <div class="sub-screen"><strong>Add Person</strong> — Family, friends, or organizations</div>
+            <div class="sub-screen"><strong>Contact Info</strong> — Optional contact details</div>
+            <div class="sub-screen"><strong>Relationship</strong> — How they're connected to you</div>
+          </div>
+        </div>
+
+        <div class="screen-box">
+          <div class="screen-title">🏷️ Assign Items</div>
+          <div class="screen-desc">Choose who gets what.</div>
+          <div class="sub-screens">
+            <div class="sub-screen"><strong>Select Items</strong> — Browse your inventory</div>
+            <div class="sub-screen"><strong>Assign to Person</strong> — Link item to beneficiary</div>
+            <div class="sub-screen"><strong>Add Notes</strong> — Why it's meaningful or special instructions</div>
+          </div>
+        </div>
+
+        <div class="screen-box">
+          <div class="screen-title">📤 Share with Family</div>
+          <div class="screen-desc">Let family members see your wishes.</div>
+          <div class="sub-screens">
+            <div class="sub-screen"><strong>iCloud Sharing</strong> — Secure share via iCloud</div>
+            <div class="sub-screen"><strong>View-Only Access</strong> — They can see but not edit</div>
+            <div class="sub-screen"><strong>Stop Sharing</strong> — Revoke access anytime</div>
+          </div>
+        </div>
+
+        <div class="screen-box">
+          <div class="screen-title">✏️ Update Anytime</div>
+          <div class="screen-desc">Life changes. Your wishes can too.</div>
+          <div class="sub-screens">
+            <div class="sub-screen"><strong>Reassign Items</strong> — Move items between people</div>
+            <div class="sub-screen"><strong>Remove Assignments</strong> — Clear wishes for an item</div>
+            <div class="sub-screen"><strong>Auto-Sync</strong> — Shared views update automatically</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flow-note">
+        <strong>Important:</strong> Legacy Wishes are personal intentions, not legal instructions. They help start conversations and reduce uncertainty. For estate planning, please consult an attorney.
+      </div>
+    </div>
+
     <!-- SETTINGS -->
     <div class="card" id="settings">
       <div class="section-header">
@@ -691,11 +844,11 @@
       </div>
     </div>
 
-    <!-- TOOLS/ACTIONS -->
-    <div class="card" id="tools">
+    <!-- ACTIONS -->
+    <div class="card" id="actions">
       <div class="section-header">
         <span class="section-icon" aria-hidden="true">🛠️</span>
-        <h2>Tools & Actions</h2>
+        <h2>Actions</h2>
       </div>
 
       <div class="screen-grid">
