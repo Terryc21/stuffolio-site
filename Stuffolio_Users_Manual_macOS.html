@@ -473,6 +473,7 @@
                 <li><a href="#data-review">Reviewing Data Quality</a></li>
                 <li><a href="#icloud">Using iCloud Sync</a></li>
                 <li><a href="#apple-integration">Apple Integration Features</a></li>
+                <li><a href="#macos-features">macOS-Specific Features</a></li>
                 <li><a href="#settings">Configuring Settings</a></li>
                 <li><a href="#legacy-wishes">Legacy Wishes</a></li>
                 <li><a href="#shortcuts">Keyboard Shortcuts</a></li>
@@ -899,6 +900,35 @@
                 <li>Click the filter again to clear it</li>
             </ol>
 
+            <h4>Filter Presets</h4>
+            <p>Save your favorite filter combinations for one-tap access to commonly-used views:</p>
+
+            <p><strong>Creating a Filter Preset:</strong></p>
+            <ol>
+                <li>Apply filters to create the view you want (e.g., Category: Electronics + Status: Expiring)</li>
+                <li>Click the <strong>Save Filter</strong> button in the toolbar</li>
+                <li>Enter a descriptive name (e.g., "Expiring Electronics")</li>
+                <li>Click <strong>Save</strong></li>
+            </ol>
+
+            <p><strong>Using Filter Presets:</strong></p>
+            <ul>
+                <li>Click the <strong>Presets</strong> menu in the toolbar</li>
+                <li>Select any saved preset to apply those filters instantly</li>
+                <li>Presets appear as quick-access buttons for one-tap filtering</li>
+            </ul>
+
+            <p><strong>Managing Filter Presets:</strong></p>
+            <ul>
+                <li>To rename a preset: Right-click and select <strong>Rename</strong></li>
+                <li>To delete a preset: Right-click and select <strong>Delete</strong></li>
+                <li>To update a preset: Apply new filters, then click <strong>Update [Preset Name]</strong></li>
+            </ul>
+
+            <div class="tip">
+                <strong>Example Presets:</strong> "High Value Items" (Value > $1000), "Expiring This Month" (Status: Warning), "Home Office Equipment" (Category: Electronics + Location: Office)
+            </div>
+
             <h3>Sorting Products</h3>
             <ol>
                 <li>Click the <strong>Sort</strong> button in the toolbar</li>
@@ -912,6 +942,18 @@
                 <li>Results appear as you type</li>
                 <li>Press <kbd>Escape</kbd> to clear</li>
             </ol>
+
+            <h4>Recent Searches</h4>
+            <p>Stuffolio remembers your recent search terms for quick access:</p>
+            <ul>
+                <li>Click the search field to see a list of your recent searches</li>
+                <li>Click any recent search to run it again instantly</li>
+                <li>Recent searches are saved across sessions</li>
+                <li>The list shows your last 10 searches</li>
+            </ul>
+            <div class="tip">
+                <strong>Tip:</strong> Use Recent Searches to quickly re-run common queries like "electronics" or "warranty expiring" without retyping.
+            </div>
 
             <h3>Keyboard Navigation</h3>
             <ul>
@@ -1340,6 +1382,69 @@
             <a href="#toc" class="back-to-top">↑ Back to Contents</a>
         </section>
 
+        <section id="macos-features">
+            <h2>macOS-Specific Features</h2>
+            <p>Stuffolio includes special features designed specifically for the Mac experience.</p>
+
+            <h3>Hover Effects</h3>
+            <p>Stuffolio provides subtle visual feedback when you move your mouse over interactive elements, making it easy to identify what you can click:</p>
+
+            <h4>Product Row Hover</h4>
+            <ul>
+                <li>When hovering over any product in the list, the row slightly highlights</li>
+                <li>The row lifts with a subtle shadow effect</li>
+                <li>This makes it clear which product you're about to interact with</li>
+                <li>Particularly helpful when browsing long lists</li>
+            </ul>
+
+            <h4>Button and Control Hover</h4>
+            <ul>
+                <li>Buttons change appearance when you hover over them</li>
+                <li>Interactive elements brighten or change color</li>
+                <li>Toolbar buttons show a subtle highlight</li>
+                <li>Filter chips and tags respond to hover</li>
+            </ul>
+
+            <h4>Dashboard Card Hover</h4>
+            <ul>
+                <li>Feature cards on the Dashboard lift when you hover</li>
+                <li>A shadow effect indicates the card is clickable</li>
+                <li>Makes navigation more intuitive and responsive</li>
+            </ul>
+
+            <div class="tip">
+                <strong>Accessibility Note:</strong> If you have Reduce Motion enabled in System Settings, hover effects are simplified to respect your preferences.
+            </div>
+
+            <h3>Trackpad Gestures</h3>
+            <p>Use your Mac's trackpad for natural navigation:</p>
+            <ul>
+                <li><strong>Two-finger scroll</strong> — Navigate through lists and content</li>
+                <li><strong>Pinch to zoom</strong> — Zoom in on product photos</li>
+                <li><strong>Swipe between pages</strong> — Navigate back and forward (when available)</li>
+            </ul>
+
+            <h3>Context Menus</h3>
+            <p>Right-click (or Control-click) on any product for quick actions:</p>
+            <ul>
+                <li>Edit product details</li>
+                <li>Open AI Assistant</li>
+                <li>Duplicate product</li>
+                <li>Copy product information</li>
+                <li>Share product</li>
+                <li>Delete product</li>
+            </ul>
+
+            <h3>Window Management</h3>
+            <ul>
+                <li><strong>Full Screen Mode:</strong> Click the green button in the window title bar or press <kbd>^⌘F</kbd></li>
+                <li><strong>Split View:</strong> Click and hold the green button, then drag to either side of the screen</li>
+                <li><strong>Resize:</strong> Drag any window edge or corner to resize</li>
+                <li><strong>Minimize:</strong> Press <kbd>⌘M</kbd> to minimize to the Dock</li>
+            </ul>
+            <a href="#toc" class="back-to-top">↑ Back to Contents</a>
+        </section>
+
         <section id="settings">
             <h2>Configuring Settings</h2>
 
@@ -1574,18 +1679,51 @@
 
         <section id="accessibility">
             <h2>Accessibility</h2>
-            <p>Stuffolio is designed to be accessible to everyone.</p>
+            <p>Stuffolio is designed to be accessible to everyone, with comprehensive support for assistive technologies and keyboard-only navigation.</p>
 
-            <h3>VoiceOver</h3>
-            <p>Full VoiceOver support throughout the app. To enable: Press <kbd>⌘F5</kbd> or go to System Settings > Accessibility > VoiceOver.</p>
+            <h3>VoiceOver Support</h3>
+            <p>Full VoiceOver support throughout the app with enhanced, descriptive labels. To enable: Press <kbd>⌘F5</kbd> or go to System Settings > Accessibility > VoiceOver.</p>
 
-            <h3>Keyboard Navigation</h3>
+            <h4>Enhanced VoiceOver Labels</h4>
+            <p>Stuffolio provides detailed, context-rich announcements when using VoiceOver:</p>
+            <ul>
+                <li><strong>Product Listings:</strong> VoiceOver announces the product name, manufacturer, category, and current warranty status</li>
+                <li><strong>Status Badges:</strong> Warranty status is announced as "Active warranty", "Warning - expiring soon", "Expired warranty", or "Lifetime warranty"</li>
+                <li><strong>Interactive Elements:</strong> All buttons, links, and controls include descriptive labels explaining their purpose</li>
+                <li><strong>Forms:</strong> Input fields include hints about expected values and format</li>
+                <li><strong>Images:</strong> Product photos include meaningful descriptions</li>
+            </ul>
+
+            <p><strong>Example VoiceOver Announcement:</strong></p>
+            <p><em>"Samsung 65-inch TV, manufactured by Samsung, Electronics category, Active warranty, button"</em></p>
+
+            <div class="tip">
+                <strong>Tip:</strong> Use VoiceOver's Item Chooser (<kbd>VO+I</kbd>) to quickly jump to specific products or sections.
+            </div>
+
+            <h3>Enhanced Keyboard Navigation</h3>
+            <p>Stuffolio has been optimized for keyboard-only users with improved focus management and navigation shortcuts.</p>
+
+            <h4>Enabling Full Keyboard Access</h4>
             <ol>
                 <li>Go to System Settings > Accessibility > Keyboard</li>
                 <li>Enable <strong>Full Keyboard Access</strong></li>
                 <li>Use <kbd>Tab</kbd> to move between controls</li>
                 <li>Use <kbd>Space</kbd> to activate buttons</li>
             </ol>
+
+            <h4>Keyboard Navigation Improvements</h4>
+            <ul>
+                <li><strong>Focus Indicators:</strong> Clear, high-contrast focus rings show which element is selected</li>
+                <li><strong>Logical Tab Order:</strong> Tab moves through elements in a predictable, logical order</li>
+                <li><strong>Skip Links:</strong> Jump to main content areas without tabbing through everything</li>
+                <li><strong>Form Navigation:</strong> Press <kbd>Tab</kbd> to move forward, <kbd>Shift+Tab</kbd> to move backward</li>
+                <li><strong>List Navigation:</strong> Arrow keys (<kbd>↑</kbd> <kbd>↓</kbd>) navigate product lists efficiently</li>
+                <li><strong>Dialog Boxes:</strong> <kbd>Escape</kbd> closes dialogs, <kbd>Return</kbd> activates default button</li>
+            </ul>
+
+            <h4>Accessible Shortcuts</h4>
+            <p>All features are accessible via keyboard shortcuts. See the <a href="#shortcuts">Keyboard Shortcuts</a> section for a complete list.</p>
 
             <h3>Dynamic Type</h3>
             <p>Text scales with your system settings. Go to System Settings > Accessibility > Display and adjust <strong>Text size</strong>.</p>
