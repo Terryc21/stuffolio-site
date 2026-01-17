@@ -598,6 +598,10 @@
             <h3>Filling Out the Product Form</h3>
             <p>The form has these fields (only Product Name is required):</p>
 
+            <div class="tip">
+                <strong>New in Sprint 5:</strong> The product form now uses collapsible sections to keep things organized. Basic fields are shown by default, and you can expand "Additional Details" sections to see more options. This makes it easier to focus on what you need without getting overwhelmed.
+            </div>
+
             <div class="step-box">
                 <h4>Step 1: Enter Basic Information</h4>
                 <ol>
@@ -659,6 +663,24 @@
                     <li>Or press <kbd>⌘S</kbd> to save</li>
                     <li>The product is added to your inventory</li>
                 </ol>
+            </div>
+
+            <h3>Using Collapsible Sections (Progressive Form Disclosure)</h3>
+            <p>To keep forms organized and prevent information overload, Stuffolio uses collapsible sections in the product form:</p>
+            <ul>
+                <li><strong>Essential fields</strong> are always visible at the top (Product Name, Manufacturer, etc.)</li>
+                <li><strong>Additional sections</strong> can be expanded when needed:
+                    <ul>
+                        <li>Click the chevron icon (▶) next to a section heading to expand it</li>
+                        <li>Click again (▼) to collapse the section</li>
+                        <li>Common collapsible sections include: "Additional Details", "Warranty Information", "Maintenance", "Loans"</li>
+                    </ul>
+                </li>
+                <li>Sections remember their expanded/collapsed state while you're editing</li>
+                <li>This makes the form less cluttered and easier to navigate, especially when adding products with lots of details</li>
+            </ul>
+            <div class="tip">
+                <strong>Tip:</strong> Expand only the sections you need. You don't have to fill out every field — just enter what's relevant for each product.
             </div>
             <a href="#toc" class="back-to-top">↑ Back to Contents</a>
         </section>
@@ -1301,6 +1323,48 @@
                 <li>↻ <strong>Syncing</strong> — Currently uploading/downloading</li>
                 <li>⚠️ <strong>Offline</strong> — No internet connection</li>
             </ul>
+
+            <h3>Offline Mode & Auto-Sync</h3>
+            <p><strong>New in Sprint 5:</strong> Stuffolio now works seamlessly even when you're offline.</p>
+
+            <h4>How Offline Mode Works</h4>
+            <ul>
+                <li><strong>Make changes offline</strong> — Add, edit, or delete products without an internet connection</li>
+                <li><strong>Automatic queuing</strong> — All changes are saved locally and queued for sync</li>
+                <li><strong>Auto-sync when online</strong> — When your Mac reconnects to the internet, queued changes sync automatically</li>
+                <li><strong>No manual action needed</strong> — You don't need to press any buttons or trigger sync manually</li>
+            </ul>
+
+            <h4>What You Can Do Offline</h4>
+            <ul>
+                <li>Add new products</li>
+                <li>Edit existing products</li>
+                <li>Add photos (they'll upload when you're back online)</li>
+                <li>Delete products</li>
+                <li>Browse your inventory</li>
+                <li>Search and filter products</li>
+            </ul>
+
+            <h4>Viewing Pending Changes</h4>
+            <p>While offline, you can see how many changes are waiting to sync:</p>
+            <ol>
+                <li>Go to <strong>Settings > Data</strong></li>
+                <li>Look for the sync status indicator</li>
+                <li>If offline, it shows: "Offline — X changes pending"</li>
+                <li>When you reconnect, these changes upload automatically</li>
+            </ol>
+
+            <div class="tip">
+                <strong>Tip:</strong> Offline mode is perfect for inventory work in areas with poor connectivity, like garages, basements, or storage units. Just keep working — everything syncs when you're back online.
+            </div>
+
+            <h4>Conflict Resolution</h4>
+            <p>If you edit the same product on multiple devices while offline:</p>
+            <ul>
+                <li>The most recent change wins</li>
+                <li>Stuffolio uses timestamps to determine which version to keep</li>
+                <li>No data is lost — earlier versions are preserved in sync history</li>
+            </ul>
             <a href="#toc" class="back-to-top">↑ Back to Contents</a>
         </section>
 
@@ -1859,6 +1923,7 @@
             <h2>Version History</h2>
             <table>
                 <tr><th>Version</th><th>Date</th><th>Highlights</th></tr>
+                <tr><td>2.0 - Sprint 5</td><td>Jan 2026</td><td>Progressive Form Disclosure, Offline Mode with Auto-Sync</td></tr>
                 <tr><td>2.0</td><td>Jan 2026</td><td>Mac Excellence: Native experience, keyboard shortcuts, Continuity</td></tr>
                 <tr><td>1.0</td><td>Dec 2025</td><td>Initial release</td></tr>
             </table>
