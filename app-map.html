@@ -102,7 +102,6 @@
       margin-bottom:6px;
       font-size:.85rem;
       color:var(--muted);
-      transition: background .2s, border-color .2s;
     }
     .sub-screen:last-child { margin-bottom:0 }
     .sub-screen strong { color:var(--text); font-weight:500 }
@@ -114,6 +113,13 @@
     .badge.core {
       background: rgba(134,239,172,.15);
       color:var(--good);
+    }
+    .badge.new {
+      background: rgba(251,191,36,.2);
+      color:#fbbf24;
+      font-size: 0.7rem;
+      padding: 2px 6px;
+      margin-left: 6px;
     }
 
     .flow-note {
@@ -134,6 +140,8 @@
     .light-mode .sub-screen { background:rgba(0,0,0,.02) !important; border-color:rgba(0,0,0,.08) !important }
     .light-mode .section-header { background:rgba(0,102,204,.08) !important; border-color:rgba(0,102,204,.25) !important }
     .light-mode .badge.optional { background:rgba(124,58,237,.1) !important; color:#7c3aed !important }
+    .light-mode .badge.new { background:rgba(217,119,6,.15) !important; color:#b45309 !important }
+    .light-mode .feature-chip.new-feature::after { background:rgba(217,119,6,.2) !important; color:#b45309 !important }
 
     /* ===== Interactive Journey Map ===== */
     .journey-map {
@@ -247,16 +255,28 @@
       align-items: center;
       gap: 8px;
       transition: background 0.2s, border-color 0.2s;
+      text-decoration: none;
+      cursor: pointer;
     }
     .feature-chip:hover {
       background: rgba(255,255,255,.1);
       border-color: var(--accent);
+      color: var(--text);
     }
     .feature-chip .chip-icon {
       font-size: 1.1rem;
     }
     .feature-chip.optional {
       border-style: dashed;
+    }
+    .feature-chip.new-feature::after {
+      content: "NEW";
+      font-size: 0.6rem;
+      background: rgba(251,191,36,.25);
+      color: #fbbf24;
+      padding: 1px 4px;
+      border-radius: 3px;
+      margin-left: auto;
     }
 
     /* Pulse animation on stage icons */
@@ -366,10 +386,10 @@
             <span class="stage-arrow" aria-hidden="true">▼</span>
           </div>
           <div class="stage-features">
-            <div class="feature-chip"><span class="chip-icon">⚡</span> Quick Add</div>
-            <div class="feature-chip"><span class="chip-icon">📝</span> Full Details</div>
-            <div class="feature-chip optional"><span class="chip-icon">📷</span> Scan Barcode</div>
-            <div class="feature-chip optional"><span class="chip-icon">🔍</span> Stuff Scout</div>
+            <a href="#add-product" class="feature-chip" onclick="event.stopPropagation()"><span class="chip-icon">⚡</span> Quick Add</a>
+            <a href="#add-product" class="feature-chip" onclick="event.stopPropagation()"><span class="chip-icon">📝</span> Full Details</a>
+            <a href="#add-product" class="feature-chip optional" onclick="event.stopPropagation()"><span class="chip-icon">📷</span> Scan Barcode</a>
+            <a href="#stuff-scout" class="feature-chip optional" onclick="event.stopPropagation()"><span class="chip-icon">🔍</span> Stuff Scout</a>
           </div>
         </div>
 
@@ -381,17 +401,17 @@
             <span class="stage-icon" aria-hidden="true">📋</span>
             <div class="stage-info">
               <div class="stage-title">Track It</div>
-              <div class="stage-tagline">Warranties, locations, values & more</div>
+              <div class="stage-tagline">Warranties, ratings, maintenance & more</div>
             </div>
             <span class="stage-arrow" aria-hidden="true">▼</span>
           </div>
           <div class="stage-features">
-            <div class="feature-chip"><span class="chip-icon">🗂️</span> Categories</div>
-            <div class="feature-chip"><span class="chip-icon">📍</span> Locations</div>
-            <div class="feature-chip"><span class="chip-icon">🔔</span> Warranty Alerts</div>
-            <div class="feature-chip"><span class="chip-icon">📎</span> Attachments</div>
-            <div class="feature-chip"><span class="chip-icon">💰</span> Values</div>
-            <div class="feature-chip"><span class="chip-icon">🏷️</span> Serial Numbers</div>
+            <a href="#item-detail" class="feature-chip" onclick="event.stopPropagation()"><span class="chip-icon">🔔</span> Warranties</a>
+            <a href="#item-detail" class="feature-chip new-feature" onclick="event.stopPropagation()"><span class="chip-icon">⭐</span> Ratings</a>
+            <a href="#item-detail" class="feature-chip new-feature" onclick="event.stopPropagation()"><span class="chip-icon">🔧</span> Maintenance</a>
+            <a href="#my-products" class="feature-chip" onclick="event.stopPropagation()"><span class="chip-icon">📍</span> Locations</a>
+            <a href="#item-detail" class="feature-chip" onclick="event.stopPropagation()"><span class="chip-icon">💰</span> Values</a>
+            <a href="#item-detail" class="feature-chip" onclick="event.stopPropagation()"><span class="chip-icon">📎</span> Attachments</a>
           </div>
         </div>
 
@@ -408,12 +428,12 @@
             <span class="stage-arrow" aria-hidden="true">▼</span>
           </div>
           <div class="stage-features">
-            <div class="feature-chip"><span class="chip-icon">🔎</span> Search</div>
-            <div class="feature-chip"><span class="chip-icon">📊</span> Dashboard</div>
-            <div class="feature-chip"><span class="chip-icon">🗃️</span> Filters</div>
-            <div class="feature-chip optional"><span class="chip-icon">🤖</span> AI Assistant</div>
-            <div class="feature-chip optional"><span class="chip-icon">🔍</span> Stuff Scout</div>
-            <div class="feature-chip optional"><span class="chip-icon">⚠️</span> Recall Check</div>
+            <a href="#my-products" class="feature-chip" onclick="event.stopPropagation()"><span class="chip-icon">🔎</span> Search</a>
+            <a href="#dashboard" class="feature-chip" onclick="event.stopPropagation()"><span class="chip-icon">📊</span> Dashboard</a>
+            <a href="#my-products" class="feature-chip" onclick="event.stopPropagation()"><span class="chip-icon">🗃️</span> Filters</a>
+            <a href="#item-detail" class="feature-chip optional" onclick="event.stopPropagation()"><span class="chip-icon">🤖</span> AI Assistant</a>
+            <a href="#stuff-scout" class="feature-chip optional" onclick="event.stopPropagation()"><span class="chip-icon">🔍</span> Stuff Scout</a>
+            <a href="#insights" class="feature-chip optional" onclick="event.stopPropagation()"><span class="chip-icon">⚠️</span> Recall Check</a>
           </div>
         </div>
 
@@ -430,18 +450,20 @@
             <span class="stage-arrow" aria-hidden="true">▼</span>
           </div>
           <div class="stage-features">
-            <div class="feature-chip"><span class="chip-icon">💰</span> Sold</div>
-            <div class="feature-chip"><span class="chip-icon">🎁</span> Donated</div>
-            <div class="feature-chip"><span class="chip-icon">🎀</span> Gifted</div>
-            <div class="feature-chip"><span class="chip-icon">♻️</span> Recycled</div>
-            <div class="feature-chip"><span class="chip-icon">↩️</span> Returned</div>
-            <div class="feature-chip"><span class="chip-icon">🗄️</span> Archive</div>
+            <a href="#dispose" class="feature-chip" onclick="event.stopPropagation()"><span class="chip-icon">💰</span> Sold</a>
+            <a href="#dispose" class="feature-chip" onclick="event.stopPropagation()"><span class="chip-icon">🎁</span> Donated</a>
+            <a href="#dispose" class="feature-chip" onclick="event.stopPropagation()"><span class="chip-icon">🎀</span> Gifted</a>
+            <a href="#dispose" class="feature-chip" onclick="event.stopPropagation()"><span class="chip-icon">♻️</span> Recycled</a>
+            <a href="#legacy-wishes" class="feature-chip" onclick="event.stopPropagation()"><span class="chip-icon">💝</span> Legacy Wishes</a>
+            <a href="#my-products" class="feature-chip" onclick="event.stopPropagation()"><span class="chip-icon">🗄️</span> Archive</a>
           </div>
         </div>
       </div>
 
       <p style="text-align:center; margin-top:24px; margin-bottom:0; font-size:0.85rem; color:var(--muted);">
         <span style="border:1px dashed var(--line); padding:2px 8px; border-radius:4px;">Dashed border</span> = optional network feature
+        &nbsp;•&nbsp;
+        <span class="badge new" style="margin-left:0;">New</span> = added in v3.1
       </p>
     </div>
 
@@ -595,6 +617,28 @@
             <div class="sub-screen"><strong>Warranty</strong> — Expiration date and reminders</div>
             <div class="sub-screen"><strong>Location</strong> — Where it's stored</div>
             <div class="sub-screen"><strong>Notes</strong> — Personal notes and comments</div>
+          </div>
+        </div>
+
+        <div class="screen-box">
+          <div class="screen-title">⭐ Product Rating <span class="badge new">New</span></div>
+          <div class="screen-desc">Track your satisfaction and remember what's worth buying again.</div>
+          <div class="sub-screens">
+            <div class="sub-screen"><strong>Star Rating</strong> — Rate products 1-5 stars</div>
+            <div class="sub-screen"><strong>Would Buy Again</strong> — Yes/No decision memory</div>
+            <div class="sub-screen"><strong>Rating Notes</strong> — Why you rated it this way</div>
+            <div class="sub-screen"><strong>Filter by Rating</strong> — Find your favorites</div>
+          </div>
+        </div>
+
+        <div class="screen-box">
+          <div class="screen-title">🔧 Maintenance <span class="badge new">New</span></div>
+          <div class="screen-desc">Schedule upkeep and get smart suggestions based on product category.</div>
+          <div class="sub-screens">
+            <div class="sub-screen"><strong>Scheduled Tasks</strong> — Recurring maintenance reminders</div>
+            <div class="sub-screen"><strong>Smart Suggestions</strong> — Category-based presets</div>
+            <div class="sub-screen"><strong>Task History</strong> — Track completed maintenance</div>
+            <div class="sub-screen"><strong>Due Alerts</strong> — Notifications when tasks are due</div>
           </div>
         </div>
 
@@ -811,6 +855,19 @@
           <div class="sub-screens">
             <div class="sub-screen"><strong>Enable/Disable</strong> — Toggle sync on or off</div>
             <div class="sub-screen"><strong>Sync Status</strong> — View last sync time</div>
+            <div class="sub-screen"><strong>Offline Mode</strong> — Works without internet, syncs when connected</div>
+            <div class="sub-screen"><strong>Conflict Resolution</strong> — Smart merging when edits collide <span class="badge new">New</span></div>
+          </div>
+        </div>
+
+        <div class="screen-box">
+          <div class="screen-title">👨‍👩‍👧‍👦 Family Sharing <span class="badge new">New</span></div>
+          <div class="screen-desc">Share your inventory with family or household members.</div>
+          <div class="sub-screens">
+            <div class="sub-screen"><strong>Invite Members</strong> — Add family by email</div>
+            <div class="sub-screen"><strong>Permission Levels</strong> — View Only, Can Edit, Admin</div>
+            <div class="sub-screen"><strong>Manage Members</strong> — Change permissions or remove</div>
+            <div class="sub-screen"><strong>Shared Items</strong> — See what's shared with your household</div>
           </div>
         </div>
 
