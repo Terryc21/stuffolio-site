@@ -123,102 +123,351 @@
             font-size: 1.1em;
         }
 
-        /* Layout */
-        .page-wrapper {
-            display: flex;
-            min-height: 100vh;
+        /* Main Content */
+        .main-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
         }
 
-        /* Sidebar Navigation */
-        .sidebar {
-            width: 280px;
-            background: var(--card-bg);
-            border-right: 1px solid var(--border);
-            position: fixed;
-            top: 48px;
-            left: 0;
-            bottom: 0;
-            overflow-y: auto;
-            padding: 20px 0;
-            z-index: 100;
+        /* Header */
+        header {
+            text-align: center;
+            margin-bottom: 32px;
         }
 
-        .sidebar-header {
-            padding: 0 20px 16px;
-            border-bottom: 1px solid var(--border);
-            margin-bottom: 16px;
-        }
-
-        .sidebar-header h3 {
-            font-size: 0.85em;
-            color: var(--text-secondary);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .nav-section {
+        header h1 {
+            font-size: 2.2em;
             margin-bottom: 8px;
         }
 
-        .nav-section-title {
-            padding: 8px 20px;
-            font-size: 0.75em;
-            font-weight: 600;
+        header .version {
             color: var(--text-secondary);
+            font-size: 1.1em;
+        }
+
+        header .platforms {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 16px;
+            flex-wrap: wrap;
+        }
+
+        header .platform-badge {
+            background: var(--card-bg);
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 0.9em;
+            border: 1px solid var(--border);
+        }
+
+        /* Welcome Card */
+        .welcome-card {
+            background: linear-gradient(135deg, var(--beta), var(--primary));
+            color: white;
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 32px;
+            text-align: center;
+        }
+
+        .welcome-card h2 {
+            font-size: 1.6em;
+            margin-bottom: 12px;
+        }
+
+        .welcome-card p {
+            opacity: 0.95;
+            font-size: 1.1em;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .welcome-card .philosophy {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            font-size: 1em;
+            opacity: 0.9;
+        }
+
+        /* Section Cards */
+        .card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 28px;
+            margin-bottom: 24px;
+            border: 1px solid var(--border);
+        }
+
+        .card h2 {
+            font-size: 1.4em;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .card h2 .icon {
+            font-size: 1.3em;
+        }
+
+        .card .subtitle {
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
+
+        /* Priority Badge */
+        .priority-badge {
+            background: linear-gradient(135deg, var(--success), #2db44c);
+            color: white;
+            padding: 3px 10px;
+            border-radius: 10px;
+            font-size: 0.7em;
+            font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
 
-        .nav-link {
+        /* Priority Features */
+        .priority-grid {
+            display: grid;
+            gap: 16px;
+        }
+
+        .priority-item {
+            background: var(--background);
+            border-radius: 12px;
+            padding: 20px;
+            border-left: 4px solid var(--success);
+        }
+
+        .priority-item h3 {
+            font-size: 1.1em;
+            margin-bottom: 6px;
             display: flex;
             align-items: center;
             gap: 10px;
-            padding: 10px 20px;
-            color: var(--text);
-            text-decoration: none;
-            font-size: 0.9em;
-            transition: all 0.2s;
-            border-left: 3px solid transparent;
         }
 
-        .nav-link:hover {
+        .priority-item h3 .badge {
+            background: var(--beta);
+            color: white;
+            font-size: 0.65em;
+            padding: 2px 8px;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+
+        .priority-item p {
+            color: var(--text-secondary);
+            font-size: 0.95em;
+            margin-bottom: 10px;
+        }
+
+        .priority-item .why {
+            font-size: 0.85em;
+            color: var(--success);
+            font-style: italic;
+        }
+
+        /* Scenarios */
+        .scenario-grid {
+            display: grid;
+            gap: 16px;
+        }
+
+        .scenario-item {
             background: var(--background);
-            border-left-color: var(--primary);
+            border-radius: 12px;
+            padding: 20px;
+            position: relative;
         }
 
-        .nav-link.active {
-            background: rgba(0, 122, 255, 0.1);
-            border-left-color: var(--primary);
+        .scenario-item::before {
+            content: attr(data-number);
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            background: var(--primary);
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.9em;
+        }
+
+        .scenario-item h3 {
+            font-size: 1.05em;
+            margin-bottom: 8px;
+            margin-top: 8px;
+        }
+
+        .scenario-item p {
+            color: var(--text-secondary);
+            font-size: 0.95em;
+            margin-bottom: 12px;
+        }
+
+        .scenario-item .exercises {
+            font-size: 0.85em;
+            color: var(--text);
+            background: var(--card-bg);
+            padding: 12px;
+            border-radius: 8px;
+        }
+
+        .scenario-item .exercises strong {
             color: var(--primary);
         }
 
-        .nav-link .icon {
-            width: 20px;
+        /* Feedback Section */
+        .feedback-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .feedback-option {
+            background: var(--background);
+            border-radius: 12px;
+            padding: 24px;
             text-align: center;
+            text-decoration: none;
+            color: var(--text);
+            transition: all 0.2s;
+            border: 2px solid transparent;
         }
 
-        .nav-link .progress-dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: var(--border);
-            margin-left: auto;
+        .feedback-option:hover {
+            border-color: var(--primary);
+            transform: translateY(-2px);
         }
 
-        .nav-link .progress-dot.partial {
-            background: var(--warning);
+        .feedback-option .icon {
+            font-size: 2.5em;
+            margin-bottom: 12px;
         }
 
-        .nav-link .progress-dot.complete {
+        .feedback-option h3 {
+            font-size: 1.1em;
+            margin-bottom: 6px;
+        }
+
+        .feedback-option p {
+            font-size: 0.85em;
+            color: var(--text-secondary);
+        }
+
+        .feedback-option.primary {
+            background: linear-gradient(135deg, rgba(0,122,255,0.1), rgba(88,86,214,0.1));
+            border-color: var(--primary);
+        }
+
+        /* Copy Template */
+        .template-box {
+            background: var(--background);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .template-box h4 {
+            font-size: 0.95em;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .template-content {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 16px;
+            font-family: 'SF Mono', Monaco, monospace;
+            font-size: 0.85em;
+            white-space: pre-line;
+            margin-bottom: 12px;
+        }
+
+        .copy-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.9em;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .copy-btn:hover {
+            background: #0066cc;
+        }
+
+        .copy-btn.copied {
             background: var(--success);
         }
 
-        /* Main Content */
-        .main-content {
-            flex: 1;
-            margin-left: 280px;
-            padding: 40px;
-            max-width: 900px;
+        /* Expandable Checklist */
+        .expand-section {
+            border-top: 1px solid var(--border);
+            margin-top: 32px;
+            padding-top: 32px;
+            text-align: center;
+        }
+
+        .expand-prompt {
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+        }
+
+        .expand-btn {
+            background: var(--background);
+            color: var(--text);
+            border: 2px solid var(--border);
+            padding: 14px 28px;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 600;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .expand-btn:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .expand-btn .arrow {
+            transition: transform 0.3s;
+        }
+
+        .expand-btn.expanded .arrow {
+            transform: rotate(180deg);
+        }
+
+        /* Full Checklist (hidden by default) */
+        .full-checklist {
+            display: none;
+            margin-top: 32px;
+            text-align: left;
+        }
+
+        .full-checklist.visible {
+            display: block;
         }
 
         /* Progress Card */
@@ -227,18 +476,19 @@
             color: white;
             border-radius: 16px;
             padding: 24px;
-            margin-bottom: 32px;
+            margin-bottom: 24px;
             box-shadow: 0 4px 20px rgba(175, 82, 222, 0.3);
         }
 
-        .progress-card h2 {
-            font-size: 1.5em;
+        .progress-card h3 {
+            font-size: 1.2em;
             margin-bottom: 8px;
         }
 
         .progress-card p {
             opacity: 0.9;
             margin-bottom: 16px;
+            font-size: 0.95em;
         }
 
         .progress-bar-container {
@@ -278,12 +528,12 @@
             background: rgba(255,255,255,0.3);
         }
 
-        /* Section Cards */
+        /* Section (for checklist) */
         .section {
             background: var(--card-bg);
             border-radius: 16px;
             padding: 24px;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
             border: 1px solid var(--border);
         }
 
@@ -296,31 +546,32 @@
             user-select: none;
         }
 
-        .section-header h2 {
+        .section-header h3 {
             flex: 1;
-            font-size: 1.3em;
+            font-size: 1.15em;
         }
 
         .section-icon {
-            width: 40px;
-            height: 40px;
+            width: 36px;
+            height: 36px;
             background: var(--background);
             border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.2em;
+            font-size: 1.1em;
         }
 
         .section-toggle {
-            width: 32px;
-            height: 32px;
+            width: 28px;
+            height: 28px;
             background: var(--background);
             border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
             transition: transform 0.3s;
+            font-size: 0.9em;
         }
 
         .section.collapsed .section-toggle {
@@ -332,7 +583,7 @@
         }
 
         .section-progress {
-            font-size: 0.85em;
+            font-size: 0.8em;
             color: var(--text-secondary);
             background: var(--background);
             padding: 4px 10px;
@@ -344,6 +595,19 @@
             color: var(--success);
         }
 
+        .sprint-badge {
+            background: var(--beta);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 0.7em;
+            font-weight: 600;
+        }
+
+        .sprint-badge.new {
+            background: var(--success);
+        }
+
         /* Checklist Items */
         .checklist {
             list-style: none;
@@ -353,7 +617,7 @@
             display: flex;
             align-items: flex-start;
             gap: 12px;
-            padding: 12px 0;
+            padding: 10px 0;
             border-bottom: 1px solid var(--border);
         }
 
@@ -362,8 +626,8 @@
         }
 
         .checklist-item input[type="checkbox"] {
-            width: 22px;
-            height: 22px;
+            width: 20px;
+            height: 20px;
             margin-top: 2px;
             accent-color: var(--primary);
             cursor: pointer;
@@ -372,6 +636,7 @@
         .checklist-item label {
             flex: 1;
             cursor: pointer;
+            font-size: 0.95em;
         }
 
         .checklist-item.checked label {
@@ -379,42 +644,31 @@
             text-decoration: line-through;
         }
 
-        /* Subsection */
         .subsection {
-            margin-top: 20px;
-            padding-top: 16px;
+            margin-top: 16px;
+            padding-top: 12px;
             border-top: 1px solid var(--border);
         }
 
-        .subsection h3 {
-            font-size: 1.1em;
-            margin-bottom: 12px;
-            color: var(--primary);
-        }
-
         .subsection h4 {
-            font-size: 0.95em;
-            margin: 16px 0 8px;
-            color: var(--text-secondary);
+            font-size: 1em;
+            margin-bottom: 10px;
+            color: var(--primary);
         }
 
         /* Info Boxes */
         .info-box {
             background: rgba(0, 122, 255, 0.1);
             border-left: 4px solid var(--primary);
-            padding: 16px;
+            padding: 14px;
             border-radius: 0 8px 8px 0;
-            margin: 16px 0;
+            margin: 14px 0;
+            font-size: 0.9em;
         }
 
         .info-box.warning {
             background: rgba(255, 149, 0, 0.1);
             border-left-color: var(--warning);
-        }
-
-        .info-box.success {
-            background: rgba(52, 199, 89, 0.1);
-            border-left-color: var(--success);
         }
 
         .info-box strong {
@@ -426,12 +680,12 @@
         table {
             width: 100%;
             border-collapse: collapse;
-            margin: 16px 0;
-            font-size: 0.9em;
+            margin: 12px 0;
+            font-size: 0.85em;
         }
 
         th, td {
-            padding: 12px;
+            padding: 10px;
             text-align: left;
             border-bottom: 1px solid var(--border);
         }
@@ -441,7 +695,7 @@
             font-weight: 600;
         }
 
-        /* Keyboard Shortcuts */
+        /* Keyboard */
         kbd {
             background: var(--background);
             border: 1px solid var(--border);
@@ -451,148 +705,149 @@
             font-size: 0.85em;
         }
 
-        /* Sprint Badges */
-        .sprint-badge {
-            display: inline-block;
-            background: var(--beta);
-            color: white;
-            padding: 2px 8px;
-            border-radius: 10px;
-            font-size: 0.75em;
-            font-weight: 600;
-            margin-left: 8px;
-        }
-
-        .sprint-badge.new {
-            background: var(--success);
-        }
-
-        /* Mobile Responsive */
-        @media (max-width: 900px) {
-            .sidebar {
-                display: none;
-            }
-
-            .main-content {
-                margin-left: 0;
-                padding: 20px;
-            }
-
-            .theme-toggle {
-                top: 56px;
-                right: 10px;
-                padding: 6px 12px;
-            }
-        }
-
-        /* Back to Top Button */
-        .back-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 50px;
-            height: 50px;
-            background: var(--primary);
-            color: white;
-            border: none;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 1.5em;
-            box-shadow: 0 4px 12px rgba(0, 122, 255, 0.3);
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s;
-            z-index: 100;
-        }
-
-        .back-to-top.visible {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .back-to-top:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 16px rgba(0, 122, 255, 0.4);
-        }
-
-        /* Header */
-        header {
-            text-align: center;
-            margin-bottom: 32px;
-        }
-
-        header h1 {
-            font-size: 2.2em;
-            margin-bottom: 8px;
-        }
-
-        header .version {
-            color: var(--text-secondary);
-            font-size: 1.1em;
-        }
-
-        header .platforms {
-            display: flex;
-            justify-content: center;
-            gap: 16px;
-            margin-top: 16px;
-        }
-
-        header .platform-badge {
-            background: var(--background);
-            padding: 8px 16px;
-            border-radius: 8px;
-            font-size: 0.9em;
-            border: 1px solid var(--border);
-        }
-
-        /* Thank You Card */
+        /* Thank You */
         .thank-you-card {
-            background: linear-gradient(135deg, #34C759, #30B350);
+            background: linear-gradient(135deg, #34C759, #2db44c);
             color: white;
             border-radius: 16px;
             padding: 32px;
             text-align: center;
-            margin: 32px 0;
+            margin-top: 32px;
         }
 
         .thank-you-card h2 {
-            font-size: 1.8em;
+            font-size: 1.6em;
             margin-bottom: 12px;
         }
 
         .thank-you-card p {
             opacity: 0.95;
-            font-size: 1.1em;
+            font-size: 1.05em;
         }
 
-        /* Feedback Section */
-        .feedback-options {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 16px;
-            margin-top: 16px;
-        }
-
-        .feedback-card {
-            background: var(--background);
-            padding: 20px;
-            border-radius: 12px;
+        /* Footer */
+        footer {
             text-align: center;
-        }
-
-        .feedback-card .icon {
-            font-size: 2em;
-            margin-bottom: 8px;
-        }
-
-        .feedback-card h4 {
-            margin-bottom: 4px;
-        }
-
-        .feedback-card p {
-            font-size: 0.85em;
+            padding: 24px;
             color: var(--text-secondary);
+            font-size: 0.85em;
+        }
+
+        /* Navigation */
+        .site-nav {
+            background: var(--card-bg);
+            border-bottom: 1px solid var(--border);
+            padding: 12px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .site-nav .site-title {
+            font-weight: 700;
+            font-size: 1.2em;
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .site-nav nav {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .site-nav nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: color 0.2s;
+        }
+
+        .site-nav nav a:hover {
+            color: var(--primary);
+        }
+
+        .site-nav nav a[aria-current="page"] {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        /* Become a Tester Badge */
+        .tester-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, var(--beta), var(--primary));
+            color: white;
+            padding: 12px 20px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.2s;
+            box-shadow: 0 4px 12px rgba(175, 82, 222, 0.3);
+        }
+
+        .tester-badge:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(175, 82, 222, 0.4);
+        }
+
+        .tester-badge .icon {
+            font-size: 1.3em;
+        }
+
+        .tester-cta {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .tester-cta p {
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+            font-size: 0.95em;
+        }
+
+        /* Mobile */
+        @media (max-width: 600px) {
+            .main-content {
+                padding: 20px 16px;
+            }
+
+            .theme-toggle {
+                top: auto;
+                position: static;
+                margin-left: auto;
+            }
+
+            .site-nav {
+                padding: 10px 16px;
+            }
+
+            .site-nav nav {
+                gap: 12px;
+            }
+
+            .site-nav nav a {
+                font-size: 0.85em;
+            }
+
+            header h1 {
+                font-size: 1.8em;
+            }
+
+            .welcome-card {
+                padding: 24px 20px;
+            }
+
+            .card {
+                padding: 20px;
+            }
+
+            .feedback-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -602,81 +857,205 @@
         TestFlight Beta Testing <span>v1.0 Build 14</span>
     </div>
 
-    <!-- Theme Toggle -->
-    <div class="theme-toggle">
-        <span class="theme-icon">☀️</span>
-        <div class="theme-toggle-switch" onclick="toggleTheme()"></div>
-        <span class="theme-icon">🌙</span>
+    <!-- Navigation -->
+    <div class="site-nav">
+        <a href="index.html" class="site-title">Stuffolio</a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="quick-start.html">Quick Start</a>
+            <a href="features.html">Features</a>
+            <a href="beta-testing-guide.html" aria-current="page">Testing Guide</a>
+            <a href="support.html">Support</a>
+        </nav>
+        <!-- Theme Toggle -->
+        <div class="theme-toggle" style="position: static; box-shadow: none; border: none; padding: 0; background: transparent;">
+            <span class="theme-icon">☀️</span>
+            <div class="theme-toggle-switch" onclick="toggleTheme()"></div>
+            <span class="theme-icon">🌙</span>
+        </div>
     </div>
 
-    <div class="page-wrapper">
-        <!-- Sidebar Navigation -->
-        <nav class="sidebar">
-            <div class="sidebar-header">
-                <h3>Testing Sections</h3>
-            </div>
+    <main class="main-content">
+        <!-- Become a Tester CTA -->
+        <div class="tester-cta">
+            <p>Not a beta tester yet?</p>
+            <a href="https://testflight.apple.com/join/TWgM95st" class="tester-badge">
+                <span class="icon">🧪</span>
+                <span>Join the Beta on TestFlight</span>
+            </a>
+        </div>
 
-            <div class="nav-section">
-                <div class="nav-section-title">Getting Started</div>
-                <a href="#welcome" class="nav-link"><span class="icon">👋</span> Welcome <span class="progress-dot" data-section="welcome"></span></a>
-                <a href="#quick-start" class="nav-link"><span class="icon">🚀</span> Quick Start <span class="progress-dot" data-section="quick-start"></span></a>
+        <!-- Header -->
+        <header>
+            <h1>Beta Testing Guide</h1>
+            <p class="version">Stuffolio v1.0 (Build 14) — January 2026</p>
+            <div class="platforms">
+                <span class="platform-badge">📱 iOS 17.6+</span>
+                <span class="platform-badge">📱 iPadOS 17.6+</span>
+                <span class="platform-badge">💻 macOS 14.6+</span>
             </div>
+        </header>
 
-            <div class="nav-section">
-                <div class="nav-section-title">Core Features</div>
-                <a href="#adding-items" class="nav-link"><span class="icon">➕</span> Adding Items <span class="progress-dot" data-section="adding-items"></span></a>
-                <a href="#item-management" class="nav-link"><span class="icon">📦</span> Item Management <span class="progress-dot" data-section="item-management"></span></a>
-                <a href="#photos" class="nav-link"><span class="icon">📷</span> Photos <span class="progress-dot" data-section="photos"></span></a>
-                <a href="#warranty" class="nav-link"><span class="icon">🛡️</span> Warranty <span class="progress-dot" data-section="warranty"></span></a>
+        <!-- Welcome Card -->
+        <div class="welcome-card">
+            <h2>Welcome, Beta Tester!</h2>
+            <p>Thanks for helping us make Stuffolio better. There's no pressure to test everything — explore what interests you and tell us what you find.</p>
+            <div class="philosophy">
+                <strong>The Stuffolio way:</strong> Do as much or as little as feels right. Your real-world feedback matters more than checking every box.
             </div>
+        </div>
 
-            <div class="nav-section">
-                <div class="nav-section-title">Quality & UX (Sprints 1-6)</div>
-                <a href="#form-validation" class="nav-link"><span class="icon">✅</span> Form Validation <span class="progress-dot" data-section="form-validation"></span></a>
-                <a href="#bulk-operations" class="nav-link"><span class="icon">⚡</span> Bulk Operations <span class="progress-dot" data-section="bulk-operations"></span></a>
-                <a href="#accessibility" class="nav-link"><span class="icon">♿</span> Accessibility <span class="progress-dot" data-section="accessibility"></span></a>
-            </div>
+        <!-- Priority Features -->
+        <div class="card">
+            <h2><span class="icon">🎯</span> Priority Testing <span class="priority-badge">Please Focus Here</span></h2>
+            <p class="subtitle">These are brand new features that need the most testing.</p>
 
-            <div class="nav-section">
-                <div class="nav-section-title">iOS Excellence (Sprints 7-9)</div>
-                <a href="#system-integration" class="nav-link"><span class="icon">🔗</span> System Integration <span class="progress-dot" data-section="system-integration"></span></a>
-                <a href="#ipad-features" class="nav-link"><span class="icon">📱</span> iPad Features <span class="progress-dot" data-section="ipad-features"></span></a>
-                <a href="#ios-polish" class="nav-link"><span class="icon">✨</span> iOS Polish <span class="progress-dot" data-section="ios-polish"></span></a>
-            </div>
-
-            <div class="nav-section">
-                <div class="nav-section-title">New Features (Sprints 10-13)</div>
-                <a href="#sync-conflicts" class="nav-link"><span class="icon">🔄</span> Sync Conflicts <span class="progress-dot" data-section="sync-conflicts"></span></a>
-                <a href="#maintenance" class="nav-link"><span class="icon">🔧</span> Maintenance <span class="progress-dot" data-section="maintenance"></span></a>
-                <a href="#ratings" class="nav-link"><span class="icon">⭐</span> Ratings <span class="progress-dot" data-section="ratings"></span></a>
-                <a href="#family-sharing" class="nav-link"><span class="icon">👨‍👩‍👧‍👦</span> Family Sharing <span class="progress-dot" data-section="family-sharing"></span></a>
-            </div>
-
-            <div class="nav-section">
-                <div class="nav-section-title">Additional</div>
-                <a href="#legacy-wishes" class="nav-link"><span class="icon">🎁</span> Legacy Wishes <span class="progress-dot" data-section="legacy-wishes"></span></a>
-                <a href="#ai-features" class="nav-link"><span class="icon">🤖</span> AI Features <span class="progress-dot" data-section="ai-features"></span></a>
-                <a href="#feedback" class="nav-link"><span class="icon">💬</span> Feedback <span class="progress-dot" data-section="feedback"></span></a>
-            </div>
-        </nav>
-
-        <!-- Main Content -->
-        <main class="main-content">
-            <!-- Header -->
-            <header>
-                <h1>Stuffolio Beta Testing Guide</h1>
-                <p class="version">Version 1.0 (Build 14) — January 2026</p>
-                <div class="platforms">
-                    <span class="platform-badge">📱 iOS 17.6+</span>
-                    <span class="platform-badge">📱 iPadOS 17.6+</span>
-                    <span class="platform-badge">💻 macOS 14.6+</span>
+            <div class="priority-grid">
+                <div class="priority-item">
+                    <h3>🔄 Sync Conflict Resolution <span class="badge">Sprint 10</span></h3>
+                    <p>Edit the same item on two devices, then see how Stuffolio shows you both versions side-by-side so you can choose what to keep.</p>
+                    <div class="why">Why it matters: This is completely new — we need to know if the UI makes sense.</div>
                 </div>
-            </header>
 
+                <div class="priority-item">
+                    <h3>🔧 Smart Maintenance <span class="badge">Sprint 11</span></h3>
+                    <p>Add items in different categories (Electronics, Vehicles, Appliances) and check the Dashboard for category-specific maintenance suggestions.</p>
+                    <div class="why">Why it matters: Are the suggested tasks useful? Do the intervals make sense?</div>
+                </div>
+
+                <div class="priority-item">
+                    <h3>⭐ Product Ratings <span class="badge">Sprint 12</span></h3>
+                    <p>Rate your items 1-5 stars and toggle "Would Buy Again." Try filtering and sorting by rating.</p>
+                    <div class="why">Why it matters: We want to know if the rating UI feels natural and useful.</div>
+                </div>
+
+                <div class="priority-item">
+                    <h3>👨‍👩‍👧‍👦 Family Sharing <span class="badge">Sprint 13</span></h3>
+                    <p>Share an item with a family member. Test View Only vs. Can Edit permissions. See if changes sync properly.</p>
+                    <div class="why">Why it matters: Multi-user sync is complex — we need real-world testing.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scenarios -->
+        <div class="card">
+            <h2><span class="icon">🎬</span> Try These Scenarios</h2>
+            <p class="subtitle">Real-world tasks that naturally exercise multiple features.</p>
+
+            <div class="scenario-grid">
+                <div class="scenario-item" data-number="1">
+                    <h3>The New Purchase</h3>
+                    <p>You just bought a blender. Add it to Stuffolio with a photo, set the warranty, and rate it.</p>
+                    <div class="exercises">
+                        <strong>Exercises:</strong> Quick Add, photo capture, warranty tracking, ratings
+                    </div>
+                </div>
+
+                <div class="scenario-item" data-number="2">
+                    <h3>The Mystery Item</h3>
+                    <p>Find something in your house you're not sure about. Use Stuff Scout to identify it and add it to your inventory.</p>
+                    <div class="exercises">
+                        <strong>Exercises:</strong> AI identification, auto-fill, editing suggestions
+                    </div>
+                </div>
+
+                <div class="scenario-item" data-number="3">
+                    <h3>The Shared Appliance</h3>
+                    <p>Add your washing machine and share it with a family member so you both can track its maintenance.</p>
+                    <div class="exercises">
+                        <strong>Exercises:</strong> Family sharing, maintenance suggestions, permissions
+                    </div>
+                </div>
+
+                <div class="scenario-item" data-number="4">
+                    <h3>The Declutter Decision</h3>
+                    <p>Pick something you might donate. Use the Donate vs. Sell Advisor to see which option is better financially.</p>
+                    <div class="exercises">
+                        <strong>Exercises:</strong> AI advisor, value estimation, disposal tracking
+                    </div>
+                </div>
+
+                <div class="scenario-item" data-number="5">
+                    <h3>The Multi-Device Edit</h3>
+                    <p>Start editing an item on your iPhone, then continue on your iPad or Mac. Try editing the same field on two devices at once.</p>
+                    <div class="exercises">
+                        <strong>Exercises:</strong> iCloud sync, Handoff, conflict resolution
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Feedback Section -->
+        <div class="card">
+            <h2><span class="icon">💬</span> Send Us Feedback</h2>
+            <p class="subtitle">Found a bug? Have a suggestion? Here's how to reach us.</p>
+
+            <div class="feedback-grid">
+                <a href="mailto:dev@stuffolio.app?subject=Stuffolio%20Beta%20Feedback%20-%20v1.0%20(14)&body=%0A%0A---%0AWhat%20I%20tested%3A%0A%0AWhat%20happened%3A%0A%0AWhat%20I%20expected%3A%0A%0ADevice%3A%0AiOS%2FmacOS%20Version%3A%0A" class="feedback-option primary">
+                    <div class="icon">📧</div>
+                    <h3>Email Us</h3>
+                    <p>dev@stuffolio.app<br>Pre-filled template ready</p>
+                </a>
+
+                <div class="feedback-option" onclick="showTestFlightTip()">
+                    <div class="icon">📲</div>
+                    <h3>TestFlight</h3>
+                    <p>Shake your device or<br>screenshot to report</p>
+                </div>
+
+                <div class="feedback-option" onclick="copyTemplate()">
+                    <div class="icon">📋</div>
+                    <h3>Copy Template</h3>
+                    <p>Get a feedback template<br>to paste anywhere</p>
+                </div>
+            </div>
+
+            <div class="template-box" id="templateBox" style="display: none;">
+                <h4>📋 Feedback Template</h4>
+                <div class="template-content" id="templateContent">Stuffolio Beta Feedback - v1.0 (14)
+
+What I tested:
+[Describe the feature or scenario]
+
+What happened:
+[Describe the actual behavior]
+
+What I expected:
+[Describe what should have happened]
+
+Device: [iPhone 15 / iPad Pro / MacBook Air / etc.]
+OS Version: [iOS 18.2 / macOS 15.2 / etc.]
+
+Additional notes:
+[Screenshots, steps to reproduce, etc.]</div>
+                <button class="copy-btn" onclick="copyToClipboard()">Copy to Clipboard</button>
+            </div>
+
+            <div class="info-box" id="testflightTip" style="display: none;">
+                <strong>TestFlight Feedback Tips</strong>
+                <ul style="margin: 8px 0 0 20px; font-size: 0.9em;">
+                    <li><strong>Shake your device</strong> while in the app to open the feedback form</li>
+                    <li><strong>Take a screenshot</strong> — TestFlight will ask if you want to send feedback</li>
+                    <li>TestFlight automatically includes device info and crash logs</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Expand Section -->
+        <div class="expand-section">
+            <p class="expand-prompt">Want to systematically test every feature?</p>
+            <button class="expand-btn" onclick="toggleFullChecklist()">
+                <span>Show Complete Checklist</span>
+                <span class="arrow">▼</span>
+            </button>
+        </div>
+
+        <!-- Full Checklist (hidden by default) -->
+        <div class="full-checklist" id="fullChecklist">
             <!-- Progress Card -->
             <div class="progress-card">
-                <h2>Your Testing Progress</h2>
-                <p>Complete the checklist items below to help us ensure quality.</p>
+                <h3>Your Testing Progress</h3>
+                <p>This is optional! Only for testers who want to track everything.</p>
                 <div class="progress-bar-container">
                     <div class="progress-bar" id="progressBar" style="width: 0%"></div>
                 </div>
@@ -687,372 +1066,217 @@
                 <button class="reset-btn" onclick="resetProgress()">Reset Progress</button>
             </div>
 
-            <!-- Welcome Section -->
-            <section class="section" id="welcome" data-section="welcome">
-                <div class="section-header" onclick="toggleSection(this.parentElement)">
-                    <div class="section-icon">👋</div>
-                    <h2>Welcome, Beta Testers!</h2>
-                    <span class="section-progress">0/0</span>
-                    <div class="section-toggle">▼</div>
-                </div>
-                <div class="section-content">
-                    <p>Thank you for helping test Stuffolio! This guide covers all features implemented across <strong>Sprints 1-13</strong>. Your feedback helps us build a better app.</p>
-
-                    <div class="info-box">
-                        <strong>How to Use This Guide</strong>
-                        Check off items as you test them. Your progress is saved automatically in your browser.
-                    </div>
-
-                    <ul class="checklist">
-                        <li class="checklist-item">
-                            <input type="checkbox" id="welcome-1">
-                            <label for="welcome-1">I understand this is beta software and may have bugs</label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="welcome-2">
-                            <label for="welcome-2">I will report issues via TestFlight feedback</label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="welcome-3">
-                            <label for="welcome-3">I have a backup of any important data</label>
-                        </li>
-                    </ul>
-                </div>
-            </section>
-
-            <!-- Quick Start Section -->
-            <section class="section" id="quick-start" data-section="quick-start">
-                <div class="section-header" onclick="toggleSection(this.parentElement)">
-                    <div class="section-icon">🚀</div>
-                    <h2>Quick Start Checklist</h2>
-                    <span class="section-progress">0/0</span>
-                    <div class="section-toggle">▼</div>
-                </div>
-                <div class="section-content">
-                    <p>Before diving into specific features, complete these basic checks:</p>
-                    <ul class="checklist">
-                        <li class="checklist-item">
-                            <input type="checkbox" id="qs-1">
-                            <label for="qs-1">App launches without crashing</label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="qs-2">
-                            <label for="qs-2">Can create a new item with basic info</label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="qs-3">
-                            <label for="qs-3">Can view item in list and detail views</label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="qs-4">
-                            <label for="qs-4">Can edit an existing item</label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="qs-5">
-                            <label for="qs-5">Can delete an item</label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="qs-6">
-                            <label for="qs-6">iCloud sync works (if enabled)</label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="qs-7">
-                            <label for="qs-7">App works on both iOS and macOS (if testing both)</label>
-                        </li>
-                    </ul>
-                </div>
-            </section>
-
-            <!-- Adding Items Section -->
-            <section class="section" id="adding-items" data-section="adding-items">
-                <div class="section-header" onclick="toggleSection(this.parentElement)">
-                    <div class="section-icon">➕</div>
-                    <h2>Adding Items</h2>
-                    <span class="section-progress">0/0</span>
-                    <div class="section-toggle">▼</div>
-                </div>
-                <div class="section-content">
-                    <ul class="checklist">
-                        <li class="checklist-item">
-                            <input type="checkbox" id="add-1">
-                            <label for="add-1">Add item using the "+" button</label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="add-2">
-                            <label for="add-2">Add item via Stuff Scout (AI scanning)</label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="add-3">
-                            <label for="add-3">Add item via barcode scanner</label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="add-4">
-                            <label for="add-4">Form validation prevents saving without required fields</label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="add-5">
-                            <label for="add-5">Required field indicators (red asterisks) appear correctly</label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="add-6">
-                            <label for="add-6">Validation error messages display inline</label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="add-7">
-                            <label for="add-7">Draft auto-save works when dismissing mid-entry</label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="add-8">
-                            <label for="add-8">Draft restore prompt appears when reopening form</label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="add-9">
-                            <label for="add-9">Toast notification confirms item creation</label>
-                        </li>
-                    </ul>
-                </div>
-            </section>
-
-            <!-- Item Management Section -->
-            <section class="section" id="item-management" data-section="item-management">
+            <!-- Core Features -->
+            <section class="section" id="core-features" data-section="core-features">
                 <div class="section-header" onclick="toggleSection(this.parentElement)">
                     <div class="section-icon">📦</div>
-                    <h2>Item Management</h2>
+                    <h3>Core Features</h3>
                     <span class="section-progress">0/0</span>
                     <div class="section-toggle">▼</div>
                 </div>
                 <div class="section-content">
                     <ul class="checklist">
                         <li class="checklist-item">
-                            <input type="checkbox" id="mgmt-1">
-                            <label for="mgmt-1">View item list with proper sorting options</label>
+                            <input type="checkbox" id="core-1">
+                            <label for="core-1">Add item using the "+" button</label>
                         </li>
                         <li class="checklist-item">
-                            <input type="checkbox" id="mgmt-2">
-                            <label for="mgmt-2">Search for items by name, category, manufacturer</label>
+                            <input type="checkbox" id="core-2">
+                            <label for="core-2">Add item via barcode scanner</label>
                         </li>
                         <li class="checklist-item">
-                            <input type="checkbox" id="mgmt-3">
-                            <label for="mgmt-3">Filter items by category, status, warranty state</label>
+                            <input type="checkbox" id="core-3">
+                            <label for="core-3">Search for items by name</label>
                         </li>
                         <li class="checklist-item">
-                            <input type="checkbox" id="mgmt-4">
-                            <label for="mgmt-4">View item detail with all sections populated</label>
+                            <input type="checkbox" id="core-4">
+                            <label for="core-4">Filter items by category</label>
                         </li>
                         <li class="checklist-item">
-                            <input type="checkbox" id="mgmt-5">
-                            <label for="mgmt-5">Edit item and verify changes persist</label>
+                            <input type="checkbox" id="core-5">
+                            <label for="core-5">Edit an existing item</label>
                         </li>
                         <li class="checklist-item">
-                            <input type="checkbox" id="mgmt-6">
-                            <label for="mgmt-6">Delete item with confirmation dialog</label>
+                            <input type="checkbox" id="core-6">
+                            <label for="core-6">Delete an item</label>
                         </li>
                         <li class="checklist-item">
-                            <input type="checkbox" id="mgmt-7">
-                            <label for="mgmt-7">Duplicate item creates accurate copy</label>
+                            <input type="checkbox" id="core-7">
+                            <label for="core-7">Add photos to an item</label>
                         </li>
                         <li class="checklist-item">
-                            <input type="checkbox" id="mgmt-8">
-                            <label for="mgmt-8">Context menu (long-press/right-click) shows all actions</label>
+                            <input type="checkbox" id="core-8">
+                            <label for="core-8">Set warranty dates</label>
                         </li>
                     </ul>
                 </div>
             </section>
 
-            <!-- Photos Section -->
-            <section class="section" id="photos" data-section="photos">
+            <!-- Sprint 10-13 Features -->
+            <section class="section" id="new-features" data-section="new-features">
                 <div class="section-header" onclick="toggleSection(this.parentElement)">
-                    <div class="section-icon">📷</div>
-                    <h2>Photos & Documents</h2>
+                    <div class="section-icon">✨</div>
+                    <h3>New Features (Sprints 10-13)</h3>
+                    <span class="sprint-badge new">Priority</span>
                     <span class="section-progress">0/0</span>
                     <div class="section-toggle">▼</div>
                 </div>
                 <div class="section-content">
-                    <ul class="checklist">
-                        <li class="checklist-item">
-                            <input type="checkbox" id="photo-1">
-                            <label for="photo-1">Add photo from camera (iOS only)</label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="photo-2">
-                            <label for="photo-2">Add photo from photo library</label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="photo-3">
-                            <label for="photo-3">Add receipt photos</label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="photo-4">
-                            <label for="photo-4">View photos in full-screen gallery</label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="photo-5">
-                            <label for="photo-5">Delete photos from items</label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="photo-6">
-                            <label for="photo-6">Photo thumbnails load correctly in lists</label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="photo-7">
-                            <label for="photo-7">Photos sync via iCloud (if enabled)</label>
-                        </li>
-                    </ul>
-                </div>
-            </section>
-
-            <!-- Warranty Section -->
-            <section class="section" id="warranty" data-section="warranty">
-                <div class="section-header" onclick="toggleSection(this.parentElement)">
-                    <div class="section-icon">🛡️</div>
-                    <h2>Warranty Tracking</h2>
-                    <span class="section-progress">0/0</span>
-                    <div class="section-toggle">▼</div>
-                </div>
-                <div class="section-content">
-                    <ul class="checklist">
-                        <li class="checklist-item">
-                            <input type="checkbox" id="warranty-1">
-                            <label for="warranty-1">Set warranty expiration date</label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="warranty-2">
-                            <label for="warranty-2">Set lifetime warranty toggle</label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="warranty-3">
-                            <label for="warranty-3">View warranty status indicators (Active, Expiring Soon, Expired)</label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="warranty-4">
-                            <label for="warranty-4">Dashboard shows warranty alerts</label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="warranty-5">
-                            <label for="warranty-5">Verify warranty badges use correct colors (Blue=Active, Yellow=Soon, Red=Expired)</label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="warranty-6">
-                            <label for="warranty-6">No warranty option works correctly</label>
-                        </li>
-                    </ul>
-
-                    <div class="info-box warning">
-                        <strong>Color Note</strong>
-                        Active warranties should be <strong>Blue</strong>, not Green. This is for colorblind accessibility.
-                    </div>
-                </div>
-            </section>
-
-            <!-- Form Validation Section -->
-            <section class="section" id="form-validation" data-section="form-validation">
-                <div class="section-header" onclick="toggleSection(this.parentElement)">
-                    <div class="section-icon">✅</div>
-                    <h2>Form Validation</h2>
-                    <span class="sprint-badge">Sprint 2</span>
-                    <span class="section-progress">0/0</span>
-                    <div class="section-toggle">▼</div>
-                </div>
-                <div class="section-content">
-                    <ul class="checklist">
-                        <li class="checklist-item">
-                            <input type="checkbox" id="form-1">
-                            <label for="form-1">Required fields show red asterisk indicator</label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="form-2">
-                            <label for="form-2">Submitting empty required field shows error</label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="form-3">
-                            <label for="form-3">Error messages appear below the field</label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="form-4">
-                            <label for="form-4">Errors clear when field is corrected</label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="form-5">
-                            <label for="form-5">Tab through form fields works (macOS/iPad)</label>
-                        </li>
-                    </ul>
-                </div>
-            </section>
-
-            <!-- Bulk Operations Section -->
-            <section class="section" id="bulk-operations" data-section="bulk-operations">
-                <div class="section-header" onclick="toggleSection(this.parentElement)">
-                    <div class="section-icon">⚡</div>
-                    <h2>Bulk Operations</h2>
-                    <span class="sprint-badge">Phase B</span>
-                    <span class="section-progress">0/0</span>
-                    <div class="section-toggle">▼</div>
-                </div>
-                <div class="section-content">
-                    <p><strong>Location:</strong> Tools menu</p>
-
                     <div class="subsection">
-                        <h3>Photo Optimizer</h3>
+                        <h4>🔄 Sync Conflict Resolution</h4>
                         <ul class="checklist">
                             <li class="checklist-item">
-                                <input type="checkbox" id="bulk-1">
-                                <label for="bulk-1">Scans items with photos</label>
+                                <input type="checkbox" id="sync-1">
+                                <label for="sync-1">Conflict badge appears on Settings → Cloud Sync</label>
                             </li>
                             <li class="checklist-item">
-                                <input type="checkbox" id="bulk-2">
-                                <label for="bulk-2">Shows photo size/count analysis</label>
+                                <input type="checkbox" id="sync-2">
+                                <label for="sync-2">Conflict detail shows both versions side-by-side</label>
                             </li>
                             <li class="checklist-item">
-                                <input type="checkbox" id="bulk-3">
-                                <label for="bulk-3">Compress photos option works</label>
+                                <input type="checkbox" id="sync-3">
+                                <label for="sync-3">"Keep This Device" resolution works</label>
+                            </li>
+                            <li class="checklist-item">
+                                <input type="checkbox" id="sync-4">
+                                <label for="sync-4">"Keep iCloud" resolution works</label>
                             </li>
                         </ul>
                     </div>
 
                     <div class="subsection">
-                        <h3>Duplicate Finder</h3>
+                        <h4>🔧 Smart Maintenance</h4>
                         <ul class="checklist">
                             <li class="checklist-item">
-                                <input type="checkbox" id="bulk-4">
-                                <label for="bulk-4">Scans for potential duplicates</label>
+                                <input type="checkbox" id="maint-1">
+                                <label for="maint-1">Maintenance suggestions appear on Dashboard</label>
                             </li>
                             <li class="checklist-item">
-                                <input type="checkbox" id="bulk-5">
-                                <label for="bulk-5">Shows matched pairs with similarity</label>
+                                <input type="checkbox" id="maint-2">
+                                <label for="maint-2">Suggestions show correct priority colors</label>
                             </li>
                             <li class="checklist-item">
-                                <input type="checkbox" id="bulk-6">
-                                <label for="bulk-6">Can merge or ignore duplicates</label>
+                                <input type="checkbox" id="maint-3">
+                                <label for="maint-3">Tapping "Done" marks task complete</label>
+                            </li>
+                            <li class="checklist-item">
+                                <input type="checkbox" id="maint-4">
+                                <label for="maint-4">Suggestions vary by item category</label>
                             </li>
                         </ul>
                     </div>
 
                     <div class="subsection">
-                        <h3>Batch Categorize</h3>
+                        <h4>⭐ Product Ratings</h4>
                         <ul class="checklist">
                             <li class="checklist-item">
-                                <input type="checkbox" id="bulk-7">
-                                <label for="bulk-7">Select multiple uncategorized items</label>
+                                <input type="checkbox" id="rate-1">
+                                <label for="rate-1">Star rating picker (1-5 stars) works</label>
                             </li>
                             <li class="checklist-item">
-                                <input type="checkbox" id="bulk-8">
-                                <label for="bulk-8">Assign category to batch</label>
+                                <input type="checkbox" id="rate-2">
+                                <label for="rate-2">"Would Buy Again" toggle works</label>
                             </li>
                             <li class="checklist-item">
-                                <input type="checkbox" id="bulk-9">
-                                <label for="bulk-9">Changes apply correctly</label>
+                                <input type="checkbox" id="rate-3">
+                                <label for="rate-3">Can filter items by rating</label>
+                            </li>
+                            <li class="checklist-item">
+                                <input type="checkbox" id="rate-4">
+                                <label for="rate-4">Ratings sync across devices</label>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="subsection">
+                        <h4>👨‍👩‍👧‍👦 Family Sharing</h4>
+                        <ul class="checklist">
+                            <li class="checklist-item">
+                                <input type="checkbox" id="fam-1">
+                                <label for="fam-1">Share button appears on items</label>
+                            </li>
+                            <li class="checklist-item">
+                                <input type="checkbox" id="fam-2">
+                                <label for="fam-2">Can start sharing an item</label>
+                            </li>
+                            <li class="checklist-item">
+                                <input type="checkbox" id="fam-3">
+                                <label for="fam-3">Shared items appear in "Shared with Me"</label>
+                            </li>
+                            <li class="checklist-item">
+                                <input type="checkbox" id="fam-4">
+                                <label for="fam-4">Permission levels work (View Only, Can Edit)</label>
                             </li>
                         </ul>
                     </div>
                 </div>
             </section>
 
-            <!-- Accessibility Section -->
-            <section class="section" id="accessibility" data-section="accessibility">
+            <!-- System Integration -->
+            <section class="section collapsed" id="system-integration" data-section="system-integration">
+                <div class="section-header" onclick="toggleSection(this.parentElement)">
+                    <div class="section-icon">🔗</div>
+                    <h3>System Integration</h3>
+                    <span class="section-progress">0/0</span>
+                    <div class="section-toggle">▼</div>
+                </div>
+                <div class="section-content">
+                    <ul class="checklist">
+                        <li class="checklist-item">
+                            <input type="checkbox" id="sys-1">
+                            <label for="sys-1">Spotlight search finds items</label>
+                        </li>
+                        <li class="checklist-item">
+                            <input type="checkbox" id="sys-2">
+                            <label for="sys-2">Handoff works between devices</label>
+                        </li>
+                        <li class="checklist-item">
+                            <input type="checkbox" id="sys-3">
+                            <label for="sys-3">Widgets display correctly</label>
+                        </li>
+                        <li class="checklist-item">
+                            <input type="checkbox" id="sys-4">
+                            <label for="sys-4">iCloud sync works</label>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- AI Features -->
+            <section class="section collapsed" id="ai-features" data-section="ai-features">
+                <div class="section-header" onclick="toggleSection(this.parentElement)">
+                    <div class="section-icon">🤖</div>
+                    <h3>AI Features</h3>
+                    <span class="section-progress">0/0</span>
+                    <div class="section-toggle">▼</div>
+                </div>
+                <div class="section-content">
+                    <ul class="checklist">
+                        <li class="checklist-item">
+                            <input type="checkbox" id="ai-1">
+                            <label for="ai-1">Stuff Scout identifies products</label>
+                        </li>
+                        <li class="checklist-item">
+                            <input type="checkbox" id="ai-2">
+                            <label for="ai-2">Manual finder locates documentation</label>
+                        </li>
+                        <li class="checklist-item">
+                            <input type="checkbox" id="ai-3">
+                            <label for="ai-3">Value estimation provides reasonable estimates</label>
+                        </li>
+                        <li class="checklist-item">
+                            <input type="checkbox" id="ai-4">
+                            <label for="ai-4">Donate vs. Sell Advisor shows comparison</label>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Accessibility -->
+            <section class="section collapsed" id="accessibility" data-section="accessibility">
                 <div class="section-header" onclick="toggleSection(this.parentElement)">
                     <div class="section-icon">♿</div>
-                    <h2>Accessibility</h2>
-                    <span class="sprint-badge">Sprint 5</span>
+                    <h3>Accessibility</h3>
                     <span class="section-progress">0/0</span>
                     <div class="section-toggle">▼</div>
                 </div>
@@ -1064,128 +1288,31 @@
                         </li>
                         <li class="checklist-item">
                             <input type="checkbox" id="a11y-2">
-                            <label for="a11y-2">VoiceOver navigation is logical</label>
+                            <label for="a11y-2">Dynamic Type works at all sizes</label>
                         </li>
                         <li class="checklist-item">
                             <input type="checkbox" id="a11y-3">
-                            <label for="a11y-3">Dynamic Type works at all sizes</label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="a11y-4">
-                            <label for="a11y-4">Color contrast is sufficient</label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="a11y-5">
-                            <label for="a11y-5">No status relies only on color (icon + text always present)</label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="a11y-6">
-                            <label for="a11y-6">Keyboard navigation works (macOS/iPad)</label>
+                            <label for="a11y-3">Keyboard navigation works (Mac/iPad)</label>
                         </li>
                     </ul>
 
                     <div class="subsection">
-                        <h3>Keyboard Shortcuts (macOS/iPad)</h3>
+                        <h4>Keyboard Shortcuts</h4>
                         <table>
                             <tr><th>Shortcut</th><th>Action</th></tr>
-                            <tr><td><kbd>⌘1</kbd></td><td>Dashboard</td></tr>
-                            <tr><td><kbd>⌘2</kbd></td><td>My Products</td></tr>
-                            <tr><td><kbd>⌘3</kbd></td><td>Reports</td></tr>
-                            <tr><td><kbd>⌘4</kbd></td><td>Tools</td></tr>
-                            <tr><td><kbd>⌘5</kbd></td><td>Stuff Scout</td></tr>
-                            <tr><td><kbd>⌘,</kbd></td><td>Settings</td></tr>
                             <tr><td><kbd>⌘N</kbd></td><td>Add Item</td></tr>
                             <tr><td><kbd>⌘K</kbd></td><td>Quick Find</td></tr>
+                            <tr><td><kbd>⌘,</kbd></td><td>Settings</td></tr>
                         </table>
                     </div>
                 </div>
             </section>
 
-            <!-- System Integration Section -->
-            <section class="section" id="system-integration" data-section="system-integration">
+            <!-- iPad & Mac -->
+            <section class="section collapsed" id="ipad-mac" data-section="ipad-mac">
                 <div class="section-header" onclick="toggleSection(this.parentElement)">
-                    <div class="section-icon">🔗</div>
-                    <h2>System Integration</h2>
-                    <span class="sprint-badge">Sprints 7-9</span>
-                    <span class="section-progress">0/0</span>
-                    <div class="section-toggle">▼</div>
-                </div>
-                <div class="section-content">
-                    <div class="info-box">
-                        <strong>How to Enable</strong>
-                        All integrations are opt-in. Go to Settings → Integrations to enable each one.
-                    </div>
-
-                    <div class="subsection">
-                        <h3>Spotlight Search</h3>
-                        <ul class="checklist">
-                            <li class="checklist-item">
-                                <input type="checkbox" id="sys-1">
-                                <label for="sys-1">Enabling Spotlight indexes existing items</label>
-                            </li>
-                            <li class="checklist-item">
-                                <input type="checkbox" id="sys-2">
-                                <label for="sys-2">Search for item from iOS home screen</label>
-                            </li>
-                            <li class="checklist-item">
-                                <input type="checkbox" id="sys-3">
-                                <label for="sys-3">Tapping search result opens item in app</label>
-                            </li>
-                            <li class="checklist-item">
-                                <input type="checkbox" id="sys-4">
-                                <label for="sys-4">Disabling clears index</label>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="subsection">
-                        <h3>Handoff</h3>
-                        <ul class="checklist">
-                            <li class="checklist-item">
-                                <input type="checkbox" id="sys-5">
-                                <label for="sys-5">View item on one device, see Handoff icon on another</label>
-                            </li>
-                            <li class="checklist-item">
-                                <input type="checkbox" id="sys-6">
-                                <label for="sys-6">Tap Handoff to continue on other device</label>
-                            </li>
-                            <li class="checklist-item">
-                                <input type="checkbox" id="sys-7">
-                                <label for="sys-7">Correct item opens on receiving device</label>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="subsection">
-                        <h3>Interactive Widgets</h3>
-                        <ul class="checklist">
-                            <li class="checklist-item">
-                                <input type="checkbox" id="sys-8">
-                                <label for="sys-8">Add widgets to home screen/desktop</label>
-                            </li>
-                            <li class="checklist-item">
-                                <input type="checkbox" id="sys-9">
-                                <label for="sys-9">Widget displays correct data</label>
-                            </li>
-                            <li class="checklist-item">
-                                <input type="checkbox" id="sys-10">
-                                <label for="sys-10">Quick Add button opens add form</label>
-                            </li>
-                            <li class="checklist-item">
-                                <input type="checkbox" id="sys-11">
-                                <label for="sys-11">Widget refreshes correctly</label>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <!-- iPad Features Section -->
-            <section class="section" id="ipad-features" data-section="ipad-features">
-                <div class="section-header" onclick="toggleSection(this.parentElement)">
-                    <div class="section-icon">📱</div>
-                    <h2>iPad Features</h2>
-                    <span class="sprint-badge">Sprint 8</span>
+                    <div class="section-icon">💻</div>
+                    <h3>iPad & Mac</h3>
                     <span class="section-progress">0/0</span>
                     <div class="section-toggle">▼</div>
                 </div>
@@ -1193,519 +1320,43 @@
                     <ul class="checklist">
                         <li class="checklist-item">
                             <input type="checkbox" id="ipad-1">
-                            <label for="ipad-1">NavigationSplitView with sidebar works correctly</label>
+                            <label for="ipad-1">Split View layout works on iPad</label>
                         </li>
                         <li class="checklist-item">
                             <input type="checkbox" id="ipad-2">
-                            <label for="ipad-2">Balanced column widths display properly</label>
+                            <label for="ipad-2">Stage Manager compatible</label>
                         </li>
                         <li class="checklist-item">
                             <input type="checkbox" id="ipad-3">
-                            <label for="ipad-3">Split View multitasking works</label>
+                            <label for="ipad-3">Trackpad/mouse hover effects work</label>
                         </li>
                         <li class="checklist-item">
                             <input type="checkbox" id="ipad-4">
-                            <label for="ipad-4">Slide Over multitasking works</label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="ipad-5">
-                            <label for="ipad-5">Stage Manager compatible</label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="ipad-6">
-                            <label for="ipad-6">Trackpad hover effects work</label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="ipad-7">
-                            <label for="ipad-7">Apple Pencil scribble works in text fields</label>
+                            <label for="ipad-4">macOS menu bar works correctly</label>
                         </li>
                     </ul>
                 </div>
             </section>
+        </div>
 
-            <!-- iOS Polish Section -->
-            <section class="section" id="ios-polish" data-section="ios-polish">
-                <div class="section-header" onclick="toggleSection(this.parentElement)">
-                    <div class="section-icon">✨</div>
-                    <h2>iOS Polish</h2>
-                    <span class="sprint-badge">Sprint 9</span>
-                    <span class="section-progress">0/0</span>
-                    <div class="section-toggle">▼</div>
-                </div>
-                <div class="section-content">
-                    <div class="subsection">
-                        <h3>Haptic Feedback</h3>
-                        <ul class="checklist">
-                            <li class="checklist-item">
-                                <input type="checkbox" id="polish-1">
-                                <label for="polish-1">Success haptic on save</label>
-                            </li>
-                            <li class="checklist-item">
-                                <input type="checkbox" id="polish-2">
-                                <label for="polish-2">Selection haptic on list items</label>
-                            </li>
-                            <li class="checklist-item">
-                                <input type="checkbox" id="polish-3">
-                                <label for="polish-3">Warning haptic on destructive actions</label>
-                            </li>
-                            <li class="checklist-item">
-                                <input type="checkbox" id="polish-4">
-                                <label for="polish-4">Error haptic on failures</label>
-                            </li>
-                        </ul>
-                    </div>
+        <!-- Thank You -->
+        <div class="thank-you-card">
+            <h2>Thank You!</h2>
+            <p>Your feedback helps make Stuffolio better for everyone.<br>We truly appreciate your time!</p>
+        </div>
 
-                    <div class="subsection">
-                        <h3>Context Menus & Drag/Drop</h3>
-                        <ul class="checklist">
-                            <li class="checklist-item">
-                                <input type="checkbox" id="polish-5">
-                                <label for="polish-5">Long-press item row shows context menu</label>
-                            </li>
-                            <li class="checklist-item">
-                                <input type="checkbox" id="polish-6">
-                                <label for="polish-6">Delete shows red/destructive styling</label>
-                            </li>
-                            <li class="checklist-item">
-                                <input type="checkbox" id="polish-7">
-                                <label for="polish-7">Drag item to other apps works</label>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Sync Conflicts Section -->
-            <section class="section" id="sync-conflicts" data-section="sync-conflicts">
-                <div class="section-header" onclick="toggleSection(this.parentElement)">
-                    <div class="section-icon">🔄</div>
-                    <h2>Sync Conflict Resolution</h2>
-                    <span class="sprint-badge new">Sprint 10 — NEW</span>
-                    <span class="section-progress">0/0</span>
-                    <div class="section-toggle">▼</div>
-                </div>
-                <div class="section-content">
-                    <div class="info-box warning">
-                        <strong>How to Create a Conflict</strong>
-                        Edit the same item on two devices while offline, then sync both devices.
-                    </div>
-
-                    <ul class="checklist">
-                        <li class="checklist-item">
-                            <input type="checkbox" id="sync-1">
-                            <label for="sync-1">Conflict badge appears on Settings → Cloud Sync</label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="sync-2">
-                            <label for="sync-2">Conflict count shows correctly</label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="sync-3">
-                            <label for="sync-3">Tapping opens conflict list</label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="sync-4">
-                            <label for="sync-4">Conflict detail shows both versions side-by-side</label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="sync-5">
-                            <label for="sync-5">"This Device" shows local changes correctly</label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="sync-6">
-                            <label for="sync-6">"iCloud" shows remote changes correctly</label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="sync-7">
-                            <label for="sync-7">Field-by-field diff displays differences</label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="sync-8">
-                            <label for="sync-8">"Keep This Device" resolution works</label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="sync-9">
-                            <label for="sync-9">"Keep iCloud" resolution works</label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="sync-10">
-                            <label for="sync-10">"Resolve All" bulk option works</label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="sync-11">
-                            <label for="sync-11">Conflict removed from list after resolution</label>
-                        </li>
-                    </ul>
-                </div>
-            </section>
-
-            <!-- Maintenance Section -->
-            <section class="section" id="maintenance" data-section="maintenance">
-                <div class="section-header" onclick="toggleSection(this.parentElement)">
-                    <div class="section-icon">🔧</div>
-                    <h2>Smart Maintenance Suggestions</h2>
-                    <span class="sprint-badge new">Sprint 11 — NEW</span>
-                    <span class="section-progress">0/0</span>
-                    <div class="section-toggle">▼</div>
-                </div>
-                <div class="section-content">
-                    <p><strong>Location:</strong> Dashboard and item details</p>
-
-                    <ul class="checklist">
-                        <li class="checklist-item">
-                            <input type="checkbox" id="maint-1">
-                            <label for="maint-1">Maintenance suggestions appear on Dashboard</label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="maint-2">
-                            <label for="maint-2">Suggestions show correct priority (Red/Orange/Blue)</label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="maint-3">
-                            <label for="maint-3">Overdue items show "X days overdue"</label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="maint-4">
-                            <label for="maint-4">Due soon items show "Due in X days"</label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="maint-5">
-                            <label for="maint-5">Tapping "Done" marks maintenance complete</label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="maint-6">
-                            <label for="maint-6">Tapping "Skip" dismisses for this cycle</label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="maint-7">
-                            <label for="maint-7">"View All" shows complete suggestion list</label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="maint-8">
-                            <label for="maint-8">Suggestions vary by item category</label>
-                        </li>
-                    </ul>
-
-                    <div class="subsection">
-                        <h3>Built-in Maintenance Rules</h3>
-                        <table>
-                            <tr><th>Category</th><th>Task</th><th>Interval</th></tr>
-                            <tr><td>Electronics</td><td>Data Backup</td><td>30 days</td></tr>
-                            <tr><td>Electronics</td><td>Clean Vents</td><td>90 days</td></tr>
-                            <tr><td>Appliances</td><td>Replace Filters</td><td>90 days</td></tr>
-                            <tr><td>Appliances</td><td>Deep Clean</td><td>180 days</td></tr>
-                            <tr><td>Vehicles</td><td>Oil Change</td><td>90 days</td></tr>
-                            <tr><td>Vehicles</td><td>Tire Rotation</td><td>180 days</td></tr>
-                            <tr><td>HVAC</td><td>Replace Filter</td><td>30 days</td></tr>
-                            <tr><td>Outdoor</td><td>Winterize</td><td>Yearly</td></tr>
-                        </table>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Ratings Section -->
-            <section class="section" id="ratings" data-section="ratings">
-                <div class="section-header" onclick="toggleSection(this.parentElement)">
-                    <div class="section-icon">⭐</div>
-                    <h2>Product Ratings</h2>
-                    <span class="sprint-badge new">Sprint 12 — NEW</span>
-                    <span class="section-progress">0/0</span>
-                    <div class="section-toggle">▼</div>
-                </div>
-                <div class="section-content">
-                    <p><strong>Location:</strong> Item Detail view</p>
-
-                    <ul class="checklist">
-                        <li class="checklist-item">
-                            <input type="checkbox" id="rate-1">
-                            <label for="rate-1">Star rating picker (1-5 stars) works</label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="rate-2">
-                            <label for="rate-2">"Would Buy Again" Yes/No toggle works</label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="rate-3">
-                            <label for="rate-3">Rating notes field accepts text</label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="rate-4">
-                            <label for="rate-4">Ratings persist after saving</label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="rate-5">
-                            <label for="rate-5">Ratings appear in item list view</label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="rate-6">
-                            <label for="rate-6">Can filter items by rating</label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="rate-7">
-                            <label for="rate-7">Can sort items by rating</label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="rate-8">
-                            <label for="rate-8">Ratings sync across devices</label>
-                        </li>
-                    </ul>
-                </div>
-            </section>
-
-            <!-- Family Sharing Section -->
-            <section class="section" id="family-sharing" data-section="family-sharing">
-                <div class="section-header" onclick="toggleSection(this.parentElement)">
-                    <div class="section-icon">👨‍👩‍👧‍👦</div>
-                    <h2>Family Sharing</h2>
-                    <span class="sprint-badge new">Sprint 13 — NEW</span>
-                    <span class="section-progress">0/0</span>
-                    <div class="section-toggle">▼</div>
-                </div>
-                <div class="section-content">
-                    <div class="info-box">
-                        <strong>Requirements</strong>
-                        iCloud account and a family member with Stuffolio installed.
-                    </div>
-
-                    <p><strong>Location:</strong> Settings → Cloud Sync → Family Sharing</p>
-
-                    <ul class="checklist">
-                        <li class="checklist-item">
-                            <input type="checkbox" id="fam-1">
-                            <label for="fam-1">Share button appears on items</label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="fam-2">
-                            <label for="fam-2">Tapping Share opens family share sheet</label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="fam-3">
-                            <label for="fam-3">Can start sharing an item</label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="fam-4">
-                            <label for="fam-4">Invitation link can be sent</label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="fam-5">
-                            <label for="fam-5">Recipient can accept invitation</label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="fam-6">
-                            <label for="fam-6">Shared items appear in "Shared with Me"</label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="fam-7">
-                            <label for="fam-7">"Shared by Me" shows items you're sharing</label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="fam-8">
-                            <label for="fam-8">Can view participant list</label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="fam-9">
-                            <label for="fam-9">Can remove participants</label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="fam-10">
-                            <label for="fam-10">Can stop sharing entirely</label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="fam-11">
-                            <label for="fam-11">Permission levels work (View Only, Can Edit)</label>
-                        </li>
-                    </ul>
-                </div>
-            </section>
-
-            <!-- Legacy Wishes Section -->
-            <section class="section" id="legacy-wishes" data-section="legacy-wishes">
-                <div class="section-header" onclick="toggleSection(this.parentElement)">
-                    <div class="section-icon">🎁</div>
-                    <h2>Legacy Wishes</h2>
-                    <span class="sprint-badge">Bonus Feature</span>
-                    <span class="section-progress">0/0</span>
-                    <div class="section-toggle">▼</div>
-                </div>
-                <div class="section-content">
-                    <div class="info-box">
-                        <strong>How to Enable</strong>
-                        Settings → Legacy Planning → Enable Legacy Wishes
-                    </div>
-
-                    <ul class="checklist">
-                        <li class="checklist-item">
-                            <input type="checkbox" id="legacy-1">
-                            <label for="legacy-1">Disclaimer banner appears on all Legacy views</label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="legacy-2">
-                            <label for="legacy-2">Add beneficiaries with different relationships</label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="legacy-3">
-                            <label for="legacy-3">Assign items to beneficiaries</label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="legacy-4">
-                            <label for="legacy-4">Set priority order for multiple recipients</label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="legacy-5">
-                            <label for="legacy-5">Set fallback disposition (Donate, Sell, etc.)</label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="legacy-6">
-                            <label for="legacy-6">Add notes/reasons to assignments</label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="legacy-7">
-                            <label for="legacy-7">Statistics card shows correct counts</label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="legacy-8">
-                            <label for="legacy-8">Export as PDF works</label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="legacy-9">
-                            <label for="legacy-9">PDF contains disclaimer and all assignments</label>
-                        </li>
-                    </ul>
-                </div>
-            </section>
-
-            <!-- AI Features Section -->
-            <section class="section" id="ai-features" data-section="ai-features">
-                <div class="section-header" onclick="toggleSection(this.parentElement)">
-                    <div class="section-icon">🤖</div>
-                    <h2>AI Features</h2>
-                    <span class="section-progress">0/0</span>
-                    <div class="section-toggle">▼</div>
-                </div>
-                <div class="section-content">
-                    <div class="subsection">
-                        <h3>Stuff Scout</h3>
-                        <ul class="checklist">
-                            <li class="checklist-item">
-                                <input type="checkbox" id="ai-1">
-                                <label for="ai-1">Camera opens for product scanning</label>
-                            </li>
-                            <li class="checklist-item">
-                                <input type="checkbox" id="ai-2">
-                                <label for="ai-2">AI identifies product correctly</label>
-                            </li>
-                            <li class="checklist-item">
-                                <input type="checkbox" id="ai-3">
-                                <label for="ai-3">Suggested info appears (name, category, price)</label>
-                            </li>
-                            <li class="checklist-item">
-                                <input type="checkbox" id="ai-4">
-                                <label for="ai-4">"Add to Products" transfers data correctly</label>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="subsection">
-                        <h3>Donate vs. Sell Advisor</h3>
-                        <p><strong>Location:</strong> Tools → Analysis</p>
-                        <ul class="checklist">
-                            <li class="checklist-item">
-                                <input type="checkbox" id="ai-5">
-                                <label for="ai-5">Select item for analysis</label>
-                            </li>
-                            <li class="checklist-item">
-                                <input type="checkbox" id="ai-6">
-                                <label for="ai-6">Tax bracket slider works (10%-37%)</label>
-                            </li>
-                            <li class="checklist-item">
-                                <input type="checkbox" id="ai-7">
-                                <label for="ai-7">Marketplace selection works</label>
-                            </li>
-                            <li class="checklist-item">
-                                <input type="checkbox" id="ai-8">
-                                <label for="ai-8">Side-by-side comparison shows correctly</label>
-                            </li>
-                            <li class="checklist-item">
-                                <input type="checkbox" id="ai-9">
-                                <label for="ai-9">Recommendation banner displays</label>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Feedback Section -->
-            <section class="section" id="feedback" data-section="feedback">
-                <div class="section-header" onclick="toggleSection(this.parentElement)">
-                    <div class="section-icon">💬</div>
-                    <h2>Reporting Issues</h2>
-                    <span class="section-progress">0/0</span>
-                    <div class="section-toggle">▼</div>
-                </div>
-                <div class="section-content">
-                    <p>When reporting issues, please include:</p>
-                    <ul class="checklist">
-                        <li class="checklist-item">
-                            <input type="checkbox" id="fb-1">
-                            <label for="fb-1"><strong>Device:</strong> iPhone 15, iPad Pro, MacBook Air, etc.</label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="fb-2">
-                            <label for="fb-2"><strong>OS Version:</strong> iOS 17.6.1, macOS 14.6, etc.</label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="fb-3">
-                            <label for="fb-3"><strong>Steps to reproduce:</strong> What exactly did you do?</label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="fb-4">
-                            <label for="fb-4"><strong>Expected behavior:</strong> What should have happened?</label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="fb-5">
-                            <label for="fb-5"><strong>Actual behavior:</strong> What actually happened?</label>
-                        </li>
-                        <li class="checklist-item">
-                            <input type="checkbox" id="fb-6">
-                            <label for="fb-6"><strong>Screenshots/video:</strong> If applicable</label>
-                        </li>
-                    </ul>
-
-                    <div class="feedback-options">
-                        <div class="feedback-card">
-                            <div class="icon">📲</div>
-                            <h4>TestFlight Feedback</h4>
-                            <p>Shake device or use TestFlight app</p>
-                        </div>
-                        <div class="feedback-card">
-                            <div class="icon">⚙️</div>
-                            <h4>In-App Feedback</h4>
-                            <p>Settings → Send Feedback</p>
-                        </div>
-                        <div class="feedback-card">
-                            <div class="icon">🚨</div>
-                            <h4>Critical Issues</h4>
-                            <p>Report immediately via TestFlight</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Thank You Card -->
-            <div class="thank-you-card">
-                <h2>Thank You!</h2>
-                <p>Your testing helps make Stuffolio better for everyone.<br>We appreciate your time and detailed feedback!</p>
+        <footer>
+            <p>Beta Testing Guide v1.0 — Last Updated January 18, 2026</p>
+            <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 12px;">
+                <a href="index.html" style="color: var(--primary); text-decoration: none;">Home</a>
+                <a href="quick-start.html" style="color: var(--primary); text-decoration: none;">Quick Start</a>
+                <a href="features.html" style="color: var(--primary); text-decoration: none;">Features</a>
+                <a href="support.html" style="color: var(--primary); text-decoration: none;">Support</a>
+                <a href="privacy.html" style="color: var(--primary); text-decoration: none;">Privacy</a>
             </div>
-
-            <footer style="text-align: center; padding: 20px; color: var(--text-secondary); font-size: 0.9em;">
-                <p>Document Version 1.0 — Last Updated January 17, 2026</p>
-                <p style="margin-top: 8px;">This is a temporary beta testing page. Not for public distribution.</p>
-            </footer>
-        </main>
-    </div>
-
-    <!-- Back to Top Button -->
-    <button class="back-to-top" onclick="scrollToTop()">↑</button>
+            <p style="margin-top: 12px; font-size: 0.8em;">© 2026 Coffee & Code LLC</p>
+        </footer>
+    </main>
 
     <script>
         // Theme Toggle
@@ -1739,16 +1390,58 @@
             }
         })();
 
+        // Toggle full checklist
+        function toggleFullChecklist() {
+            const checklist = document.getElementById('fullChecklist');
+            const btn = document.querySelector('.expand-btn');
+
+            checklist.classList.toggle('visible');
+            btn.classList.toggle('expanded');
+
+            if (checklist.classList.contains('visible')) {
+                btn.querySelector('span:first-child').textContent = 'Hide Complete Checklist';
+                checklist.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                updateProgressUI();
+            } else {
+                btn.querySelector('span:first-child').textContent = 'Show Complete Checklist';
+            }
+        }
+
         // Section Toggle
         function toggleSection(section) {
             section.classList.toggle('collapsed');
+        }
+
+        // Show TestFlight tip
+        function showTestFlightTip() {
+            const tip = document.getElementById('testflightTip');
+            tip.style.display = tip.style.display === 'none' ? 'block' : 'none';
+        }
+
+        // Show/copy template
+        function copyTemplate() {
+            const box = document.getElementById('templateBox');
+            box.style.display = box.style.display === 'none' ? 'block' : 'none';
+        }
+
+        function copyToClipboard() {
+            const content = document.getElementById('templateContent').textContent;
+            navigator.clipboard.writeText(content).then(() => {
+                const btn = document.querySelector('.copy-btn');
+                btn.textContent = 'Copied!';
+                btn.classList.add('copied');
+                setTimeout(() => {
+                    btn.textContent = 'Copy to Clipboard';
+                    btn.classList.remove('copied');
+                }, 2000);
+            });
         }
 
         // Progress Tracking
         const STORAGE_KEY = 'stuffolio-beta-progress';
 
         function saveProgress() {
-            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            const checkboxes = document.querySelectorAll('.full-checklist input[type="checkbox"]');
             const progress = {};
             checkboxes.forEach(cb => {
                 progress[cb.id] = cb.checked;
@@ -1766,38 +1459,40 @@
                     if (checkbox) {
                         checkbox.checked = progress[id];
                         if (progress[id]) {
-                            checkbox.closest('.checklist-item').classList.add('checked');
+                            checkbox.closest('.checklist-item')?.classList.add('checked');
                         }
                     }
                 });
             }
-            updateProgressUI();
         }
 
         function resetProgress() {
-            if (confirm('Are you sure you want to reset all progress? This cannot be undone.')) {
+            if (confirm('Reset all progress? This cannot be undone.')) {
                 localStorage.removeItem(STORAGE_KEY);
-                document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+                document.querySelectorAll('.full-checklist input[type="checkbox"]').forEach(cb => {
                     cb.checked = false;
-                    cb.closest('.checklist-item').classList.remove('checked');
+                    cb.closest('.checklist-item')?.classList.remove('checked');
                 });
                 updateProgressUI();
             }
         }
 
         function updateProgressUI() {
-            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-            const checked = document.querySelectorAll('input[type="checkbox"]:checked').length;
+            const checkboxes = document.querySelectorAll('.full-checklist input[type="checkbox"]');
+            const checked = document.querySelectorAll('.full-checklist input[type="checkbox"]:checked').length;
             const total = checkboxes.length;
-            const percent = Math.round((checked / total) * 100);
+            const percent = total > 0 ? Math.round((checked / total) * 100) : 0;
 
-            // Update main progress bar
-            document.getElementById('progressBar').style.width = percent + '%';
-            document.getElementById('progressText').textContent = `${checked} of ${total} items completed`;
-            document.getElementById('progressPercent').textContent = percent + '%';
+            const progressBar = document.getElementById('progressBar');
+            const progressText = document.getElementById('progressText');
+            const progressPercent = document.getElementById('progressPercent');
+
+            if (progressBar) progressBar.style.width = percent + '%';
+            if (progressText) progressText.textContent = `${checked} of ${total} items completed`;
+            if (progressPercent) progressPercent.textContent = percent + '%';
 
             // Update section progress
-            document.querySelectorAll('.section').forEach(section => {
+            document.querySelectorAll('.full-checklist .section').forEach(section => {
                 const sectionCheckboxes = section.querySelectorAll('input[type="checkbox"]');
                 const sectionChecked = section.querySelectorAll('input[type="checkbox"]:checked').length;
                 const sectionTotal = sectionCheckboxes.length;
@@ -1811,89 +1506,23 @@
                         progressSpan.classList.remove('complete');
                     }
                 }
-
-                // Update sidebar dots
-                const sectionId = section.getAttribute('data-section');
-                const dot = document.querySelector(`.nav-link .progress-dot[data-section="${sectionId}"]`);
-                if (dot && sectionTotal > 0) {
-                    dot.classList.remove('partial', 'complete');
-                    if (sectionChecked === sectionTotal) {
-                        dot.classList.add('complete');
-                    } else if (sectionChecked > 0) {
-                        dot.classList.add('partial');
-                    }
-                }
             });
         }
 
         // Initialize checkboxes
-        document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+        document.querySelectorAll('.full-checklist input[type="checkbox"]').forEach(cb => {
             cb.addEventListener('change', function() {
                 if (this.checked) {
-                    this.closest('.checklist-item').classList.add('checked');
+                    this.closest('.checklist-item')?.classList.add('checked');
                 } else {
-                    this.closest('.checklist-item').classList.remove('checked');
+                    this.closest('.checklist-item')?.classList.remove('checked');
                 }
                 saveProgress();
             });
         });
 
-        // Load saved progress on page load
+        // Load saved progress
         loadProgress();
-
-        // Back to top button
-        window.addEventListener('scroll', function() {
-            const btn = document.querySelector('.back-to-top');
-            if (window.scrollY > 500) {
-                btn.classList.add('visible');
-            } else {
-                btn.classList.remove('visible');
-            }
-        });
-
-        function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        // Smooth scroll for nav links
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href').substring(1);
-                const target = document.getElementById(targetId);
-                if (target) {
-                    // Expand section if collapsed
-                    if (target.classList.contains('collapsed')) {
-                        target.classList.remove('collapsed');
-                    }
-                    // Scroll to section
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    // Update active state
-                    document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
-                    this.classList.add('active');
-                }
-            });
-        });
-
-        // Update active nav link on scroll
-        window.addEventListener('scroll', function() {
-            const sections = document.querySelectorAll('.section');
-            let current = '';
-
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                if (window.scrollY >= sectionTop - 200) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            document.querySelectorAll('.nav-link').forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === '#' + current) {
-                    link.classList.add('active');
-                }
-            });
-        });
     </script>
 </body>
 </html>

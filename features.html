@@ -1,0 +1,822 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>What Stuffolio Does — Features & Capabilities</title>
+  <meta name="description" content="Discover what Stuffolio can do for you. Track warranties, remember what works, share with family, and plan ahead — the thoughtful way to manage your stuff." />
+  <meta name="theme-color" content="#0b1220" />
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://stuffolio.app/features.html" />
+  <meta property="og:title" content="What Stuffolio Does — Features & Capabilities" />
+  <meta property="og:description" content="Discover what Stuffolio can do for you. Track warranties, remember what works, share with family, and plan ahead." />
+  <meta property="og:image" content="https://stuffolio.app/assets/og-image.png" />
+  <meta property="og:site_name" content="Stuffolio" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="What Stuffolio Does — Features & Capabilities" />
+  <meta name="twitter:description" content="Discover what Stuffolio can do for you. Track warranties, remember what works, share with family, and plan ahead." />
+  <meta name="twitter:image" content="https://stuffolio.app/assets/og-image.png" />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://stuffolio.app/features.html" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
+
+  <!-- Shared Styles -->
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- Page-specific styles -->
+  <style>
+    :root { --max: 900px }
+
+    .hero-intro {
+      text-align: center;
+      margin-bottom: 8px;
+    }
+    .hero-intro h1 {
+      font-size: 2.2rem;
+      margin: 0 0 12px;
+    }
+    .hero-intro .tagline {
+      font-size: 1.2rem;
+      color: var(--muted);
+      max-width: 600px;
+      margin: 0 auto 20px;
+      line-height: 1.6;
+    }
+
+    .philosophy-box {
+      background: linear-gradient(135deg, rgba(167,139,250,.1), rgba(125,211,252,.08));
+      border: 1px solid rgba(167,139,250,.3);
+      border-radius: 14px;
+      padding: 24px;
+      margin: 20px 0;
+      text-align: center;
+    }
+    .philosophy-box p {
+      margin: 0;
+      color: var(--text);
+      font-size: 1.1rem;
+      line-height: 1.7;
+    }
+    .philosophy-box strong {
+      color: var(--accent);
+    }
+
+    .capability-section {
+      margin-top: 32px;
+    }
+    .capability-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--line);
+    }
+    .capability-icon {
+      font-size: 2rem;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(125,211,252,.1);
+      border-radius: 12px;
+      flex-shrink: 0;
+    }
+    .capability-header h2 {
+      margin: 0;
+      font-size: 1.4rem;
+      color: var(--text);
+    }
+    .capability-header .subtitle {
+      font-size: 0.95rem;
+      color: var(--muted);
+      font-weight: normal;
+      margin-top: 4px;
+    }
+
+    .capability-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 14px;
+    }
+
+    .capability-item {
+      background: rgba(255,255,255,.03);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 18px;
+      transition: all 0.2s;
+    }
+    .capability-item:hover {
+      border-color: rgba(125,211,252,.4);
+      background: rgba(125,211,252,.05);
+    }
+    .capability-item h3 {
+      font-size: 1rem;
+      margin: 0 0 8px;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .capability-item h3 .item-icon {
+      font-size: 1.1rem;
+    }
+    .capability-item p {
+      margin: 0;
+      font-size: 0.92rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .insight-box {
+      background: rgba(251,191,36,.08);
+      border: 1px solid rgba(251,191,36,.25);
+      border-radius: 10px;
+      padding: 16px;
+      margin-top: 16px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .insight-box .insight-icon {
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+    .insight-box p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    .new-badge {
+      background: linear-gradient(135deg, #a78bfa, #7dd3fc);
+      color: #0b1220;
+      font-size: 0.65rem;
+      padding: 2px 8px;
+      border-radius: 8px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .cta-section {
+      text-align: center;
+      padding: 32px 24px;
+      background: linear-gradient(180deg, transparent, rgba(125,211,252,.05));
+      border-radius: 16px;
+      margin-top: 32px;
+    }
+    .cta-section h2 {
+      margin: 0 0 12px;
+      font-size: 1.6rem;
+    }
+    .cta-section p {
+      color: var(--muted);
+      margin: 0 0 20px;
+    }
+
+    /* Stuff Scout intro */
+    .scout-intro {
+      text-align: center;
+    }
+    .scout-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    .scout-icon {
+      font-size: 2.5rem;
+      width: 70px;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, rgba(167,139,250,.2), rgba(125,211,252,.15));
+      border: 2px solid rgba(167,139,250,.4);
+      border-radius: 20px;
+      flex-shrink: 0;
+    }
+    .scout-header h2 {
+      margin: 0;
+      font-size: 1.8rem;
+      background: linear-gradient(135deg, #a78bfa, #7dd3fc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .scout-tagline {
+      margin: 4px 0 0;
+      color: var(--muted);
+      font-size: 1.1rem;
+    }
+    .scout-description {
+      max-width: 700px;
+      margin: 0 auto 24px;
+      text-align: left;
+    }
+    .scout-description p {
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 1.05rem;
+    }
+    .scout-capabilities {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+    }
+    .scout-cap-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(167,139,250,.1);
+      border: 1px solid rgba(167,139,250,.3);
+      border-radius: 20px;
+      padding: 8px 16px;
+      font-size: 0.9rem;
+      color: var(--text);
+    }
+    .scout-cap-item .cap-icon {
+      font-size: 1rem;
+    }
+
+    /* AI section special styling */
+    .ai-section .capability-header {
+      border-bottom-color: rgba(167,139,250,.3);
+    }
+    .ai-section .capability-icon {
+      background: linear-gradient(135deg, rgba(167,139,250,.2), rgba(125,211,252,.15));
+      border: 1px solid rgba(167,139,250,.3);
+    }
+    .ai-section .capability-item:hover {
+      border-color: rgba(167,139,250,.5);
+      background: rgba(167,139,250,.08);
+    }
+    .ai-badge {
+      background: linear-gradient(135deg, #a78bfa, #7dd3fc);
+      color: #0b1220;
+      font-size: 0.6rem;
+      padding: 2px 6px;
+      border-radius: 6px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-left: 6px;
+    }
+
+    /* Light mode */
+    .light-mode .philosophy-box { background: linear-gradient(135deg, rgba(124,58,237,.08), rgba(0,102,204,.05)); }
+    .light-mode .capability-icon { background: rgba(0,102,204,.1); }
+    .light-mode .capability-item { background: rgba(0,0,0,.02); }
+    .light-mode .capability-item:hover { background: rgba(0,102,204,.05); border-color: rgba(0,102,204,.3); }
+    .light-mode .insight-box { background: rgba(234,179,8,.08); }
+    .light-mode .scout-icon { background: linear-gradient(135deg, rgba(124,58,237,.15), rgba(0,102,204,.1)); border-color: rgba(124,58,237,.3); }
+    .light-mode .scout-cap-item { background: rgba(124,58,237,.08); border-color: rgba(124,58,237,.2); }
+    .light-mode .ai-section .capability-icon { background: linear-gradient(135deg, rgba(124,58,237,.15), rgba(0,102,204,.1)); }
+    .light-mode .ai-section .capability-item:hover { background: rgba(124,58,237,.05); border-color: rgba(124,58,237,.3); }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="wrap">
+    <header>
+      <a href="index.html" class="site-title">Stuffolio</a>
+      <div class="header-right">
+        <!-- BETA-PERIOD-ONLY: Remove "Testing Guide" link after launch -->
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="features.html" aria-current="page">Features</a>
+          <a href="quick-start.html">Quick Start</a>
+          <a href="Stuffolio_Users_Manual.html">User Manual</a>
+          <a href="beta-testing-guide.html">Testing Guide</a>
+          <a href="support.html">Support</a>
+        </nav>
+        <div class="theme-toggle">
+          <span class="theme-icon">☀️</span>
+          <button class="theme-toggle-switch" id="themeToggle" aria-label="Toggle light/dark mode"></button>
+          <span class="theme-icon">🌙</span>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- Hero -->
+      <div class="card">
+        <div class="hero-intro">
+          <h1>What Stuffolio Does</h1>
+          <p class="tagline">Not just inventory. A thoughtful system for the life of your stuff — from the day you bring it home to the day you pass it on.</p>
+        </div>
+
+        <div class="philosophy-box">
+          <p>
+            Most apps ask <strong>"What do you own?"</strong><br>
+            Stuffolio asks <strong>"What do you want to remember about what you own?"</strong><br><br>
+            Warranties that actually help. Ratings that inform future decisions.<br>
+            Wishes that reduce family stress. All in one place, private by default.
+          </p>
+        </div>
+      </div>
+
+      <!-- Meet Stuff Scout -->
+      <div class="card">
+        <div class="scout-intro">
+          <div class="scout-header">
+            <div class="scout-icon">🔍</div>
+            <div>
+              <h2>Meet Stuff Scout</h2>
+              <p class="scout-tagline">Your AI assistant for everything you own</p>
+            </div>
+          </div>
+          <div class="scout-description">
+            <p>Stuff Scout is Stuffolio's built-in AI that actually understands <em>stuff</em>. Point your camera at grandma's antique vase, a thrift store mystery, or that weird tool in the garage — Stuff Scout identifies it, researches its history, estimates its value, and finds the manual you lost years ago.</p>
+            <p style="margin-bottom:0">It's like having a knowledgeable friend who's seen everything, remembers everything, and never judges you for not knowing what a "dovetail jig" is.</p>
+          </div>
+          <div class="scout-capabilities">
+            <div class="scout-cap-item">
+              <span class="cap-icon">📸</span>
+              <span>Identify from photos</span>
+            </div>
+            <div class="scout-cap-item">
+              <span class="cap-icon">📖</span>
+              <span>Find manuals & parts</span>
+            </div>
+            <div class="scout-cap-item">
+              <span class="cap-icon">💰</span>
+              <span>Estimate values</span>
+            </div>
+            <div class="scout-cap-item">
+              <span class="cap-icon">🏺</span>
+              <span>Research history</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- KNOW WHAT YOU OWN -->
+      <div class="card">
+        <div class="capability-section">
+          <div class="capability-header">
+            <div class="capability-icon">📋</div>
+            <div>
+              <h2>Know What You Own</h2>
+              <div class="subtitle">The foundation — your personal inventory, your way</div>
+            </div>
+          </div>
+
+          <div class="capability-grid">
+            <div class="capability-item">
+              <h3><span class="item-icon">🔍</span> Find anything instantly</h3>
+              <p>Search by name, category, location, or just a few letters. Spotlight integration means you can search from anywhere on your device.</p>
+            </div>
+            <div class="capability-item">
+              <h3><span class="item-icon">📍</span> Know where things are</h3>
+              <p>Track locations — garage, attic, storage unit, "lent to Dave." When you need something, you'll know where to look.</p>
+            </div>
+            <div class="capability-item">
+              <h3><span class="item-icon">💰</span> Track values over time</h3>
+              <p>What you paid, what it's worth now, depreciation estimates. Useful for insurance, selling, and making informed decisions.</p>
+            </div>
+            <div class="capability-item">
+              <h3><span class="item-icon">📸</span> Capture with photos</h3>
+              <p>A picture is worth a thousand data entry fields. Start with a photo, add details when you have time — or never. Your choice.</p>
+            </div>
+            <div class="capability-item">
+              <h3><span class="item-icon">🤖</span> Let AI identify it</h3>
+              <p>Point Stuff Scout at grandma's vase, a thrift store find, or "what IS this thing?" Get identification, history, and value estimates.</p>
+            </div>
+            <div class="capability-item">
+              <h3><span class="item-icon">📝</span> Remember the story</h3>
+              <p>Notes field for context: "Wedding gift from Uncle Bob" or "Got this at the flea market in Austin, 2019." The stories matter too.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- AI-POWERED INTELLIGENCE -->
+      <div class="card">
+        <div class="capability-section ai-section">
+          <div class="capability-header">
+            <div class="capability-icon">🤖</div>
+            <div>
+              <h2>AI-Powered Intelligence</h2>
+              <div class="subtitle">Stuff Scout and friends — your AI assistants for everything</div>
+            </div>
+            <span class="ai-badge">AI</span>
+          </div>
+
+          <div class="capability-grid">
+            <div class="capability-item">
+              <h3><span class="item-icon">📸</span> Visual identification</h3>
+              <p>Point your camera at anything. Stuff Scout uses image recognition to identify products, antiques, collectibles, tools, and mystery items you can't quite name.</p>
+            </div>
+            <div class="capability-item">
+              <h3><span class="item-icon">🏺</span> History & provenance</h3>
+              <p>That vintage piece? Stuff Scout researches its era, manufacturer, and cultural context. Learn the story behind what you own — especially for inherited items.</p>
+            </div>
+            <div class="capability-item">
+              <h3><span class="item-icon">💰</span> Value estimation</h3>
+              <p>Get fair market value estimates based on condition, age, and recent comparable sales. Know what things are worth before you insure, sell, or donate.</p>
+            </div>
+            <div class="capability-item">
+              <h3><span class="item-icon">📖</span> Manual finder</h3>
+              <p>Lost the manual? AI searches manufacturer sites, archive databases, and user communities to locate product manuals, spec sheets, and setup guides.</p>
+            </div>
+            <div class="capability-item">
+              <h3><span class="item-icon">🔧</span> Parts & repair lookup</h3>
+              <p>Need a replacement part? AI identifies compatible parts, suggests where to buy them, and finds DIY repair videos for common fixes.</p>
+            </div>
+            <div class="capability-item">
+              <h3><span class="item-icon">⚠️</span> Recall checker</h3>
+              <p>Automatically checks your items against recall databases. Get notified if something you own has a safety recall you missed.</p>
+            </div>
+            <div class="capability-item">
+              <h3><span class="item-icon">📊</span> Donate vs. Sell advisor</h3>
+              <p>Should you sell it or donate it? AI calculates tax deduction value vs. likely sale price and tells you which option puts more money in your pocket.</p>
+            </div>
+            <div class="capability-item">
+              <h3><span class="item-icon">🏷️</span> Smart categorization</h3>
+              <p>Add an item and AI suggests the right category, typical warranty periods, and common maintenance schedules. Less data entry, more accuracy.</p>
+            </div>
+          </div>
+
+          <div class="insight-box">
+            <span class="insight-icon">💡</span>
+            <p><strong>Privacy note:</strong> AI features are opt-in and off by default. When you use them, image processing happens through secure APIs — we don't store your photos or build profiles. Use AI when it's helpful, skip it when you don't need it.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROTECT YOUR PURCHASES -->
+      <div class="card">
+        <div class="capability-section">
+          <div class="capability-header">
+            <div class="capability-icon">🛡️</div>
+            <div>
+              <h2>Protect Your Purchases</h2>
+              <div class="subtitle">Warranties that actually help when you need them</div>
+            </div>
+          </div>
+
+          <div class="capability-grid">
+            <div class="capability-item">
+              <h3><span class="item-icon">📊</span> Track warranty phases</h3>
+              <p>Not just "expires 2027." Know when Full Coverage becomes Parts Only, when Labor ends, when you're down to Limited. Real protection awareness.</p>
+            </div>
+            <div class="capability-item">
+              <h3><span class="item-icon">🔔</span> Get alerts before changes</h3>
+              <p>Notification before your coverage downgrades — so you can get that repair done while it's still fully covered.</p>
+            </div>
+            <div class="capability-item">
+              <h3><span class="item-icon">🧾</span> Store proof of purchase</h3>
+              <p>Photos of receipts, order confirmations, invoice PDFs. When you need to make a claim, everything's already documented.</p>
+            </div>
+            <div class="capability-item">
+              <h3><span class="item-icon">📞</span> Log support interactions</h3>
+              <p>Rep names, case numbers, what they said, follow-up dates. Never start from scratch on your third call to customer service.</p>
+            </div>
+            <div class="capability-item">
+              <h3><span class="item-icon">🏠</span> Document for insurance</h3>
+              <p>If disaster strikes, you'll have photos, values, and purchase info ready. Export reports for claims — even with incomplete data.</p>
+            </div>
+            <div class="capability-item">
+              <h3><span class="item-icon">💵</span> Track deductibles</h3>
+              <p>Know your out-of-pocket costs per warranty tier. Factor that into repair vs. replace decisions.</p>
+            </div>
+          </div>
+
+          <div class="insight-box">
+            <span class="insight-icon">💡</span>
+            <p><strong>The "aha" moment:</strong> That 3-year warranty on your fridge? Year 1 might be full coverage. Years 2-3 might be parts only. Most apps just show "expires 2027." Stuffolio shows you <em>when your coverage actually changes</em>.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- MAINTAIN YOUR STUFF -->
+      <div class="card">
+        <div class="capability-section">
+          <div class="capability-header">
+            <div class="capability-icon">🔧</div>
+            <div>
+              <h2>Maintain Your Stuff</h2>
+              <div class="subtitle">Keep things running with smart reminders</div>
+            </div>
+            <span class="new-badge">New</span>
+          </div>
+
+          <div class="capability-grid">
+            <div class="capability-item">
+              <h3><span class="item-icon">📅</span> Smart maintenance reminders</h3>
+              <p>Category-aware suggestions: oil changes for vehicles, filter replacements for HVAC, data backups for electronics. Stuffolio knows what your stuff needs.</p>
+            </div>
+            <div class="capability-item">
+              <h3><span class="item-icon">🚨</span> Priority-based alerts</h3>
+              <p>Overdue items surface first. "Due soon" items get attention. Upcoming tasks stay visible but don't nag. The right urgency at the right time.</p>
+            </div>
+            <div class="capability-item">
+              <h3><span class="item-icon">📖</span> Find manuals and parts</h3>
+              <p>AI-powered lookup for user manuals, replacement parts, and DIY repair videos. Don't waste hours searching — let Stuffolio find it.</p>
+            </div>
+            <div class="capability-item">
+              <h3><span class="item-icon">📜</span> Track service history</h3>
+              <p>Log maintenance you've done: date, cost, notes. Know when you last changed the oil, replaced the battery, or cleaned the filter.</p>
+            </div>
+          </div>
+
+          <div class="insight-box">
+            <span class="insight-icon">💡</span>
+            <p><strong>Example:</strong> Add your car → Stuffolio suggests oil changes every 90 days, tire rotation every 180 days. Add your HVAC system → monthly filter reminders. It's maintenance that makes sense for what you actually own.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- REMEMBER WHAT WORKS -->
+      <div class="card">
+        <div class="capability-section">
+          <div class="capability-header">
+            <div class="capability-icon">⭐</div>
+            <div>
+              <h2>Remember What Works</h2>
+              <div class="subtitle">Decision memory — your personal product wisdom</div>
+            </div>
+            <span class="new-badge">New</span>
+          </div>
+
+          <div class="capability-grid">
+            <div class="capability-item">
+              <h3><span class="item-icon">⭐</span> Rate your stuff (1-5 stars)</h3>
+              <p>How satisfied are you with this product? Quick rating that's meaningful months or years later when you need to replace it.</p>
+            </div>
+            <div class="capability-item">
+              <h3><span class="item-icon">🔄</span> Track "Would Buy Again"</h3>
+              <p>Simple yes or no. The most practical question: if this broke tomorrow, would you buy the same thing? Your future self will thank you.</p>
+            </div>
+            <div class="capability-item">
+              <h3><span class="item-icon">📝</span> Add rating notes</h3>
+              <p>Why the 2 stars? "Motor died after 6 months." Why the 5 stars? "Still going strong after 8 years." Context that matters.</p>
+            </div>
+            <div class="capability-item">
+              <h3><span class="item-icon">🔍</span> Filter by satisfaction</h3>
+              <p>Show me all my 5-star items. Show me things I wouldn't buy again. Find patterns in what works for you.</p>
+            </div>
+          </div>
+
+          <div class="insight-box">
+            <span class="insight-icon">💡</span>
+            <p><strong>This isn't social media.</strong> Stuffolio ratings aren't reviews for others to read. They're <em>decision memory for you</em> — helping answer "Should I buy this brand again?" when you're standing in the store three years from now, trying to remember if that vacuum was any good.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SHARE WITH FAMILY -->
+      <div class="card">
+        <div class="capability-section">
+          <div class="capability-header">
+            <div class="capability-icon">👨‍👩‍👧‍👦</div>
+            <div>
+              <h2>Share With Family</h2>
+              <div class="subtitle">Collaborate when you want, stay private when you don't</div>
+            </div>
+            <span class="new-badge">New</span>
+          </div>
+
+          <div class="capability-grid">
+            <div class="capability-item">
+              <h3><span class="item-icon">💰</span> One purchase, whole family</h3>
+              <p>Apple Family Sharing means you buy Stuffolio once and up to 6 family members can use it. Everyone gets their own private inventory.</p>
+            </div>
+            <div class="capability-item">
+              <h3><span class="item-icon">📤</span> Share specific items</h3>
+              <p>Share the TV with your spouse. Share the car with your teen. Share warranty info with gift recipients. You control what's shared.</p>
+            </div>
+            <div class="capability-item">
+              <h3><span class="item-icon">👁️</span> Permission levels</h3>
+              <p>View Only or Can Edit — you decide. Share the info without giving control, or collaborate fully. Change permissions anytime.</p>
+            </div>
+            <div class="capability-item">
+              <h3><span class="item-icon">🔒</span> Private by default</h3>
+              <p>Nothing is shared unless you explicitly share it. Your inventory is yours. Family members can't browse your stuff.</p>
+            </div>
+          </div>
+
+          <div class="insight-box">
+            <span class="insight-icon">💡</span>
+            <p><strong>Real example:</strong> You and your spouse both drive the family car. Share it so you both can track maintenance, log repairs, and see warranty info — without duplicating the item in two separate inventories.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- PLAN AHEAD -->
+      <div class="card">
+        <div class="capability-section">
+          <div class="capability-header">
+            <div class="capability-icon">💝</div>
+            <div>
+              <h2>Plan Ahead</h2>
+              <div class="subtitle">Legacy Wishes — reduce stress for the people you love</div>
+            </div>
+          </div>
+
+          <div class="capability-grid">
+            <div class="capability-item">
+              <h3><span class="item-icon">🎁</span> Record who gets what</h3>
+              <p>Grandma's ring goes to Sarah. The vintage guitar goes to your nephew. The photo albums stay with the eldest. Document your intentions clearly.</p>
+            </div>
+            <div class="capability-item">
+              <h3><span class="item-icon">📖</span> Add stories and context</h3>
+              <p>"This watch was your grandfather's. He wore it every day for 40 years." The meaning behind the object matters as much as the object itself.</p>
+            </div>
+            <div class="capability-item">
+              <h3><span class="item-icon">📤</span> Share with family</h3>
+              <p>When you're ready, share your Legacy Wishes via iCloud. Family can see your intentions — no surprises, no guessing, no conflict.</p>
+            </div>
+            <div class="capability-item">
+              <h3><span class="item-icon">📄</span> Export as PDF</h3>
+              <p>Generate a document to print, email, or store with important papers. A simple record of your wishes in a shareable format.</p>
+            </div>
+          </div>
+
+          <div class="insight-box">
+            <span class="insight-icon">💡</span>
+            <p><strong>Important:</strong> Legacy Wishes is not a legal will. It doesn't replace estate planning. It simply answers the smaller, personal questions that wills rarely cover: Who gets the mixing bowl you used every Sunday? The tools you maintained for decades? It's a conversation starter, not a legal document.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- MOVE THINGS ON -->
+      <div class="card">
+        <div class="capability-section">
+          <div class="capability-header">
+            <div class="capability-icon">📦</div>
+            <div>
+              <h2>Move Things On</h2>
+              <div class="subtitle">Sell, donate, or dispose — intentionally</div>
+            </div>
+          </div>
+
+          <div class="capability-grid">
+            <div class="capability-item">
+              <h3><span class="item-icon">🎗️</span> Track donations</h3>
+              <p>Record what you donated, when, to whom, and the fair market value. Everything you need for tax documentation in one place.</p>
+            </div>
+            <div class="capability-item">
+              <h3><span class="item-icon">💵</span> Get value estimates</h3>
+              <p>AI-powered fair market value suggestions based on item condition, age, and recent sales. Know what things are actually worth.</p>
+            </div>
+            <div class="capability-item">
+              <h3><span class="item-icon">📊</span> Compare donate vs. sell</h3>
+              <p>Tax deduction vs. marketplace sale — which comes out ahead for your situation? The Donate vs. Sell Advisor does the math.</p>
+            </div>
+            <div class="capability-item">
+              <h3><span class="item-icon">📜</span> Keep disposal history</h3>
+              <p>Disposed items move to your archive. You can still reference them for insurance claims, tax records, or just "what happened to that thing?"</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- WORK YOUR WAY -->
+      <div class="card">
+        <div class="capability-section">
+          <div class="capability-header">
+            <div class="capability-icon">✨</div>
+            <div>
+              <h2>Work Your Way</h2>
+              <div class="subtitle">Flexible, not fussy — fits your workflow</div>
+            </div>
+          </div>
+
+          <div class="capability-grid">
+            <div class="capability-item">
+              <h3><span class="item-icon">📱</span> iPhone, iPad, and Mac</h3>
+              <p>Native apps for all three. Capture on your phone, manage on your Mac. Same data, optimized for each device.</p>
+            </div>
+            <div class="capability-item">
+              <h3><span class="item-icon">☁️</span> iCloud sync (optional)</h3>
+              <p>Your data in YOUR iCloud — not ours. Sync across devices, or keep it local. You choose.</p>
+            </div>
+            <div class="capability-item">
+              <h3><span class="item-icon">🔄</span> Multi-device editing</h3>
+              <p>Edit on any device. If conflicts happen, you see both versions side-by-side and decide what to keep. No silent overwrites.</p>
+            </div>
+            <div class="capability-item">
+              <h3><span class="item-icon">🔎</span> Spotlight & Handoff</h3>
+              <p>Search your stuff from the iOS home screen. Start on iPhone, continue on Mac. Deep system integration when you want it.</p>
+            </div>
+            <div class="capability-item">
+              <h3><span class="item-icon">📱</span> Widgets</h3>
+              <p>Add items from your lock screen. See expiring warranties at a glance. Quick actions without opening the app.</p>
+            </div>
+            <div class="capability-item">
+              <h3><span class="item-icon">⌨️</span> Keyboard-first</h3>
+              <p>Press ⌘K for the command palette. Navigate anywhere in two keystrokes. Power-user friendly.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PRIVACY -->
+      <div class="card">
+        <div class="capability-section">
+          <div class="capability-header">
+            <div class="capability-icon">🔒</div>
+            <div>
+              <h2>Privacy First</h2>
+              <div class="subtitle">Your stuff, your data, your control</div>
+            </div>
+          </div>
+
+          <div class="capability-grid">
+            <div class="capability-item">
+              <h3><span class="item-icon">📱</span> Local by default</h3>
+              <p>Data stays on your device unless you enable iCloud sync. Even then, it's YOUR iCloud — we never see your inventory.</p>
+            </div>
+            <div class="capability-item">
+              <h3><span class="item-icon">✋</span> All opt-in</h3>
+              <p>Network features, Spotlight, Siri, AI — everything is OFF by default. Enable only what you want. We don't assume.</p>
+            </div>
+            <div class="capability-item">
+              <h3><span class="item-icon">🚫</span> No ads, no tracking</h3>
+              <p>No advertising. No analytics profiles. No selling your data. You're the customer, not the product.</p>
+            </div>
+            <div class="capability-item">
+              <h3><span class="item-icon">👁️</span> Accessibility built-in</h3>
+              <p>VoiceOver support. Dynamic Type. Colorblind-safe design (blue/yellow/red, never color alone). WCAG 2.1 AA compliant.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="card">
+        <div class="cta-section">
+          <h2>Ready to Try Stuffolio?</h2>
+          <p>Track what you own. Protect your purchases. Remember what works. Plan ahead.</p>
+          <div class="ctaRow" style="justify-content: center;">
+            <a class="btn primary" href="https://testflight.apple.com/join/TWgM95st">Join the Beta</a>
+            <a class="btn" href="quick-start.html">Quick Start Guide</a>
+          </div>
+        </div>
+      </div>
+
+    </main>
+
+    <footer>
+      <div>© <span id="y"></span> Coffee & Code LLC</div>
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="index.html">Home</a>
+        <a href="family-sharing.html">Family Sharing</a>
+        <a href="support.html">Support</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="app-map.html">App Map</a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+
+    // Theme toggle
+    const html = document.documentElement;
+    const toggle = document.getElementById('themeToggle');
+
+    const saved = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const theme = saved || (prefersDark ? 'dark' : 'light');
+
+    if (theme === 'light') {
+      html.classList.add('light-mode');
+    } else {
+      toggle.classList.add('dark');
+    }
+
+    toggle.addEventListener('click', () => {
+      const isLight = html.classList.contains('light-mode');
+      if (isLight) {
+        html.classList.remove('light-mode');
+        toggle.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        html.classList.add('light-mode');
+        toggle.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+      }
+    });
+  </script>
+</body>
+</html>

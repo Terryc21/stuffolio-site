@@ -1,4 +1,20 @@
 <!DOCTYPE html>
+<!--
+  BETA-PERIOD CLEANUP GUIDE
+  =========================
+  When transitioning from beta to public release, search for "BETA-PERIOD-ONLY"
+  comments in this file. Sections marked include:
+
+  1. Hero badge: "Beta Testing Now" → "Available on the App Store"
+  2. Hero CTA row: TestFlight buttons → App Store download buttons
+  3. "What's New in v1.0" section: Remove or convert to release notes
+  4. Final CTA: "Join the Beta" → "Download on the App Store"
+
+  Also consider:
+  - Removing beta-testing-guide.html (or redirect to support.html)
+  - Updating testflight-invite.html (or remove entirely)
+  - Uncommenting the Apple Smart App Banner meta tag (line ~29)
+-->
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -339,6 +355,57 @@
     }
     .light-mode .whats-new-box { background: linear-gradient(135deg, rgba(124,58,237,.08), rgba(0,102,204,.05)); }
     .light-mode .whats-new-item { background: rgba(0,0,0,.03); }
+
+    /* Beta Testing Invite */
+    .beta-invite {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      padding: 20px 24px;
+      background: linear-gradient(135deg, rgba(175,82,222,.1), rgba(0,122,255,.08));
+      border: 1px solid rgba(175,82,222,.3);
+      border-radius: 14px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    .beta-invite:hover {
+      background: linear-gradient(135deg, rgba(175,82,222,.15), rgba(0,122,255,.12));
+      border-color: rgba(175,82,222,.5);
+      transform: translateY(-2px);
+    }
+    .beta-invite .invite-icon {
+      font-size: 1.8rem;
+    }
+    .beta-invite .invite-text {
+      text-align: left;
+    }
+    .beta-invite .invite-text strong {
+      display: block;
+      color: var(--text);
+      font-size: 1.05rem;
+      margin-bottom: 2px;
+    }
+    .beta-invite .invite-text span {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    .beta-invite .invite-arrow {
+      color: var(--accent);
+      font-size: 1.4rem;
+      transition: transform 0.2s;
+    }
+    .beta-invite:hover .invite-arrow {
+      transform: translateX(4px);
+    }
+    .light-mode .beta-invite {
+      background: linear-gradient(135deg, rgba(124,58,237,.08), rgba(0,102,204,.06));
+      border-color: rgba(124,58,237,.25);
+    }
+    .light-mode .beta-invite:hover {
+      background: linear-gradient(135deg, rgba(124,58,237,.12), rgba(0,102,204,.1));
+      border-color: rgba(124,58,237,.4);
+    }
     .light-mode .whats-new-item:hover { background: rgba(0,0,0,.05); }
 
     /* Pricing cards */
@@ -415,7 +482,7 @@
       <div class="header-right">
         <nav>
           <a href="#why">Why Stuffolio</a>
-          <a href="#features">Features</a>
+          <a href="features.html">Features</a>
           <a href="#pricing">Pricing</a>
           <a href="quick-start.html">Quick Start</a>
           <a href="Stuffolio_Users_Manual.html">User Manual</a>
@@ -435,6 +502,7 @@
       <!-- HERO -->
       <section class="hero">
         <div class="card">
+          <!-- BETA-PERIOD-ONLY: Change to "Available on the App Store" or similar after launch -->
           <div class="badge"><span class="dot" aria-hidden="true"></span> Beta Testing Now &bull; iPhone / iPad / Mac</div>
 
           <div class="heroLogoRow">
@@ -460,11 +528,13 @@
             <span class="stage">📦 Move On</span>
           </div>
 
+          <!-- BETA-PERIOD-ONLY: Replace with App Store buttons after launch -->
           <div class="ctaRow">
-            <a class="btn primary" href="testflight-invite.html">Become a Beta Tester</a>
+            <a class="btn primary" href="https://testflight.apple.com/join/TWgM95st">Become a Beta Tester</a>
             <a class="btn" href="beta-testing-guide.html">What to Test</a>
             <a class="btn" href="quick-start.html">Quick Start Guide</a>
           </div>
+          <!-- END BETA-PERIOD-ONLY -->
 
           <div class="callout">
             <b>Privacy by default.</b> Your data stays on your device (or your iCloud). No ads, no tracking, no profiles &mdash; ever.
@@ -475,15 +545,26 @@
         </div>
       </section>
 
+      <!-- BETA-PERIOD-ONLY: Remove or convert to "Release Notes" after launch -->
       <!-- WHAT'S NEW IN v1.0 -->
       <section id="whats-new" style="margin-top:18px;">
+        <!-- Beta Testing Invite -->
+        <a href="beta-testing-guide.html" class="beta-invite" style="margin-bottom: 20px;">
+          <span class="invite-icon">🔬</span>
+          <div class="invite-text">
+            <strong>Curious what beta testing looks like?</strong>
+            <span>See what our testers are exploring and how you can help shape Stuffolio.</span>
+          </div>
+          <span class="invite-arrow">→</span>
+        </a>
+
         <div class="card">
           <div class="whats-new-box">
             <div class="whats-new-header">
-              <span class="whats-new-badge">New in v1.0</span>
-              <h3>Fresh Features for Beta Testers</h3>
+              <h3>What's new in Stuffolio beta 1.0 (14)</h3>
             </div>
             <div class="whats-new-grid">
+              <!-- Sync Conflict Resolution -->
               <div class="whats-new-item">
                 <span class="whats-new-icon">🔄</span>
                 <div>
@@ -492,30 +573,62 @@
                 </div>
               </div>
               <div class="whats-new-item">
+                <span class="whats-new-icon">🔔</span>
+                <div>
+                  <strong>Conflict Alerts</strong>
+                  <span>Badge on Settings → Cloud Sync shows when conflicts need your attention.</span>
+                </div>
+              </div>
+              <!-- Smart Maintenance -->
+              <div class="whats-new-item">
                 <span class="whats-new-icon">🔧</span>
                 <div>
                   <strong>Smart Maintenance</strong>
-                  <span>Automatic reminders based on category — oil changes, filter replacements, seasonal prep.</span>
+                  <span>Category-based reminders — oil changes, filter replacements, seasonal prep.</span>
                 </div>
               </div>
+              <div class="whats-new-item">
+                <span class="whats-new-icon">📋</span>
+                <div>
+                  <strong>Maintenance Dashboard</strong>
+                  <span>See upcoming tasks with priority colors. Mark complete when done.</span>
+                </div>
+              </div>
+              <!-- Product Ratings -->
               <div class="whats-new-item">
                 <span class="whats-new-icon">⭐</span>
                 <div>
                   <strong>Product Ratings</strong>
-                  <span>Rate items 1-5 stars, track "Would Buy Again" — remember what's worth repurchasing.</span>
+                  <span>Rate items 1-5 stars with optional notes. Your personal decision memory.</span>
                 </div>
               </div>
               <div class="whats-new-item">
+                <span class="whats-new-icon">🔁</span>
+                <div>
+                  <strong>Would Buy Again</strong>
+                  <span>Quick toggle to track repurchase decisions. Filter to find your favorites.</span>
+                </div>
+              </div>
+              <!-- Family Sharing -->
+              <div class="whats-new-item">
                 <span class="whats-new-icon">👨‍👩‍👧‍👦</span>
                 <div>
-                  <strong>Family Sharing</strong>
-                  <span>Share specific items with family via CloudKit. View Only or Can Edit permissions.</span>
+                  <strong>Family Item Sharing</strong>
+                  <span>Share specific items via CloudKit with View Only or Can Edit permissions.</span>
+                </div>
+              </div>
+              <div class="whats-new-item">
+                <span class="whats-new-icon">📥</span>
+                <div>
+                  <strong>Shared with Me</strong>
+                  <span>New section shows items others have shared with you. Changes sync automatically.</span>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </section>
+      <!-- END BETA-PERIOD-ONLY -->
 
       <!-- WHY STUFFOLIO - THREE PILLARS -->
       <section id="why" style="margin-top:18px;">
@@ -1035,16 +1148,21 @@
       </section>
 
       <!-- FINAL CTA -->
+      <!-- BETA-PERIOD-ONLY: Update CTA buttons to App Store links after launch -->
       <section style="margin-top:18px;">
         <div class="card final-cta">
           <h2>Ready to Take Control of Your Stuff?</h2>
-          <p style="color:var(--muted); font-size:1.15rem; margin-bottom:24px;">
+          <p style="color:var(--muted); font-size:1.15rem; margin-bottom:16px;">
             Track what you own. Protect your purchases. Plan what matters.
           </p>
+          <p style="color:var(--accent); font-size:1rem; margin-bottom:24px; font-weight:600;">
+            🎁 Beta testing is completely free — and your feedback is truly appreciated!
+          </p>
           <div class="ctaRow" style="justify-content:center;">
-            <a class="btn primary" href="testflight-invite.html">Join the Beta</a>
+            <a class="btn primary" href="https://testflight.apple.com/join/TWgM95st">Join the Beta</a>
             <a class="btn" href="quick-start.html">Quick Start Guide</a>
           </div>
+          <!-- END BETA-PERIOD-ONLY -->
           <p style="color:var(--muted); font-size:.9rem; margin-top:20px; margin-bottom:0;">
             Questions? <a href="support.html">Get support</a> or read our <a href="privacy.html">privacy policy</a>.
           </p>
@@ -1058,6 +1176,8 @@
       <div style="display:flex; gap:12px; flex-wrap:wrap;">
         <a href="Stuffolio_Users_Manual.html">User Manual</a>
         <a href="family-sharing.html">Family Sharing</a>
+        <!-- BETA-PERIOD-ONLY: Remove Testing Guide link after launch -->
+        <a href="beta-testing-guide.html">Testing Guide</a>
         <a href="support.html">Support</a>
         <a href="privacy.html">Privacy</a>
         <a href="terms.html">Terms</a>
