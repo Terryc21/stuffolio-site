@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
-    <title>Stuffolio Beta Testing Guide — v1.0 (14)</title>
+    <title>Stuffolio Beta Testing Guide — v1.0 (15)</title>
     <style>
         :root {
             --primary: #007AFF;
@@ -418,37 +418,59 @@
             background: var(--success);
         }
 
-        /* Expandable Checklist */
+        /* Expandable Checklist - Prominent Card Style */
         .expand-section {
-            border-top: 1px solid var(--border);
+            background: linear-gradient(135deg, rgba(0, 122, 255, 0.08), rgba(88, 86, 214, 0.08));
+            border: 2px solid var(--primary);
+            border-radius: 16px;
             margin-top: 32px;
-            padding-top: 32px;
+            padding: 28px;
             text-align: center;
+        }
+
+        .expand-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .expand-header .icon {
+            font-size: 1.8em;
+        }
+
+        .expand-header h3 {
+            font-size: 1.3em;
+            color: var(--text);
+            margin: 0;
         }
 
         .expand-prompt {
             color: var(--text-secondary);
-            margin-bottom: 16px;
+            margin-bottom: 20px;
+            font-size: 1em;
         }
 
         .expand-btn {
-            background: var(--background);
-            color: var(--text);
-            border: 2px solid var(--border);
-            padding: 14px 28px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+            padding: 16px 32px;
             border-radius: 12px;
             cursor: pointer;
-            font-size: 1em;
+            font-size: 1.1em;
             font-weight: 600;
             transition: all 0.2s;
             display: inline-flex;
             align-items: center;
             gap: 10px;
+            box-shadow: 0 4px 12px rgba(0, 122, 255, 0.3);
         }
 
         .expand-btn:hover {
-            border-color: var(--primary);
-            color: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 122, 255, 0.4);
         }
 
         .expand-btn .arrow {
@@ -457,6 +479,17 @@
 
         .expand-btn.expanded .arrow {
             transform: rotate(180deg);
+        }
+
+        .expand-badge {
+            display: inline-block;
+            background: var(--success);
+            color: white;
+            font-size: 0.75em;
+            padding: 4px 10px;
+            border-radius: 12px;
+            margin-top: 16px;
+            font-weight: 600;
         }
 
         /* Full Checklist (hidden by default) */
@@ -854,7 +887,7 @@
 <body>
     <!-- Beta Banner -->
     <div class="beta-banner">
-        TestFlight Beta Testing <span>v1.0 Build 14</span>
+        TestFlight Beta Testing <span>v1.0 Build 15</span>
     </div>
 
     <!-- Navigation -->
@@ -888,7 +921,7 @@
         <!-- Header -->
         <header>
             <h1>Beta Testing Guide</h1>
-            <p class="version">Stuffolio v1.0 (Build 14) — January 2026</p>
+            <p class="version">Stuffolio v1.0 (Build 15) — January 2026</p>
             <div class="platforms">
                 <span class="platform-badge">📱 iOS 17.6+</span>
                 <span class="platform-badge">📱 iPadOS 17.6+</span>
@@ -912,21 +945,21 @@
 
             <div class="priority-grid">
                 <div class="priority-item">
-                    <h3>🔄 Sync Conflict Resolution <span class="badge">Sprint 10</span></h3>
-                    <p>Edit the same item on two devices, then see how Stuffolio shows you both versions side-by-side so you can choose what to keep.</p>
-                    <div class="why">Why it matters: This is completely new — we need to know if the UI makes sense.</div>
+                    <h3>💳 Apple Wallet Warranty Cards <span class="badge">NEW</span></h3>
+                    <p>Add a product with a warranty date, then look for the Apple Wallet section. Tap "Add to Wallet" to create a warranty pass you can access from your lock screen.</p>
+                    <div class="why">Why it matters: First release of Wallet integration — does the pass look right? Is the status color correct?</div>
                 </div>
 
                 <div class="priority-item">
-                    <h3>🔧 Smart Maintenance <span class="badge">Sprint 11</span></h3>
-                    <p>Add items in different categories (Electronics, Vehicles, Appliances) and check the Dashboard for category-specific maintenance suggestions.</p>
-                    <div class="why">Why it matters: Are the suggested tasks useful? Do the intervals make sense?</div>
+                    <h3> AppleCare+ Tracking <span class="badge">NEW</span></h3>
+                    <p>Add an Apple product (iPhone, iPad, Mac, etc.) and save it. You should see a prompt asking about AppleCare+. Check for the blue Care+ badge in product lists.</p>
+                    <div class="why">Why it matters: Beta tester feedback said AppleCare was hard to find — does this help?</div>
                 </div>
 
                 <div class="priority-item">
-                    <h3>⭐ Product Ratings <span class="badge">Sprint 12</span></h3>
-                    <p>Rate your items 1-5 stars and toggle "Would Buy Again." Try filtering and sorting by rating.</p>
-                    <div class="why">Why it matters: We want to know if the rating UI feels natural and useful.</div>
+                    <h3>📸 Photo Selection Improvements <span class="badge">NEW</span></h3>
+                    <p>Add a product and tap "Add Photo" in Quick Start. After selecting a photo, you'll see quality feedback and options to extract details via OCR or suggest a category.</p>
+                    <div class="why">Why it matters: New photo assessment UI — is the quality feedback helpful? Does OCR extract correctly?</div>
                 </div>
 
                 <div class="priority-item">
@@ -991,7 +1024,7 @@
             <p class="subtitle">Found a bug? Have a suggestion? Here's how to reach us.</p>
 
             <div class="feedback-grid">
-                <a href="mailto:dev@stuffolio.app?subject=Stuffolio%20Beta%20Feedback%20-%20v1.0%20(14)&body=%0A%0A---%0AWhat%20I%20tested%3A%0A%0AWhat%20happened%3A%0A%0AWhat%20I%20expected%3A%0A%0ADevice%3A%0AiOS%2FmacOS%20Version%3A%0A" class="feedback-option primary">
+                <a href="mailto:dev@stuffolio.app?subject=Stuffolio%20Beta%20Feedback%20-%20v1.0%20(15)&body=%0A%0A---%0AWhat%20I%20tested%3A%0A%0AWhat%20happened%3A%0A%0AWhat%20I%20expected%3A%0A%0ADevice%3A%0AiOS%2FmacOS%20Version%3A%0A" class="feedback-option primary">
                     <div class="icon">📧</div>
                     <h3>Email Us</h3>
                     <p>dev@stuffolio.app<br>Pre-filled template ready</p>
@@ -1012,7 +1045,7 @@
 
             <div class="template-box" id="templateBox" style="display: none;">
                 <h4>📋 Feedback Template</h4>
-                <div class="template-content" id="templateContent">Stuffolio Beta Feedback - v1.0 (14)
+                <div class="template-content" id="templateContent">Stuffolio Beta Feedback - v1.0 (15)
 
 What I tested:
 [Describe the feature or scenario]
@@ -1041,13 +1074,18 @@ Additional notes:
             </div>
         </div>
 
-        <!-- Expand Section -->
+        <!-- Expand Section - Prominent Checklist Card -->
         <div class="expand-section">
-            <p class="expand-prompt">Want to systematically test every feature?</p>
+            <div class="expand-header">
+                <span class="icon">📋</span>
+                <h3>Complete Testing Checklist</h3>
+            </div>
+            <p class="expand-prompt">Track your progress with our interactive checklist — your progress saves automatically!</p>
             <button class="expand-btn" onclick="toggleFullChecklist()">
                 <span>Show Complete Checklist</span>
                 <span class="arrow">▼</span>
             </button>
+            <div class="expand-badge">✓ Progress Saved Locally</div>
         </div>
 
         <!-- Full Checklist (hidden by default) -->
@@ -1112,78 +1150,110 @@ Additional notes:
                 </div>
             </section>
 
-            <!-- Sprint 10-13 Features -->
+            <!-- New Priority Features (Build 15) -->
             <section class="section" id="new-features" data-section="new-features">
                 <div class="section-header" onclick="toggleSection(this.parentElement)">
                     <div class="section-icon">✨</div>
-                    <h3>New Features (Sprints 10-13)</h3>
+                    <h3>New Features (Build 15)</h3>
                     <span class="sprint-badge new">Priority</span>
                     <span class="section-progress">0/0</span>
                     <div class="section-toggle">▼</div>
                 </div>
                 <div class="section-content">
                     <div class="subsection">
-                        <h4>🔄 Sync Conflict Resolution</h4>
+                        <h4>💳 Apple Wallet Warranty Cards</h4>
                         <ul class="checklist">
                             <li class="checklist-item">
-                                <input type="checkbox" id="sync-1">
-                                <label for="sync-1">Conflict badge appears on Settings → Cloud Sync</label>
+                                <input type="checkbox" id="wallet-1">
+                                <label for="wallet-1">Wallet Passes toggle appears in Settings → Notifications</label>
                             </li>
                             <li class="checklist-item">
-                                <input type="checkbox" id="sync-2">
-                                <label for="sync-2">Conflict detail shows both versions side-by-side</label>
+                                <input type="checkbox" id="wallet-2">
+                                <label for="wallet-2">Apple Wallet section appears for products with active warranty</label>
                             </li>
                             <li class="checklist-item">
-                                <input type="checkbox" id="sync-3">
-                                <label for="sync-3">"Keep This Device" resolution works</label>
+                                <input type="checkbox" id="wallet-3">
+                                <label for="wallet-3">Wallet section hidden when warranty expired or no date set</label>
                             </li>
                             <li class="checklist-item">
-                                <input type="checkbox" id="sync-4">
-                                <label for="sync-4">"Keep iCloud" resolution works</label>
+                                <input type="checkbox" id="wallet-4">
+                                <label for="wallet-4">"Add to Wallet" button opens iOS Wallet sheet</label>
+                            </li>
+                            <li class="checklist-item">
+                                <input type="checkbox" id="wallet-5">
+                                <label for="wallet-5">Pass preview shows correct status color (green/yellow/red)</label>
+                            </li>
+                            <li class="checklist-item">
+                                <input type="checkbox" id="wallet-6">
+                                <label for="wallet-6">Disabling Wallet Passes in Settings hides Wallet section</label>
                             </li>
                         </ul>
                     </div>
 
                     <div class="subsection">
-                        <h4>🔧 Smart Maintenance</h4>
+                        <h4> AppleCare+ Tracking</h4>
                         <ul class="checklist">
                             <li class="checklist-item">
-                                <input type="checkbox" id="maint-1">
-                                <label for="maint-1">Maintenance suggestions appear on Dashboard</label>
+                                <input type="checkbox" id="apple-1">
+                                <label for="apple-1">AppleCare+ prompt appears after saving Apple products</label>
                             </li>
                             <li class="checklist-item">
-                                <input type="checkbox" id="maint-2">
-                                <label for="maint-2">Suggestions show correct priority colors</label>
+                                <input type="checkbox" id="apple-2">
+                                <label for="apple-2">"Add AppleCare+" opens Extended Warranty form pre-filled</label>
                             </li>
                             <li class="checklist-item">
-                                <input type="checkbox" id="maint-3">
-                                <label for="maint-3">Tapping "Done" marks task complete</label>
+                                <input type="checkbox" id="apple-3">
+                                <label for="apple-3">"Maybe Later" dismisses prompt without opening form</label>
                             </li>
                             <li class="checklist-item">
-                                <input type="checkbox" id="maint-4">
-                                <label for="maint-4">Suggestions vary by item category</label>
+                                <input type="checkbox" id="apple-4">
+                                <label for="apple-4">Blue Care+ badge appears in product list for active AppleCare</label>
+                            </li>
+                            <li class="checklist-item">
+                                <input type="checkbox" id="apple-5">
+                                <label for="apple-5">Blue Care+ badge appears in product detail header</label>
+                            </li>
+                            <li class="checklist-item">
+                                <input type="checkbox" id="apple-6">
+                                <label for="apple-6">Badge turns gray when AppleCare+ is expired</label>
+                            </li>
+                            <li class="checklist-item">
+                                <input type="checkbox" id="apple-7">
+                                <label for="apple-7">Non-Apple products don't trigger AppleCare prompt</label>
                             </li>
                         </ul>
                     </div>
 
                     <div class="subsection">
-                        <h4>⭐ Product Ratings</h4>
+                        <h4>📸 Photo Selection Improvements</h4>
                         <ul class="checklist">
                             <li class="checklist-item">
-                                <input type="checkbox" id="rate-1">
-                                <label for="rate-1">Star rating picker (1-5 stars) works</label>
+                                <input type="checkbox" id="photo-1">
+                                <label for="photo-1">Photo assessment sheet appears after selecting a photo</label>
                             </li>
                             <li class="checklist-item">
-                                <input type="checkbox" id="rate-2">
-                                <label for="rate-2">"Would Buy Again" toggle works</label>
+                                <input type="checkbox" id="photo-2">
+                                <label for="photo-2">Three options shown: Suggest Category, Extract Details, Just Add Photo</label>
                             </li>
                             <li class="checklist-item">
-                                <input type="checkbox" id="rate-3">
-                                <label for="rate-3">Can filter items by rating</label>
+                                <input type="checkbox" id="photo-3">
+                                <label for="photo-3">Quality indicators show "Good match", "May work", or "Poor match"</label>
                             </li>
                             <li class="checklist-item">
-                                <input type="checkbox" id="rate-4">
-                                <label for="rate-4">Ratings sync across devices</label>
+                                <input type="checkbox" id="photo-4">
+                                <label for="photo-4">Blurry photos show appropriate quality warnings</label>
+                            </li>
+                            <li class="checklist-item">
+                                <input type="checkbox" id="photo-5">
+                                <label for="photo-5">"Extract Details" (OCR) populates form fields correctly</label>
+                            </li>
+                            <li class="checklist-item">
+                                <input type="checkbox" id="photo-6">
+                                <label for="photo-6">"Suggest Category" provides reasonable category suggestions</label>
+                            </li>
+                            <li class="checklist-item">
+                                <input type="checkbox" id="photo-7">
+                                <label for="photo-7">Quick Start menu collapses after completing any action</label>
                             </li>
                         </ul>
                     </div>
@@ -1346,7 +1416,7 @@ Additional notes:
         </div>
 
         <footer>
-            <p>Beta Testing Guide v1.0 — Last Updated January 18, 2026</p>
+            <p>Beta Testing Guide v1.0 — Last Updated January 19, 2026</p>
             <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 12px;">
                 <a href="index.html" style="color: var(--primary); text-decoration: none;">Home</a>
                 <a href="quick-start.html" style="color: var(--primary); text-decoration: none;">Quick Start</a>
