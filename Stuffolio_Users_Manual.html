@@ -712,7 +712,89 @@
 
         <section id="adding-photos">
             <h2>Adding Photos to Products</h2>
-            <p>Photos help identify products and serve as documentation for warranty claims.</p>
+            <p>Photos help identify products and serve as documentation for warranty claims. Stuffolio can also analyze your photos to automatically suggest categories and extract product details.</p>
+
+            <h3>Quick Start Photo Options</h3>
+            <p>When adding a new product, the <strong>Quick Start</strong> section at the top offers fast ways to add photos with intelligent analysis:</p>
+            <ol>
+                <li>Tap <strong>Add Photo</strong> in Quick Start</li>
+                <li>Choose a photo from your library or camera</li>
+                <li>A <strong>Photo Assessment</strong> screen appears showing:
+                    <ul>
+                        <li>Preview of your selected photo</li>
+                        <li>Quality assessment (blur, resolution, text detection)</li>
+                        <li>Suitability indicators for each analysis type</li>
+                    </ul>
+                </li>
+            </ol>
+
+            <h4>Three Analysis Options</h4>
+            <table>
+                <tr>
+                    <th>Option</th>
+                    <th>What It Does</th>
+                    <th>Best For</th>
+                </tr>
+                <tr>
+                    <td><strong>Suggest Category</strong></td>
+                    <td>Uses on-device AI to identify the product type</td>
+                    <td>Product photos showing the item clearly</td>
+                </tr>
+                <tr>
+                    <td><strong>Extract Details</strong></td>
+                    <td>Uses cloud OCR to read text and fill form fields</td>
+                    <td>Receipts, labels, nameplates with visible text</td>
+                </tr>
+                <tr>
+                    <td><strong>Just Add Photo</strong></td>
+                    <td>Adds the photo without analysis</td>
+                    <td>Any photo you want to keep</td>
+                </tr>
+            </table>
+
+            <h4>Understanding Suitability Indicators</h4>
+            <p>Each option shows how well your photo matches that analysis type:</p>
+            <ul>
+                <li><span class="badge badge-active">Good match</span> — Photo is well-suited for this analysis</li>
+                <li><span class="badge badge-warning">May work</span> — Analysis might succeed, but results may vary</li>
+                <li><span class="badge badge-expired">Poor match</span> — Photo unlikely to yield good results (e.g., blurry or no text detected)</li>
+            </ul>
+
+            <div class="tip">
+                <strong>Quality Tips:</strong> If the photo quality is limited, you'll see helpful tips like "Hold camera steady or use better lighting" or "No text detected - ensure label is visible."
+            </div>
+
+            <h3>Extract Details (OCR Auto-Fill)</h3>
+            <p>The <strong>Extract Details</strong> option can automatically populate form fields by reading text from your photo:</p>
+
+            <h4>What It Extracts</h4>
+            <ul>
+                <li><strong>Brand/Manufacturer</strong> — From product labels or receipts</li>
+                <li><strong>Model Number</strong> — From nameplates or packaging</li>
+                <li><strong>Serial Number</strong> — From product labels</li>
+                <li><strong>Purchase Price</strong> — From receipts</li>
+                <li><strong>Purchase Date</strong> — From receipts</li>
+                <li><strong>Store/Retailer</strong> — From receipts</li>
+            </ul>
+
+            <h4>How to Use</h4>
+            <ol>
+                <li>Select a photo showing a receipt, label, or nameplate</li>
+                <li>Tap <strong>Extract Details</strong></li>
+                <li>Wait for OCR processing (requires internet)</li>
+                <li>Extracted fields are automatically filled in the form</li>
+                <li>Review and edit as needed</li>
+            </ol>
+
+            <div class="tip">
+                <strong>Tips for Best OCR Results:</strong>
+                <ul>
+                    <li>Photograph labels and receipts straight-on (not at an angle)</li>
+                    <li>Ensure good lighting with no shadows on text</li>
+                    <li>Get close enough that text is clearly readable</li>
+                    <li>For receipts, capture the full receipt including store name and date</li>
+                </ul>
+            </div>
 
             <h3>Adding Photos on iPhone/iPad</h3>
             <p><strong>From the Add/Edit Product Screen:</strong></p>

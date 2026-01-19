@@ -690,7 +690,80 @@
 
         <section id="adding-photos">
             <h2>Adding Photos to Products</h2>
-            <p>Photos help identify products and serve as documentation for warranty claims.</p>
+            <p>Photos help identify products and serve as documentation for warranty claims. Stuffolio can also analyze your photos to automatically suggest categories and extract product details like brand, model, serial number, and price.</p>
+
+            <h3>Photo Analysis Options</h3>
+            <p>When you add a photo while creating or editing a product, Stuffolio can analyze it to help fill in product information:</p>
+
+            <h4>Three Analysis Options</h4>
+            <table>
+                <tr>
+                    <th>Option</th>
+                    <th>What It Does</th>
+                    <th>Best For</th>
+                </tr>
+                <tr>
+                    <td><strong>Suggest Category</strong></td>
+                    <td>Uses on-device AI to identify the product type</td>
+                    <td>Product photos showing the item clearly</td>
+                </tr>
+                <tr>
+                    <td><strong>Extract Details</strong></td>
+                    <td>Uses cloud OCR to read text and fill form fields</td>
+                    <td>Receipts, labels, nameplates with visible text</td>
+                </tr>
+                <tr>
+                    <td><strong>Just Add Photo</strong></td>
+                    <td>Adds the photo without analysis</td>
+                    <td>Any photo you want to keep</td>
+                </tr>
+            </table>
+
+            <h3>Extract Details (OCR Auto-Fill)</h3>
+            <p>The <strong>Extract Details</strong> option can automatically populate form fields by reading text from your photo:</p>
+
+            <h4>What It Extracts</h4>
+            <ul>
+                <li><strong>Brand/Manufacturer</strong> — From product labels or receipts</li>
+                <li><strong>Model Number</strong> — From nameplates or packaging</li>
+                <li><strong>Serial Number</strong> — From product labels</li>
+                <li><strong>Purchase Price</strong> — From receipts</li>
+                <li><strong>Purchase Date</strong> — From receipts</li>
+                <li><strong>Store/Retailer</strong> — From receipts</li>
+            </ul>
+
+            <h4>How to Use</h4>
+            <ol>
+                <li>Add a photo showing a receipt, label, or nameplate</li>
+                <li>When the Photo Assessment appears, click <strong>Extract Details</strong></li>
+                <li>Wait for OCR processing (requires internet)</li>
+                <li>Extracted fields are automatically filled in the form</li>
+                <li>Review and edit as needed</li>
+            </ol>
+
+            <div class="tip">
+                <strong>Tips for Best OCR Results:</strong>
+                <ul>
+                    <li>Photograph labels and receipts straight-on (not at an angle)</li>
+                    <li>Ensure good lighting with no shadows on text</li>
+                    <li>Get close enough that text is clearly readable</li>
+                    <li>For receipts, capture the full receipt including store name and date</li>
+                </ul>
+            </div>
+
+            <h3>Photo Quality Assessment</h3>
+            <p>When you add a photo, Stuffolio analyzes it on-device to assess quality:</p>
+            <ul>
+                <li><strong>Blur Detection</strong> — Identifies if the photo is too blurry for reliable analysis</li>
+                <li><strong>Text Detection</strong> — Checks if readable text is present (important for OCR)</li>
+                <li><strong>Resolution Check</strong> — Ensures the image is high enough quality</li>
+            </ul>
+            <p>Each analysis option shows a suitability indicator:</p>
+            <ul>
+                <li><strong>Good match</strong> — Photo is well-suited for this analysis</li>
+                <li><strong>May work</strong> — Analysis might succeed, but results may vary</li>
+                <li><strong>Poor match</strong> — Photo unlikely to yield good results</li>
+            </ul>
 
             <h3>Method 1: Paste from Clipboard (Most Common on Mac)</h3>
 
