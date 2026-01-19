@@ -967,6 +967,48 @@
                     <p>Share an item with a family member. Test View Only vs. Can Edit permissions. See if changes sync properly.</p>
                     <div class="why">Why it matters: Multi-user sync is complex — we need real-world testing.</div>
                 </div>
+
+                <div class="priority-item">
+                    <h3>👆 Tappable Detail Fields <span class="badge">NEW</span></h3>
+                    <p>In product detail view, tap any field (name, manufacturer, model, serial number, etc.) to edit it directly. No need to tap the Edit button first.</p>
+                    <div class="why">Why it matters: Streamlined editing workflow — does tapping feel natural and responsive?</div>
+                </div>
+
+                <div class="priority-item">
+                    <h3>🔄 Two-Tier Condition Picker <span class="badge">NEW</span></h3>
+                    <p>When setting product condition, select "Used" or "Refurbished" to reveal sub-conditions (Like New, Good, Fair, Poor for Used; Certified, Seller, Other for Refurbished).</p>
+                    <div class="why">Why it matters: More granular condition tracking — is the two-tier picker intuitive?</div>
+                </div>
+
+                <div class="priority-item">
+                    <h3>📷 Quick Start Card Improvements <span class="badge">NEW</span></h3>
+                    <p>The Quick Start card now groups actions: <strong>Add Photos</strong> (Scan Barcode, Take Photo, Choose Photo, Paste for OCR, Drag & Drop) and <strong>Scan for Details</strong> (Scan Receipt, Scan Label). Tap the <strong>?</strong> icon for built-in help.</p>
+                    <div class="why">Why it matters: Better organization — are the groupings clear? Does the help button work?</div>
+                </div>
+
+                <div class="priority-item">
+                    <h3>📸 Take Photo (Direct Camera) <span class="badge">NEW</span></h3>
+                    <p>On iPhone, tap "Take Photo" in Quick Start to open the camera directly and capture a product photo without going through the photo library.</p>
+                    <div class="why">Why it matters: Faster photo capture — does the camera open reliably?</div>
+                </div>
+
+                <div class="priority-item">
+                    <h3>📋 Clipboard Preview Thumbnail <span class="badge">NEW</span></h3>
+                    <p>When you have an image copied to your clipboard, "Paste for OCR" shows a small thumbnail preview of what will be pasted.</p>
+                    <div class="why">Why it matters: Visual confirmation before pasting — does the thumbnail display correctly?</div>
+                </div>
+
+                <div class="priority-item">
+                    <h3>🖼️ Drag & Drop Zone (iPad) <span class="badge">NEW</span></h3>
+                    <p>On iPad in Split View or Slide Over, drag images from other apps into the dedicated drop zone in Quick Start.</p>
+                    <div class="why">Why it matters: iPad multitasking workflow — does drag & drop work smoothly?</div>
+                </div>
+
+                <div class="priority-item">
+                    <h3>📂 Images & Documents Auto-Expand <span class="badge">NEW</span></h3>
+                    <p>When editing a product that has photos or documents attached, those sections now auto-expand so you can see the content immediately.</p>
+                    <div class="why">Why it matters: Better visibility — does auto-expand feel helpful or annoying?</div>
+                </div>
             </div>
         </div>
 
@@ -1279,6 +1321,102 @@ Additional notes:
                             </li>
                         </ul>
                     </div>
+
+                    <div class="subsection">
+                        <h4>👆 Tappable Detail Fields (Jan 19)</h4>
+                        <ul class="checklist">
+                            <li class="checklist-item">
+                                <input type="checkbox" id="tap-1">
+                                <label for="tap-1">Tap product name in detail view opens edit mode</label>
+                            </li>
+                            <li class="checklist-item">
+                                <input type="checkbox" id="tap-2">
+                                <label for="tap-2">Tap manufacturer field opens edit mode</label>
+                            </li>
+                            <li class="checklist-item">
+                                <input type="checkbox" id="tap-3">
+                                <label for="tap-3">Tap model/serial number fields opens edit mode</label>
+                            </li>
+                            <li class="checklist-item">
+                                <input type="checkbox" id="tap-4">
+                                <label for="tap-4">Tap any editable field scrolls to that field in edit view</label>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="subsection">
+                        <h4>🔄 Two-Tier Condition Picker (Jan 19)</h4>
+                        <ul class="checklist">
+                            <li class="checklist-item">
+                                <input type="checkbox" id="cond-1">
+                                <label for="cond-1">Selecting "Used" reveals sub-conditions (Like New, Good, Fair, Poor)</label>
+                            </li>
+                            <li class="checklist-item">
+                                <input type="checkbox" id="cond-2">
+                                <label for="cond-2">Selecting "Refurbished" reveals sub-conditions (Certified, Seller, Other)</label>
+                            </li>
+                            <li class="checklist-item">
+                                <input type="checkbox" id="cond-3">
+                                <label for="cond-3">Sub-condition selection saves correctly</label>
+                            </li>
+                            <li class="checklist-item">
+                                <input type="checkbox" id="cond-4">
+                                <label for="cond-4">Condition displays correctly in product detail and list views</label>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="subsection">
+                        <h4>📷 Quick Start Card Improvements (Jan 19)</h4>
+                        <ul class="checklist">
+                            <li class="checklist-item">
+                                <input type="checkbox" id="qs-1">
+                                <label for="qs-1">"Add Photos" group contains: Scan Barcode, Take Photo, Choose Photo, Paste for OCR, Drag & Drop</label>
+                            </li>
+                            <li class="checklist-item">
+                                <input type="checkbox" id="qs-2">
+                                <label for="qs-2">"Scan for Details" group contains: Scan Receipt, Scan Label</label>
+                            </li>
+                            <li class="checklist-item">
+                                <input type="checkbox" id="qs-3">
+                                <label for="qs-3">Help (?) button next to Quick Start header opens help sheet</label>
+                            </li>
+                            <li class="checklist-item">
+                                <input type="checkbox" id="qs-4">
+                                <label for="qs-4">"Take Photo" (iPhone) opens camera directly</label>
+                            </li>
+                            <li class="checklist-item">
+                                <input type="checkbox" id="qs-5">
+                                <label for="qs-5">"Paste for OCR" shows thumbnail preview of clipboard image</label>
+                            </li>
+                            <li class="checklist-item">
+                                <input type="checkbox" id="qs-6">
+                                <label for="qs-6">Drag & Drop zone (iPad) accepts images from other apps</label>
+                            </li>
+                            <li class="checklist-item">
+                                <input type="checkbox" id="qs-7">
+                                <label for="qs-7">"Scan Barcode" button is prominent and easy to find</label>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="subsection">
+                        <h4>📂 Images & Documents Auto-Expand (Jan 19)</h4>
+                        <ul class="checklist">
+                            <li class="checklist-item">
+                                <input type="checkbox" id="expand-1">
+                                <label for="expand-1">Images section auto-expands when product has photos</label>
+                            </li>
+                            <li class="checklist-item">
+                                <input type="checkbox" id="expand-2">
+                                <label for="expand-2">Documents section auto-expands when product has attachments</label>
+                            </li>
+                            <li class="checklist-item">
+                                <input type="checkbox" id="expand-3">
+                                <label for="expand-3">Sections remain collapsed when no content exists</label>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </section>
 
@@ -1416,7 +1554,7 @@ Additional notes:
         </div>
 
         <footer>
-            <p>Beta Testing Guide v1.0 — Last Updated January 19, 2026</p>
+            <p>Beta Testing Guide v1.0 — Last Updated January 19, 2026 (Archive Update)</p>
             <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 12px;">
                 <a href="index.html" style="color: var(--primary); text-decoration: none;">Home</a>
                 <a href="quick-start.html" style="color: var(--primary); text-decoration: none;">Quick Start</a>
