@@ -46,24 +46,19 @@
 
   <!-- Structured Data -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "Stuffolio",
-    "operatingSystem": "iOS, iPadOS, macOS",
-    "applicationCategory": "UtilitiesApplication",
-    "description": "Track what you own, protect your purchases with smart warranty tracking, and plan who gets your treasured belongings.",
-    "offers": {
-      "@type": "Offer",
-      "price": "9.99",
-      "priceCurrency": "USD"
-    },
-    "author": {
-      "@type": "Organization",
-      "name": "Coffee & Code LLC"
-    }
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Stuffolio",
+  "operatingSystem": "iOS, iPadOS, macOS",
+  "applicationCategory": "UtilitiesApplication",
+  "description": "Stuffolio helps you manage the life of your stuff — track what you own, keep receipts and warranties together, get maintenance reminders, and record Legacy Wishes (informational only) so your family has clarity.",
+  "author": {
+    "@type": "Organization",
+    "name": "Coffee & Code LLC"
   }
-  </script>
+}
+</script>
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
@@ -506,7 +501,7 @@
           <div class="badge"><span class="dot" aria-hidden="true"></span> Beta Testing Now &bull; iPhone / iPad / Mac</div>
 
           <div class="heroLogoRow">
-            <img class="stuffolioLogo" src="assets/logo-256.png" alt="Stuffolio logo" width="120" height="120" />
+            <img loading="lazy" class="stuffolioLogo" src="assets/logo-256.png" alt="Stuffolio logo" width="120" height="120" />
             <div>
               <h1 style="margin-top:0;">
                 Because one day you look around and think,<br/><span class="gradient-text">"Where did we get so much stuff?"</span>
@@ -525,16 +520,18 @@
             <span class="arrow">→</span>
             <span class="stage">🏠 Own</span>
             <span class="arrow">→</span>
-            <span class="stage">📦 Dispose</span>
+            <span class="stage">📦 Move On</span>
           </div>
 
           <!-- BETA-PERIOD-ONLY: Replace with App Store buttons after launch -->
           <div class="ctaRow">
             <a class="btn primary" href="https://testflight.apple.com/join/TWgM95st">Become a Beta Tester</a>
-            <a class="btn" href="beta-testing-guide.html">What to Test</a>
+            <a class="btn" href="beta-testing-guide.html">Testing Guide (5 min)</a>
             <a class="btn" href="quick-start.html">Quick Start Guide</a>
           </div>
-          <!-- END BETA-PERIOD-ONLY -->
+          <!-- END BETA-PERIOD
+          <p class="micro-note" style="margin-top:10px; color:var(--muted); font-size:.95rem;">Already in TestFlight? Scroll down for what’s new in <strong>17.1</strong>.</p>
+-ONLY -->
 
           <div class="callout">
             <b>Privacy by default.</b> Your data stays on your device (or your iCloud). No ads, no tracking, no profiles &mdash; ever.
@@ -560,145 +557,56 @@
 
         <div class="card">
           <div class="whats-new-box">
-            <div class="whats-new-header">
-              <h3>What's new in Stuffolio beta 1.0 (16)</h3>
-            </div>
-            <div class="whats-new-grid">
-              <!-- Tappable Fields & Condition Picker -->
-              <div class="whats-new-item">
-                <span class="whats-new-icon">👆</span>
-                <div>
-                  <strong>Tappable Detail Fields</strong>
-                  <span>Tap any field in product detail view to edit it directly — no Edit button needed.</span>
-                </div>
-              </div>
-              <div class="whats-new-item">
-                <span class="whats-new-icon">🔄</span>
-                <div>
-                  <strong>Two-Tier Condition Picker</strong>
-                  <span>Select Used or Refurbished to reveal sub-conditions like "Like New" or "Certified."</span>
-                </div>
-              </div>
-              <!-- Quick Start Card Improvements -->
-              <div class="whats-new-item">
-                <span class="whats-new-icon">📷</span>
-                <div>
-                  <strong>Quick Start Card Redesign</strong>
-                  <span>Grouped actions: Add Photos (Scan, Take Photo, Choose, Paste, Drag & Drop) and Scan for Details (OCR).</span>
-                </div>
-              </div>
-              <div class="whats-new-item">
-                <span class="whats-new-icon">📸</span>
-                <div>
-                  <strong>Take Photo (Direct Camera)</strong>
-                  <span>On iPhone, open the camera directly to capture product photos without the photo library.</span>
-                </div>
-              </div>
-              <div class="whats-new-item">
-                <span class="whats-new-icon">📋</span>
-                <div>
-                  <strong>Clipboard Preview</strong>
-                  <span>"Paste for OCR" shows a thumbnail preview of your clipboard image before pasting.</span>
-                </div>
-              </div>
-              <div class="whats-new-item">
-                <span class="whats-new-icon">🖼️</span>
-                <div>
-                  <strong>Drag & Drop Zone (iPad)</strong>
-                  <span>In Split View, drag images from other apps into the dedicated drop zone.</span>
-                </div>
-              </div>
-              <!-- UX Improvements -->
-              <div class="whats-new-item">
-                <span class="whats-new-icon">❓</span>
-                <div>
-                  <strong>Quick Start Help Button</strong>
-                  <span>Tap the ? icon next to Quick Start for a built-in help sheet explaining each feature.</span>
-                </div>
-              </div>
-              <div class="whats-new-item">
-                <span class="whats-new-icon">📂</span>
-                <div>
-                  <strong>Images & Docs Auto-Expand</strong>
-                  <span>Images & Documents sections automatically expand when content exists.</span>
-                </div>
-              </div>
-              <!-- AppleCare+ Features -->
-              <div class="whats-new-item">
-                <span class="whats-new-icon">🛡️</span>
-                <div>
-                  <strong>AppleCare+ Discoverability</strong>
-                  <span>Save an Apple product and get prompted to add AppleCare+ details with helpful hints.</span>
-                </div>
-              </div>
-              <div class="whats-new-item">
-                <span class="whats-new-icon">🏷️</span>
-                <div>
-                  <strong>AppleCare Badges</strong>
-                  <span>See AppleCare+ status at a glance in product lists and detail views.</span>
-                </div>
-              </div>
-              <!-- Stuff Scout AI -->
-              <div class="whats-new-item">
-                <span class="whats-new-icon">🔔</span>
-                <div>
-                  <strong>Background Processing</strong>
-                  <span>Stuff Scout continues analyzing in the background. Get notified when results are ready.</span>
-                </div>
-              </div>
-              <div class="whats-new-item">
-                <span class="whats-new-icon">🧾</span>
-                <div>
-                  <strong>Auto-fill from Receipt</strong>
-                  <span>Tap "Auto-fill from Receipt" to extract price, date, and store from attached receipt images.</span>
-                </div>
-              </div>
-              <div class="whats-new-item">
-                <span class="whats-new-icon">🔗</span>
-                <div>
-                  <strong>Receipt Pairing</strong>
-                  <span>From Stuff Scout results, tap "Add Receipt Photo" to pair receipts and auto-fill purchase details.</span>
-                </div>
-              </div>
-              <!-- Smart Photo Analysis -->
-              <div class="whats-new-item">
-                <span class="whats-new-icon">🔍</span>
-                <div>
-                  <strong>OCR Auto-Fill</strong>
-                  <span>Extract brand, model, serial number, price, date, and store from receipts and labels.</span>
-                </div>
-              </div>
-              <div class="whats-new-item">
-                <span class="whats-new-icon">📊</span>
-                <div>
-                  <strong>Photo Quality Hints</strong>
-                  <span>On-device blur, text, and resolution detection tells you if a photo will work well.</span>
-                </div>
-              </div>
-              <div class="whats-new-item">
-                <span class="whats-new-icon">🍎</span>
-                <div>
-                  <strong>Apple Product Detection</strong>
-                  <span>Auto-detects iPhone, iPad, Mac, Watch from product title for smarter defaults.</span>
-                </div>
-              </div>
-              <div class="whats-new-item">
-                <span class="whats-new-icon">🏷️</span>
-                <div>
-                  <strong>Multi-Category Support</strong>
-                  <span>Assign up to 5 categories per item. A blender can be Kitchen & Dining AND Electronics.</span>
-                </div>
-              </div>
-              <div class="whats-new-item">
-                <span class="whats-new-icon">🍳</span>
-                <div>
-                  <strong>New Categories</strong>
-                  <span>Kitchen & Dining, Personal Care, and Antique/Collectable for better organization.</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+  <div class="whats-new-header">
+    <h3>What’s new in Stuffolio beta 1.0 (17.1)</h3>
+  </div>
+
+  <div class="whats-new-grid">
+    <div class="whats-new-item">
+      <span class="whats-new-icon">🗂️</span>
+      <div>
+        <strong>My Products: List / Gallery / Cards</strong>
+        <div class="small">Switch views instantly on iPhone, iPad, and Mac. Great with search + filters.</div>
+      </div>
+    </div>
+
+    <div class="whats-new-item">
+      <span class="whats-new-icon">🔔</span>
+      <div>
+        <strong>Stuff Scout runs in the background</strong>
+        <div class="small">Start a scan, leave the app, and get a notification when results are ready.</div>
+      </div>
+    </div>
+
+    <div class="whats-new-item">
+      <span class="whats-new-icon">🏷️</span>
+      <div>
+        <strong>Up to 5 categories per product</strong>
+        <div class="small">Multi-select picker with removable chips. Items can appear in multiple category groups.</div>
+      </div>
+    </div>
+
+    <div class="whats-new-item">
+      <span class="whats-new-icon">🧾</span>
+      <div>
+        <strong>Receipt pairing + auto-fill</strong>
+        <div class="small">Attach a receipt after identification. Auto-fill can pull store/date/price into empty fields.</div>
+      </div>
+    </div>
+
+    <div class="whats-new-item">
+      <span class="whats-new-icon">🖼️</span>
+      <div>
+        <strong>Better photo handling</strong>
+        <div class="small">Thumbnails prioritize product photos over receipts, and the Images section expands when photos exist.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="whats-new-footer">
+    <a class="btn btn-secondary" href="beta-testing-guide.html">See the 17.1 Testing Guide</a>
+  </div>
+</div>
       </section>
       <!-- END BETA-PERIOD-ONLY -->
 
@@ -853,8 +761,8 @@
 
             <div class="scenario">
               <div class="scenario-emoji">💔</div>
-              <p class="scenario-quote">"When Mom passed, we didn't know what she wanted us to have."</p>
-              <p class="scenario-result">→ Her Legacy Wishes were already shared. No guessing.</p>
+              <p class="scenario-quote">"When we helped family downsize, we couldn’t remember who wanted what."</p>
+              <p class="scenario-result">→ Legacy Wishes made it easy to record decisions before anyone had to guess.</p>
             </div>
 
             <div class="scenario">
@@ -1044,7 +952,7 @@
             <div class="carousel-container">
               <button class="carousel-nav carousel-prev" onclick="carouselPrev('ios')" aria-label="Previous screenshot">&#10094;</button>
               <div class="carousel-slide">
-                <img id="ios-carousel-img" src="Lightbox/iOS%20Screenshots/ios-dashboard-light.png" alt="" class="carousel-img" onclick="openLightbox('ios', 0)">
+                <img loading="lazy" id="ios-carousel-img" src="Lightbox/iOS%20Screenshots/ios-dashboard-light.png" alt="" class="carousel-img" onclick="openLightbox('ios', 0)">
               </div>
               <button class="carousel-nav carousel-next" onclick="carouselNext('ios')" aria-label="Next screenshot">&#10095;</button>
             </div>
@@ -1057,7 +965,7 @@
             <div class="carousel-container">
               <button class="carousel-nav carousel-prev" onclick="carouselPrev('mac')" aria-label="Previous screenshot">&#10094;</button>
               <div class="carousel-slide">
-                <img id="mac-carousel-img" src="Lightbox/macOS%20screenshots/macos-dashboard.png" alt="" class="carousel-img" onclick="openLightbox('mac', 0)">
+                <img loading="lazy" id="mac-carousel-img" src="Lightbox/macOS%20screenshots/macos-dashboard.png" alt="" class="carousel-img" onclick="openLightbox('mac', 0)">
               </div>
               <button class="carousel-nav carousel-next" onclick="carouselNext('mac')" aria-label="Next screenshot">&#10095;</button>
             </div>
@@ -1187,6 +1095,7 @@
           <p style="color:var(--muted); text-align:center;">
             Stuffolio works great standalone. AI features are optional.
           </p>
+          <p style="color:var(--muted); text-align:center; margin-top:10px; font-size:.95rem;"><strong>TestFlight beta is free.</strong> Pricing below reflects the planned App Store release.</p>
 
           <div class="pricing-grid">
             <div class="price-card featured">
@@ -1287,7 +1196,7 @@
   <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Screenshot viewer" hidden onclick="closeLightbox(event)">
     <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close">&times;</button>
     <button class="lightbox-nav lightbox-prev" onclick="prevImage(event)" aria-label="Previous">&#10094;</button>
-    <img id="lightbox-img" class="lightbox-img" src="" alt="" />
+    <img loading="lazy" id="lightbox-img" class="lightbox-img" src="" alt="" />
     <button class="lightbox-nav lightbox-next" onclick="nextImage(event)" aria-label="Next">&#10095;</button>
     <div id="lightbox-caption" class="lightbox-caption"></div>
   </div>
