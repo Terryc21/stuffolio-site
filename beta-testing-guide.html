@@ -1017,6 +1017,24 @@
                 </div>
 
                 <div class="priority-item">
+                    <h3>🔗 Receipt Pairing <span class="badge">Enhanced</span></h3>
+                    <p>After identifying a product with Stuff Scout, tap "Add to Products" and look for the new "Add Receipt Photo" option. Capture your receipt to auto-fill store name, purchase date, and price from the receipt OCR.</p>
+                    <div class="why">Why it matters: Combines product identification with purchase details in one flow — does the receipt extraction work? Is the UI clear?</div>
+                </div>
+
+                <div class="priority-item">
+                    <h3>🔔 Stuff Scout Background Processing <span class="badge">NEW</span></h3>
+                    <p>Start a Stuff Scout analysis, then immediately switch to another app or lock your device. You should receive a notification when the analysis completes. Tap the notification to view your results.</p>
+                    <div class="why">Why it matters: Users shouldn't have to wait with the app open — does the notification arrive? Does tapping it navigate correctly?</div>
+                </div>
+
+                <div class="priority-item">
+                    <h3>🧾 Auto-fill from Receipt <span class="badge">NEW</span></h3>
+                    <p>Add a product and attach a receipt image. Look for the "Auto-fill from Receipt" button to extract purchase details from existing receipt images without re-scanning.</p>
+                    <div class="why">Why it matters: Extracts data from already-attached receipts — does OCR find the receipt? Does auto-fill populate correctly?</div>
+                </div>
+
+                <div class="priority-item">
                     <h3>🍳 New Product Categories <span class="badge">NEW</span></h3>
                     <p>Three new categories added: <strong>Kitchen & Dining</strong> (cookware, appliances, dinnerware), <strong>Personal Care</strong> (grooming, beauty, hygiene products), and <strong>Antique/Collectable</strong> (vintage items, collectibles, heirlooms).</p>
                     <div class="why">Why it matters: Better organization — do these categories cover items you couldn't categorize before?</div>
@@ -1461,6 +1479,40 @@ Additional notes:
                     </div>
 
                     <div class="subsection">
+                        <h4>🔗 Receipt Pairing (Jan 20)</h4>
+                        <ul class="checklist">
+                            <li class="checklist-item">
+                                <input type="checkbox" id="receipt-1">
+                                <label for="receipt-1">"Add Receipt Photo" button appears in Add to Products sheet</label>
+                            </li>
+                            <li class="checklist-item">
+                                <input type="checkbox" id="receipt-2">
+                                <label for="receipt-2">Tapping opens camera/photo picker for receipt</label>
+                            </li>
+                            <li class="checklist-item">
+                                <input type="checkbox" id="receipt-3">
+                                <label for="receipt-3">Processing indicator shows while extracting receipt data</label>
+                            </li>
+                            <li class="checklist-item">
+                                <input type="checkbox" id="receipt-4">
+                                <label for="receipt-4">Extracted store name, date, and price display in preview</label>
+                            </li>
+                            <li class="checklist-item">
+                                <input type="checkbox" id="receipt-5">
+                                <label for="receipt-5">Can remove receipt and add a different one</label>
+                            </li>
+                            <li class="checklist-item">
+                                <input type="checkbox" id="receipt-6">
+                                <label for="receipt-6">Receipt data pre-fills Add Item form (seller, date, price)</label>
+                            </li>
+                            <li class="checklist-item">
+                                <input type="checkbox" id="receipt-7">
+                                <label for="receipt-7">Receipt image attached to product images</label>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="subsection">
                         <h4>🍳 New Product Categories (Jan 19)</h4>
                         <ul class="checklist">
                             <li class="checklist-item">
@@ -1622,7 +1674,7 @@ Additional notes:
         </div>
 
         <footer>
-            <p>Beta Testing Guide v1.0 — Last Updated January 19, 2026 (Multi-Category Support)</p>
+            <p>Beta Testing Guide v1.0 — Last Updated January 20, 2026 (Background Processing)</p>
             <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 12px;">
                 <a href="index.html" style="color: var(--primary); text-decoration: none;">Home</a>
                 <a href="quick-start.html" style="color: var(--primary); text-decoration: none;">Quick Start</a>
