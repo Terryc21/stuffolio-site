@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
-    <title>Stuffolio Beta Testing Guide — v1.0 (15)</title>
+    <title>Stuffolio Beta Testing Guide — v1.0 (17)</title>
     <style>
         :root {
             --primary: #007AFF;
@@ -887,7 +887,7 @@
 <body>
     <!-- Beta Banner -->
     <div class="beta-banner">
-        TestFlight Beta Testing <span>v1.0 Build 15</span>
+        TestFlight Beta Testing <span>v1.0 Build 17</span>
     </div>
 
     <!-- Navigation -->
@@ -921,7 +921,7 @@
         <!-- Header -->
         <header>
             <h1>Beta Testing Guide</h1>
-            <p class="version">Stuffolio v1.0 (Build 15) — January 2026</p>
+            <p class="version">Stuffolio v1.0 (Build 17) — January 2026</p>
             <div class="platforms">
                 <span class="platform-badge">📱 iOS 17.6+</span>
                 <span class="platform-badge">📱 iPadOS 17.6+</span>
@@ -944,10 +944,42 @@
             <p class="subtitle">These are brand new features that need the most testing.</p>
 
             <div class="priority-grid">
+                <!-- CRITICAL: Complex features requiring extensive testing -->
+                <div class="priority-item">
+                    <h3>👨‍👩‍👧‍👦 Family Sharing <span class="badge">Sprint 13</span></h3>
+                    <p>Share an item with a family member. Test View Only vs. Can Edit permissions. See if changes sync properly.</p>
+                    <div class="why">Why it matters: Multi-user sync is complex — we need real-world testing.</div>
+                </div>
+
+                <div class="priority-item">
+                    <h3>🔔 Stuff Scout Background Processing <span class="badge">NEW</span></h3>
+                    <p>Start a Stuff Scout analysis, then immediately switch to another app or lock your device. You should receive a notification when the analysis completes. Tap the notification to view your results.</p>
+                    <div class="why">Why it matters: Users shouldn't have to wait with the app open — does the notification arrive? Does tapping it navigate correctly?</div>
+                </div>
+
+                <div class="priority-item">
+                    <h3>🏷️ Multi-Category Support <span class="badge">NEW</span></h3>
+                    <p>Products can now belong to multiple categories (up to 5). When adding or editing a product, use the new chip-based category picker to select multiple categories. Items appear in all applicable groups in Gallery View.</p>
+                    <div class="why">Why it matters: Many items fit multiple categories — is the picker intuitive? Do items show up correctly in filtered views?</div>
+                </div>
+
+                <!-- CORE: Important new functionality -->
                 <div class="priority-item">
                     <h3>💳 Apple Wallet Warranty Cards <span class="badge">NEW</span></h3>
                     <p>Add a product with a warranty date, then look for the Apple Wallet section. Tap "Add to Wallet" to create a warranty pass you can access from your lock screen.</p>
                     <div class="why">Why it matters: First release of Wallet integration — does the pass look right? Is the status color correct?</div>
+                </div>
+
+                <div class="priority-item">
+                    <h3>🔗 Receipt Pairing <span class="badge">Enhanced</span></h3>
+                    <p>After identifying a product with Stuff Scout, tap "Add to Products" and look for the new "Add Receipt Photo" option. Capture your receipt to auto-fill store name, purchase date, and price from the receipt OCR.</p>
+                    <div class="why">Why it matters: Combines product identification with purchase details in one flow — does the receipt extraction work? Is the UI clear?</div>
+                </div>
+
+                <div class="priority-item">
+                    <h3>🧾 Auto-fill from Receipt <span class="badge">NEW</span></h3>
+                    <p>Add a product and attach a receipt image. Look for the "Auto-fill from Receipt" button to extract purchase details from existing receipt images without re-scanning.</p>
+                    <div class="why">Why it matters: Extracts data from already-attached receipts — does OCR find the receipt? Does auto-fill populate correctly?</div>
                 </div>
 
                 <div class="priority-item">
@@ -956,6 +988,7 @@
                     <div class="why">Why it matters: Beta tester feedback said AppleCare was hard to find — does this help?</div>
                 </div>
 
+                <!-- PHOTO/MEDIA: Image-related features -->
                 <div class="priority-item">
                     <h3>📸 Photo Selection Improvements <span class="badge">NEW</span></h3>
                     <p>Add a product and tap "Add Photo" in Quick Start. After selecting a photo, you'll see quality feedback and options to extract details via OCR or suggest a category.</p>
@@ -963,9 +996,22 @@
                 </div>
 
                 <div class="priority-item">
-                    <h3>👨‍👩‍👧‍👦 Family Sharing <span class="badge">Sprint 13</span></h3>
-                    <p>Share an item with a family member. Test View Only vs. Can Edit permissions. See if changes sync properly.</p>
-                    <div class="why">Why it matters: Multi-user sync is complex — we need real-world testing.</div>
+                    <h3>📷 Photo Filter <span class="badge">NEW</span></h3>
+                    <p>In the Items view, use the new photo filter to show only items <strong>with photos</strong> ("Has Pics") or items <strong>without photos</strong> ("No Pics"). Great for finding products that need photos added.</p>
+                    <div class="why">Why it matters: Helps identify incomplete product entries — is the filter easy to find and use?</div>
+                </div>
+
+                <div class="priority-item">
+                    <h3>🏷️ Improved Category Suggestions <span class="badge">Enhanced</span></h3>
+                    <p>AI category suggestions now include many more keywords, especially for kitchen appliances (coffee makers, blenders, rice cookers, etc.). The matching logic is also more precise to avoid false suggestions.</p>
+                    <div class="why">Why it matters: Previous version sometimes suggested wrong categories (e.g., "Crafts" for a coffee maker) — are suggestions more accurate now?</div>
+                </div>
+
+                <!-- UI IMPROVEMENTS: User experience enhancements -->
+                <div class="priority-item">
+                    <h3>📷 Quick Start Card Improvements <span class="badge">NEW</span></h3>
+                    <p>The Quick Start card now groups actions: <strong>Add Photos</strong> (Scan Barcode, Take Photo, Choose Photo, Paste for OCR, Drag & Drop) and <strong>Scan for Details</strong> (Scan Receipt, Scan Label). Tap the <strong>?</strong> icon for built-in help.</p>
+                    <div class="why">Why it matters: Better organization — are the groupings clear? Does the help button work?</div>
                 </div>
 
                 <div class="priority-item">
@@ -981,12 +1027,6 @@
                 </div>
 
                 <div class="priority-item">
-                    <h3>📷 Quick Start Card Improvements <span class="badge">NEW</span></h3>
-                    <p>The Quick Start card now groups actions: <strong>Add Photos</strong> (Scan Barcode, Take Photo, Choose Photo, Paste for OCR, Drag & Drop) and <strong>Scan for Details</strong> (Scan Receipt, Scan Label). Tap the <strong>?</strong> icon for built-in help.</p>
-                    <div class="why">Why it matters: Better organization — are the groupings clear? Does the help button work?</div>
-                </div>
-
-                <div class="priority-item">
                     <h3>📸 Take Photo (Direct Camera) <span class="badge">NEW</span></h3>
                     <p>On iPhone, tap "Take Photo" in Quick Start to open the camera directly and capture a product photo without going through the photo library.</p>
                     <div class="why">Why it matters: Faster photo capture — does the camera open reliably?</div>
@@ -998,6 +1038,7 @@
                     <div class="why">Why it matters: Visual confirmation before pasting — does the thumbnail display correctly?</div>
                 </div>
 
+                <!-- PLATFORM-SPECIFIC & MINOR -->
                 <div class="priority-item">
                     <h3>🖼️ Drag & Drop Zone (iPad) <span class="badge">NEW</span></h3>
                     <p>On iPad in Split View or Slide Over, drag images from other apps into the dedicated drop zone in Quick Start.</p>
@@ -1011,33 +1052,15 @@
                 </div>
 
                 <div class="priority-item">
-                    <h3>🏷️ Multi-Category Support <span class="badge">NEW</span></h3>
-                    <p>Products can now belong to multiple categories (up to 5). When adding or editing a product, use the new chip-based category picker to select multiple categories. Items appear in all applicable groups in Gallery View.</p>
-                    <div class="why">Why it matters: Many items fit multiple categories — is the picker intuitive? Do items show up correctly in filtered views?</div>
-                </div>
-
-                <div class="priority-item">
-                    <h3>🔗 Receipt Pairing <span class="badge">Enhanced</span></h3>
-                    <p>After identifying a product with Stuff Scout, tap "Add to Products" and look for the new "Add Receipt Photo" option. Capture your receipt to auto-fill store name, purchase date, and price from the receipt OCR.</p>
-                    <div class="why">Why it matters: Combines product identification with purchase details in one flow — does the receipt extraction work? Is the UI clear?</div>
-                </div>
-
-                <div class="priority-item">
-                    <h3>🔔 Stuff Scout Background Processing <span class="badge">NEW</span></h3>
-                    <p>Start a Stuff Scout analysis, then immediately switch to another app or lock your device. You should receive a notification when the analysis completes. Tap the notification to view your results.</p>
-                    <div class="why">Why it matters: Users shouldn't have to wait with the app open — does the notification arrive? Does tapping it navigate correctly?</div>
-                </div>
-
-                <div class="priority-item">
-                    <h3>🧾 Auto-fill from Receipt <span class="badge">NEW</span></h3>
-                    <p>Add a product and attach a receipt image. Look for the "Auto-fill from Receipt" button to extract purchase details from existing receipt images without re-scanning.</p>
-                    <div class="why">Why it matters: Extracts data from already-attached receipts — does OCR find the receipt? Does auto-fill populate correctly?</div>
-                </div>
-
-                <div class="priority-item">
                     <h3>🍳 New Product Categories <span class="badge">NEW</span></h3>
                     <p>Three new categories added: <strong>Kitchen & Dining</strong> (cookware, appliances, dinnerware), <strong>Personal Care</strong> (grooming, beauty, hygiene products), and <strong>Antique/Collectable</strong> (vintage items, collectibles, heirlooms).</p>
                     <div class="why">Why it matters: Better organization — do these categories cover items you couldn't categorize before?</div>
+                </div>
+
+                <div class="priority-item">
+                    <h3>📱 Scrollable Filter Bar (iPhone) <span class="badge">Fixed</span></h3>
+                    <p>On iPhone, the filter buttons row now scrolls horizontally. Previously, buttons could be clipped on smaller screens or when many filters were active.</p>
+                    <div class="why">Why it matters: All filter options should be accessible — can you swipe to see all filter buttons?</div>
                 </div>
             </div>
         </div>
@@ -1096,7 +1119,7 @@
             <p class="subtitle">Found a bug? Have a suggestion? Here's how to reach us.</p>
 
             <div class="feedback-grid">
-                <a href="mailto:dev@stuffolio.app?subject=Stuffolio%20Beta%20Feedback%20-%20v1.0%20(15)&body=%0A%0A---%0AWhat%20I%20tested%3A%0A%0AWhat%20happened%3A%0A%0AWhat%20I%20expected%3A%0A%0ADevice%3A%0AiOS%2FmacOS%20Version%3A%0A" class="feedback-option primary">
+                <a href="mailto:dev@stuffolio.app?subject=Stuffolio%20Beta%20Feedback%20-%20v1.0%20(17)&body=%0A%0A---%0AWhat%20I%20tested%3A%0A%0AWhat%20happened%3A%0A%0AWhat%20I%20expected%3A%0A%0ADevice%3A%0AiOS%2FmacOS%20Version%3A%0A" class="feedback-option primary">
                     <div class="icon">📧</div>
                     <h3>Email Us</h3>
                     <p>dev@stuffolio.app<br>Pre-filled template ready</p>
@@ -1117,7 +1140,7 @@
 
             <div class="template-box" id="templateBox" style="display: none;">
                 <h4>📋 Feedback Template</h4>
-                <div class="template-content" id="templateContent">Stuffolio Beta Feedback - v1.0 (15)
+                <div class="template-content" id="templateContent">Stuffolio Beta Feedback - v1.0 (17)
 
 What I tested:
 [Describe the feature or scenario]
@@ -1222,11 +1245,11 @@ Additional notes:
                 </div>
             </section>
 
-            <!-- New Priority Features (Build 15) -->
+            <!-- New Priority Features (Build 17) -->
             <section class="section" id="new-features" data-section="new-features">
                 <div class="section-header" onclick="toggleSection(this.parentElement)">
                     <div class="section-icon">✨</div>
-                    <h3>New Features (Build 15)</h3>
+                    <h3>New Features (Build 17)</h3>
                     <span class="sprint-badge new">Priority</span>
                     <span class="section-progress">0/0</span>
                     <div class="section-toggle">▼</div>
@@ -1537,6 +1560,68 @@ Additional notes:
                             </li>
                         </ul>
                     </div>
+
+                    <div class="subsection">
+                        <h4>📷 Photo Filter (Jan 20)</h4>
+                        <ul class="checklist">
+                            <li class="checklist-item">
+                                <input type="checkbox" id="photofilter-1">
+                                <label for="photofilter-1">Photo filter button appears in filter row (Items view)</label>
+                            </li>
+                            <li class="checklist-item">
+                                <input type="checkbox" id="photofilter-2">
+                                <label for="photofilter-2">"Has Pics" filter shows only items with photos</label>
+                            </li>
+                            <li class="checklist-item">
+                                <input type="checkbox" id="photofilter-3">
+                                <label for="photofilter-3">"No Pics" filter shows only items without photos</label>
+                            </li>
+                            <li class="checklist-item">
+                                <input type="checkbox" id="photofilter-4">
+                                <label for="photofilter-4">Photo filter badge appears when filter is active</label>
+                            </li>
+                            <li class="checklist-item">
+                                <input type="checkbox" id="photofilter-5">
+                                <label for="photofilter-5">Photo filter saves in filter presets</label>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="subsection">
+                        <h4>🏷️ Improved Category Suggestions (Jan 20)</h4>
+                        <ul class="checklist">
+                            <li class="checklist-item">
+                                <input type="checkbox" id="catsugg-1">
+                                <label for="catsugg-1">Coffee maker image suggests "Small Appliances" (not "Crafts")</label>
+                            </li>
+                            <li class="checklist-item">
+                                <input type="checkbox" id="catsugg-2">
+                                <label for="catsugg-2">Kitchen appliances (blender, toaster, etc.) suggest correct category</label>
+                            </li>
+                            <li class="checklist-item">
+                                <input type="checkbox" id="catsugg-3">
+                                <label for="catsugg-3">Category suggestions feel more accurate overall</label>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="subsection">
+                        <h4>📱 Scrollable Filter Bar (Jan 20)</h4>
+                        <ul class="checklist">
+                            <li class="checklist-item">
+                                <input type="checkbox" id="scrollfilter-1">
+                                <label for="scrollfilter-1">Filter buttons row scrolls horizontally on iPhone</label>
+                            </li>
+                            <li class="checklist-item">
+                                <input type="checkbox" id="scrollfilter-2">
+                                <label for="scrollfilter-2">All filter buttons accessible (no clipping on edges)</label>
+                            </li>
+                            <li class="checklist-item">
+                                <input type="checkbox" id="scrollfilter-3">
+                                <label for="scrollfilter-3">Lifecycle filter row (segmented control) has proper padding</label>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </section>
 
@@ -1674,7 +1759,7 @@ Additional notes:
         </div>
 
         <footer>
-            <p>Beta Testing Guide v1.0 — Last Updated January 20, 2026 (Background Processing)</p>
+            <p>Beta Testing Guide v1.0 — Last Updated January 20, 2026 (Photo Filter, Category Suggestions)</p>
             <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 12px;">
                 <a href="index.html" style="color: var(--primary); text-decoration: none;">Home</a>
                 <a href="quick-start.html" style="color: var(--primary); text-decoration: none;">Quick Start</a>
