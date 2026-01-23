@@ -1676,13 +1676,14 @@
             </div>
 
             <h3>Scout Refinement (Edit Existing Items)</h3>
-            <p>Already have an item in your inventory? You can re-analyze it with Stuff Scout to discover additional details:</p>
+            <p>Already have an item in your inventory? You can re-analyze it with Stuff Scout to discover additional details. Scout now uses your existing form data (manufacturer, model, notes) as context for smarter, more accurate analysis.</p>
 
             <h4>Opening Scout Refinement</h4>
             <ol>
                 <li>Open <strong>Edit</strong> for any existing product</li>
                 <li>Scroll down to find the <strong>Stuff Scout</strong> section</li>
                 <li>Tap to expand the section</li>
+                <li>The section shows guidance: "The more you fill in, the better Scout's analysis"</li>
             </ol>
 
             <h4>If the Item Has Photos</h4>
@@ -1701,11 +1702,18 @@
 
             <h4>Selecting What to Apply</h4>
             <ol>
-                <li>Each field has a checkbox to include or exclude it</li>
-                <li>Use <strong>Select All</strong> / <strong>Deselect All</strong> to toggle everything</li>
-                <li>Fields with differences are pre-selected (except price)</li>
-                <li><strong>NEW</strong> fields (empty in your data, filled by Scout) are highlighted</li>
-                <li>Tap <strong>Apply Selected</strong> to update your form</li>
+                <li>Each field shows radio buttons with three choices:
+                    <ul>
+                        <li><strong>Keep current</strong> — Use your existing value</li>
+                        <li><strong>Use Scout's finding</strong> — Apply what Scout discovered</li>
+                        <li><strong>Enter custom</strong> — Type your own value</li>
+                    </ul>
+                </li>
+                <li>Fields where Scout found new information default to "Use Scout's finding"</li>
+                <li>Fields where you already have data default to "Keep current"</li>
+                <li><strong>NEW</strong> badges highlight fields Scout discovered that you don't have</li>
+                <li>Tap <strong>Apply Changes</strong> to update your form</li>
+                <li>A confirmation shows exactly which fields were updated</li>
             </ol>
 
             <table>
@@ -1726,7 +1734,7 @@
             </table>
 
             <div class="tip">
-                <strong>Tip:</strong> Scout Refinement is great for items you added quickly and want to enhance later. Add a photo, run Scout, and apply the findings — all without re-entering anything manually.
+                <strong>Tip:</strong> Scout Refinement is great for items you added quickly and want to enhance later. For best results, fill in what you know (like manufacturer or model) before running Scout — this context helps Scout provide more accurate analysis. In real tests, adding details like "Ernst Roth, 1945" improved valuations from $500 to $20,000.
             </div>
 
             <h3>Clickable Source Links</h3>

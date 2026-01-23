@@ -539,9 +539,9 @@
 
       <div class="priority-grid">
         <div class="priority-item">
-          <h3>✨ Stuff Scout Refinement <span class="badge">NEW</span></h3>
-          <p>Re-analyze existing items from the Edit view. Compare Scout's findings with current values and selectively apply updates.</p>
-          <div class="why">Why it matters: This lets users enhance their existing inventory with AI — a key workflow improvement.</div>
+          <h3>✨ Stuff Scout Refinement <span class="badge">IMPROVED</span></h3>
+          <p>Re-analyze existing items from the Edit view. Scout now uses your form data (manufacturer, model, notes) as context for smarter analysis. Radio button selection lets you choose: Keep current value, Use Scout's finding, or Enter custom value for each field.</p>
+          <div class="why">Why it matters: Adding details you know (like "Ernst Roth, 1945") can dramatically improve valuations — from $500 to $20,000 in real tests.</div>
         </div>
 
         <div class="priority-item">
@@ -816,18 +816,19 @@ Additional notes:
           </div>
 
           <div class="subsection">
-            <h4>✨ Stuff Scout Refinement (NEW - Build 18)</h4>
+            <h4>✨ Stuff Scout Refinement (IMPROVED - Build 18)</h4>
             <ul class="checklist">
               <li class="checklist-item"><input type="checkbox" id="refine-1"><label for="refine-1">Scout section appears in Edit Item (collapsed by default)</label></li>
-              <li class="checklist-item"><input type="checkbox" id="refine-2"><label for="refine-2">Photo count displays correctly in section</label></li>
+              <li class="checklist-item"><input type="checkbox" id="refine-2"><label for="refine-2">Section shows guidance: "The more you fill in, the better Scout's analysis"</label></li>
               <li class="checklist-item"><input type="checkbox" id="refine-3"><label for="refine-3">"Analyze" button disabled when no photos</label></li>
-              <li class="checklist-item"><input type="checkbox" id="refine-4"><label for="refine-4">Scout analyzes existing item photos</label></li>
-              <li class="checklist-item"><input type="checkbox" id="refine-5"><label for="refine-5">Comparison view shows current vs Scout values</label></li>
+              <li class="checklist-item"><input type="checkbox" id="refine-4"><label for="refine-4">Adding form details before analyzing improves Scout results</label></li>
+              <li class="checklist-item"><input type="checkbox" id="refine-5"><label for="refine-5">Radio buttons show three choices: Keep current / Use Scout's finding / Enter custom</label></li>
               <li class="checklist-item"><input type="checkbox" id="refine-6"><label for="refine-6">Confidence badge displays percentage</label></li>
               <li class="checklist-item"><input type="checkbox" id="refine-7"><label for="refine-7">"NEW" badges appear for newly discovered fields</label></li>
-              <li class="checklist-item"><input type="checkbox" id="refine-8"><label for="refine-8">Checkboxes allow selecting which fields to apply</label></li>
-              <li class="checklist-item"><input type="checkbox" id="refine-9"><label for="refine-9">"Apply Selected" updates form fields correctly</label></li>
-              <li class="checklist-item"><input type="checkbox" id="refine-10"><label for="refine-10">Recent Sales show clickable source links</label></li>
+              <li class="checklist-item"><input type="checkbox" id="refine-8"><label for="refine-8">Custom value field appears when "Enter custom value" selected</label></li>
+              <li class="checklist-item"><input type="checkbox" id="refine-9"><label for="refine-9">"Apply Changes" shows confirmation of what was updated</label></li>
+              <li class="checklist-item"><input type="checkbox" id="refine-10"><label for="refine-10">Confirmation reminds user to tap Save to keep changes</label></li>
+              <li class="checklist-item"><input type="checkbox" id="refine-11"><label for="refine-11">Recent Sales show clickable source links</label></li>
             </ul>
           </div>
 
@@ -971,7 +972,7 @@ Additional notes:
     </div>
 
     <footer>
-      <p>Beta Testing Guide v1.1 — Last Updated January 22, 2026 (Build 18)</p>
+      <p>Beta Testing Guide v1.2 — Last Updated January 22, 2026 (Build 18)</p>
       <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:12px;">
         <a href="index.html" style="color:var(--primary);text-decoration:none;">Home</a>
         <a href="quick-start.html" style="color:var(--primary);text-decoration:none;">Quick Start</a>
