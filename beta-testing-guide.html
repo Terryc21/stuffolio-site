@@ -526,9 +526,44 @@
     <!-- Welcome Card -->
     <div class="welcome-card">
       <h2>Welcome, Beta Tester!</h2>
-      <p>Thanks for helping make Stuffolio better. There’s no pressure to test everything — explore what interests you and tell us what you find.</p>
+      <p>Thanks for helping make Stuffolio better. There's no pressure to test everything — explore what interests you and tell us what you find.</p>
       <div class="philosophy">
         <strong>The Stuffolio way:</strong> Do as much or as little as feels right. Your real-world feedback matters more than checking every box.
+      </div>
+    </div>
+
+    <!-- What's New Card -->
+    <div class="card">
+      <h2><span class="icon" aria-hidden="true">🆕</span> What's New in This Build</h2>
+      <p>This update includes many user interface improvements across the app, plus enhanced entry modes for different item types.</p>
+
+      <h3 style="margin-top: 1.5em;">🔄 Resetting Your AI Trial</h3>
+      <p>You can reset your AI trial at any time during beta testing:</p>
+      <p style="background: var(--card-bg); padding: 12px 16px; border-radius: 8px; font-family: monospace; margin: 0.5em 0;">
+        <strong>Settings → Beta Testing → Reset AI Trial</strong>
+      </p>
+
+      <h3 style="margin-top: 1.5em;">🔍 Testing Stuff Scout</h3>
+      <p>Try identifying items using:</p>
+      <ul style="margin: 0.5em 0 1em 1.5em;">
+        <li>The camera</li>
+        <li>Your Photo Library</li>
+        <li>Drag and drop images directly into Stuff Scout</li>
+      </ul>
+      <p>After adding an image, tap <strong>Analyze</strong>.</p>
+
+      <h4 style="margin-top: 1.2em;">Refining Results</h4>
+      <p>If the results seem off, tap <strong>"Not Quite Right."</strong></p>
+      <p>In the Refine Results form, add details or notes, then tap <strong>Re-Analyze</strong>. This feedback often improves accuracy in a meaningful way.</p>
+
+      <h4 style="margin-top: 1.2em;">Valuation Transparency</h4>
+      <p>Tap the source shown in the <strong>Recent Sales</strong> card to see the data used for the valuation.</p>
+
+      <div class="priority-item" style="margin-top: 1.5em; background: var(--card-bg); padding: 16px; border-radius: 12px;">
+        <h4 style="margin-top: 0;">💡 A Quick Example</h4>
+        <p style="margin-bottom: 0.5em;">A photo of an antique compote we own was initially valued at <strong>$5,000+</strong>.</p>
+        <p style="margin-bottom: 0.5em;">After tapping "Not Quite Right" and noting that it was made of <em>Depression glass</em>, the result updated to a much more accurate value of <strong>$45</strong>.</p>
+        <p style="margin-bottom: 0; color: var(--muted);">Occasionally results can be a little funny — and that's part of what makes testing useful. 😄</p>
       </div>
     </div>
 
@@ -754,16 +789,32 @@ Additional notes:
           <div class="section-toggle">▼</div>
         </div>
         <div class="section-content">
-          <ul class="checklist">
-            <li class="checklist-item"><input type="checkbox" id="core-1"><label for="core-1">Add an item using the “+” button</label></li>
-            <li class="checklist-item"><input type="checkbox" id="core-2"><label for="core-2">Add an item via barcode scanner</label></li>
-            <li class="checklist-item"><input type="checkbox" id="core-3"><label for="core-3">Search for items by name</label></li>
-            <li class="checklist-item"><input type="checkbox" id="core-4"><label for="core-4">Filter items by category</label></li>
-            <li class="checklist-item"><input type="checkbox" id="core-5"><label for="core-5">Edit an existing item</label></li>
-            <li class="checklist-item"><input type="checkbox" id="core-6"><label for="core-6">Delete an item</label></li>
-            <li class="checklist-item"><input type="checkbox" id="core-7"><label for="core-7">Add photos to an item</label></li>
-            <li class="checklist-item"><input type="checkbox" id="core-8"><label for="core-8">Set warranty dates</label></li>
-          </ul>
+          <div class="subsection">
+            <h4>📥 Entry Mode Chooser</h4>
+            <ul class="checklist">
+              <li class="checklist-item"><input type="checkbox" id="core-entry-1"><label for="core-entry-1">Tap "+" button — Entry Mode Chooser appears with 5 options</label></li>
+              <li class="checklist-item"><input type="checkbox" id="core-entry-2"><label for="core-entry-2">"Something I just got" opens form with warranty expanded (12 months default)</label></li>
+              <li class="checklist-item"><input type="checkbox" id="core-entry-3"><label for="core-entry-3">"Something I already have" shows photo selection first</label></li>
+              <li class="checklist-item"><input type="checkbox" id="core-entry-4"><label for="core-entry-4">Existing item flow: Take Photo / Choose from Library / Skip all work</label></li>
+              <li class="checklist-item"><input type="checkbox" id="core-entry-5"><label for="core-entry-5">Existing item form shows "Current Market Value" emphasized (green icon)</label></li>
+              <li class="checklist-item"><input type="checkbox" id="core-entry-6"><label for="core-entry-6">Existing item form has warranty section collapsed by default</label></li>
+              <li class="checklist-item"><input type="checkbox" id="core-entry-7"><label for="core-entry-7">"Multiple identical items" opens batch entry form</label></li>
+              <li class="checklist-item"><input type="checkbox" id="core-entry-8"><label for="core-entry-8">"Record a donation" opens donation tracking form</label></li>
+              <li class="checklist-item"><input type="checkbox" id="core-entry-9"><label for="core-entry-9">"Use Stuff Scout AI" opens AI identification flow</label></li>
+            </ul>
+          </div>
+          <div class="subsection">
+            <h4>📦 Basic Item Management</h4>
+            <ul class="checklist">
+              <li class="checklist-item"><input type="checkbox" id="core-1"><label for="core-1">Add an item via barcode scanner</label></li>
+              <li class="checklist-item"><input type="checkbox" id="core-3"><label for="core-3">Search for items by name</label></li>
+              <li class="checklist-item"><input type="checkbox" id="core-4"><label for="core-4">Filter items by category</label></li>
+              <li class="checklist-item"><input type="checkbox" id="core-5"><label for="core-5">Edit an existing item</label></li>
+              <li class="checklist-item"><input type="checkbox" id="core-6"><label for="core-6">Delete an item</label></li>
+              <li class="checklist-item"><input type="checkbox" id="core-7"><label for="core-7">Add photos to an item</label></li>
+              <li class="checklist-item"><input type="checkbox" id="core-8"><label for="core-8">Set warranty dates</label></li>
+            </ul>
+          </div>
         </div>
       </section>
 
