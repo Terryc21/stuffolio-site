@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
   <meta name="robots" content="noindex, nofollow" />
-  <title>Stuffolio Beta Testing Guide — v1.0 (17.1)</title>
+  <title>Stuffolio Beta Testing Guide — v1.0 (Build 18)</title>
 
   <style>
     :root{
@@ -482,7 +482,7 @@
 
 <body>
   <div class="beta-banner">
-    TestFlight Beta Testing <span>v1.0 Build 17.1</span>
+    TestFlight Beta Testing <span>v1.0 Build 18</span>
   </div>
 
   <!-- Navigation (unchanged links) -->
@@ -515,7 +515,7 @@
     <!-- Header -->
     <header>
       <h1>Beta Testing Guide</h1>
-      <p class="version">Stuffolio v1.0 (Build 17.1) — January 2026</p>
+      <p class="version">Stuffolio v1.0 (Build 18) — January 2026</p>
       <div class="platforms">
         <span class="platform-badge">📱 iOS 17.6+</span>
         <span class="platform-badge">📱 iPadOS 17.6+</span>
@@ -532,34 +532,34 @@
       </div>
     </div>
 
-    <!-- Priority Features (refocused to 17.1) -->
+    <!-- Priority Features (refocused to Build 18) -->
     <div class="card">
-      <h2><span class="icon" aria-hidden="true">🎯</span> Priority Testing <span class="priority-badge">17.1 Focus</span></h2>
+      <h2><span class="icon" aria-hidden="true">🎯</span> Priority Testing <span class="priority-badge">Build 18 Focus</span></h2>
       <p class="subtitle">If you only test a few things, please focus here. These areas are the most new/complex in this build.</p>
 
       <div class="priority-grid">
         <div class="priority-item">
+          <h3>✨ Stuff Scout Refinement <span class="badge">NEW</span></h3>
+          <p>Re-analyze existing items from the Edit view. Compare Scout's findings with current values and selectively apply updates.</p>
+          <div class="why">Why it matters: This lets users enhance their existing inventory with AI — a key workflow improvement.</div>
+        </div>
+
+        <div class="priority-item">
+          <h3>🧬 Legacy Wishes in Edit Item <span class="badge">NEW</span></h3>
+          <p>Assign items to beneficiaries directly from the Edit Item view without leaving the form.</p>
+          <div class="why">Why it matters: Streamlines the "who gets what" workflow — one less navigation step.</div>
+        </div>
+
+        <div class="priority-item">
           <h3>📱 iPad UI & Layout Polish <span class="badge">Critical</span></h3>
           <p>Sheet sizing, form readability, hover + context menus, and navigation behavior across iPad orientations and window sizes.</p>
-          <div class="why">Why it matters: A lot changed here — we want iPad to feel “native” and rock-solid.</div>
+          <div class="why">Why it matters: A lot changed here — we want iPad to feel "native" and rock-solid.</div>
         </div>
 
         <div class="priority-item">
-          <h3>🧬 Legacy Wishes <span class="badge">New Core Feature</span></h3>
-          <p>Create beneficiaries, assign items, edit/remove assignments, and review/export summaries.</p>
-          <div class="why">Why it matters: This is important (and personal) — clarity and tone matter as much as correctness.</div>
-        </div>
-
-        <div class="priority-item">
-          <h3>🔔 Stuff Scout Background Processing <span class="badge">New</span></h3>
-          <p>Start a scan, leave the app, and confirm notifications arrive. Tap the notification and verify it opens the right results.</p>
-          <div class="why">Why it matters: Background + notifications can be device/OS-specific — real-world testing is essential.</div>
-        </div>
-
-        <div class="priority-item">
-          <h3>💳 AppleCare+ & Apple Wallet <span class="badge">New</span></h3>
-          <p>AppleCare+ prompts/badges and Wallet warranty passes. Verify active/expired states and whether the pass feels useful.</p>
-          <div class="why">Why it matters: This touches Apple system UI — we need “it just works” reliability.</div>
+          <h3>🔗 Clickable Source Links <span class="badge">New</span></h3>
+          <p>Recent Sales in Stuff Scout results now have clickable marketplace links (eBay, Etsy, etc.) when available.</p>
+          <div class="why">Why it matters: Users can verify pricing sources and explore comparable sales.</div>
         </div>
       </div>
     </div>
@@ -666,7 +666,7 @@
 
       <div class="feedback-grid">
         <a class="feedback-option primary"
-           href="mailto:dev@stuffolio.app?subject=Stuffolio%20Beta%20Feedback%20-%20v1.0%20(17.1)&body=%0A%0A---%0AWhat%20I%20tested%3A%0A%0AWhat%20happened%3A%0A%0AWhat%20I%20expected%3A%0A%0ADevice%3A%0AiOS%2FmacOS%20Version%3A%0A">
+           href="mailto:dev@stuffolio.app?subject=Stuffolio%20Beta%20Feedback%20-%20v1.0%20(Build%2018)&body=%0A%0A---%0AWhat%20I%20tested%3A%0A%0AWhat%20happened%3A%0A%0AWhat%20I%20expected%3A%0A%0ADevice%3A%0AiOS%2FmacOS%20Version%3A%0A">
           <div class="icon" aria-hidden="true">📧</div>
           <h3>Email Us</h3>
           <p>dev@stuffolio.app<br />Pre-filled template ready</p>
@@ -687,7 +687,7 @@
 
       <div class="template-box" id="templateBox" style="display:none;">
         <h4>📋 Feedback Template</h4>
-        <div class="template-content" id="templateContent">Stuffolio Beta Feedback - v1.0 (17.1)
+        <div class="template-content" id="templateContent">Stuffolio Beta Feedback - v1.0 (Build 18)
 
 What I tested:
 [Describe the feature or scenario]
@@ -767,11 +767,11 @@ Additional notes:
         </div>
       </section>
 
-      <!-- New Features (17.1 Priority) -->
+      <!-- New Features (Build 18 Priority) -->
       <section class="section" id="new-features" data-section="new-features">
         <div class="section-header" onclick="toggleSection(this.parentElement)" tabindex="0" role="button" aria-expanded="true">
           <div class="section-icon">✨</div>
-          <h3>New Features (Build 17.1)</h3>
+          <h3>New Features (Build 18)</h3>
           <span class="sprint-badge new">Priority</span>
           <span class="section-progress">0/0</span>
           <div class="section-toggle">▼</div>
@@ -792,6 +792,18 @@ Additional notes:
           </div>
 
           <div class="subsection">
+            <h4>🧬 Legacy Wishes in Edit Item (NEW - Build 18)</h4>
+            <ul class="checklist">
+              <li class="checklist-item"><input type="checkbox" id="legacy-edit-1"><label for="legacy-edit-1">Legacy Wishes section appears in Edit Item form (collapsed)</label></li>
+              <li class="checklist-item"><input type="checkbox" id="legacy-edit-2"><label for="legacy-edit-2">Section only visible when Legacy Wishes feature enabled</label></li>
+              <li class="checklist-item"><input type="checkbox" id="legacy-edit-3"><label for="legacy-edit-3">Expanding section shows current assignment (if any)</label></li>
+              <li class="checklist-item"><input type="checkbox" id="legacy-edit-4"><label for="legacy-edit-4">"Assign This Item" opens assignment sheet</label></li>
+              <li class="checklist-item"><input type="checkbox" id="legacy-edit-5"><label for="legacy-edit-5">"Edit Legacy Assignment" for existing assignments</label></li>
+              <li class="checklist-item"><input type="checkbox" id="legacy-edit-6"><label for="legacy-edit-6">Status indicator shows when collapsed (checkmark if assigned)</label></li>
+            </ul>
+          </div>
+
+          <div class="subsection">
             <h4>📱 iPad UI & Layout Polish</h4>
             <ul class="checklist">
               <li class="checklist-item"><input type="checkbox" id="ipadui-1"><label for="ipadui-1">Sheets open at a comfortable size (not cramped)</label></li>
@@ -804,9 +816,25 @@ Additional notes:
           </div>
 
           <div class="subsection">
+            <h4>✨ Stuff Scout Refinement (NEW - Build 18)</h4>
+            <ul class="checklist">
+              <li class="checklist-item"><input type="checkbox" id="refine-1"><label for="refine-1">Scout section appears in Edit Item (collapsed by default)</label></li>
+              <li class="checklist-item"><input type="checkbox" id="refine-2"><label for="refine-2">Photo count displays correctly in section</label></li>
+              <li class="checklist-item"><input type="checkbox" id="refine-3"><label for="refine-3">"Analyze" button disabled when no photos</label></li>
+              <li class="checklist-item"><input type="checkbox" id="refine-4"><label for="refine-4">Scout analyzes existing item photos</label></li>
+              <li class="checklist-item"><input type="checkbox" id="refine-5"><label for="refine-5">Comparison view shows current vs Scout values</label></li>
+              <li class="checklist-item"><input type="checkbox" id="refine-6"><label for="refine-6">Confidence badge displays percentage</label></li>
+              <li class="checklist-item"><input type="checkbox" id="refine-7"><label for="refine-7">"NEW" badges appear for newly discovered fields</label></li>
+              <li class="checklist-item"><input type="checkbox" id="refine-8"><label for="refine-8">Checkboxes allow selecting which fields to apply</label></li>
+              <li class="checklist-item"><input type="checkbox" id="refine-9"><label for="refine-9">"Apply Selected" updates form fields correctly</label></li>
+              <li class="checklist-item"><input type="checkbox" id="refine-10"><label for="refine-10">Recent Sales show clickable source links</label></li>
+            </ul>
+          </div>
+
+          <div class="subsection">
             <h4>🔔 Stuff Scout Background Processing</h4>
             <ul class="checklist">
-              <li class="checklist-item"><input type="checkbox" id="bg-1"><label for="bg-1">“Process in Background” runs after leaving the app</label></li>
+              <li class="checklist-item"><input type="checkbox" id="bg-1"><label for="bg-1">"Process in Background" runs after leaving the app</label></li>
               <li class="checklist-item"><input type="checkbox" id="bg-2"><label for="bg-2">Notification arrives when analysis completes</label></li>
               <li class="checklist-item"><input type="checkbox" id="bg-3"><label for="bg-3">Tapping notification opens the right results</label></li>
               <li class="checklist-item"><input type="checkbox" id="bg-4"><label for="bg-4">Badge count matches unviewed background results</label></li>
@@ -943,7 +971,7 @@ Additional notes:
     </div>
 
     <footer>
-      <p>Beta Testing Guide v1.0 — Last Updated January 21, 2026 (Build 17.1)</p>
+      <p>Beta Testing Guide v1.1 — Last Updated January 22, 2026 (Build 18)</p>
       <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:12px;">
         <a href="index.html" style="color:var(--primary);text-decoration:none;">Home</a>
         <a href="quick-start.html" style="color:var(--primary);text-decoration:none;">Quick Start</a>
@@ -1064,8 +1092,8 @@ Additional notes:
     });
 
     // ---------- Progress + persistence ----------
-    const STORAGE_KEY_CHECKS = 'stuffolio_beta_checks_v171';
-    const STORAGE_KEY_SECTIONS = 'stuffolio_beta_sections_v171';
+    const STORAGE_KEY_CHECKS = 'stuffolio_beta_checks_v18';
+    const STORAGE_KEY_SECTIONS = 'stuffolio_beta_sections_v18';
 
     function loadState() {
       try {

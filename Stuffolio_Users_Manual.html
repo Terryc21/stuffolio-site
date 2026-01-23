@@ -132,6 +132,142 @@
             border-color: var(--primary);
         }
 
+        /* Search Box Styles */
+        .search-container {
+            margin: 24px 0;
+            position: relative;
+        }
+
+        .search-box {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 12px 16px;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .search-box:focus-within {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.15);
+        }
+
+        .search-box input {
+            flex: 1;
+            border: none;
+            background: transparent;
+            font-size: 1em;
+            color: var(--text);
+            outline: none;
+        }
+
+        .search-box input::placeholder {
+            color: var(--text-secondary);
+        }
+
+        .search-icon {
+            color: var(--text-secondary);
+            font-size: 1.1em;
+        }
+
+        .search-clear {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            cursor: pointer;
+            padding: 4px;
+            font-size: 1.1em;
+            display: none;
+        }
+
+        .search-clear.visible {
+            display: block;
+        }
+
+        .search-clear:hover {
+            color: var(--text);
+        }
+
+        .search-results {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            margin-top: 8px;
+            max-height: 400px;
+            overflow-y: auto;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            z-index: 100;
+            display: none;
+        }
+
+        .search-results.visible {
+            display: block;
+        }
+
+        .search-result-item {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border);
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .search-result-item:last-child {
+            border-bottom: none;
+        }
+
+        .search-result-item:hover {
+            background: var(--background);
+        }
+
+        .search-result-title {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+
+        .search-result-context {
+            font-size: 0.9em;
+            color: var(--text-secondary);
+            line-height: 1.4;
+        }
+
+        .search-result-context mark {
+            background: rgba(255, 193, 7, 0.3);
+            color: var(--text);
+            padding: 1px 2px;
+            border-radius: 2px;
+        }
+
+        .search-no-results {
+            padding: 16px;
+            text-align: center;
+            color: var(--text-secondary);
+        }
+
+        .search-hint {
+            font-size: 0.85em;
+            color: var(--text-secondary);
+            margin-top: 8px;
+            text-align: center;
+        }
+
+        .search-shortcut {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            background: var(--background);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 0.85em;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -460,6 +596,17 @@
             <a href="Stuffolio_Users_Manual_iOS.html">📱 iOS / iPad</a>
             <a href="Stuffolio_Users_Manual_macOS.html">💻 macOS</a>
             <a href="support.html">🆘 Support</a>
+        </div>
+
+        <!-- Search Box -->
+        <div class="search-container">
+            <div class="search-box">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="searchInput" placeholder="Search manual... (Press / to focus)" autocomplete="off">
+                <button class="search-clear" id="searchClear" aria-label="Clear search">✕</button>
+            </div>
+            <div class="search-results" id="searchResults"></div>
+            <p class="search-hint">Press <span class="search-shortcut">/</span> to search, <span class="search-shortcut">Esc</span> to close</p>
         </div>
 
         <nav id="toc">
@@ -1527,6 +1674,70 @@
             <div class="tip">
                 <strong>Tip:</strong> Bookmarks are permanent and never auto-delete. Use them for valuable identifications you want to keep forever.
             </div>
+
+            <h3>Scout Refinement (Edit Existing Items)</h3>
+            <p>Already have an item in your inventory? You can re-analyze it with Stuff Scout to discover additional details:</p>
+
+            <h4>Opening Scout Refinement</h4>
+            <ol>
+                <li>Open <strong>Edit</strong> for any existing product</li>
+                <li>Scroll down to find the <strong>Stuff Scout</strong> section</li>
+                <li>Tap to expand the section</li>
+            </ol>
+
+            <h4>If the Item Has Photos</h4>
+            <ol>
+                <li>The section shows how many photos are available</li>
+                <li>Tap <strong>Analyze with Stuff Scout</strong></li>
+                <li>Scout analyzes your existing product photos</li>
+                <li>The comparison view appears showing:
+                    <ul>
+                        <li><strong>Confidence badge</strong> — How confident Scout is in the identification</li>
+                        <li><strong>Field-by-field comparison</strong> — Your current values vs Scout's findings</li>
+                        <li><strong>"NEW" badges</strong> — Fields Scout discovered that you don't have</li>
+                    </ul>
+                </li>
+            </ol>
+
+            <h4>Selecting What to Apply</h4>
+            <ol>
+                <li>Each field has a checkbox to include or exclude it</li>
+                <li>Use <strong>Select All</strong> / <strong>Deselect All</strong> to toggle everything</li>
+                <li>Fields with differences are pre-selected (except price)</li>
+                <li><strong>NEW</strong> fields (empty in your data, filled by Scout) are highlighted</li>
+                <li>Tap <strong>Apply Selected</strong> to update your form</li>
+            </ol>
+
+            <table>
+                <thead>
+                    <tr><th>Scout Field</th><th>Updates</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Identification</td><td>Product Name</td></tr>
+                    <tr><td>Maker</td><td>Manufacturer</td></tr>
+                    <tr><td>Value</td><td>Price</td></tr>
+                    <tr><td>Era</td><td>Appended to Notes</td></tr>
+                    <tr><td>Country of Origin</td><td>Appended to Notes</td></tr>
+                    <tr><td>Condition</td><td>Condition field</td></tr>
+                    <tr><td>Materials</td><td>Appended to Notes</td></tr>
+                    <tr><td>Markings</td><td>Appended to Notes</td></tr>
+                    <tr><td>About</td><td>Appended to Notes</td></tr>
+                </tbody>
+            </table>
+
+            <div class="tip">
+                <strong>Tip:</strong> Scout Refinement is great for items you added quickly and want to enhance later. Add a photo, run Scout, and apply the findings — all without re-entering anything manually.
+            </div>
+
+            <h3>Clickable Source Links</h3>
+            <p>When Scout estimates value, the Recent Sales section now includes clickable marketplace links:</p>
+            <ol>
+                <li>In Scout results, scroll to <strong>Recent Sales</strong></li>
+                <li>Each sale shows the platform (eBay, Etsy, etc.)</li>
+                <li>Tap the platform name to open the listing (if available)</li>
+                <li>Verify Scout's sources and explore comparable sales</li>
+            </ol>
+
             <a href="#toc" class="back-to-top">Back to Contents</a>
         </section>
 
@@ -2826,6 +3037,187 @@
 
         // Initialize on page load
         initTheme();
+
+        // Search Functionality
+        const searchInput = document.getElementById('searchInput');
+        const searchResults = document.getElementById('searchResults');
+        const searchClear = document.getElementById('searchClear');
+
+        // Build search index from page content
+        function buildSearchIndex() {
+            const sections = document.querySelectorAll('section[id]');
+            const index = [];
+
+            sections.forEach(section => {
+                const id = section.id;
+                const heading = section.querySelector('h2');
+                const title = heading ? heading.textContent : id;
+                const content = section.textContent;
+
+                // Also index subsections (h3)
+                const subsections = section.querySelectorAll('h3');
+                subsections.forEach(sub => {
+                    const subTitle = sub.textContent;
+                    const subContent = getTextUntilNextHeading(sub);
+                    index.push({
+                        id: id,
+                        title: title + ' > ' + subTitle,
+                        content: subContent,
+                        element: sub
+                    });
+                });
+
+                index.push({
+                    id: id,
+                    title: title,
+                    content: content,
+                    element: section
+                });
+            });
+
+            return index;
+        }
+
+        function getTextUntilNextHeading(element) {
+            let text = element.textContent;
+            let sibling = element.nextElementSibling;
+            while (sibling && !sibling.matches('h2, h3')) {
+                text += ' ' + sibling.textContent;
+                sibling = sibling.nextElementSibling;
+            }
+            return text;
+        }
+
+        const searchIndex = buildSearchIndex();
+
+        function performSearch(query) {
+            if (!query || query.length < 2) {
+                searchResults.classList.remove('visible');
+                return;
+            }
+
+            const queryLower = query.toLowerCase();
+            const results = [];
+
+            searchIndex.forEach(item => {
+                const contentLower = item.content.toLowerCase();
+                const titleLower = item.title.toLowerCase();
+
+                if (titleLower.includes(queryLower) || contentLower.includes(queryLower)) {
+                    // Find context around the match
+                    let context = '';
+                    const pos = contentLower.indexOf(queryLower);
+                    if (pos !== -1) {
+                        const start = Math.max(0, pos - 50);
+                        const end = Math.min(item.content.length, pos + query.length + 50);
+                        context = (start > 0 ? '...' : '') +
+                                  item.content.substring(start, end) +
+                                  (end < item.content.length ? '...' : '');
+                    }
+
+                    results.push({
+                        id: item.id,
+                        title: item.title,
+                        context: context,
+                        score: titleLower.includes(queryLower) ? 2 : 1
+                    });
+                }
+            });
+
+            // Sort by score and remove duplicates
+            results.sort((a, b) => b.score - a.score);
+            const uniqueResults = results.filter((item, index, self) =>
+                index === self.findIndex(t => t.id === item.id && t.title === item.title)
+            ).slice(0, 10);
+
+            displayResults(uniqueResults, query);
+        }
+
+        function displayResults(results, query) {
+            if (results.length === 0) {
+                searchResults.innerHTML = '<div class="search-no-results">No results found for "' + escapeHtml(query) + '"</div>';
+                searchResults.classList.add('visible');
+                return;
+            }
+
+            const html = results.map(result => {
+                const highlightedContext = highlightMatch(result.context, query);
+                return `
+                    <div class="search-result-item" data-section="${result.id}">
+                        <div class="search-result-title">${escapeHtml(result.title)}</div>
+                        <div class="search-result-context">${highlightedContext}</div>
+                    </div>
+                `;
+            }).join('');
+
+            searchResults.innerHTML = html;
+            searchResults.classList.add('visible');
+
+            // Add click handlers
+            searchResults.querySelectorAll('.search-result-item').forEach(item => {
+                item.addEventListener('click', () => {
+                    const sectionId = item.dataset.section;
+                    const section = document.getElementById(sectionId);
+                    if (section) {
+                        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        searchResults.classList.remove('visible');
+                        searchInput.blur();
+                    }
+                });
+            });
+        }
+
+        function highlightMatch(text, query) {
+            if (!text) return '';
+            const escaped = escapeHtml(text);
+            const regex = new RegExp('(' + escapeRegex(query) + ')', 'gi');
+            return escaped.replace(regex, '<mark>$1</mark>');
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        function escapeRegex(string) {
+            return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        }
+
+        // Event listeners
+        searchInput.addEventListener('input', (e) => {
+            const query = e.target.value.trim();
+            searchClear.classList.toggle('visible', query.length > 0);
+            performSearch(query);
+        });
+
+        searchClear.addEventListener('click', () => {
+            searchInput.value = '';
+            searchClear.classList.remove('visible');
+            searchResults.classList.remove('visible');
+            searchInput.focus();
+        });
+
+        // Keyboard shortcuts
+        document.addEventListener('keydown', (e) => {
+            // Press / to focus search
+            if (e.key === '/' && document.activeElement !== searchInput) {
+                e.preventDefault();
+                searchInput.focus();
+            }
+            // Press Escape to close results and blur
+            if (e.key === 'Escape') {
+                searchResults.classList.remove('visible');
+                searchInput.blur();
+            }
+        });
+
+        // Close results when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.search-container')) {
+                searchResults.classList.remove('visible');
+            }
+        });
     </script>
 </body>
 </html>

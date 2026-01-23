@@ -124,6 +124,142 @@
             border-color: var(--primary);
         }
 
+        /* Search Box Styles */
+        .search-container {
+            margin: 24px 0;
+            position: relative;
+        }
+
+        .search-box {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 12px 16px;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .search-box:focus-within {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.15);
+        }
+
+        .search-box input {
+            flex: 1;
+            border: none;
+            background: transparent;
+            font-size: 1em;
+            color: var(--text);
+            outline: none;
+        }
+
+        .search-box input::placeholder {
+            color: var(--text-secondary);
+        }
+
+        .search-icon {
+            color: var(--text-secondary);
+            font-size: 1.1em;
+        }
+
+        .search-clear {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            cursor: pointer;
+            padding: 4px;
+            font-size: 1.1em;
+            display: none;
+        }
+
+        .search-clear.visible {
+            display: block;
+        }
+
+        .search-clear:hover {
+            color: var(--text);
+        }
+
+        .search-results {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            margin-top: 8px;
+            max-height: 400px;
+            overflow-y: auto;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            z-index: 100;
+            display: none;
+        }
+
+        .search-results.visible {
+            display: block;
+        }
+
+        .search-result-item {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border);
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .search-result-item:last-child {
+            border-bottom: none;
+        }
+
+        .search-result-item:hover {
+            background: var(--background);
+        }
+
+        .search-result-title {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+
+        .search-result-context {
+            font-size: 0.9em;
+            color: var(--text-secondary);
+            line-height: 1.4;
+        }
+
+        .search-result-context mark {
+            background: rgba(255, 193, 7, 0.3);
+            color: var(--text);
+            padding: 1px 2px;
+            border-radius: 2px;
+        }
+
+        .search-no-results {
+            padding: 16px;
+            text-align: center;
+            color: var(--text-secondary);
+        }
+
+        .search-hint {
+            font-size: 0.85em;
+            color: var(--text-secondary);
+            margin-top: 8px;
+            text-align: center;
+        }
+
+        .search-shortcut {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            background: var(--background);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 0.85em;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -274,6 +410,17 @@
             <a href="support.html">🆘 Support</a>
         </div>
 
+        <!-- Search Box -->
+        <div class="search-container">
+            <div class="search-box">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="searchInput" placeholder="Search guide... (Press / to focus)" autocomplete="off">
+                <button class="search-clear" id="searchClear" aria-label="Clear search">✕</button>
+            </div>
+            <div class="search-results" id="searchResults"></div>
+            <p class="search-hint">Press <span class="search-shortcut">/</span> to search, <span class="search-shortcut">Esc</span> to close</p>
+        </div>
+
         <hr>
 
         <h2>What is Stuffolio?</h2>
@@ -358,6 +505,22 @@
             <strong>Pro Tip:</strong> Your last 25 scans are auto-saved. Swipe right on any recent scan to bookmark it permanently. Bookmarks never expire.
         </div>
 
+        <h3>Scout Refinement (Re-Analyze Existing Items)</h3>
+        <p>Already have an item in your inventory? Re-analyze it with Stuff Scout:</p>
+        <ol>
+            <li>Open the item and tap <strong>Edit</strong></li>
+            <li>Expand the <strong>Stuff Scout</strong> section</li>
+            <li>Tap <strong>Analyze with Stuff Scout</strong></li>
+            <li>Scout analyzes the item's photos and shows a comparison</li>
+            <li>Review current values vs. Scout's findings side-by-side</li>
+            <li>Check boxes for fields you want to update</li>
+            <li>Tap <strong>Apply Selected</strong> to update your item</li>
+        </ol>
+
+        <div class="tip">
+            <strong>Pro Tip:</strong> Scout Refinement is perfect for items you added quickly — add details later without starting over.
+        </div>
+
         <h3>Receipt Pairing</h3>
         <p>Combine product identification with purchase details in one flow:</p>
         <ol>
@@ -418,9 +581,12 @@
         <ol>
             <li>Enable in <strong>Settings &gt; Legacy Planning</strong></li>
             <li>Add <strong>Recipients</strong> (family, friends, charities)</li>
-            <li>Assign items to recipients from any product's detail view</li>
+            <li>Assign items to recipients from any product's detail view or from the <strong>Edit</strong> screen</li>
             <li>Share as PDF or let family view in-app</li>
         </ol>
+        <div class="tip">
+            <strong>Pro Tip:</strong> You can now assign Legacy Wishes directly from the Edit Item view — look for the "Legacy Wishes" section while editing any item.
+        </div>
         <div class="note">
             <strong>Note:</strong> This is not a legal will — just a way to document your preferences. Consult an attorney for legally binding arrangements.
         </div>
@@ -449,6 +615,9 @@
             <tr><td>Configure privacy</td><td>Go to <strong>Settings &gt; Preferences</strong> to control opt-in features</td></tr>
             <tr><td>View past Stuff Scout scans</td><td>Go to <strong>Scout History</strong> — Recent tab shows auto-saved scans</td></tr>
             <tr><td>Save a scan permanently</td><td>Swipe right on any Recent scan to bookmark it</td></tr>
+            <tr><td>Re-analyze existing item</td><td>Edit item → expand <strong>Stuff Scout</strong> → tap <strong>Analyze</strong></td></tr>
+            <tr><td>Assign legacy wishes in edit</td><td>Edit item → expand <strong>Legacy Wishes</strong> → select recipient</td></tr>
+            <tr><td>View sale source</td><td>Tap source link in Recent Sales to open listing</td></tr>
         </table>
 
         <hr>
@@ -504,6 +673,97 @@
             }
         }
         initTheme();
+
+        // Search Functionality
+        const searchInput = document.getElementById('searchInput');
+        const searchResults = document.getElementById('searchResults');
+        const searchClear = document.getElementById('searchClear');
+
+        function buildSearchIndex() {
+            const headings = document.querySelectorAll('h2, h3');
+            const index = [];
+            headings.forEach((heading, i) => {
+                const title = heading.textContent;
+                let content = title;
+                let sibling = heading.nextElementSibling;
+                while (sibling && !sibling.matches('h2, h3, hr')) {
+                    content += ' ' + sibling.textContent;
+                    sibling = sibling.nextElementSibling;
+                }
+                // Generate an ID for scrolling
+                const id = 'section-' + i;
+                heading.id = id;
+                index.push({ id, title, content, element: heading });
+            });
+            return index;
+        }
+
+        const searchIndex = buildSearchIndex();
+
+        function performSearch(query) {
+            if (!query || query.length < 2) { searchResults.classList.remove('visible'); return; }
+            const queryLower = query.toLowerCase();
+            const results = [];
+            searchIndex.forEach(item => {
+                const contentLower = item.content.toLowerCase();
+                const titleLower = item.title.toLowerCase();
+                if (titleLower.includes(queryLower) || contentLower.includes(queryLower)) {
+                    let context = '';
+                    const pos = contentLower.indexOf(queryLower);
+                    if (pos !== -1) {
+                        const start = Math.max(0, pos - 50);
+                        const end = Math.min(item.content.length, pos + query.length + 50);
+                        context = (start > 0 ? '...' : '') + item.content.substring(start, end) + (end < item.content.length ? '...' : '');
+                    }
+                    results.push({ id: item.id, title: item.title, context, score: titleLower.includes(queryLower) ? 2 : 1 });
+                }
+            });
+            results.sort((a, b) => b.score - a.score);
+            const uniqueResults = results.filter((item, index, self) => index === self.findIndex(t => t.title === item.title)).slice(0, 10);
+            displayResults(uniqueResults, query);
+        }
+
+        function displayResults(results, query) {
+            if (results.length === 0) {
+                searchResults.innerHTML = '<div class="search-no-results">No results found for "' + escapeHtml(query) + '"</div>';
+                searchResults.classList.add('visible');
+                return;
+            }
+            const html = results.map(result => `<div class="search-result-item" data-section="${result.id}"><div class="search-result-title">${escapeHtml(result.title)}</div><div class="search-result-context">${highlightMatch(result.context, query)}</div></div>`).join('');
+            searchResults.innerHTML = html;
+            searchResults.classList.add('visible');
+            searchResults.querySelectorAll('.search-result-item').forEach(item => {
+                item.addEventListener('click', () => {
+                    const section = document.getElementById(item.dataset.section);
+                    if (section) { section.scrollIntoView({ behavior: 'smooth', block: 'start' }); searchResults.classList.remove('visible'); searchInput.blur(); }
+                });
+            });
+        }
+
+        function highlightMatch(text, query) {
+            if (!text) return '';
+            const escaped = escapeHtml(text);
+            const regex = new RegExp('(' + escapeRegex(query) + ')', 'gi');
+            return escaped.replace(regex, '<mark>$1</mark>');
+        }
+
+        function escapeHtml(text) { const div = document.createElement('div'); div.textContent = text; return div.innerHTML; }
+        function escapeRegex(string) { return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }
+
+        searchInput.addEventListener('input', (e) => {
+            const query = e.target.value.trim();
+            searchClear.classList.toggle('visible', query.length > 0);
+            performSearch(query);
+        });
+
+        searchClear.addEventListener('click', () => { searchInput.value = ''; searchClear.classList.remove('visible'); searchResults.classList.remove('visible'); searchInput.focus(); });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === '/' && document.activeElement !== searchInput) { e.preventDefault(); searchInput.focus(); }
+            if (e.key === 'Escape') { searchResults.classList.remove('visible'); searchInput.blur(); }
+        });
+
+        document.addEventListener('click', (e) => { if (!e.target.closest('.search-container')) { searchResults.classList.remove('visible'); } });
     </script>
 </body>
 </html>
