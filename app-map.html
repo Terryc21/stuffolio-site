@@ -477,47 +477,105 @@
     <div class="card" id="dashboard">
       <div class="section-header">
         <span class="section-icon" aria-hidden="true">📊</span>
-        <h2>Dashboard</h2>
+        <h2>Dashboard <span class="badge new">Redesigned</span></h2>
       </div>
 
       <div class="screen-grid">
         <div class="screen-box">
-          <div class="screen-title">📈 Overview</div>
-          <div class="screen-desc">At-a-glance summary of your inventory.</div>
+          <div class="screen-title">🔍 Dashboard Header <span class="badge new">New</span></div>
+          <div class="screen-desc">Integrated search and customize in the header.</div>
+          <div class="sub-screens">
+            <div class="sub-screen"><strong>Search Bar</strong> — Search your inventory without leaving Dashboard</div>
+            <div class="sub-screen"><strong>Customize Button</strong> — Choose which stat cards to display</div>
+          </div>
+        </div>
+
+        <div class="screen-box">
+          <div class="screen-title">📈 Stat Cards</div>
+          <div class="screen-desc">Customizable at-a-glance metrics.</div>
           <div class="sub-screens">
             <div class="sub-screen"><strong>Total Items</strong> — Count of all items in your inventory</div>
             <div class="sub-screen"><strong>Total Value</strong> — Combined value of your stuff</div>
-            <div class="sub-screen"><strong>By Category</strong> — Breakdown by category</div>
-            <div class="sub-screen"><strong>By Location</strong> — Breakdown by location</div>
+            <div class="sub-screen"><strong>Custom Stats</strong> — Choose which stats to display</div>
           </div>
         </div>
 
         <div class="screen-box">
-          <div class="screen-title">🔔 Alerts</div>
-          <div class="screen-desc">Important notifications about your items.</div>
+          <div class="screen-title">🔔 Needs Attention Card <span class="badge new">New</span></div>
+          <div class="screen-desc">Actionable items requiring your attention.</div>
           <div class="sub-screens">
-            <div class="sub-screen"><strong>Expiring Warranties</strong> — Items with warranties ending soon</div>
-            <div class="sub-screen"><strong>Recall Notices</strong> — Safety recalls for your products</div>
+            <div class="sub-screen"><strong>Expiring Warranties</strong> — Warranties ending soon (tappable)</div>
+            <div class="sub-screen"><strong>Overdue Maintenance</strong> — Maintenance tasks past due</div>
+            <div class="sub-screen"><strong>Loans Past Due</strong> — Items on loan past return date</div>
+            <div class="sub-screen"><strong>Flagged Items</strong> — Items you've flagged for review</div>
+            <div class="sub-screen"><strong>View All Items</strong> — Always-visible link to full inventory</div>
+            <div class="sub-screen"><strong>"All Caught Up!"</strong> — Shown when nothing needs attention</div>
           </div>
         </div>
 
         <div class="screen-box">
-          <div class="screen-title">🕐 Recent Activity</div>
-          <div class="screen-desc">Latest changes to your inventory.</div>
+          <div class="screen-title">⚡ Quick Actions Row <span class="badge new">New</span></div>
+          <div class="screen-desc">Circular buttons for common tasks.</div>
           <div class="sub-screens">
-            <div class="sub-screen"><strong>Recently Added</strong> — New items you've added</div>
-            <div class="sub-screen"><strong>Recently Updated</strong> — Items you've modified</div>
-            <div class="sub-screen"><strong>Recently Disposed</strong> — Items you've let go</div>
+            <div class="sub-screen"><strong>Scan</strong> — Quick barcode scan</div>
+            <div class="sub-screen"><strong>Add</strong> — Add a new item manually</div>
+            <div class="sub-screen"><strong>AI</strong> — AI-powered photo identification</div>
+            <div class="sub-screen"><strong>Scout</strong> — Open Stuff Scout for full analysis</div>
           </div>
         </div>
 
         <div class="screen-box">
-          <div class="screen-title">⚡ Quick Actions</div>
-          <div class="screen-desc">Fast access to common tasks.</div>
+          <div class="screen-title">🧭 Explore Section <span class="badge new">New</span></div>
+          <div class="screen-desc">Feature shortcuts in a grid layout.</div>
           <div class="sub-screens">
-            <div class="sub-screen"><strong>Add Item</strong> — Jump to add a new item</div>
-            <div class="sub-screen"><strong>Scan Barcode</strong> — Quick barcode scan</div>
-            <div class="sub-screen"><strong>Search</strong> — Find an item</div>
+            <div class="sub-screen"><strong>Insights</strong> — View inventory insights</div>
+            <div class="sub-screen"><strong>Reports</strong> — Generate inventory reports</div>
+            <div class="sub-screen"><strong>Categories</strong> — Browse by category</div>
+            <div class="sub-screen"><strong>Locations</strong> — Browse by location</div>
+            <div class="sub-screen"><strong>Legacy</strong> — Legacy Wishes planning</div>
+            <div class="sub-screen"><strong>Recalls</strong> — Check for product recalls</div>
+            <div class="sub-screen"><strong>Loans</strong> — Track borrowed/lent items</div>
+            <div class="sub-screen"><strong>Backup</strong> — Export and backup your data</div>
+          </div>
+        </div>
+
+        <div class="screen-box">
+          <div class="screen-title">💡 Actionable Tips <span class="badge new">New</span></div>
+          <div class="screen-desc">Contextual suggestions based on your usage.</div>
+          <div class="sub-screens">
+            <div class="sub-screen"><strong>Photo Tips</strong> — "Add photos for insurance documentation"</div>
+            <div class="sub-screen"><strong>Rating Tips</strong> — "Rate items to track satisfaction"</div>
+            <div class="sub-screen"><strong>Dismissible</strong> — Close tips you don't want to see</div>
+          </div>
+        </div>
+
+        <div class="screen-box">
+          <div class="screen-title">🔧 Maintenance Suggestions (Mac) <span class="badge new">New</span></div>
+          <div class="screen-desc">Proactive maintenance cards on macOS.</div>
+          <div class="sub-screens">
+            <div class="sub-screen"><strong>Items Needing Attention</strong> — Based on age and category</div>
+            <div class="sub-screen"><strong>Set Up Reminder</strong> — Create maintenance schedule</div>
+            <div class="sub-screen"><strong>View History</strong> — See past maintenance</div>
+          </div>
+        </div>
+
+        <div class="screen-box">
+          <div class="screen-title">⭐ Rating Insights (Mac) <span class="badge new">New</span></div>
+          <div class="screen-desc">Rating analytics summary on macOS Dashboard.</div>
+          <div class="sub-screens">
+            <div class="sub-screen"><strong>Items Rated</strong> — How many items have ratings</div>
+            <div class="sub-screen"><strong>Average Rating</strong> — Your overall satisfaction</div>
+            <div class="sub-screen"><strong>Would Buy Again %</strong> — Percentage you'd repurchase</div>
+            <div class="sub-screen"><strong>View Full Insights</strong> — Open Rating Insights view</div>
+          </div>
+        </div>
+
+        <div class="screen-box">
+          <div class="screen-title">❓ Help Tooltips <span class="badge new">New</span></div>
+          <div class="screen-desc">Contextual help on each Dashboard section.</div>
+          <div class="sub-screens">
+            <div class="sub-screen"><strong>(?) Button</strong> — Tap for section explanation</div>
+            <div class="sub-screen"><strong>In-place Help</strong> — Learn without leaving the screen</div>
           </div>
         </div>
       </div>
