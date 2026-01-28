@@ -44,19 +44,58 @@
   <!-- Apple Smart App Banner (uncomment when app is live) -->
   <!-- <meta name="apple-itunes-app" content="app-id=YOUR_APP_ID"> -->
 
-  <!-- Structured Data -->
+  <!-- Structured Data: Software Application -->
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   "name": "Stuffolio",
-  "operatingSystem": "iOS, iPadOS, macOS",
+  "operatingSystem": "iOS 17.6+, iPadOS 17.6+, macOS 14.6+",
   "applicationCategory": "UtilitiesApplication",
-  "description": "Stuffolio helps you manage the life of your stuff — track what you own, keep receipts and warranties together, get maintenance reminders, and record Legacy Wishes (informational only) so your family has clarity.",
+  "description": "Stuffolio helps you manage the life of your stuff — track what you own, keep receipts and warranties together, get maintenance reminders, and record Legacy Wishes so your family has clarity.",
   "author": {
     "@type": "Organization",
-    "name": "Coffee & Code LLC"
-  }
+    "name": "Coffee & Code LLC",
+    "url": "https://stuffolio.app"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD",
+    "description": "Free with optional Pro subscription"
+  },
+  "featureList": [
+    "AI-powered product identification with Stuff Scout",
+    "Warranty tracking with coverage phases",
+    "Apple Wallet warranty cards",
+    "Maintenance reminders and scheduling",
+    "Legacy Wishes estate planning",
+    "Family Sharing support",
+    "iCloud sync across devices",
+    "Export to CSV, PDF, and Excel",
+    "Insurance documentation and claim prep",
+    "Recall checking via CPSC database"
+  ],
+  "screenshot": "https://stuffolio.app/assets/og-image.png",
+  "softwareVersion": "1.0",
+  "datePublished": "2026-01-01"
+}
+</script>
+
+  <!-- Structured Data: Organization -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Coffee & Code LLC",
+  "url": "https://stuffolio.app",
+  "logo": "https://stuffolio.app/assets/apple-touch-icon.png",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "email": "support@stuffolio.app",
+    "contactType": "customer support"
+  },
+  "sameAs": []
 }
 </script>
 
@@ -478,9 +517,9 @@
         <nav>
           <a href="#why">Why Stuffolio</a>
           <a href="features.html">Features</a>
-          <a href="#pricing">Pricing</a>
+          <a href="compare.html">Compare</a>
+          <a href="whats-new.html">What's New</a>
           <a href="quick-start.html">Quick Start</a>
-          <a href="Stuffolio_Users_Manual.html">User Manual</a>
           <a href="support.html">Support</a>
         </nav>
 
@@ -716,56 +755,54 @@
         </div>
       </section>
 
-      <!-- NOT JUST ANOTHER INVENTORY APP -->
+      <!-- WHAT MAKES STUFFOLIO DIFFERENT -->
       <section id="compare" style="margin-top:18px;">
         <div class="card">
-          <h2 style="margin-top:0; text-align:center;">Not Just Another Inventory App</h2>
+          <h2 style="margin-top:0; text-align:center;">What Makes Stuffolio Different</h2>
           <p style="color:var(--muted); text-align:center;">
-            Here's what makes Stuffolio different.
+            There are several good home inventory apps. Here's what we focused on.
           </p>
 
           <div class="compare-grid">
-            <div class="compare-card others">
-              <h4>❌ Typical Inventory Apps</h4>
+            <div class="compare-card others" style="background:rgba(125,211,252,.04); border-color:rgba(125,211,252,.2);">
+              <h4 style="color:var(--accent);">🎯 Our Focus</h4>
               <ul>
-                <li>Tedious data entry &mdash; every field required</li>
-                <li>Single platform (phone only)</li>
-                <li>Manual item identification</li>
-                <li>No AI help for manuals, parts, or values</li>
-                <li>Warranty = just an expiration date</li>
-                <li>No maintenance reminders</li>
-                <li>No product ratings or reviews</li>
-                <li>Sync conflicts? Data gets overwritten silently</li>
-                <li>No inheritance planning</li>
-                <li>Data on company servers</li>
-                <li>Per-seat family pricing</li>
+                <li><strong>Warranty depth</strong> &mdash; coverage phases, not just dates</li>
+                <li><strong>Apple Wallet cards</strong> &mdash; warranty proof without opening the app</li>
+                <li><strong>The full claim experience</strong> &mdash; RMA tracking + support call logging</li>
+                <li><strong>Product memory</strong> &mdash; ratings and "Would Buy Again"</li>
+                <li><strong>Decision tools</strong> &mdash; Repair, Keep, or Replace?</li>
+                <li><strong>AI product research</strong> &mdash; manuals, parts, values on demand</li>
+                <li><strong>Value over time</strong> &mdash; snapshots and depreciation</li>
+                <li><strong>Conflict resolution</strong> &mdash; side-by-side, you decide</li>
               </ul>
             </div>
 
             <div class="compare-card stuffolio">
-              <h4>✓ Stuffolio</h4>
+              <h4>✓ All Stuffolio Features</h4>
               <ul>
                 <li><strong>Quick capture</strong> &mdash; start with a photo, add details later</li>
                 <li><strong>Mac + iPhone + iPad</strong> &mdash; seamless workflow</li>
-                <li><strong>Stuff Scout AI</strong> &mdash; "What is this?" from a photo</li>
-                <li><strong>AI Product Assistant</strong> &mdash; manuals, parts, values, tips</li>
-                <li><strong>AI Response Caching</strong> &mdash; offline access to previous queries</li>
+                <li><strong>Stuff Scout AI</strong> &mdash; identify items from photos</li>
                 <li><strong>Warranty phases</strong> &mdash; Full → Parts Only → Limited</li>
                 <li><strong>Apple Wallet Cards</strong> &mdash; warranty proof at your fingertips</li>
                 <li><strong>RMA & return tracking</strong> &mdash; track claims to completion</li>
-                <li><strong>Support interaction logging</strong> &mdash; rep names, case numbers, follow-ups</li>
+                <li><strong>Support interaction logging</strong> &mdash; rep names, case numbers</li>
                 <li><strong>Smart maintenance</strong> &mdash; category-based reminders</li>
                 <li><strong>Product ratings</strong> &mdash; remember what's worth buying again</li>
-                <li><strong>Repair, Keep, or Replace?</strong> &mdash; thinking tool for item decisions</li>
                 <li><strong>Value Snapshots</strong> &mdash; track inventory value over time</li>
                 <li><strong>Audit Mode</strong> &mdash; verify physical inventory matches records</li>
-                <li><strong>Sync conflict resolution</strong> &mdash; you decide, never lose data</li>
                 <li><strong>Legacy Wishes</strong> &mdash; plan who gets what</li>
+                <li><strong>Insurance Profile</strong> &mdash; identify coverage gaps</li>
                 <li><strong>Your data in your iCloud</strong> &mdash; not ours</li>
-                <li><strong>Family Sharing:</strong> buy once, share items with family</li>
+                <li><strong>Family Sharing</strong> &mdash; buy once, share with family</li>
               </ul>
             </div>
           </div>
+
+          <p style="text-align:center; margin-top:20px; font-size:0.95rem;">
+            <a href="compare.html">See detailed comparison with other apps →</a>
+          </p>
         </div>
       </section>
 

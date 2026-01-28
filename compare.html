@@ -1,0 +1,761 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Compare Home Inventory Apps — Stuffolio vs Alternatives</title>
+  <meta name="description" content="An honest comparison of home inventory apps for iOS and Mac: Stuffolio, Under My Roof, Itemtopia, Sortly, Everspruce, and more. Find the right app for your needs." />
+  <meta name="theme-color" content="#0b1220" />
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://stuffolio.app/compare.html" />
+  <meta property="og:title" content="Compare Home Inventory Apps — Stuffolio vs Alternatives" />
+  <meta property="og:description" content="An honest comparison of home inventory apps for iOS and Mac. Find the right app for your needs." />
+  <meta property="og:image" content="https://stuffolio.app/assets/og-image.png" />
+  <meta property="og:site_name" content="Stuffolio" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Compare Home Inventory Apps — Stuffolio vs Alternatives" />
+  <meta name="twitter:description" content="An honest comparison of home inventory apps for iOS and Mac. Find the right app for your needs." />
+  <meta name="twitter:image" content="https://stuffolio.app/assets/og-image.png" />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://stuffolio.app/compare.html" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
+
+  <!-- Shared Styles -->
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- Page-specific styles -->
+  <style>
+    :root { --max: 1100px }
+
+    .hero-intro {
+      text-align: center;
+      margin-bottom: 8px;
+    }
+    .hero-intro h1 {
+      font-size: 2rem;
+      margin: 0 0 12px;
+    }
+    .hero-intro .tagline {
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 700px;
+      margin: 0 auto 20px;
+      line-height: 1.6;
+    }
+
+    .disclaimer {
+      background: rgba(251,191,36,.08);
+      border: 1px solid rgba(251,191,36,.3);
+      border-radius: 12px;
+      padding: 16px;
+      margin: 20px 0;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+    .disclaimer strong { color: var(--text); }
+
+    h2 {
+      font-size: 1.4rem;
+      margin: 32px 0 16px;
+      color: var(--accent);
+    }
+    h3 {
+      font-size: 1.15rem;
+      margin: 24px 0 12px;
+      color: var(--text);
+    }
+    p { margin: 0 0 14px; color: var(--muted); line-height: 1.6; }
+    a { color: var(--accent); }
+    a:hover { color: var(--text); }
+
+    /* Comparison table */
+    .comparison-table-wrap {
+      overflow-x: auto;
+      margin: 20px 0;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+    }
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+      min-width: 800px;
+    }
+    .comparison-table th,
+    .comparison-table td {
+      padding: 12px 14px;
+      text-align: left;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+    .comparison-table th {
+      background: rgba(125,211,252,.08);
+      font-weight: 600;
+      color: var(--text);
+      position: sticky;
+      top: 0;
+    }
+    .comparison-table th:first-child {
+      position: sticky;
+      left: 0;
+      z-index: 2;
+      background: rgba(125,211,252,.12);
+    }
+    .comparison-table td:first-child {
+      position: sticky;
+      left: 0;
+      background: var(--bg);
+      font-weight: 500;
+      color: var(--text);
+      border-right: 1px solid var(--line);
+    }
+    .comparison-table tr:last-child td { border-bottom: none; }
+    .comparison-table tr:hover td { background: rgba(125,211,252,.04); }
+    .comparison-table tr:hover td:first-child { background: rgba(125,211,252,.08); }
+
+    .check { color: #22c55e; }
+    .cross { color: #ef4444; opacity: 0.6; }
+    .partial { color: #f59e0b; }
+    .unknown { color: var(--muted); font-style: italic; font-size: 0.85rem; }
+
+    /* App cards */
+    .app-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin: 20px 0;
+    }
+    .app-card {
+      background: rgba(255,255,255,.03);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 20px;
+      transition: all 0.2s;
+    }
+    .app-card:hover {
+      border-color: rgba(125,211,252,.4);
+      transform: translateY(-2px);
+    }
+    .app-card.highlighted {
+      border: 2px solid rgba(125,211,252,.5);
+      background: rgba(125,211,252,.04);
+    }
+    .app-card h3 {
+      margin: 0 0 8px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .app-card .price {
+      font-size: 0.85rem;
+      color: var(--accent2);
+      margin-bottom: 12px;
+    }
+    .app-card .strengths,
+    .app-card .considerations {
+      font-size: 0.9rem;
+      margin: 12px 0 0;
+    }
+    .app-card .strengths h4,
+    .app-card .considerations h4 {
+      font-size: 0.85rem;
+      margin: 0 0 6px;
+      color: var(--text);
+    }
+    .app-card ul {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+    .app-card li { margin: 4px 0; }
+
+    /* Best for badges */
+    .best-for {
+      display: inline-block;
+      background: rgba(167,139,250,.15);
+      color: var(--accent2);
+      font-size: 0.75rem;
+      padding: 3px 8px;
+      border-radius: 4px;
+      margin-left: auto;
+    }
+
+    /* Feature deep dive */
+    .feature-section {
+      margin: 28px 0;
+      padding: 20px;
+      background: rgba(255,255,255,.02);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+    }
+    .feature-section h3 {
+      margin-top: 0;
+      color: var(--accent);
+    }
+
+    /* Choosing guide */
+    .choose-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+      margin: 20px 0;
+    }
+    .choose-card {
+      background: rgba(255,255,255,.03);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 18px;
+    }
+    .choose-card h4 {
+      margin: 0 0 8px;
+      color: var(--accent);
+      font-size: 1rem;
+    }
+    .choose-card p {
+      margin: 0;
+      font-size: 0.9rem;
+    }
+
+    /* Light mode */
+    .light-mode .comparison-table th { background: rgba(0,102,204,.08); }
+    .light-mode .comparison-table th:first-child { background: rgba(0,102,204,.12); }
+    .light-mode .comparison-table td:first-child { background: #fff; }
+    .light-mode .comparison-table tr:hover td { background: rgba(0,102,204,.04); }
+    .light-mode .comparison-table tr:hover td:first-child { background: rgba(0,102,204,.08); }
+    .light-mode .app-card { background: rgba(0,0,0,.02); }
+    .light-mode .app-card.highlighted { background: rgba(0,102,204,.04); }
+    .light-mode .disclaimer { background: rgba(251,191,36,.1); }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="wrap">
+    <header>
+      <a href="index.html" class="site-title">Stuffolio</a>
+      <div class="header-right">
+        <!-- BETA-PERIOD-ONLY: Remove "Testing Guide" link after launch -->
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="features.html">Features</a>
+          <a href="compare.html" aria-current="page">Compare</a>
+          <a href="whats-new.html">What's New</a>
+          <a href="quick-start.html">Quick Start</a>
+          <a href="support.html">Support</a>
+        </nav>
+        <div class="theme-toggle">
+          <span class="theme-icon">☀️</span>
+          <button class="theme-toggle-switch" id="themeToggle" aria-label="Toggle light/dark mode"></button>
+          <span class="theme-icon">🌙</span>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="card">
+        <div class="hero-intro">
+          <h1>Home Inventory App Comparison</h1>
+          <p class="tagline">An honest look at how Stuffolio compares to other home inventory apps. Different apps suit different needs — here's help finding the right fit.</p>
+        </div>
+
+        <div class="disclaimer">
+          <strong>Note:</strong> This comparison is based on publicly available information from app stores and official websites as of January 2025. Features and pricing may change. We've tried to be accurate and fair, but we encourage you to verify details before making a decision. If you notice any errors, please <a href="mailto:dev@stuffolio.app">let us know</a>.
+        </div>
+      </div>
+
+      <!-- FEATURE COMPARISON TABLE -->
+      <div class="card">
+        <h2 style="margin-top:0;">Feature Comparison</h2>
+        <p>A side-by-side look at key features across popular home inventory apps.</p>
+
+        <div class="comparison-table-wrap">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Feature</th>
+                <th>Stuffolio</th>
+                <th>Under My Roof</th>
+                <th>Itemtopia</th>
+                <th>Sortly</th>
+                <th>Everspruce</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Platforms</td>
+                <td>iPhone, iPad, Mac</td>
+                <td>iPhone, iPad, Mac</td>
+                <td>iPhone, iPad, Mac, Vision</td>
+                <td>iPhone, iPad, Web</td>
+                <td>iPhone, iPad, Vision</td>
+              </tr>
+              <tr>
+                <td>Quick Item Entry</td>
+                <td><span class="check">✓</span> Photo-first, details later</td>
+                <td><span class="check">✓</span> Voice entry mode</td>
+                <td><span class="check">✓</span> Voice, receipt forward</td>
+                <td><span class="check">✓</span> Batch import</td>
+                <td><span class="check">✓</span> Batch mode</td>
+              </tr>
+              <tr>
+                <td>AI Item Identification</td>
+                <td><span class="check">✓</span> Stuff Scout (photos)</td>
+                <td><span class="partial">◐</span> Apple Intelligence (categorization)</td>
+                <td><span class="check">✓</span> Item Intelligence</td>
+                <td><span class="cross">✗</span></td>
+                <td><span class="cross">✗</span></td>
+              </tr>
+              <tr>
+                <td>AI Product Research</td>
+                <td><span class="check">✓</span> Manuals, parts, values</td>
+                <td><span class="cross">✗</span></td>
+                <td><span class="partial">◐</span> Value estimation</td>
+                <td><span class="cross">✗</span></td>
+                <td><span class="cross">✗</span></td>
+              </tr>
+              <tr>
+                <td>Warranty Tracking</td>
+                <td><span class="check">✓</span> With coverage phases</td>
+                <td><span class="check">✓</span> Standard + renewable</td>
+                <td><span class="check">✓</span> Expiry reminders</td>
+                <td><span class="partial">◐</span> Date-based alerts</td>
+                <td><span class="partial">◐</span> Date field (Plus only)</td>
+              </tr>
+              <tr>
+                <td>Coverage Phases (Full → Parts Only)</td>
+                <td><span class="check">✓</span></td>
+                <td><span class="unknown">Not documented</span></td>
+                <td><span class="cross">✗</span></td>
+                <td><span class="cross">✗</span></td>
+                <td><span class="cross">✗</span></td>
+              </tr>
+              <tr>
+                <td>Apple Wallet Warranty Cards</td>
+                <td><span class="check">✓</span></td>
+                <td><span class="cross">✗</span></td>
+                <td><span class="cross">✗</span></td>
+                <td><span class="cross">✗</span></td>
+                <td><span class="cross">✗</span></td>
+              </tr>
+              <tr>
+                <td>RMA/Claim Tracking</td>
+                <td><span class="check">✓</span> Full workflow</td>
+                <td><span class="check">✓</span> Claims management</td>
+                <td><span class="cross">✗</span></td>
+                <td><span class="cross">✗</span></td>
+                <td><span class="cross">✗</span></td>
+              </tr>
+              <tr>
+                <td>Support Call Logging</td>
+                <td><span class="check">✓</span> Rep names, case numbers</td>
+                <td><span class="unknown">Not documented</span></td>
+                <td><span class="cross">✗</span></td>
+                <td><span class="cross">✗</span></td>
+                <td><span class="cross">✗</span></td>
+              </tr>
+              <tr>
+                <td>Maintenance Reminders</td>
+                <td><span class="check">✓</span> Category-based</td>
+                <td><span class="check">✓</span> With notifications</td>
+                <td><span class="partial">◐</span> AI-assisted</td>
+                <td><span class="cross">✗</span></td>
+                <td><span class="cross">✗</span></td>
+              </tr>
+              <tr>
+                <td>Product Ratings</td>
+                <td><span class="check">✓</span> 1-5 stars + "Buy Again"</td>
+                <td><span class="cross">✗</span></td>
+                <td><span class="cross">✗</span></td>
+                <td><span class="cross">✗</span></td>
+                <td><span class="cross">✗</span></td>
+              </tr>
+              <tr>
+                <td>Value Tracking Over Time</td>
+                <td><span class="check">✓</span> Snapshots + depreciation</td>
+                <td><span class="partial">◐</span> Multiple valuations</td>
+                <td><span class="cross">✗</span></td>
+                <td><span class="cross">✗</span></td>
+                <td><span class="partial">◐</span> Current value (Plus)</td>
+              </tr>
+              <tr>
+                <td>Insurance Documentation</td>
+                <td><span class="check">✓</span> Profile + claim prep</td>
+                <td><span class="check">✓</span> Coverage analysis</td>
+                <td><span class="partial">◐</span> Export</td>
+                <td><span class="check">✓</span> Reports</td>
+                <td><span class="check">✓</span> Export</td>
+              </tr>
+              <tr>
+                <td>Estate/Legacy Planning</td>
+                <td><span class="check">✓</span> Legacy Wishes</td>
+                <td><span class="check">✓</span> Heir assignments</td>
+                <td><span class="cross">✗</span></td>
+                <td><span class="cross">✗</span></td>
+                <td><span class="cross">✗</span></td>
+              </tr>
+              <tr>
+                <td>iCloud Sync</td>
+                <td><span class="check">✓</span> Your iCloud</td>
+                <td><span class="check">✓</span> Your iCloud</td>
+                <td><span class="partial">◐</span> Cloud sync</td>
+                <td><span class="partial">◐</span> Sortly cloud</td>
+                <td><span class="partial">◐</span> Cloud backup</td>
+              </tr>
+              <tr>
+                <td>Sync Conflict Resolution</td>
+                <td><span class="check">✓</span> Side-by-side choice</td>
+                <td><span class="unknown">Not documented</span></td>
+                <td><span class="unknown">Not documented</span></td>
+                <td><span class="unknown">Not documented</span></td>
+                <td><span class="unknown">Not documented</span></td>
+              </tr>
+              <tr>
+                <td>Family Sharing (Apple)</td>
+                <td><span class="check">✓</span> Included</td>
+                <td><span class="check">✓</span> Included</td>
+                <td><span class="partial">◐</span> Per-user pricing</td>
+                <td><span class="partial">◐</span> Per-user pricing</td>
+                <td><span class="check">✓</span> Up to 3 users free</td>
+              </tr>
+              <tr>
+                <td>Barcode Scanning</td>
+                <td><span class="check">✓</span></td>
+                <td><span class="check">✓</span></td>
+                <td><span class="check">✓</span></td>
+                <td><span class="check">✓</span></td>
+                <td><span class="check">✓</span> QR codes</td>
+              </tr>
+              <tr>
+                <td>Export Formats</td>
+                <td>CSV, PDF, Excel</td>
+                <td>CSV</td>
+                <td>CSV, receipts</td>
+                <td>CSV, PDF</td>
+                <td>CSV, PDF</td>
+              </tr>
+              <tr>
+                <td>Pricing Model</td>
+                <td>One-time + optional AI sub</td>
+                <td>Free (10 items) or subscription</td>
+                <td>Free (20 items) or subscription</td>
+                <td>Free (100 items) or subscription</td>
+                <td>Free (50 items) or subscription</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p style="font-size:0.85rem; color:var(--muted);">
+          <span class="check">✓</span> = Supported &nbsp;
+          <span class="partial">◐</span> = Partial/Limited &nbsp;
+          <span class="cross">✗</span> = Not available &nbsp;
+          <span class="unknown">Not documented</span> = Could not verify
+        </p>
+      </div>
+
+      <!-- APP PROFILES -->
+      <div class="card">
+        <h2 style="margin-top:0;">App Profiles</h2>
+        <p>A brief overview of each app's strengths and who it's best suited for.</p>
+
+        <div class="app-grid">
+          <div class="app-card highlighted">
+            <h3>Stuffolio <span class="best-for">Warranty-focused</span></h3>
+            <p class="price">$9.99 one-time + optional AI subscription</p>
+            <p>A "life-of-stuff" system focused on the full ownership experience: protecting warranties, making repair-vs-replace decisions, and planning for the future.</p>
+            <div class="strengths">
+              <h4>Strengths</h4>
+              <ul>
+                <li>Warranty coverage phases (Full → Parts Only → Limited)</li>
+                <li>Apple Wallet warranty cards</li>
+                <li>RMA tracking and support call logging</li>
+                <li>AI product research (manuals, parts, values)</li>
+                <li>Product ratings for future purchase decisions</li>
+                <li>Repair, Keep, or Replace decision tool</li>
+                <li>One-time purchase for core features</li>
+              </ul>
+            </div>
+            <div class="considerations">
+              <h4>Consider if</h4>
+              <ul>
+                <li>You want detailed warranty management beyond just dates</li>
+                <li>You value remembering which products were worth buying</li>
+                <li>You prefer one-time purchase over subscriptions</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="app-card">
+            <h3>Under My Roof <span class="best-for">Full-featured</span></h3>
+            <p class="price">Free (10 items) / $4.99/mo or $34.99/yr</p>
+            <p>A comprehensive home inventory app from Binary Formations with strong maintenance tracking and estate planning. App Store Editors' Choice.</p>
+            <div class="strengths">
+              <h4>Strengths</h4>
+              <ul>
+                <li>Mature, well-established app (17+ years of development)</li>
+                <li>Maintenance scheduling with notifications</li>
+                <li>Estate planning with heir assignments</li>
+                <li>Supply inventory with low-stock alerts</li>
+                <li>3D room scanning (LiDAR devices)</li>
+                <li>Voice entry with Apple Intelligence</li>
+              </ul>
+            </div>
+            <div class="considerations">
+              <h4>Consider if</h4>
+              <ul>
+                <li>You want a proven, feature-rich solution</li>
+                <li>Supply tracking (filters, consumables) is important</li>
+                <li>You have a LiDAR-equipped device for 3D scans</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="app-card">
+            <h3>Itemtopia <span class="best-for">Collections</span></h3>
+            <p class="price">Free (20 items) / $7.99/mo or $79.99/yr</p>
+            <p>Flexible inventory app with strong AI features and the ability to create instant selling pages. Great for collectors and those with diverse tracking needs.</p>
+            <div class="strengths">
+              <h4>Strengths</h4>
+              <ul>
+                <li>AI-powered Item Intelligence for identification</li>
+                <li>Instant webpage creation for selling items</li>
+                <li>Highly customizable fields and categories</li>
+                <li>Receipt forwarding to auto-create items</li>
+                <li>Tracks more than belongings (services, warranties, medical)</li>
+                <li>Vision Pro support</li>
+              </ul>
+            </div>
+            <div class="considerations">
+              <h4>Consider if</h4>
+              <ul>
+                <li>You have extensive collections to catalog</li>
+                <li>You want to easily sell items online</li>
+                <li>You need to track diverse information types</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="app-card">
+            <h3>Sortly <span class="best-for">Business/Moving</span></h3>
+            <p class="price">Free (100 items) / $4.99/mo+</p>
+            <p>Originally designed for businesses, Sortly excels at folder-based organization and QR code labeling. Popular for moving and small business inventory.</p>
+            <div class="strengths">
+              <h4>Strengths</h4>
+              <ul>
+                <li>Excellent folder/hierarchy organization</li>
+                <li>QR code label generation and printing</li>
+                <li>Team collaboration with role-based access</li>
+                <li>Web access in addition to mobile</li>
+                <li>Strong business/commercial features</li>
+                <li>100 free items (most generous free tier)</li>
+              </ul>
+            </div>
+            <div class="considerations">
+              <h4>Consider if</h4>
+              <ul>
+                <li>You're moving and need box labeling</li>
+                <li>You run a small business with inventory needs</li>
+                <li>Team access and permissions are important</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="app-card">
+            <h3>Everspruce <span class="best-for">Simple & Free</span></h3>
+            <p class="price">Free (50 items) / $5.99/mo or $44.99/yr</p>
+            <p>A straightforward home inventory app focused on simplicity. Good for basic cataloging without overwhelming features.</p>
+            <div class="strengths">
+              <h4>Strengths</h4>
+              <ul>
+                <li>Clean, simple interface</li>
+                <li>Batch mode for quick entry</li>
+                <li>QR code labels for boxes</li>
+                <li>Checkout tracking for borrowed items</li>
+                <li>Up to 3 additional users free</li>
+                <li>50 free items to start</li>
+              </ul>
+            </div>
+            <div class="considerations">
+              <h4>Consider if</h4>
+              <ul>
+                <li>You want something simple without advanced features</li>
+                <li>Basic cataloging for insurance is your main goal</li>
+                <li>You share a household and want free multi-user</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="app-card">
+            <h3>Memento Database <span class="best-for">Power Users</span></h3>
+            <p class="price">Free / $3.99-$11.99 Pro tiers</p>
+            <p>A general-purpose database app that can be configured for home inventory. Maximum flexibility for technical users who want full control.</p>
+            <div class="strengths">
+              <h4>Strengths</h4>
+              <ul>
+                <li>Completely customizable database structure</li>
+                <li>Thousands of community templates</li>
+                <li>JavaScript scripting for automation</li>
+                <li>Can track anything, not just inventory</li>
+                <li>Cross-platform (Android, iOS, desktop)</li>
+                <li>AI assistant for database creation</li>
+              </ul>
+            </div>
+            <div class="considerations">
+              <h4>Consider if</h4>
+              <ul>
+                <li>You want complete control over data structure</li>
+                <li>You're comfortable with database concepts</li>
+                <li>You need to track varied data types in one app</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CHOOSING THE RIGHT APP -->
+      <div class="card">
+        <h2 style="margin-top:0;">Which App Is Right for You?</h2>
+        <p>Your ideal app depends on what you're trying to accomplish. Here are some common scenarios:</p>
+
+        <div class="choose-grid">
+          <div class="choose-card">
+            <h4>"I want to track warranties seriously"</h4>
+            <p><strong>Consider Stuffolio</strong> — Coverage phases, Apple Wallet cards, RMA tracking, and support call logging go beyond basic date tracking.</p>
+          </div>
+
+          <div class="choose-card">
+            <h4>"I need a proven, full-featured solution"</h4>
+            <p><strong>Consider Under My Roof</strong> — 17+ years of development, App Store Editors' Choice, comprehensive feature set including maintenance and estate planning.</p>
+          </div>
+
+          <div class="choose-card">
+            <h4>"I have large collections to catalog"</h4>
+            <p><strong>Consider Itemtopia</strong> — Highly customizable fields, AI identification, and features designed for collectors of art, vintage items, or memorabilia.</p>
+          </div>
+
+          <div class="choose-card">
+            <h4>"I'm moving and need to label boxes"</h4>
+            <p><strong>Consider Sortly</strong> — Excellent folder organization and QR code label generation make it ideal for moving and box tracking.</p>
+          </div>
+
+          <div class="choose-card">
+            <h4>"I just need basic insurance documentation"</h4>
+            <p><strong>Consider Everspruce</strong> — Simple, straightforward cataloging with photo documentation. 50 free items is enough for many households.</p>
+          </div>
+
+          <div class="choose-card">
+            <h4>"I want complete control over my data"</h4>
+            <p><strong>Consider Memento Database</strong> — Build exactly the system you want with complete flexibility, though it requires more setup.</p>
+          </div>
+
+          <div class="choose-card">
+            <h4>"I run a small business"</h4>
+            <p><strong>Consider Sortly</strong> — Team collaboration, role-based permissions, and business-oriented features make it suitable for commercial use.</p>
+          </div>
+
+          <div class="choose-card">
+            <h4>"I want to remember which products were good"</h4>
+            <p><strong>Consider Stuffolio</strong> — Product ratings with "Would Buy Again" tracking and brand history help inform future purchases.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- WHAT MAKES STUFFOLIO DIFFERENT -->
+      <div class="card">
+        <h2 style="margin-top:0;">What Makes Stuffolio Different</h2>
+        <p>We built Stuffolio because existing apps treated inventory as a static catalog. We wanted to track the full <em>life</em> of each item — from purchase through ownership to eventual disposition. Here's what that means in practice:</p>
+
+        <div class="feature-section">
+          <h3>Warranty Coverage Phases</h3>
+          <p>Real warranties change over time. A 5-year appliance warranty might offer full coverage in year 1, parts-only in years 2-3, and limited coverage in years 4-5. Stuffolio tracks these transitions and notifies you before coverage changes — so you know what's actually covered right now, not just when the warranty expires.</p>
+        </div>
+
+        <div class="feature-section">
+          <h3>Apple Wallet Warranty Cards</h3>
+          <p>When you're at a repair shop, fumbling through an app to prove warranty coverage is frustrating. Stuffolio generates Apple Wallet passes for your warranties — one tap from your Lock Screen shows proof of coverage. We haven't found another home inventory app that does this.</p>
+        </div>
+
+        <div class="feature-section">
+          <h3>The Full Support Experience</h3>
+          <p>Dealing with warranty claims involves more than tracking dates. Stuffolio logs RMA numbers, claim status, and shipping info. It also records customer support interactions — rep names, case numbers, what was promised, and follow-up dates. When you're on your third call to customer service, this context is invaluable.</p>
+        </div>
+
+        <div class="feature-section">
+          <h3>Product Memory</h3>
+          <p>When your blender breaks after 8 years, you probably can't remember if the brand was any good. Stuffolio's product ratings and "Would Buy Again" tracking build a personal database of your experiences. The "Repair, Keep, or Replace?" tool uses this history — alongside repair costs and remaining lifespan — to help you decide what to do next.</p>
+        </div>
+
+        <div class="feature-section">
+          <h3>Privacy Model</h3>
+          <p>Your inventory syncs through your personal iCloud account — we never see your data. This is similar to Under My Roof's approach, and different from apps that sync through company servers. For AI features, we send only the data needed for that specific query, and we don't use your data to train models.</p>
+        </div>
+      </div>
+
+      <!-- FAIR ACKNOWLEDGMENTS -->
+      <div class="card">
+        <h2 style="margin-top:0;">Where Others Excel</h2>
+        <p>In the interest of fairness, here's where some competitors have advantages:</p>
+        <ul>
+          <li><strong>Under My Roof</strong> has 17+ years of development and is an App Store Editors' Choice. Its supply inventory with low-stock alerts and 3D room scanning are features Stuffolio doesn't offer.</li>
+          <li><strong>Itemtopia</strong> can create instant webpages to sell items — great for collectors who frequently buy and sell. Its Vision Pro support is ahead of most apps.</li>
+          <li><strong>Sortly</strong> has web access and team collaboration features that make it better suited for businesses and shared workspaces.</li>
+          <li><strong>Everspruce</strong> offers up to 3 additional users free — generous for households that don't want per-seat pricing.</li>
+          <li><strong>Memento Database</strong> offers unmatched flexibility — if you want complete control over data structure and are comfortable with databases, it's hard to beat.</li>
+        </ul>
+        <p>The "best" app depends entirely on your priorities. We think Stuffolio is the best choice for people who take warranties seriously and want to track the full ownership experience — but we're obviously biased. Try a few apps and see what feels right for your workflow.</p>
+      </div>
+
+      <!-- CTA -->
+      <div class="card" style="text-align:center;">
+        <h2 style="margin-top:0;">Ready to Try Stuffolio?</h2>
+        <p>Start with the features that matter to you. Core inventory tracking is included with purchase; AI features are available as an optional subscription.</p>
+        <div style="margin-top:20px; display:flex; gap:14px; justify-content:center; flex-wrap:wrap;">
+          <a href="features.html" class="btn" style="background:var(--accent); color:#000; padding:12px 24px; border-radius:8px; text-decoration:none; font-weight:600;">See All Features</a>
+          <a href="quick-start.html" class="btn-secondary" style="border:1px solid var(--accent); color:var(--accent); padding:12px 24px; border-radius:8px; text-decoration:none;">Quick Start Guide</a>
+        </div>
+      </div>
+
+    </main>
+
+    <footer>
+      <div>© <span id="y"></span> Coffee & Code LLC</div>
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="index.html">Home</a>
+        <a href="features.html">Features</a>
+        <a href="family-sharing.html">Family Sharing</a>
+        <a href="support.html">Support</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+
+    // Theme toggle
+    const html = document.documentElement;
+    const toggle = document.getElementById('themeToggle');
+
+    const saved = localStorage.getItem('theme');
+    if (saved === 'light') html.classList.add('light-mode');
+    else if (!saved && window.matchMedia('(prefers-color-scheme: light)').matches) {
+      html.classList.add('light-mode');
+    }
+
+    toggle.addEventListener('click', () => {
+      html.classList.toggle('light-mode');
+      localStorage.setItem('theme', html.classList.contains('light-mode') ? 'light' : 'dark');
+    });
+  </script>
+</body>
+</html>

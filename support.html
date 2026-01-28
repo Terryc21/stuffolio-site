@@ -83,6 +83,152 @@
     .light-mode .contact-box { background:rgba(124,58,237,.08) !important; border-color:rgba(124,58,237,.25) !important }
     .light-mode .faq-item summary { color:#1a1a1a !important }
   </style>
+
+  <!-- Structured Data: FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is Stuff Scout?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Stuff Scout is an AI tool that helps you identify items from photos. Point your camera at something, and it will tell you what it is, share its history, and give you an idea of its value. It's especially handy for heirlooms and spotting hidden gems at thrift stores."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Stuffolio sync across devices?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, if you enable iCloud sync. Your data syncs through your personal iCloud account — we never see it. You can also use Stuffolio completely offline with no sync."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I export my inventory?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Export to CSV, PDF, or other formats from the Actions section. Great for insurance documentation, moving, or just having a backup."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is my data private?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Your inventory stays on your device by default. Network features (sync, AI, barcode lookup) are all opt-in."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do warranty reminders work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Add a warranty expiration date to any item and Stuffolio will remind you before it expires. You can customize how far in advance you want to be notified in Settings."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are coverage phases (tiered warranties)?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Many warranties change coverage over time. Stuffolio lets you track these phases so you always know what's covered right now. You can add multiple coverage phases to any warranty, each with its own coverage type, date range, and deductible."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I track items I've sold or donated?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. When you let go of something, you can mark it as sold, donated, gifted, recycled, returned, or trashed. Stuffolio keeps a history so you know where everything went. For tax purposes, it tracks donations (estimated fair market value, recipient, date) and sales (price, date, buyer)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Stuffolio work offline?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Core features work completely offline — adding items, viewing your inventory, editing details, and exporting. Only optional features like Stuff Scout (AI), barcode lookup, and iCloud sync require an internet connection."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Stuffolio free? Are there in-app purchases?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Stuffolio is a one-time purchase of $9.99. All core inventory features are included — adding items, tracking warranties, organizing by location, exporting data, and more. AI features require a separate optional subscription due to ongoing server costs."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is Legacy Wishes?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Legacy Wishes helps you document who should receive your belongings. Record your preferences for family heirlooms, collectibles, and meaningful items — so your wishes are clear when the time comes. Add recipients, assign items, set fallbacks, and share as PDF."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I add warranty cards to Apple Wallet?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes! You can generate Apple Wallet passes for your warranties. This gives you quick access to proof of coverage when you're at a repair shop. The pass includes product name, warranty expiration date, and key coverage details."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is Photo Quick Add?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Photo Quick Add is the fastest way to add items to your inventory. Instead of typing product details manually, you snap a photo and AI extracts the information for you — product name, manufacturer, model, serial number, and purchase details."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is Audit Mode?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Audit Mode helps you verify that your physical inventory matches your digital records. Start an audit, walk through your space room-by-room, mark items as found, and get a summary of discrepancies."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the Insurance Profile?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The Insurance Profile helps you understand how your belongings fit with your insurance coverage. It tracks coverage limits, identifies high-value items that exceed per-item limits, and flags coverage gaps before you need to file a claim."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use Siri with Stuffolio?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes! Stuffolio integrates with Siri Shortcuts. Built-in shortcuts include 'Add item to Stuffolio', 'Show my expiring warranties', and 'Open Stuff Scout'. You can also create custom automations in the Shortcuts app."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I back up my data?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You have several options: Enable iCloud sync for automatic backup, export your inventory to CSV, PDF, or Excel from the Actions section, or use your device's regular backup (iCloud Backup or Finder/iTunes) which includes Stuffolio data."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I mark an item as lost or stolen?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Open the item, tap Dispose, select 'Lost' or 'Stolen', and enter details including date, circumstances, police report number (for stolen items), and insurance claim status. The item moves to your Archive but remains searchable. If recovered, you can restore it."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body>
@@ -94,12 +240,11 @@
         <!-- BETA-PERIOD-ONLY: Remove "Testing Guide" link after launch -->
         <nav>
           <a href="index.html">Home</a>
+          <a href="features.html">Features</a>
+          <a href="compare.html">Compare</a>
+          <a href="whats-new.html">What's New</a>
           <a href="quick-start.html">Quick Start</a>
-          <a href="Stuffolio_Users_Manual.html">User Manual</a>
-          <a href="beta-testing-guide.html">Testing Guide</a>
           <a href="support.html" aria-current="page">Support</a>
-          <a href="privacy.html">Privacy</a>
-          <a href="app-map.html">App Map</a>
         </nav>
         <div class="theme-toggle">
           <span class="theme-icon">☀️</span>
@@ -137,7 +282,9 @@
           <li>Take photos of receipts and attach them to items</li>
           <li>Use Stuff Scout to identify items you can't remember</li>
           <li>Export your inventory for insurance documentation</li>
+          <li>Use ⌘K to quickly navigate anywhere on Mac</li>
         </ul>
+        <p style="margin-top:12px;"><a href="quick-reference.html">View printable Quick Reference Card →</a></p>
       </div>
 
       <div class="card">

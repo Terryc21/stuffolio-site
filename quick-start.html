@@ -115,6 +115,49 @@
     .light-mode .tip-box p { color:#333 !important }
     .light-mode .phase-card { background:rgba(0,0,0,.03) !important; border-color:rgba(0,0,0,.1) !important }
   </style>
+
+  <!-- Structured Data: HowTo Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Add Your First Item to Stuffolio",
+    "description": "Learn how to add items to your Stuffolio inventory in just a few steps. Start simple and add more details later.",
+    "totalTime": "PT2M",
+    "tool": [
+      {
+        "@type": "HowToTool",
+        "name": "Stuffolio app for iOS or macOS"
+      }
+    ],
+    "step": [
+      {
+        "@type": "HowToStep",
+        "position": 1,
+        "name": "Open the Add Item Screen",
+        "text": "Tap the + button in the toolbar to begin adding a new item."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 2,
+        "name": "Choose Your Situation",
+        "text": "Select from: Something I just got (new purchases with receipts), Something I already have (existing items), Multiple identical items, Record a donation, or Use Stuff Scout AI to identify items from photos."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 3,
+        "name": "Fill in What You Know",
+        "text": "Enter the Title (what is it?), Category (Electronics, Furniture, Tools, etc.), Purchase Date (use Approximate toggle if unsure), and Price or Current Value."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 4,
+        "name": "Save Your Item",
+        "text": "Tap Save and you're done! You can add more details like photos, warranties, and manuals anytime."
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body>
@@ -126,12 +169,11 @@
         <!-- BETA-PERIOD-ONLY: Remove "Testing Guide" link after launch -->
         <nav>
           <a href="index.html">Home</a>
+          <a href="features.html">Features</a>
+          <a href="compare.html">Compare</a>
+          <a href="whats-new.html">What's New</a>
           <a href="quick-start.html" aria-current="page">Quick Start</a>
-          <a href="Stuffolio_Users_Manual.html">User Manual</a>
-          <a href="beta-testing-guide.html">Testing Guide</a>
           <a href="support.html">Support</a>
-          <a href="privacy.html">Privacy</a>
-          <a href="app-map.html">App Map</a>
         </nav>
         <div class="theme-toggle">
           <span class="theme-icon">☀️</span>

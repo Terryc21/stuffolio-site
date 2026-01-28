@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Quick Reference Card — Stuffolio</title>
+  <meta name="description" content="Printable quick reference card with keyboard shortcuts and key features for Stuffolio power users." />
+  <meta name="theme-color" content="#0b1220" />
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://stuffolio.app/quick-reference.html" />
+  <meta property="og:title" content="Quick Reference Card — Stuffolio" />
+  <meta property="og:description" content="Printable quick reference card with keyboard shortcuts and key features for Stuffolio power users." />
+  <meta property="og:image" content="https://stuffolio.app/assets/og-image.png" />
+  <meta property="og:site_name" content="Stuffolio" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Quick Reference Card — Stuffolio" />
+  <meta name="twitter:description" content="Printable quick reference card with keyboard shortcuts and key features for Stuffolio power users." />
+  <meta name="twitter:image" content="https://stuffolio.app/assets/og-image.png" />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://stuffolio.app/quick-reference.html" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
+
+  <!-- Shared Styles -->
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- Page-specific styles -->
+  <style>
+    :root { --max: 900px }
+
+    .print-header {
+      text-align: center;
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 2px solid var(--accent);
+    }
+    .print-header h1 {
+      font-size: 1.8rem;
+      margin: 0 0 4px;
+    }
+    .print-header p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .print-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--accent);
+      color: #000;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      margin-bottom: 20px;
+      cursor: pointer;
+      border: none;
+      font-size: 1rem;
+    }
+    .print-btn:hover {
+      background: var(--accent2);
+      color: #fff;
+    }
+
+    .ref-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+    }
+
+    .ref-section {
+      background: rgba(125,211,252,.04);
+      border: 1px solid rgba(125,211,252,.15);
+      border-radius: 12px;
+      padding: 16px;
+    }
+    .ref-section h3 {
+      font-size: 1rem;
+      margin: 0 0 12px;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .ref-section h4 {
+      font-size: 0.85rem;
+      margin: 14px 0 8px;
+      color: var(--accent2);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .ref-section h4:first-of-type {
+      margin-top: 0;
+    }
+
+    .shortcut-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .shortcut-list li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 4px 0;
+      font-size: 0.9rem;
+      border-bottom: 1px solid rgba(125,211,252,.08);
+    }
+    .shortcut-list li:last-child {
+      border-bottom: none;
+    }
+    .shortcut-list .action {
+      color: var(--text);
+    }
+    .shortcut-list .keys {
+      font-family: ui-monospace, monospace;
+      font-size: 0.8rem;
+      background: rgba(125,211,252,.12);
+      padding: 2px 8px;
+      border-radius: 4px;
+      color: var(--accent);
+      white-space: nowrap;
+    }
+
+    .goto-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4px 16px;
+    }
+    .goto-grid li {
+      font-size: 0.85rem;
+      color: var(--muted);
+      padding: 2px 0;
+    }
+
+    .feature-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .feature-list li {
+      padding: 6px 0;
+      font-size: 0.9rem;
+      color: var(--muted);
+      border-bottom: 1px solid rgba(125,211,252,.08);
+      display: flex;
+      gap: 8px;
+    }
+    .feature-list li:last-child {
+      border-bottom: none;
+    }
+    .feature-list .icon {
+      flex-shrink: 0;
+    }
+
+    .tips-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .tips-list li {
+      padding: 5px 0;
+      font-size: 0.85rem;
+      color: var(--muted);
+      display: flex;
+      gap: 8px;
+    }
+    .tips-list .bullet {
+      color: var(--accent);
+    }
+
+    .footer-note {
+      text-align: center;
+      margin-top: 20px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(125,211,252,.15);
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+    .footer-note a {
+      color: var(--accent);
+    }
+
+    /* Light mode overrides */
+    .light-mode .ref-section {
+      background: rgba(0,102,204,.04);
+      border-color: rgba(0,102,204,.15);
+    }
+    .light-mode .shortcut-list .keys {
+      background: rgba(0,102,204,.1);
+      color: #0066cc;
+    }
+
+    /* Print styles */
+    @media print {
+      @page {
+        size: letter;
+        margin: 0.5in;
+      }
+
+      body {
+        background: #fff !important;
+        color: #000 !important;
+        font-size: 10pt !important;
+      }
+
+      .wrap {
+        max-width: 100% !important;
+        padding: 0 !important;
+      }
+
+      header, footer, .print-btn, .theme-toggle, .skip-link {
+        display: none !important;
+      }
+
+      main {
+        padding: 0 !important;
+      }
+
+      .card {
+        background: none !important;
+        border: none !important;
+        padding: 0 !important;
+        box-shadow: none !important;
+      }
+
+      .print-header {
+        border-bottom-color: #000 !important;
+        margin-bottom: 16px !important;
+        padding-bottom: 10px !important;
+      }
+      .print-header h1 {
+        font-size: 18pt !important;
+        color: #000 !important;
+      }
+      .print-header p {
+        color: #666 !important;
+      }
+
+      .ref-grid {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 12px !important;
+      }
+
+      .ref-section {
+        background: #f8f8f8 !important;
+        border: 1px solid #ccc !important;
+        border-radius: 6px !important;
+        padding: 10px !important;
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+      .ref-section h3 {
+        color: #000 !important;
+        font-size: 10pt !important;
+        margin-bottom: 8px !important;
+      }
+      .ref-section h4 {
+        color: #333 !important;
+        font-size: 8pt !important;
+        margin: 10px 0 6px !important;
+      }
+
+      .shortcut-list li {
+        font-size: 8pt !important;
+        padding: 2px 0 !important;
+        border-bottom-color: #ddd !important;
+      }
+      .shortcut-list .action {
+        color: #000 !important;
+      }
+      .shortcut-list .keys {
+        background: #e8e8e8 !important;
+        color: #000 !important;
+        font-size: 7pt !important;
+        padding: 1px 5px !important;
+      }
+
+      .goto-grid li {
+        font-size: 8pt !important;
+        color: #333 !important;
+      }
+
+      .feature-list li,
+      .tips-list li {
+        font-size: 8pt !important;
+        color: #333 !important;
+        padding: 3px 0 !important;
+      }
+
+      .footer-note {
+        margin-top: 12px !important;
+        padding-top: 10px !important;
+        font-size: 8pt !important;
+        color: #666 !important;
+        border-top-color: #ccc !important;
+      }
+      .footer-note a {
+        color: #000 !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="wrap">
+    <header>
+      <a href="index.html" class="site-title">Stuffolio</a>
+      <div class="header-right">
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="features.html">Features</a>
+          <a href="compare.html">Compare</a>
+          <a href="whats-new.html">What's New</a>
+          <a href="quick-start.html">Quick Start</a>
+          <a href="support.html">Support</a>
+        </nav>
+        <div class="theme-toggle">
+          <span class="theme-icon">☀️</span>
+          <button class="theme-toggle-switch" id="themeToggle" aria-label="Toggle light/dark mode"></button>
+          <span class="theme-icon">🌙</span>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+    <div class="card">
+      <button class="print-btn" onclick="window.print()">
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+        Print This Card
+      </button>
+
+      <div class="print-header">
+        <h1>Stuffolio Quick Reference</h1>
+        <p>Keyboard shortcuts and power user tips for Mac</p>
+      </div>
+
+      <div class="ref-grid">
+        <!-- Global Shortcuts -->
+        <div class="ref-section">
+          <h3><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M6 8h.01M10 8h.01M14 8h.01M18 8h.01M8 12h8M6 16h.01M18 16h.01M10 16h4"/></svg> Global Shortcuts</h3>
+          <ul class="shortcut-list">
+            <li><span class="action">Open Go To Menu</span><span class="keys">⌘ K</span></li>
+            <li><span class="action">Add New Product</span><span class="keys">⌘ N</span></li>
+            <li><span class="action">Open Settings</span><span class="keys">⌘ ,</span></li>
+          </ul>
+
+          <h4>Quick Navigation</h4>
+          <ul class="shortcut-list">
+            <li><span class="action">Dashboard</span><span class="keys">⌘ 1</span></li>
+            <li><span class="action">My Products</span><span class="keys">⌘ 2</span></li>
+            <li><span class="action">Actions</span><span class="keys">⌘ 3</span></li>
+            <li><span class="action">Insights</span><span class="keys">⌘ 4</span></li>
+            <li><span class="action">Stuff Scout</span><span class="keys">⌘ 5</span></li>
+            <li><span class="action">Legacy Wishes</span><span class="keys">⌘ 6</span></li>
+          </ul>
+        </div>
+
+        <!-- Go To Commands -->
+        <div class="ref-section">
+          <h3><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg> Go To Commands (⌘K)</h3>
+
+          <h4>Actions</h4>
+          <ul class="shortcut-list goto-grid">
+            <li>Add New Product</li>
+            <li>Edit Product</li>
+            <li>Duplicate Product</li>
+            <li>Move Products</li>
+            <li>Archive Product</li>
+            <li>Restore from Archive</li>
+            <li>Delete Product</li>
+            <li>Print...</li>
+          </ul>
+
+          <h4>Utilities</h4>
+          <ul class="shortcut-list goto-grid">
+            <li>Export Data</li>
+            <li>Import Data</li>
+            <li>Manage Categories</li>
+          </ul>
+
+          <h4>Reports</h4>
+          <ul class="shortcut-list goto-grid">
+            <li>Value Report</li>
+            <li>Warranty Report</li>
+            <li>Insurance Report</li>
+          </ul>
+        </div>
+
+        <!-- Key Features -->
+        <div class="ref-section">
+          <h3><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> Key Features</h3>
+          <ul class="feature-list">
+            <li><span class="icon">📸</span>Stuff Scout AI — Snap a photo for instant product identification</li>
+            <li><span class="icon">🔐</span>3-Phase Warranties — Track store, manufacturer, and extended coverage</li>
+            <li><span class="icon">💳</span>Apple Wallet — Add warranty cards for quick proof of purchase</li>
+            <li><span class="icon">☁️</span>iCloud Sync — Access inventory on all your Apple devices</li>
+            <li><span class="icon">📊</span>Smart Reports — Value, warranty, and insurance summaries</li>
+            <li><span class="icon">🏠</span>Locations & Rooms — Organize by where items live</li>
+            <li><span class="icon">📎</span>Attachments — Store receipts, manuals, and documents</li>
+            <li><span class="icon">🎁</span>Legacy Wishes — Designate items to loved ones</li>
+          </ul>
+        </div>
+
+        <!-- Power User Tips -->
+        <div class="ref-section">
+          <h3><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg> Power User Tips</h3>
+          <ul class="tips-list">
+            <li><span class="bullet">→</span>Use ⌘K to quickly jump anywhere without leaving your keyboard</li>
+            <li><span class="bullet">→</span>Batch select items in My Products for bulk operations</li>
+            <li><span class="bullet">→</span>Add serial numbers for electronics to help with warranty claims</li>
+            <li><span class="bullet">→</span>Set up maintenance reminders for items needing regular care</li>
+            <li><span class="bullet">→</span>Use categories and locations together for precise organization</li>
+            <li><span class="bullet">→</span>Export to CSV for insurance documentation or spreadsheet analysis</li>
+            <li><span class="bullet">→</span>Archive seasonal items instead of deleting to preserve history</li>
+            <li><span class="bullet">→</span>Enable iCloud sync in Settings to back up and sync across devices</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-note">
+        <strong>stuffolio.app</strong> — Personal inventory management for Apple devices<br>
+        <a href="quick-start.html">Quick Start Guide</a> · <a href="support.html">Support</a> · <a href="mailto:support@stuffolio.app">support@stuffolio.app</a>
+      </div>
+    </div>
+    </main>
+
+    <footer>
+      <div>© <span id="y"></span> Coffee & Code LLC</div>
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="index.html">Home</a>
+        <a href="family-sharing.html">Family Sharing</a>
+        <a href="support.html">Support</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="app-map.html">App Map</a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+
+    // Theme toggle
+    const html = document.documentElement;
+    const toggle = document.getElementById('themeToggle');
+
+    // Check saved preference or system preference
+    const saved = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const theme = saved || (prefersDark ? 'dark' : 'light');
+
+    if (theme === 'light') {
+      html.classList.add('light-mode');
+    } else {
+      toggle.classList.add('dark');
+    }
+
+    toggle.addEventListener('click', () => {
+      const isLight = html.classList.contains('light-mode');
+      if (isLight) {
+        html.classList.remove('light-mode');
+        toggle.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        html.classList.add('light-mode');
+        toggle.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,547 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>What's New — Stuffolio Changelog</title>
+  <meta name="description" content="See what's new in Stuffolio. Version history, new features, improvements, and bug fixes for each release." />
+  <meta name="theme-color" content="#0b1220" />
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://stuffolio.app/whats-new.html" />
+  <meta property="og:title" content="What's New — Stuffolio Changelog" />
+  <meta property="og:description" content="See what's new in Stuffolio. Version history, new features, improvements, and bug fixes." />
+  <meta property="og:image" content="https://stuffolio.app/assets/og-image.png" />
+  <meta property="og:site_name" content="Stuffolio" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="What's New — Stuffolio Changelog" />
+  <meta name="twitter:description" content="See what's new in Stuffolio. Version history, new features, improvements, and bug fixes." />
+  <meta name="twitter:image" content="https://stuffolio.app/assets/og-image.png" />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://stuffolio.app/whats-new.html" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
+
+  <!-- Shared Styles -->
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- Page-specific styles -->
+  <style>
+    :root { --max: 800px }
+
+    .hero-intro {
+      text-align: center;
+      margin-bottom: 8px;
+    }
+    .hero-intro h1 {
+      font-size: 2rem;
+      margin: 0 0 12px;
+    }
+    .hero-intro .tagline {
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .current-version {
+      background: linear-gradient(135deg, rgba(34,197,94,.1), rgba(125,211,252,.08));
+      border: 2px solid rgba(34,197,94,.3);
+      border-radius: 14px;
+      padding: 20px;
+      margin: 24px 0;
+      text-align: center;
+    }
+    .current-version .version-number {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--text);
+      margin: 0 0 4px;
+    }
+    .current-version .version-date {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin: 0;
+    }
+    .current-version .version-status {
+      display: inline-block;
+      background: rgba(34,197,94,.2);
+      color: #22c55e;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 12px;
+      margin-top: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* Release entry */
+    .release {
+      margin: 32px 0;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--line);
+    }
+    .release:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .release-header {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+    .release-version {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text);
+      margin: 0;
+    }
+    .release-date {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+    .release-tag {
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .release-tag.beta {
+      background: rgba(251,191,36,.15);
+      color: #fbbf24;
+    }
+    .release-tag.stable {
+      background: rgba(34,197,94,.15);
+      color: #22c55e;
+    }
+
+    .release-summary {
+      color: var(--muted);
+      margin: 0 0 16px;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    /* Change categories */
+    .change-category {
+      margin: 16px 0;
+    }
+    .change-category h4 {
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin: 0 0 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .change-category.new h4 { color: #22c55e; }
+    .change-category.improved h4 { color: #3b82f6; }
+    .change-category.fixed h4 { color: #f59e0b; }
+    .change-category.changed h4 { color: #a78bfa; }
+
+    .change-category ul {
+      margin: 0;
+      padding-left: 20px;
+      color: var(--muted);
+    }
+    .change-category li {
+      margin: 8px 0;
+      line-height: 1.5;
+    }
+    .change-category li strong {
+      color: var(--text);
+    }
+
+    /* Highlight box for important changes */
+    .highlight-change {
+      background: rgba(125,211,252,.06);
+      border: 1px solid rgba(125,211,252,.2);
+      border-radius: 10px;
+      padding: 14px 16px;
+      margin: 12px 0;
+    }
+    .highlight-change p {
+      margin: 0;
+      color: var(--text);
+      font-size: 0.95rem;
+    }
+    .highlight-change .label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 6px;
+    }
+
+    /* Quick links */
+    .quick-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    .quick-links a {
+      font-size: 0.9rem;
+      color: var(--accent);
+      text-decoration: none;
+      padding: 8px 14px;
+      border: 1px solid rgba(125,211,252,.3);
+      border-radius: 8px;
+      transition: all 0.2s;
+    }
+    .quick-links a:hover {
+      background: rgba(125,211,252,.1);
+      border-color: rgba(125,211,252,.5);
+    }
+
+    /* Archive toggle */
+    .archive-toggle {
+      text-align: center;
+      margin: 24px 0;
+    }
+    .archive-toggle button {
+      background: transparent;
+      border: 1px solid var(--line);
+      color: var(--muted);
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: all 0.2s;
+    }
+    .archive-toggle button:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    .archived-releases {
+      display: none;
+    }
+    .archived-releases.show {
+      display: block;
+    }
+
+    /* Light mode */
+    .light-mode .current-version { background: linear-gradient(135deg, rgba(22,163,74,.08), rgba(0,102,204,.05)); }
+    .light-mode .release-tag.beta { background: rgba(217,119,6,.12); color: #b45309; }
+    .light-mode .release-tag.stable { background: rgba(22,163,74,.12); color: #16a34a; }
+    .light-mode .highlight-change { background: rgba(0,102,204,.05); border-color: rgba(0,102,204,.15); }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="wrap">
+    <header>
+      <a href="index.html" class="site-title">Stuffolio</a>
+      <div class="header-right">
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="features.html">Features</a>
+          <a href="compare.html">Compare</a>
+          <a href="whats-new.html" aria-current="page">What's New</a>
+          <a href="quick-start.html">Quick Start</a>
+          <a href="support.html">Support</a>
+        </nav>
+        <div class="theme-toggle">
+          <span class="theme-icon">☀️</span>
+          <button class="theme-toggle-switch" id="themeToggle" aria-label="Toggle light/dark mode"></button>
+          <span class="theme-icon">🌙</span>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="card">
+        <div class="hero-intro">
+          <h1>What's New</h1>
+          <p class="tagline">Version history and changelog for Stuffolio. See new features, improvements, and fixes in each release.</p>
+        </div>
+
+        <div class="current-version">
+          <p class="version-number">Version 1.0 (Build 18)</p>
+          <p class="version-date">January 22, 2026</p>
+          <span class="version-status">Beta Testing</span>
+        </div>
+
+        <div class="quick-links">
+          <a href="beta-testing-guide.html">Testing Guide</a>
+          <a href="support.html">Report an Issue</a>
+          <a href="features.html">All Features</a>
+        </div>
+      </div>
+
+      <!-- CURRENT RELEASE -->
+      <div class="card">
+        <div class="release">
+          <div class="release-header">
+            <h2 class="release-version">Version 1.0 (Build 18)</h2>
+            <span class="release-date">January 22, 2026</span>
+            <span class="release-tag beta">Beta</span>
+          </div>
+
+          <p class="release-summary">
+            This build focuses on improved Stuff Scout refinement, Legacy Wishes integration in the Edit Item view, and numerous UI polish updates across the app.
+          </p>
+
+          <div class="highlight-change">
+            <p class="label">Highlight</p>
+            <p><strong>Stuff Scout Refinement from Edit View</strong> — Re-analyze existing items using your form data (manufacturer, model, notes) as context. Radio button selection lets you choose what to keep for each field. Adding details you know can dramatically improve valuations.</p>
+          </div>
+
+          <div class="change-category new">
+            <h4>New Features</h4>
+            <ul>
+              <li><strong>Legacy Wishes in Edit Item</strong> — Assign items to beneficiaries directly from the Edit Item view without leaving the form</li>
+              <li><strong>Stuff Scout Refinement</strong> — Re-analyze items from Edit view with form data as context; choose per-field what to keep</li>
+              <li><strong>Receipt Pairing for Scout Results</strong> — Add receipt photo after Scout identification; store, date, and price auto-fill</li>
+              <li><strong>Clickable Source Links</strong> — Tap source links in Recent Sales to view original marketplace listings</li>
+            </ul>
+          </div>
+
+          <div class="change-category improved">
+            <h4>Improvements</h4>
+            <ul>
+              <li><strong>Scout Result Caching</strong> — Recent Scans now cache last 25 analyses for 30-day offline access</li>
+              <li><strong>Scout Bookmarks</strong> — Swipe right on any scan to save permanently; access saved analyses anytime</li>
+              <li><strong>Entry Mode Selection</strong> — New picker when adding items: "Something I just got", "Something I already have", "Multiple identical items", "Record a donation", or "Use Stuff Scout AI"</li>
+              <li><strong>Approximate Date Toggle</strong> — Mark purchase dates as approximate when you don't know the exact date</li>
+              <li><strong>UI Polish</strong> — Numerous interface improvements throughout the app</li>
+            </ul>
+          </div>
+
+          <div class="change-category fixed">
+            <h4>Bug Fixes</h4>
+            <ul>
+              <li>Fixed issue where warranty phase notifications could be delivered at incorrect times</li>
+              <li>Resolved sync conflict dialog not appearing in certain edge cases</li>
+              <li>Fixed keyboard dismissal behavior on iPad when editing notes</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- BUILD 17 -->
+        <div class="release">
+          <div class="release-header">
+            <h2 class="release-version">Version 1.0 (Build 17)</h2>
+            <span class="release-date">January 15, 2026</span>
+            <span class="release-tag beta">Beta</span>
+          </div>
+
+          <p class="release-summary">
+            Introduced Apple Wallet warranty cards, RMA tracking, and customer support interaction logging.
+          </p>
+
+          <div class="change-category new">
+            <h4>New Features</h4>
+            <ul>
+              <li><strong>Apple Wallet Warranty Cards</strong> — Generate Wallet passes for warranties; quick proof of coverage at repair shops</li>
+              <li><strong>RMA & Claim Tracking</strong> — Track warranty claims: RMA numbers, status, shipping labels, timeline</li>
+              <li><strong>Support Interaction Logging</strong> — Log customer service calls: rep names, case numbers, promises, follow-ups</li>
+              <li><strong>Value Snapshots</strong> — Track how inventory value changes over time with automatic snapshots</li>
+              <li><strong>Depreciation Calculator</strong> — Estimate current value based on age and depreciation method</li>
+            </ul>
+          </div>
+
+          <div class="change-category improved">
+            <h4>Improvements</h4>
+            <ul>
+              <li><strong>Warranty Coverage Phases</strong> — Enhanced UI for managing Full → Parts Only → Limited transitions</li>
+              <li><strong>Insurance Profile</strong> — Better coverage gap identification and high-value item flagging</li>
+              <li><strong>Export Options</strong> — Added Excel format; improved PDF layout for insurance documentation</li>
+            </ul>
+          </div>
+
+          <div class="change-category fixed">
+            <h4>Bug Fixes</h4>
+            <ul>
+              <li>Fixed crash when adding warranty with no end date on macOS</li>
+              <li>Resolved iCloud sync delay when adding photos on cellular connection</li>
+              <li>Fixed filter presets not persisting across app restarts</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- BUILD 16 -->
+        <div class="release">
+          <div class="release-header">
+            <h2 class="release-version">Version 1.0 (Build 16)</h2>
+            <span class="release-date">January 8, 2026</span>
+            <span class="release-tag beta">Beta</span>
+          </div>
+
+          <p class="release-summary">
+            Added Siri Shortcuts integration, Audit Mode for inventory verification, and the Duplicate Finder.
+          </p>
+
+          <div class="change-category new">
+            <h4>New Features</h4>
+            <ul>
+              <li><strong>Siri Shortcuts</strong> — Voice control: "Add item to Stuffolio", "Show expiring warranties", "Open Stuff Scout"</li>
+              <li><strong>Audit Mode</strong> — Room-by-room verification that physical inventory matches digital records</li>
+              <li><strong>Duplicate Finder</strong> — Scan inventory for items added twice; compare side-by-side or merge</li>
+              <li><strong>Filter Presets</strong> — Save favorite search filters for one-tap access</li>
+            </ul>
+          </div>
+
+          <div class="change-category improved">
+            <h4>Improvements</h4>
+            <ul>
+              <li><strong>Product Ratings</strong> — Added "Would Buy Again" tracking alongside 1-5 star ratings</li>
+              <li><strong>Repair, Keep, or Replace?</strong> — Now shows brand history from your other items</li>
+              <li><strong>Widgets</strong> — New Lock Screen widget for warranty countdown</li>
+            </ul>
+          </div>
+
+          <div class="change-category fixed">
+            <h4>Bug Fixes</h4>
+            <ul>
+              <li>Fixed Spotlight search not indexing newly added items</li>
+              <li>Resolved issue where maintenance reminders could duplicate</li>
+              <li>Fixed category picker scrolling issue on smaller iPhones</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- ARCHIVE TOGGLE -->
+        <div class="archive-toggle">
+          <button id="archiveToggle">Show Earlier Builds</button>
+        </div>
+
+        <!-- ARCHIVED RELEASES -->
+        <div class="archived-releases" id="archivedReleases">
+
+          <!-- BUILD 15 -->
+          <div class="release">
+            <div class="release-header">
+              <h2 class="release-version">Version 1.0 (Build 15)</h2>
+              <span class="release-date">January 2, 2026</span>
+              <span class="release-tag beta">Beta</span>
+            </div>
+
+            <p class="release-summary">
+              Introduced Legacy Wishes for estate planning and improved multi-device sync conflict resolution.
+            </p>
+
+            <div class="change-category new">
+              <h4>New Features</h4>
+              <ul>
+                <li><strong>Legacy Wishes</strong> — Document who should receive your belongings; assign recipients, set fallbacks</li>
+                <li><strong>Sync Conflict Resolution</strong> — Side-by-side comparison when edits conflict; you decide what to keep</li>
+                <li><strong>Photo Quick Add</strong> — AI extracts product info from photos of products, nameplates, receipts, or packaging</li>
+              </ul>
+            </div>
+
+            <div class="change-category improved">
+              <h4>Improvements</h4>
+            <ul>
+                <li><strong>Dashboard Redesign</strong> — New "Needs Attention" section surfaces items requiring action</li>
+                <li><strong>Quick Actions</strong> — Circular buttons for common tasks on Dashboard</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- BUILD 14 -->
+          <div class="release">
+            <div class="release-header">
+              <h2 class="release-version">Version 1.0 (Build 14)</h2>
+              <span class="release-date">December 20, 2025</span>
+              <span class="release-tag beta">Beta</span>
+            </div>
+
+            <p class="release-summary">
+              Initial public beta release with core inventory features, Stuff Scout AI, and warranty tracking.
+            </p>
+
+            <div class="change-category new">
+              <h4>Initial Features</h4>
+              <ul>
+                <li><strong>Core Inventory</strong> — Add, edit, organize items with photos, categories, and locations</li>
+                <li><strong>Stuff Scout AI</strong> — Identify items from photos; get product details, history, and valuations</li>
+                <li><strong>Warranty Tracking</strong> — Track expiration dates with coverage phases and reminders</li>
+                <li><strong>Maintenance Reminders</strong> — Category-based scheduling for regular upkeep</li>
+                <li><strong>Product Ratings</strong> — Rate items 1-5 stars to remember what's worth buying again</li>
+                <li><strong>iCloud Sync</strong> — Sync across iPhone, iPad, and Mac through your iCloud account</li>
+                <li><strong>Family Sharing</strong> — Share specific items with family members</li>
+                <li><strong>Export</strong> — CSV, PDF formats for insurance documentation</li>
+                <li><strong>Barcode Scanning</strong> — Auto-fill product info by scanning UPC/EAN codes</li>
+                <li><strong>Recall Checker</strong> — Check products against CPSC recall database</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- FEEDBACK CTA -->
+      <div class="card" style="text-align:center;">
+        <h2 style="margin-top:0;">Found an Issue?</h2>
+        <p style="color:var(--muted);">Help us improve Stuffolio by reporting bugs or suggesting features.</p>
+        <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+          <a href="mailto:dev@stuffolio.app?subject=Stuffolio%20Feedback" style="background:var(--accent); color:#000; padding:12px 24px; border-radius:8px; text-decoration:none; font-weight:600;">Send Feedback</a>
+          <a href="beta-testing-guide.html" style="border:1px solid var(--accent); color:var(--accent); padding:12px 24px; border-radius:8px; text-decoration:none;">Testing Guide</a>
+        </div>
+      </div>
+
+    </main>
+
+    <footer>
+      <div>© <span id="y"></span> Coffee & Code LLC</div>
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="index.html">Home</a>
+        <a href="features.html">Features</a>
+        <a href="family-sharing.html">Family Sharing</a>
+        <a href="support.html">Support</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+
+    // Theme toggle
+    const html = document.documentElement;
+    const toggle = document.getElementById('themeToggle');
+
+    const saved = localStorage.getItem('theme');
+    if (saved === 'light') html.classList.add('light-mode');
+    else if (!saved && window.matchMedia('(prefers-color-scheme: light)').matches) {
+      html.classList.add('light-mode');
+    }
+
+    toggle.addEventListener('click', () => {
+      html.classList.toggle('light-mode');
+      localStorage.setItem('theme', html.classList.contains('light-mode') ? 'light' : 'dark');
+    });
+
+    // Archive toggle
+    const archiveToggle = document.getElementById('archiveToggle');
+    const archivedReleases = document.getElementById('archivedReleases');
+
+    archiveToggle.addEventListener('click', () => {
+      archivedReleases.classList.toggle('show');
+      archiveToggle.textContent = archivedReleases.classList.contains('show')
+        ? 'Hide Earlier Builds'
+        : 'Show Earlier Builds';
+    });
+  </script>
+</body>
+</html>
