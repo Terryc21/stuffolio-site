@@ -188,6 +188,14 @@
       },
       {
         "@type": "Question",
+        "name": "How does Voice Input work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Voice Input lets you add items hands-free using natural language. Tap the microphone button, speak naturally (e.g., 'Add coffee maker to kitchen, manufacturer Cuisinart, price 99 dollars'), and Stuffolio parses your words into form fields. Recognizes title, room, manufacturer, price, model number, serial number, and category. Uses on-device speech recognition for privacy."
+        }
+      },
+      {
+        "@type": "Question",
         "name": "What is Audit Mode?",
         "acceptedAnswer": {
           "@type": "Answer",
@@ -533,6 +541,29 @@
           <li><strong>Packaging</strong> — Product box or packaging. AI reads product details, specifications, and barcodes.</li>
         </ul>
         <p style="margin-top:10px;">For most complete records, use a combination: Product photo + Nameplate + Receipt.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>How does Voice Input work?</summary>
+        <p>Voice Input lets you add items hands-free using natural language. Tap the microphone button in Add Item, speak your item details, and Stuffolio parses your words into form fields.</p>
+        <p style="margin-top:10px;"><strong>Example commands:</strong></p>
+        <ul style="margin-top:8px;">
+          <li>"Add coffee maker to kitchen, manufacturer Cuisinart, price 99 dollars"</li>
+          <li>"Add Samsung TV to living room, model QN65S95D"</li>
+          <li>"Add iPhone 15 Pro, brand Apple, serial number ABC123"</li>
+        </ul>
+        <p style="margin-top:10px;"><strong>Recognized fields:</strong></p>
+        <ul style="margin-top:8px;">
+          <li><strong>Title</strong> — The item name (e.g., "coffee maker")</li>
+          <li><strong>Room/Location</strong> — "to kitchen", "in the garage", "to office"</li>
+          <li><strong>Manufacturer/Brand</strong> — "manufacturer Apple", "brand Samsung", "by Sony"</li>
+          <li><strong>Price</strong> — "$99", "99 dollars", "price 1299"</li>
+          <li><strong>Model Number</strong> — "model ABC123", "model number XYZ"</li>
+          <li><strong>Serial Number</strong> — "serial ABC789", "serial number XYZ"</li>
+          <li><strong>Category</strong> — Keywords like "electronics", "furniture", "tools"</li>
+        </ul>
+        <p style="margin-top:10px;"><strong>Privacy:</strong> Voice recognition uses on-device processing (iOS 17+). Your voice data stays on your device — nothing is sent to servers.</p>
+        <p style="margin-top:10px;"><strong>Permissions:</strong> Voice Input requires microphone and speech recognition permissions. You'll be prompted the first time you use it.</p>
       </details>
 
       <details class="faq-item">
