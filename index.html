@@ -58,12 +58,26 @@
     "name": "Coffee & Code LLC",
     "url": "https://stuffolio.app"
   },
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD",
-    "description": "Free with optional Pro subscription"
-  },
+  "offers": [
+    {
+      "@type": "Offer",
+      "price": "9.99",
+      "priceCurrency": "USD",
+      "description": "One-time purchase"
+    },
+    {
+      "@type": "Offer",
+      "price": "2.99",
+      "priceCurrency": "USD",
+      "description": "AI subscription (monthly)"
+    },
+    {
+      "@type": "Offer",
+      "price": "19.99",
+      "priceCurrency": "USD",
+      "description": "AI subscription (annual)"
+    }
+  ],
   "featureList": [
     "AI-powered product identification with Stuff Scout",
     "Voice input with natural language parsing",
@@ -549,8 +563,21 @@
           </div>
 
           <p class="lead" style="font-size:1.15rem;">
-            Stuffolio isn't just another inventory app. It's a <strong>life-of-stuff system</strong> &mdash;
+            Stuffolio isn&#39;t just another inventory app. It&#39;s a <strong>life-of-stuff system</strong> &mdash;
             for buying, owning, repairing, and moving things on. On purpose.
+          </p>
+
+          <p class="lead" style="margin-top:10px; margin-bottom:10px;">
+            Here&#39;s what makes it different:
+          </p>
+          <ul class="feature-bullets" style="margin-top:0;">
+            <li>Built around the full life of your stuff (Acquire &rarr; Own &rarr; Move On)</li>
+            <li>Tracks warranties and coverage that change over time</li>
+            <li>Optional AI that helps you find information when you need it</li>
+            <li>Helps you decide what to do next &mdash; repair it, replace it, donate it, sell it, or pass it on</li>
+          </ul>
+          <p class="small" style="color:var(--muted); margin-top:8px;">
+            Stuffolio is designed for real households, not businesses or collectors.
           </p>
 
           <!-- Lifecycle flow -->
@@ -575,7 +602,7 @@
           <div class="callout">
             <b>Privacy by default.</b> Your data stays on your device (or your iCloud). No ads, no tracking, no profiles &mdash; ever.
             <div style="margin-top:8px;">
-              <b>Optional AI help:</b> Identify items from photos, find manuals and parts, get value estimates &mdash; only when you ask.
+              <b>Optional AI help:</b> Identify items from photos, find manuals and DIY help, DIY help, and parts, get value estimates &mdash; only when you ask.
             </div>
           </div>
         </div>
@@ -732,7 +759,7 @@
               <p class="pillar-tagline">AI-powered insights</p>
               <ul>
                 <li>"What is this?" from a photo</li>
-                <li>Find manuals &amp; replacement parts</li>
+                <li>Find manuals and DIY help &amp; replacement parts</li>
                 <li>Value estimates for selling</li>
                 <li>Smart maintenance reminders by category</li>
                 <li>Repair, Keep, or Replace? advisor</li>
@@ -1099,7 +1126,7 @@
               <h3>🤖 Stuff Scout (AI)</h3>
               <ul>
                 <li>Point at grandma's vase &mdash; get "1920s Depression glass, $45-80"</li>
-                <li>Find manuals, parts, DIY videos</li>
+                <li>Find manuals and DIY help, parts, DIY videos</li>
                 <li>Links to recent sales for price context</li>
               </ul>
             </div>
@@ -1238,7 +1265,7 @@
                 <li>Legacy Wishes</li>
                 <li>Inventory to help document loss</li>
                 <li>iCloud sync</li>
-                <li><strong>Family Sharing included</strong></li>
+                <li><strong>Family Sharing included</strong> (up to 6 family members)</li>
               </ul>
             </div>
 
@@ -1250,12 +1277,16 @@
                 <li>Stuff Scout: "What is this?"</li>
                 <li>Smart categorization</li>
                 <li>Value estimates</li>
-                <li>Find manuals &amp; parts</li>
+                <li>Find manuals and DIY help &amp; parts</li>
                 <li>Maintenance suggestions</li>
-                <li>Per-person subscription</li>
+                <li>Per-person subscription (AI costs scale by usage)</li>
               </ul>
             </div>
           </div>
+
+          <p style="color:var(--muted); text-align:center; margin:14px auto 0; max-width: 760px; font-size: .95rem;">
+            Purchase Stuffolio once and your family can install it through Apple Family Sharing (up to 6 members). AI features are optional and billed per person, because each person’s AI usage has real server costs.
+          </p>
         </div>
       </section>
 
@@ -1308,7 +1339,8 @@
         <a href="app-map.html">App Map</a>
         <a href="story.html">Story</a>
       </div>
-    </footer>
+      <div class="trust-strip"><span>Privacy-first. No ads. No selling your data. Optional AI features.</span></div>
+</footer>
   </div>
 
   <script>
