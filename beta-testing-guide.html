@@ -1,30 +1,425 @@
-Ideas for Using Claude Code with Xcode
-1. Install XcodebuildMCP early
-Install XcodebuildMCP as soon as possible. It can multiply your productivity by automating the clean/build/test cycle after code changes, saving a huge amount of time and friction.
-You don’t need to install it manually—simply instruct Claude Code to obtain and install XcodebuildMCP for you.
-2. Create a CLAUDE.md file at the project root
-Create a CLAUDE.md document and place it in the root directory of your project. Claude Code reads this at the beginning of every session and uses it as persistent project context.
-In CLAUDE.md, define key parameters such as:
-    • Tooling/versions: You are building an app using Xcode 26 on macOS 26. Without this, Claude may give faulty guidance (for example, telling you to find a menu item that has moved or been renamed).
-    • Platforms: The app is multi-platform (e.g., macOS, iOS, watchOS, visionOS), so it generates accurate platform-specific logic and #if / #else suggestions.
-    • Compatibility: The app should remain backward compatible with all macOS and iOS versions that are SwiftData-compatible (for example, iOS 17 and macOS 14).
-    • Rules/decisions: Any architectural or policy decisions already made (accessibility standards, data model constraints, privacy rules), so you don’t have to restate them constantly.
-As you reach meaningful milestones (for example, committing to WCAG accessibility or a specific data-sync strategy), explicitly instruct Claude Code to add those decisions to CLAUDE.md.
-3. Periodically request a “Report Card” deep review
-Every so often (especially after major changes), ask Claude Code to review your project and generate a comprehensive Report Card.
-Ask for a structured report covering:
-    • Security risks
-    • UI and accessibility
-    • Architecture and workflow
-    • Performance and refactoring opportunities
-Explicitly instruct it to rely on the actual source code, not just markdown or documentation. Then aim to improve the lowest grades and “earn” all A’s on the next report card.
-4. Be intentional about prompt scope
-Know when to ask:
-    • Specific questions: “Why this approach instead of that?”
-    • Exploratory questions: “What are your recommendations for improving ___?”
-Switching deliberately between the two often yields better insights than staying in either open opr closed ended prompts.
-5. Cross-check Claude Code with other AI tools
-Try giving the same prompt to Claude Code and ChatGPT (or another AI agent). Then:
-    1. Copy ChatGPT’s response back into Claude Code
-    2. Ask: “What do you think of ChatGPT’s response to ___?”
-The results can be surprisingly valuable—ranging from sharp criticism to genuine praise. You can then ask Claude Code to integrate the strongest parts of ChatGPT’s response into its own solution.  Claude Codes responses to me doing this has ranged from “GBT is hallucinating, the only reason to what GBT is recommending do this is for resume building” to “GBT’s analysis in insightful and much better thought out than my own in this regard...”
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Beta Testing Guide — Stuffolio</title>
+  <meta name="description" content="Beta testing guide for Stuffolio. Learn what to test, how to report feedback, and help shape the future of personal inventory management." />
+  <meta name="theme-color" content="#0b1220" />
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://stuffolio.app/beta-testing-guide.html" />
+  <meta property="og:title" content="Beta Testing Guide — Stuffolio" />
+  <meta property="og:description" content="Beta testing guide for Stuffolio. Learn what to test, how to report feedback, and help shape the future of personal inventory management." />
+  <meta property="og:image" content="https://stuffolio.app/assets/og-image.png" />
+  <meta property="og:site_name" content="Stuffolio" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Beta Testing Guide — Stuffolio" />
+  <meta name="twitter:description" content="Beta testing guide for Stuffolio. Learn what to test, how to report feedback, and help shape the future of personal inventory management." />
+  <meta name="twitter:image" content="https://stuffolio.app/assets/og-image.png" />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://stuffolio.app/beta-testing-guide.html" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
+
+  <!-- Shared Styles -->
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- Page-specific styles -->
+  <style>
+    :root { --max: 900px }
+    h1 { font-size:2.2rem; margin:0 0 8px }
+    h2 { font-size:1.4rem; margin:28px 0 12px; color:var(--accent) }
+    h3 { font-size:1.1rem; margin:20px 0 8px; color:var(--text) }
+    p { margin:0 0 14px; color:var(--muted); line-height:1.6 }
+    a { color:var(--accent) }
+    a:hover { color:var(--text) }
+    ul, ol { color:var(--muted); line-height:1.6 }
+    li { margin:6px 0 }
+
+    .hero-box {
+      background: linear-gradient(135deg, rgba(167,139,250,.12), rgba(125,211,252,.08));
+      border: 1px solid rgba(167,139,250,.3);
+      border-radius: 14px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    .hero-box p { margin:0; color:var(--text) }
+
+    .priority-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+      margin: 16px 0;
+    }
+    .priority-card {
+      background: rgba(255,255,255,.03);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 16px;
+    }
+    .priority-card h4 {
+      margin: 0 0 8px;
+      font-size: 1rem;
+      color: var(--text);
+    }
+    .priority-card.high { border-left: 4px solid #ef4444; }
+    .priority-card.medium { border-left: 4px solid #f59e0b; }
+    .priority-card.low { border-left: 4px solid #22c55e; }
+
+    .feedback-box {
+      background: rgba(125,211,252,.08);
+      border: 1px solid rgba(125,211,252,.25);
+      border-radius: 12px;
+      padding: 16px;
+      margin: 16px 0;
+    }
+    .feedback-box a { font-weight: 600 }
+
+    .warning-box {
+      background: rgba(251,191,36,.08);
+      border: 1px solid rgba(251,191,36,.3);
+      border-radius: 12px;
+      padding: 16px;
+      margin: 16px 0;
+    }
+    .warning-box strong { color: var(--text) }
+
+    .checklist {
+      list-style: none;
+      padding: 0;
+    }
+    .checklist li {
+      padding: 8px 0 8px 28px;
+      position: relative;
+      border-bottom: 1px solid var(--line);
+    }
+    .checklist li:last-child { border-bottom: none }
+    .checklist li::before {
+      content: "☐";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
+
+    /* Light mode overrides */
+    .light-mode .hero-box { background: linear-gradient(135deg, rgba(124,58,237,.08), rgba(0,102,204,.06)) !important }
+    .light-mode .priority-card { background: rgba(0,0,0,.02) !important }
+    .light-mode .feedback-box { background: rgba(0,102,204,.06) !important }
+    .light-mode .warning-box { background: rgba(251,191,36,.06) !important }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="wrap">
+    <header>
+      <a href="index.html" class="site-title">Stuffolio</a>
+      <div class="header-right">
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="features.html">Features</a>
+          <a href="compare.html">Compare</a>
+          <a href="quick-start.html">Quick Start</a>
+          <a href="support.html">Support</a>
+        </nav>
+        <div class="theme-toggle">
+          <span class="theme-icon">☀️</span>
+          <button class="theme-toggle-switch" id="themeToggle" aria-label="Toggle light/dark mode"></button>
+          <span class="theme-icon">🌙</span>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="card">
+        <h1>Beta Testing Guide</h1>
+        <p class="lead">Thank you for helping test Stuffolio! Your feedback shapes the app before public release.</p>
+
+        <div class="hero-box">
+          <p><strong>Current Beta:</strong> Version 1.0 (Build 21) — January 30, 2026</p>
+        </div>
+      </div>
+
+      <!-- GETTING STARTED -->
+      <div class="card">
+        <h2 style="margin-top:0">Getting Started</h2>
+
+        <h3>Install via TestFlight</h3>
+        <ol>
+          <li>Install Apple's <a href="https://apps.apple.com/app/testflight/id899247664" target="_blank" rel="noopener">TestFlight</a> app on your iPhone, iPad, or Mac.</li>
+          <li>Tap the <a href="https://testflight.apple.com/join/TWgM95st" target="_blank" rel="noopener">Stuffolio beta invite link</a>.</li>
+          <li>Install Stuffolio and start testing!</li>
+        </ol>
+
+        <h3>First Steps</h3>
+        <ul>
+          <li><strong>Add a few items</strong> — Start with 3-5 items you know well (electronics, appliances, tools)</li>
+          <li><strong>Try different entry methods</strong> — Manual entry, barcode scan, Photo Quick Add, voice input</li>
+          <li><strong>Enable iCloud sync</strong> (optional) — Test syncing between devices if you have multiple Apple devices</li>
+          <li><strong>Explore AI features</strong> — Try Stuff Scout, AI Product Assistant, and the new Current Price lookup</li>
+        </ul>
+
+        <div class="warning-box">
+          <strong>Important:</strong> Beta builds expire after 90 days. TestFlight will notify you when updates are available. Always keep the app updated to the latest beta build.
+        </div>
+      </div>
+
+      <!-- WHAT TO TEST -->
+      <div class="card">
+        <h2 style="margin-top:0">What to Test</h2>
+        <p>Focus your testing on these priority areas:</p>
+
+        <div class="priority-grid">
+          <div class="priority-card high">
+            <h4>High Priority</h4>
+            <ul style="margin:0; padding-left:18px;">
+              <li><strong>Price Watch</strong> — New feature! Track prices, set alerts, view history charts</li>
+              <li><strong>Data integrity</strong> — Items save correctly, no data loss</li>
+              <li><strong>iCloud sync</strong> — Changes sync between devices</li>
+              <li><strong>Crashes</strong> — Report any app crashes immediately</li>
+            </ul>
+          </div>
+
+          <div class="priority-card medium">
+            <h4>Medium Priority</h4>
+            <ul style="margin:0; padding-left:18px;">
+              <li><strong>AI features</strong> — Stuff Scout accuracy, AI Assistant responses</li>
+              <li><strong>Barcode scanning</strong> — Product lookup accuracy</li>
+              <li><strong>Export functionality</strong> — CSV, PDF, Excel exports</li>
+              <li><strong>Warranty tracking</strong> — Notifications, coverage phases</li>
+            </ul>
+          </div>
+
+          <div class="priority-card low">
+            <h4>Lower Priority</h4>
+            <ul style="margin:0; padding-left:18px;">
+              <li><strong>UI polish</strong> — Visual glitches, alignment issues</li>
+              <li><strong>Accessibility</strong> — VoiceOver, Dynamic Type</li>
+              <li><strong>Widgets</strong> — Home Screen, Lock Screen widgets</li>
+              <li><strong>Siri Shortcuts</strong> — Voice command functionality</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- NEW IN THIS BUILD -->
+      <div class="card">
+        <h2 style="margin-top:0">New in Build 21</h2>
+        <p>Please focus extra attention on these new features:</p>
+
+        <h3>Price Watch (Replacement Cost Tracker)</h3>
+        <ul>
+          <li>Enable Price Watch on any item to track current replacement costs</li>
+          <li>Test price alerts — set a target price and verify notifications work</li>
+          <li>Check price history charts for visual accuracy</li>
+          <li>Try multiple price sources: manual entry, Stuff Scout, barcode scan, AI "Current Price"</li>
+        </ul>
+
+        <h3>AI "Current Price" Query</h3>
+        <ul>
+          <li>Open AI Product Assistant on any item</li>
+          <li>Try the new "Current Price" query type</li>
+          <li>Verify it returns accurate retailer prices</li>
+          <li>Test "Apply to Price Watch" button</li>
+        </ul>
+
+        <h3>Stuff Scout → Price Watch Integration</h3>
+        <ul>
+          <li>Use Stuff Scout to analyze an item</li>
+          <li>When applying results, check for "Update Price Watch" option</li>
+          <li>Verify marketplace prices are correctly saved to Price Watch</li>
+        </ul>
+      </div>
+
+      <!-- TESTING CHECKLIST -->
+      <div class="card">
+        <h2 style="margin-top:0">Testing Checklist</h2>
+        <p>Use this checklist to ensure comprehensive coverage:</p>
+
+        <h3>Core Functionality</h3>
+        <ul class="checklist">
+          <li>Add items using different methods (manual, barcode, photo, voice)</li>
+          <li>Edit item details and verify changes save</li>
+          <li>Delete an item and confirm it's removed</li>
+          <li>Search for items by name, category, location</li>
+          <li>Filter items using the filter menu</li>
+          <li>Export inventory to CSV, PDF, or Excel</li>
+        </ul>
+
+        <h3>Price Watch</h3>
+        <ul class="checklist">
+          <li>Enable Price Watch on an item</li>
+          <li>Add a price manually</li>
+          <li>Set a price alert with target price</li>
+          <li>View price history chart</li>
+          <li>Use AI "Current Price" to fetch prices</li>
+          <li>Apply Stuff Scout value to Price Watch</li>
+        </ul>
+
+        <h3>AI Features</h3>
+        <ul class="checklist">
+          <li>Use Stuff Scout to identify an item from photo</li>
+          <li>Refine Scout results with additional details</li>
+          <li>Use AI Product Assistant for manual/parts lookup</li>
+          <li>Try Current Price query</li>
+          <li>Verify AI response caching works offline</li>
+        </ul>
+
+        <h3>Sync & Multi-Device</h3>
+        <ul class="checklist">
+          <li>Enable iCloud sync</li>
+          <li>Add item on one device, verify it appears on another</li>
+          <li>Edit same item on two devices, test conflict resolution</li>
+          <li>Test with airplane mode / offline usage</li>
+        </ul>
+      </div>
+
+      <!-- HOW TO REPORT FEEDBACK -->
+      <div class="card">
+        <h2 style="margin-top:0">How to Report Feedback</h2>
+
+        <div class="feedback-box">
+          <p style="margin:0"><strong>Primary:</strong> Use TestFlight's built-in feedback — shake your device or go to TestFlight → Stuffolio → Send Beta Feedback</p>
+        </div>
+
+        <div class="feedback-box">
+          <p style="margin:0"><strong>Email:</strong> <a href="mailto:beta@stuffolio.app">beta@stuffolio.app</a> — For detailed reports, screenshots, or feature requests</p>
+        </div>
+
+        <h3>What to Include in Bug Reports</h3>
+        <ul>
+          <li><strong>What you were doing</strong> — Steps to reproduce the issue</li>
+          <li><strong>What you expected</strong> — The behavior you expected</li>
+          <li><strong>What actually happened</strong> — The actual result (crash, error, wrong data, etc.)</li>
+          <li><strong>Device info</strong> — iPhone/iPad/Mac model, iOS/macOS version</li>
+          <li><strong>Screenshots/screen recordings</strong> — Visual evidence is extremely helpful</li>
+        </ul>
+
+        <h3>Feature Requests</h3>
+        <p>Have an idea for Stuffolio? Tell us:</p>
+        <ul>
+          <li>What problem are you trying to solve?</li>
+          <li>How do you currently work around it?</li>
+          <li>How would the ideal solution work?</li>
+        </ul>
+      </div>
+
+      <!-- KNOWN ISSUES -->
+      <div class="card">
+        <h2 style="margin-top:0">Known Issues</h2>
+        <p>These issues are already identified and being worked on:</p>
+
+        <ul>
+          <li><strong>Price Watch charts</strong> — Charts may flicker briefly when first loading on older devices</li>
+          <li><strong>iPad Split View</strong> — Some layout issues when resizing in Split View mode</li>
+          <li><strong>Offline AI caching</strong> — Cached responses occasionally show stale provider info</li>
+        </ul>
+
+        <p style="font-size:0.9rem; color:var(--muted);">You don't need to report these — we're already on it!</p>
+      </div>
+
+      <!-- EXPECTATIONS -->
+      <div class="card">
+        <h2 style="margin-top:0">Beta Tester Expectations</h2>
+
+        <h3>What We Ask of You</h3>
+        <ul>
+          <li><strong>Use the app regularly</strong> — Daily or weekly usage helps find real-world issues</li>
+          <li><strong>Report issues promptly</strong> — The sooner we know, the sooner we can fix</li>
+          <li><strong>Keep the app updated</strong> — Install new beta builds when available</li>
+          <li><strong>Be patient</strong> — Beta software has bugs; that's why we're testing</li>
+          <li><strong>Keep it confidential</strong> — Don't share screenshots or details publicly until launch</li>
+        </ul>
+
+        <h3>What You Can Expect from Us</h3>
+        <ul>
+          <li><strong>Regular updates</strong> — New builds every 1-2 weeks during active development</li>
+          <li><strong>Responsiveness</strong> — We read every piece of feedback</li>
+          <li><strong>Credit</strong> — Beta testers who contribute significantly will be acknowledged</li>
+          <li><strong>Transparency</strong> — We'll share what we're working on and why</li>
+        </ul>
+
+        <div class="warning-box">
+          <strong>Data Safety:</strong> While we've designed Stuffolio to protect your data, beta software can have unexpected issues. We recommend using test data or non-critical items during early beta testing. Your real inventory data syncs to your personal iCloud — we never have access to it.
+        </div>
+      </div>
+
+      <!-- RESOURCES -->
+      <div class="card">
+        <h2 style="margin-top:0">Resources</h2>
+        <ul>
+          <li><a href="quick-start.html">Quick Start Guide</a> — Get up and running fast</li>
+          <li><a href="features.html">Features Overview</a> — See everything Stuffolio can do</li>
+          <li><a href="app-map.html">App Map</a> — Visual guide to all screens and features</li>
+          <li><a href="whats-new.html">What's New</a> — Changelog for each build</li>
+          <li><a href="support.html">Support & FAQ</a> — Common questions answered</li>
+          <li><a href="Stuffolio_Users_Manual.html">Full User Manual</a> — Complete reference</li>
+        </ul>
+      </div>
+
+      <!-- THANK YOU -->
+      <div class="card" style="text-align:center;">
+        <h2 style="margin-top:0">Thank You!</h2>
+        <p>Your testing helps make Stuffolio better for everyone. We genuinely appreciate your time and feedback.</p>
+        <p style="margin-bottom:0;">— The Stuffolio Team</p>
+      </div>
+    </main>
+
+    <footer>
+      <div>© <span id="y"></span> Coffee & Code LLC</div>
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="index.html">Home</a>
+        <span style="color:var(--muted)">Docs:</span>
+        <a href="Stuffolio_Quick_Start_Guide.html">Quick Start</a>
+        <a href="Stuffolio_Users_Manual.html">Full Manual</a>
+        <span style="color:var(--line)">|</span>
+        <a href="family-sharing.html">Family Sharing</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="app-map.html">App Map</a>
+        <a href="story.html">Story</a>
+      </div>
+      <div class="trust-strip"><span>Privacy-first. No ads. No selling your data. Optional AI features.</span></div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+
+    // Theme toggle
+    const html = document.documentElement;
+    const toggle = document.getElementById('themeToggle');
+
+    const saved = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const theme = saved || (prefersDark ? 'dark' : 'light');
+
+    if (theme === 'light') {
+      html.classList.add('light-mode');
+    } else {
+      toggle.classList.add('dark');
+    }
+
+    toggle.addEventListener('click', () => {
+      const isLight = html.classList.contains('light-mode');
+      if (isLight) {
+        html.classList.remove('light-mode');
+        toggle.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        html.classList.add('light-mode');
+        toggle.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+      }
+    });
+  </script>
+</body>
+</html>
