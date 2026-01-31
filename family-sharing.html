@@ -225,45 +225,103 @@
       </div>
     </div>
 
-    <!-- Item Sharing Section (NEW) -->
+    <!-- Household Sharing Section -->
     <div class="card">
-      <h2 style="margin-top:0">🔗 Share Specific Items <span style="background: linear-gradient(135deg, #a78bfa, #7dd3fc); color: #0b1220; font-size: 0.7rem; padding: 3px 10px; border-radius: 10px; margin-left: 8px; font-weight: 700;">NEW</span></h2>
-      <p>Beyond app sharing, you can now share specific items with family members through CloudKit.</p>
+      <h2 style="margin-top:0">🏠 Household Sharing <span style="background: linear-gradient(135deg, #a78bfa, #7dd3fc); color: #0b1220; font-size: 0.7rem; padding: 3px 10px; border-radius: 10px; margin-left: 8px; font-weight: 700;">NEW</span></h2>
+      <p>Create a shared household where family members can view and manage shared items together. Real-time sync keeps everyone updated.</p>
 
       <div class="highlight">
-        <p><strong>How it works:</strong> Select any item and tap Share. Invite family members by email. They see the item in their "Shared with Me" section.</p>
+        <p><strong>How it works:</strong> One person creates a household and invites family members. Mark any item as "Shared with Household" and it instantly appears on everyone's devices with full sync.</p>
       </div>
+
+      <h3>Setting Up a Household</h3>
+      <ol style="color: var(--muted); line-height: 1.8;">
+        <li>Go to <strong>Settings → Data → Family Sharing</strong></li>
+        <li>Tap <strong>Create Household</strong> (or <strong>Start Sharing</strong>)</li>
+        <li>Enter the email addresses of family members to invite</li>
+        <li>Choose their permission level: <strong>Viewer</strong>, <strong>Editor</strong>, or <strong>Admin</strong></li>
+        <li>Tap <strong>Send Invitation</strong></li>
+      </ol>
+
+      <h3>Joining a Household</h3>
+      <ol style="color: var(--muted); line-height: 1.8;">
+        <li>When someone invites you, you'll receive a notification</li>
+        <li>Tap the notification or go to <strong>Settings → Data → Family Sharing</strong></li>
+        <li>Tap <strong>Accept Invitation</strong></li>
+        <li>Shared items will sync to your device automatically</li>
+      </ol>
 
       <div class="feature-grid">
         <div class="feature-item">
-          <div class="icon">📤</div>
-          <h4>Share Any Item</h4>
-          <p>Share a specific item with one or more family members. They don't need to add it manually.</p>
+          <div class="icon">🔄</div>
+          <h4>Real-Time Sync</h4>
+          <p>Changes sync instantly across all family members' devices. Add an item on your phone, see it on your spouse's iPad.</p>
         </div>
         <div class="feature-item">
-          <div class="icon">👁️</div>
-          <h4>Permission Levels</h4>
-          <p>Choose <strong>View Only</strong> or <strong>Can Edit</strong> for each person you share with.</p>
+          <div class="icon">👤</div>
+          <h4>Owner Attribution</h4>
+          <p>See who added or last modified each item. Know that "Kitchen Mixer" was added by Mom on her iPhone.</p>
         </div>
         <div class="feature-item">
-          <div class="icon">📥</div>
-          <h4>Shared with Me</h4>
-          <p>Items shared by others appear in a dedicated section. Easy to find, separate from your own inventory.</p>
+          <div class="icon">⚡</div>
+          <h4>Offline Support</h4>
+          <p>Make changes while offline. They sync automatically when you're back online — no data loss.</p>
         </div>
         <div class="feature-item">
-          <div class="icon">🔒</div>
-          <h4>You Control Access</h4>
-          <p>Remove participants or stop sharing entirely at any time. Your data, your rules.</p>
+          <div class="icon">🔀</div>
+          <h4>Conflict Resolution</h4>
+          <p>If two people edit the same item simultaneously, you can choose which version to keep or merge changes.</p>
         </div>
       </div>
 
+      <h3>Permission Levels</h3>
+      <table class="pricing-table">
+        <tr>
+          <th>Role</th>
+          <th>Can View</th>
+          <th>Can Edit</th>
+          <th>Can Manage Members</th>
+        </tr>
+        <tr>
+          <td><strong>Viewer</strong></td>
+          <td><span class="check">✓</span></td>
+          <td>—</td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td><strong>Editor</strong></td>
+          <td><span class="check">✓</span></td>
+          <td><span class="check">✓</span></td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td><strong>Admin</strong></td>
+          <td><span class="check">✓</span></td>
+          <td><span class="check">✓</span></td>
+          <td><span class="check">✓</span></td>
+        </tr>
+      </table>
+
+      <h3>Sharing an Item</h3>
+      <ol style="color: var(--muted); line-height: 1.8;">
+        <li>Open any item in your inventory</li>
+        <li>Scroll to the <strong>Sharing</strong> section</li>
+        <li>Toggle <strong>Share with Household</strong> on</li>
+        <li>The item immediately syncs to all household members</li>
+      </ol>
+
       <h3>Great For</h3>
       <ul style="color: var(--muted);">
-        <li><strong>Household items</strong> — Share the TV, appliances, or furniture with your spouse</li>
-        <li><strong>Shared vehicles</strong> — Both drivers can track maintenance and warranty</li>
-        <li><strong>Gifts</strong> — Share warranty info with the recipient</li>
-        <li><strong>Lending</strong> — Keep track of who has what</li>
+        <li><strong>Household appliances</strong> — Everyone tracks the fridge, washer, and HVAC warranties</li>
+        <li><strong>Shared vehicles</strong> — Both drivers see maintenance history and warranty status</li>
+        <li><strong>Home electronics</strong> — Share the TV, sound system, and gaming console info</li>
+        <li><strong>Tools and equipment</strong> — Keep the whole family informed about shared resources</li>
+        <li><strong>Furniture</strong> — Track warranties on the couch, dining table, and mattresses together</li>
       </ul>
+
+      <div class="highlight-yellow">
+        <p><strong>Privacy Note:</strong> Only items you explicitly mark as "Shared with Household" are visible to others. Your personal items remain private unless you choose to share them.</p>
+      </div>
     </div>
 
     <!-- Legacy Wishes Section -->
@@ -350,13 +408,33 @@
       </details>
 
       <details class="faq-item">
-        <summary>How do I share a specific item with family?</summary>
-        <p>Open the item, tap the Share button, and invite family members by email. They'll receive an invitation and see the item in their "Shared with Me" section. You can choose View Only or Can Edit permissions.</p>
+        <summary>How do I create a household?</summary>
+        <p>Go to <strong>Settings → Data → Family Sharing</strong> and tap <strong>Create Household</strong>. Enter the email addresses of family members you want to invite, choose their permission level (Viewer, Editor, or Admin), and send the invitation.</p>
       </details>
 
       <details class="faq-item">
-        <summary>What's the difference between Family Sharing and Item Sharing?</summary>
-        <p><strong>Family Sharing</strong> (Apple) lets family members download the app for free — each person has their own private inventory. <strong>Item Sharing</strong> (CloudKit) lets you share specific items with family members so they can view or edit them.</p>
+        <summary>How do I share an item with my household?</summary>
+        <p>Open any item, scroll to the <strong>Sharing</strong> section, and toggle <strong>Share with Household</strong> on. The item will instantly sync to all household members' devices.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>What's the difference between Apple Family Sharing and Household Sharing?</summary>
+        <p><strong>Apple Family Sharing</strong> lets family members download the app for free — each person has their own private inventory. <strong>Household Sharing</strong> (built into Stuffolio) lets you create a shared pool of items that sync in real-time across all members' devices.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>What happens if two people edit the same item at once?</summary>
+        <p>Stuffolio detects conflicts and shows you both versions. You can choose to keep one version, the other, or merge the changes together. No data is lost.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Can I see who added or modified an item?</summary>
+        <p>Yes! Every shared item shows owner attribution — you can see who originally shared it and who last modified it, including the device name and timestamp.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>What happens if I'm offline?</summary>
+        <p>You can still view and edit shared items while offline. Changes queue up automatically and sync when you're back online. If there's a conflict with someone else's changes, you'll be prompted to resolve it.</p>
       </details>
 
       <details class="faq-item">
