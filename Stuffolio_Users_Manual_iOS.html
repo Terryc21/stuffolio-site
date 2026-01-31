@@ -2576,61 +2576,104 @@
 
         <section id="family-sharing">
             <h2>Family/Household Sharing</h2>
-            <p>Share your product inventory with family members or household members using CloudKit sharing. Everyone can view and manage shared items collaboratively.</p>
+            <p>Create a shared household where family members can view and manage shared items together. Real-time sync powered by CloudKit keeps everyone updated instantly.</p>
 
             <h3>Requirements</h3>
             <ul>
-                <li>iCloud Sync must be enabled</li>
+                <li>iCloud Sync must be enabled in Settings</li>
                 <li>All participants need Apple IDs and iCloud accounts</li>
-                <li>iOS 17.6 or later on all devices</li>
+                <li>iOS 17.0 or later on all devices</li>
             </ul>
 
-            <h3>Sharing Your Products</h3>
+            <h3>Creating a Household (Owner)</h3>
             <ol>
-                <li>Go to <strong>Settings > Data > Family Sharing</strong></li>
-                <li>Tap <strong>Start Sharing</strong></li>
+                <li>Go to <strong>Settings → Data → Family Sharing</strong></li>
+                <li>Tap <strong>Create Household</strong> (or <strong>Start Sharing</strong>)</li>
                 <li>Enter the email address of the person you want to invite</li>
                 <li>Select their permission level:
                     <ul>
-                        <li><strong>View Only</strong> — Can see products but not edit</li>
-                        <li><strong>Can Edit</strong> — Can add, edit, and delete products</li>
+                        <li><strong>Viewer</strong> — Can see shared products but not edit</li>
+                        <li><strong>Editor</strong> — Can add, edit, and delete shared products</li>
                         <li><strong>Admin</strong> — Full control including managing other members</li>
                     </ul>
                 </li>
                 <li>Tap <strong>Send Invitation</strong></li>
             </ol>
 
-            <h3>Managing Shared Users</h3>
-            <p>In <strong>Settings > Data > Family Sharing</strong>, you can:</p>
+            <h3>Joining a Household (Participant)</h3>
+            <ol>
+                <li>You'll receive a notification or email when someone invites you</li>
+                <li>Tap the invitation link, or go to <strong>Settings → Data → Family Sharing</strong></li>
+                <li>Tap <strong>Accept Invitation</strong></li>
+                <li>Shared products will automatically sync to your device</li>
+            </ol>
+
+            <h3>Sharing an Item with Your Household</h3>
+            <ol>
+                <li>Open any item in your inventory</li>
+                <li>Scroll down to find the <strong>Sharing</strong> section</li>
+                <li>Toggle <strong>Share with Household</strong> on</li>
+                <li>The item immediately syncs to all household members</li>
+            </ol>
+            <p>To stop sharing an item, toggle the switch off. The item remains in your inventory but is removed from other members' shared items.</p>
+
+            <h3>Managing Household Members</h3>
+            <p>In <strong>Settings → Data → Family Sharing</strong>, household owners and admins can:</p>
             <ul>
                 <li>See all family members and their permission levels</li>
                 <li>Change someone's permission level (tap their name)</li>
                 <li>Remove a member (swipe left, tap <strong>Remove</strong>)</li>
                 <li>View pending invitations</li>
+                <li>Leave the household (if you're a participant)</li>
             </ul>
-
-            <h3>Accepting a Sharing Invitation</h3>
-            <ol>
-                <li>You'll receive a notification when someone invites you</li>
-                <li>Tap the notification or go to <strong>Settings > Data > Family Sharing</strong></li>
-                <li>Tap <strong>Accept Invitation</strong></li>
-                <li>The shared products will appear in your inventory</li>
-            </ol>
 
             <h3>Understanding Shared Items</h3>
             <ul>
-                <li>Shared products show a <strong>sharing indicator</strong> badge</li>
-                <li>Changes sync to all family members automatically</li>
-                <li>The original owner retains ultimate control</li>
-                <li>Deleted items are removed for everyone</li>
+                <li>Shared products display a <strong>household badge</strong> icon</li>
+                <li>You can see <strong>who added</strong> each item and from which device</li>
+                <li>Changes sync in <strong>real-time</strong> to all family members</li>
+                <li>The <strong>"Added by"</strong> label shows the original sharer's name</li>
+                <li><strong>"Last modified by"</strong> shows who made the most recent change</li>
+            </ul>
+
+            <h3>Real-Time Sync</h3>
+            <p>Household Sharing uses CloudKit push notifications for real-time updates:</p>
+            <ul>
+                <li>When someone adds or edits a shared item, your device updates within seconds</li>
+                <li>A sync indicator appears briefly when changes are being applied</li>
+                <li>Pull down on the shared items list to manually refresh</li>
+            </ul>
+
+            <h3>Offline Support</h3>
+            <p>You can work with shared items even without internet:</p>
+            <ul>
+                <li>View and edit shared items while offline</li>
+                <li>Changes are queued automatically</li>
+                <li>When you're back online, changes sync in the background</li>
+                <li>If someone else edited the same item while you were offline, you'll see a conflict prompt</li>
+            </ul>
+
+            <h3>Conflict Resolution</h3>
+            <p>If two people edit the same item at the same time, Stuffolio detects the conflict:</p>
+            <ul>
+                <li>A notification alerts you that a conflict was detected</li>
+                <li>You can view both versions side-by-side</li>
+                <li>Choose to:
+                    <ul>
+                        <li><strong>Keep Local</strong> — Use your version</li>
+                        <li><strong>Keep Remote</strong> — Use the other person's version</li>
+                        <li><strong>Merge</strong> — Combine changes intelligently</li>
+                        <li><strong>Keep Both</strong> — Create a duplicate item</li>
+                    </ul>
+                </li>
             </ul>
 
             <div class="tip">
-                <strong>Tip:</strong> Use Family Sharing to let everyone in your household track shared appliances, tools, and vehicles. Each person can add their own items while also seeing the family inventory.
+                <strong>Tip:</strong> Use Household Sharing for appliances, vehicles, furniture, and electronics that the whole family uses. Each person can also keep their own personal items private.
             </div>
 
             <div class="warning">
-                <strong>Important:</strong> Only share with people you trust. Members with edit permissions can modify or delete shared products.
+                <strong>Important:</strong> Only share with people you trust. Members with Editor permissions can modify or delete shared products. Only items you explicitly mark as "Share with Household" are visible to others.
             </div>
             <a href="#toc" class="back-to-top">↑ Back to Contents</a>
         </section>
