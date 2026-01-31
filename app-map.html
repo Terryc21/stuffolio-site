@@ -332,6 +332,8 @@
     <header>
       <a href="index.html" class="site-title">Stuffolio</a>
       <div class="header-right">
+        <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+
         <nav>
           <a href="index.html">Home</a>
           <a href="features.html">Features</a>
@@ -340,6 +342,13 @@
           <a href="quick-start.html">Quick Start</a>
           <a href="support.html">Support</a>
         </nav>
+
+        <button class="search-toggle" aria-label="Search documentation">
+          <span class="search-icon">🔍</span>
+          <span class="search-label">Search</span>
+          <kbd class="search-kbd">⌘K</kbd>
+        </button>
+
         <div class="theme-toggle">
           <span class="theme-icon">☀️</span>
           <button class="theme-toggle-switch" id="themeToggle" aria-label="Toggle light/dark mode"></button>
@@ -1254,6 +1263,15 @@
     </main>
 
     <footer>
+      <!-- BETA-PERIOD-ONLY: Change to App Store badge after launch -->
+      <div class="download-cta">
+        <a href="https://testflight.apple.com/join/TWgM95st" class="download-badge testflight">
+          <img src="assets/testflight-badge.svg" alt="Download on TestFlight" width="135" height="40" onerror="this.outerHTML='<span class=badge-fallback>Join TestFlight Beta</span>'" />
+        </a>
+        <span class="download-tagline">Free beta • iPhone, iPad, Mac</span>
+      </div>
+      <!-- END BETA-PERIOD-ONLY -->
+
       <div>© <span id="y"></span> Coffee & Code LLC</div>
       <div style="display:flex; gap:12px; flex-wrap:wrap;">
         <a href="index.html">Home</a>
@@ -1328,5 +1346,8 @@
       });
     });
   </script>
+
+  <!-- Site Search -->
+  <script src="js/search.js"></script>
 </body>
 </html>

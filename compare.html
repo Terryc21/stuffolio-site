@@ -355,6 +355,8 @@
     <header>
       <a href="index.html" class="site-title">Stuffolio</a>
       <div class="header-right">
+        <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+
         <nav>
           <a href="index.html">Home</a>
           <a href="features.html">Features</a>
@@ -362,6 +364,13 @@
           <a href="quick-start.html">Quick Start</a>
           <a href="support.html">Support</a>
         </nav>
+
+        <button class="search-toggle" aria-label="Search documentation">
+          <span class="search-icon">🔍</span>
+          <span class="search-label">Search</span>
+          <kbd class="search-kbd">⌘K</kbd>
+        </button>
+
         <div class="theme-toggle">
           <span class="theme-icon">☀️</span>
           <button class="theme-toggle-switch" id="themeToggle" aria-label="Toggle light/dark mode"></button>
@@ -734,6 +743,54 @@
         </p>
       </div>
 
+<!-- PRICING CALCULATOR -->
+      <div class="card">
+        <h2 style="margin-top:0;">Cost Comparison Calculator</h2>
+        <p>See how much you'd save with Stuffolio's one-time purchase vs. subscription apps over time.</p>
+
+        <div class="pricing-calc">
+          <div class="pricing-slider-wrap">
+            <label for="yearsSlider">How many years will you use the app? <strong id="yearsDisplay">3 years</strong></label>
+            <input type="range" id="yearsSlider" class="pricing-slider" min="1" max="5" value="3" />
+          </div>
+
+          <div class="pricing-results">
+            <div class="pricing-result-card stuffolio">
+              <h4>Stuffolio</h4>
+              <div class="price" id="stuffolioPrice">$29.98</div>
+              <div class="period">One-time + AI subscription</div>
+              <div style="font-size:.8rem; color:var(--muted); margin-top:8px;">$9.99 app + $19.99/yr AI (optional)</div>
+            </div>
+            <div class="pricing-result-card">
+              <h4>Sortly</h4>
+              <div class="price" id="sortlyPrice">$1,764</div>
+              <div class="period">$49/month (lowest tier)</div>
+            </div>
+            <div class="pricing-result-card">
+              <h4>Itemtopia</h4>
+              <div class="price" id="itemtopiaPrice">$239.97</div>
+              <div class="period">$79.99/year</div>
+            </div>
+            <div class="pricing-result-card">
+              <h4>Under My Roof</h4>
+              <div class="price" id="umrPrice">$104.97</div>
+              <div class="period">$34.99/year</div>
+            </div>
+          </div>
+
+          <div class="pricing-savings">
+            <div>You could save up to</div>
+            <div class="amount" id="savingsAmount">$1,734</div>
+            <div style="font-size:.9rem; color:var(--muted);">vs. Sortly over <span id="savingsYears">3</span> years</div>
+          </div>
+        </div>
+
+        <p style="font-size:.85rem; color:var(--muted); margin-top:16px; text-align:center;">
+          * Prices based on publicly listed rates as of January 2026. Sortly's $49/mo is their lowest "Advanced" tier;
+          higher tiers go up to $299/mo. Stuffolio's AI features are optional — the core app works fully without them.
+        </p>
+      </div>
+
 <!-- CTA -->
       <div class="card" style="text-align:center;">
         <h2 style="margin-top:0;">Try the Lifecycle Approach</h2>
@@ -750,6 +807,15 @@
     </main>
 
     <footer>
+      <!-- BETA-PERIOD-ONLY: Change to App Store badge after launch -->
+      <div class="download-cta">
+        <a href="https://testflight.apple.com/join/TWgM95st" class="download-badge testflight">
+          <img src="assets/testflight-badge.svg" alt="Download on TestFlight" width="135" height="40" onerror="this.outerHTML='<span class=badge-fallback>Join TestFlight Beta</span>'" />
+        </a>
+        <span class="download-tagline">Free beta • iPhone, iPad, Mac</span>
+      </div>
+      <!-- END BETA-PERIOD-ONLY -->
+
       <div>© <span id="y"></span> Coffee & Code LLC</div>
       <div style="display:flex; gap:12px; flex-wrap:wrap;">
         <a href="index.html">Home</a>
@@ -785,6 +851,46 @@
       html.classList.toggle('light-mode');
       localStorage.setItem('theme', html.classList.contains('light-mode') ? 'light' : 'dark');
     });
+
+    // Pricing Calculator
+    const yearsSlider = document.getElementById('yearsSlider');
+    const yearsDisplay = document.getElementById('yearsDisplay');
+    const stuffolioPrice = document.getElementById('stuffolioPrice');
+    const sortlyPrice = document.getElementById('sortlyPrice');
+    const itemtopiaPrice = document.getElementById('itemtopiaPrice');
+    const umrPrice = document.getElementById('umrPrice');
+    const savingsAmount = document.getElementById('savingsAmount');
+    const savingsYears = document.getElementById('savingsYears');
+
+    function updatePricing() {
+      const years = parseInt(yearsSlider.value);
+      yearsDisplay.textContent = years + ' year' + (years > 1 ? 's' : '');
+      savingsYears.textContent = years;
+
+      // Stuffolio: $9.99 one-time + $19.99/yr AI (optional)
+      const stuffolio = 9.99 + (19.99 * years);
+      // Sortly: $49/month = $588/year
+      const sortly = 49 * 12 * years;
+      // Itemtopia: $79.99/year
+      const itemtopia = 79.99 * years;
+      // Under My Roof: $34.99/year
+      const umr = 34.99 * years;
+
+      stuffolioPrice.textContent = '$' + stuffolio.toFixed(2);
+      sortlyPrice.textContent = '$' + sortly.toLocaleString();
+      itemtopiaPrice.textContent = '$' + itemtopia.toFixed(2);
+      umrPrice.textContent = '$' + umr.toFixed(2);
+
+      // Savings vs Sortly (biggest difference)
+      const savings = sortly - stuffolio;
+      savingsAmount.textContent = '$' + Math.round(savings).toLocaleString();
+    }
+
+    yearsSlider.addEventListener('input', updatePricing);
+    updatePricing(); // Initial calculation
   </script>
+
+  <!-- Site Search -->
+  <script src="js/search.js"></script>
 </body>
 </html>
