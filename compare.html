@@ -347,6 +347,15 @@
     }
     .bridge p{ margin: 0; }
 </style>
+
+<style>
+/* Drop-in additions for AI notes + beta callout */
+.ai-footnote,.ai-subtext,.ai-note{opacity:.88;font-size:.95em;line-height:1.4;margin-top:.5rem}
+.ai-footnote:before,.ai-subtext:before,.ai-note:before{content:"† ";opacity:.9}
+.beta-callout{border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.04);border-radius:14px;padding:.8rem 1rem;margin:1rem 0 1.25rem}
+.beta-callout strong{display:block;margin-bottom:.25rem}
+</style>
+
 </head>
 
 <body>
@@ -363,7 +372,7 @@
           <a href="compare.html" aria-current="page">Compare</a>
           <a href="quick-start.html">Quick Start</a>
           <a href="support.html">Support</a>
-        </nav>
+         <a href="beta-testing-guide.html">Beta Guide</a> </nav>
 
         <button class="search-toggle" aria-label="Search documentation">
           <span class="search-icon">🔍</span>
@@ -647,7 +656,7 @@
               </tr>
               <tr>
                 <td>Pricing Model</td>
-                <td>One-time + optional AI sub</td>
+                <td>One-time + AI assistance when you ask sub</td>
                 <td>Free (10 items) or subscription</td>
                 <td>Free (20 items) or subscription</td>
                 <td>Free (100 items) or subscription</td>
@@ -663,6 +672,9 @@
           <span class="cross">✗</span> = Not available &nbsp;
           <span class="unknown">Not documented</span> = Could not verify
         </p>
+<p class="ai-subtext">AI assistance when you ask — silent when you don’t.</p>
+<p class="ai-footnote">Unlike apps that analyze data continuously in the background, Stuffolio’s AI runs only when you explicitly ask for help.</p>
+
       </div>
 
       <!-- WHAT MAKES STUFFOLIO DIFFERENT -->
@@ -718,7 +730,7 @@
           <h3>Privacy model</h3>
           <p>
             Stuffolio syncs through your personal iCloud account — we don’t see your inventory.
-            For optional AI features, we send only what’s needed for that specific query, and we don’t use your data to train models.
+            For AI assistance when you ask features, we send only what’s needed for that specific query, and we don’t use your data to train models.
           </p>
         </div>
       </div>
@@ -746,7 +758,7 @@
         <p>
           If the lifecycle approach resonates, the <a href="features.html">Features</a> page shows exactly how Stuffolio implements it —
           warranty coverage phases, Apple Wallet warranty cards, support and claim history, maintenance reminders, product memory,
-          and optional AI help for manuals, parts, and research. It’s meant to feel practical: fewer “where did I put that?” moments,
+          and AI assistance when you ask help for manuals, parts, and research. It’s meant to feel practical: fewer “where did I put that?” moments,
           and better decisions the next time you buy, repair, or replace something.
         </p>
       </div>
@@ -838,7 +850,7 @@
         <a href="privacy.html">Privacy</a>
         <a href="terms.html">Terms</a>
       </div>
-      <div class="trust-strip"><span>Privacy-first. No ads. No selling your data. Optional AI features.</span></div>
+      <div class="trust-strip"><span>Privacy-first. No ads. No selling your data. AI when you ask — silent when you don't.</span></div>
 </footer>
   </div>
 
