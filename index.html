@@ -79,7 +79,7 @@
     }
   ],
   "featureList": [
-    "AI-powered product identification with Stuff Scout",
+    "AI-assisted product identification with Stuff Scout",
     "Voice input with natural language parsing",
     "Warranty tracking with coverage phases",
     "Apple Wallet warranty cards",
@@ -519,6 +519,15 @@
     .light-mode .aha-box { background: linear-gradient(135deg, rgba(251,191,36,.08), rgba(251,146,60,.06)); }
     .light-mode .lifecycle-strip { background: linear-gradient(90deg, rgba(0,102,204,.06), rgba(124,58,237,.06)); }
   </style>
+
+<style>
+/* Drop-in additions for AI notes + beta callout */
+.ai-footnote,.ai-subtext{opacity:.88;font-size:.95em;line-height:1.4;margin-top:.5rem}
+.ai-footnote:before,.ai-subtext:before{content:"† ";opacity:.9}
+.beta-callout{border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.04);border-radius:14px;padding:.8rem 1rem;margin:1rem 0 1.25rem}
+.beta-callout strong{display:block;margin-bottom:.25rem}
+</style>
+
 </head>
 
 <body>
@@ -567,6 +576,8 @@
               <h1 style="margin-top:0;">
                 Because one day you look around and think,<br/><span class="gradient-text">"Where did we get so much stuff?"</span>
               </h1>
+<div class="beta-callout"><strong>Beta testers:</strong> Please use the <a href="beta-testing-guide.html">Beta Testing Guide</a> for setup, what to test, and where to send feedback.</div>
+
             </div>
           </div>
 
@@ -581,12 +592,15 @@
           <ul class="feature-bullets" style="margin-top:0;">
             <li>Built around the full life of your stuff (Acquire &rarr; Own &rarr; Move On)</li>
             <li>Tracks warranties and coverage that change over time</li>
-            <li>Optional AI that helps you find information when you need it</li>
+            <li>AI assistance when you ask that helps you find information when you need it</li>
             <li>Helps you decide what to do next &mdash; repair it, replace it, donate it, sell it, or pass it on</li>
           </ul>
           <p class="small" style="color:var(--muted); margin-top:8px;">
             Stuffolio is designed for real households, not businesses or collectors.
           </p>
+<p class="ai-subtext">AI assistance when you ask — silent when you don’t.</p>
+<p class="ai-footnote">Stuffolio’s AI is user-initiated and non-ambient. Nothing is analyzed or sent to external services unless you explicitly ask for help.</p>
+
 
           <!-- Lifecycle flow -->
           <div class="lifecycle-strip">
@@ -610,7 +624,7 @@
           <div class="callout">
             <b>Privacy by default.</b> Your data stays on your device (or your iCloud). No ads, no tracking, no profiles &mdash; ever.
             <div style="margin-top:8px;">
-              <b>Optional AI help:</b> Identify items from photos, find manuals and DIY help, DIY help, and parts, get value estimates &mdash; only when you ask.
+              <b>AI when you ask — silent when you don't:</b> Identify items from photos, find manuals and DIY help, parts, get value estimates. Nothing is analyzed unless you explicitly ask.
             </div>
           </div>
         </div>
@@ -632,85 +646,86 @@
         <div class="card">
           <div class="whats-new-box">
   <div class="whats-new-header">
-    <h3>What's new in Stuffolio beta 1.0 (Build 18+)</h3>
+    <h3>What's new in Stuffolio beta 1.0 (Build 21)</h3>
   </div>
 
   <div class="whats-new-grid">
     <div class="whats-new-item">
+      <span class="whats-new-icon">👨‍👩‍👧‍👦</span>
+      <div>
+        <strong>Household Sharing</strong>
+        <div class="small">Create a shared household and invite family members. Share appliances, vehicles, and electronics with real-time sync. Viewer, Editor, or Admin permissions.</div>
+      </div>
+    </div>
+
+    <div class="whats-new-item">
+      <span class="whats-new-icon">🔄</span>
+      <div>
+        <strong>Real-Time Sync</strong>
+        <div class="small">Changes to shared items sync instantly across all family members' devices. See who added each item and who last modified it.</div>
+      </div>
+    </div>
+
+    <div class="whats-new-item">
+      <span class="whats-new-icon">📈</span>
+      <div>
+        <strong>Price Watch</strong>
+        <div class="small">That mixer you paid $350 for might cost $550 to replace today. Track current market prices, view history charts, and get alerts when prices drop.</div>
+      </div>
+    </div>
+
+    <div class="whats-new-item">
+      <span class="whats-new-icon">💵</span>
+      <div>
+        <strong>AI "Current Price" Query</strong>
+        <div class="small">New AI Assistant query finds current retail prices from Amazon, Walmart, Best Buy, Target, and more. Essential for insurance documentation.</div>
+      </div>
+    </div>
+
+    <div class="whats-new-item">
       <span class="whats-new-icon">📊</span>
       <div>
-        <strong>Hybrid Dashboard Redesign</strong>
-        <div class="small">New actionable "Needs Attention" card shows expiring warranties, overdue maintenance, past-due loans, and flagged items. Quick Actions row for Scan, Add, AI, and Scout.</div>
+        <strong>Dashboard Price Watch Card</strong>
+        <div class="small">See items with significant price changes at a glance. Know when replacement costs spike or drop.</div>
       </div>
     </div>
 
     <div class="whats-new-item">
-      <span class="whats-new-icon">🧭</span>
+      <span class="whats-new-icon">🔍</span>
       <div>
-        <strong>Explore Section</strong>
-        <div class="small">Feature shortcuts grid: Insights, Reports, Categories, Locations, Legacy, Recalls, Loans, and Backup — all from the Dashboard.</div>
+        <strong>Enhanced Barcode Scanner</strong>
+        <div class="small">UPC lookup now returns current retail pricing from major retailers. Option to auto-enable Price Watch from scan results.</div>
       </div>
     </div>
 
     <div class="whats-new-item">
-      <span class="whats-new-icon">💡</span>
+      <span class="whats-new-icon">⚡</span>
       <div>
-        <strong>Actionable Tips</strong>
-        <div class="small">Contextual suggestions based on your usage: "Add photos for insurance" or "Rate items to track satisfaction." Dismissible and helpful.</div>
+        <strong>Conflict Resolution</strong>
+        <div class="small">When two people edit the same shared item, compare versions side-by-side and choose what to keep.</div>
       </div>
     </div>
 
     <div class="whats-new-item">
-      <span class="whats-new-icon">⭐</span>
+      <span class="whats-new-icon">📴</span>
       <div>
-        <strong>Rating Insights (Mac)</strong>
-        <div class="small">At-a-glance summary on macOS Dashboard: items rated, average satisfaction, and "would buy again" percentage.</div>
-      </div>
-    </div>
-
-    <div class="whats-new-item">
-      <span class="whats-new-icon">🔧</span>
-      <div>
-        <strong>Maintenance Suggestions (Mac)</strong>
-        <div class="small">Proactive maintenance cards show items that may need attention based on age and category.</div>
+        <strong>Offline Support</strong>
+        <div class="small">Edit shared items offline; changes sync automatically when back online. AI response caching for offline access.</div>
       </div>
     </div>
 
     <div class="whats-new-item">
       <span class="whats-new-icon">✨</span>
       <div>
-        <strong>Scout Refinement (Improved)</strong>
-        <div class="small">Re-analyze items with context from your form data. Radio button selection: Keep current, Use Scout's finding, or Enter custom value.</div>
-      </div>
-    </div>
-
-    <div class="whats-new-item">
-      <span class="whats-new-icon">🔗</span>
-      <div>
-        <strong>Clickable Source Links</strong>
-        <div class="small">Recent Sales in Scout results now link to eBay, Etsy, and other marketplace sources.</div>
-      </div>
-    </div>
-
-    <div class="whats-new-item">
-      <span class="whats-new-icon">🗂️</span>
-      <div>
-        <strong>My Products: List / Gallery / Cards</strong>
-        <div class="small">Switch views instantly on iPhone, iPad, and Mac. Great with search + filters.</div>
-      </div>
-    </div>
-
-    <div class="whats-new-item">
-      <span class="whats-new-icon">🎤</span>
-      <div>
-        <strong>Voice Input</strong>
-        <div class="small">Tap the mic next to Product Name and speak: "Add coffee maker to kitchen, manufacturer Cuisinart, price 99 dollars." Works in Add and Edit forms.</div>
+        <strong>Stuff Scout → Price Watch</strong>
+        <div class="small">When applying Scout results, optionally update Price Watch with marketplace values. Keep replacement costs current.</div>
       </div>
     </div>
   </div>
 
   <div class="whats-new-footer">
-    <a class="btn btn-secondary" href="beta-testing-guide.html">See the Testing Guide</a>
+    <a class="btn btn-secondary" href="whats-new.html">Full Changelog</a>
+    <a class="btn btn-secondary" href="beta-testing-guide.html">Testing Guide</a>
   </div>
 </div>
       </section>
@@ -764,7 +779,7 @@
             <div class="pillar">
               <span class="pillar-icon">🤖</span>
               <h3>Discover</h3>
-              <p class="pillar-tagline">AI-powered insights</p>
+              <p class="pillar-tagline">AI-assisted insights</p>
               <ul>
                 <li>"What is this?" from a photo</li>
                 <li>Find manuals and DIY help &amp; replacement parts</li>
@@ -1260,7 +1275,7 @@
         <div class="card">
           <h2 style="margin-top:0; text-align:center;">Simple Pricing</h2>
           <p style="color:var(--muted); text-align:center;">
-            Stuffolio works great standalone. AI features are optional.
+            Stuffolio works great standalone. AI assistance is available when you ask — silent when you don't.
           </p>
           <p style="color:var(--muted); text-align:center; margin-top:10px; font-size:.95rem;"><strong>TestFlight beta is free.</strong> Pricing below reflects the planned App Store release.</p>
 
@@ -1295,7 +1310,7 @@
           </div>
 
           <p style="color:var(--muted); text-align:center; margin:14px auto 0; max-width: 760px; font-size: .95rem;">
-            Purchase Stuffolio once and your family can install it through Apple Family Sharing (up to 6 members). AI features are optional and billed per person, because each person’s AI usage has real server costs.
+            Purchase Stuffolio once and your family can install it through Apple Family Sharing (up to 6 members). AI assistance runs only when you ask — nothing analyzed in the background. AI is billed per person because each person's usage has real server costs.
           </p>
         </div>
       </section>
@@ -1358,7 +1373,7 @@
         <a href="app-map.html">App Map</a>
         <a href="story.html">Story</a>
       </div>
-      <div class="trust-strip"><span>Privacy-first. No ads. No selling your data. Optional AI features.</span></div>
+      <div class="trust-strip"><span>Privacy-first. No ads. No selling your data. AI when you ask — silent when you don't.</span></div>
 </footer>
   </div>
 

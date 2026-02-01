@@ -253,6 +253,15 @@
     ]
   }
   </script>
+
+<style>
+/* Drop-in additions for AI notes + beta callout */
+.ai-footnote,.ai-subtext,.ai-note{opacity:.88;font-size:.95em;line-height:1.4;margin-top:.5rem}
+.ai-footnote:before,.ai-subtext:before,.ai-note:before{content:"† ";opacity:.9}
+.beta-callout{border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.04);border-radius:14px;padding:.8rem 1rem;margin:1rem 0 1.25rem}
+.beta-callout strong{display:block;margin-bottom:.25rem}
+</style>
+
 </head>
 
 <body>
@@ -270,7 +279,7 @@
           <a href="compare.html">Compare</a>
           <a href="quick-start.html">Quick Start</a>
           <a href="support.html" aria-current="page">Support</a>
-        </nav>
+         <a href="beta-testing-guide.html">Beta Guide</a> </nav>
 
         <button class="search-toggle" aria-label="Search documentation">
           <span class="search-icon">🔍</span>
@@ -353,6 +362,9 @@
       <details class="faq-item">
         <summary>How can I improve the effectiveness of information returned by AI assistants?</summary>
         <p>Even though Stuffolio works great with only partial information about a product, the more specific and accurate the details you provide, the better results you'll get from AI features:</p>
+<p class="ai-subtext">AI assistance when you ask — silent when you don’t.</p>
+<p class="ai-footnote">Stuffolio’s AI is user-initiated and non-ambient. Nothing is analyzed or sent to external services unless you explicitly ask for help.</p>
+
         <ul style="margin-top:10px;">
           <li><strong>Use real brand names</strong> — "KitchenAid" not "my mixer"</li>
           <li><strong>Include model numbers</strong> — "KSM150PSER" helps pinpoint exact specs, manuals, and parts</li>
@@ -495,7 +507,7 @@
       <details class="faq-item">
         <summary>Is Stuffolio free? Are there in-app purchases?</summary>
         <p>Stuffolio is a one-time purchase of $9.99. All core inventory features are included — adding items, tracking warranties, organizing by location, exporting data, and more.</p>
-        <p style="margin-top:10px;"><strong>AI Features (Optional Subscription):</strong> Stuff Scout and other AI-powered features require a separate subscription due to ongoing server costs. Subscriptions are <strong>$2.99/month</strong> or <strong>$19.99/year</strong> (cancel anytime).</p>
+        <p style="margin-top:10px;"><strong>AI Features (Optional Subscription):</strong> Stuff Scout and other AI-assisted features require a separate subscription due to ongoing server costs. Subscriptions are <strong>$2.99/month</strong> or <strong>$19.99/year</strong> (cancel anytime).</p>
         <p style="margin-top:10px;">You can use Stuffolio fully without the AI subscription. The core app works great on its own.</p>
         <p style="margin-top:10px; font-size:.95rem; color:var(--muted);">Family Sharing covers the one-time app purchase (up to 6 family members). AI subscriptions are per person, because each person’s AI usage has real costs.</p>
       </details>
@@ -905,7 +917,7 @@
         <a href="app-map.html">App Map</a>
         <a href="story.html">Story</a>
       </div>
-      <div class="trust-strip"><span>Privacy-first. No ads. No selling your data. Optional AI features.</span></div>
+      <div class="trust-strip"><span>Privacy-first. No ads. No selling your data. AI when you ask — silent when you don't.</span></div>
 </footer>
   </div>
 

@@ -115,6 +115,15 @@
     .light-mode .feedback-box { background: rgba(0,102,204,.06) !important }
     .light-mode .warning-box { background: rgba(251,191,36,.06) !important }
   </style>
+
+<style>
+/* Drop-in additions for AI notes + beta callout */
+.ai-footnote,.ai-subtext,.ai-note{opacity:.88;font-size:.95em;line-height:1.4;margin-top:.5rem}
+.ai-footnote:before,.ai-subtext:before,.ai-note:before{content:"† ";opacity:.9}
+.beta-callout{border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.04);border-radius:14px;padding:.8rem 1rem;margin:1rem 0 1.25rem}
+.beta-callout strong{display:block;margin-bottom:.25rem}
+</style>
+
 </head>
 
 <body>
@@ -173,7 +182,7 @@
           <li><strong>Add a few items</strong> — Start with 3-5 items you know well (electronics, appliances, tools)</li>
           <li><strong>Try different entry methods</strong> — Manual entry, barcode scan, Photo Quick Add, voice input</li>
           <li><strong>Enable iCloud sync</strong> (optional) — Test syncing between devices if you have multiple Apple devices</li>
-          <li><strong>Explore AI features</strong> — Try Stuff Scout, AI Product Assistant, and the new Current Price lookup</li>
+          <li><strong>Explore AI assistance</strong> — Try Stuff Scout, AI Product Assistant, and the new Current Price lookup (runs only when you ask)</li>
         </ul>
 
         <div class="warning-box">
@@ -185,6 +194,9 @@
       <div class="card">
         <h2 style="margin-top:0">What to Test</h2>
         <p>Focus your testing on these priority areas:</p>
+<p class="ai-subtext">AI assistance when you ask — silent when you don’t.</p>
+<p class="ai-footnote">Stuffolio includes AI assistance that runs only when you explicitly request it. There is no background analysis, no passive monitoring, and no automatic data sharing.</p>
+
 
         <div class="priority-grid">
           <div class="priority-card high">
@@ -200,7 +212,7 @@
           <div class="priority-card medium">
             <h4>Medium Priority</h4>
             <ul style="margin:0; padding-left:18px;">
-              <li><strong>AI features</strong> — Stuff Scout accuracy, AI Assistant responses</li>
+              <li><strong>AI assistance</strong> — Stuff Scout accuracy, AI Assistant responses (runs only when requested)</li>
               <li><strong>Barcode scanning</strong> — Product lookup accuracy</li>
               <li><strong>Export functionality</strong> — CSV, PDF, Excel exports</li>
               <li><strong>Warranty tracking</strong> — Notifications, coverage phases</li>
@@ -405,7 +417,7 @@
         <a href="app-map.html">App Map</a>
         <a href="story.html">Story</a>
       </div>
-      <div class="trust-strip"><span>Privacy-first. No ads. No selling your data. Optional AI features.</span></div>
+      <div class="trust-strip"><span>Privacy-first. No ads. No selling your data. AI when you ask — silent when you don't.</span></div>
     </footer>
   </div>
 
