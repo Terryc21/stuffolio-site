@@ -452,6 +452,33 @@
     margin-bottom: 10px;
   }
 
+  /* Navigation badge for "NEW" indicator */
+  .nav-badge {
+    position: relative;
+  }
+  .nav-badge::after {
+    content: "NEW";
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    font-size: 0.6rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #a78bfa, #7dd3fc);
+    color: #0b1220;
+    padding: 2px 5px;
+    border-radius: 4px;
+    letter-spacing: 0.3px;
+    animation: pulse-badge 2s ease-in-out infinite;
+  }
+  @keyframes pulse-badge {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.85; transform: scale(1.05); }
+  }
+  .light-mode .nav-badge::after {
+    background: linear-gradient(135deg, #7c3aed, #0066cc);
+    color: #fff;
+  }
+
   /* Logo Styles */
   .heroLogoRow {
     display: flex;
