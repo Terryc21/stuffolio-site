@@ -1,36 +1,638 @@
 <!DOCTYPE html>
+<!--
+  BETA-PERIOD CLEANUP GUIDE
+  =========================
+  When transitioning from beta to public release, search for "BETA-PERIOD-ONLY"
+  comments in this file. Sections marked include:
+
+  1. Hero badge: "Beta Testing Now" → "Available on the App Store"
+  2. Hero CTA row: TestFlight buttons → App Store download buttons
+  3. "What's New in v1.0" section: Remove or convert to release notes
+  4. Final CTA: "Join the Beta" → "Download on the App Store"
+
+  Also consider:
+  - Removing beta-testing-guide.html (or redirect to support.html)
+  - Updating testflight-invite.html (or remove entirely)
+  - Uncommenting the Apple Smart App Banner meta tag (line ~29)
+-->
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Story — Stuffolio</title>
-<link rel="stylesheet" href="css/styles.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>What I Learned Building an App at 73 — Stuffolio</title>
+  <meta name="description" content="A personal essay about learning to code later in life, building Stuffolio, and finding a calmer way to manage the things we own." />
+  <meta name="theme-color" content="#0b1220" />
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://stuffolio.app/story.html" />
+  <meta property="og:title" content="What I Learned Building an App at 73" />
+  <meta property="og:description" content="I'm 73 years old, and within the past year I decided to learn a little coding. What I didn't expect was that it would turn into an actual app." />
+  <meta property="og:image" content="https://stuffolio.app/assets/og-image.png" />
+  <meta property="og:site_name" content="Stuffolio" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="What I Learned Building an App at 73" />
+  <meta name="twitter:description" content="I'm 73 years old, and within the past year I decided to learn a little coding. What I didn't expect was that it would turn into an actual app." />
+  <meta name="twitter:image" content="https://stuffolio.app/assets/og-image.png" />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://stuffolio.app/story.html" />
+
+  <!-- Apple Smart App Banner (uncomment when app is live) -->
+  <!-- <meta name="apple-itunes-app" content="app-id=YOUR_APP_ID"> -->
+
+  <!-- Structured Data: Software Application -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Stuffolio",
+  "operatingSystem": "iOS 17.6+, iPadOS 17.6+, macOS 14.6+",
+  "applicationCategory": "UtilitiesApplication",
+  "description": "Stuffolio helps you manage the life of your stuff — track what you own, keep receipts and warranties together, get maintenance reminders, and record Legacy Wishes so your family has clarity.",
+  "author": {
+    "@type": "Organization",
+    "name": "Coffee & Code LLC",
+    "url": "https://stuffolio.app"
+  },
+  "offers": [
+    {
+      "@type": "Offer",
+      "price": "9.99",
+      "priceCurrency": "USD",
+      "description": "One-time purchase"
+    },
+    {
+      "@type": "Offer",
+      "price": "2.99",
+      "priceCurrency": "USD",
+      "description": "AI subscription (monthly)"
+    },
+    {
+      "@type": "Offer",
+      "price": "19.99",
+      "priceCurrency": "USD",
+      "description": "AI subscription (annual)"
+    }
+  ],
+  "featureList": [
+    "AI-powered product identification with Stuff Scout",
+    "Warranty tracking with coverage phases",
+    "Apple Wallet warranty cards",
+    "Maintenance reminders and scheduling",
+    "Legacy Wishes estate planning",
+    "Family Sharing support",
+    "iCloud sync across devices",
+    "Export to CSV, PDF, and Excel",
+    "Insurance documentation and claim prep",
+    "Recall checking via CPSC database"
+  ],
+  "screenshot": "https://stuffolio.app/assets/og-image.png",
+  "softwareVersion": "1.0",
+  "datePublished": "2026-01-01"
+}
+</script>
+
+  <!-- Structured Data: Organization -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Coffee & Code LLC",
+  "url": "https://stuffolio.app",
+  "logo": "https://stuffolio.app/assets/apple-touch-icon.png",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "email": "support@stuffolio.app",
+    "contactType": "customer support"
+  },
+  "sameAs": []
+}
+</script>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
+
+  <!-- Shared Styles -->
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- Page-specific styles -->
+  <style>
+    /* Override hero grid to single column */
+    .hero {
+      display: block;
+    }
+
+    /* Animated gradient text for hero emphasis */
+    .gradient-text {
+      background: linear-gradient(135deg, var(--accent), var(--accent2), #a78bfa);
+      background-size: 200% 200%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: gradientShift 8s ease infinite;
+    }
+    @keyframes gradientShift {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+
+    /* Lifecycle flow strip */
+    .lifecycle-strip {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      padding: 16px;
+      background: linear-gradient(90deg, rgba(125,211,252,.08), rgba(167,139,250,.08));
+      border-radius: 12px;
+      margin: 20px 0;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    .lifecycle-strip .stage {
+      padding: 8px 16px;
+      background: rgba(255,255,255,.05);
+      border-radius: 8px;
+      transition: transform 0.2s, background 0.2s;
+    }
+    .lifecycle-strip .stage:hover {
+      transform: scale(1.05);
+      background: rgba(255,255,255,.1);
+    }
+    .lifecycle-strip .arrow {
+      color: var(--accent);
+      font-size: 1.3rem;
+    }
+
+    /* Pillars grid */
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      margin: 24px 0;
+    }
+    @media (max-width: 650px) {
+      .pillars-grid { grid-template-columns: 1fr; }
+    }
+    .pillar {
+      text-align: center;
+      padding: 28px 20px;
+      background: rgba(125,211,252,.05);
+      border: 1px solid rgba(125,211,252,.15);
+      border-radius: 16px;
+      transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+    }
+    .pillar:hover {
+      transform: translateY(-4px);
+      border-color: rgba(125,211,252,.4);
+      box-shadow: 0 8px 24px rgba(125,211,252,.1);
+    }
+    .pillar-icon {
+      font-size: 3rem;
+      margin-bottom: 12px;
+      display: block;
+    }
+    .pillar h3 {
+      color: var(--accent);
+      margin: 0 0 8px;
+      font-size: 1.4rem;
+    }
+    .pillar .pillar-tagline {
+      color: var(--text);
+      font-size: 1rem;
+      margin-bottom: 12px;
+    }
+    .pillar ul {
+      text-align: left;
+      margin: 0;
+      padding-left: 20px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    .pillar li { margin: 6px 0; }
+
+    /* Comparison grid (red/green) */
+    .compare-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin: 24px 0;
+    }
+    @media (max-width: 650px) {
+      .compare-grid { grid-template-columns: 1fr; }
+    }
+    .compare-card {
+      padding: 24px;
+      border-radius: 14px;
+      transition: transform 0.2s;
+    }
+    .compare-card:hover { transform: translateY(-2px); }
+    .compare-card.others {
+      background: rgba(239,68,68,.06);
+      border: 1px solid rgba(239,68,68,.2);
+    }
+    .compare-card.stuffolio {
+      background: rgba(34,197,94,.06);
+      border: 2px solid rgba(34,197,94,.3);
+    }
+    .compare-card h4 {
+      margin: 0 0 14px;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .compare-card.others h4 { color: #ef4444; }
+    .compare-card.stuffolio h4 { color: #22c55e; }
+    .compare-card ul {
+      margin: 0;
+      padding-left: 20px;
+      color: var(--muted);
+    }
+    .compare-card li { margin: 8px 0; }
+    .compare-card.stuffolio li strong { color: var(--accent); }
+
+    /* Scenario cards with quotes */
+    .scenarios-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 18px;
+      margin: 24px 0;
+    }
+    .scenario {
+      padding: 24px;
+      background: linear-gradient(135deg, rgba(167,139,250,.06), rgba(125,211,252,.04));
+      border: 1px solid rgba(167,139,250,.2);
+      border-radius: 14px;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .scenario:hover {
+      transform: translateY(-2px);
+      border-color: rgba(167,139,250,.4);
+    }
+    .scenario-emoji {
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+    .scenario-quote {
+      font-style: italic;
+      color: var(--text);
+      font-size: 1.05rem;
+      margin: 0 0 12px;
+      line-height: 1.5;
+    }
+    .scenario-result {
+      color: var(--accent);
+      font-weight: 600;
+      margin: 0;
+      font-size: 0.95rem;
+    }
+
+    /* Stats section */
+    .stats-row {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 40px;
+      margin: 28px 0;
+    }
+    .stat {
+      text-align: center;
+    }
+    .stat-number {
+      font-size: 3rem;
+      font-weight: 800;
+      color: var(--accent);
+      line-height: 1;
+    }
+    .stat-label {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-top: 8px;
+    }
+
+    /* Fun "aha" callout box */
+    .aha-box {
+      background: linear-gradient(135deg, rgba(251,191,36,.1), rgba(251,146,60,.08));
+      border: 1px solid rgba(251,191,36,.3);
+      border-radius: 14px;
+      padding: 20px 24px;
+      margin: 20px 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+    .aha-box .aha-icon {
+      font-size: 2rem;
+      flex-shrink: 0;
+    }
+    .aha-box p {
+      margin: 0;
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* What's New box */
+    .whats-new-box {
+      background: linear-gradient(135deg, rgba(167,139,250,.12), rgba(125,211,252,.08));
+      border: 2px solid rgba(167,139,250,.4);
+      border-radius: 16px;
+      padding: 24px;
+      margin: 24px 0;
+    }
+    .whats-new-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .whats-new-badge {
+      background: linear-gradient(135deg, #a78bfa, #7dd3fc);
+      color: #0b1220;
+      font-weight: 700;
+      font-size: 0.85rem;
+      padding: 6px 14px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .whats-new-header h3 {
+      margin: 0;
+      font-size: 1.3rem;
+      color: var(--text);
+    }
+    .whats-new-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+    @media (max-width: 650px) {
+      .whats-new-grid { grid-template-columns: 1fr; }
+    }
+    .whats-new-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 14px;
+      background: rgba(255,255,255,.03);
+      border-radius: 10px;
+      transition: background 0.2s;
+    }
+    .whats-new-item:hover {
+      background: rgba(255,255,255,.06);
+    }
+    .whats-new-icon {
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+    .whats-new-item strong {
+      color: var(--accent);
+      display: block;
+      margin-bottom: 4px;
+    }
+    .whats-new-item span {
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
+    .light-mode .whats-new-box { background: linear-gradient(135deg, rgba(124,58,237,.08), rgba(0,102,204,.05)); }
+    .light-mode .whats-new-item { background: rgba(0,0,0,.03); }
+
+    /* Beta Testing Invite */
+    .beta-invite {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      padding: 20px 24px;
+      background: linear-gradient(135deg, rgba(175,82,222,.1), rgba(0,122,255,.08));
+      border: 1px solid rgba(175,82,222,.3);
+      border-radius: 14px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    .beta-invite:hover {
+      background: linear-gradient(135deg, rgba(175,82,222,.15), rgba(0,122,255,.12));
+      border-color: rgba(175,82,222,.5);
+      transform: translateY(-2px);
+    }
+    .beta-invite .invite-icon {
+      font-size: 1.8rem;
+    }
+    .beta-invite .invite-text {
+      text-align: left;
+    }
+    .beta-invite .invite-text strong {
+      display: block;
+      color: var(--text);
+      font-size: 1.05rem;
+      margin-bottom: 2px;
+    }
+    .beta-invite .invite-text span {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    .beta-invite .invite-arrow {
+      color: var(--accent);
+      font-size: 1.4rem;
+      transition: transform 0.2s;
+    }
+    .beta-invite:hover .invite-arrow {
+      transform: translateX(4px);
+    }
+    .light-mode .beta-invite {
+      background: linear-gradient(135deg, rgba(124,58,237,.08), rgba(0,102,204,.06));
+      border-color: rgba(124,58,237,.25);
+    }
+    .light-mode .beta-invite:hover {
+      background: linear-gradient(135deg, rgba(124,58,237,.12), rgba(0,102,204,.1));
+      border-color: rgba(124,58,237,.4);
+    }
+    .light-mode .whats-new-item:hover { background: rgba(0,0,0,.05); }
+
+    /* Pricing cards */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      max-width: 700px;
+      margin: 24px auto;
+    }
+    .price-card {
+      padding: 28px;
+      text-align: center;
+      border-radius: 16px;
+      background: rgba(255,255,255,.03);
+      border: 1px solid var(--line);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .price-card:hover {
+      transform: translateY(-2px);
+    }
+    .price-card.featured {
+      border: 2px solid var(--accent);
+      box-shadow: 0 0 30px rgba(125,211,252,.1);
+    }
+    .price-card h3 { margin-top: 0; }
+    .price-card .price {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+    .price-card .price-note {
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+    .price-card ul {
+      text-align: left;
+      margin: 0;
+      padding-left: 20px;
+      color: var(--muted);
+    }
+    .price-card li { margin: 6px 0; }
+
+    /* Final CTA section */
+    .final-cta {
+      text-align: center;
+      padding: 40px 24px;
+      background: linear-gradient(180deg, transparent, rgba(125,211,252,.05));
+      border-radius: 20px;
+    }
+    .final-cta h2 {
+      margin-top: 0;
+      font-size: 1.8rem;
+    }
+
+    /* Light mode adjustments */
+    .light-mode .pillar { background: rgba(0,102,204,.04); border-color: rgba(0,102,204,.15); }
+    .light-mode .pillar:hover { border-color: rgba(0,102,204,.35); box-shadow: 0 8px 24px rgba(0,102,204,.08); }
+    .light-mode .compare-card.others { background: rgba(220,38,38,.05); }
+    .light-mode .compare-card.stuffolio { background: rgba(22,163,74,.05); }
+    .light-mode .scenario { background: linear-gradient(135deg, rgba(124,58,237,.05), rgba(0,102,204,.03)); }
+    .light-mode .aha-box { background: linear-gradient(135deg, rgba(251,191,36,.08), rgba(251,146,60,.06)); }
+    .light-mode .lifecycle-strip { background: linear-gradient(90deg, rgba(0,102,204,.06), rgba(124,58,237,.06)); }
+  </style>
 </head>
 <body>
-<header class="site-header">
-  <nav class="nav">
-    <a href="index.html">Home</a>
-    <a href="features.html">Features</a>
-    <a href="compare.html">Compare</a>
-    <a href="story.html">Story</a>
-    <a href="support.html">Support</a>
-    <a href="beta-testing-guide.html">Beta Guide</a>
-  </nav>
-</header>
-<main class="page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="wrap">
+    <header>
+      <a href="index.html" class="site-title">Stuffolio</a>
 
-<h1>Why Stuffolio</h1>
-<p>Stuffolio was designed to be deliberate — about possessions, privacy, and technology.</p>
-<section>
-  <h2>Our approach to AI</h2>
-  <p>We chose non‑ambient AI. The app does nothing unless you ask.</p>
-  <p class="footnote">† This contrasts with background or surveillance-style AI used elsewhere.</p>
-</section>
+      <div class="header-right">
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="features.html">Features</a>
+          <a href="compare.html">Compare</a>
+          <a href="story.html">Story</a>
+          <a href="quick-start.html">Quick Start</a>
+          <a href="beta-testing-guide.html">Beta Guide</a>
+          <a href="support.html">Support</a>
+        </nav>
 
-</main>
-<footer class="site-footer">
-  <p>© Stuffolio</p>
-  <div class="trust-strip"><span>Privacy-first. No ads. No selling your data. AI when you ask — silent when you don't.</span></div>
+        <div class="theme-toggle">
+          <span class="theme-icon">☀️</span>
+          <button class="theme-toggle-switch" id="themeToggle" aria-label="Toggle light/dark mode"></button>
+          <span class="theme-icon">🌙</span>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="card">
+        <h1 style="margin-top:0;">What I Learned Building an App at 73 — and Why It Changed How I Think About Our Stuff</h1>
+        <p class="tagline" style="max-width:850px;">A personal essay about building Stuffolio, learning something new later in life, and finding a calmer way to manage the things we own.</p>
+        <div class="disclaimer" style="margin-top:14px;"><strong>Note:</strong> This is a personal story, not legal advice. “Legacy Wishes” is a simple way to record personal intentions about belongings.</div>
+        <p>I’m 73 years old, and within the past year I decided to learn a little coding.</p>
+        <p>This wasn’t part of some grand plan. I just wanted something new to work on, something to keep my mind engaged. What I didn’t expect was that it would turn into an actual app.</p>
+        <p>There were plenty of false starts. More than a few “Damn, I think I need to start over” moments. And an embarrassing number of times I told myself, “I’ll just add one more feature.”</p>
+        <p>It took much longer than I expected, but I learned a lot along the way. And somehow, it turned into something I’m genuinely excited to share.</p>
+        <h2>It started with a manual</h2>
+        <p>The idea for the app, which I eventually named Stuffolio, didn’t come from a brilliant insight. It came from standing in front of something that wasn’t working and thinking, I know I’ve seen the manual for this … somewhere.</p>
+        <p>That moment kept repeating itself.</p>
+        <p>I was always looking for the same things: manuals, serial numbers, setup instructions, repair videos, or trying to remember whether a warranty was still valid or had quietly expired. Sometimes the information was in a folder. Sometimes it was buried in an email. And more often than I’d like to admit, it was in “that drawer.”</p>
+        <p>You know the one.</p>
+        <p>Eventually, I had to admit that “that drawer” was not a filing system.</p>
+        <p>So I built something simple: a place to keep track of what we own, along with the information we actually need — warranty dates, manuals, support contacts, even online help videos. One place instead of twelve.</p>
+        <p>But as I worked on it, the questions got bigger.</p>
+        <p>My wife and I started looking around our home and asking ourselves: Where did all of this stuff come from? And maybe more importantly, what are we eventually going to do with it?</p>
+        <p>Things have a way of accumulating quietly. Some we bought. Some were gifts. Others just seemed to appear over the years. Along the way, we assumed certain items would naturally become heirlooms — things we’d pass down to our daughters because they mattered to us.</p>
+        <p>What we’ve learned, sometimes gently and sometimes not, is that what feels meaningful to one generation doesn’t always feel that way to the next. Some of the things we thought our kids would treasure turned out to be things they simply don’t want.</p>
+        <p>That led to a different kind of question. How do you even talk with your kids about that? Not as a legal conversation, and not as something heavy or uncomfortable, but as a practical way to make things easier for them later?</p>
+        <p>So we tried it.</p>
+        <p>One evening, we FaceTimed our two daughters and walked through some of the things we’d always assumed they’d want. The oak school desk we’d picked up at a yard sale. A set of china that had been in the family for decades. Pieces we’d collected while traveling.</p>
+        <p>They were honest with us. The desk wouldn’t fit either of their lives. The china wasn’t their style. But a few things surprised them — items we’d almost overlooked meant more to them than we expected. And some things we thought were just ours, one daughter asked if she could have someday, while the other had no interest at all.</p>
+        <p>It was clarifying for everyone.</p>
+        <p>It wasn’t a difficult conversation. It was a relief. One we’ll have again.</p>
+        <p>That’s when I caught myself thinking, Ah — another feature.</p>
+        <p>I added something I eventually called Legacy Wishes: a simple way to leave context behind. We could describe an item, note why it mattered, and indicate which of our daughters might want it. Just as important, it gave them a way to tell us if they didn’t. If neither wanted something, we could note whether to donate it, sell it, or let it go.</p>
+        <p>It wasn’t about control or planning everything out. It was about clarity — and removing a little uncertainty for everyone involved.</p>
+        <h2>Learning something new later in life</h2>
+        <p>Building the app became its own education.</p>
+        <p>I started the way a lot of people do now: watching instructional videos and trying things out, often without fully understanding what I was looking at. I spent a lot of time staring at development screens thinking, Well, that didn’t work.</p>
+        <p>Along the way, I discovered that modern AI tools could be surprisingly helpful. At first, it felt like they were doing too much of the work, and that made me uneasy. But over time, something shifted. They stopped feeling like a replacement and started feeling more like an airplane — and I was the pilot.</p>
+        <p>They could help with navigation and smooth things out, but I was still deciding where to go and when to land.</p>
+        <p>As I got more comfortable, I noticed something else. I wasn’t just asking questions anymore. I was pushing back, debating answers, and occasionally correcting the tools themselves. Sometimes I was clearly the student. Other times, I found myself in the role of teacher.</p>
+        <p>That back-and-forth is where the learning really stuck.</p>
+        <p>What mattered most was that the learning was still mine. The tools didn’t replace effort or judgment. They supported it. Slowly, things that once felt completely opaque started to make sense.</p>
+        <p>It reminded me that learning later in life isn’t about speed. It’s about curiosity, patience, and being willing to feel uncomfortable long enough for things to click.</p>
+        <h2>A clearer way to think about the future</h2>
+        <p>One afternoon, we were in a Goodwill store and came across a set of dishes that looked familiar. I took a quick photo, ran it through Stuffolio, and learned just enough about what they were and what they were worth to make a simple decision.</p>
+        <p>We passed. We already have too much stuff.</p>
+        <p>That was the whole point. I wasn’t looking for a perfect answer. I just wanted enough information to decide and move on — the same kind of clarity I wanted to leave for our daughters.</p>
+        <p>Somewhere along the way, the technical questions gave way to more personal ones. Would someone know what this is? Would they understand why it mattered, or feel comfortable letting it go? Would the people I care about most be left guessing — or have enough context to decide for themselves?</p>
+        <p>I realized we don’t need more complexity. We need clarity, on our own terms.</p>
+        <p>That’s what I tried to build. And honestly, that’s what I’m still figuring out — like everyone else at this stage of life, trying to make a little more sense of the things we own and what they mean … if anything at all.</p>
+        <p>Terry Nyberg, 73, is a lifelong learner who built Stuffolio after finally admitting that the top drawer was not, in fact, a filing system.</p>
+        <p style="color:var(--muted); margin-top:22px;">—</p>
+        <div class="bridge" style="margin-top:22px;"><p style="margin:0;">If the lifecycle approach resonates, see how Stuffolio implements it on the <a href="features.html">Features</a> page — and how Legacy Wishes and Family Sharing fit together on the <a href="family-sharing.html">Family Sharing</a> page.</p></div>
+      </div>
+    </main>
+
+    <footer>
+      <div>&copy; <span id="y"></span> Coffee &amp; Code LLC</div>
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <span style="color:var(--muted)">Docs:</span>
+        <a href="Stuffolio_Quick_Start_Guide.html">Quick Start</a>
+        <a href="Stuffolio_Users_Manual.html">Full Manual</a>
+        <span style="color:var(--line)">|</span>
+        <a href="family-sharing.html">Family Sharing</a>
+        <!-- BETA-PERIOD-ONLY: Remove Testing Guide link after launch -->
+        <a href="beta-testing-guide.html">Testing Guide</a>
+        <a href="support.html">Support</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="app-map.html">App Map</a>
+      </div>
+      <div class="trust-strip"><span>Privacy-first. No ads. No selling your data. Optional AI features.</span></div>
 </footer>
+  </div>
+
+  <script>
+    // Year
+    const y = document.getElementById("y");
+    if (y) y.textContent = new Date().getFullYear();
+
+    // Theme toggle
+    const html = document.documentElement;
+    const toggle = document.getElementById('themeToggle');
+    if (toggle) {
+      const saved = localStorage.getItem('theme');
+      if (saved === 'light') html.classList.add('light-mode');
+      else if (!saved && window.matchMedia('(prefers-color-scheme: light)').matches) {
+        html.classList.add('light-mode');
+      }
+      toggle.addEventListener('click', () => {
+        html.classList.toggle('light-mode');
+        localStorage.setItem('theme', html.classList.contains('light-mode') ? 'light' : 'dark');
+      });
+    }
+  </script>
 </body>
 </html>
