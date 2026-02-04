@@ -326,7 +326,7 @@
 
     <!-- Legacy Wishes Section -->
     <div class="card">
-      <h2 style="margin-top:0">💝 Legacy Wishes</h2>
+      <h2 style="margin-top:0">💝 Legacy Wishes <span style="background: linear-gradient(135deg, #a78bfa, #7dd3fc); color: #0b1220; font-size: 0.7rem; padding: 3px 10px; border-radius: 10px; margin-left: 8px; font-weight: 700;">UPDATED</span></h2>
       <p>Plan what happens to your meaningful belongings. Reduce confusion and stress for the people you love.</p>
 
       <div class="highlight-purple">
@@ -342,7 +342,7 @@
         <div class="feature-item">
           <div class="icon">👤</div>
           <h4>Add Beneficiaries</h4>
-          <p>Create a list of people who might receive your belongings — family members, friends, or organizations.</p>
+          <p>Create a list of people who might receive your belongings — family members, friends, charities, or organizations.</p>
         </div>
         <div class="feature-item">
           <div class="icon">🏷️</div>
@@ -350,20 +350,94 @@
           <p>Choose which items go to which people. Add notes about why an item is meaningful or special instructions.</p>
         </div>
         <div class="feature-item">
+          <div class="icon">🔄</div>
+          <h4>Contingency Recipients <span style="background: rgba(34,197,94,.2); color: #22c55e; font-size: 0.6rem; padding: 2px 6px; border-radius: 4px; margin-left: 4px;">NEW</span></h4>
+          <p>Set a line of succession — if the primary recipient declines, specify who should receive the item next.</p>
+        </div>
+        <div class="feature-item">
           <div class="icon">📤</div>
           <h4>Share Your Wishes</h4>
-          <p>When you're ready, share your Legacy Wishes with family through secure iCloud collaboration.</p>
+          <p>When you're ready, share your Legacy Wishes with family through secure CloudKit collaboration with real-time sync.</p>
         </div>
         <div class="feature-item">
           <div class="icon">✏️</div>
           <h4>Update Anytime</h4>
           <p>Life changes. Your wishes can too. Add, remove, or reassign items whenever you want.</p>
         </div>
+        <div class="feature-item">
+          <div class="icon">📄</div>
+          <h4>Export as PDF</h4>
+          <p>Generate a formatted PDF document to print, email, or store with important papers.</p>
+        </div>
       </div>
 
       <div class="highlight-yellow">
         <p><strong>Important:</strong> Legacy Wishes are not legal instructions — they are personal intentions meant to reduce confusion and stress. For estate planning, please consult an attorney.</p>
       </div>
+
+      <h3>Receiving Shared Wishes</h3>
+      <p style="color:var(--muted);">When someone shares their Legacy Wishes with you, here's what happens:</p>
+      <ol style="color: var(--muted); line-height: 1.8;">
+        <li>You receive an <strong>iCloud share link</strong> via Messages, Mail, or another method</li>
+        <li>Tap the link on your iPhone, iPad, or Mac</li>
+        <li>Stuffolio opens (or you're prompted to download it from the App Store)</li>
+        <li>Accept the share invitation</li>
+        <li>View the shared wishes anytime in <strong>Legacy Wishes → Shared with Me</strong></li>
+      </ol>
+
+      <h3>What Recipients See</h3>
+      <div class="feature-grid">
+        <div class="feature-item">
+          <div class="icon">👀</div>
+          <h4>View-Only Access</h4>
+          <p>See all wishes and assignments clearly labeled as "View Only" — you cannot make changes to someone else's wishes.</p>
+        </div>
+        <div class="feature-item">
+          <div class="icon">👥</div>
+          <h4>All Recipients</h4>
+          <p>See who else is designated to receive items, their relationships, and how many items each person is assigned.</p>
+        </div>
+        <div class="feature-item">
+          <div class="icon">📦</div>
+          <h4>Item Assignments</h4>
+          <p>View each item, who it's designated to, contingency recipients if declined, fallback disposition (donate, sell, etc.), and any personal notes.</p>
+        </div>
+        <div class="feature-item">
+          <div class="icon">🔄</div>
+          <h4>Real-Time Sync</h4>
+          <p>When the owner updates their wishes, changes appear automatically on your device via CloudKit.</p>
+        </div>
+        <div class="feature-item">
+          <div class="icon">📴</div>
+          <h4>Offline Access <span style="background: rgba(34,197,94,.2); color: #22c55e; font-size: 0.6rem; padding: 2px 6px; border-radius: 4px; margin-left: 4px;">NEW</span></h4>
+          <p>View shared wishes even when offline. Changes sync automatically when you're back online.</p>
+        </div>
+        <div class="feature-item">
+          <div class="icon">👤</div>
+          <h4>Owner Attribution</h4>
+          <p>See who shared the wishes with you and when they last made updates.</p>
+        </div>
+      </div>
+
+      <h3>Family Input & Collaboration <span style="background: rgba(34,197,94,.2); color: #22c55e; font-size: 0.6rem; padding: 2px 6px; border-radius: 4px; margin-left: 4px;">NEW</span></h3>
+      <p style="color:var(--muted);">If the owner enables <strong>View &amp; Input</strong> permission, you can indicate your preferences:</p>
+      <ul style="color: var(--muted);">
+        <li><strong>"I'd like this"</strong> — Express interest in an item</li>
+        <li><strong>"No preference"</strong> — You're neutral</li>
+        <li><strong>"I don't need this"</strong> — Decline interest (helps identify items for the contingency recipient)</li>
+      </ul>
+      <p style="color:var(--muted);">Your input helps the owner make informed decisions. They see all family preferences and can identify conflicts (when multiple people want the same item). <strong>Conflict detection</strong> highlights items where more than one family member has expressed interest — helping start conversations before they become disagreements. The owner always makes final decisions.</p>
+
+      <div class="highlight">
+        <p><strong>How Conflict Detection Works:</strong> When two or more family members express interest in the same item, Stuffolio flags it for the owner. They can see who's interested, review each person's notes, and make an informed decision — or use it as a starting point for a family conversation.</p>
+      </div>
+
+      <h3>Assigning Legacy Wishes</h3>
+      <p style="color:var(--muted);">You can assign items to beneficiaries in two ways:</p>
+      <ul style="color: var(--muted);">
+        <li><strong>From Legacy Wishes hub</strong> — Browse all your items and assign recipients</li>
+        <li><strong>From Edit Item view</strong> — Scroll to the Legacy Wishes section while editing any item and assign directly</li>
+      </ul>
     </div>
 
     <!-- Pricing Section -->
@@ -448,8 +522,38 @@
       </details>
 
       <details class="faq-item">
+        <summary>What happens when I receive a Legacy Wishes share link?</summary>
+        <p>Tap the iCloud link on your device. If you have Stuffolio installed, it opens automatically and prompts you to accept the share. If not, you'll be directed to download it first. Once accepted, you can view the shared wishes anytime in <strong>Legacy Wishes → Shared with Me</strong>.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Can I edit someone else's Legacy Wishes?</summary>
+        <p>No. Shared Legacy Wishes are always view-only. You can see all the information, but only the owner can make changes. If they enable "View &amp; Input" permission, you can indicate your preferences on items, but you cannot modify assignments.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Do I need Stuffolio installed to view shared wishes?</summary>
+        <p>Yes. When you tap a share link, you'll be prompted to download Stuffolio from the App Store if you don't have it. The app is included with Apple Family Sharing — if the owner purchased it, you can download it free.</p>
+      </details>
+
+      <details class="faq-item">
         <summary>Is Legacy Wishes a legal document?</summary>
         <p>No. Legacy Wishes are not legal instructions — they are personal intentions meant to reduce confusion and stress. They help start conversations and reduce uncertainty. For estate planning, please consult an attorney.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>What are contingency recipients?</summary>
+        <p>Contingency recipients are your "plan B" — a line of succession for each item. If your primary recipient declines or can't accept an item, it automatically goes to the contingency recipient you specified. This ensures your wishes are honored even if circumstances change.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>What happens when multiple family members want the same item?</summary>
+        <p>Stuffolio's conflict detection highlights items where more than one person has expressed interest. As the owner, you see all preferences and can make an informed decision — or use it to start a family conversation. The owner always makes the final decision.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Can I export my Legacy Wishes?</summary>
+        <p>Yes. You can generate a formatted PDF document showing all your beneficiaries, item assignments, contingency recipients, and notes. Print it, email it, or store it with other important papers.</p>
       </details>
 
       <details class="faq-item">

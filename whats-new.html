@@ -284,8 +284,8 @@
         </div>
 
         <div class="current-version">
-          <p class="version-number">Version 1.0 (Build 21)</p>
-          <p class="version-date">January 30, 2026</p>
+          <p class="version-number">Version 1.0 (Build 22)</p>
+          <p class="version-date">February 3, 2026</p>
           <span class="version-status">Beta Testing</span>
         </div>
 
@@ -301,7 +301,7 @@
         <div class="release">
           <div class="release-header">
             <h2 class="release-version">Version 1.0 (Build 22)</h2>
-            <span class="release-date">February 2, 2026</span>
+            <span class="release-date">February 3, 2026</span>
             <span class="release-tag beta">Beta</span>
           </div>
 
@@ -342,6 +342,17 @@
               <li><strong>Removed "Use Stuff Scout AI" option</strong> — AI now runs automatically for subscribers when using Photo</li>
               <li><strong>Moved "Record a donation"</strong> — Now accessible via Dispose Of → Donate (where it logically belongs)</li>
               <li><strong>Moved "Multiple identical items"</strong> — Use quantity field in the form instead</li>
+              <li><strong>AI messaging based on access</strong> — Photo flow shows accurate messaging: "AI will identify your item" for subscribers/beta testers, or "Add a photo of your item" for others</li>
+            </ul>
+          </div>
+
+          <div class="change-category fixed">
+            <h4>Bug Fixes</h4>
+            <ul>
+              <li><strong>Photo handoff from library</strong> — Photos selected from library now properly appear in the Add Item form immediately</li>
+              <li><strong>Keyboard dismiss on scroll</strong> — Keyboard now dismisses immediately when scrolling the form (was delayed ~30 seconds)</li>
+              <li><strong>Cleaner photo flow</strong> — Tips and Quick Start overlays automatically hide when photos are already added, giving you a clear view of your item</li>
+              <li><strong>Images section auto-expand</strong> — When adding items via photo, the Images section now automatically expands to show your photo</li>
             </ul>
           </div>
         </div>
@@ -380,6 +391,11 @@
             <p><strong>Component-Based Warranties</strong> — Some products have different warranty periods per component. Track 3 years on batteries and 5 years on tools for brands like EGO Power+, DeWalt, and more. Coverage Phases is now a top-level section available when adding new items (not just editing).</p>
           </div>
 
+          <div class="highlight-change">
+            <p class="label">New</p>
+            <p><strong>Legacy Wishes Family Sharing</strong> — Share your Legacy Wishes with family via CloudKit. Real-time sync, offline support, and conflict detection when multiple family members express interest in the same item. Family members can now indicate preferences ("I'd like this" / "I don't need this") to help you make decisions.</p>
+          </div>
+
           <div class="change-category new">
             <h4>New Features</h4>
             <ul>
@@ -399,6 +415,10 @@
               <li><strong>Component-Based Warranties</strong> — Track different warranty periods for different product components (e.g., 3 years on batteries, 5 years on tools). Category-aware suggestions help you quickly add common components</li>
               <li><strong>Coverage Phases Discoverability</strong> — Coverage Phases is now a top-level section in the add/edit form (no longer nested inside Warranty). Available when creating new items, not just editing</li>
               <li><strong>Coverage Phase Help</strong> — New in-form help button explains coverage types, component warranties, and when to use phases</li>
+              <li><strong>Legacy Wishes CloudKit Sharing</strong> — Share your Legacy Wishes with family via iCloud with real-time sync across all devices</li>
+              <li><strong>Legacy Wishes Family Input</strong> — Family members can indicate preferences on items: "I'd like this", "No preference", or "I don't need this"</li>
+              <li><strong>Legacy Wishes Conflict Detection</strong> — When multiple family members express interest in the same item, the owner sees a conflict indicator to help start conversations</li>
+              <li><strong>Legacy Wishes Offline Support</strong> — View and work with shared Legacy Wishes even when offline; changes sync automatically when back online</li>
             </ul>
           </div>
 
@@ -446,6 +466,7 @@
             <h4>New Features</h4>
             <ul>
               <li><strong>Legacy Wishes in Edit Item</strong> — Assign items to beneficiaries directly from the Edit Item view without leaving the form</li>
+              <li><strong>Contingency Recipients</strong> — Set a line of succession for Legacy Wishes. If your primary recipient declines, specify who should receive the item next</li>
               <li><strong>Stuff Scout Refinement</strong> — Re-analyze items from Edit view with form data as context; choose per-field what to keep</li>
               <li><strong>Receipt Pairing for Scout Results</strong> — Add receipt photo after Scout identification; store, date, and price auto-fill</li>
               <li><strong>Clickable Source Links</strong> — Tap source links in Recent Sales to view original marketplace listings</li>
