@@ -437,7 +437,11 @@
       <!-- WHY I BUILT THIS -->
       <section id="story" style="margin-top:18px;">
         <div class="card" style="background: linear-gradient(135deg, rgba(167,139,250,.08), rgba(125,211,252,.05)); border: 1px solid rgba(167,139,250,.2);">
-          <div style="display:grid; grid-template-columns:1fr; gap:20px; max-width:750px; margin:0 auto;">
+          <div style="display:grid; grid-template-columns:280px 1fr; gap:24px; align-items:center; max-width:850px; margin:0 auto;">
+            <div style="text-align:center;">
+              <img src="assets/manual-pile-web.jpg" alt="A pile of product manuals" style="width:100%; border-radius:10px; box-shadow:0 4px 16px rgba(0,0,0,0.25);" loading="lazy" />
+              <p style="margin:8px 0 0; font-size:0.8rem; color:var(--muted); font-style:italic;">The actual pile.</p>
+            </div>
             <div>
               <p style="font-size:0.8rem; text-transform:uppercase; letter-spacing:1px; color:var(--accent); margin:0 0 8px; font-weight:600;">Why I Built This</p>
               <blockquote style="font-size:1.15rem; line-height:1.7; margin:0; padding:0; border:none; color:var(--text); font-style:italic;">
@@ -451,6 +455,12 @@
               </p>
             </div>
           </div>
+          <style>
+            @media (max-width: 650px) {
+              #story .card > div { grid-template-columns: 1fr !important; }
+              #story .card > div > div:first-child { max-width: 280px; margin: 0 auto; }
+            }
+          </style>
         </div>
       </section>
 
