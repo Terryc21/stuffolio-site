@@ -125,12 +125,8 @@
 
   <!-- Page-specific styles -->
   <style>
-    /* Override hero grid to single column */
-    .hero {
-      display: block;
-    }
+    .hero { display: block; }
 
-    /* Animated gradient text for hero emphasis */
     .gradient-text {
       background: linear-gradient(135deg, var(--accent), var(--accent2), #a78bfa);
       background-size: 200% 200%;
@@ -144,7 +140,6 @@
       50% { background-position: 100% 50%; }
     }
 
-    /* Lifecycle flow strip */
     .lifecycle-strip {
       display: flex;
       justify-content: center;
@@ -172,7 +167,6 @@
       font-size: 1.3rem;
     }
 
-    /* Pillars grid */
     .pillars-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -195,72 +189,12 @@
       border-color: rgba(125,211,252,.4);
       box-shadow: 0 8px 24px rgba(125,211,252,.1);
     }
-    .pillar-icon {
-      font-size: 3rem;
-      margin-bottom: 12px;
-      display: block;
-    }
-    .pillar h3 {
-      color: var(--accent);
-      margin: 0 0 8px;
-      font-size: 1.4rem;
-    }
-    .pillar .pillar-tagline {
-      color: var(--text);
-      font-size: 1rem;
-      margin-bottom: 12px;
-    }
-    .pillar ul {
-      text-align: left;
-      margin: 0;
-      padding-left: 20px;
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
+    .pillar-icon { font-size: 3rem; margin-bottom: 12px; display: block; }
+    .pillar h3 { color: var(--accent); margin: 0 0 8px; font-size: 1.4rem; }
+    .pillar .pillar-tagline { color: var(--text); font-size: 1rem; margin-bottom: 12px; }
+    .pillar ul { text-align: left; margin: 0; padding-left: 20px; color: var(--muted); font-size: 0.9rem; }
     .pillar li { margin: 6px 0; }
 
-    /* Comparison grid (red/green) */
-    .compare-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-      margin: 24px 0;
-    }
-    @media (max-width: 650px) {
-      .compare-grid { grid-template-columns: 1fr; }
-    }
-    .compare-card {
-      padding: 24px;
-      border-radius: 14px;
-      transition: transform 0.2s;
-    }
-    .compare-card:hover { transform: translateY(-2px); }
-    .compare-card.others {
-      background: rgba(239,68,68,.06);
-      border: 1px solid rgba(239,68,68,.2);
-    }
-    .compare-card.stuffolio {
-      background: rgba(34,197,94,.06);
-      border: 2px solid rgba(34,197,94,.3);
-    }
-    .compare-card h4 {
-      margin: 0 0 14px;
-      font-size: 1.1rem;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .compare-card.others h4 { color: #ef4444; }
-    .compare-card.stuffolio h4 { color: #22c55e; }
-    .compare-card ul {
-      margin: 0;
-      padding-left: 20px;
-      color: var(--muted);
-    }
-    .compare-card li { margin: 8px 0; }
-    .compare-card.stuffolio li strong { color: var(--accent); }
-
-    /* Scenario cards with quotes */
     .scenarios-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -278,48 +212,10 @@
       transform: translateY(-2px);
       border-color: rgba(167,139,250,.4);
     }
-    .scenario-emoji {
-      font-size: 2rem;
-      margin-bottom: 12px;
-    }
-    .scenario-quote {
-      font-style: italic;
-      color: var(--text);
-      font-size: 1.05rem;
-      margin: 0 0 12px;
-      line-height: 1.5;
-    }
-    .scenario-result {
-      color: var(--accent);
-      font-weight: 600;
-      margin: 0;
-      font-size: 0.95rem;
-    }
+    .scenario-emoji { font-size: 2rem; margin-bottom: 12px; }
+    .scenario-quote { font-style: italic; color: var(--text); font-size: 1.05rem; margin: 0 0 12px; line-height: 1.5; }
+    .scenario-result { color: var(--accent); font-weight: 600; margin: 0; font-size: 0.95rem; }
 
-    /* Stats section */
-    .stats-row {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 40px;
-      margin: 28px 0;
-    }
-    .stat {
-      text-align: center;
-    }
-    .stat-number {
-      font-size: 3rem;
-      font-weight: 800;
-      color: var(--accent);
-      line-height: 1;
-    }
-    .stat-label {
-      color: var(--muted);
-      font-size: 0.95rem;
-      margin-top: 8px;
-    }
-
-    /* Fun "aha" callout box */
     .aha-box {
       background: linear-gradient(135deg, rgba(251,191,36,.1), rgba(251,146,60,.08));
       border: 1px solid rgba(251,191,36,.3);
@@ -330,17 +226,9 @@
       align-items: flex-start;
       gap: 16px;
     }
-    .aha-box .aha-icon {
-      font-size: 2rem;
-      flex-shrink: 0;
-    }
-    .aha-box p {
-      margin: 0;
-      color: var(--text);
-      line-height: 1.6;
-    }
+    .aha-box .aha-icon { font-size: 2rem; flex-shrink: 0; }
+    .aha-box p { margin: 0; color: var(--text); line-height: 1.6; }
 
-    /* What's New box */
     .whats-new-box {
       background: linear-gradient(135deg, rgba(167,139,250,.12), rgba(125,211,252,.08));
       border: 2px solid rgba(167,139,250,.4);
@@ -348,35 +236,10 @@
       padding: 24px;
       margin: 24px 0;
     }
-    .whats-new-header {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 16px;
-    }
-    .whats-new-badge {
-      background: linear-gradient(135deg, #a78bfa, #7dd3fc);
-      color: #0b1220;
-      font-weight: 700;
-      font-size: 0.85rem;
-      padding: 6px 14px;
-      border-radius: 20px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-    .whats-new-header h3 {
-      margin: 0;
-      font-size: 1.3rem;
-      color: var(--text);
-    }
-    .whats-new-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
-    }
-    @media (max-width: 650px) {
-      .whats-new-grid { grid-template-columns: 1fr; }
-    }
+    .whats-new-header { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+    .whats-new-header h3 { margin: 0; font-size: 1.3rem; color: var(--text); }
+    .whats-new-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    @media (max-width: 650px) { .whats-new-grid { grid-template-columns: 1fr; } }
     .whats-new-item {
       display: flex;
       align-items: flex-start;
@@ -386,79 +249,11 @@
       border-radius: 10px;
       transition: background 0.2s;
     }
-    .whats-new-item:hover {
-      background: rgba(255,255,255,.06);
-    }
-    .whats-new-icon {
-      font-size: 1.5rem;
-      flex-shrink: 0;
-    }
-    .whats-new-item strong {
-      color: var(--accent);
-      display: block;
-      margin-bottom: 4px;
-    }
-    .whats-new-item span {
-      color: var(--muted);
-      font-size: 0.9rem;
-      line-height: 1.4;
-    }
-    .light-mode .whats-new-box { background: linear-gradient(135deg, rgba(124,58,237,.08), rgba(0,102,204,.05)); }
-    .light-mode .whats-new-item { background: rgba(0,0,0,.03); }
+    .whats-new-item:hover { background: rgba(255,255,255,.06); }
+    .whats-new-icon { font-size: 1.5rem; flex-shrink: 0; }
+    .whats-new-item strong { color: var(--accent); display: block; margin-bottom: 4px; }
+    .whats-new-item span { color: var(--muted); font-size: 0.9rem; line-height: 1.4; }
 
-    /* Beta Testing Invite */
-    .beta-invite {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 16px;
-      padding: 20px 24px;
-      background: linear-gradient(135deg, rgba(175,82,222,.1), rgba(0,122,255,.08));
-      border: 1px solid rgba(175,82,222,.3);
-      border-radius: 14px;
-      text-decoration: none;
-      transition: all 0.3s ease;
-    }
-    .beta-invite:hover {
-      background: linear-gradient(135deg, rgba(175,82,222,.15), rgba(0,122,255,.12));
-      border-color: rgba(175,82,222,.5);
-      transform: translateY(-2px);
-    }
-    .beta-invite .invite-icon {
-      font-size: 1.8rem;
-    }
-    .beta-invite .invite-text {
-      text-align: left;
-    }
-    .beta-invite .invite-text strong {
-      display: block;
-      color: var(--text);
-      font-size: 1.05rem;
-      margin-bottom: 2px;
-    }
-    .beta-invite .invite-text span {
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-    .beta-invite .invite-arrow {
-      color: var(--accent);
-      font-size: 1.4rem;
-      transition: transform 0.2s;
-    }
-    .beta-invite:hover .invite-arrow {
-      transform: translateX(4px);
-    }
-    .light-mode .beta-invite {
-      background: linear-gradient(135deg, rgba(124,58,237,.08), rgba(0,102,204,.06));
-      border-color: rgba(124,58,237,.25);
-    }
-    .light-mode .beta-invite:hover {
-      background: linear-gradient(135deg, rgba(124,58,237,.12), rgba(0,102,204,.1));
-      border-color: rgba(124,58,237,.4);
-    }
-    .light-mode .whats-new-item:hover { background: rgba(0,0,0,.05); }
-
-    /* Pricing cards */
     .pricing-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -472,63 +267,42 @@
       border-radius: 16px;
       background: rgba(255,255,255,.03);
       border: 1px solid var(--line);
-      transition: transform 0.2s, box-shadow 0.2s;
+      transition: transform 0.2s;
     }
-    .price-card:hover {
-      transform: translateY(-2px);
-    }
-    .price-card.featured {
-      border: 2px solid var(--accent);
-      box-shadow: 0 0 30px rgba(125,211,252,.1);
-    }
+    .price-card:hover { transform: translateY(-2px); }
+    .price-card.featured { border: 2px solid var(--accent); box-shadow: 0 0 30px rgba(125,211,252,.1); }
     .price-card h3 { margin-top: 0; }
-    .price-card .price {
-      font-size: 2.5rem;
-      font-weight: 700;
-      color: var(--accent);
-    }
-    .price-card .price-note {
-      color: var(--muted);
-      margin-bottom: 16px;
-    }
-    .price-card ul {
-      text-align: left;
-      margin: 0;
-      padding-left: 20px;
-      color: var(--muted);
-    }
+    .price-card .price { font-size: 2.5rem; font-weight: 700; color: var(--accent); }
+    .price-card .price-note { color: var(--muted); margin-bottom: 16px; }
+    .price-card ul { text-align: left; margin: 0; padding-left: 20px; color: var(--muted); }
     .price-card li { margin: 6px 0; }
 
-    /* Final CTA section */
     .final-cta {
       text-align: center;
       padding: 40px 24px;
       background: linear-gradient(180deg, transparent, rgba(125,211,252,.05));
       border-radius: 20px;
     }
-    .final-cta h2 {
-      margin-top: 0;
-      font-size: 1.8rem;
-    }
+    .final-cta h2 { margin-top: 0; font-size: 1.8rem; }
 
-    /* Light mode adjustments */
+    .beta-callout {
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.04);
+      border-radius: 14px;
+      padding: .8rem 1rem;
+      margin: 1rem 0 1.25rem;
+    }
+    .beta-callout strong { display: block; margin-bottom: .25rem; }
+
     .light-mode .pillar { background: rgba(0,102,204,.04); border-color: rgba(0,102,204,.15); }
     .light-mode .pillar:hover { border-color: rgba(0,102,204,.35); box-shadow: 0 8px 24px rgba(0,102,204,.08); }
-    .light-mode .compare-card.others { background: rgba(220,38,38,.05); }
-    .light-mode .compare-card.stuffolio { background: rgba(22,163,74,.05); }
     .light-mode .scenario { background: linear-gradient(135deg, rgba(124,58,237,.05), rgba(0,102,204,.03)); }
     .light-mode .aha-box { background: linear-gradient(135deg, rgba(251,191,36,.08), rgba(251,146,60,.06)); }
     .light-mode .lifecycle-strip { background: linear-gradient(90deg, rgba(0,102,204,.06), rgba(124,58,237,.06)); }
+    .light-mode .whats-new-box { background: linear-gradient(135deg, rgba(124,58,237,.08), rgba(0,102,204,.05)); }
+    .light-mode .whats-new-item { background: rgba(0,0,0,.03); }
+    .light-mode .whats-new-item:hover { background: rgba(0,0,0,.05); }
   </style>
-
-<style>
-/* Drop-in additions for AI notes + beta callout */
-.ai-footnote,.ai-subtext{opacity:.88;font-size:.95em;line-height:1.4;margin-top:.5rem}
-.ai-footnote:before,.ai-subtext:before{content:"† ";opacity:.9}
-.beta-callout{border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.04);border-radius:14px;padding:.8rem 1rem;margin:1rem 0 1.25rem}
-.beta-callout strong{display:block;margin-bottom:.25rem}
-</style>
-
 </head>
 
 <body>
@@ -578,33 +352,14 @@
               <h1 style="margin-top:0;">
                 Because one day you look around and think,<br/><span class="gradient-text">"Where did we get so much stuff?"</span>
               </h1>
-<div class="beta-callout"><strong>Beta testers:</strong> Please use the <a href="beta-testing-guide.html">Beta Testing Guide</a> for setup, what to test, and where to send feedback.</div>
-
+              <div class="beta-callout"><strong>Beta testers:</strong> Please use the <a href="beta-testing-guide.html">Beta Testing Guide</a> for setup, what to test, and where to send feedback.</div>
             </div>
           </div>
 
           <p class="lead" style="font-size:1.15rem;">
-            Stuffolio isn&#39;t just another inventory app. It&#39;s a <strong>life-of-stuff system</strong> &mdash;
-            for buying, owning, repairing, and moving things on. On purpose.
+            Stuffolio helps you manage the full life of your stuff &mdash; from buying it, to owning it, to deciding what happens next.
           </p>
 
-          <p class="lead" style="margin-top:10px; margin-bottom:10px;">
-            Here&#39;s what makes it different:
-          </p>
-          <ul class="feature-bullets" style="margin-top:0;">
-            <li>Built around the full life of your stuff (Acquire &rarr; Own &rarr; Move On)</li>
-            <li>Tracks warranties and coverage that change over time</li>
-            <li>AI assistance when you ask that helps you find information when you need it</li>
-            <li>Helps you decide what to do next &mdash; repair it, replace it, donate it, sell it, or pass it on</li>
-          </ul>
-          <p class="small" style="color:var(--muted); margin-top:8px;">
-            Stuffolio is designed for real households, not businesses or collectors.
-          </p>
-<p class="ai-subtext">AI assistance when you ask — silent when you don’t.</p>
-<p class="ai-footnote">Stuffolio’s AI is user-initiated and non-ambient. Nothing is analyzed or sent to external services unless you explicitly ask for help.</p>
-
-
-          <!-- Lifecycle flow -->
           <div class="lifecycle-strip">
             <span class="stage">🛒 Acquire</span>
             <span class="arrow">→</span>
@@ -616,18 +371,14 @@
           <!-- BETA-PERIOD-ONLY: Replace with App Store buttons after launch -->
           <div class="ctaRow">
             <a class="btn primary" href="https://testflight.apple.com/join/TWgM95st">Become a Beta Tester</a>
-            <a class="btn" href="beta-testing-guide.html">Testing Guide (5 min)</a>
             <a class="btn" href="quick-start.html">Quick Start Guide</a>
           </div>
-          <!-- END BETA-PERIOD
-          <p class="micro-note" style="margin-top:10px; color:var(--muted); font-size:.95rem;">Already in TestFlight? Scroll down for what’s new in <strong>17.1</strong>.</p>
--ONLY -->
 
           <div class="callout">
-            <b>Privacy by default.</b> Your data stays on your device (or your iCloud). No ads, no tracking, no profiles &mdash; ever.
-            <div style="margin-top:8px;">
-              <b>AI when you ask — silent when you don't:</b> Identify items from photos, find manuals and DIY help, parts, get value estimates. Nothing is analyzed unless you explicitly ask.
-            </div>
+            <b>Privacy by default.</b> Your data stays on your device (or your iCloud). No ads, no tracking, no profiles.
+            <span style="display:block; margin-top:8px;">
+              <b>AI when you ask.</b> Identify items from photos, find manuals and parts, get value estimates. Nothing is analyzed unless you explicitly ask.
+            </span>
           </div>
         </div>
       </section>
@@ -635,103 +386,78 @@
       <!-- BETA-PERIOD-ONLY: Remove or convert to "Release Notes" after launch -->
       <!-- WHAT'S NEW IN v1.0 -->
       <section id="whats-new" style="margin-top:18px;">
-        <!-- Beta Testing Invite -->
-        <a href="beta-testing-guide.html" class="beta-invite" style="margin-bottom: 20px;">
-          <span class="invite-icon">🔬</span>
-          <div class="invite-text">
-            <strong>Curious what beta testing looks like?</strong>
-            <span>See what our testers are exploring and how you can help shape Stuffolio.</span>
-          </div>
-          <span class="invite-arrow">→</span>
-        </a>
-
         <div class="card">
           <div class="whats-new-box">
-  <div class="whats-new-header">
-    <h3>What's new in Stuffolio beta 1.0 (Build 22)</h3>
-  </div>
+            <div class="whats-new-header">
+              <h3>What's new in Stuffolio beta 1.0 (Build 23)</h3>
+            </div>
 
-  <div class="whats-new-grid">
-    <div class="whats-new-item">
-      <span class="whats-new-icon">📸</span>
-      <div>
-        <strong>Simplified Add Item</strong>
-        <div class="small">Just 3 clear options: Photo (AI identifies automatically), Barcode (scan UPC), or Manual (enter yourself). Clean card-based UI makes the choice obvious.</div>
-      </div>
-    </div>
+            <div class="whats-new-grid">
+              <div class="whats-new-item">
+                <span class="whats-new-icon">📸</span>
+                <div>
+                  <strong>Simplified Add Item</strong>
+                  <span>3 clear options: Photo (AI identifies), Barcode (scan UPC), or Manual. Form appears instantly while AI works in the background.</span>
+                </div>
+              </div>
 
-    <div class="whats-new-item">
-      <span class="whats-new-icon">⚡</span>
-      <div>
-        <strong>Optimistic AI Loading</strong>
-        <div class="small">Take a photo and the form appears instantly. AI analyzes in the background and fields fill in automatically as results arrive. No more waiting!</div>
-      </div>
-    </div>
+              <div class="whats-new-item">
+                <span class="whats-new-icon">👨‍👩‍👧‍👦</span>
+                <div>
+                  <strong>Household Sharing</strong>
+                  <span>Create a shared household with real-time sync. Share appliances, vehicles, and electronics with family members.</span>
+                </div>
+              </div>
 
-    <div class="whats-new-item">
-      <span class="whats-new-icon">🧪</span>
-      <div>
-        <strong>Unlimited Beta AI</strong>
-        <div class="small">Beta testers now have unlimited AI queries for testing. No need to worry about trial limits while helping us improve Stuffolio.</div>
-      </div>
-    </div>
+              <div class="whats-new-item">
+                <span class="whats-new-icon">💝</span>
+                <div>
+                  <strong>Legacy Wishes Sharing</strong>
+                  <span>Share wishes via CloudKit. Family can indicate preferences; conflict detection highlights items multiple people want.</span>
+                </div>
+              </div>
 
-    <div class="whats-new-item">
-      <span class="whats-new-icon">💝</span>
-      <div>
-        <strong>Legacy Wishes Family Sharing</strong>
-        <div class="small">Share your Legacy Wishes via CloudKit with real-time sync. Family can indicate preferences; conflict detection highlights items multiple people want.</div>
-      </div>
-    </div>
+              <div class="whats-new-item">
+                <span class="whats-new-icon">🛡️</span>
+                <div>
+                  <strong>Component Warranties</strong>
+                  <span>Track different warranty periods for different parts (e.g., 3 years on batteries, 5 years on tools).</span>
+                </div>
+              </div>
+            </div>
 
-    <div class="whats-new-item">
-      <span class="whats-new-icon">🔄</span>
-      <div>
-        <strong>Contingency Recipients</strong>
-        <div class="small">Set a line of succession for Legacy Wishes. If your primary recipient declines, specify who should receive the item next.</div>
-      </div>
-    </div>
-
-    <div class="whats-new-item">
-      <span class="whats-new-icon">👨‍👩‍👧‍👦</span>
-      <div>
-        <strong>Household Sharing</strong>
-        <div class="small">Create a shared household and invite family members. Share appliances, vehicles, and electronics with real-time sync.</div>
-      </div>
-    </div>
-
-    <div class="whats-new-item">
-      <span class="whats-new-icon">📈</span>
-      <div>
-        <strong>Price Watch</strong>
-        <div class="small">Track current market prices, view history charts, and get alerts when prices drop. Essential for insurance documentation.</div>
-      </div>
-    </div>
-
-    <div class="whats-new-item">
-      <span class="whats-new-icon">🛡️</span>
-      <div>
-        <strong>Component Warranties</strong>
-        <div class="small">Track different warranty periods for different components (e.g., 3 years on batteries, 5 years on tools).</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="whats-new-footer">
-    <a class="btn btn-secondary" href="whats-new.html">Full Changelog</a>
-    <a class="btn btn-secondary" href="beta-testing-guide.html">Testing Guide</a>
-  </div>
-</div>
+            <div class="whats-new-footer" style="margin-top:16px;">
+              <a class="btn btn-secondary" href="whats-new.html">Full Changelog</a>
+            </div>
+          </div>
+        </div>
       </section>
       <!-- END BETA-PERIOD-ONLY -->
 
-      <!-- WHY STUFFOLIO - THREE PILLARS -->
+      <!-- WHY I BUILT THIS -->
+      <section id="story" style="margin-top:18px;">
+        <div class="card" style="background: linear-gradient(135deg, rgba(167,139,250,.08), rgba(125,211,252,.05)); border: 1px solid rgba(167,139,250,.2);">
+          <div style="display:grid; grid-template-columns:1fr; gap:20px; max-width:750px; margin:0 auto;">
+            <div>
+              <p style="font-size:0.8rem; text-transform:uppercase; letter-spacing:1px; color:var(--accent); margin:0 0 8px; font-weight:600;">Why I Built This</p>
+              <blockquote style="font-size:1.15rem; line-height:1.7; margin:0; padding:0; border:none; color:var(--text); font-style:italic;">
+                "I had to admit that 'that drawer' was not a filing system. So I built something simple: a place to keep track of what we own, along with the information we actually need — warranty dates, manuals, support contacts. One place instead of twelve."
+              </blockquote>
+              <p style="margin:16px 0 0; color:var(--muted); font-size:0.95rem;">
+                — <strong style="color:var(--text);">Terry Nyberg, 73</strong>, founder of Stuffolio. After decades in business, he learned to code and built the app he wished existed.
+              </p>
+              <p style="margin:12px 0 0;">
+                <a href="story.html" style="color:var(--accent); font-weight:500;">Read the full story →</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- WHY STUFFOLIO - FIVE PILLARS -->
       <section id="why" style="margin-top:18px;">
         <div class="card">
-          <h2 style="margin-top:0; text-align:center;">Why Stuffolio?</h2>
-          <p style="color:var(--muted); text-align:center; font-size:1.1rem; margin-bottom:8px;">
-            Most inventory apps stop at "list your stuff." We go further.
-          </p>
+          <h2 style="margin-top:0; text-align:center;">What Stuffolio Does</h2>
 
           <div class="pillars-grid">
             <div class="pillar">
@@ -739,10 +465,9 @@
               <h3>Track</h3>
               <p class="pillar-tagline">Know what you own</p>
               <ul>
-                <li>Fast capture with photos</li>
-                <li>Barcode scanning (14 formats)</li>
+                <li>Photos, barcodes, or manual entry</li>
                 <li>21 categories, 18 room presets</li>
-                <li>Works even with incomplete info</li>
+                <li>Works with incomplete info</li>
               </ul>
             </div>
 
@@ -753,8 +478,7 @@
               <ul>
                 <li>Warranty <em>phase</em> tracking</li>
                 <li>Alerts before coverage changes</li>
-                <li>Deductible tracking</li>
-                <li>Inventory to help document loss</li>
+                <li>RMA and support call logging</li>
               </ul>
             </div>
 
@@ -764,8 +488,7 @@
               <p class="pillar-tagline">Decide what happens next</p>
               <ul>
                 <li>Legacy Wishes for family</li>
-                <li>Donation &amp; sale tracking</li>
-                <li>Tax documentation</li>
+                <li>Donation & sale tracking</li>
                 <li>Share wishes via iCloud</li>
               </ul>
             </div>
@@ -776,9 +499,7 @@
               <p class="pillar-tagline">AI-assisted insights</p>
               <ul>
                 <li>"What is this?" from a photo</li>
-                <li>Find manuals and DIY help &amp; replacement parts</li>
-                <li>Value estimates for selling</li>
-                <li>Smart maintenance reminders by category</li>
+                <li>Find manuals, parts, DIY help</li>
                 <li>Repair, Keep, or Replace? advisor</li>
               </ul>
             </div>
@@ -791,7 +512,6 @@
                 <li>Rate products 1-5 stars</li>
                 <li>Track "Would Buy Again"</li>
                 <li>Filter by your ratings</li>
-                <li>Never forget what worked</li>
               </ul>
             </div>
           </div>
@@ -799,258 +519,98 @@
           <div class="aha-box">
             <span class="aha-icon">💡</span>
             <p>
-              <strong>The "aha" moment:</strong> That 3-year warranty on your fridge? Year 1 might be full coverage.
-              Year 2-3 might be parts only. Most apps just show "expires 2027."
-              Stuffolio shows you <em>when your coverage actually changes</em>.
+              <strong>The key difference:</strong> That 3-year warranty on your fridge? Year 1 might be full coverage, years 2-3 parts only. Most apps just show "expires 2027." Stuffolio shows you <em>when your coverage actually changes</em>.
             </p>
-          </div>
-        </div>
-      </section>
-
-      <!-- WHAT MAKES STUFFOLIO DIFFERENT -->
-      <section id="compare" style="margin-top:18px;">
-        <div class="card">
-          <h2 style="margin-top:0; text-align:center;">What Makes Stuffolio Different</h2>
-          <p style="color:var(--muted); text-align:center;">
-            There are several good home inventory apps. Here's what we focused on.
-          </p>
-
-          <div class="compare-grid">
-            <div class="compare-card others" style="background:rgba(125,211,252,.04); border-color:rgba(125,211,252,.2);">
-              <h4 style="color:var(--accent);">🎯 Our Focus</h4>
-              <ul>
-                <li><strong>Warranty depth</strong> &mdash; coverage phases, not just dates</li>
-                <li><strong>Apple Wallet cards</strong> &mdash; warranty proof without opening the app</li>
-                <li><strong>The full claim experience</strong> &mdash; RMA tracking + support call logging</li>
-                <li><strong>Product memory</strong> &mdash; ratings and "Would Buy Again"</li>
-                <li><strong>Decision tools</strong> &mdash; Repair, Keep, or Replace?</li>
-                <li><strong>AI product research</strong> &mdash; manuals, parts, values on demand</li>
-                <li><strong>Value over time</strong> &mdash; snapshots and depreciation</li>
-                <li><strong>Conflict resolution</strong> &mdash; side-by-side, you decide</li>
-              </ul>
-            </div>
-
-            <div class="compare-card stuffolio">
-              <h4>✓ All Stuffolio Features</h4>
-              <ul>
-                <li><strong>Quick capture</strong> &mdash; photo, voice, or barcode — add details later</li>
-                <li><strong>Mac + iPhone + iPad</strong> &mdash; seamless workflow</li>
-                <li><strong>Stuff Scout AI</strong> &mdash; identify items from photos</li>
-                <li><strong>Warranty phases</strong> &mdash; Full → Parts Only → Limited</li>
-                <li><strong>Apple Wallet Cards</strong> &mdash; warranty proof at your fingertips</li>
-                <li><strong>RMA & return tracking</strong> &mdash; track claims to completion</li>
-                <li><strong>Support interaction logging</strong> &mdash; rep names, case numbers</li>
-                <li><strong>Smart maintenance</strong> &mdash; category-based reminders</li>
-                <li><strong>Product ratings</strong> &mdash; remember what's worth buying again</li>
-                <li><strong>Value Snapshots</strong> &mdash; track inventory value over time</li>
-                <li><strong>Price Watch</strong> &mdash; see how inflation affects what you own</li>
-                <li><strong>Audit Mode</strong> &mdash; verify physical inventory matches records</li>
-                <li><strong>Legacy Wishes</strong> &mdash; plan who gets what</li>
-                <li><strong>Insurance Profile</strong> &mdash; identify coverage gaps</li>
-                <li><strong>Your data in your iCloud</strong> &mdash; not ours</li>
-                <li><strong>Family Sharing</strong> &mdash; buy once, share with family</li>
-              </ul>
-            </div>
           </div>
 
           <p style="text-align:center; margin-top:20px; font-size:0.95rem;">
-            <a href="compare.html">See detailed comparison with other apps →</a>
+            <a href="features.html">See all features →</a>
           </p>
         </div>
       </section>
 
-      <!-- WHEN IT MATTERS MOST - SCENARIOS -->
+      <!-- REAL SCENARIOS -->
       <section id="scenarios" style="margin-top:18px;">
         <div class="card">
-          <h2 style="margin-top:0; text-align:center;">When It Matters Most</h2>
-          <p style="color:var(--muted); text-align:center;">
-            Real situations where Stuffolio makes the difference.
-          </p>
+          <h2 style="margin-top:0; text-align:center;">When It Matters</h2>
 
           <div class="scenarios-grid">
             <div class="scenario">
               <div class="scenario-emoji">🔥</div>
               <p class="scenario-quote">"After the fire, we had to list everything we lost for insurance."</p>
-              <p class="scenario-result">→ Photos, receipts, and values &mdash; already documented and saved on iCloud.</p>
+              <p class="scenario-result">→ Photos, receipts, and values already documented.</p>
             </div>
 
             <div class="scenario">
               <div class="scenario-emoji">🔧</div>
-              <p class="scenario-quote">"The dishwasher broke. I had no idea if it was still under warranty."</p>
+              <p class="scenario-quote">"The dishwasher broke. Is it still under warranty?"</p>
               <p class="scenario-result">→ Alert: "Coverage changes to Parts Only in 30 days."</p>
             </div>
 
             <div class="scenario">
               <div class="scenario-emoji">💔</div>
-              <p class="scenario-quote">"When we helped family downsize, we couldn’t remember who wanted what."</p>
-              <p class="scenario-result">→ Legacy Wishes made it easy to record decisions before anyone had to guess.</p>
-            </div>
-
-            <div class="scenario">
-              <div class="scenario-emoji">📞</div>
-              <p class="scenario-quote">"I called Samsung three times. Who did I talk to? What's my case number?"</p>
-              <p class="scenario-result">→ Support history: Rep name, reference #, follow-up date.</p>
+              <p class="scenario-quote">"When we helped family downsize, nobody knew who wanted what."</p>
+              <p class="scenario-result">→ Legacy Wishes recorded decisions before anyone had to guess.</p>
             </div>
 
             <div class="scenario">
               <div class="scenario-emoji">🔍</div>
-              <p class="scenario-quote">"I used Stuff Scout at a Goodwill store. Point, shoot - instant history and value estimate on a set of dishes!"</p>
-              <p class="scenario-result">→ AI identification: What is it? What's it worth? Buy or pass?</p>
+              <p class="scenario-quote">"What IS this thing? What's it worth?"</p>
+              <p class="scenario-result">→ Stuff Scout: "1920s Depression glass, $45-80."</p>
             </div>
 
             <div class="scenario">
-              <div class="scenario-emoji">📱</div>
-              <p class="scenario-quote">"I walked around our house snapping pictures with my iPhone. Later on my Mac, I added items from my photo album. Couldn't be easier."</p>
-              <p class="scenario-result">→ Seamless workflow: Capture on iPhone, manage on Mac.</p>
-            </div>
-
-            <div class="scenario">
-              <div class="scenario-emoji">🔄</div>
-              <p class="scenario-quote">"I updated an item on my phone while my wife edited the same thing on her iPad. Now what?"</p>
-              <p class="scenario-result">→ Side-by-side comparison shows both versions. You decide what to keep.</p>
+              <div class="scenario-emoji">📞</div>
+              <p class="scenario-quote">"I called Samsung three times. Who did I talk to?"</p>
+              <p class="scenario-result">→ Support history: Rep name, case #, follow-up date.</p>
             </div>
 
             <div class="scenario">
               <div class="scenario-emoji">⭐</div>
-              <p class="scenario-quote">"This vacuum broke after 6 months. I never want to buy this brand again."</p>
-              <p class="scenario-result">→ 1-star rating + "Would Not Buy Again" — your future self will thank you.</p>
-            </div>
-
-            <div class="scenario">
-              <div class="scenario-emoji">🔧</div>
-              <p class="scenario-quote">"My coffee maker is acting up. Should I get it fixed or just buy a new one?"</p>
-              <p class="scenario-result">→ Repair, Keep, or Replace? shows repair options first, your brand history, and helps you think — not shop.</p>
+              <p class="scenario-quote">"This vacuum broke after 6 months. Never buying this brand again."</p>
+              <p class="scenario-result">→ 1-star + "Would Not Buy Again" — your future self will thank you.</p>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- BUILT FROM THE GROUND UP -->
+      <!-- BUILT FOR -->
       <section id="built-for" style="margin-top:18px;">
         <div class="card">
-          <h2 style="margin-top:0; text-align:center;">Built From the Ground-up to:</h2>
+          <h2 style="margin-top:0; text-align:center;">How It's Built</h2>
 
           <div class="pillars-grid">
             <div class="pillar">
               <span class="pillar-icon">🔒</span>
-              <h3>Respect Your Privacy</h3>
+              <h3>Privacy First</h3>
               <p class="pillar-tagline">Your data belongs to you</p>
               <ul>
-                <li>Data stored locally by default</li>
-                <li>Optional iCloud sync &mdash; YOUR account, not ours</li>
-                <li>All network features are opt-in</li>
-                <li>No ads, no tracking, no profiles &mdash; ever</li>
+                <li>Stored locally or in YOUR iCloud</li>
+                <li>All network features opt-in</li>
                 <li>We never see your inventory</li>
               </ul>
             </div>
 
             <div class="pillar">
               <span class="pillar-icon">👁️</span>
-              <h3>Accessibility</h3>
+              <h3>Accessible</h3>
               <p class="pillar-tagline">Designed for everyone</p>
               <ul>
-                <li>Colorblind-safe design &mdash; color + icon + text (never color alone)</li>
-                <li>Blue/yellow/red palette only (avoids green/red/amber confusion)</li>
-                <li>Full VoiceOver support throughout</li>
-                <li>Dynamic Type &mdash; scales with your text size</li>
-                <li>WCAG 2.1 Level AA compliant</li>
+                <li>Colorblind-safe (blue/yellow/red)</li>
+                <li>Full VoiceOver support</li>
+                <li>Dynamic Type throughout</li>
               </ul>
             </div>
 
             <div class="pillar">
-              <span class="pillar-icon">🔄</span>
-              <h3>Work the Way You Do</h3>
-              <p class="pillar-tagline">Flexible, not fussy</p>
+              <span class="pillar-icon">🍎</span>
+              <h3>Apple Native</h3>
+              <p class="pillar-tagline">Works like you expect</p>
               <ul>
-                <li>Start with a photo, add details later</li>
-                <li>No required fields &mdash; capture what you know</li>
-                <li>Works offline, syncs when ready</li>
-                <li>iPhone, iPad, and Mac &mdash; seamlessly</li>
-                <li>Your workflow, your way</li>
+                <li>Spotlight, Handoff, Widgets</li>
+                <li>Siri Shortcuts, Focus Filters</li>
+                <li>iPhone, iPad, Mac — seamlessly</li>
               </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- POWER USER FEATURES -->
-      <section id="power-features" style="margin-top:18px;">
-        <div class="card">
-          <h2 style="margin-top:0; text-align:center;">Deeply Integrated with Apple</h2>
-          <p style="color:var(--muted); text-align:center; margin-bottom:20px;">
-            Stuffolio works the way you expect Apple apps to work.
-          </p>
-
-          <div class="grid">
-            <div class="card" style="padding:18px;">
-              <h3>🔎 Spotlight Search</h3>
-              <p style="color:var(--muted); margin:0;">Search your stuff from anywhere on your device. Type in Spotlight, find your items instantly.</p>
-            </div>
-
-            <div class="card" style="padding:18px;">
-              <h3>🔄 Handoff</h3>
-              <p style="color:var(--muted); margin:0;">Start on iPhone, continue on Mac. Pick up where you left off on any device.</p>
-            </div>
-
-            <div class="card" style="padding:18px;">
-              <h3>📱 Interactive Widgets</h3>
-              <p style="color:var(--muted); margin:0;">Add items from your lock screen. View expiring warranties at a glance. Quick actions without opening the app.</p>
-            </div>
-
-            <div class="card" style="padding:18px;">
-              <h3>⌨️ Keyboard Shortcuts</h3>
-              <p style="color:var(--muted); margin:0;">Navigate anywhere with ⌘K command palette. 9 shortcuts for power users who prefer keyboard-first workflows.</p>
-            </div>
-
-            <div class="card" style="padding:18px;">
-              <h3>🎯 Focus Filters</h3>
-              <p style="color:var(--muted); margin:0;">Your inventory adapts to your Focus mode. Show only what's relevant when you're working, relaxing, or traveling.</p>
-            </div>
-
-            <div class="card" style="padding:18px;">
-              <h3>🗣️ Siri Shortcuts</h3>
-              <p style="color:var(--muted); margin:0;">"Hey Siri, add an item to Stuffolio." Voice control for quick capture when your hands are full.</p>
-            </div>
-          </div>
-
-          <p style="color:var(--muted); text-align:center; font-size:.9rem; margin-top:16px; margin-bottom:0;">
-            All integrations are opt-in. Enable only what you want in Settings → Integrations.
-          </p>
-        </div>
-      </section>
-
-      <!-- WHO IT'S FOR -->
-      <section id="who" style="margin-top:18px;">
-        <div class="card">
-          <h2 style="margin-top:0; text-align:center;">Who Uses Stuffolio</h2>
-
-          <div class="use-cases-grid">
-            <div class="use-case">
-              <div class="use-case-icon">🏠</div>
-              <h3>Homeowners &amp; Renters</h3>
-              <p class="use-case-quote">"If my house burned down, could I list everything I own?"</p>
-              <p class="use-case-desc">Document your belongings for insurance &mdash; even without receipts.</p>
-            </div>
-
-            <div class="use-case">
-              <div class="use-case-icon">⏰</div>
-              <h3>Warranty Trackers</h3>
-              <p class="use-case-quote">"My dishwasher died. Was it still under warranty?"</p>
-              <p class="use-case-desc">Know when coverage <em>changes</em> &mdash; not just when it expires.</p>
-            </div>
-
-            <div class="use-case">
-              <div class="use-case-icon">🔍</div>
-              <h3>Collectors &amp; Thrifters</h3>
-              <p class="use-case-quote">"What IS this thing? What's it worth?"</p>
-              <p class="use-case-desc">Stuff Scout identifies items and estimates values from a photo.</p>
-            </div>
-
-            <div class="use-case">
-              <div class="use-case-icon">👨‍👩‍👧</div>
-              <h3>Families &amp; Planning Ahead</h3>
-              <p class="use-case-quote">"I want specific people to have specific things."</p>
-              <p class="use-case-desc">Legacy Wishes lets you record intentions &mdash; not a legal doc, just clarity.</p>
             </div>
           </div>
         </div>
@@ -1061,10 +621,9 @@
         <div class="card">
           <h2 style="margin-top:0; text-align:center;">See Stuffolio in Action</h2>
           <p style="color:var(--muted); text-align:center; margin-bottom:20px;">
-            Beautiful on Mac, iPhone, and iPad &mdash; in light or dark mode.
+            Beautiful on Mac, iPhone, and iPad — in light or dark mode.
           </p>
 
-          <!-- Platform Tabs -->
           <div class="platform-tabs" role="tablist">
             <button class="platform-tab active" role="tab" aria-selected="true" data-platform="ios" id="tab-ios" aria-controls="carousel-ios">
               <span class="tab-icon">📱</span> iPhone &amp; iPad
@@ -1074,7 +633,6 @@
             </button>
           </div>
 
-          <!-- iOS Carousel -->
           <div id="carousel-ios" class="carousel" role="tabpanel" aria-labelledby="tab-ios">
             <div class="carousel-container">
               <button class="carousel-nav carousel-prev" onclick="carouselPrev('ios')" aria-label="Previous screenshot">&#10094;</button>
@@ -1087,7 +645,6 @@
             <div id="ios-carousel-dots" class="carousel-dots"></div>
           </div>
 
-          <!-- Mac Carousel -->
           <div id="carousel-mac" class="carousel" role="tabpanel" aria-labelledby="tab-mac" hidden>
             <div class="carousel-container">
               <button class="carousel-nav carousel-prev" onclick="carouselPrev('mac')" aria-label="Previous screenshot">&#10094;</button>
@@ -1106,182 +663,11 @@
         </div>
       </section>
 
-      <!-- FEATURES -->
-      <section id="features" style="margin-top:18px;">
-        <div class="card">
-          <h2 style="margin-top:0;">Features (the practical kind)</h2>
-          <p style="color:var(--muted); margin-bottom:20px;">Everything you need to track, protect, and plan.</p>
-
-          <div class="grid">
-            <div class="card" style="padding:18px;">
-              <h3>📸 Fast capture</h3>
-              <ul>
-                <li>Add items with photos + a few fields</li>
-                <li>Batch entry for multiple identical items</li>
-                <li>Scan barcodes to auto-fill (14 formats)</li>
-              </ul>
-            </div>
-
-            <div class="card" style="padding:18px;">
-              <h3>🛡️ Smart warranty tracking</h3>
-              <ul>
-                <li>Coverage phases: Full → Parts → Limited</li>
-                <li>Alerts before coverage changes</li>
-                <li>RMA & return claim tracking</li>
-              </ul>
-            </div>
-
-            <div class="card" style="padding:18px;">
-              <h3>⚠️ Recall alerts</h3>
-              <ul>
-                <li>Check products against CPSC database</li>
-                <li>See hazards and remedy instructions</li>
-                <li>Know if your stuff has safety issues</li>
-              </ul>
-            </div>
-
-            <div class="card" style="padding:18px;">
-              <h3>🤖 Stuff Scout (AI)</h3>
-              <ul>
-                <li>Point at grandma's vase &mdash; get "1920s Depression glass, $45-80"</li>
-                <li>Find manuals and DIY help, parts, DIY videos</li>
-                <li>Links to recent sales for price context</li>
-              </ul>
-            </div>
-
-            <div class="card" style="padding:18px;">
-              <h3>📞 Support history</h3>
-              <ul>
-                <li>Log calls, chats, and emails</li>
-                <li>Track rep names &amp; case numbers</li>
-                <li>Never repeat your story twice</li>
-              </ul>
-            </div>
-
-            <div class="card" style="padding:18px;">
-              <h3>💝 Legacy Wishes</h3>
-              <ul>
-                <li>Plan who gets treasured items</li>
-                <li>Share wishes via iCloud</li>
-                <li>Not legal &mdash; just clarity for family</li>
-              </ul>
-            </div>
-
-            <div class="card" style="padding:18px;">
-              <h3>📊 Insurance-ready exports</h3>
-              <ul>
-                <li>PDF, CSV, or Excel</li>
-                <li>Useful even with incomplete info</li>
-                <li>Donation &amp; tax reports</li>
-              </ul>
-            </div>
-
-            <div class="card" style="padding:18px;">
-              <h3>🔒 Privacy first</h3>
-              <ul>
-                <li>Data in YOUR iCloud &mdash; not ours</li>
-                <li>All network features are opt-in</li>
-                <li>No ads, no tracking, ever</li>
-              </ul>
-            </div>
-
-            <div class="card" style="padding:18px;">
-              <h3>🏠 <a href="family-sharing.html" style="text-decoration:none;">Household Sharing</a></h3>
-              <ul>
-                <li>Buy once &mdash; family uses free</li>
-                <li>Create a household with real-time sync</li>
-                <li>See who added each shared item</li>
-                <li>Viewer, Editor, or Admin permissions</li>
-              </ul>
-            </div>
-
-            <div class="card" style="padding:18px;">
-              <h3>⭐ Product Ratings</h3>
-              <p style="font-size:.9em;color:var(--muted);margin-bottom:8px;">When something wears out or breaks, know whether to buy the same brand again or switch.</p>
-              <ul>
-                <li>Rate items 1-5 stars based on your experience</li>
-                <li>Track "Would Buy Again" for future purchases</li>
-                <li>Filter by satisfaction to see your best brands</li>
-              </ul>
-            </div>
-
-            <div class="card" style="padding:18px;">
-              <h3>🔄 Sync Conflict Resolution</h3>
-              <ul>
-                <li>Edit on multiple devices freely</li>
-                <li>Side-by-side version comparison</li>
-                <li>You decide what to keep</li>
-              </ul>
-            </div>
-
-            <div class="card" style="padding:18px;">
-              <h3>🔧 Smart Maintenance</h3>
-              <ul>
-                <li>Category-based reminders</li>
-                <li>VIN tracking for vehicles</li>
-                <li>Priority levels: overdue → due soon</li>
-              </ul>
-            </div>
-
-            <div class="card" style="padding:18px;">
-              <h3>🛠️ Repair, Keep, or Replace?</h3>
-              <p style="font-size:.9em;color:var(--muted);margin-bottom:8px;">A thinking tool — not a shopping funnel. Make intentional decisions about your stuff.</p>
-              <ul>
-                <li>Repair options shown first (with iFixit links)</li>
-                <li>Your brand history &amp; satisfaction data</li>
-                <li>Lifespan analysis with confidence levels</li>
-                <li>Research tips to find credible reviews</li>
-              </ul>
-            </div>
-
-            <div class="card" style="padding:18px;">
-              <h3>📲 Apple Wallet Cards</h3>
-              <ul>
-                <li>Add warranty cards to Apple Wallet</li>
-                <li>Quick proof of coverage at repair shops</li>
-                <li>Cards auto-expire when warranty does</li>
-              </ul>
-            </div>
-
-            <div class="card" style="padding:18px;">
-              <h3>📈 Value Snapshots</h3>
-              <ul>
-                <li>Track inventory value over time</li>
-                <li>Automatic periodic snapshots</li>
-                <li>Trend charts for depreciation</li>
-              </ul>
-            </div>
-
-            <div class="card" style="padding:18px;">
-              <h3>✅ Audit Mode</h3>
-              <ul>
-                <li>Verify physical inventory matches records</li>
-                <li>Mark items as "Found" room-by-room</li>
-                <li>Identify missing or moved items</li>
-              </ul>
-            </div>
-
-            <div class="card" style="padding:18px;">
-              <h3>🤝 Loan Tracking</h3>
-              <ul>
-                <li>Track items lent to friends &amp; neighbors</li>
-                <li>Remember what you've borrowed from others</li>
-                <li>Return date reminders &amp; overdue alerts</li>
-                <li>One-tap reminder messages to borrowers</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <!-- PRICING -->
       <section id="pricing" style="margin-top:18px;">
         <div class="card">
           <h2 style="margin-top:0; text-align:center;">Simple Pricing</h2>
-          <p style="color:var(--muted); text-align:center;">
-            Stuffolio works great standalone. AI assistance is available when you ask — silent when you don't.
-          </p>
-          <p style="color:var(--muted); text-align:center; margin-top:10px; font-size:.95rem;"><strong>TestFlight beta is free.</strong> Pricing below reflects the planned App Store release.</p>
+          <p style="color:var(--muted); text-align:center; font-size:.95rem;"><strong>TestFlight beta is free.</strong> Pricing below reflects the planned App Store release.</p>
 
           <div class="pricing-grid">
             <div class="price-card featured">
@@ -1292,29 +678,28 @@
                 <li>Full inventory management</li>
                 <li>Smart warranty tracking</li>
                 <li>Legacy Wishes</li>
-                <li>Inventory to help document loss</li>
+                <li>Insurance documentation</li>
                 <li>iCloud sync</li>
-                <li><strong>Family Sharing included</strong> (up to 6 family members)</li>
+                <li><strong>Family Sharing included</strong></li>
               </ul>
             </div>
 
             <div class="price-card">
               <h3>AI Enhancements</h3>
               <div class="price">$2.99<span style="font-size:1rem; font-weight:400;">/mo</span></div>
-              <div class="price-note"><strong>or $19.99/year (5 months free)</strong></div>
+              <div class="price-note"><strong>or $19.99/year</strong></div>
               <ul>
-                <li>Stuff Scout: "What is this?"</li>
+                <li>Stuff Scout identification</li>
                 <li>Smart categorization</li>
                 <li>Value estimates</li>
-                <li>Find manuals and DIY help &amp; parts</li>
+                <li>Find manuals & parts</li>
                 <li>Maintenance suggestions</li>
-                <li>Per-person subscription (AI costs scale by usage)</li>
               </ul>
             </div>
           </div>
 
-          <p style="color:var(--muted); text-align:center; margin:14px auto 0; max-width: 760px; font-size: .95rem;">
-            Purchase Stuffolio once and your family can install it through Apple Family Sharing (up to 6 members). AI assistance runs only when you ask — nothing analyzed in the background. AI is billed per person because each person's usage has real server costs.
+          <p style="color:var(--muted); text-align:center; margin:14px auto 0; max-width: 700px; font-size: .9rem;">
+            Purchase once, share with up to 6 family members via Apple Family Sharing. AI subscription is per-person because each person's usage has real server costs.
           </p>
         </div>
       </section>
@@ -1324,33 +709,30 @@
       <section style="margin-top:18px;">
         <div class="card final-cta">
           <h2>Ready to Take Control of Your Stuff?</h2>
-          <p style="color:var(--muted); font-size:1.15rem; margin-bottom:16px;">
+          <p style="color:var(--muted); font-size:1.1rem; margin-bottom:20px;">
             Track what you own. Protect your purchases. Plan what matters.
-          </p>
-          <p style="color:var(--accent); font-size:1rem; margin-bottom:24px; font-weight:600;">
-            🎁 Beta testing is completely free — and your feedback is truly appreciated!
           </p>
           <div class="ctaRow" style="justify-content:center;">
             <a class="btn primary" href="https://testflight.apple.com/join/TWgM95st">Join the Beta</a>
             <a class="btn" href="quick-start.html">Quick Start Guide</a>
           </div>
-          <!-- END BETA-PERIOD-ONLY -->
           <p style="color:var(--muted); font-size:.9rem; margin-top:20px; margin-bottom:0;">
             Questions? <a href="support.html">Get support</a> or read our <a href="privacy.html">privacy policy</a>.
           </p>
         </div>
       </section>
+      <!-- END BETA-PERIOD-ONLY -->
 
-          <div class="card">
+      <div class="card" style="margin-top:18px;">
         <h2 style="margin-top:0;">Story</h2>
         <p>
-          “I finally admitted that the top drawer was not, in fact, a filing system.”
+          "I finally admitted that the top drawer was not, in fact, a filing system."
           That small realization turned into Stuffolio — and a much bigger shift in how I think about the things we own.
         </p>
         <p style="margin-bottom:0;"><a href="story.html">Read the story →</a></p>
       </div>
 
-</main>
+    </main>
 
     <footer>
       <!-- BETA-PERIOD-ONLY: Change to App Store badge after launch -->
@@ -1364,31 +746,22 @@
 
       <div>&copy; <span id="y"></span> Coffee &amp; Code LLC</div>
       <div style="display:flex; gap:12px; flex-wrap:wrap;">
-        <span style="color:var(--muted)">Docs:</span>
-        <a href="Stuffolio_Quick_Start_Guide.html">Quick Start</a>
-        <a href="Stuffolio_Users_Manual.html">Full Manual</a>
-        <span style="color:var(--line)">|</span>
+        <a href="features.html">Features</a>
         <a href="whats-new.html">What's New</a>
-        <a href="family-sharing.html">Family Sharing</a>
-        <!-- BETA-PERIOD-ONLY: Remove Testing Guide link after launch -->
-        <a href="beta-testing-guide.html">Testing Guide</a>
+        <a href="quick-start.html">Quick Start</a>
         <a href="support.html">Support</a>
         <a href="privacy.html">Privacy</a>
         <a href="terms.html">Terms</a>
-        <a href="app-map.html">App Map</a>
         <a href="story.html">Story</a>
       </div>
-      <div class="trust-strip"><span>Privacy-first. No ads. No selling your data. AI when you ask — silent when you don't.</span></div>
-</footer>
+    </footer>
   </div>
 
   <script>
     document.getElementById("y").textContent = new Date().getFullYear();
 
-    // Theme toggle
     const html = document.documentElement;
     const toggle = document.getElementById('themeToggle');
-
     const saved = localStorage.getItem('theme');
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     const theme = saved || (prefersDark ? 'dark' : 'light');
@@ -1416,7 +789,6 @@
   </div>
 
   <script>
-    // Screenshot data
     const iosScreenshots = [
       { thumb: 'Lightbox/iOS%20Screenshots/ios-dashboard-light.png', full: 'Lightbox/iOS%20Screenshots/ios-dashboard-light.png', caption: 'Dashboard' },
       { thumb: 'Lightbox/iOS%20Screenshots/ios-dashboard-scrolled.png', full: 'Lightbox/iOS%20Screenshots/ios-dashboard-scrolled.png', caption: 'Dashboard Scrolled' },
@@ -1450,7 +822,6 @@
       { thumb: 'Lightbox/macOS%20screenshots/macos-data-management.png', full: 'Lightbox/macOS%20screenshots/macos-data-management.png', caption: 'Data Management' }
     ];
 
-    // Carousel state
     const carouselState = { ios: 0, mac: 0 };
     let currentPlatform = 'ios';
 
@@ -1507,7 +878,6 @@
       updateCarousel(platform);
     }
 
-    // Platform tabs
     document.querySelectorAll('.platform-tab').forEach(tab => {
       tab.addEventListener('click', function() {
         const platform = this.dataset.platform;
@@ -1525,7 +895,6 @@
       });
     });
 
-    // Lightbox
     let lightboxScreenshots = [];
     let currentIndex = 0;
 
@@ -1565,7 +934,6 @@
       document.getElementById('lightbox-caption').textContent = lightboxScreenshots[currentIndex].caption;
     }
 
-    // Keyboard nav
     document.addEventListener('keydown', function(e) {
       const lightbox = document.getElementById('lightbox');
       if (lightbox.classList.contains('active')) {
@@ -1575,11 +943,9 @@
       }
     });
 
-    // Initialize
     initCarousels();
   </script>
 
-  <!-- Site Search -->
   <script src="js/search.js"></script>
 </body>
 </html>
