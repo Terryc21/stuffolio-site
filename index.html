@@ -20,22 +20,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Stuffolio — Track. Protect. Plan. The Life-of-Stuff System.</title>
-  <meta name="description" content="More than inventory. Stuffolio is a life-of-stuff system: track what you own, protect it with real-world warranty tracking, and plan who gets your treasured belongings. Privacy-first, Family Sharing included." />
+  <title>Stuffolio — Know what you own. Decide what to do next.</title>
+  <meta name="description" content="Stuffolio is a full-featured home inventory app — photos, manuals, warranties, receipts — with one important difference: it's designed for decisions, not just lists. Privacy-first for iPhone, iPad, and Mac." />
   <meta name="theme-color" content="#0b1220" />
 
   <!-- Open Graph / Social Sharing -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://stuffolio.app/" />
-  <meta property="og:title" content="Stuffolio — Track. Protect. Plan." />
-  <meta property="og:description" content="More than inventory. Track warranties with coverage phases, document for insurance, and plan who gets your treasured belongings. Privacy-first for iPhone, iPad, and Mac." />
+  <meta property="og:title" content="Stuffolio — Know what you own. Decide what to do next." />
+  <meta property="og:description" content="A full-featured home inventory app designed for decisions, not just lists. Track warranties with coverage phases, document for insurance, and plan who gets your treasured belongings." />
   <meta property="og:image" content="https://stuffolio.app/assets/og-image.png" />
   <meta property="og:site_name" content="Stuffolio" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Stuffolio — Track. Protect. Plan." />
-  <meta name="twitter:description" content="More than inventory. Track warranties with coverage phases, document for insurance, and plan who gets your treasured belongings." />
+  <meta name="twitter:title" content="Stuffolio — Know what you own. Decide what to do next." />
+  <meta name="twitter:description" content="A full-featured home inventory app designed for decisions, not just lists. Privacy-first for iPhone, iPad, and Mac." />
   <meta name="twitter:image" content="https://stuffolio.app/assets/og-image.png" />
 
   <!-- Canonical URL -->
@@ -167,6 +167,35 @@
       font-size: 1.3rem;
     }
 
+    .positioning-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin: 20px 0;
+    }
+    @media (max-width: 700px) {
+      .positioning-grid { grid-template-columns: 1fr; }
+    }
+    .positioning-card {
+      padding: 24px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .positioning-card:hover {
+      transform: translateY(-2px);
+    }
+    .positioning-card.highlight {
+      border-color: rgba(167,139,250,.35);
+      background: linear-gradient(135deg, rgba(167,139,250,.08), rgba(125,211,252,.05));
+    }
+    .positioning-card .card-icon { font-size: 2.2rem; margin-bottom: 12px; display: block; }
+    .positioning-card h3 { margin: 0 0 8px; font-size: 1.3rem; }
+    .positioning-card .tagline { color: var(--muted); margin: 0 0 12px; font-size: 0.95rem; }
+    .positioning-card ul { margin: 0; padding-left: 18px; color: var(--muted); font-size: 0.95rem; }
+    .positioning-card li { margin: 8px 0; }
+
     .pillars-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -294,6 +323,21 @@
     }
     .beta-callout strong { display: block; margin-bottom: .25rem; }
 
+    .privacy-trio {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin-top: 18px;
+    }
+    .privacy-item {
+      background: rgba(255,255,255,.035);
+      border: 1px solid rgba(255,255,255,.09);
+      border-radius: 14px;
+      padding: 18px;
+    }
+    .privacy-item strong { display: block; margin-bottom: 6px; color: var(--accent); }
+    .privacy-item div { color: var(--muted); font-size: 0.95rem; }
+
     .light-mode .pillar { background: rgba(0,102,204,.04); border-color: rgba(0,102,204,.15); }
     .light-mode .pillar:hover { border-color: rgba(0,102,204,.35); box-shadow: 0 8px 24px rgba(0,102,204,.08); }
     .light-mode .scenario { background: linear-gradient(135deg, rgba(124,58,237,.05), rgba(0,102,204,.03)); }
@@ -302,6 +346,7 @@
     .light-mode .whats-new-box { background: linear-gradient(135deg, rgba(124,58,237,.08), rgba(0,102,204,.05)); }
     .light-mode .whats-new-item { background: rgba(0,0,0,.03); }
     .light-mode .whats-new-item:hover { background: rgba(0,0,0,.05); }
+    .light-mode .positioning-card.highlight { background: linear-gradient(135deg, rgba(124,58,237,.06), rgba(0,102,204,.04)); }
   </style>
 </head>
 
@@ -313,7 +358,7 @@
       <a href="index.html" class="site-title">Stuffolio</a>
 
       <div class="header-right">
-        <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+        <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
 
         <nav>
           <a href="index.html" aria-current="page">Home</a>
@@ -325,15 +370,15 @@
         </nav>
 
         <button class="search-toggle" aria-label="Search documentation">
-          <span class="search-icon">🔍</span>
+          <span class="search-icon">&#128269;</span>
           <span class="search-label">Search</span>
-          <kbd class="search-kbd">⌘K</kbd>
+          <kbd class="search-kbd">&#8984;K</kbd>
         </button>
 
         <div class="theme-toggle">
-          <span class="theme-icon">☀️</span>
+          <span class="theme-icon">&#9728;&#65039;</span>
           <button class="theme-toggle-switch" id="themeToggle" aria-label="Toggle light/dark mode"></button>
-          <span class="theme-icon">🌙</span>
+          <span class="theme-icon">&#127769;</span>
         </div>
       </div>
     </header>
@@ -350,22 +395,22 @@
             <img loading="lazy" class="stuffolioLogo" src="assets/logo-256.png" alt="Stuffolio logo" width="120" height="120" />
             <div>
               <h1 style="margin-top:0;">
-                Because one day you look around and think,<br/><span class="gradient-text">"Where did we get so much stuff?"</span>
+                Know what you own.<br/><span class="gradient-text">Decide what to do next.</span>
               </h1>
               <div class="beta-callout"><strong>Beta testers:</strong> Please use the <a href="beta-testing-guide.html">Beta Testing Guide</a> for setup, what to test, and where to send feedback.</div>
             </div>
           </div>
 
           <p class="lead" style="font-size:1.15rem;">
-            Stuffolio helps you manage the full life of your stuff &mdash; from buying it, to owning it, to deciding what happens next.
+            Stuffolio is a full-featured home inventory app &mdash; photos, manuals, warranties, receipts &mdash; designed to help you decide what happens next.
           </p>
 
           <div class="lifecycle-strip">
-            <span class="stage">🛒 Acquire</span>
-            <span class="arrow">→</span>
-            <span class="stage">🏠 Own</span>
-            <span class="arrow">→</span>
-            <span class="stage">📦 Move On</span>
+            <span class="stage">&#128722; Acquire</span>
+            <span class="arrow">&rarr;</span>
+            <span class="stage">&#127968; Own</span>
+            <span class="arrow">&rarr;</span>
+            <span class="stage">&#128230; Move On</span>
           </div>
 
           <!-- BETA-PERIOD-ONLY: Replace with App Store buttons after launch -->
@@ -374,12 +419,55 @@
             <a class="btn" href="quick-start.html">Quick Start Guide</a>
           </div>
 
-          <div class="callout">
-            <b>Privacy by default.</b> Your data stays on your device (or your iCloud). No ads, no tracking, no profiles.
-            <span style="display:block; margin-top:8px;">
-              <b>AI when you ask.</b> Identify items from photos, find manuals and parts, get value estimates. Nothing is analyzed unless you explicitly ask.
-            </span>
+          <p style="color:var(--muted); font-size:.95rem; margin-top:14px;">
+            Works offline by default. Turn on only the features you want.
+          </p>
+        </div>
+      </section>
+
+      <!-- POSITIONING: What makes Stuffolio different -->
+      <section id="positioning" style="margin-top:18px;">
+        <div class="card">
+          <h2 style="margin-top:0; text-align:center;">Inventory, and then the part inventory apps don't do</h2>
+
+          <div class="aha-box">
+            <span class="aha-icon">&#9989;</span>
+            <p>
+              <strong>Yes &mdash; Stuffolio does everything you'd expect from a home inventory app.</strong>
+              Track photos, notes, manuals, warranties, receipts, serial numbers, and support information from day one.
+            </p>
           </div>
+
+          <div class="positioning-grid">
+            <div class="positioning-card">
+              <span class="card-icon" aria-hidden="true">&#128203;</span>
+              <h3>Typical inventory apps</h3>
+              <p class="tagline">Great at lists and completeness.</p>
+              <ul>
+                <li>Optimize for capturing <em>more</em> detail</li>
+                <li>Answer: "What do I own?"</li>
+                <li>Stop once it's recorded</li>
+              </ul>
+            </div>
+
+            <div class="positioning-card highlight">
+              <span class="card-icon" aria-hidden="true">&#129517;</span>
+              <h3>Stuffolio</h3>
+              <p class="tagline">Built for clarity and decisions.</p>
+              <ul>
+                <li>Encourages "just enough" information</li>
+                <li>Answers: "What should I do with this?"</li>
+                <li>Helps across the full life of your stuff</li>
+              </ul>
+            </div>
+          </div>
+
+          <p class="lead" style="margin-top:16px;">
+            Keeping track of things isn't the hard part. The hard part is what happens later &mdash; when something breaks, you're moving, you're filing an insurance claim, or you're trying to let go of something.
+          </p>
+          <p style="margin-top:8px; color:var(--muted);">
+            Stuffolio supports those moments: maintain it, fix it, insure it, sell it, donate it, or pass it on &mdash; without requiring you to build a perfect spreadsheet first.
+          </p>
         </div>
       </section>
 
@@ -394,7 +482,7 @@
 
             <div class="whats-new-grid">
               <div class="whats-new-item">
-                <span class="whats-new-icon">📸</span>
+                <span class="whats-new-icon">&#128248;</span>
                 <div>
                   <strong>Simplified Add Item</strong>
                   <span>3 clear options: Photo (AI identifies), Barcode (scan UPC), or Manual. Form appears instantly while AI works in the background.</span>
@@ -402,7 +490,7 @@
               </div>
 
               <div class="whats-new-item">
-                <span class="whats-new-icon">👨‍👩‍👧‍👦</span>
+                <span class="whats-new-icon">&#128106;</span>
                 <div>
                   <strong>Household Sharing</strong>
                   <span>Create a shared household with real-time sync. Share appliances, vehicles, and electronics with family members.</span>
@@ -410,7 +498,7 @@
               </div>
 
               <div class="whats-new-item">
-                <span class="whats-new-icon">💝</span>
+                <span class="whats-new-icon">&#128157;</span>
                 <div>
                   <strong>Legacy Wishes Sharing</strong>
                   <span>Share wishes via CloudKit. Family can indicate preferences; conflict detection highlights items multiple people want.</span>
@@ -418,7 +506,7 @@
               </div>
 
               <div class="whats-new-item">
-                <span class="whats-new-icon">🛡️</span>
+                <span class="whats-new-icon">&#128737;&#65039;</span>
                 <div>
                   <strong>Component Warranties</strong>
                   <span>Track different warranty periods for different parts (e.g., 3 years on batteries, 5 years on tools).</span>
@@ -445,13 +533,13 @@
             <div>
               <p style="font-size:0.8rem; text-transform:uppercase; letter-spacing:1px; color:var(--accent); margin:0 0 8px; font-weight:600;">Why I Built This</p>
               <blockquote style="font-size:1.15rem; line-height:1.7; margin:0; padding:0; border:none; color:var(--text); font-style:italic;">
-                "I had to admit that 'that drawer' was not a filing system. So I built something simple: a place to keep track of what we own, along with the information we actually need — warranty dates, manuals, support contacts. One place instead of twelve."
+                "I had to admit that 'that drawer' was not a filing system. So I built something simple: a place to keep track of what we own, along with the information we actually need &mdash; warranty dates, manuals, support contacts. One place instead of twelve."
               </blockquote>
               <p style="margin:16px 0 0; color:var(--muted); font-size:0.95rem;">
-                — <strong style="color:var(--text);">Terry Nyberg</strong>, founder of Stuffolio. While looking for something new to learn, he taught himself to code and built the app he wished existed.
+                &mdash; <strong style="color:var(--text);">Terry Nyberg</strong>, founder of Stuffolio. While looking for something new to learn, he taught himself to code and built the app he wished existed.
               </p>
               <p style="margin:12px 0 0;">
-                <a href="story.html" style="color:var(--accent); font-weight:500;">Read the full story →</a>
+                <a href="story.html" style="color:var(--accent); font-weight:500;">Read the full story &rarr;</a>
               </p>
             </div>
           </div>
@@ -471,7 +559,7 @@
 
           <div class="pillars-grid">
             <div class="pillar">
-              <span class="pillar-icon">📋</span>
+              <span class="pillar-icon">&#128203;</span>
               <h3>Track</h3>
               <p class="pillar-tagline">Know what you own</p>
               <ul>
@@ -482,7 +570,7 @@
             </div>
 
             <div class="pillar">
-              <span class="pillar-icon">🛡️</span>
+              <span class="pillar-icon">&#128737;&#65039;</span>
               <h3>Protect</h3>
               <p class="pillar-tagline">Safeguard your purchases</p>
               <ul>
@@ -493,18 +581,18 @@
             </div>
 
             <div class="pillar">
-              <span class="pillar-icon">💝</span>
+              <span class="pillar-icon">&#128157;</span>
               <h3>Plan</h3>
               <p class="pillar-tagline">Decide what happens next</p>
               <ul>
                 <li>Legacy Wishes for family</li>
-                <li>Donation & sale tracking</li>
+                <li>Donation &amp; sale tracking</li>
                 <li>Share wishes via iCloud</li>
               </ul>
             </div>
 
             <div class="pillar">
-              <span class="pillar-icon">🤖</span>
+              <span class="pillar-icon">&#129302;</span>
               <h3>Discover</h3>
               <p class="pillar-tagline">AI-assisted insights</p>
               <ul>
@@ -515,7 +603,7 @@
             </div>
 
             <div class="pillar">
-              <span class="pillar-icon">⭐</span>
+              <span class="pillar-icon">&#11088;</span>
               <h3>Remember</h3>
               <p class="pillar-tagline">Learn from experience</p>
               <ul>
@@ -527,14 +615,14 @@
           </div>
 
           <div class="aha-box">
-            <span class="aha-icon">💡</span>
+            <span class="aha-icon">&#128161;</span>
             <p>
               <strong>The key difference:</strong> That 3-year warranty on your fridge? Year 1 might be full coverage, years 2-3 parts only. Most apps just show "expires 2027." Stuffolio shows you <em>when your coverage actually changes</em>.
             </p>
           </div>
 
           <p style="text-align:center; margin-top:20px; font-size:0.95rem;">
-            <a href="features.html">See all features →</a>
+            <a href="features.html">See all features &rarr;</a>
           </p>
         </div>
       </section>
@@ -546,63 +634,81 @@
 
           <div class="scenarios-grid">
             <div class="scenario">
-              <div class="scenario-emoji">🔥</div>
+              <div class="scenario-emoji">&#128293;</div>
               <p class="scenario-quote">"After the fire, we had to list everything we lost for insurance."</p>
-              <p class="scenario-result">→ Photos, receipts, and values already documented.</p>
+              <p class="scenario-result">&rarr; Photos, receipts, and values already documented.</p>
             </div>
 
             <div class="scenario">
-              <div class="scenario-emoji">🔧</div>
+              <div class="scenario-emoji">&#128295;</div>
               <p class="scenario-quote">"The dishwasher broke. Is it still under warranty?"</p>
-              <p class="scenario-result">→ Alert: "Coverage changes to Parts Only in 30 days."</p>
+              <p class="scenario-result">&rarr; Alert: "Coverage changes to Parts Only in 30 days."</p>
             </div>
 
             <div class="scenario">
-              <div class="scenario-emoji">💔</div>
+              <div class="scenario-emoji">&#128148;</div>
               <p class="scenario-quote">"When we helped family downsize, nobody knew who wanted what."</p>
-              <p class="scenario-result">→ Legacy Wishes recorded decisions before anyone had to guess.</p>
+              <p class="scenario-result">&rarr; Legacy Wishes recorded decisions before anyone had to guess.</p>
             </div>
 
             <div class="scenario">
-              <div class="scenario-emoji">🔍</div>
+              <div class="scenario-emoji">&#128270;</div>
               <p class="scenario-quote">"What IS this thing? What's it worth?"</p>
-              <p class="scenario-result">→ Stuff Scout: "1920s Depression glass, $45-80."</p>
+              <p class="scenario-result">&rarr; Stuff Scout: "1920s Depression glass, $45-80."</p>
             </div>
 
             <div class="scenario">
-              <div class="scenario-emoji">📞</div>
+              <div class="scenario-emoji">&#128222;</div>
               <p class="scenario-quote">"I called Samsung three times. Who did I talk to?"</p>
-              <p class="scenario-result">→ Support history: Rep name, case #, follow-up date.</p>
+              <p class="scenario-result">&rarr; Support history: Rep name, case #, follow-up date.</p>
             </div>
 
             <div class="scenario">
-              <div class="scenario-emoji">⭐</div>
+              <div class="scenario-emoji">&#11088;</div>
               <p class="scenario-quote">"This vacuum broke after 6 months. Never buying this brand again."</p>
-              <p class="scenario-result">→ 1-star + "Would Not Buy Again" — your future self will thank you.</p>
+              <p class="scenario-result">&rarr; 1-star + "Would Not Buy Again" &mdash; your future self will thank you.</p>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- BUILT FOR -->
+      <!-- BUILT FOR (Privacy-first) -->
       <section id="built-for" style="margin-top:18px;">
         <div class="card">
-          <h2 style="margin-top:0; text-align:center;">How It's Built</h2>
+          <h2 style="margin-top:0; text-align:center;">Privacy-first by Design</h2>
+          <p class="lead" style="text-align:center; max-width:700px; margin:0 auto 18px;">
+            Stuffolio starts quiet on purpose. Internet features, AI assistance, and cloud sync are off by default. You choose what to enable.
+          </p>
 
-          <div class="pillars-grid">
+          <div class="privacy-trio">
+            <div class="privacy-item">
+              <strong>&#128274; Offline by default</strong>
+              <div>Use the app without signing in or uploading anything. Your data stays on your device.</div>
+            </div>
+            <div class="privacy-item">
+              <strong>&#9881;&#65039; Clear controls</strong>
+              <div>Turn on only what you want, when you want it. No dark patterns or buried settings.</div>
+            </div>
+            <div class="privacy-item">
+              <strong>&#128526; No surveillance vibe</strong>
+              <div>Designed to respect your attention and your data. We never see your inventory.</div>
+            </div>
+          </div>
+
+          <div class="pillars-grid" style="margin-top:24px;">
             <div class="pillar">
-              <span class="pillar-icon">🔒</span>
+              <span class="pillar-icon">&#128274;</span>
               <h3>Privacy First</h3>
               <p class="pillar-tagline">Your data belongs to you</p>
               <ul>
                 <li>Stored locally or in YOUR iCloud</li>
                 <li>All network features opt-in</li>
-                <li>We never see your inventory</li>
+                <li>AI only when you explicitly ask</li>
               </ul>
             </div>
 
             <div class="pillar">
-              <span class="pillar-icon">👁️</span>
+              <span class="pillar-icon">&#128065;</span>
               <h3>Accessible</h3>
               <p class="pillar-tagline">Designed for everyone</p>
               <ul>
@@ -613,13 +719,13 @@
             </div>
 
             <div class="pillar">
-              <span class="pillar-icon">🍎</span>
+              <span class="pillar-icon">&#127822;</span>
               <h3>Apple Native</h3>
               <p class="pillar-tagline">Works like you expect</p>
               <ul>
                 <li>Spotlight, Handoff, Widgets</li>
                 <li>Siri Shortcuts, Focus Filters</li>
-                <li>iPhone, iPad, Mac — seamlessly</li>
+                <li>iPhone, iPad, Mac &mdash; seamlessly</li>
               </ul>
             </div>
           </div>
@@ -631,15 +737,15 @@
         <div class="card">
           <h2 style="margin-top:0; text-align:center;">See Stuffolio in Action</h2>
           <p style="color:var(--muted); text-align:center; margin-bottom:20px;">
-            Beautiful on Mac, iPhone, and iPad — in light or dark mode.
+            Beautiful on Mac, iPhone, and iPad &mdash; in light or dark mode.
           </p>
 
           <div class="platform-tabs" role="tablist">
             <button class="platform-tab active" role="tab" aria-selected="true" data-platform="ios" id="tab-ios" aria-controls="carousel-ios">
-              <span class="tab-icon">📱</span> iPhone &amp; iPad
+              <span class="tab-icon">&#128241;</span> iPhone &amp; iPad
             </button>
             <button class="platform-tab" role="tab" aria-selected="false" data-platform="mac" id="tab-mac" aria-controls="carousel-mac">
-              <span class="tab-icon">💻</span> Mac
+              <span class="tab-icon">&#128187;</span> Mac
             </button>
           </div>
 
@@ -702,7 +808,7 @@
                 <li>Stuff Scout identification</li>
                 <li>Smart categorization</li>
                 <li>Value estimates</li>
-                <li>Find manuals & parts</li>
+                <li>Find manuals &amp; parts</li>
                 <li>Maintenance suggestions</li>
               </ul>
             </div>
@@ -720,7 +826,7 @@
         <div class="card final-cta">
           <h2>Ready to Take Control of Your Stuff?</h2>
           <p style="color:var(--muted); font-size:1.1rem; margin-bottom:20px;">
-            Track what you own. Protect your purchases. Plan what matters.
+            Know what you own. Decide what to do next.
           </p>
           <div class="ctaRow" style="justify-content:center;">
             <a class="btn primary" href="https://testflight.apple.com/join/TWgM95st">Join the Beta</a>
@@ -737,9 +843,9 @@
         <h2 style="margin-top:0;">Story</h2>
         <p>
           "I finally admitted that the top drawer was not, in fact, a filing system."
-          That small realization turned into Stuffolio — and a much bigger shift in how I think about the things we own.
+          That small realization turned into Stuffolio &mdash; and a much bigger shift in how I think about the things we own.
         </p>
-        <p style="margin-bottom:0;"><a href="story.html">Read the story →</a></p>
+        <p style="margin-bottom:0;"><a href="story.html">Read the story &rarr;</a></p>
       </div>
 
     </main>
@@ -750,7 +856,7 @@
         <a href="https://testflight.apple.com/join/TWgM95st" class="download-badge testflight">
           <img src="assets/testflight-badge.svg" alt="Download on TestFlight" width="135" height="40" onerror="this.outerHTML='<span class=badge-fallback>Join TestFlight Beta</span>'" />
         </a>
-        <span class="download-tagline">Free beta • iPhone, iPad, Mac</span>
+        <span class="download-tagline">Free beta &bull; iPhone, iPad, Mac</span>
       </div>
       <!-- END BETA-PERIOD-ONLY -->
 

@@ -162,7 +162,7 @@
         <p class="lead">Thank you for helping test Stuffolio! Your feedback shapes the app before public release.</p>
 
         <div class="hero-box">
-          <p><strong>Current Beta:</strong> Version 1.0 (Build 23) — Updated February 5, 2026</p>
+          <p><strong>Current Beta:</strong> Version 1.0 (Build 24) — Updated February 6, 2026</p>
         </div>
       </div>
 
@@ -206,7 +206,8 @@
           <div class="priority-card high">
             <h4>High Priority</h4>
             <ul style="margin:0; padding-left:18px;">
-              <li><strong>Price Watch</strong> — New feature! Track prices, set alerts, view history charts</li>
+              <li><strong>Send to Apps</strong> — New! Test Notes, Calendar, and Reminders integration</li>
+              <li><strong>Price Watch</strong> — Track prices, set alerts, view history charts</li>
               <li><strong>Data integrity</strong> — Items save correctly, no data loss</li>
               <li><strong>iCloud sync</strong> — Changes sync between devices</li>
               <li><strong>Crashes</strong> — Report any app crashes immediately</li>
@@ -237,15 +238,24 @@
 
       <!-- NEW IN THIS BUILD -->
       <div class="card">
-        <h2 style="margin-top:0">New in Build 23</h2>
-        <p>Bug fixes and polish following the Add Item redesign. Please verify these improvements:</p>
+        <h2 style="margin-top:0">New in Build 24</h2>
+        <p>This build introduces "Send to Apps" — quick integration with Apple Notes, Calendar, and Reminders.</p>
 
-        <h3>Bug Fixes</h3>
+        <h3>New Features</h3>
         <ul>
-          <li><strong>Quick Find:</strong> Fixed search to return more reliable results</li>
-          <li><strong>Add Item overlays (iOS):</strong> Tips and Quick Start overlays now correctly show/hide based on context</li>
-          <li><strong>Keyboard dismiss (iOS):</strong> Keyboard dismisses reliably when scrolling forms</li>
-          <li><strong>UI polish:</strong> Various visual refinements throughout the app</li>
+          <li><strong>Send to Apps Bar:</strong> Tap chips to send item details to Notes, Calendar, or Reminders</li>
+          <li><strong>Apple Notes:</strong> Opens Notes with item title, brand, and model copied for easy pasting</li>
+          <li><strong>Calendar:</strong> Creates warranty expiration events with item context</li>
+          <li><strong>Reminders:</strong> Adds maintenance tasks or follow-up reminders</li>
+          <li><strong>Quick Links:</strong> Access system apps from the Tools tab</li>
+        </ul>
+
+        <h3>How to Test</h3>
+        <ul>
+          <li>Open any item detail view — look for the "Send to" section with Notes, Calendar, Reminders chips</li>
+          <li>Tap each chip and verify the destination app opens</li>
+          <li>Paste (⌘V or long-press) to verify item details were copied correctly</li>
+          <li>Try from both existing items and during Add Item flow</li>
         </ul>
 
         <h3>From Build 22: Simplified Add Item Flow</h3>
