@@ -162,7 +162,7 @@
         <p class="lead">Thank you for helping test Stuffolio! Your feedback shapes the app before public release.</p>
 
         <div class="hero-box">
-          <p><strong>Current Beta:</strong> Version 1.0 (Build 24) — Updated February 6, 2026</p>
+          <p><strong>Current Beta:</strong> Version 1.0 (Build 25) — Updated February 8, 2026</p>
         </div>
       </div>
 
@@ -206,10 +206,10 @@
           <div class="priority-card high">
             <h4>High Priority</h4>
             <ul style="margin:0; padding-left:18px;">
-              <li><strong>Send to Apps</strong> — New! Test Notes, Calendar, and Reminders integration</li>
-              <li><strong>Price Watch</strong> — Track prices, set alerts, view history charts</li>
+              <li><strong>Encrypted Backups</strong> — New! Test password protection for backup files</li>
+              <li><strong>Onboarding Flow</strong> — New! Test "Set Up Your Experience" toggles</li>
+              <li><strong>Family Sharing Deletion</strong> — Verify only creator/admin can delete shared items</li>
               <li><strong>Data integrity</strong> — Items save correctly, no data loss</li>
-              <li><strong>iCloud sync</strong> — Changes sync between devices</li>
               <li><strong>Crashes</strong> — Report any app crashes immediately</li>
             </ul>
           </div>
@@ -217,20 +217,21 @@
           <div class="priority-card medium">
             <h4>Medium Priority</h4>
             <ul style="margin:0; padding-left:18px;">
+              <li><strong>Send to Apps</strong> — Notes, Calendar, and Reminders integration</li>
               <li><strong>AI assistance</strong> — Stuff Scout accuracy, AI Assistant responses (runs only when requested)</li>
-              <li><strong>Barcode scanning</strong> — Product lookup accuracy</li>
-              <li><strong>Export functionality</strong> — CSV, PDF, Excel exports</li>
-              <li><strong>Warranty tracking</strong> — Notifications, coverage phases</li>
+              <li><strong>Price Watch</strong> — Track prices, set alerts, view history charts</li>
+              <li><strong>iCloud sync</strong> — Changes sync between devices</li>
+              <li><strong>Export functionality</strong> — CSV, PDF, Excel, encrypted backup exports</li>
             </ul>
           </div>
 
           <div class="priority-card low">
             <h4>Lower Priority</h4>
             <ul style="margin:0; padding-left:18px;">
+              <li><strong>Terminology</strong> — Check "Product" → "Item" changes throughout</li>
               <li><strong>UI polish</strong> — Visual glitches, alignment issues</li>
               <li><strong>Accessibility</strong> — VoiceOver, Dynamic Type</li>
               <li><strong>Widgets</strong> — Home Screen, Lock Screen widgets</li>
-              <li><strong>Siri Shortcuts</strong> — Voice command functionality</li>
             </ul>
           </div>
         </div>
@@ -238,24 +239,55 @@
 
       <!-- NEW IN THIS BUILD -->
       <div class="card">
-        <h2 style="margin-top:0">New in Build 24</h2>
-        <p>This build introduces "Send to Apps" — quick integration with Apple Notes, Calendar, and Reminders.</p>
+        <h2 style="margin-top:0">New in Build 25</h2>
+        <p>This build focuses on onboarding improvements, family sharing safety, and backup security.</p>
 
-        <h3>New Features</h3>
+        <h3>Simplified Onboarding</h3>
         <ul>
-          <li><strong>Send to Apps Bar:</strong> Tap chips to send item details to Notes, Calendar, or Reminders</li>
-          <li><strong>Apple Notes:</strong> Opens Notes with item title, brand, and model copied for easy pasting</li>
-          <li><strong>Calendar:</strong> Creates warranty expiration events with item context</li>
-          <li><strong>Reminders:</strong> Adds maintenance tasks or follow-up reminders</li>
-          <li><strong>Quick Links:</strong> Access system apps from the Tools tab</li>
+          <li><strong>Set Up Your Experience:</strong> New onboarding screen with 3 simple toggles</li>
+          <li><strong>AI Assistants:</strong> Stuff Scout, product identification, OCR</li>
+          <li><strong>Online Lookups:</strong> Barcode product info, safety recall checker</li>
+          <li><strong>iCloud Sync:</strong> Keep inventory synced across devices</li>
+          <li>All toggles ON by default — just tap Continue to get started</li>
         </ul>
 
-        <h3>How to Test</h3>
+        <h3>How to Test Onboarding</h3>
         <ul>
-          <li>Open any item detail view — look for the "Send to" section with Notes, Calendar, Reminders chips</li>
-          <li>Tap each chip and verify the destination app opens</li>
-          <li>Paste (⌘V or long-press) to verify item details were copied correctly</li>
-          <li>Try from both existing items and during Add Item flow</li>
+          <li>Delete and reinstall Stuffolio to see the new onboarding flow</li>
+          <li>Toggle each option on/off to verify features enable/disable correctly</li>
+          <li>Check that AI features work when AI Assistants is ON</li>
+          <li>Verify barcode lookup works when Online Lookups is ON</li>
+        </ul>
+
+        <h3>Password-Protected Backups</h3>
+        <ul>
+          <li>Go to Settings → Backup & Restore → Create Backup</li>
+          <li>Toggle "Encrypt with password" ON</li>
+          <li>Enter a password and create the backup</li>
+          <li>Verify the file is saved as <code>.stuffolio</code> (not <code>.json</code>)</li>
+          <li>Try restoring — app should prompt for password</li>
+        </ul>
+
+        <h3>Family Sharing Deletion Safety</h3>
+        <ul>
+          <li>In a shared household, try to delete an item you didn't create</li>
+          <li>Verify Editors can no longer delete shared items</li>
+          <li>Verify the item creator can still delete their own items</li>
+          <li>Verify Admins can delete any shared item</li>
+        </ul>
+
+        <h3>Terminology Update</h3>
+        <ul>
+          <li>Notice "Product" has been changed to "Item" throughout the app</li>
+          <li>Check menu items, navigation, and labels for consistency</li>
+        </ul>
+
+        <h3>From Build 24: Send to Apps</h3>
+        <ul>
+          <li><strong>Send to Apps Bar:</strong> Tap chips to send item details to Notes, Calendar, or Reminders</li>
+          <li><strong>Apple Notes:</strong> Opens Notes with item title, brand, and model copied</li>
+          <li><strong>Calendar:</strong> Creates warranty expiration events</li>
+          <li><strong>Reminders:</strong> Adds maintenance tasks or follow-up reminders</li>
         </ul>
 
         <h3>From Build 22: Simplified Add Item Flow</h3>
@@ -264,37 +296,6 @@
           <li><strong>Photo mode:</strong> Form appears immediately while AI analyzes in the background</li>
           <li><strong>Optimistic loading:</strong> Start entering data right away — AI fields fill in automatically when ready</li>
           <li><strong>Beta testers:</strong> Unlimited AI access — Photo analysis runs automatically for you!</li>
-        </ul>
-
-        <h3>Price Watch (Replacement Cost Tracker)</h3>
-        <ul>
-          <li>Enable Price Watch on any item to track current replacement costs</li>
-          <li>Test price alerts — set a target price and verify notifications work</li>
-          <li>Check price history charts for visual accuracy</li>
-          <li>Try multiple price sources: manual entry, Stuff Scout, barcode scan, AI "Current Price"</li>
-        </ul>
-
-        <h3>AI "Current Price" Query</h3>
-        <ul>
-          <li>Open AI Product Assistant on any item</li>
-          <li>Try the new "Current Price" query type</li>
-          <li>Verify it returns accurate retailer prices</li>
-          <li>Test "Apply to Price Watch" button</li>
-        </ul>
-
-        <h3>Stuff Scout → Price Watch Integration</h3>
-        <ul>
-          <li>Use Stuff Scout to analyze an item</li>
-          <li>When applying results, check for "Update Price Watch" option</li>
-          <li>Verify marketplace prices are correctly saved to Price Watch</li>
-        </ul>
-
-        <h3>Recent Bug Fixes (Feb 3)</h3>
-        <ul>
-          <li><strong>Photo handoff fixed</strong> — Photos from library now appear immediately in the form</li>
-          <li><strong>Keyboard dismiss improved</strong> — Scrolling immediately dismisses keyboard</li>
-          <li><strong>Cleaner photo flow</strong> — Tips/overlays automatically hide when photos are added</li>
-          <li><strong>Accurate AI messaging</strong> — Photo flow shows correct text based on your access level</li>
         </ul>
       </div>
 
@@ -313,6 +314,26 @@
           <li>Search for items by name, category, location</li>
           <li>Filter items using the filter menu</li>
           <li>Export inventory to CSV, PDF, or Excel</li>
+        </ul>
+
+        <h3>Backup & Security (New in Build 25)</h3>
+        <ul class="checklist">
+          <li>Create a plain (unencrypted) backup and verify restore</li>
+          <li>Create an encrypted backup with password</li>
+          <li>Verify encrypted file has <code>.stuffolio</code> extension</li>
+          <li>Restore encrypted backup — verify password prompt appears</li>
+          <li>Try wrong password — verify error message</li>
+          <li>Restore with correct password — verify data integrity</li>
+        </ul>
+
+        <h3>Family Sharing (Updated in Build 25)</h3>
+        <ul class="checklist">
+          <li>Create a shared household</li>
+          <li>Invite a family member as Editor</li>
+          <li>As Editor, try to delete an item you didn't create</li>
+          <li>Verify deletion is blocked with clear message</li>
+          <li>As Admin, verify you can delete any shared item</li>
+          <li>Verify item creator can always delete their own items</li>
         </ul>
 
         <h3>Price Watch</h3>

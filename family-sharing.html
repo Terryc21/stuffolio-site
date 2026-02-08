@@ -280,6 +280,7 @@
           <th>Role</th>
           <th>Can View</th>
           <th>Can Edit</th>
+          <th>Can Delete</th>
           <th>Can Manage Members</th>
         </tr>
         <tr>
@@ -287,11 +288,13 @@
           <td><span class="check">✓</span></td>
           <td>—</td>
           <td>—</td>
+          <td>—</td>
         </tr>
         <tr>
           <td><strong>Editor</strong></td>
           <td><span class="check">✓</span></td>
           <td><span class="check">✓</span></td>
+          <td>Own items only*</td>
           <td>—</td>
         </tr>
         <tr>
@@ -299,8 +302,10 @@
           <td><span class="check">✓</span></td>
           <td><span class="check">✓</span></td>
           <td><span class="check">✓</span></td>
+          <td><span class="check">✓</span></td>
         </tr>
       </table>
+      <p style="font-size: 0.85rem; color: var(--muted); margin-top: 8px;">*Editors can only delete items they personally added. To delete items added by other family members, Admin permission is required. This prevents accidental deletion of shared items.</p>
 
       <h3>Sharing an Item</h3>
       <ol style="color: var(--muted); line-height: 1.8;">
