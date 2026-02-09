@@ -894,6 +894,24 @@
       </details>
 
       <details class="faq-item">
+        <summary>"No application set to open the URL" error (macOS)</summary>
+        <p>If you see an error like "There is no application set to open the URL calshow://" when using Send to Apps features, this means macOS can't find the Calendar, Notes, or Reminders app.</p>
+        <p style="margin-top:10px;"><strong>To fix this:</strong></p>
+        <ol style="margin-top:8px;">
+          <li>Open <strong>System Settings → Privacy & Security → Full Disk Access</strong></li>
+          <li>Make sure Stuffolio has access (or add it)</li>
+          <li>Restart Stuffolio</li>
+        </ol>
+        <p style="margin-top:10px;">If that doesn't work, try:</p>
+        <ul style="margin-top:8px;">
+          <li>Open Calendar/Notes/Reminders manually once to ensure they're properly installed</li>
+          <li>Run in Terminal: <code>/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user</code> (rebuilds URL handlers)</li>
+          <li>Restart your Mac</li>
+        </ul>
+        <p style="margin-top:10px;">This is a macOS configuration issue, not a Stuffolio bug. The system URL schemes for Apple's apps occasionally need to be re-registered.</p>
+      </details>
+
+      <details class="faq-item">
         <summary>My data seems to have disappeared</summary>
         <p>Don't panic! First, check if you're signed into the same iCloud account (if using sync). Try force-quitting and reopening the app. If you recently restored your device, make sure iCloud sync is enabled and give it time to download. If data is truly lost, contact us — we'll help troubleshoot.</p>
       </details>
