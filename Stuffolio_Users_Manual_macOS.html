@@ -604,6 +604,7 @@
             <h2>Table of Contents</h2>
             <ol>
                 <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#actions-overview">Actions Overview</a></li>
                 <li><a href="#getting-started">Getting Started</a></li>
                 <li><a href="#adding-products">Adding Your First Product</a></li>
                 <li><a href="#adding-photos">Adding Photos to Products</a></li>
@@ -625,6 +626,9 @@
                 <li><a href="#insurance-profile">Insurance Profile & Claim Prep</a></li>
                 <li><a href="#audit-mode">Audit Mode</a></li>
                 <li><a href="#duplicate-finder">Duplicate Finder</a></li>
+                <li><a href="#data-cleanup">Data Cleanup</a></li>
+                <li><a href="#batch-categorize">Batch Categorize</a></li>
+                <li><a href="#bulk-price-update">Bulk Price Update</a></li>
                 <li><a href="#disposing-items">Disposing of Items</a></li>
                 <li><a href="#icloud">Using iCloud Sync</a></li>
                 <li><a href="#family-sharing">Family/Household Sharing</a></li>
@@ -667,6 +671,51 @@
                     </ul>
                 </li>
             </ul>
+            <a href="#toc" class="back-to-top">↑ Back to Contents</a>
+        </section>
+
+        <section id="actions-overview">
+            <h2>Actions Overview</h2>
+            <p>The Actions section organizes tools into six categories to help you find what you need quickly.</p>
+
+            <h3>Tool Categories</h3>
+            <table>
+                <tr><th>Category</th><th>Description</th><th>Tools</th></tr>
+                <tr>
+                    <td><strong>Capture</strong></td>
+                    <td>Scan and import products</td>
+                    <td>Smart Scanner, CSV Import</td>
+                </tr>
+                <tr>
+                    <td><strong>Export</strong></td>
+                    <td>Export and share reports</td>
+                    <td>Inventory Report (PDF, CSV, Excel)</td>
+                </tr>
+                <tr>
+                    <td><strong>Decisions</strong></td>
+                    <td>Valuation and planning</td>
+                    <td>Stuff Scout, Price Watch, Donation Advisor</td>
+                </tr>
+                <tr>
+                    <td><strong>Data</strong></td>
+                    <td>Backup and restore</td>
+                    <td>Backup Data, Restore Data</td>
+                </tr>
+                <tr>
+                    <td><strong>Safety</strong></td>
+                    <td>Recalls and product help</td>
+                    <td>Recall Checker, AI Assistant</td>
+                </tr>
+                <tr>
+                    <td><strong>Maintenance</strong></td>
+                    <td>Clean up and organize</td>
+                    <td>Verify Inventory, Photo Optimizer, Duplicate Finder, Clean Up Records, Bulk Price Update, Batch Categorize</td>
+                </tr>
+            </table>
+
+            <div class="tip">
+                <strong>Tip:</strong> Access Actions from the sidebar, or use Go To (⌘K) to jump directly to any tool by name.
+            </div>
             <a href="#toc" class="back-to-top">↑ Back to Contents</a>
         </section>
 
@@ -1124,8 +1173,19 @@
             </ul>
             <p>You can add up to 5 photos.</p>
 
+            <h3>Choose Scan Depth</h3>
+            <p>Before starting analysis, select how thorough you want Stuff Scout to be:</p>
+            <ul>
+                <li><strong>Quick ID</strong> (~15 seconds) — Fast identification only. Best for when you just need to know what something is.</li>
+                <li><strong>With Pricing</strong> (~25 seconds) — Identification plus marketplace verification and current value estimates. Recommended for most items.</li>
+                <li><strong>Full Appraisal</strong> (~40 seconds) — Complete analysis including historical context, provenance research, condition assessment, and detailed valuation. Best for antiques, collectibles, and potentially valuable items.</li>
+            </ul>
+            <div class="tip">
+                <strong>Tip:</strong> Use Quick ID for everyday items you just want to catalog. Reserve Full Appraisal for items where detailed history and accurate valuation matter.
+            </div>
+
             <h3>Identification Results</h3>
-            <p>Click the <strong>Identify</strong> button and wait 10-30 seconds. Results include:</p>
+            <p>Click the <strong>Identify</strong> button and wait (time depends on your selected scan depth). Results include:</p>
             <ul>
                 <li><strong>What It Is</strong> — Description of the item</li>
                 <li><strong>Maker/Manufacturer</strong> — Who made it</li>
@@ -1213,11 +1273,16 @@
             <p>Shows scans you've saved permanently:</p>
             <ul>
                 <li>Bookmarks never expire or get automatically deleted</li>
-                <li>Add notes and tags to organize your collection</li>
+                <li>Full data preserved: image, identification, maker, era, value range, historical context, collector notes</li>
+                <li>Add your own notes and tags to organize your collection</li>
                 <li>Right-click to delete individual bookmarks</li>
             </ul>
+
+            <h4>Searching Scout History</h4>
+            <p>Use the search field to find scans by item identification, maker, or era.</p>
+
             <div class="tip">
-                <strong>Tip:</strong> Found something valuable? Right-click any recent scan to save it as a permanent bookmark before it gets pushed out by newer scans.
+                <strong>Tip:</strong> Found something valuable? Right-click any recent scan to save it as a permanent bookmark before it gets pushed out by newer scans. Bookmarks are perfect for items you want to research further before deciding to add to inventory.
             </div>
             <a href="#toc" class="back-to-top">↑ Back to Contents</a>
         </section>
@@ -2057,6 +2122,104 @@
                 <li><strong>Delete:</strong> Remove the duplicate entry</li>
                 <li><strong>Not a Duplicate:</strong> Dismiss from future scans</li>
             </ul>
+            <a href="#toc" class="back-to-top">↑ Back to Contents</a>
+        </section>
+
+        <section id="data-cleanup">
+            <h2>Data Cleanup</h2>
+            <p>Find and fix incomplete records in your inventory with automated analysis and guided fixes.</p>
+
+            <h3>Running Data Cleanup</h3>
+            <ol>
+                <li>Go to <strong>Actions > Data Cleanup</strong></li>
+                <li>Wait while your inventory is analyzed</li>
+                <li>Review the completeness score and issue categories</li>
+            </ol>
+
+            <h3>Issue Categories</h3>
+            <ul>
+                <li><strong>Missing Photos</strong> — Items without any photos attached</li>
+                <li><strong>Missing Price</strong> — Items without a purchase price</li>
+                <li><strong>Missing Category</strong> — Items not assigned to any category</li>
+                <li><strong>Missing Manufacturer</strong> — Items without manufacturer specified</li>
+                <li><strong>Expired Warranties</strong> — Items with warranties that have expired</li>
+                <li><strong>Large Photos</strong> — Photos over 1MB that could be optimized</li>
+                <li><strong>Missing Serial Number</strong> — High-value items without serial numbers</li>
+            </ul>
+
+            <h3>Fixing Issues</h3>
+            <ol>
+                <li>Click any category card to see affected items</li>
+                <li>Click an item to open it for editing</li>
+                <li>Add the missing information</li>
+                <li>Click <strong>Refresh Analysis</strong> to update the report</li>
+            </ol>
+
+            <div class="tip">
+                <strong>Tip:</strong> The completeness score shows what percentage of your inventory has complete records. Aim for 80% or higher for insurance documentation.
+            </div>
+            <a href="#toc" class="back-to-top">↑ Back to Contents</a>
+        </section>
+
+        <section id="batch-categorize">
+            <h2>Batch Categorize</h2>
+            <p>Automatically assign categories to uncategorized items using smart keyword matching.</p>
+
+            <h3>Running Batch Categorize</h3>
+            <ol>
+                <li>Go to <strong>Actions > Batch Categorize</strong></li>
+                <li>View the list of uncategorized items with suggested categories</li>
+                <li>Review suggestions — each shows a confidence-based category match</li>
+            </ol>
+
+            <h3>Applying Categories</h3>
+            <ol>
+                <li>Use <strong>Select All</strong> to include all items, or click individual checkboxes</li>
+                <li>To change a suggestion, click the <strong>•••</strong> menu and choose a different category</li>
+                <li>Click <strong>Apply Categories</strong> to save all changes at once</li>
+            </ol>
+
+            <div class="tip">
+                <strong>Tip:</strong> Items showing "No suggestion" need manual category selection via the menu — the keyword matcher couldn't determine a confident match.
+            </div>
+            <a href="#toc" class="back-to-top">↑ Back to Contents</a>
+        </section>
+
+        <section id="bulk-price-update">
+            <h2>Bulk Price Update</h2>
+            <p>Update current values for multiple items at once using various calculation methods.</p>
+
+            <h3>Opening Bulk Price Update</h3>
+            <ol>
+                <li>Go to <strong>Actions > Bulk Price Update</strong></li>
+                <li>Select which items to update</li>
+                <li>Choose an update strategy</li>
+                <li>Preview and apply changes</li>
+            </ol>
+
+            <h3>Selection Modes</h3>
+            <ul>
+                <li><strong>All Items</strong> — Update your entire inventory</li>
+                <li><strong>By Category</strong> — Update only items in a specific category</li>
+                <li><strong>By Room</strong> — Update only items in a specific location</li>
+                <li><strong>Items with Price</strong> — Only items that have a purchase price recorded</li>
+                <li><strong>Missing Current Value</strong> — Only items without a current value set</li>
+            </ul>
+
+            <h3>Update Strategies</h3>
+            <ul>
+                <li><strong>Set Specific Value</strong> — Apply the same dollar amount to all selected items</li>
+                <li><strong>% of Purchase Price</strong> — Calculate as a percentage (e.g., 80%) of the original price</li>
+                <li><strong>Apply Depreciation</strong> — Use category-based depreciation rates based on item age</li>
+                <li><strong>Clear All Values</strong> — Remove current values from selected items</li>
+            </ul>
+
+            <h3>Preview Before Applying</h3>
+            <p>Click <strong>Preview Changes</strong> to see exactly what will change before committing.</p>
+
+            <div class="tip">
+                <strong>Tip:</strong> Use "% of Purchase Price" with 70-80% for general depreciation, or "Apply Depreciation" for category-specific rates.
+            </div>
             <a href="#toc" class="back-to-top">↑ Back to Contents</a>
         </section>
 
