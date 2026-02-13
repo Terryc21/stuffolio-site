@@ -285,7 +285,7 @@
 
         <div class="current-version">
           <p class="version-number">Version 1.0 (Build 25)</p>
-          <p class="version-date">February 8, 2026</p>
+          <p class="version-date">February 10, 2026</p>
           <span class="version-status">Beta Testing</span>
         </div>
 
@@ -301,13 +301,18 @@
         <div class="release">
           <div class="release-header">
             <h2 class="release-version">Version 1.0 (Build 25)</h2>
-            <span class="release-date">February 8, 2026</span>
+            <span class="release-date">February 10, 2026</span>
             <span class="release-tag beta">Beta</span>
           </div>
 
           <p class="release-summary">
-            Simplified onboarding experience, enhanced family sharing safety, and optional encrypted backups. Plus consistent "Item" terminology throughout the app.
+            Critical fixes for App Store readiness. Improved CloudKit sync reliability, better error recovery, and enhanced diagnostics. Plus simplified onboarding, enhanced family sharing safety, and optional encrypted backups.
           </p>
+
+          <div class="highlight-change">
+            <p class="label">Critical Fix</p>
+            <p><strong>CloudKit Batch Sync</strong> — Replaced sequential record uploads with batch operations for better performance and reliability. Better error recovery continues on non-critical errors instead of stopping completely.</p>
+          </div>
 
           <div class="highlight-change">
             <p class="label">Highlight</p>
@@ -339,6 +344,16 @@
               <li><strong>Consistent Terminology</strong> — Changed "Product" to "Item" throughout the app for clearer, more intuitive language</li>
               <li><strong>Onboarding Hints</strong> — Each toggle now includes subtle explanatory text about what data is used</li>
               <li><strong>Delete Permission Feedback</strong> — Clear messaging when users can't delete shared items they didn't create</li>
+            </ul>
+          </div>
+
+          <div class="change-category fixed">
+            <h4>Critical Fixes (February 10)</h4>
+            <ul>
+              <li><strong>CloudKit Batch Sync</strong> — Batch operations replace sequential uploads; processes items in groups of 200</li>
+              <li><strong>Partial Deletion Handling</strong> — Failed deletions remain in tracker for retry instead of being lost</li>
+              <li><strong>Enhanced Error Logging</strong> — Sentry captures all CloudKit errors for better diagnostics</li>
+              <li><strong>App Store Compliance</strong> — Removed exit(0) patterns that could cause rejection; replaced with state-driven recovery</li>
             </ul>
           </div>
 
