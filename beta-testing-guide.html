@@ -137,6 +137,7 @@
         <nav>
           <a href="index.html">Home</a>
           <a href="features.html">Features</a>
+          <a href="whats-new.html" class="nav-badge">What's New</a>
           <a href="compare.html">Compare</a>
           <a href="quick-start.html">Quick Start</a>
           <a href="support.html">Support</a>
@@ -162,7 +163,7 @@
         <p class="lead">Thank you for helping test Stuffolio! Your feedback shapes the app before public release.</p>
 
         <div class="hero-box">
-          <p><strong>Current Beta:</strong> Version 1.0 (Build 25) — Updated February 8, 2026</p>
+          <p><strong>Current Beta:</strong> Version 1.0 (Build 25) — Updated February 10, 2026</p>
         </div>
       </div>
 
@@ -242,7 +243,15 @@
       <!-- NEW IN THIS BUILD -->
       <div class="card">
         <h2 style="margin-top:0">New in Build 25</h2>
-        <p>This build focuses on onboarding improvements, family sharing safety, and backup security.</p>
+        <p>This build focuses on onboarding improvements, family sharing safety, backup security, and critical App Store readiness fixes.</p>
+
+        <h3>Critical Fixes (February 10)</h3>
+        <ul>
+          <li><strong>CloudKit Batch Sync:</strong> Replaced sequential uploads with batch operations for better performance</li>
+          <li><strong>Partial Deletion Handling:</strong> Failed deletions remain in tracker for retry</li>
+          <li><strong>Enhanced Error Logging:</strong> Sentry captures all CloudKit errors for diagnostics</li>
+          <li><strong>App Store Compliance:</strong> Removed exit(0) patterns; now uses state-driven recovery</li>
+        </ul>
 
         <h3>Simplified Onboarding</h3>
         <ul>
@@ -526,11 +535,14 @@
       <div>© <span id="y"></span> Coffee & Code LLC</div>
       <div style="display:flex; gap:12px; flex-wrap:wrap;">
         <a href="index.html">Home</a>
+        <a href="features.html">Features</a>
         <span style="color:var(--muted)">Docs:</span>
         <a href="Stuffolio_Quick_Start_Guide.html">Quick Start</a>
         <a href="Stuffolio_Users_Manual.html">Full Manual</a>
         <span style="color:var(--line)">|</span>
+        <a href="whats-new.html">What's New</a>
         <a href="family-sharing.html">Family Sharing</a>
+        <a href="support.html">Support</a>
         <a href="privacy.html">Privacy</a>
         <a href="terms.html">Terms</a>
         <a href="app-map.html">App Map</a>
