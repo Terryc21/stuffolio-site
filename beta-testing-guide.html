@@ -137,10 +137,23 @@
         <nav>
           <a href="index.html">Home</a>
           <a href="features.html">Features</a>
-          <a href="whats-new.html" class="nav-badge">What's New</a>
+          <div class="nav-dropdown">
+            <button class="nav-dropdown-toggle">Docs</button>
+            <div class="nav-dropdown-menu">
+              <a href="quick-start.html">Quick Start</a>
+              <a href="Stuffolio_Users_Manual.html">User Manual</a>
+              <a href="whats-new.html">What's New</a>
+              <a href="app-map.html">App Map</a>
+            </div>
+          </div>
           <a href="compare.html">Compare</a>
-          <a href="quick-start.html">Quick Start</a>
-          <a href="support.html">Support</a>
+          <div class="nav-dropdown">
+            <button class="nav-dropdown-toggle">Support</button>
+            <div class="nav-dropdown-menu">
+              <a href="support.html">Help & FAQ</a>
+              <a href="Stuffolio_Users_Manual.html">User Manual</a>
+            </div>
+          </div>
         </nav>
 
         <button class="search-toggle" aria-label="Search documentation">
@@ -532,24 +545,47 @@
       </div>
       <!-- END BETA-PERIOD-ONLY -->
 
-      <div>© <span id="y"></span> Coffee & Code LLC</div>
-      <div style="display:flex; gap:12px; flex-wrap:wrap;">
-        <a href="index.html">Home</a>
-        <a href="features.html">Features</a>
-        <span style="color:var(--muted)">Docs:</span>
-        <a href="Stuffolio_Quick_Start_Guide.html">Quick Start</a>
-        <a href="Stuffolio_Users_Manual.html">Full Manual</a>
-        <span style="color:var(--line)">|</span>
-        <a href="whats-new.html">What's New</a>
-        <a href="family-sharing.html">Family Sharing</a>
-        <a href="support.html">Support</a>
-        <a href="privacy.html">Privacy</a>
-        <a href="terms.html">Terms</a>
-        <a href="app-map.html">App Map</a>
-        <a href="story.html">Story</a>
+      <div class="footer-columns">
+        <div class="footer-column">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="compare.html">Compare</a></li>
+            <li><a href="whats-new.html">What's New</a></li>
+            <li><a href="story.html">Our Story</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Docs</h4>
+          <ul>
+            <li><a href="quick-start.html">Quick Start</a></li>
+            <li><a href="app-map.html">App Map</a></li>
+            <li><a href="family-sharing.html">Family Sharing</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="support.html">Help & FAQ</a></li>
+            <li><a href="Stuffolio_Users_Manual.html">User Manual</a></li>
+            <li><a href="beta-testing-guide.html">Testing Guide</a></li>
+            <li><a href="mailto:support@stuffolio.app">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Policies</h4>
+          <ul>
+            <li><a href="privacy.html">Privacy</a></li>
+            <li><a href="terms.html">Terms</a></li>
+          </ul>
+        </div>
       </div>
-      <div class="trust-strip"><span>Privacy-first. No ads. No selling your data. AI when you ask — silent when you don't.</span></div>
+      <div class="footer-bottom">
+        <div>&copy; <span id="y"></span> Coffee &amp; Code LLC</div>
+        <div class="trust-strip"><span>Privacy-first. No ads. No selling your data. AI when you ask — silent when you don't.</span></div>
+      </div>
     </footer>
+    <button class="back-to-top" aria-label="Back to top">↑</button>
   </div>
 
   <script>
@@ -580,6 +616,30 @@
         toggle.classList.remove('dark');
         localStorage.setItem('theme', 'light');
       }
+    });
+
+    // Back to Top Button
+    const backToTop = document.querySelector('.back-to-top');
+    if (backToTop) {
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 400) {
+          backToTop.classList.add('visible');
+        } else {
+          backToTop.classList.remove('visible');
+        }
+      });
+      backToTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+
+    // Dropdown Menu (for mobile)
+    document.querySelectorAll('.nav-dropdown-toggle').forEach(toggle => {
+      toggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        const dropdown = toggle.closest('.nav-dropdown');
+        dropdown.classList.toggle('open');
+      });
     });
   </script>
 
