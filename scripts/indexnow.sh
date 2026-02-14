@@ -1,6 +1,10 @@
 #!/bin/bash
-# IndexNow URL Submission Script for stuffolio.app
+# Search Engine Notification Script for stuffolio.app
 # Notifies search engines when content is added or updated
+#
+# Supported:
+#   - IndexNow (Bing, Yandex, etc.) - submits specific URLs
+#   - Google - pings sitemap
 #
 # Usage:
 #   ./scripts/indexnow.sh                    # Submit all pages
@@ -79,34 +83,39 @@ BODY=$(echo "$RESPONSE" | sed '$d')
 
 case $HTTP_CODE in
     200)
-        echo "✓ Success: URLs submitted and accepted"
+        echo "✓ IndexNow: URLs submitted and accepted"
         ;;
     202)
-        echo "✓ Accepted: URLs queued for processing"
+        echo "✓ IndexNow: URLs queued for processing"
         ;;
     400)
-        echo "✗ Error 400: Bad request - check URL format"
+        echo "✗ IndexNow Error 400: Bad request - check URL format"
         echo "$BODY"
         exit 1
         ;;
     403)
-        echo "✗ Error 403: Key not valid for this host"
+        echo "✗ IndexNow Error 403: Key not valid for this host"
         exit 1
         ;;
     422)
-        echo "✗ Error 422: Invalid URLs in request"
+        echo "✗ IndexNow Error 422: Invalid URLs in request"
         echo "$BODY"
         exit 1
         ;;
     429)
-        echo "✗ Error 429: Too many requests - try again later"
+        echo "✗ IndexNow Error 429: Too many requests - try again later"
         exit 1
         ;;
     *)
-        echo "✗ Unexpected response: HTTP $HTTP_CODE"
+        echo "✗ IndexNow: Unexpected response: HTTP $HTTP_CODE"
         echo "$BODY"
         exit 1
         ;;
 esac
 
-echo "Done!"
+echo ""
+echo "Done! URLs submitted to IndexNow (Bing, Yandex, etc.)"
+echo ""
+echo "Note: Google doesn't support IndexNow. For Google indexing:"
+echo "  → Ensure sitemap.xml is up-to-date"
+echo "  → Submit via Google Search Console: https://search.google.com/search-console"
