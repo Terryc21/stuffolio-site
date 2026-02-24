@@ -306,8 +306,8 @@
 
         <!-- SYNC:CURRENT_VERSION -->
         <div class="current-version">
-          <p class="version-number">Version 1.0 (Build 26)</p>
-          <p class="version-date">February 20, 2026</p>
+          <p class="version-number">Version 1.0 (Build 27)</p>
+          <p class="version-date">February 24, 2026</p>
           <span class="version-status">Beta Testing</span>
         </div>
         <!-- /SYNC:CURRENT_VERSION -->
@@ -323,80 +323,107 @@
       <div class="card">
         <div class="release">
           <div class="release-header">
-            <h2 class="release-version">Version 1.0 (Build 26)</h2>
-            <span class="release-date">February 20, 2026</span>
+            <h2 class="release-version">Version 1.0 (Build 27)</h2>
+            <span class="release-date">February 24, 2026</span>
             <span class="release-tag beta">Beta</span>
           </div>
 
           <p class="release-summary">
-            New Stuff Scout linkage: Items added via Stuff Scout now show a "View Scout Results" button in item detail. Plus critical CloudKit sync fixes, simplified onboarding, enhanced family sharing safety, and optional encrypted backups.
+            Major reliability and quality update. Fixes crashes when deleting items, resolves iCloud sync duplicates, and adds colorblind-friendly icon colors throughout the app. Plus a smarter Repair Advisor, direct AppleCare+ editing, and Go To now opens features directly instead of dropping you on a generic page.
           </p>
 
           <div class="highlight-change">
             <p class="label">Highlight</p>
-            <p><strong>View Scout Results from Items</strong> — Items added via Stuff Scout now show a "Stuff Scout" section in item detail. Tap "View Scout Results" to see the original identification, valuation, historical context, and collector notes — no need to re-scan.</p>
-          </div>
-
-          <div class="highlight-change">
-            <p class="label">Critical Fix</p>
-            <p><strong>CloudKit Batch Sync</strong> — Replaced sequential record uploads with batch operations for better performance and reliability. Better error recovery continues on non-critical errors instead of stopping completely.</p>
+            <p><strong>Colorblind-Friendly Icons</strong> — Icons throughout the app now use distinct, meaningful colors instead of the previous "sea of blue." Categories, conditions, and statuses are easier to tell apart for everyone, especially users with color vision differences.</p>
           </div>
 
           <div class="highlight-change">
             <p class="label">Highlight</p>
-            <p><strong>Simplified Onboarding</strong> — New "Set Up Your Experience" screen replaces the previous privacy consent wall. Three simple toggles (AI Assistants, Online Lookups, iCloud Sync) are all ON by default with clear explanations of what each does.</p>
+            <p><strong>Smarter Repair Advisor</strong> — The Repair, Keep, or Replace feature now uses your actual item data (age, warranty status, condition, brand history) to give better recommendations with clear confidence levels. If you only have one damaged item, it skips the picker and goes straight to the advice.</p>
           </div>
 
           <div class="highlight-change">
-            <p class="label">Security</p>
-            <p><strong>Password-Protected Backups</strong> — Optionally encrypt your backup files with a password. Encrypted backups use industry-standard PBKDF2 + AES-GCM encryption and are saved as <code>.stuffolio</code> files. Restore automatically detects encrypted files and prompts for the password.</p>
+            <p class="label">Highlight</p>
+            <p><strong>Go To Now Opens Features Directly</strong> — When you search for a specific feature like "Value Calculator" or "Settings" using Go To (&#8984;K), it now opens that feature right away instead of dropping you on a general page where you'd have to find it yourself.</p>
           </div>
 
           <!-- SYNC:TESTFLIGHT_CHANGES -->
           <div class="change-category new">
             <h4>New Features</h4>
             <ul>
-              <li><strong>View Scout Results from Item Detail</strong> — Items added via Stuff Scout now show a "Stuff Scout" section with a "View Scout Results" button. Tap to see the original identification, valuation, and collector notes without re-scanning</li>
-              <li><strong>Expanded Siri Shortcuts</strong> — 7 new automation actions for power users: "Add item to [location]", "What's my inventory worth?", "Show maintenance due", "Get items by category", and more. Build custom workflows in the Shortcuts app</li>
-              <li><strong>Set Up Your Experience</strong> — Action-oriented onboarding with 3 feature toggles (AI, Online Lookups, iCloud Sync) — all enabled by default</li>
-              <li><strong>Encrypted Backups</strong> — Optional password protection for backup exports using AES-GCM encryption</li>
-              <li><strong>Family Sharing Deletion Safety</strong> — Only the item creator or household Admin can delete shared items — Editors can no longer accidentally delete others' items</li>
-              <li><strong>Scan Depth Options</strong> — Choose your analysis level: Quick ID (~15s), With Pricing (~25s), or Full Appraisal (~40s) — balance speed vs detail for your needs</li>
-              <li><strong>Data Cleanup Tool</strong> — Analyze inventory completeness with quality scores, identify items missing photos, values, or warranties, and get suggestions for improving data quality</li>
-              <li><strong>Batch Categorize Tool</strong> — Automatically categorize multiple items at once using keyword matching — great for cleaning up uncategorized imports</li>
-              <li><strong>Bulk Price Update Tool</strong> — Update prices for multiple items using various strategies: percentage adjustment, AI lookup, or manual entry</li>
-              <li><strong>Photo Optimizer</strong> — Reduce photo storage size while maintaining quality — compress existing photos or set defaults for new captures</li>
+              <li><strong>Direct AppleCare+ Editing</strong> — Edit AppleCare+ details (incidents used, service fees, coverage dates) without opening the full item editor. If you have just one Apple product, it opens instantly with no picker step</li>
+              <li><strong>iCloud Sync in Empty State</strong> — When your inventory is empty, you'll now see an option to turn on iCloud Sync right from the welcome screen</li>
+              <li><strong>Expanded Repair Resources</strong> — The Repair Advisor now shows more repair guides, parts sources, and action options to help you decide what to do with damaged items</li>
             </ul>
           </div>
 
           <div class="change-category improved">
             <h4>Improvements</h4>
             <ul>
-              <li><strong>Consistent Terminology</strong> — Changed "Product" to "Item" throughout the app for clearer, more intuitive language</li>
-              <li><strong>Onboarding Hints</strong> — Each toggle now includes subtle explanatory text about what data is used</li>
-              <li><strong>Delete Permission Feedback</strong> — Clear messaging when users can't delete shared items they didn't create</li>
+              <li><strong>Faster Photo Loading</strong> — Item photos now load in the background, so scrolling through your inventory feels smoother</li>
+              <li><strong>Better iCloud Sync</strong> — Duplicate items from sync are now prevented, and photo syncing is more reliable</li>
+              <li><strong>Improved Error Recovery</strong> — The app handles more edge cases gracefully instead of showing errors</li>
+              <li><strong>Smoother App Performance</strong> — Reduced memory usage and faster screen loading throughout the app</li>
             </ul>
           </div>
 
           <div class="change-category fixed">
-            <h4>Critical Fixes (February 10)</h4>
+            <h4>Bug Fixes</h4>
             <ul>
-              <li><strong>CloudKit Batch Sync</strong> — Batch operations replace sequential uploads; processes items in groups of 200</li>
-              <li><strong>Partial Deletion Handling</strong> — Failed deletions remain in tracker for retry instead of being lost</li>
-              <li><strong>Enhanced Error Logging</strong> — Sentry captures all CloudKit errors for better diagnostics</li>
-              <li><strong>App Store Compliance</strong> — Removed exit(0) patterns that could cause rejection; replaced with state-driven recovery</li>
+              <li><strong>Item Deletion Crashes</strong> — Fixed several crashes that could happen when deleting items, especially items with photos or attachments</li>
+              <li><strong>iCloud Sync Duplicates</strong> — Resolved an issue where syncing could create duplicate items on other devices</li>
+              <li><strong>Gallery Display</strong> — Fixed photos not appearing correctly in gallery view after syncing</li>
+              <li><strong>Scout Results</strong> — Fixed the dismiss button not working properly after viewing Stuff Scout results</li>
+              <li><strong>Onboarding Stability</strong> — Fixed a crash that could occur during first-time setup with iCloud enabled</li>
             </ul>
           </div>
 
           <div class="change-category changed">
             <h4>Under the Hood</h4>
             <ul>
-              <li><strong>Separate Test Schemes</strong> — Unit tests and UI tests now run separately for faster development</li>
-              <li><strong>Refactored Large Files</strong> — Dashboard, Item Detail, and Form views split into focused extension files for better maintainability</li>
-              <li><strong>Mock Managers</strong> — New protocol-based mocks for CloudSync, Backup, and Keychain testing</li>
+              <li><strong>iCloud Sync Rewrite</strong> — The sync engine was reorganized into focused modules for better reliability</li>
+              <li><strong>Expanded Test Coverage</strong> — Added automated tests for 6 more areas of the app</li>
+              <li><strong>Code Cleanup</strong> — Removed unused code and fixed potential stability issues</li>
             </ul>
           </div>
           <!-- /SYNC:TESTFLIGHT_CHANGES -->
+        </div>
+      </div>
+
+      <!-- BUILD 26 -->
+      <div class="card">
+        <div class="release">
+          <div class="release-header">
+            <h2 class="release-version">Version 1.0 (Build 26)</h2>
+            <span class="release-date">February 20, 2026</span>
+            <span class="release-tag beta">Beta</span>
+          </div>
+
+          <p class="release-summary">
+            Stuff Scout linkage: Items added via Stuff Scout now show a "View Scout Results" button. Plus simplified onboarding, enhanced family sharing safety, and optional encrypted backups.
+          </p>
+
+          <div class="change-category new">
+            <h4>New Features</h4>
+            <ul>
+              <li><strong>View Scout Results from Items</strong> — Items added via Stuff Scout show a "View Scout Results" button to see the original identification and valuation without re-scanning</li>
+              <li><strong>Expanded Siri Shortcuts</strong> — 7 new voice commands: "What's my inventory worth?", "Show maintenance due", "Get items by category", and more</li>
+              <li><strong>Simplified Onboarding</strong> — New "Set Up Your Experience" screen with 3 simple toggles (AI, Online Lookups, iCloud Sync) — all ON by default</li>
+              <li><strong>Encrypted Backups</strong> — Optional password protection for backup files</li>
+              <li><strong>Family Sharing Deletion Safety</strong> — Only the item creator or household Admin can delete shared items</li>
+              <li><strong>Scan Depth Options</strong> — Choose Quick ID (~15s), With Pricing (~25s), or Full Appraisal (~40s)</li>
+              <li><strong>Data Cleanup, Batch Categorize, Bulk Price Update</strong> — New tools to organize and update your inventory in bulk</li>
+              <li><strong>Photo Optimizer</strong> — Reduce photo storage size while keeping quality</li>
+            </ul>
+          </div>
+
+          <div class="change-category fixed">
+            <h4>Bug Fixes</h4>
+            <ul>
+              <li><strong>iCloud Sync Performance</strong> — Faster, more reliable syncing with better error recovery</li>
+              <li><strong>App Store Compliance</strong> — Resolved patterns that could cause App Store rejection</li>
+            </ul>
+          </div>
         </div>
       </div>
 
@@ -837,8 +864,8 @@
       <!-- SYNC:LASTCOMMIT -->
       <div class="card" style="background: var(--card-bg); border: 1px solid var(--border); padding: 16px; margin-bottom: 24px;">
         <h3 style="margin: 0 0 8px; font-size: 0.9rem; color: var(--muted);">Latest Development Activity</h3>
-        <code style="font-size: 0.85rem; color: var(--text);">Add View Scout Results feature for Item ↔ Scout linkage</code>
-        <p style="margin: 8px 0 0; font-size: 0.8rem; color: var(--muted);">Feb 20, 2026 • Stuff Scout integration</p>
+        <code style="font-size: 0.85rem; color: var(--text);">Go To now opens features directly &amp; colorblind-friendly icon colors</code>
+        <p style="margin: 8px 0 0; font-size: 0.8rem; color: var(--muted);">Feb 24, 2026 • Navigation &amp; accessibility</p>
       </div>
       <!-- /SYNC:LASTCOMMIT -->
 
