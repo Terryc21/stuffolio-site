@@ -176,7 +176,7 @@
         <p class="lead">Thank you for helping test Stuffolio! Your feedback shapes the app before public release.</p>
 
         <div class="hero-box">
-          <p><strong>Current Beta:</strong> Version 1.0 (Build 25) — Updated February 10, 2026</p>
+          <p><strong>Current Beta:</strong> Version 1.0 (Build 27) — Updated February 24, 2026</p>
         </div>
       </div>
 
@@ -220,10 +220,10 @@
           <div class="priority-card high">
             <h4>High Priority</h4>
             <ul style="margin:0; padding-left:18px;">
-              <li><strong>Encrypted Backups</strong> — New! Test password protection for backup files</li>
-              <li><strong>Onboarding Flow</strong> — New! Test "Set Up Your Experience" toggles</li>
-              <li><strong>Family Sharing Deletion</strong> — Verify only creator/admin can delete shared items</li>
-              <li><strong>Data integrity</strong> — Items save correctly, no data loss</li>
+              <li><strong>Item Deletion</strong> — Delete items with photos and verify no crashes</li>
+              <li><strong>iCloud Sync</strong> — Sync between devices and check for duplicate items</li>
+              <li><strong>Repair Advisor</strong> — Try with damaged items, check recommendations make sense</li>
+              <li><strong>Go To (&#8984;K)</strong> — Search for features like "Settings" or "Value Calculator" and verify they open directly</li>
               <li><strong>Crashes</strong> — Report any app crashes immediately</li>
             </ul>
           </div>
@@ -231,12 +231,11 @@
           <div class="priority-card medium">
             <h4>Medium Priority</h4>
             <ul style="margin:0; padding-left:18px;">
-              <li><strong>Send to Apps</strong> — Notes, Calendar, and Reminders integration</li>
-              <li><strong>AI assistance</strong> — Stuff Scout accuracy, AI Assistant responses (runs only when requested)</li>
-              <li><strong>Scan Depth Options</strong> — Test Quick ID, With Pricing, and Full Appraisal modes</li>
-              <li><strong>Data Tools</strong> — Data Cleanup, Batch Categorize, Bulk Price Update</li>
+              <li><strong>AppleCare+ Editing</strong> — Try editing AppleCare+ details directly from the dashboard</li>
+              <li><strong>Icon Colors</strong> — Check that icons use distinct, meaningful colors (not all blue)</li>
+              <li><strong>Photo Loading</strong> — Scroll through items and verify photos load smoothly</li>
+              <li><strong>AI assistance</strong> — Stuff Scout accuracy, AI Assistant responses</li>
               <li><strong>Price Watch</strong> — Track prices, set alerts, view history charts</li>
-              <li><strong>iCloud sync</strong> — Changes sync between devices</li>
               <li><strong>Export functionality</strong> — CSV, PDF, Excel, encrypted backup exports</li>
             </ul>
           </div>
@@ -244,7 +243,7 @@
           <div class="priority-card low">
             <h4>Lower Priority</h4>
             <ul style="margin:0; padding-left:18px;">
-              <li><strong>Terminology</strong> — Check "Product" → "Item" changes throughout</li>
+              <li><strong>Empty State</strong> — Check the iCloud Sync option appears when inventory is empty</li>
               <li><strong>UI polish</strong> — Visual glitches, alignment issues</li>
               <li><strong>Accessibility</strong> — VoiceOver, Dynamic Type</li>
               <li><strong>Widgets</strong> — Home Screen, Lock Screen widgets</li>
@@ -255,102 +254,60 @@
 
       <!-- NEW IN THIS BUILD -->
       <div class="card">
-        <h2 style="margin-top:0">New in Build 25</h2>
-        <p>This build focuses on onboarding improvements, family sharing safety, backup security, and critical App Store readiness fixes.</p>
+        <h2 style="margin-top:0">New in Build 27</h2>
+        <p>This build focuses on reliability, accessibility, and making features easier to reach.</p>
 
-        <h3>Critical Fixes (February 10)</h3>
+        <h3>Colorblind-Friendly Icons</h3>
         <ul>
-          <li><strong>CloudKit Batch Sync:</strong> Replaced sequential uploads with batch operations for better performance</li>
-          <li><strong>Partial Deletion Handling:</strong> Failed deletions remain in tracker for retry</li>
-          <li><strong>Enhanced Error Logging:</strong> Sentry captures all CloudKit errors for diagnostics</li>
-          <li><strong>App Store Compliance:</strong> Removed exit(0) patterns; now uses state-driven recovery</li>
+          <li>Icons now use distinct colors instead of the previous "all blue" look</li>
+          <li>Categories, conditions, and statuses are easier to tell apart</li>
+          <li>Check icons in item lists, the Dashboard, and category views</li>
         </ul>
 
-        <h3>Simplified Onboarding</h3>
+        <h3>Smarter Repair Advisor</h3>
         <ul>
-          <li><strong>Set Up Your Experience:</strong> New onboarding screen with 3 simple toggles</li>
-          <li><strong>AI Assistants:</strong> Stuff Scout, product identification, OCR</li>
-          <li><strong>Online Lookups:</strong> Barcode product info, safety recall checker</li>
-          <li><strong>iCloud Sync:</strong> Keep inventory synced across devices</li>
-          <li>All toggles ON by default — just tap Continue to get started</li>
+          <li>Open Repair Advisor from the Dashboard or an item's context menu</li>
+          <li>If you have one damaged item, it opens the advisor directly (no picker step)</li>
+          <li>Recommendations now use your actual item data — age, warranty status, condition, and your history with that brand</li>
+          <li>Look for confidence levels: High, Medium, or Exploratory</li>
         </ul>
 
-        <h3>How to Test Onboarding</h3>
+        <h3>Direct AppleCare+ Editing</h3>
         <ul>
-          <li>Delete and reinstall Stuffolio to see the new onboarding flow</li>
-          <li>Toggle each option on/off to verify features enable/disable correctly</li>
-          <li>Check that AI features work when AI Assistants is ON</li>
-          <li>Verify barcode lookup works when Online Lookups is ON</li>
+          <li>Open AppleCare+ Tracking from the Dashboard</li>
+          <li>If you have one Apple product, it opens the editor directly</li>
+          <li>Edit incidents used, service fees, and coverage dates without opening the full item editor</li>
         </ul>
 
-        <h3>Password-Protected Backups</h3>
+        <h3>Go To Opens Features Directly</h3>
         <ul>
-          <li>Go to Settings → Backup & Restore → Create Backup</li>
-          <li>Toggle "Encrypt with password" ON</li>
-          <li>Enter a password and create the backup</li>
-          <li>Verify the file is saved as <code>.stuffolio</code> (not <code>.json</code>)</li>
-          <li>Try restoring — app should prompt for password</li>
+          <li>Press &#8984;K or tap the search icon to open Go To</li>
+          <li>Search for "Value Calculator" — it should open Value Calculator directly</li>
+          <li>Search for "Settings" — it should open Settings directly</li>
+          <li>Search for "Depreciation" — it should open the Depreciation tracker directly</li>
+          <li>Previously these would land on a general page where you'd have to find the feature yourself</li>
         </ul>
 
-        <h3>Family Sharing Deletion Safety</h3>
+        <h3>Crash Fixes</h3>
         <ul>
-          <li>In a shared household, try to delete an item you didn't create</li>
-          <li>Verify Editors can no longer delete shared items</li>
-          <li>Verify the item creator can still delete their own items</li>
-          <li>Verify Admins can delete any shared item</li>
+          <li>Try deleting items that have photos attached — this was crashing before</li>
+          <li>Try deleting items that were synced from another device</li>
+          <li>Check that gallery view shows photos correctly after syncing</li>
         </ul>
 
-        <h3>Terminology Update</h3>
+        <h3>iCloud Sync Improvements</h3>
         <ul>
-          <li>Notice "Product" has been changed to "Item" throughout the app</li>
-          <li>Check menu items, navigation, and labels for consistency</li>
+          <li>Add an item on one device and check it appears on another without duplicates</li>
+          <li>Verify photos sync correctly between devices</li>
+          <li>When your inventory is empty, check that an "Enable iCloud Sync" option appears</li>
         </ul>
 
-        <h3>Scan Depth Options</h3>
+        <h3>Still Worth Testing from Earlier Builds</h3>
         <ul>
-          <li>Open Stuff Scout and take a photo</li>
-          <li>Choose <strong>Quick ID</strong> (~15s) — verify fast identification results</li>
-          <li>Choose <strong>With Pricing</strong> (~25s) — verify price estimates are included</li>
-          <li>Choose <strong>Full Appraisal</strong> (~40s) — verify comprehensive analysis with historical context</li>
-          <li>Compare results between depth levels for the same item</li>
-        </ul>
-
-        <h3>Data Tools</h3>
-        <ul>
-          <li><strong>Data Cleanup:</strong> Go to Actions → Data Cleanup → analyze inventory completeness</li>
-          <li>Verify quality scores appear for each item category</li>
-          <li>Test filtering by missing data (photos, values, warranties)</li>
-          <li><strong>Batch Categorize:</strong> Select multiple uncategorized items → apply category rules</li>
-          <li>Verify keyword matching suggestions are accurate</li>
-          <li><strong>Bulk Price Update:</strong> Select multiple items → update prices using percentage or AI lookup</li>
-          <li>Test Photo Optimizer on items with large photos</li>
-        </ul>
-
-        <h3>Legacy Wishes</h3>
-        <ul>
-          <li>Enable Legacy Wishes in Settings → Legacy Planning</li>
-          <li>Add beneficiaries (family, friends, organizations)</li>
-          <li>Assign items to recipients with notes</li>
-          <li>Set contingency recipients (succession order)</li>
-          <li>Test CloudKit sharing with family members</li>
-          <li>Verify conflict detection when multiple people want same item</li>
-          <li>Export Legacy Wishes as PDF</li>
-        </ul>
-
-        <h3>From Build 24: Send to Apps</h3>
-        <ul>
-          <li><strong>Send to Apps Bar:</strong> Tap chips to send item details to Notes, Calendar, or Reminders</li>
-          <li><strong>Apple Notes:</strong> Opens Notes with item title, brand, and model copied</li>
-          <li><strong>Calendar:</strong> Creates warranty expiration events</li>
-          <li><strong>Reminders:</strong> Adds maintenance tasks or follow-up reminders</li>
-        </ul>
-
-        <h3>From Build 22: Simplified Add Item Flow</h3>
-        <ul>
-          <li><strong>3 clear options:</strong> Photo, Barcode, or Manual — instead of 5 confusing choices</li>
-          <li><strong>Photo mode:</strong> Form appears immediately while AI analyzes in the background</li>
-          <li><strong>Optimistic loading:</strong> Start entering data right away — AI fields fill in automatically when ready</li>
-          <li><strong>Beta testers:</strong> Unlimited AI access — Photo analysis runs automatically for you!</li>
+          <li><strong>Encrypted Backups:</strong> Settings → Backup → toggle "Encrypt with password"</li>
+          <li><strong>Send to Apps:</strong> Tap Notes, Calendar, or Reminders chips on any item</li>
+          <li><strong>Scan Depth Options:</strong> Try Quick ID, With Pricing, and Full Appraisal in Stuff Scout</li>
+          <li><strong>Data Tools:</strong> Data Cleanup, Batch Categorize, Bulk Price Update</li>
         </ul>
       </div>
 
@@ -366,12 +323,13 @@
           <li>Verify AI fields fill in automatically after photo analysis</li>
           <li>Edit item details and verify changes save</li>
           <li>Delete an item and confirm it's removed</li>
+          <li>Delete an item with photos attached — verify no crash</li>
           <li>Search for items by name, category, location</li>
           <li>Filter items using the filter menu</li>
           <li>Export inventory to CSV, PDF, or Excel</li>
         </ul>
 
-        <h3>Backup & Security (New in Build 25)</h3>
+        <h3>Backup & Security</h3>
         <ul class="checklist">
           <li>Create a plain (unencrypted) backup and verify restore</li>
           <li>Create an encrypted backup with password</li>
@@ -381,7 +339,7 @@
           <li>Restore with correct password — verify data integrity</li>
         </ul>
 
-        <h3>Family Sharing (Updated in Build 25)</h3>
+        <h3>Family Sharing</h3>
         <ul class="checklist">
           <li>Create a shared household</li>
           <li>Invite a family member as Editor</li>
@@ -413,7 +371,7 @@
           <li>Verify AI response caching works offline</li>
         </ul>
 
-        <h3>Data Tools (New in Build 25)</h3>
+        <h3>Data Tools</h3>
         <ul class="checklist">
           <li>Run Data Cleanup analysis on your inventory</li>
           <li>Check quality scores for different categories</li>
@@ -435,12 +393,34 @@
           <li>Export Legacy Wishes as PDF</li>
         </ul>
 
+        <h3>Repair Advisor & AppleCare+</h3>
+        <ul class="checklist">
+          <li>Open Repair Advisor from Dashboard — check recommendations use your real item data</li>
+          <li>If you have one damaged item, verify it skips the picker and opens directly</li>
+          <li>Look for confidence levels (High, Medium, Exploratory) on recommendations</li>
+          <li>Open AppleCare+ Tracking from Dashboard</li>
+          <li>If you have one Apple product, verify it opens the editor directly</li>
+          <li>Edit AppleCare+ incidents, fees, and dates from the direct editor</li>
+        </ul>
+
+        <h3>Go To (&#8984;K)</h3>
+        <ul class="checklist">
+          <li>Open Go To and search for "Value Calculator" — verify it opens directly</li>
+          <li>Search for "Settings" — verify it opens Settings directly</li>
+          <li>Search for "Depreciation" — verify it opens the tracker directly</li>
+          <li>Search for "Cloud Sync" — verify it opens sync settings directly</li>
+          <li>Navigate to a section (like My Products or Dashboard) via Go To</li>
+        </ul>
+
         <h3>Sync & Multi-Device</h3>
         <ul class="checklist">
           <li>Enable iCloud sync</li>
           <li>Add item on one device, verify it appears on another</li>
+          <li>Verify photos sync correctly between devices</li>
+          <li>Check for duplicates after syncing</li>
           <li>Edit same item on two devices, test conflict resolution</li>
           <li>Test with airplane mode / offline usage</li>
+          <li>When inventory is empty, check that an "Enable iCloud Sync" option appears</li>
         </ul>
       </div>
 
@@ -483,6 +463,7 @@
           <li><strong>Price Watch charts</strong> — Charts may flicker briefly when first loading on older devices</li>
           <li><strong>iPad Split View</strong> — Some layout issues when resizing in Split View mode</li>
           <li><strong>Offline AI caching</strong> — Cached responses occasionally show stale provider info</li>
+          <li><strong>Go To on macOS</strong> — Some features already had direct access on macOS; Go To improvements primarily affect iOS</li>
         </ul>
 
         <p style="font-size:0.9rem; color:var(--muted);">You don't need to report these — we're already on it!</p>
