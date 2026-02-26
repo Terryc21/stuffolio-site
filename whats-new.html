@@ -306,8 +306,8 @@
 
         <!-- SYNC:CURRENT_VERSION -->
         <div class="current-version">
-          <p class="version-number">Version 1.0 (Build 27)</p>
-          <p class="version-date">February 24, 2026</p>
+          <p class="version-number">Version 1.0 (Build 28)</p>
+          <p class="version-date">February 26, 2026</p>
           <span class="version-status">Beta Testing</span>
         </div>
         <!-- /SYNC:CURRENT_VERSION -->
@@ -323,13 +323,13 @@
       <div class="card">
         <div class="release">
           <div class="release-header">
-            <h2 class="release-version">Version 1.0 (Build 27)</h2>
-            <span class="release-date">February 24, 2026</span>
+            <h2 class="release-version">Version 1.0 (Build 28)</h2>
+            <span class="release-date">February 26, 2026</span>
             <span class="release-tag beta">Beta</span>
           </div>
 
           <p class="release-summary">
-            Major reliability and quality update. Fixes crashes when deleting items, resolves iCloud sync duplicates, and adds colorblind-friendly icon colors throughout the app. Plus a smarter Repair Advisor, direct AppleCare+ editing, and Go To now opens features directly instead of dropping you on a generic page.
+            Dashboard redesign, smarter navigation, and broad polish. The Dashboard gets a fresh layout with an improved search prompt and Customize shortcut. Go To now covers more features and opens them directly. Touch targets, keyboard dismiss, and sheet headers are consistent throughout the app.
           </p>
 
           <div class="highlight-change">
@@ -349,41 +349,46 @@
 
           <!-- SYNC:TESTFLIGHT_CHANGES -->
           <div class="change-category new">
-            <h4>New Features</h4>
+            <h4>New</h4>
             <ul>
-              <li><strong>Direct AppleCare+ Editing</strong> — Edit AppleCare+ details (incidents used, service fees, coverage dates) without opening the full item editor. If you have just one Apple product, it opens instantly with no picker step</li>
-              <li><strong>iCloud Sync in Empty State</strong> — When your inventory is empty, you'll now see an option to turn on iCloud Sync right from the welcome screen</li>
-              <li><strong>Expanded Repair Resources</strong> — The Repair Advisor now shows more repair guides, parts sources, and action options to help you decide what to do with damaged items</li>
+              <li><strong>Dashboard Redesign</strong> — Rebuilt Dashboard layout with a tappable search prompt, a visible Customize shortcut, and cleaner card organization throughout</li>
+              <li><strong>Smarter Repair Advisor</strong> — Repair, Keep, or Replace now uses your actual item data — age, warranty status, condition, brand — for more accurate recommendations with clear confidence levels</li>
+              <li><strong>Direct AppleCare+ Editing</strong> — Edit AppleCare+ details (incidents used, service fees, coverage dates) without opening the full item editor. Single Apple-product users skip the picker entirely</li>
+              <li><strong>Enhancements in Settings</strong> — A new Enhancements section in Settings surfaces subscription features in context</li>
+              <li><strong>iCloud Sync in Empty State</strong> — Empty inventory screen now offers a one-tap option to turn on iCloud Sync</li>
             </ul>
           </div>
 
           <div class="change-category improved">
             <h4>Improvements</h4>
             <ul>
-              <li><strong>Faster Photo Loading</strong> — Item photos now load in the background, so scrolling through your inventory feels smoother</li>
-              <li><strong>Better iCloud Sync</strong> — Duplicate items from sync are now prevented, and photo syncing is more reliable</li>
-              <li><strong>Improved Error Recovery</strong> — The app handles more edge cases gracefully instead of showing errors</li>
-              <li><strong>Smoother App Performance</strong> — Reduced memory usage and faster screen loading throughout the app</li>
+              <li><strong>Go To Navigation</strong> — More features are registered in Go To (⌘K / spotlight), and every result opens its feature directly — no more intermediate pages</li>
+              <li><strong>Consistent Keyboard Dismiss</strong> — Added keyboard dismiss controls to 8+ views that were missing them, using a consistent chevron-icon pattern</li>
+              <li><strong>Sheet Hero Headers</strong> — 7 feature sheets now open with a coloured hero header for a more polished, contextual feel</li>
+              <li><strong>Touch Targets</strong> — Selection card tap areas fixed throughout the app so every card responds reliably</li>
+              <li><strong>Faster Photo Loading</strong> — Item photos load in the background for smoother scrolling</li>
+              <li><strong>Better iCloud Sync</strong> — Duplicate prevention improved; photo syncing is more reliable</li>
             </ul>
           </div>
 
           <div class="change-category fixed">
             <h4>Bug Fixes</h4>
             <ul>
-              <li><strong>Item Deletion Crashes</strong> — Fixed several crashes that could happen when deleting items, especially items with photos or attachments</li>
-              <li><strong>iCloud Sync Duplicates</strong> — Resolved an issue where syncing could create duplicate items on other devices</li>
-              <li><strong>Gallery Display</strong> — Fixed photos not appearing correctly in gallery view after syncing</li>
-              <li><strong>Scout Results</strong> — Fixed the dismiss button not working properly after viewing Stuff Scout results</li>
-              <li><strong>Onboarding Stability</strong> — Fixed a crash that could occur during first-time setup with iCloud enabled</li>
+              <li><strong>Bulk Delete Recovery</strong> — Improved recovery UX when deleting multiple items, preventing data loss on interruption</li>
+              <li><strong>Memory Leaks</strong> — Fixed closure-capture leaks in banner notifications and a macOS observer token</li>
+              <li><strong>Silent Failures</strong> — Cache clear and rescan operations now surface errors instead of failing silently</li>
+              <li><strong>Item Deletion Crashes</strong> — Fixed crashes when deleting items with photos or attachments</li>
+              <li><strong>iCloud Sync Duplicates</strong> — Resolved issue causing duplicate items on other devices after sync</li>
+              <li><strong>Scout Results Dismiss</strong> — Fixed dismiss button not responding after viewing Stuff Scout results</li>
             </ul>
           </div>
 
           <div class="change-category changed">
             <h4>Under the Hood</h4>
             <ul>
-              <li><strong>iCloud Sync Rewrite</strong> — The sync engine was reorganized into focused modules for better reliability</li>
-              <li><strong>Expanded Test Coverage</strong> — Added automated tests for 6 more areas of the app</li>
-              <li><strong>Code Cleanup</strong> — Removed unused code and fixed potential stability issues</li>
+              <li><strong>iCloud Sync Rewrite</strong> — Sync engine reorganised into focused modules for better reliability</li>
+              <li><strong>Expanded Test Coverage</strong> — Automated tests added for Dashboard components, Repair/Keep/Replace logic, and 6+ more areas</li>
+              <li><strong>Code Cleanup</strong> — Removed unused code, simplified guard-let patterns, and fixed potential stability issues</li>
             </ul>
           </div>
           <!-- /SYNC:TESTFLIGHT_CHANGES -->
@@ -864,8 +869,8 @@
       <!-- SYNC:LASTCOMMIT -->
       <div class="card" style="background: var(--card-bg); border: 1px solid var(--border); padding: 16px; margin-bottom: 24px;">
         <h3 style="margin: 0 0 8px; font-size: 0.9rem; color: var(--muted);">Latest Development Activity</h3>
-        <code style="font-size: 0.85rem; color: var(--text);">Go To now opens features directly &amp; colorblind-friendly icon colors</code>
-        <p style="margin: 8px 0 0; font-size: 0.8rem; color: var(--muted);">Feb 24, 2026 • Navigation &amp; accessibility</p>
+        <code style="font-size: 0.85rem; color: var(--text);">Dashboard redesign (SF7a), warranty fix, and Go To cleanup</code>
+        <p style="margin: 8px 0 0; font-size: 0.8rem; color: var(--muted);">Feb 26, 2026 • Dashboard &amp; UI</p>
       </div>
       <!-- /SYNC:LASTCOMMIT -->
 
