@@ -176,7 +176,7 @@
         <p class="lead">Thank you for helping test Stuffolio! Your feedback shapes the app before public release.</p>
 
         <div class="hero-box">
-          <p><strong>Current Beta:</strong> Version 1.0 (Build 27) — Updated February 24, 2026</p>
+          <p><strong>Current Beta:</strong> Version 1.0 (Build 28) — Updated February 26, 2026</p>
         </div>
       </div>
 
@@ -220,9 +220,9 @@
           <div class="priority-card high">
             <h4>High Priority</h4>
             <ul style="margin:0; padding-left:18px;">
-              <li><strong>Item Deletion</strong> — Delete items with photos and verify no crashes</li>
-              <li><strong>iCloud Sync</strong> — Sync between devices and check for duplicate items</li>
-              <li><strong>Repair Advisor</strong> — Try with damaged items, check recommendations make sense</li>
+              <li><strong>Dashboard redesign</strong> — Check the new layout, icons, and card hierarchy across all sections</li>
+              <li><strong>Keyboard dismiss</strong> — Scroll or tap outside a text field on any form and verify the keyboard dismisses reliably</li>
+              <li><strong>Touch targets</strong> — Tap buttons, rows, and context menus — everything should feel easy to hit</li>
               <li><strong>Go To (&#8984;K)</strong> — Search for features like "Settings" or "Value Calculator" and verify they open directly</li>
               <li><strong>Crashes</strong> — Report any app crashes immediately</li>
             </ul>
@@ -254,56 +254,47 @@
 
       <!-- NEW IN THIS BUILD -->
       <div class="card">
-        <h2 style="margin-top:0">New in Build 27</h2>
-        <p>This build focuses on reliability, accessibility, and making features easier to reach.</p>
+        <h2 style="margin-top:0">New in Build 28</h2>
+        <p>This build focuses on the Dashboard experience, polish, and stability ahead of App Store submission.</p>
 
-        <h3>Colorblind-Friendly Icons</h3>
+        <h3>Dashboard Redesign</h3>
         <ul>
-          <li>Icons now use distinct colors instead of the previous "all blue" look</li>
-          <li>Categories, conditions, and statuses are easier to tell apart</li>
-          <li>Check icons in item lists, the Dashboard, and category views</li>
+          <li>Refreshed icon set (SF7a) with cleaner visuals and better visual hierarchy</li>
+          <li>Warranty section now shows actual expiry dates instead of just a count</li>
+          <li>Tapping a Dashboard tile navigates directly to the relevant section</li>
+          <li>Dashboard loads faster — stat calculations and image decoding moved off the main thread</li>
         </ul>
 
-        <h3>Smarter Repair Advisor</h3>
+        <h3>Keyboard &amp; Touch Polish</h3>
         <ul>
-          <li>Open Repair Advisor from the Dashboard or an item's context menu</li>
-          <li>If you have one damaged item, it opens the advisor directly (no picker step)</li>
-          <li>Recommendations now use your actual item data — age, warranty status, condition, and your history with that brand</li>
-          <li>Look for confidence levels: High, Medium, or Exploratory</li>
+          <li>Keyboards now dismiss on scroll and background tap consistently across all forms</li>
+          <li>Touch targets enlarged across item lists, buttons, and context menus</li>
+          <li>Items show purchase date if acquired date is absent — no more blank "Acquired" fields</li>
         </ul>
 
-        <h3>Direct AppleCare+ Editing</h3>
+        <h3>Enhancements Page in Settings</h3>
         <ul>
-          <li>Open AppleCare+ Tracking from the Dashboard</li>
-          <li>If you have one Apple product, it opens the editor directly</li>
-          <li>Edit incidents used, service fees, and coverage dates without opening the full item editor</li>
+          <li>New Enhancements page in Settings combines version history, privacy policy, and a change summary</li>
+          <li>Check that the page loads and links work correctly</li>
         </ul>
 
-        <h3>Go To Opens Features Directly</h3>
+        <h3>Bulk Delete Recovery</h3>
         <ul>
-          <li>Press &#8984;K or tap the search icon to open Go To</li>
-          <li>Search for "Value Calculator" — it should open Value Calculator directly</li>
-          <li>Search for "Settings" — it should open Settings directly</li>
-          <li>Search for "Depreciation" — it should open the Depreciation tracker directly</li>
-          <li>Previously these would land on a general page where you'd have to find the feature yourself</li>
+          <li>An undo toast now appears immediately after bulk deletes, before navigation changes</li>
+          <li>Try selecting multiple items and deleting — verify the undo option is easy to reach</li>
         </ul>
 
-        <h3>Crash Fixes</h3>
+        <h3>Crash &amp; Sync Fixes</h3>
         <ul>
-          <li>Try deleting items that have photos attached — this was crashing before</li>
-          <li>Try deleting items that were synced from another device</li>
-          <li>Check that gallery view shows photos correctly after syncing</li>
-        </ul>
-
-        <h3>iCloud Sync Improvements</h3>
-        <ul>
-          <li>Add an item on one device and check it appears on another without duplicates</li>
-          <li>Verify photos sync correctly between devices</li>
-          <li>When your inventory is empty, check that an "Enable iCloud Sync" option appears</li>
+          <li>Fixed launch crashes for users who previously used certain scanner flows</li>
+          <li>iCloud conflict resolution improved — items edited on two devices simultaneously now merge instead of duplicating</li>
+          <li>Photo deletes are now transactional — file removed only after CloudKit confirms deletion</li>
+          <li>Fixed text truncation in narrow iPad column layouts</li>
         </ul>
 
         <h3>Still Worth Testing from Earlier Builds</h3>
         <ul>
+          <li><strong>Repair Advisor:</strong> Try with damaged items, look for confidence levels and data-driven recommendations</li>
           <li><strong>Encrypted Backups:</strong> Settings → Backup → toggle "Encrypt with password"</li>
           <li><strong>Send to Apps:</strong> Tap Notes, Calendar, or Reminders chips on any item</li>
           <li><strong>Scan Depth Options:</strong> Try Quick ID, With Pricing, and Full Appraisal in Stuff Scout</li>
