@@ -176,7 +176,7 @@
         <p class="lead">Thank you for helping test Stuffolio! Your feedback shapes the app before public release.</p>
 
         <div class="hero-box">
-          <p><strong>Current Beta:</strong> Version 1.0 (Build 28) — Updated February 26, 2026</p>
+          <p><strong>Current Beta:</strong> Version 1.0 (Build 26) — Updated March 2, 2026</p>
         </div>
       </div>
 
@@ -231,9 +231,9 @@
           <div class="priority-card medium">
             <h4>Medium Priority</h4>
             <ul style="margin:0; padding-left:18px;">
-              <li><strong>AppleCare+ Editing</strong> — Try editing AppleCare+ details directly from the dashboard</li>
-              <li><strong>Icon Colors</strong> — Check that icons use distinct, meaningful colors (not all blue)</li>
-              <li><strong>Photo Loading</strong> — Scroll through items and verify photos load smoothly</li>
+              <li><strong>Accessibility (NEW)</strong> — Go to Settings → Accessibility → Larger Text, drag to maximum, and verify text is readable throughout the app</li>
+              <li><strong>Reduce Motion (NEW)</strong> — Enable Settings → Accessibility → Motion → Reduce Motion and check that animations simplify</li>
+              <li><strong>Legacy Wishes deletion</strong> — Add a beneficiary, then delete them — verify they disappear from the list</li>
               <li><strong>AI assistance</strong> — Stuff Scout accuracy, AI Assistant responses</li>
               <li><strong>Price Watch</strong> — Track prices, set alerts, view history charts</li>
               <li><strong>Export functionality</strong> — CSV, PDF, Excel, encrypted backup exports</li>
@@ -243,9 +243,10 @@
           <div class="priority-card low">
             <h4>Lower Priority</h4>
             <ul style="margin:0; padding-left:18px;">
+              <li><strong>VoiceOver</strong> — Enable VoiceOver and navigate item lists; buttons and labels should read clearly</li>
+              <li><strong>AppleCare+ Editing</strong> — Try editing AppleCare+ details directly from the dashboard</li>
               <li><strong>Empty State</strong> — Check the iCloud Sync option appears when inventory is empty</li>
               <li><strong>UI polish</strong> — Visual glitches, alignment issues</li>
-              <li><strong>Accessibility</strong> — VoiceOver, Dynamic Type</li>
               <li><strong>Widgets</strong> — Home Screen, Lock Screen widgets</li>
             </ul>
           </div>
@@ -254,46 +255,38 @@
 
       <!-- NEW IN THIS BUILD -->
       <div class="card">
-        <h2 style="margin-top:0">New in Build 28</h2>
-        <p>This build focuses on the Dashboard experience, polish, and stability ahead of App Store submission.</p>
+        <h2 style="margin-top:0">New in Build 26</h2>
+        <p>This build focuses on accessibility, stability, and security hardening ahead of App Store submission.</p>
 
-        <h3>Dashboard Redesign</h3>
+        <h3>Accessibility Overhaul</h3>
         <ul>
-          <li>Refreshed icon set (SF7a) with cleaner visuals and better visual hierarchy</li>
-          <li>Warranty section now shows actual expiry dates instead of just a count</li>
-          <li>Tapping a Dashboard tile navigates directly to the relevant section</li>
-          <li>Dashboard loads faster — stat calculations and image decoding moved off the main thread</li>
+          <li>Dynamic Type support across the entire app — all text now scales with iOS text size settings</li>
+          <li>Reduce Motion support — animations automatically simplify when Reduce Motion is enabled in Settings</li>
+          <li>VoiceOver improvements — labels, hints, and traits audited and corrected throughout</li>
+          <li>Try Settings → Accessibility → Display &amp; Text Size → Larger Text and verify the app remains readable at maximum size</li>
+          <li>Try Settings → Accessibility → Motion → Reduce Motion and verify transitions feel calmer</li>
         </ul>
 
-        <h3>Keyboard &amp; Touch Polish</h3>
+        <h3>Bug Fix: Legacy Wishes Beneficiary Deletion</h3>
         <ul>
-          <li>Keyboards now dismiss on scroll and background tap consistently across all forms</li>
-          <li>Touch targets enlarged across item lists, buttons, and context menus</li>
-          <li>Items show purchase date if acquired date is absent — no more blank "Acquired" fields</li>
+          <li>Fixed a bug where deleting a beneficiary in Legacy Wishes would silently fail, leaving the beneficiary visible in the list</li>
+          <li>Beneficiaries now delete correctly and are removed from any existing assignments</li>
         </ul>
 
-        <h3>Enhancements Page in Settings</h3>
+        <h3>Reliability Improvements</h3>
         <ul>
-          <li>New Enhancements page in Settings combines version history, privacy policy, and a change summary</li>
-          <li>Check that the page loads and links work correctly</li>
+          <li>Improved error handling for JSON parsing failures — the app now recovers gracefully instead of showing a blank screen</li>
+          <li>Schema stability improvements — in-memory data model operations are more robust during edge-case operations</li>
         </ul>
 
-        <h3>Bulk Delete Recovery</h3>
+        <h3>Security</h3>
         <ul>
-          <li>An undo toast now appears immediately after bulk deletes, before navigation changes</li>
-          <li>Try selecting multiple items and deleting — verify the undo option is easy to reach</li>
-        </ul>
-
-        <h3>Crash &amp; Sync Fixes</h3>
-        <ul>
-          <li>Fixed launch crashes for users who previously used certain scanner flows</li>
-          <li>iCloud conflict resolution improved — items edited on two devices simultaneously now merge instead of duplicating</li>
-          <li>Photo deletes are now transactional — file removed only after CloudKit confirms deletion</li>
-          <li>Fixed text truncation in narrow iPad column layouts</li>
+          <li>App Attest verification added to AI endpoints — requests are now cryptographically attested to originate from a genuine Stuffolio installation</li>
         </ul>
 
         <h3>Still Worth Testing from Earlier Builds</h3>
         <ul>
+          <li><strong>Dashboard:</strong> Refreshed icon set, warranty expiry dates, tile navigation</li>
           <li><strong>Repair Advisor:</strong> Try with damaged items, look for confidence levels and data-driven recommendations</li>
           <li><strong>Encrypted Backups:</strong> Settings → Backup → toggle "Encrypt with password"</li>
           <li><strong>Send to Apps:</strong> Tap Notes, Calendar, or Reminders chips on any item</li>
@@ -374,11 +367,23 @@
           <li>Verify optimized photos maintain quality</li>
         </ul>
 
+        <h3>Accessibility</h3>
+        <ul class="checklist">
+          <li>Go to Settings → Accessibility → Display &amp; Text Size → Larger Text and drag to maximum</li>
+          <li>Navigate the item list and detail views — verify text is readable and nothing is clipped</li>
+          <li>Enable Settings → Accessibility → Motion → Reduce Motion</li>
+          <li>Navigate between screens — verify transitions feel calm (no large spring animations)</li>
+          <li>Enable VoiceOver (Settings → Accessibility → VoiceOver)</li>
+          <li>Swipe through buttons and labels on the Dashboard — verify each announces its purpose</li>
+          <li>Disable VoiceOver when done (triple-click side button if shortcut is set up)</li>
+        </ul>
+
         <h3>Legacy Wishes</h3>
         <ul class="checklist">
           <li>Enable Legacy Wishes in Settings</li>
           <li>Add at least 2 beneficiaries</li>
-          <li>Assign items to beneficiaries</li>
+          <li>Delete one beneficiary — verify they disappear from the list</li>
+          <li>Assign items to remaining beneficiaries</li>
           <li>Set contingency recipients</li>
           <li>Test sharing via CloudKit (if family available)</li>
           <li>Export Legacy Wishes as PDF</li>
@@ -452,7 +457,7 @@
 
         <ul>
           <li><strong>Price Watch charts</strong> — Charts may flicker briefly when first loading on older devices</li>
-          <li><strong>iPad Split View</strong> — Some layout issues when resizing in Split View mode</li>
+          <li><strong>iPad rotation</strong> — Rotating between portrait and landscape can reset navigation state (e.g., the sidebar collapses unexpectedly). This is a known layout issue being addressed for the next build.</li>
           <li><strong>Offline AI caching</strong> — Cached responses occasionally show stale provider info</li>
           <li><strong>Go To on macOS</strong> — Some features already had direct access on macOS; Go To improvements primarily affect iOS</li>
         </ul>
