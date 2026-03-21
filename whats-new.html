@@ -306,8 +306,8 @@
 
         <!-- SYNC:CURRENT_VERSION -->
         <div class="current-version">
-          <p class="version-number">Version 1.0 (Build 28)</p>
-          <p class="version-date">March 6, 2026</p>
+          <p class="version-number">Version 1.0 (Build 29)</p>
+          <p class="version-date">March 20, 2026</p>
           <span class="version-status">Beta Testing</span>
         </div>
         <!-- /SYNC:CURRENT_VERSION -->
@@ -323,6 +323,74 @@
       <div class="card">
         <div class="release">
           <div class="release-header">
+            <h2 class="release-version">Version 1.0 (Build 29)</h2>
+            <span class="release-date">March 20, 2026</span>
+            <span class="release-tag beta">Beta</span>
+          </div>
+
+          <p class="release-summary">
+            Inline AI alternatives in Repair/Keep/Replace, improved photo collection UX, and 3 waves of workflow audit fixes. The decision tool now fetches product alternatives directly in the view with an animated progress indicator. Adding photos is clearer with contextual button labels and a 5-photo limit.
+          </p>
+
+          <div class="highlight-change">
+            <p class="label">Highlight</p>
+            <p><strong>Inline AI Alternatives</strong> — Repair, Keep, or Replace now fetches alternative product recommendations directly in the decision view with an animated progress indicator. No need to leave the screen to research options.</p>
+          </div>
+
+          <div class="highlight-change">
+            <p class="label">Highlight</p>
+            <p><strong>Better Photo Collection</strong> — After selecting your first photo, the Add Item flow now shows contextual button labels ("Capture another angle"), a photo count badge (1 of 5), and moves the Continue button below the add-more options for a natural flow.</p>
+          </div>
+
+          <!-- SYNC:TESTFLIGHT_CHANGES -->
+          <div class="change-category new">
+            <h4>New</h4>
+            <ul>
+              <li><strong>Inline AI Alternatives</strong> — Repair, Keep, or Replace fetches product alternatives inline with an animated progress indicator showing search phases. Includes source attribution and "Ask More Questions" fallback to the full AI assistant</li>
+              <li><strong>find_alternatives Backend Endpoint</strong> — New Cloudflare Worker query type with Brave/Tavily/Exa provider chain for product alternative recommendations</li>
+            </ul>
+          </div>
+
+          <div class="change-category improved">
+            <h4>Improvements</h4>
+            <ul>
+              <li><strong>Photo Collection UX</strong> — Dynamic subtitle shows photo count, contextual button labels after first photo, prominent "Add More Photos" section header, and 5-photo max enforced client-side</li>
+              <li><strong>Recall History Persistence</strong> — Recall check results now persist in UserDefaults with JSON encoding and deduplication by recall number</li>
+              <li><strong>Onboarding Scroll Fix</strong> — FirstItemSuccessView wrapped in ScrollView to prevent buttons going off-screen at large Dynamic Type sizes</li>
+              <li><strong>Delete Affordances</strong> — Visible delete buttons with confirmations added to Depreciation Tracking, Social Media Links, and RMA views</li>
+            </ul>
+          </div>
+
+          <div class="change-category fixed">
+            <h4>Bug Fixes</h4>
+            <ul>
+              <li><strong>Photo Library Selection</strong> — Fixed second photo not being added when using "Choose from Library" in collection mode. Added missing onChange handler and reset selectedPhotoItem after processing</li>
+              <li><strong>Spotlight Performance</strong> — Fixed O(n) full table scan in Spotlight indexing</li>
+              <li><strong>Handoff Bug</strong> — Fixed stale itemID in Handoff causing wrong item to open on other devices</li>
+              <li><strong>Deep Link Failures</strong> — Fixed silent deep link failures with proper fallback handling</li>
+              <li><strong>Orphaned Photos</strong> — Fixed orphaned photo attachments and conflict matching in sync</li>
+              <li><strong>Race Conditions</strong> — Fixed sync ghost items, orphaned loans, and concurrent access issues</li>
+            </ul>
+          </div>
+
+          <div class="change-category changed">
+            <h4>Under the Hood</h4>
+            <ul>
+              <li><strong>Workflow Audit</strong> — 3 waves of systematic workflow fixes across navigation, data wiring, and UX dead ends</li>
+              <li><strong>Bug Prospector</strong> — Deep analysis pass finding and fixing assumption bugs, state machine issues, and error path gaps</li>
+              <li><strong>Swift Testing</strong> — New tests use Swift Testing framework (#expect, @Test, @Suite). 10 new unit tests for AI alternatives</li>
+              <li><strong>SwiftUI Modernization</strong> — SwiftData predicate safety, CloudKit model defaults, concurrency fixes</li>
+              <li><strong>Dead Code Removal</strong> — Removed 24 dead code items across 15 files (~265 lines) plus 7 dead files (~2k lines)</li>
+            </ul>
+          </div>
+          <!-- /SYNC:TESTFLIGHT_CHANGES -->
+        </div>
+      </div>
+
+      <!-- BUILD 26 -->
+      <div class="card">
+        <div class="release">
+          <div class="release-header">
             <h2 class="release-version">Version 1.0 (Build 26)</h2>
             <span class="release-date">March 2, 2026</span>
             <span class="release-tag beta">Beta</span>
@@ -332,22 +400,6 @@
             Dashboard redesign, accessibility overhaul, solid-color icons app-wide, and pre-release hardening. The Dashboard gets a fresh layout with an improved search prompt and Customize shortcut. Go To now covers more features and opens them directly. Dynamic Type, Keychain security, and performance improvements across the board.
           </p>
 
-          <div class="highlight-change">
-            <p class="label">Highlight</p>
-            <p><strong>Colorblind-Friendly Icons</strong> — Icons throughout the app now use distinct, meaningful colors instead of the previous "sea of blue." Categories, conditions, and statuses are easier to tell apart for everyone, especially users with color vision differences.</p>
-          </div>
-
-          <div class="highlight-change">
-            <p class="label">Highlight</p>
-            <p><strong>Smarter Repair Advisor</strong> — The Repair, Keep, or Replace feature now uses your actual item data (age, warranty status, condition, brand history) to give better recommendations with clear confidence levels. If you only have one damaged item, it skips the picker and goes straight to the advice.</p>
-          </div>
-
-          <div class="highlight-change">
-            <p class="label">Highlight</p>
-            <p><strong>Go To Now Opens Features Directly</strong> — When you search for a specific feature like "Value Calculator" or "Settings" using Go To (&#8984;K), it now opens that feature right away instead of dropping you on a general page where you'd have to find it yourself.</p>
-          </div>
-
-          <!-- SYNC:TESTFLIGHT_CHANGES -->
           <div class="change-category new">
             <h4>New</h4>
             <ul>
@@ -401,7 +453,6 @@
               <li><strong>Code Cleanup</strong> — Removed unused dead code (ScoutBookmarkManager, VersionedSchema migration), simplified guard-let patterns</li>
             </ul>
           </div>
-          <!-- /SYNC:TESTFLIGHT_CHANGES -->
         </div>
       </div>
 
@@ -879,8 +930,8 @@
       <!-- SYNC:LASTCOMMIT -->
       <div class="card" style="background: var(--card-bg); border: 1px solid var(--border); padding: 16px; margin-bottom: 24px;">
         <h3 style="margin: 0 0 8px; font-size: 0.9rem; color: var(--muted);">Latest Development Activity</h3>
-        <code style="font-size: 0.85rem; color: var(--text);">Safe-refactor extractions, try? audit, concurrency fixes</code>
-        <p style="margin: 8px 0 0; font-size: 0.8rem; color: var(--muted);">Mar 6, 2026 • Code Quality &amp; Reliability</p>
+        <code style="font-size: 0.85rem; color: var(--text);">Inline AI alternatives, photo UX improvements, workflow audit fixes</code>
+        <p style="margin: 8px 0 0; font-size: 0.8rem; color: var(--muted);">Mar 20, 2026 • Features &amp; UX</p>
       </div>
       <!-- /SYNC:LASTCOMMIT -->
 
