@@ -629,6 +629,7 @@
                 <li><a href="#smart-maintenance">Smart Maintenance Suggestions</a></li>
                 <li><a href="#loans">Tracking Loans</a></li>
                 <li><a href="#recalls">Checking for Recalls</a></li>
+                <li><a href="#repair-keep-replace">Repair, Keep, or Replace?</a></li>
                 <li><a href="#exporting">Exporting Your Data</a></li>
                 <li><a href="#importing">Importing Products</a></li>
                 <li><a href="#data-review">Reviewing Data Quality</a></li>
@@ -804,17 +805,27 @@
             </div>
 
             <h3>Method 1: Photo (Recommended)</h3>
-            <p>The fastest way to add items. The form appears immediately while AI analyzes in the background.</p>
+            <p>The fastest way to add items. Capture one or more photos, then the form appears while AI analyzes in the background.</p>
             <ol>
                 <li>Tap <strong>Photo</strong></li>
-                <li>Choose how to add a photo:
+                <li>Choose how to add your first photo:
                     <ul>
                         <li><strong>Take Photo</strong> &mdash; Use your camera to capture the item</li>
                         <li><strong>Choose from Library</strong> &mdash; Select an existing photo</li>
                         <li><strong>Paste from Clipboard</strong> &mdash; Use a copied image</li>
+                        <li><strong>Import from Files</strong> &mdash; Select an image file</li>
                     </ul>
                 </li>
-                <li>The form appears <strong>immediately</strong> with your photo attached</li>
+                <li>After your first photo, you enter <strong>photo collection mode</strong>:
+                    <ul>
+                        <li>A thumbnail strip shows your selected photos with a counter (e.g., "1 of 5 photos")</li>
+                        <li>Button labels update to guide you: "Capture another angle", "Add more from library"</li>
+                        <li>You can add up to <strong>5 photos</strong> &mdash; more angles improve AI accuracy</li>
+                        <li>Tap the <strong>&times;</strong> on any thumbnail to remove it</li>
+                    </ul>
+                </li>
+                <li>When ready, tap <strong>Continue with AI Analysis</strong></li>
+                <li>The form appears <strong>immediately</strong> with your photos attached</li>
                 <li>For subscribers: AI analyzes in the background. Fields fill in automatically as results arrive:
                     <ul>
                         <li>Product title and manufacturer</li>
@@ -824,6 +835,10 @@
                 </li>
                 <li>You can start editing other fields while AI works &mdash; no waiting required!</li>
             </ol>
+
+            <div class="tip-box">
+                <p><strong>💡 Tip:</strong> Adding 2-3 photos from different angles significantly improves AI identification accuracy. Include a close-up of any labels, nameplates, or maker's marks.</p>
+            </div>
 
             <h3>Method 2: Barcode</h3>
             <p>Quick lookup for products with visible UPC codes.</p>
@@ -1721,9 +1736,9 @@
             </ol>
 
             <h3>Step 2: Add Additional Photos (Recommended)</h3>
-            <p>For better identification, add multiple photos:</p>
+            <p>For better identification, add multiple photos (up to 5):</p>
             <ol>
-                <li>After the first photo, tap <strong>Add Another Photo</strong></li>
+                <li>After the first photo, use the buttons below the thumbnail strip to add more</li>
                 <li>Capture different angles:
                     <ul>
                         <li><strong>Maker's Mark</strong> &mdash; Signatures, stamps, or labels</li>
@@ -2667,6 +2682,51 @@
             <h3>Important Notes</h3>
             <p>We use public CPSC data to help surface possible recalls. For complete and official information, always check <a href="https://www.cpsc.gov/Recalls">cpsc.gov</a>.</p>
             <p>Recalls from FDA (food/medical) and NHTSA (vehicles) aren't included yet. Think of this as a helpful heads-up, not a replacement for official safety resources.</p>
+
+            <a href="#toc" class="back-to-top">Back to Contents</a>
+        </section>
+
+        <section id="repair-keep-replace">
+            <h2>Repair, Keep, or Replace?</h2>
+            <p>A thinking tool that helps you make intentional decisions about your items. It surfaces repair options first and uses your own data &mdash; not shopping funnels &mdash; to guide recommendations.</p>
+
+            <h3>Opening the Tool</h3>
+            <p><span class="platform-note">iPhone</span> Open an item, tap <strong>Tools</strong>, then <strong>Repair, Keep, or Replace?</strong></p>
+            <p><span class="platform-note">iPad/Mac</span> Open an item, go to <strong>Tools > Decisions > Repair, Keep, or Replace?</strong></p>
+            <p>You can also find it via <strong>Go To</strong> (&#8984;K) by searching "repair" or "replace".</p>
+
+            <h3>What It Analyzes</h3>
+            <p>The tool examines five areas using data already in your inventory:</p>
+            <ol>
+                <li><strong>Repair Options</strong> &mdash; Repairability score by product category, estimated repair cost vs. replacement cost, links to DIY guides and parts via the AI Product Assistant</li>
+                <li><strong>Timing Analysis</strong> &mdash; How old the item is relative to its expected lifespan, warranty status, and maintenance history</li>
+                <li><strong>Cost Comparison</strong> &mdash; Repair cost vs. replacement cost based on your item's purchase price and current market value</li>
+                <li><strong>Brand Intelligence</strong> &mdash; Your personal history with the brand &mdash; average ratings, "would buy again" rate, and number of repairs across all your items from that manufacturer</li>
+                <li><strong>AI Alternative Products</strong> &mdash; Fetches alternative product recommendations inline with source attribution from trusted review sites</li>
+            </ol>
+
+            <h3>AI Alternative Products</h3>
+            <p>Tap <strong>Find Alternatives with AI</strong> to search for replacement options directly in the decision view:</p>
+            <ul>
+                <li>An animated progress indicator shows the search phases: searching, comparing, checking reviews, preparing recommendations</li>
+                <li>Results appear inline with product name, manufacturer, estimated price, key features, and reasoning</li>
+                <li>Each recommendation includes source attribution (e.g., Wirecutter, RTINGS, Reddit) with credibility tiers</li>
+                <li>Tap <strong>Ask More Questions</strong> to open the full AI Product Assistant for deeper research</li>
+            </ul>
+
+            <h3>The Recommendation</h3>
+            <p>Based on all available data, the tool suggests one of four paths:</p>
+            <ul>
+                <li><strong>Repair It</strong> &mdash; The item is worth fixing. Links to repair resources</li>
+                <li><strong>Keep Using</strong> &mdash; The item still has useful life. No action needed</li>
+                <li><strong>Replace with Same</strong> &mdash; Buy the same product again (high brand satisfaction)</li>
+                <li><strong>Try an Alternative</strong> &mdash; Consider a different product (low brand satisfaction or better options available)</li>
+            </ul>
+            <p>Each recommendation shows a confidence level based on how much data is available. More complete item records (purchase price, warranty dates, ratings, maintenance history) produce higher-confidence recommendations.</p>
+
+            <div class="tip-box">
+                <p><strong>💡 Tip:</strong> The tool has a "repair-first" philosophy &mdash; it starts with a bias toward repairing rather than replacing. This keeps your inventory useful longer and reduces waste.</p>
+            </div>
 
             <a href="#toc" class="back-to-top">Back to Contents</a>
         </section>
