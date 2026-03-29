@@ -52,6 +52,23 @@
       line-height: 1.6;
     }
 
+    .pill-row{
+      display:flex;
+      justify-content:center;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+    .pill{
+      font-size:.8rem;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      color: var(--muted);
+      background: rgba(255,255,255,.02);
+      transition: border-color 0.2s;
+    }
+    a.pill:hover { border-color: var(--accent); color: var(--text); }
+
     .philosophy-box {
       background: linear-gradient(135deg, rgba(167,139,250,.1), rgba(125,211,252,.08));
       border: 1px solid rgba(167,139,250,.3);
@@ -464,30 +481,47 @@
           </p>
         </div>
 
-        <figure style="margin:24px 0 0; text-align:center;">
-          <img src="assets/mystuff-gallery-web.jpg" alt="Stuffolio My Stuff gallery view showing items with the Item Inspector panel" style="max-width:100%; border-radius:12px; box-shadow:0 4px 20px rgba(0,0,0,0.3);" loading="lazy" />
-          <figcaption style="margin-top:10px; font-size:0.9rem; color:var(--muted); font-style:italic;">Your stuff at a glance — gallery view with Item Inspector</figcaption>
+        <div class="pill-row" aria-label="Jump to section" style="margin:20px 0 8px;">
+          <a class="pill" href="#scout" style="text-decoration:none;">Stuff Scout</a>
+          <a class="pill" href="#inventory" style="text-decoration:none;">Inventory</a>
+          <a class="pill" href="#warranties" style="text-decoration:none;">Warranties</a>
+          <a class="pill" href="#pricewatch" style="text-decoration:none;">Price Watch</a>
+          <a class="pill" href="#legacy" style="text-decoration:none;">Legacy Wishes</a>
+          <a class="pill" href="#family" style="text-decoration:none;">Family</a>
+          <a class="pill" href="#privacy" style="text-decoration:none;">Privacy</a>
+        </div>
+
+        <figure style="margin:24px auto 0; text-align:center; max-width:340px;">
+          <img src="assets/mystuff-gallery-instruments-web.png" alt="Stuffolio My Stuff gallery view showing musical instruments grouped by category with search, filters, and view options" style="max-width:100%; border-radius:16px; box-shadow:0 4px 20px rgba(0,0,0,0.3);" loading="lazy" />
+          <figcaption style="margin-top:10px; font-size:0.9rem; color:var(--muted); font-style:italic;">Gallery view &mdash; search, filter, and group by category or location</figcaption>
         </figure>
       </div>
 
       <!-- Meet Stuff Scout -->
       <!-- SYNC:FEATURE:StuffScout -->
-      <div class="card">
+      <div class="card" id="scout">
         <div class="scout-intro">
           <div class="scout-header">
             <div class="scout-icon">🔍</div>
             <div>
               <h2>Meet Stuff Scout</h2>
               <p class="scout-tagline">Your AI assistant for everything you own</p>
-<p class="ai-subtext">AI assistance when you ask — silent when you don’t.</p>
+<p class="ai-subtext">AI assistance when you ask &mdash; silent when you don’t.</p>
 <p class="ai-footnote">Stuffolio’s AI is user-initiated and non-ambient. Nothing is analyzed or sent to external services unless you explicitly ask for help.</p>
 
             </div>
           </div>
           <div class="scout-description">
-            <p>Stuff Scout is Stuffolio's built-in AI that actually understands <em>stuff</em>. Point your camera at grandma's antique vase, a thrift store mystery, or that weird tool in the garage — Stuff Scout identifies it, researches its history, estimates its value, and finds the manual you lost years ago.</p>
-            <p style="margin-bottom:0">It's like having a knowledgeable friend who's seen everything, remembers everything, and never judges you for not knowing what a "dovetail jig" is.</p>
+            <p>Stuff Scout is Stuffolio’s built-in AI that actually understands <em>stuff</em>. Point your camera at grandma’s antique vase, a thrift store mystery, or that weird tool in the garage &mdash; Stuff Scout identifies it, researches its history, estimates its value, and finds the manual you lost years ago.</p>
+            <p style="margin-bottom:0">It’s like having a knowledgeable friend who’s seen everything, remembers everything, and never judges you for not knowing what a "dovetail jig" is.</p>
           </div>
+
+          <figure style="margin:24px 0; display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+            <img src="assets/stuff-scout-input-web.png" alt="Stuff Scout analyzing 3 photos of a violin — front, back, and maker’s mark" style="max-width:280px; border-radius:16px; box-shadow:0 4px 20px rgba(0,0,0,0.25);" loading="lazy" />
+            <img src="assets/stuff-scout-results-web.png" alt="Stuff Scout identifies a Markneukirchen Violin from Germany, valued at $6,500 with 80% confidence" style="max-width:280px; border-radius:16px; box-shadow:0 4px 20px rgba(0,0,0,0.25);" loading="lazy" />
+          </figure>
+          <figcaption style="text-align:center; font-size:0.9rem; color:var(--muted); font-style:italic; margin-top:-12px; margin-bottom:16px;">Snap photos &rarr; AI identifies a Markneukirchen violin, estimates $6,500, and shows recent sales</figcaption>
+
           <div class="scout-capabilities">
             <div class="scout-cap-item">
               <span class="cap-icon">📸</span>
@@ -495,7 +529,7 @@
             </div>
             <div class="scout-cap-item">
               <span class="cap-icon">📖</span>
-              <span>Find manuals and DIY help & parts</span>
+              <span>Find manuals and DIY help &amp; parts</span>
             </div>
             <div class="scout-cap-item">
               <span class="cap-icon">💰</span>
@@ -518,9 +552,8 @@
             <div class="capability-icon">📊</div>
             <div>
               <h2>Dashboard at a Glance</h2>
-              <div class="subtitle">Your actionable home base — what needs attention, quick actions, and feature shortcuts</div>
+              <div class="subtitle">Your actionable home base &mdash; what needs attention, quick actions, and feature shortcuts</div>
             </div>
-            <span class="new-badge">New</span>
           </div>
 
           <div class="capability-grid">
@@ -572,7 +605,7 @@
 
       <!-- KNOW WHAT YOU OWN -->
       <!-- SYNC:FEATURE:Inventory -->
-      <div class="card">
+      <div class="card" id="inventory">
         <div class="capability-section">
           <div class="capability-header">
             <div class="capability-icon">📋</div>
@@ -662,7 +695,7 @@
 
       <!-- PRICE WATCH -->
       <!-- SYNC:FEATURE:PriceWatch -->
-      <div class="card">
+      <div class="card" id="pricewatch">
         <div class="capability-section">
           <div class="capability-header">
             <div class="capability-icon">💰</div>
@@ -670,7 +703,6 @@
               <h2>Price Watch</h2>
               <div class="subtitle">See how inflation affects what you own</div>
             </div>
-            <span class="new-badge">New</span>
           </div>
 
           <div class="capability-grid">
@@ -723,10 +755,9 @@
           <div class="capability-header">
             <div class="capability-icon">⚡</div>
             <div>
-              <h2>Quick Start — Fast Data Entry</h2>
+              <h2>Quick Start &mdash; Fast Data Entry</h2>
               <div class="subtitle">Multiple ways to add products in seconds, not minutes</div>
             </div>
-            <span class="new-badge">New</span>
           </div>
 
           <div class="capability-grid">
@@ -799,10 +830,9 @@
           <div class="capability-header">
             <div class="capability-icon">📸</div>
             <div>
-              <h2>Photo Quick Add: "Snap & Done"</h2>
-              <div class="subtitle">Camera-first item entry — AI does the work</div>
+              <h2>Photo Quick Add: "Snap &amp; Done"</h2>
+              <div class="subtitle">Camera-first item entry &mdash; AI does the work</div>
             </div>
-            <span class="new-badge">New</span>
           </div>
 
           <div class="capability-grid">
@@ -926,7 +956,7 @@
 
       <!-- PROTECT YOUR PURCHASES -->
       <!-- SYNC:FEATURE:Warranties -->
-      <div class="card">
+      <div class="card" id="warranties">
         <div class="capability-section">
           <div class="capability-header">
             <div class="capability-icon">🛡️</div>
@@ -995,45 +1025,7 @@
       </div>
       <!-- /SYNC:FEATURE:Warranties -->
 
-      <!-- MAINTAIN YOUR STUFF -->
-      <!-- SYNC:FEATURE:Maintenance -->
-      <div class="card">
-        <div class="capability-section">
-          <div class="capability-header">
-            <div class="capability-icon">🔧</div>
-            <div>
-              <h2>Maintain Your Stuff</h2>
-              <div class="subtitle">Keep things running with smart reminders</div>
-            </div>
-            <span class="new-badge">New</span>
-          </div>
-
-          <div class="capability-grid">
-            <div class="capability-item">
-              <h3><span class="item-icon">📅</span> Smart maintenance reminders</h3>
-              <p>Category-aware suggestions: oil changes for vehicles, filter replacements for HVAC, data backups for electronics. Stuffolio knows what your stuff needs.</p>
-            </div>
-            <div class="capability-item">
-              <h3><span class="item-icon">🚨</span> Priority-based alerts</h3>
-              <p>Overdue items surface first. "Due soon" items get attention. Upcoming tasks stay visible but don't nag. The right urgency at the right time.</p>
-            </div>
-            <div class="capability-item">
-              <h3><span class="item-icon">📖</span> Find manuals and DIY help and parts</h3>
-              <p>AI-assisted lookup for user manuals, replacement parts, and DIY repair videos. Don't waste hours searching — let Stuffolio find it.</p>
-            </div>
-            <div class="capability-item">
-              <h3><span class="item-icon">📜</span> Track service history</h3>
-              <p>Log maintenance you've done: date, cost, notes. Know when you last changed the oil, replaced the battery, or cleaned the filter.</p>
-            </div>
-          </div>
-
-          <div class="insight-box">
-            <span class="insight-icon">💡</span>
-            <p><strong>Example:</strong> Add your car → Stuffolio suggests oil changes every 90 days, tire rotation every 180 days. Add your HVAC system → monthly filter reminders. It's maintenance that makes sense for what you actually own.</p>
-          </div>
-        </div>
-      </div>
-      <!-- /SYNC:FEATURE:Maintenance -->
+      <!-- Maintain Your Stuff consolidated into Maintenance Reminders section below -->
 
       <!-- REMEMBER WHAT WORKS -->
       <!-- SYNC:FEATURE:Ratings -->
@@ -1043,9 +1035,8 @@
             <div class="capability-icon">⭐</div>
             <div>
               <h2>Remember What Works</h2>
-              <div class="subtitle">Decision memory — your personal product wisdom</div>
+              <div class="subtitle">Decision memory &mdash; your personal product wisdom</div>
             </div>
-            <span class="new-badge">New</span>
           </div>
 
           <div class="capability-grid">
@@ -1083,9 +1074,8 @@
             <div class="capability-icon">🛠️</div>
             <div>
               <h2>Repair, Keep, or Replace?</h2>
-              <div class="subtitle">A thinking tool — not a shopping funnel</div>
+              <div class="subtitle">A thinking tool &mdash; not a shopping funnel</div>
             </div>
-            <span class="new-badge">New</span>
           </div>
 
           <div class="capability-grid">
@@ -1123,53 +1113,52 @@
       </div>
       <!-- /SYNC:FEATURE:RepairKeepReplace -->
 
-      <!-- MAINTENANCE REMINDERS -->
-      <!-- SYNC:FEATURE:MaintenanceReminders -->
+      <!-- MAINTENANCE -->
+      <!-- SYNC:FEATURE:Maintenance -->
       <div class="card">
         <div class="capability-section">
           <div class="capability-header">
             <div class="capability-icon">🔧</div>
             <div>
-              <h2>Maintenance Reminders</h2>
-              <div class="subtitle">Stay on top of upkeep — multiple tasks per item</div>
+              <h2>Maintain Your Stuff</h2>
+              <div class="subtitle">Smart reminders, multiple tasks per item, service history</div>
             </div>
-            <span class="new-badge">New</span>
           </div>
 
           <div class="capability-grid">
             <div class="capability-item">
-              <h3><span class="item-icon">✅</span> Opt-in per item</h3>
-              <p>Only track maintenance for items you want. No nagging, no clutter — you decide what deserves attention.</p>
+              <h3><span class="item-icon">📅</span> Smart maintenance reminders</h3>
+              <p>Category-aware suggestions: oil changes for vehicles, filter replacements for HVAC, data backups for electronics. Stuffolio knows what your stuff needs.</p>
             </div>
             <div class="capability-item">
               <h3><span class="item-icon">📋</span> Multiple tasks per item</h3>
-              <p>Refrigerator? Track water filter (6 months), coil cleaning (12 months), and door seal check (24 months) — all on their own schedules.</p>
+              <p>Refrigerator? Track water filter (6 months), coil cleaning (12 months), and door seal check (24 months) &mdash; all on their own schedules.</p>
             </div>
             <div class="capability-item">
-              <h3><span class="item-icon">⏱️</span> Manual intervals</h3>
-              <p>Set your own maintenance schedule. Pick monthly, quarterly, or any custom interval — free and flexible.</p>
+              <h3><span class="item-icon">🚨</span> Priority-based alerts</h3>
+              <p>Overdue items surface first. "Due soon" items get attention. Upcoming tasks stay visible but don't nag. The right urgency at the right time.</p>
             </div>
             <div class="capability-item">
               <h3><span class="item-icon">🤖</span> AI-suggested intervals</h3>
-              <p>Tap "AI Suggest" to get smart interval recommendations based on product category and task type. Uses 1 query — you choose whether to accept.</p>
+              <p>Tap "AI Suggest" to get smart interval recommendations based on product category and task type. Uses 1 query &mdash; you choose whether to accept.</p>
             </div>
             <div class="capability-item">
-              <h3><span class="item-icon">🔔</span> Smart notifications</h3>
-              <p>Get notified when maintenance is due. Mark done to reset the timer. Snooze if you need more time.</p>
+              <h3><span class="item-icon">📜</span> Track service history</h3>
+              <p>Log maintenance you've done: date, cost, notes. Know when you last changed the oil, replaced the battery, or cleaned the filter.</p>
             </div>
             <div class="capability-item">
-              <h3><span class="item-icon">📝</span> Notes per task</h3>
-              <p>Add notes for each task — "Use OEM filter part #XYZ" or "Requires Torx T20 screwdriver." Context when you need it.</p>
+              <h3><span class="item-icon">📖</span> Find manuals and parts</h3>
+              <p>AI-assisted lookup for user manuals, replacement parts, and DIY repair videos. Don't waste hours searching &mdash; let Stuffolio find it.</p>
             </div>
           </div>
 
           <div class="insight-box">
             <span class="insight-icon">💡</span>
-            <p><strong>Example:</strong> Your car needs oil changes every 3 months, tire rotation every 6 months, air filter every 12 months. Track them all independently, get reminded on schedule, mark complete to keep history.</p>
+            <p><strong>Example:</strong> Add your car &rarr; Stuffolio suggests oil changes every 90 days, tire rotation every 180 days. Add your HVAC system &rarr; monthly filter reminders. Each task tracks independently with its own schedule and history.</p>
           </div>
         </div>
       </div>
-      <!-- /SYNC:FEATURE:MaintenanceReminders -->
+      <!-- /SYNC:FEATURE:Maintenance -->
 
       <!-- AI RATING FEEDBACK -->
       <div class="card">
@@ -1211,7 +1200,7 @@
 
       <!-- SHARE WITH FAMILY -->
       <!-- SYNC:FEATURE:FamilySharing -->
-      <div class="card">
+      <div class="card" id="family">
         <div class="capability-section">
           <div class="capability-header">
             <div class="capability-icon">👨‍👩‍👧‍👦</div>
@@ -1219,7 +1208,6 @@
               <h2>Share With Family</h2>
               <div class="subtitle">Create a household, sync in real-time, collaborate seamlessly</div>
             </div>
-            <span class="new-badge">New</span>
           </div>
 
           <div class="capability-grid">
@@ -1264,10 +1252,9 @@
           <div class="capability-header">
             <div class="capability-icon">🤝</div>
             <div>
-              <h2>Track Loans & Borrowed Items</h2>
-              <div class="subtitle">Never forget who has what — or what you need to return</div>
+              <h2>Track Loans &amp; Borrowed Items</h2>
+              <div class="subtitle">Never forget who has what &mdash; or what you need to return</div>
             </div>
-            <span class="new-badge">New</span>
           </div>
 
           <div class="capability-grid">
@@ -1294,7 +1281,7 @@
 
       <!-- PLAN AHEAD -->
       <!-- SYNC:FEATURE:LegacyWishes -->
-      <div class="card">
+      <div class="card" id="legacy">
         <div class="capability-section">
           <div class="capability-header">
             <div class="capability-icon">💝</div>
@@ -1303,6 +1290,11 @@
               <div class="subtitle">Legacy Wishes — reduce stress for the people you love</div>
             </div>
           </div>
+
+          <figure style="margin:0 0 20px; text-align:center;">
+            <img src="assets/legacy-wishes-mac-web.png" alt="Legacy Wishes on Mac showing progress tracker, Manage People, Share with Family, Export PDF, and assignment stats" style="max-width:100%; border-radius:12px; box-shadow:0 4px 20px rgba(0,0,0,0.3);" loading="lazy" />
+            <figcaption style="margin-top:10px; font-size:0.9rem; color:var(--muted); font-style:italic;">Legacy Wishes on Mac &mdash; track progress, manage recipients, share with family, export as PDF</figcaption>
+          </figure>
 
           <div class="capability-grid">
             <div class="capability-item">
@@ -1435,6 +1427,10 @@
               <p>Voice control your inventory with 10+ actions. "Add item to garage", "What's my inventory worth?", "Show maintenance due", "Get my electronics". Build powerful automations in the Shortcuts app.</p>
             </div>
             <div class="capability-item">
+              <h3><span class="item-icon">👆</span> Quick Actions (home screen)</h3>
+              <p>Long-press the Stuffolio icon for instant shortcuts: Add Warranty, Expiring Soon, Scan Receipt, and Check Recalls. Jump straight to what you need without opening the app first.</p>
+            </div>
+            <div class="capability-item">
               <h3><span class="item-icon">📺</span> StandBy Mode (iPhone) <span class="new-badge">New</span></h3>
               <p>Widgets look great in iOS 17's StandBy mode. Glance at warranty status or item counts from across the room while your phone charges.</p>
             </div>
@@ -1491,7 +1487,7 @@
 
       <!-- PRIVACY -->
       <!-- SYNC:FEATURE:Privacy -->
-      <div class="card">
+      <div class="card" id="privacy">
         <div class="capability-section">
           <div class="capability-header">
             <div class="capability-icon">🔒</div>
@@ -1515,6 +1511,10 @@
               <p>No advertising. No analytics profiles. No selling your data. You're the customer, not the product.</p>
             </div>
             <div class="capability-item">
+              <h3><span class="item-icon">🔐</span> Face ID / Touch ID lock</h3>
+              <p>Optional biometric app lock. Stuffolio re-locks after 60 seconds in the background. Your inventory stays private even if someone picks up your phone.</p>
+            </div>
+            <div class="capability-item">
               <h3><span class="item-icon">👁️</span> Accessibility built-in</h3>
               <p>VoiceOver support. Dynamic Type. Colorblind-safe design (blue/yellow/red, never color alone). WCAG 2.1 AA compliant.</p>
             </div>
@@ -1528,10 +1528,12 @@
         <div class="cta-section">
           <h2>Ready to Try Stuffolio?</h2>
           <p>Track what you own. Protect your purchases. Remember what works. Plan ahead.</p>
+          <p style="font-size:1.1rem; color:var(--text); margin-bottom:20px;"><strong>$9.99 one-time purchase.</strong> No subscription required. AI features optional at $2.99/month.</p>
           <div class="ctaRow" style="justify-content: center;">
             <a class="btn primary" href="https://testflight.apple.com/join/TWgM95st">Join the Beta</a>
             <a class="btn" href="quick-start.html">Quick Start Guide</a>
           </div>
+          <p style="margin-top:16px; font-size:0.9rem;"><a href="compare.html">See how Stuffolio compares</a> to other home inventory apps.</p>
         </div>
       </div>
 
