@@ -145,6 +145,10 @@
     .cross { color: #ef4444; opacity: 0.6; }
     .partial { color: #f59e0b; }
     .unknown { color: var(--muted); font-style: italic; font-size: 0.85rem; }
+    tr.unique-row td { background: rgba(167,139,250,.06); }
+    tr.unique-row td:first-child { background: rgba(167,139,250,.10); font-weight: 600; }
+    tr.unique-row:hover td { background: rgba(167,139,250,.10); }
+    tr.unique-row:hover td:first-child { background: rgba(167,139,250,.14); }
 
     /* Feature deep dive */
     .feature-section {
@@ -423,7 +427,8 @@
       <!-- FEATURE COMPARISON TABLE -->
       <div class="card">
         <h2 style="margin-top:0;">Feature Comparison</h2>
-        <p>A side-by-side view across seven apps. "Not documented" means we couldn't verify it from public sources.</p>
+        <p>Every app in this list handles the basics: photos, categories, notes, and export. The rows highlighted below show where they differ &mdash; features only Stuffolio offers are marked with a subtle highlight.</p>
+        <p style="font-size:0.9rem; color:var(--muted);">"Not documented" means we couldn't verify it from public sources.</p>
 
         <div class="comparison-table-wrap">
           <table class="comparison-table">
@@ -490,7 +495,7 @@
                 <td><span class="partial">&#9680;</span> Expiry alerts</td>
                 <td><span class="partial">&#9680;</span> Date field (Plus only)</td>
               </tr>
-              <tr>
+              <tr class="unique-row">
                 <td>Coverage Phases (Full &rarr; Parts Only)</td>
                 <td><span class="check">&#10003;</span></td>
                 <td><span class="unknown">Not documented</span></td>
@@ -500,7 +505,7 @@
                 <td><span class="cross">&#10007;</span></td>
                 <td><span class="cross">&#10007;</span></td>
               </tr>
-              <tr>
+              <tr class="unique-row">
                 <td>Component-Based Warranties</td>
                 <td><span class="check">&#10003;</span> Per-part coverage</td>
                 <td><span class="cross">&#10007;</span></td>
@@ -510,7 +515,7 @@
                 <td><span class="cross">&#10007;</span></td>
                 <td><span class="cross">&#10007;</span></td>
               </tr>
-              <tr>
+              <tr class="unique-row">
                 <td>Apple Wallet Warranty Cards</td>
                 <td><span class="check">&#10003;</span></td>
                 <td><span class="cross">&#10007;</span></td>
@@ -520,7 +525,7 @@
                 <td><span class="cross">&#10007;</span></td>
                 <td><span class="cross">&#10007;</span></td>
               </tr>
-              <tr>
+              <tr class="unique-row">
                 <td>Product Recall Alerts (CPSC)</td>
                 <td><span class="check">&#10003;</span></td>
                 <td><span class="cross">&#10007;</span></td>
@@ -560,7 +565,7 @@
                 <td><span class="cross">&#10007;</span></td>
                 <td><span class="cross">&#10007;</span></td>
               </tr>
-              <tr>
+              <tr class="unique-row">
                 <td>Product Ratings</td>
                 <td><span class="check">&#10003;</span> 1&ndash;5 stars + "Buy Again"</td>
                 <td><span class="cross">&#10007;</span></td>
@@ -580,7 +585,7 @@
                 <td><span class="cross">&#10007;</span></td>
                 <td><span class="partial">&#9680;</span> Current value (Plus)</td>
               </tr>
-              <tr>
+              <tr class="unique-row">
                 <td>Price Watch (Replacement Cost)</td>
                 <td><span class="check">&#10003;</span> History, alerts, charts</td>
                 <td><span class="cross">&#10007;</span></td>
@@ -600,7 +605,7 @@
                 <td><span class="partial">&#9680;</span> CSV/HTML export</td>
                 <td><span class="check">&#10003;</span> Export</td>
               </tr>
-              <tr>
+              <tr class="unique-row">
                 <td>Donation Tracking (Tax Deductions)</td>
                 <td><span class="check">&#10003;</span> FMV + tax records</td>
                 <td><span class="cross">&#10007;</span></td>

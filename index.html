@@ -22,7 +22,7 @@
   <meta name="msvalidate.01" content="B16FC24F5B1BA9A05762DF7D50CD40FE" />
 
   <title>Stuffolio — Know what you own. Decide what to do next.</title>
-  <meta name="description" content="Stuffolio is a full-featured home inventory app — photos, manuals, warranties, receipts — with one important difference: it's designed for decisions, not just lists. Privacy-first for iPhone, iPad, and Mac." />
+  <meta name="description" content="Every home inventory app tracks what you own. Stuffolio helps you make decisions about it — warranty intelligence, legacy wishes, AI identification, and repair-or-replace guidance. Privacy-first for iPhone, iPad, and Mac." />
   <meta name="theme-color" content="#0b1220" />
 
   <!-- Open Graph / Social Sharing -->
@@ -347,6 +347,35 @@
     .privacy-item strong { display: block; margin-bottom: 6px; color: var(--accent); }
     .privacy-item div { color: var(--muted); font-size: 0.95rem; }
 
+    /* Differentiator cards */
+    .differentiator-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin: 0;
+    }
+    @media (max-width: 700px) {
+      .differentiator-grid { grid-template-columns: 1fr; }
+    }
+    .differentiator-card {
+      padding: 24px;
+      border-radius: 14px;
+      border: 1px solid rgba(167,139,250,.2);
+      background: linear-gradient(135deg, rgba(167,139,250,.06), rgba(125,211,252,.03));
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .differentiator-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(167,139,250,.4);
+    }
+    .diff-icon { font-size: 2.2rem; margin-bottom: 8px; }
+    .differentiator-card h3 { margin: 0 0 12px; font-size: 1.2rem; color: var(--accent); }
+    .diff-problem { color: var(--text); font-style: italic; margin: 0 0 8px; line-height: 1.5; font-size: 1.02rem; }
+    .diff-others { color: var(--muted); margin: 0 0 8px; font-size: 0.92rem; }
+    .diff-stuffolio { color: var(--text); margin: 0; font-size: 0.95rem; line-height: 1.5; }
+
+    .light-mode .differentiator-card { background: linear-gradient(135deg, rgba(124,58,237,.05), rgba(0,102,204,.03)); border-color: rgba(124,58,237,.15); }
+    .light-mode .differentiator-card:hover { border-color: rgba(124,58,237,.35); }
     .light-mode .pillar { background: rgba(0,102,204,.04); border-color: rgba(0,102,204,.15); }
     .light-mode .pillar:hover { border-color: rgba(0,102,204,.35); box-shadow: 0 8px 24px rgba(0,102,204,.08); }
     .light-mode .scenario { background: linear-gradient(135deg, rgba(124,58,237,.05), rgba(0,102,204,.03)); }
@@ -355,7 +384,6 @@
     .light-mode .whats-new-box { background: linear-gradient(135deg, rgba(124,58,237,.08), rgba(0,102,204,.05)); }
     .light-mode .whats-new-item { background: rgba(0,0,0,.03); }
     .light-mode .whats-new-item:hover { background: rgba(0,0,0,.05); }
-    .light-mode .positioning-card.highlight { background: linear-gradient(135deg, rgba(124,58,237,.06), rgba(0,102,204,.04)); }
   </style>
 </head>
 
@@ -424,7 +452,7 @@
           </div>
 
           <p class="lead" style="font-size:1.15rem;">
-            Stuffolio is a full-featured home inventory app &mdash; photos, manuals, warranties, receipts &mdash; built to manage the life of what you own.
+            Every home inventory app tracks what you own.<br>Stuffolio helps you <strong>make decisions</strong> about it.
           </p>
 
           <div class="lifecycle-strip">
@@ -447,48 +475,82 @@
         </div>
       </section>
 
-      <!-- POSITIONING: What makes Stuffolio different -->
-      <section id="positioning" style="margin-top:18px;">
+      <!-- YES, AND MORE: Acknowledge basics, then differentiate -->
+      <section id="basics" style="margin-top:18px;">
         <div class="card">
-          <h2 style="margin-top:0; text-align:center;">Inventory apps record things.<br>Stuffolio manages ownership.</h2>
-
           <div class="aha-box">
             <span class="aha-icon">&#9989;</span>
             <p>
-              <strong>Yes &mdash; Stuffolio does everything you'd expect from a home inventory app.</strong>
-              Photos. Notes. Manuals. Receipts. Serial numbers. Warranty details. That's the starting point.
+              <strong>Yes &mdash; Stuffolio does everything you'd expect.</strong>
+              Photos. Receipts. Serial numbers. Manuals. Categories. Rooms. Barcodes. Search. Export. iCloud sync. Family Sharing. That's the starting point &mdash; not the destination.
             </p>
           </div>
+          <p style="text-align:center; margin:0; font-size:0.95rem;">
+            <a href="features.html">See all standard features &rarr;</a>
+          </p>
+        </div>
+      </section>
 
-          <div class="positioning-grid">
-            <div class="positioning-card">
-              <span class="card-icon" aria-hidden="true">&#128203;</span>
-              <p class="section-label">Where most inventory apps stop</p>
-              <h3>Typical inventory apps</h3>
-              <ul>
-                <li>Focus on capturing <em>more</em> detail</li>
-                <li>Answer: "What do I own?"</li>
-                <li>Stop once it's recorded</li>
-              </ul>
-              <p class="tagline" style="margin-top:12px; font-style:italic;">They're built for lists.</p>
+      <!-- WHAT NOBODY ELSE DOES: Differentiator showcase -->
+      <section id="differentiators" style="margin-top:18px;">
+        <div class="card">
+          <h2 style="margin-top:0; text-align:center;">What Nobody Else Does</h2>
+          <p class="lead" style="text-align:center; max-width:650px; margin:0 auto 24px; font-size:1.05rem;">
+            Every app on this list handles inventory. These are the things only Stuffolio does.
+          </p>
+
+          <div class="differentiator-grid">
+            <div class="differentiator-card">
+              <div class="diff-icon">&#128737;&#65039;</div>
+              <h3>Warranty Intelligence</h3>
+              <p class="diff-problem">Your fridge has a 3-year warranty. But year 1 is full coverage, years 2-3 are parts only.</p>
+              <p class="diff-others">Every other app just shows "expires 2027."</p>
+              <p class="diff-stuffolio">Stuffolio tracks <strong>coverage phases</strong> &mdash; and alerts you before they change.</p>
             </div>
 
-            <div class="positioning-card highlight">
-              <span class="card-icon" aria-hidden="true">&#129517;</span>
-              <p class="section-label">Where Stuffolio begins</p>
-              <h3>Stuffolio</h3>
-              <ul>
-                <li>Tracks each item across its full life &mdash; purchase, maintenance, warranty phases, resale, legacy</li>
-                <li>Shows real warranty transitions (full &rarr; parts-only &rarr; labor-only &rarr; expired)</li>
-                <li>Uses AI to identify items, find manuals, and answer questions instantly</li>
-                <li>Prepares documentation for insurance, repair, selling, or donating</li>
-                <li>Helps you decide: maintain it, fix it, insure it, sell it, or pass it on</li>
-              </ul>
+            <div class="differentiator-card">
+              <div class="diff-icon">&#128157;</div>
+              <h3>Legacy Wishes</h3>
+              <p class="diff-problem">Who gets grandma's ring? The piano? The toolbox?</p>
+              <p class="diff-others">Other apps don't think about this.</p>
+              <p class="diff-stuffolio">Record who gets what &mdash; privately, on your terms, shared when you're ready.</p>
+            </div>
+
+            <div class="differentiator-card">
+              <div class="diff-icon">&#128270;</div>
+              <h3>Stuff Scout AI</h3>
+              <p class="diff-problem">What IS this thing? What's it worth?</p>
+              <p class="diff-others">Other apps make you Google it yourself.</p>
+              <p class="diff-stuffolio">Point your camera. Stuff Scout identifies it, finds the manual, estimates the value, and researches its history.</p>
+            </div>
+
+            <div class="differentiator-card">
+              <div class="diff-icon">&#128295;</div>
+              <h3>Repair, Keep, or Replace?</h3>
+              <p class="diff-problem">The dishwasher broke again. Fix it or buy new?</p>
+              <p class="diff-others">Other apps can't help with this decision.</p>
+              <p class="diff-stuffolio">See repair cost vs. replacement cost, warranty status, your rating, and whether you'd buy this brand again.</p>
+            </div>
+
+            <div class="differentiator-card">
+              <div class="diff-icon">&#11088;</div>
+              <h3>Product Memory</h3>
+              <p class="diff-problem">This vacuum broke after 6 months. Never buying this brand again.</p>
+              <p class="diff-others">Other apps forget your opinions.</p>
+              <p class="diff-stuffolio">Rate every product. Track "Would Buy Again." Your experience becomes your buying guide.</p>
+            </div>
+
+            <div class="differentiator-card">
+              <div class="diff-icon">&#128200;</div>
+              <h3>Price Watch</h3>
+              <p class="diff-problem">That mixer you paid $350 for costs $550 to replace today.</p>
+              <p class="diff-others">Insurance wants current replacement cost, not what you paid.</p>
+              <p class="diff-stuffolio">Price Watch tracks how rising prices affect what you own &mdash; so you're never under-insured.</p>
             </div>
           </div>
 
-          <p class="lead" style="margin-top:16px; text-align:center; font-weight:600;">
-            Stuffolio is built for decisions.
+          <p style="text-align:center; margin-top:24px; font-size:0.95rem;">
+            <a href="features.html">See all features &rarr;</a>
           </p>
         </div>
       </section>
@@ -499,39 +561,39 @@
         <div class="card">
           <div class="whats-new-box">
             <div class="whats-new-header">
-              <h3>What's new in Stuffolio beta 1.0 (Build 26)</h3>
+              <h3>What's new in Stuffolio beta 1.0 (Build 30)</h3>
             </div>
 
             <div class="whats-new-grid">
               <div class="whats-new-item">
-                <span class="whats-new-icon">&#127774;</span>
+                <span class="whats-new-icon">&#128230;</span>
                 <div>
-                  <strong>Colorblind-Friendly Icons</strong>
-                  <span>Icons throughout the app now use distinct solid colors following Apple HIG guidelines. Visually distinct for everyone, especially users with color vision differences.</span>
+                  <strong>Acquisition Tracking</strong>
+                  <span>Record how you got each item: bought new, bought used, inherited, gifted, or found. Forms adapt dynamically -- gifts hide the price field, inherited items show provenance.</span>
                 </div>
               </div>
 
               <div class="whats-new-item">
-                <span class="whats-new-icon">&#128190;</span>
+                <span class="whats-new-icon">&#9729;&#65039;</span>
                 <div>
-                  <strong>Dynamic Type</strong>
-                  <span>All text respects your preferred text size — from smallest compact to largest accessibility sizes. Every label, caption, and body text scales correctly.</span>
+                  <strong>CloudKit Sync 81%</strong>
+                  <span>Sync coverage jumped from 21% to 81%. Extended warranties, coverage tiers, and maintenance tasks now sync reliably across iPhone, iPad, and Mac.</span>
                 </div>
               </div>
 
               <div class="whats-new-item">
-                <span class="whats-new-icon">&#128202;</span>
+                <span class="whats-new-icon">&#128269;</span>
                 <div>
-                  <strong>Dashboard Redesign</strong>
-                  <span>Rebuilt Dashboard with a tappable search prompt, a visible Customize shortcut, and cleaner card organization throughout.</span>
+                  <strong>Scout Report Sharing</strong>
+                  <span>Save and share Stuff Scout results. Copy individual sections or export the full report -- identification, pricing, history, and recommendations.</span>
                 </div>
               </div>
 
               <div class="whats-new-item">
-                <span class="whats-new-icon">&#128736;</span>
+                <span class="whats-new-icon">&#127912;</span>
                 <div>
-                  <strong>Smarter Repair Advisor</strong>
-                  <span>Repair, Keep, or Replace now uses your actual item data — age, warranty status, condition, brand — for more accurate recommendations with clear confidence levels.</span>
+                  <strong>Visual Refresh</strong>
+                  <span>Redesigned card layouts with solid category colors and improved contrast. Better readability on Mac with adaptive font scaling for desktop displays.</span>
                 </div>
               </div>
             </div>
@@ -560,8 +622,9 @@
               <p style="margin:16px 0 0; color:var(--muted); font-size:0.95rem;">
                 &mdash; <strong style="color:var(--text);">Terry Nyberg</strong>, founder of Stuffolio. While looking for something new to learn, he taught himself to code and built the app he wished existed.
               </p>
-              <p style="margin:12px 0 0;">
+              <p style="margin:12px 0 0; display:flex; gap:16px; align-items:center; flex-wrap:wrap;">
                 <a href="story.html" style="color:var(--accent); font-weight:500;">Read the full story &rarr;</a>
+                <a class="btn primary" href="https://testflight.apple.com/join/TWgM95st" style="font-size:0.9rem; padding:8px 16px;">Try what Terry built</a>
               </p>
             </div>
           </div>
@@ -574,80 +637,7 @@
         </div>
       </section>
 
-      <!-- WHY STUFFOLIO - FIVE PILLARS -->
-      <section id="why" style="margin-top:18px;">
-        <div class="card">
-          <h2 style="margin-top:0; text-align:center;">What Stuffolio Does</h2>
-
-          <div class="pillars-grid">
-            <div class="pillar">
-              <span class="pillar-icon">&#128203;</span>
-              <h3>Track</h3>
-              <p class="pillar-tagline">Know what you own</p>
-              <ul>
-                <li>Photos, barcodes, or manual entry</li>
-                <li>21 categories, 18 room presets</li>
-                <li>Works with incomplete info</li>
-              </ul>
-            </div>
-
-            <div class="pillar">
-              <span class="pillar-icon">&#128737;&#65039;</span>
-              <h3>Protect</h3>
-              <p class="pillar-tagline">Safeguard your purchases</p>
-              <ul>
-                <li>Warranty <em>phase</em> tracking</li>
-                <li>Alerts before coverage changes</li>
-                <li>RMA and support call logging</li>
-              </ul>
-            </div>
-
-            <div class="pillar">
-              <span class="pillar-icon">&#128157;</span>
-              <h3>Plan</h3>
-              <p class="pillar-tagline">Decide what happens next</p>
-              <ul>
-                <li>Legacy Wishes for family</li>
-                <li>Donation &amp; sale tracking</li>
-                <li>Share wishes via iCloud</li>
-              </ul>
-            </div>
-
-            <div class="pillar">
-              <span class="pillar-icon">&#129302;</span>
-              <h3>Discover</h3>
-              <p class="pillar-tagline">AI-assisted insights</p>
-              <ul>
-                <li>"What is this?" from a photo</li>
-                <li>Find manuals, parts, DIY help</li>
-                <li>Repair, Keep, or Replace? advisor</li>
-              </ul>
-            </div>
-
-            <div class="pillar">
-              <span class="pillar-icon">&#11088;</span>
-              <h3>Remember</h3>
-              <p class="pillar-tagline">Learn from experience</p>
-              <ul>
-                <li>Rate products 1-5 stars</li>
-                <li>Track "Would Buy Again"</li>
-                <li>Filter by your ratings</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="aha-box">
-            <span class="aha-icon">&#128161;</span>
-            <p>
-              <strong>The key difference:</strong> That 3-year warranty on your fridge? Year 1 might be full coverage, years 2-3 parts only. Most apps just show "expires 2027." Stuffolio shows you <em>when your coverage actually changes</em>.
-            </p>
-          </div>
-
-          <p style="text-align:center; margin-top:20px; font-size:0.95rem;">
-            <a href="features.html">See all features &rarr;</a>
-          </p>
-        </div>
-      </section>
+      <!-- (Five Pillars replaced by differentiator showcase above) -->
 
       <!-- REAL SCENARIOS -->
       <section id="scenarios" style="margin-top:18px;">
@@ -846,7 +836,7 @@
       <!-- BETA-PERIOD-ONLY: Update CTA buttons to App Store links after launch -->
       <section style="margin-top:18px;">
         <div class="card final-cta">
-          <h2>Ready to Take Control of Your Stuff?</h2>
+          <h2>Ready to Do More Than Just List Your Stuff?</h2>
           <p style="color:var(--muted); font-size:1.1rem; margin-bottom:20px;">
             Know what you own. Decide what to do next.
           </p>
@@ -861,14 +851,7 @@
       </section>
       <!-- END BETA-PERIOD-ONLY -->
 
-      <div class="card" style="margin-top:18px;">
-        <h2 style="margin-top:0;">Story</h2>
-        <p>
-          "I finally admitted that the top drawer was not, in fact, a filing system."
-          That small realization turned into Stuffolio &mdash; and a much bigger shift in how I think about the things we own.
-        </p>
-        <p style="margin-bottom:0;"><a href="story.html">Read the story &rarr;</a></p>
-      </div>
+      <!-- (Duplicate story card removed -- story teaser in section above is sufficient) -->
 
     </main>
 
