@@ -176,7 +176,7 @@
         <p class="lead">Thank you for helping test Stuffolio! Your feedback shapes the app before public release.</p>
 
         <div class="hero-box">
-          <p><strong>Current Beta:</strong> Version 1.0 (Build 26) — Updated March 2, 2026</p>
+          <p><strong>Current Beta:</strong> Version 1.0 (Build 30) — Updated March 26, 2026</p>
         </div>
       </div>
 
@@ -255,28 +255,28 @@
 
       <!-- NEW IN THIS BUILD -->
       <div class="card">
-        <h2 style="margin-top:0">New in Build 26</h2>
-        <p>This build focuses on accessibility, stability, and security hardening ahead of App Store submission.</p>
+        <h2 style="margin-top:0">New in Build 30</h2>
+        <p>This build adds acquisition tracking, Scout report sharing, and a major data reliability push with CloudKit sync coverage jumping from 21% to 81%.</p>
 
-        <h3>Accessibility Overhaul</h3>
+        <h3>Acquisition Type Tracking</h3>
         <ul>
-          <li>Dynamic Type support across the entire app — all text now scales with iOS text size settings</li>
-          <li>Reduce Motion support — animations automatically simplify when Reduce Motion is enabled in Settings</li>
-          <li>VoiceOver improvements — labels, hints, and traits audited and corrected throughout</li>
-          <li>Try Settings → Accessibility → Display &amp; Text Size → Larger Text and verify the app remains readable at maximum size</li>
-          <li>Try Settings → Accessibility → Motion → Reduce Motion and verify transitions feel calmer</li>
+          <li>Record how you got each item: Purchased New, Purchased Used, Inherited, Gifted, Found/Salvaged</li>
+          <li>Forms adapt dynamically — gifts hide the price field, inherited items show provenance options</li>
+          <li>Try adding an item and changing the acquisition type to see labels update</li>
         </ul>
 
-        <h3>Bug Fix: Legacy Wishes Beneficiary Deletion</h3>
+        <h3>Scout Report Sharing</h3>
         <ul>
-          <li>Fixed a bug where deleting a beneficiary in Legacy Wishes would silently fail, leaving the beneficiary visible in the list</li>
-          <li>Beneficiaries now delete correctly and are removed from any existing assignments</li>
+          <li>Save all text fields from Stuff Scout results</li>
+          <li>Copy individual sections or export the full report for sharing</li>
+          <li>Try running a Stuff Scout analysis and using the new copy/share buttons</li>
         </ul>
 
-        <h3>Reliability Improvements</h3>
+        <h3>Data Reliability</h3>
         <ul>
-          <li>Improved error handling for JSON parsing failures — the app now recovers gracefully instead of showing a blank screen</li>
-          <li>Schema stability improvements — in-memory data model operations are more robust during edge-case operations</li>
+          <li>CloudKit sync expanded from 18 to 69 fields — warranties, coverage tiers, and maintenance tasks now sync</li>
+          <li>CSV round-trip coverage expanded from 31% to 78% with 9 new columns</li>
+          <li>Backup data safety improvements — coverage tier links, beneficiary data, and donation tracking preserved on restore</li>
         </ul>
 
         <h3>Security</h3>

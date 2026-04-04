@@ -306,8 +306,8 @@
 
         <!-- SYNC:CURRENT_VERSION -->
         <div class="current-version">
-          <p class="version-number">Version 1.0 (Build 29)</p>
-          <p class="version-date">March 20, 2026</p>
+          <p class="version-number">Version 1.0 (Build 30)</p>
+          <p class="version-date">March 26, 2026</p>
           <span class="version-status">Beta Testing</span>
         </div>
         <!-- /SYNC:CURRENT_VERSION -->
@@ -320,6 +320,66 @@
       </div>
 
       <!-- CURRENT RELEASE -->
+      <div class="card">
+        <div class="release">
+          <div class="release-header">
+            <h2 class="release-version">Version 1.0 (Build 30)</h2>
+            <span class="release-date">March 26, 2026</span>
+            <span class="release-tag beta">Beta</span>
+          </div>
+
+          <p class="release-summary">
+            Acquisition type tracking, Scout report sharing, adaptive macOS fonts, and a massive data reliability push. CloudKit sync coverage jumped from 21% to 81%, CSV round-trip from 31% to 78%, and the entire UI got a visual refresh with the Insights card pattern.
+          </p>
+
+          <div class="highlight-change">
+            <p class="label">Highlight</p>
+            <p><strong>Acquisition Type Tracking</strong> -- Record how you got each item: Purchased New, Purchased Used, Inherited, Gifted, Found/Salvaged. Form labels and fields adapt dynamically -- gifts hide the price field, inherited items show provenance options.</p>
+          </div>
+
+          <div class="highlight-change">
+            <p class="label">Highlight</p>
+            <p><strong>CloudKit Sync 81%</strong> -- Sync coverage expanded from 18 to 69 fields. Extended warranties, coverage tiers, and maintenance tasks now sync across devices. Edits propagate reliably between iPhone, iPad, and Mac.</p>
+          </div>
+
+          <div class="change-category new">
+            <h4>New</h4>
+            <ul>
+              <li><strong>Acquisition Type Tracking</strong> -- 6 types (Purchased New/Used, Inherited, Gifted, Found/Salvaged) with dynamic form labels that adapt per type</li>
+              <li><strong>Scout Report Sharing</strong> -- Save all text fields from Stuff Scout results, copy buttons on each section, full report export for sharing</li>
+              <li><strong>Adaptive macOS Fonts</strong> -- Bumped small fonts for desktop readability so Mac users don't squint at tiny text</li>
+              <li><strong>Cost Basis Tracking</strong> -- Track additional costs beyond purchase price, see total investment, "great find" detection for items acquired below market value</li>
+              <li><strong>Coverage Insights</strong> -- Insured value field on warranties, stale replacement cost detection alerts you when coverage may be outdated</li>
+            </ul>
+          </div>
+
+          <div class="change-category improved">
+            <h4>Improvements</h4>
+            <ul>
+              <li><strong>CloudKit Sync Coverage</strong> -- Expanded from 21% to 81% (18 to 69 fields). Extended warranties, coverage tiers, and maintenance tasks now sync</li>
+              <li><strong>CSV Round-Trip</strong> -- Import/export coverage expanded from 31% to 78% with 9 new columns and 16 round-trip tests</li>
+              <li><strong>Widget Deep Links</strong> -- Tapping widgets now routes correctly to the relevant app section</li>
+              <li><strong>Visual Refresh</strong> -- Insights card pattern (solid category colors, white text, translucent icon circles) applied across 16+ files</li>
+              <li><strong>Accessibility</strong> -- Non-semantic yellow replaced with sf3aYellow for better colorblind contrast throughout the app</li>
+              <li><strong>Scout Valuations</strong> -- Stuff Scout value estimates now automatically flow to market price records</li>
+            </ul>
+          </div>
+
+          <div class="change-category fixed">
+            <h4>Bug Fixes</h4>
+            <ul>
+              <li><strong>Sync Reliability</strong> -- Fixed edit propagation between devices, resolved sync ghost items and orphaned records</li>
+              <li><strong>Backup Data Safety</strong> -- Fixed coverage tier links lost on restore, beneficiary backup gaps, donation ID tracking</li>
+              <li><strong>SafeDeletionManager</strong> -- Fixed crash on aged iCloud data with nil deletion dates</li>
+              <li><strong>iPhone Navigation</strong> -- Non-tab sidebar sections now present correctly as sheets</li>
+              <li><strong>Time Bomb Fixes</strong> -- 3 deferred operations that would crash on aged data identified and fixed</li>
+              <li><strong>Settings Icon Styling</strong> -- Fixed inconsistent icon styling on macOS Settings view</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- BUILD 29 -->
       <div class="card">
         <div class="release">
           <div class="release-header">

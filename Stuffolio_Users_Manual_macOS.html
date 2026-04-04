@@ -575,7 +575,7 @@
         <header>
             <h1>Stuffolio User's Manual</h1>
             <p class="subtitle">Your Personal Product Manager</p>
-            <p class="version">Version 3.1 | January 2026</p>
+            <p class="version">Version 3.2 | April 2026</p>
             <span class="platform-badge">macOS</span>
         </header>
 
@@ -868,10 +868,15 @@
             <div class="step-box">
                 <h4>Step 4: Enter Purchase Information</h4>
                 <ol>
+                    <li><strong>Acquisition Type</strong> — Select how you got this item: Purchased New, Purchased Used, Inherited, Gifted, Found/Salvaged, or Not Specified. The form adapts based on your choice — gifts hide the price field, inherited items show provenance options</li>
                     <li><strong>Purchase Date</strong> — Click the date field, use the picker or type directly (e.g., "1/15/2024")</li>
-                    <li><strong>Purchase Price</strong> — Enter the amount you paid (numbers only)</li>
+                    <li><strong>Purchase Price</strong> — Enter the amount you paid (hidden for gifts and inherited items)</li>
+                    <li><strong>Additional Costs</strong> (Optional) — Shipping, taxes, accessories, or modifications. Stuffolio calculates your total investment automatically</li>
                     <li><strong>Retailer</strong> (Optional) — Enter where you bought it</li>
                 </ol>
+                <div class="tip">
+                    <strong>Tip:</strong> If you acquired an item below market value, Stuffolio detects it as a "great find" and highlights the savings.
+                </div>
             </div>
 
             <div class="step-box">
@@ -1216,9 +1221,12 @@
             </ol>
             <p><em>Each refinement uses 1 AI query from your allowance.</em></p>
 
-            <h3>Saving Results</h3>
+            <h3>Saving &amp; Sharing Results</h3>
             <p><strong>Add to Inventory:</strong> Click to open a preview sheet with pre-filled product details.</p>
             <p><strong>Save to History:</strong> Bookmark results for later without adding to inventory.</p>
+            <p><strong>Copy Sections:</strong> Click the copy button next to any section (identification, pricing, history) to copy that text to your clipboard.</p>
+            <p><strong>Export Full Report:</strong> Click <strong>Share</strong> to export the complete report via Messages, Mail, or any sharing method.</p>
+            <p><strong>Value Auto-Update:</strong> Scout valuations automatically flow to your item's market price records, keeping value tracking current.</p>
 
             <h3>Receipt Pairing (Optional)</h3>
             <p>When adding a Stuff Scout result to inventory, you can pair it with a receipt to auto-fill purchase details:</p>
@@ -2091,9 +2099,10 @@
                 <li>Enter coverage details (total limit, per-item limit, deductible)</li>
                 <li>Click <strong>Save</strong></li>
             </ol>
+            <p>You can also set an <strong>Insured Value</strong> per item to track exactly what each item is covered for.</p>
 
             <h3>Identifying Coverage Gaps</h3>
-            <p>Stuffolio identifies items exceeding per-item limits and categories that may need additional coverage.</p>
+            <p>Stuffolio identifies items exceeding per-item limits and categories that may need additional coverage. It also alerts you when replacement cost data is stale, so you can verify your coverage stays adequate.</p>
 
             <h3>Claim Prep Kit</h3>
             <p>When disaster strikes, generate a complete claim package with photos, receipts, serial numbers, and value estimates.</p>
@@ -2865,6 +2874,9 @@
         <section id="accessibility">
             <h2>Accessibility</h2>
             <p>Stuffolio is designed to be accessible to everyone, with comprehensive support for assistive technologies and keyboard-only navigation.</p>
+
+            <h3>Adaptive Font Scaling</h3>
+            <p>Stuffolio automatically scales smaller fonts up on Mac displays for comfortable desktop reading. Text that looks fine on an iPhone can feel tiny on a 27" monitor — Stuffolio adjusts font sizes so labels, captions, and secondary text remain readable without squinting.</p>
 
             <h3>VoiceOver Support</h3>
             <p>Full VoiceOver support throughout the app with enhanced, descriptive labels. To enable: Press <kbd>⌘F5</kbd> or go to System Settings > Accessibility > VoiceOver.</p>
