@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Who Uses Stuffolio -- Estate Sales, Insurance, Collecting, Family Planning</title>
+  <meta name="description" content="Stuffolio helps families preparing for estate sales, homeowners documenting for insurance, collectors tracking value, and parents planning who gets what. See how it fits your life." />
+  <meta name="theme-color" content="#0b1220" />
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://stuffolio.app/use-cases.html" />
+  <meta property="og:title" content="Who Uses Stuffolio -- Estate Sales, Insurance, Collecting, Family Planning" />
+  <meta property="og:description" content="See how Stuffolio helps with estate sale preparation, insurance documentation, collecting, and family planning. Real use cases, real solutions." />
+  <meta property="og:image" content="https://stuffolio.app/assets/og-image.png" />
+  <meta property="og:site_name" content="Stuffolio" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Who Uses Stuffolio -- Estate Sales, Insurance, Collecting, Family Planning" />
+  <meta name="twitter:description" content="See how Stuffolio helps with estate sale preparation, insurance documentation, collecting, and family planning." />
+  <meta name="twitter:image" content="https://stuffolio.app/assets/og-image.png" />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://stuffolio.app/use-cases.html" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
+
+  <!-- Shared Styles -->
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- Page-specific styles -->
+  <style>
+    .use-case-section {
+      margin-top: 18px;
+    }
+    .use-case-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    .use-case-icon {
+      font-size: 2.8rem;
+      flex-shrink: 0;
+    }
+    .use-case-header h2 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+    .use-case-header .use-case-audience {
+      color: var(--accent);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-weight: 600;
+      margin: 4px 0 0;
+    }
+    .use-case-lead {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: var(--text);
+      margin-bottom: 20px;
+    }
+    .feature-mapping {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+      margin: 20px 0;
+    }
+    .feature-map-card {
+      padding: 20px;
+      border-radius: 12px;
+      border: 1px solid rgba(125,211,252,.15);
+      background: rgba(125,211,252,.04);
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .feature-map-card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(125,211,252,.3);
+    }
+    .feature-map-card .problem {
+      font-style: italic;
+      color: var(--muted);
+      margin: 0 0 8px;
+      font-size: 0.95rem;
+    }
+    .feature-map-card .solution {
+      color: var(--text);
+      margin: 0;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+    .feature-map-card .solution strong {
+      color: var(--accent);
+    }
+    .use-case-cta {
+      margin-top: 20px;
+      padding: 20px 24px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, rgba(167,139,250,.08), rgba(125,211,252,.05));
+      border: 1px solid rgba(167,139,250,.2);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .use-case-cta p {
+      margin: 0;
+      font-size: 1.05rem;
+      font-weight: 500;
+    }
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 16px 0 8px;
+    }
+    .pill {
+      padding: 6px 14px;
+      border-radius: 20px;
+      background: rgba(125,211,252,.1);
+      border: 1px solid rgba(125,211,252,.2);
+      color: var(--accent);
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: background 0.2s;
+    }
+    .pill:hover {
+      background: rgba(125,211,252,.2);
+    }
+    .section-divider {
+      border: none;
+      border-top: 1px solid rgba(255,255,255,.08);
+      margin: 0;
+    }
+    .story-callout {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 20px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(251,191,36,.08), rgba(251,146,60,.06));
+      border: 1px solid rgba(251,191,36,.2);
+      margin: 20px 0;
+    }
+    .story-callout .callout-icon {
+      font-size: 1.8rem;
+      flex-shrink: 0;
+    }
+    .story-callout p {
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    .light-mode .feature-map-card { background: rgba(0,102,204,.04); border-color: rgba(0,102,204,.12); }
+    .light-mode .feature-map-card:hover { border-color: rgba(0,102,204,.3); }
+    .light-mode .use-case-cta { background: linear-gradient(135deg, rgba(124,58,237,.06), rgba(0,102,204,.04)); border-color: rgba(124,58,237,.15); }
+    .light-mode .story-callout { background: linear-gradient(135deg, rgba(251,191,36,.06), rgba(251,146,60,.04)); }
+    .light-mode .section-divider { border-color: rgba(0,0,0,.08); }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="wrap">
+    <header>
+      <a href="index.html" class="site-title">Stuffolio</a>
+
+      <div class="header-right">
+        <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
+
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="features.html">Features</a>
+          <div class="nav-dropdown">
+            <button class="nav-dropdown-toggle">Docs</button>
+            <div class="nav-dropdown-menu">
+              <a href="quick-start.html">Quick Start</a>
+              <a href="Stuffolio_Users_Manual.html">User Manual</a>
+              <a href="whats-new.html">What's New</a>
+              <a href="app-map.html">App Map</a>
+            </div>
+          </div>
+          <a href="compare.html">Compare</a>
+          <div class="nav-dropdown">
+            <button class="nav-dropdown-toggle">Support</button>
+            <div class="nav-dropdown-menu">
+              <a href="support.html">Help & FAQ</a>
+              <a href="Stuffolio_Users_Manual.html">User Manual</a>
+            </div>
+          </div>
+        </nav>
+
+        <button class="search-toggle" aria-label="Search documentation">
+          <span class="search-icon">&#128269;</span>
+          <span class="search-label">Search</span>
+          <kbd class="search-kbd">&#8984;K</kbd>
+        </button>
+
+        <div class="theme-toggle">
+          <span class="theme-icon">&#9728;&#65039;</span>
+          <button class="theme-toggle-switch" id="themeToggle" aria-label="Toggle light/dark mode"></button>
+          <span class="theme-icon">&#127769;</span>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+
+      <!-- HERO -->
+      <div class="card">
+        <h1 style="margin-top:0;">Who Uses Stuffolio?</h1>
+        <p class="lead" style="max-width:750px;">Every home inventory app tracks what you own. But people come to Stuffolio for specific moments in life -- when knowing what you have isn't enough, and you need to <strong>decide what to do about it</strong>.</p>
+
+        <div class="pill-row" aria-label="Jump to section">
+          <a class="pill" href="#estate-sale" style="text-decoration:none;">Estate Sales</a>
+          <a class="pill" href="#insurance" style="text-decoration:none;">Insurance</a>
+          <a class="pill" href="#collecting" style="text-decoration:none;">Collecting</a>
+          <a class="pill" href="#family" style="text-decoration:none;">Family Planning</a>
+        </div>
+      </div>
+
+      <!-- USE CASE 1: ESTATE SALE -->
+      <section class="use-case-section" id="estate-sale">
+        <div class="card">
+          <div class="use-case-header">
+            <span class="use-case-icon">&#128230;</span>
+            <div>
+              <h2>Preparing for an Estate Sale</h2>
+              <p class="use-case-audience">For families managing a parent's estate, couples downsizing, or anyone sorting through a lifetime of belongings</p>
+            </div>
+          </div>
+
+          <p class="use-case-lead">
+            When it's time to sort through a lifetime of belongings, the last thing you need is more confusion. What's this worth? Who wants it? Should we sell it or donate it? Most families face these questions with no system at all -- just boxes, guesses, and stress.
+          </p>
+
+          <p>
+            Estate auction professionals use tools like WorthPoint ($30/mo) and Auction Flex (enterprise pricing) to manage this. Families use ... a spreadsheet, if they're lucky. Stuffolio fills that gap -- consumer-friendly tools for the hardest inventory job most people will ever face.
+          </p>
+
+          <div class="feature-mapping">
+            <div class="feature-map-card">
+              <p class="problem">"What IS all this stuff?"</p>
+              <p class="solution"><strong>Stuff Scout</strong> -- Point your camera at any item. AI identifies it, researches its history, and estimates its value in 30 seconds.</p>
+            </div>
+            <div class="feature-map-card">
+              <p class="problem">"What's it actually worth?"</p>
+              <p class="solution"><strong>Stuff Scout + Price Watch</strong> -- Get current market values, not what was paid 20 years ago. Track replacement costs for insurance claims.</p>
+            </div>
+            <div class="feature-map-card">
+              <p class="problem">"Who wants what?"</p>
+              <p class="solution"><strong>Legacy Wishes</strong> -- Record who gets what before anyone has to guess. Family members can indicate interest or decline -- no awkward conversations needed.</p>
+            </div>
+            <div class="feature-map-card">
+              <p class="problem">"Keep it, sell it, or donate it?"</p>
+              <p class="solution"><strong>Repair, Keep, or Replace</strong> -- See repair cost vs. replacement cost, your rating, and whether it's worth keeping. Make decisions with data, not guilt.</p>
+            </div>
+            <div class="feature-map-card">
+              <p class="problem">"We need records for taxes."</p>
+              <p class="solution"><strong>Donation Tracking</strong> -- Record fair market value, recipient organization, and date for every donated item. Export for your tax preparer.</p>
+            </div>
+            <div class="feature-map-card">
+              <p class="problem">"The estate sale company needs an inventory."</p>
+              <p class="solution"><strong>Export</strong> -- Hand the estate sale company a complete inventory with photos, descriptions, and values. CSV, PDF, or Excel -- their choice.</p>
+            </div>
+          </div>
+
+          <div class="story-callout">
+            <span class="callout-icon">&#128214;</span>
+            <div>
+              <p>
+                <strong>From the founder:</strong> "One evening, we FaceTimed our two daughters and walked through some of the things we'd always assumed they'd want. The desk wouldn't fit either of their lives. The china wasn't their style. But a few things surprised them -- items we'd almost overlooked meant more to them than we expected."
+              </p>
+              <p style="margin-top:8px;">
+                <a href="story.html" style="color:var(--accent);">Read the full story &rarr;</a>
+              </p>
+            </div>
+          </div>
+
+          <div class="use-case-cta">
+            <p>Start documenting now -- before you need to.</p>
+            <a class="btn primary" href="https://testflight.apple.com/join/TWgM95st">Try Stuffolio</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- USE CASE 2: INSURANCE -->
+      <section class="use-case-section" id="insurance">
+        <div class="card">
+          <div class="use-case-header">
+            <span class="use-case-icon">&#128293;</span>
+            <div>
+              <h2>Protecting What You Own</h2>
+              <p class="use-case-audience">For homeowners, renters, and anyone who'd struggle to list their belongings from memory</p>
+            </div>
+          </div>
+
+          <p class="use-case-lead">
+            After a fire, flood, or theft, insurance companies ask you to list everything you lost -- with photos, receipts, and replacement values. Most people can't. The average American household has over $100,000 in personal property, and almost half have no inventory at all.
+          </p>
+
+          <div class="feature-mapping">
+            <div class="feature-map-card">
+              <p class="problem">"I need proof of what I owned."</p>
+              <p class="solution"><strong>Photos + Receipts</strong> -- Every item documented with photos, purchase price, serial numbers, and attached receipt images. All in one place.</p>
+            </div>
+            <div class="feature-map-card">
+              <p class="problem">"Insurance wants current replacement cost."</p>
+              <p class="solution"><strong>Price Watch</strong> -- That mixer you paid $350 for costs $550 to replace today. Price Watch tracks how rising prices affect what you own.</p>
+            </div>
+            <div class="feature-map-card">
+              <p class="problem">"Is this still under warranty?"</p>
+              <p class="solution"><strong>Warranty Intelligence</strong> -- Track coverage phases, not just expiration dates. Know what's covered right now -- full coverage, parts only, or expired.</p>
+            </div>
+            <div class="feature-map-card">
+              <p class="problem">"I need a report for my agent."</p>
+              <p class="solution"><strong>Insurance Export</strong> -- Generate a claim-ready report with photos, values, and documentation. CSV, PDF, or Excel.</p>
+            </div>
+          </div>
+
+          <div class="use-case-cta">
+            <p>Document everything now. Hope you never need it.</p>
+            <a class="btn primary" href="https://testflight.apple.com/join/TWgM95st">Try Stuffolio</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- USE CASE 3: COLLECTING -->
+      <section class="use-case-section" id="collecting">
+        <div class="card">
+          <div class="use-case-header">
+            <span class="use-case-icon">&#128270;</span>
+            <div>
+              <h2>Collecting with Confidence</h2>
+              <p class="use-case-audience">For thrift shoppers, antique hunters, hobbyists, and anyone who finds things and wonders "what is this?"</p>
+            </div>
+          </div>
+
+          <p class="use-case-lead">
+            You're at Goodwill. There's a set of dishes that look familiar. Are they worth $5 or $500? You could Google it, scroll through forums, compare eBay listings -- or you could point your camera and know in 30 seconds.
+          </p>
+
+          <div class="feature-mapping">
+            <div class="feature-map-card">
+              <p class="problem">"What is this thing?"</p>
+              <p class="solution"><strong>Stuff Scout</strong> -- Identifies items from photos. Antique vases, vintage tools, mystery kitchen gadgets -- if it exists, Scout can probably tell you what it is.</p>
+            </div>
+            <div class="feature-map-card">
+              <p class="problem">"Is it worth what they're asking?"</p>
+              <p class="solution"><strong>Stuff Scout Valuation</strong> -- Current market value based on recent sales, condition, and rarity. Make buying decisions with data.</p>
+            </div>
+            <div class="feature-map-card">
+              <p class="problem">"I want to track my collection's value over time."</p>
+              <p class="solution"><strong>Price Watch + Value Snapshots</strong> -- See how your collection's total value changes. Know when something appreciates -- or when it's time to sell.</p>
+            </div>
+            <div class="feature-map-card">
+              <p class="problem">"Which brands and products have I liked?"</p>
+              <p class="solution"><strong>Product Memory</strong> -- Rate every item 1-5 stars. Track "Would Buy Again." Filter by your ratings next time you shop. Your experience becomes your buying guide.</p>
+            </div>
+          </div>
+
+          <div class="story-callout">
+            <span class="callout-icon">&#128269;</span>
+            <div>
+              <p>
+                <strong>From the founder:</strong> "We were in a Goodwill store and came across a set of dishes that looked familiar. I took a quick photo, ran it through Stuffolio, and learned just enough about what they were and what they were worth to make a simple decision. We passed. We already have too much stuff."
+              </p>
+            </div>
+          </div>
+
+          <div class="use-case-cta">
+            <p>Know what it is before you buy it.</p>
+            <a class="btn primary" href="https://testflight.apple.com/join/TWgM95st">Try Stuffolio</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- USE CASE 4: FAMILY PLANNING -->
+      <section class="use-case-section" id="family">
+        <div class="card">
+          <div class="use-case-header">
+            <span class="use-case-icon">&#128157;</span>
+            <div>
+              <h2>Planning Ahead for Family</h2>
+              <p class="use-case-audience">For parents, grandparents, and anyone who wants their family to have clarity -- not confusion</p>
+            </div>
+          </div>
+
+          <p class="use-case-lead">
+            When someone passes, families face difficult decisions during an already stressful time. Who gets the piano? Does anyone want the china? What about the toolbox grandpa used every weekend? Most families guess -- or argue. A few minutes of planning now saves weeks of stress later.
+          </p>
+
+          <div class="feature-mapping">
+            <div class="feature-map-card">
+              <p class="problem">"We assumed the kids would want everything."</p>
+              <p class="solution"><strong>Legacy Wishes</strong> -- Document who gets what, privately and on your terms. Family members can indicate interest or decline before anyone has to guess.</p>
+            </div>
+            <div class="feature-map-card">
+              <p class="problem">"What if nobody wants it?"</p>
+              <p class="solution"><strong>Fallback Planning</strong> -- Set contingency recipients and fallback actions (donate, sell, let family decide). Every item has a plan.</p>
+            </div>
+            <div class="feature-map-card">
+              <p class="problem">"We want the whole family on the same page."</p>
+              <p class="solution"><strong>Family Sharing + CloudKit Sync</strong> -- Share wishes with family in real time. Everyone sees the same information across all their devices.</p>
+            </div>
+            <div class="feature-map-card">
+              <p class="problem">"We need something we can print and keep with important papers."</p>
+              <p class="solution"><strong>PDF Export</strong> -- Generate a formatted Legacy Wishes document. Print it, email it, or store it with your will.</p>
+            </div>
+          </div>
+
+          <div class="story-callout">
+            <span class="callout-icon">&#128148;</span>
+            <div>
+              <p>
+                <strong>From the founder:</strong> "It wasn't a difficult conversation. It was a relief. One we'll have again. The oak school desk wouldn't fit either daughter's life. The china wasn't their style. But a few things surprised them -- items we'd almost overlooked meant more to them than we expected."
+              </p>
+              <p style="margin-top:8px;">
+                <a href="story.html" style="color:var(--accent);">Read the full story &rarr;</a> &bull; <a href="family-sharing.html" style="color:var(--accent);">Learn about Family Sharing &rarr;</a>
+              </p>
+            </div>
+          </div>
+
+          <div class="use-case-cta">
+            <p>Have the conversation now. Your family will thank you.</p>
+            <a class="btn primary" href="https://testflight.apple.com/join/TWgM95st">Try Stuffolio</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- PRICING REMINDER -->
+      <section style="margin-top:18px;">
+        <div class="card" style="text-align:center;">
+          <h2 style="margin-top:0;">One App. One Price. Every Use Case.</h2>
+          <p style="color:var(--muted); max-width:600px; margin:0 auto 16px;">
+            Stuffolio is <strong>$9.99 one-time</strong> -- not a subscription. All features included. Share with up to 6 family members via Apple Family Sharing.
+          </p>
+          <p style="color:var(--muted); font-size:0.9rem;">
+            Optional AI features (Stuff Scout, smart categorization) are $2.99/mo or $19.99/year.
+          </p>
+          <div class="ctaRow" style="justify-content:center; margin-top:20px;">
+            <a class="btn primary" href="https://testflight.apple.com/join/TWgM95st">Try Stuffolio</a>
+            <a class="btn" href="features.html">See All Features</a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <div class="footer-columns">
+        <div class="footer-column">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="compare.html">Compare</a></li>
+            <li><a href="whats-new.html">What's New</a></li>
+            <li><a href="story.html">Our Story</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Docs</h4>
+          <ul>
+            <li><a href="quick-start.html">Quick Start</a></li>
+            <li><a href="app-map.html">App Map</a></li>
+            <li><a href="family-sharing.html">Family Sharing</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="support.html">Help & FAQ</a></li>
+            <li><a href="Stuffolio_Users_Manual.html">User Manual</a></li>
+            <li><a href="beta-testing-guide.html">Beta Testing</a></li>
+            <li><a href="mailto:support@stuffolio.app">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Policies</h4>
+          <ul>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <!-- BETA-PERIOD-ONLY: Change to App Store badge after launch -->
+        <div class="download-cta">
+          <a href="https://testflight.apple.com/join/TWgM95st" class="download-badge testflight">
+            <img src="assets/testflight-badge.svg" alt="Download on TestFlight" width="135" height="40" onerror="this.outerHTML='<span class=badge-fallback>Join TestFlight Beta</span>'" />
+          </a>
+          <span class="download-tagline">Free beta &bull; iPhone, iPad, Mac</span>
+        </div>
+        <!-- END BETA-PERIOD-ONLY -->
+        <div>&copy; <span id="y"></span> Coffee &amp; Code LLC</div>
+      </div>
+
+      <div class="trust-strip">
+        <span>Privacy-first. No ads. No selling your data. AI when you ask -- silent when you don't.</span>
+      </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Back to top">&uarr;</button>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+
+    const html = document.documentElement;
+    const toggle = document.getElementById('themeToggle');
+    const saved = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const theme = saved || (prefersDark ? 'dark' : 'light');
+
+    if (theme === 'light') {
+      html.classList.add('light-mode');
+    } else {
+      toggle.classList.add('dark');
+    }
+
+    toggle?.addEventListener('click', () => {
+      const isLight = html.classList.toggle('light-mode');
+      toggle.classList.toggle('dark', !isLight);
+      localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    });
+  </script>
+
+  <script src="js/search.js"></script>
+
+  <!-- Navigation & Back to Top -->
+  <script>
+    // Back to Top Button
+    const backToTop = document.querySelector('.back-to-top');
+    if (backToTop) {
+      window.addEventListener('scroll', () => {
+        backToTop.classList.toggle('visible', window.scrollY > 400);
+      });
+      backToTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+
+    // Dropdown Menu (for mobile)
+    document.querySelectorAll('.nav-dropdown-toggle').forEach(toggle => {
+      toggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        toggle.closest('.nav-dropdown').classList.toggle('open');
+      });
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.nav-dropdown')) {
+        document.querySelectorAll('.nav-dropdown.open').forEach(d => d.classList.remove('open'));
+      }
+    });
+  </script>
+</body>
+</html>
