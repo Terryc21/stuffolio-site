@@ -51,7 +51,7 @@
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   "name": "Stuffolio",
-  "operatingSystem": "iOS 17.6+, iPadOS 17.6+, macOS 14.6+",
+  "operatingSystem": "iOS 17.0+, iPadOS 17.0+, macOS 14.0+",
   "applicationCategory": "UtilitiesApplication",
   "description": "Stuffolio helps you manage the life of your stuff — track what you own, keep receipts and warranties together, get maintenance reminders, and record Legacy Wishes so your family has clarity.",
   "author": {
@@ -384,6 +384,11 @@
     .light-mode .whats-new-box { background: linear-gradient(135deg, rgba(124,58,237,.08), rgba(0,102,204,.05)); }
     .light-mode .whats-new-item { background: rgba(0,0,0,.03); }
     .light-mode .whats-new-item:hover { background: rgba(0,0,0,.05); }
+
+    @media (max-width: 650px) {
+      #story .card > div { grid-template-columns: 1fr !important; }
+      #story .card > div > div:first-child { max-width: 280px; margin: 0 auto; }
+    }
   </style>
 </head>
 
@@ -410,6 +415,7 @@
             </div>
           </div>
           <a href="compare.html">Compare</a>
+          <a href="use-cases.html">Use Cases</a>
           <div class="nav-dropdown">
             <button class="nav-dropdown-toggle">Support</button>
             <div class="nav-dropdown-menu">
@@ -628,12 +634,6 @@
               </p>
             </div>
           </div>
-          <style>
-            @media (max-width: 650px) {
-              #story .card > div { grid-template-columns: 1fr !important; }
-              #story .card > div > div:first-child { max-width: 280px; margin: 0 auto; }
-            }
-          </style>
         </div>
       </section>
 
@@ -764,11 +764,11 @@
 
           <div id="carousel-ios" class="carousel" role="tabpanel" aria-labelledby="tab-ios">
             <div class="carousel-container">
-              <button class="carousel-nav carousel-prev" onclick="carouselPrev('ios')" aria-label="Previous screenshot">&#10094;</button>
+              <button class="carousel-nav carousel-prev" data-platform="ios" data-dir="prev" aria-label="Previous screenshot">&#10094;</button>
               <div class="carousel-slide">
-                <img loading="lazy" id="ios-carousel-img" src="Lightbox/iOS%20Screenshots/ios-dashboard-light.png" alt="" class="carousel-img" onclick="openLightbox('ios', 0)">
+                <img loading="lazy" id="ios-carousel-img" src="Lightbox/iOS%20Screenshots/ios-dashboard-light.png" alt="Stuffolio iOS dashboard screenshot" class="carousel-img" role="button" aria-label="View iOS screenshot in lightbox">
               </div>
-              <button class="carousel-nav carousel-next" onclick="carouselNext('ios')" aria-label="Next screenshot">&#10095;</button>
+              <button class="carousel-nav carousel-next" data-platform="ios" data-dir="next" aria-label="Next screenshot">&#10095;</button>
             </div>
             <p id="ios-carousel-caption" class="carousel-caption">Dashboard</p>
             <div id="ios-carousel-dots" class="carousel-dots"></div>
@@ -776,11 +776,11 @@
 
           <div id="carousel-mac" class="carousel" role="tabpanel" aria-labelledby="tab-mac" hidden>
             <div class="carousel-container">
-              <button class="carousel-nav carousel-prev" onclick="carouselPrev('mac')" aria-label="Previous screenshot">&#10094;</button>
+              <button class="carousel-nav carousel-prev" data-platform="mac" data-dir="prev" aria-label="Previous screenshot">&#10094;</button>
               <div class="carousel-slide">
-                <img loading="lazy" id="mac-carousel-img" src="Lightbox/macOS%20screenshots/macos-dashboard.png" alt="" class="carousel-img" onclick="openLightbox('mac', 0)">
+                <img loading="lazy" id="mac-carousel-img" src="Lightbox/macOS%20screenshots/macos-dashboard.png" alt="Stuffolio macOS dashboard screenshot" class="carousel-img" role="button" aria-label="View macOS screenshot in lightbox">
               </div>
-              <button class="carousel-nav carousel-next" onclick="carouselNext('mac')" aria-label="Next screenshot">&#10095;</button>
+              <button class="carousel-nav carousel-next" data-platform="mac" data-dir="next" aria-label="Next screenshot">&#10095;</button>
             </div>
             <p id="mac-carousel-caption" class="carousel-caption">Dashboard</p>
             <div id="mac-carousel-dots" class="carousel-dots"></div>
@@ -863,6 +863,7 @@
           <ul>
             <li><a href="features.html">Features</a></li>
             <li><a href="compare.html">Compare</a></li>
+            <li><a href="use-cases.html">Use Cases</a></li>
             <li><a href="whats-new.html">What's New</a></li>
             <li><a href="story.html">Our Story</a></li>
           </ul>
@@ -937,11 +938,11 @@
   </script>
 
   <!-- Screenshot Lightbox -->
-  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Screenshot viewer" hidden onclick="closeLightbox(event)">
-    <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close">&times;</button>
-    <button class="lightbox-nav lightbox-prev" onclick="prevImage(event)" aria-label="Previous">&#10094;</button>
-    <img loading="lazy" id="lightbox-img" class="lightbox-img" src="" alt="" />
-    <button class="lightbox-nav lightbox-next" onclick="nextImage(event)" aria-label="Next">&#10095;</button>
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Screenshot viewer" hidden>
+    <button class="lightbox-close" aria-label="Close">&times;</button>
+    <button class="lightbox-nav lightbox-prev" aria-label="Previous">&#10094;</button>
+    <img loading="lazy" id="lightbox-img" class="lightbox-img" src="" alt="Stuffolio screenshot enlarged view" />
+    <button class="lightbox-nav lightbox-next" aria-label="Next">&#10095;</button>
     <div id="lightbox-caption" class="lightbox-caption"></div>
   </div>
 
@@ -997,7 +998,7 @@
         const dot = document.createElement('button');
         dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
         dot.setAttribute('aria-label', 'Go to screenshot ' + (i + 1));
-        dot.onclick = () => goToSlide(platform, i);
+        dot.addEventListener('click', () => goToSlide(platform, i));
         dotsContainer.appendChild(dot);
       }
     }
@@ -1011,7 +1012,6 @@
 
       img.src = screenshots[index].thumb;
       img.alt = screenshots[index].caption;
-      img.onclick = () => openLightbox(platform, index);
       caption.textContent = screenshots[index].caption;
 
       const dots = document.querySelectorAll('#' + platform + '-carousel-dots .carousel-dot');
@@ -1099,6 +1099,29 @@
         if (e.key === 'ArrowRight') nextImage(e);
       }
     });
+
+    // Carousel nav buttons
+    document.querySelectorAll('.carousel-nav').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const platform = btn.dataset.platform;
+        if (btn.dataset.dir === 'prev') carouselPrev(platform);
+        else carouselNext(platform);
+      });
+    });
+
+    // Carousel image click -> lightbox
+    document.querySelectorAll('.carousel-img').forEach(img => {
+      img.addEventListener('click', () => {
+        const platform = img.id.startsWith('ios') ? 'ios' : 'mac';
+        openLightbox(platform, carouselState[platform]);
+      });
+    });
+
+    // Lightbox controls
+    document.getElementById('lightbox').addEventListener('click', (e) => closeLightbox(e));
+    document.querySelector('.lightbox-close').addEventListener('click', () => closeLightbox());
+    document.querySelector('.lightbox-prev').addEventListener('click', (e) => prevImage(e));
+    document.querySelector('.lightbox-next').addEventListener('click', (e) => nextImage(e));
 
     initCarousels();
   </script>
