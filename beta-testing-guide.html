@@ -177,7 +177,7 @@
         <p class="lead">Thank you for helping test Stuffolio! Your feedback shapes the app before public release.</p>
 
         <div class="hero-box">
-          <p><strong>Current Beta:</strong> Version 1.0 (Build 30) — Updated March 26, 2026</p>
+          <p><strong>Current Beta:</strong> Version 1.0 (Build 31) — Updated April 14, 2026</p>
         </div>
       </div>
 
@@ -221,10 +221,10 @@
           <div class="priority-card high">
             <h4>High Priority</h4>
             <ul style="margin:0; padding-left:18px;">
-              <li><strong>Dashboard redesign</strong> — Check the new layout, icons, and card hierarchy across all sections</li>
-              <li><strong>Keyboard dismiss</strong> — Scroll or tap outside a text field on any form and verify the keyboard dismisses reliably</li>
-              <li><strong>Touch targets</strong> — Tap buttons, rows, and context menus — everything should feel easy to hit</li>
-              <li><strong>Go To (&#8984;K)</strong> — Search for features like "Settings" or "Value Calculator" and verify they open directly</li>
+              <li><strong>Home tab redesign</strong> — Check the new Three Phases layout on iOS, verify all sections navigate correctly</li>
+              <li><strong>Stuff Scout confidence gate</strong> — Scan an item and test all three paths: "Yes, that's it", "Almost, I can add more details", and "No, that's not what this is"</li>
+              <li><strong>Story-first refinement</strong> — After a scan, tap "Almost" and try adding a story, then structured details. Does adding context improve the result?</li>
+              <li><strong>Vanishing fields</strong> — Edit an item and fill in fields like condition, quantity, or room. Verify they appear in the detail view after saving</li>
               <li><strong>Crashes</strong> — Report any app crashes immediately</li>
             </ul>
           </div>
@@ -232,11 +232,11 @@
           <div class="priority-card medium">
             <h4>Medium Priority</h4>
             <ul style="margin:0; padding-left:18px;">
-              <li><strong>Accessibility (NEW)</strong> — Go to Settings → Accessibility → Larger Text, drag to maximum, and verify text is readable throughout the app</li>
-              <li><strong>Reduce Motion (NEW)</strong> — Enable Settings → Accessibility → Motion → Reduce Motion and check that animations simplify</li>
-              <li><strong>Legacy Wishes deletion</strong> — Add a beneficiary, then delete them — verify they disappear from the list</li>
-              <li><strong>AI assistance</strong> — Stuff Scout accuracy, AI Assistant responses</li>
-              <li><strong>Price Watch</strong> — Track prices, set alerts, view history charts</li>
+              <li><strong>Item detail pane</strong> — Check that the new dense key-value layout shows all your item data, warranty status cards are clear</li>
+              <li><strong>Scout context evaluation</strong> — Try scanning with specific facts ("This is a [brand] [model]") vs. vague notes ("I think it might be old"). Does the AI handle them differently?</li>
+              <li><strong>Multi-photo selection</strong> — Select multiple photos from your library for Scout or item attachments</li>
+              <li><strong>Unsaved changes dialogs</strong> — Start editing notes or a beneficiary form, then dismiss. Verify you get a confirmation prompt</li>
+              <li><strong>Category colors</strong> — Check that different item categories show distinct card colors in lists</li>
               <li><strong>Export functionality</strong> — CSV, PDF, Excel, encrypted backup exports</li>
             </ul>
           </div>
@@ -244,11 +244,11 @@
           <div class="priority-card low">
             <h4>Lower Priority</h4>
             <ul style="margin:0; padding-left:18px;">
-              <li><strong>VoiceOver</strong> — Enable VoiceOver and navigate item lists; buttons and labels should read clearly</li>
-              <li><strong>AppleCare+ Editing</strong> — Try editing AppleCare+ details directly from the dashboard</li>
-              <li><strong>Empty State</strong> — Check the iCloud Sync option appears when inventory is empty</li>
-              <li><strong>UI polish</strong> — Visual glitches, alignment issues</li>
-              <li><strong>Widgets</strong> — Home Screen, Lock Screen widgets</li>
+              <li><strong>Widget deep-links</strong> — Tap a Home Screen or Lock Screen widget and verify it opens the right section</li>
+              <li><strong>macOS Activity Timeline</strong> — Check the new timeline card on the macOS Dashboard</li>
+              <li><strong>Accessibility</strong> — Larger Text at maximum, VoiceOver navigation, Reduce Motion</li>
+              <li><strong>iCloud sync</strong> — Edit an item on one device, verify changes appear on another</li>
+              <li><strong>CSV import</strong> — Import a CSV file and verify the new progress indicator and cancel button work</li>
             </ul>
           </div>
         </div>
@@ -256,43 +256,76 @@
 
       <!-- NEW IN THIS BUILD -->
       <div class="card">
-        <h2 style="margin-top:0">New in Build 30</h2>
-        <p>This build adds acquisition tracking, Scout report sharing, and a major data reliability push with CloudKit sync coverage jumping from 21% to 81%.</p>
+        <h2 style="margin-top:0">New in Build 31</h2>
+        <p>This build brings a redesigned Home tab, major Stuff Scout improvements, 38 data safety fixes, and extensive UI polish across the app.</p>
 
-        <h3>Acquisition Type Tracking</h3>
+        <h3>Home Tab Redesign</h3>
         <ul>
-          <li>Record how you got each item: Purchased New, Purchased Used, Inherited, Gifted, Found/Salvaged</li>
-          <li>Forms adapt dynamically — gifts hide the price field, inherited items show provenance options</li>
-          <li>Try adding an item and changing the acquisition type to see labels update</li>
+          <li>New "Three Phases" navigation on the iOS Home tab with reorganized sections</li>
+          <li>Tappable placeholder values ("--") now prompt you to add missing data instead of showing blanks</li>
+          <li>Activity Timeline card added to macOS Dashboard</li>
         </ul>
 
-        <h3>Scout Report Sharing</h3>
+        <h3>Stuff Scout Upgrades</h3>
         <ul>
-          <li>Save all text fields from Stuff Scout results</li>
-          <li>Copy individual sections or export the full report for sharing</li>
-          <li>Try running a Stuff Scout analysis and using the new copy/share buttons</li>
+          <li><strong>Confidence Gate (NEW):</strong> After scanning, Scout asks "Is this right?" with three paths: confirm, refine with more details, or try again</li>
+          <li><strong>Story-First Refinement:</strong> Large "Tell us what you know" text area appears first when refining, with structured fields (maker's mark, serial number, era) collapsed below as optional extras</li>
+          <li><strong>Smarter Context Evaluation:</strong> The AI now evaluates your notes critically. Specific facts (artist names, serial numbers, museum attributions) are verified against visual evidence. Speculative notes ("I think it might be...") are treated as hypotheses to investigate, not facts to confirm</li>
+          <li><strong>Category-Aware Hints:</strong> Scout suggests what details would help based on the item type (e.g., "Look for maker's marks" for antiques vs. "Find the model number" for modern items)</li>
+          <li><strong>Refinement History:</strong> See how each round of added details improved the identification and valuation</li>
+          <li><strong>Category-Specific Valuation:</strong> Price verification now routes to the right marketplaces based on what the item is (e.g., musical instruments check Reverb, collectibles check eBay)</li>
+          <li><strong>Research Tips:</strong> Scout now suggests specific subreddits, forums, reference databases, and YouTube channels relevant to your item's category</li>
+          <li>Fixed: Scout no longer dismisses when rotating your iPhone</li>
+          <li>Fixed: History recall now loads complete results including all text sections</li>
         </ul>
 
-        <h3>Data Reliability</h3>
+        <h3>Item Detail Pane Redesign</h3>
         <ul>
-          <li>CloudKit sync expanded from 18 to 69 fields — warranties, coverage tiers, and maintenance tasks now sync</li>
-          <li>CSV round-trip coverage expanded from 31% to 78% with 9 new columns</li>
-          <li>Backup data safety improvements — coverage tier links, beneficiary data, and donation tracking preserved on restore</li>
+          <li>Dense key-value layout replaces the old card-heavy design for reference data (serial numbers, model numbers, dates)</li>
+          <li>Status cards (warranty, recalls) remain prominent; static facts use clean rows</li>
+          <li>Warranty progress bar with coverage phase hints</li>
+          <li>Support section redesigned</li>
         </ul>
 
-        <h3>Security</h3>
+        <h3>Data Safety (38 Fixes)</h3>
         <ul>
-          <li>App Attest verification added to AI endpoints — requests are now cryptographically attested to originate from a genuine Stuffolio installation</li>
+          <li><strong>Vanishing fields fixed:</strong> 38 fields that could be edited in forms but never displayed in item detail are now visible</li>
+          <li>Confirmation dialogs added when dismissing sheets with unsaved changes (notes, beneficiary forms, notification settings)</li>
+          <li>Backup restore crash fixed, conflict resolution data loss prevented</li>
+          <li>Safe deletion paths for donation records with external storage</li>
+          <li>IRS threshold-gated donation confirmation for required tax documentation</li>
+          <li>CSV import now runs asynchronously with cancel and progress indicator</li>
         </ul>
 
-        <h3>Still Worth Testing from Earlier Builds</h3>
+        <h3>Visual Polish</h3>
         <ul>
-          <li><strong>Dashboard:</strong> Refreshed icon set, warranty expiry dates, tile navigation</li>
-          <li><strong>Repair Advisor:</strong> Try with damaged items, look for confidence levels and data-driven recommendations</li>
+          <li>Category colors: all 25 product categories now have distinct colorblind-safe card colors</li>
+          <li>Insights card pattern applied consistently across 16 files (solid color backgrounds, white text, translucent icon circles)</li>
+          <li>New app icon</li>
+          <li>Adaptive font scaling for macOS desktop readability</li>
+          <li>Multi-photo library picker: select multiple photos at once for Scout or item attachments</li>
+        </ul>
+
+        <h3>Reliability</h3>
+        <ul>
+          <li>Device-only crash on item detail view fixed</li>
+          <li>Widget deep-links now route correctly to app sections</li>
+          <li>CloudKit sync improvements: 6 missing relationships now sync, edit propagation between devices fixed</li>
+          <li>PDF export runs asynchronously (no longer blocks the UI)</li>
+        </ul>
+      </div>
+
+      <!-- PREVIOUS BUILD -->
+      <div class="card">
+        <h2 style="margin-top:0">Still Worth Testing from Build 30</h2>
+        <ul>
+          <li><strong>Acquisition Types:</strong> Record how you got each item (Purchased, Inherited, Gifted, Found) with forms that adapt dynamically</li>
+          <li><strong>Scan Depth Options:</strong> Try Quick ID, With Pricing, and Full Appraisal in Stuff Scout</li>
           <li><strong>Encrypted Backups:</strong> Settings → Backup → toggle "Encrypt with password"</li>
           <li><strong>Send to Apps:</strong> Tap Notes, Calendar, or Reminders chips on any item</li>
-          <li><strong>Scan Depth Options:</strong> Try Quick ID, With Pricing, and Full Appraisal in Stuff Scout</li>
+          <li><strong>Repair Advisor:</strong> Try with damaged items, look for confidence levels and data-driven recommendations</li>
           <li><strong>Data Tools:</strong> Data Cleanup, Batch Categorize, Bulk Price Update</li>
+          <li><strong>App Attest:</strong> AI requests are cryptographically attested to originate from a genuine Stuffolio installation</li>
         </ul>
       </div>
 
@@ -347,10 +380,14 @@
         <h3>AI Features</h3>
         <ul class="checklist">
           <li>Use Stuff Scout to identify an item from photo</li>
-          <li>Test Scan Depth: Quick ID (~15s)</li>
-          <li>Test Scan Depth: With Pricing (~25s)</li>
-          <li>Test Scan Depth: Full Appraisal (~40s)</li>
-          <li>Refine Scout results with additional details</li>
+          <li>Test Scan Depth: Quick ID (~15s), With Pricing (~35s), Full Appraisal (~55s)</li>
+          <li>Test the confidence gate: confirm, refine, or retry after a scan</li>
+          <li>Refine with story-first context: type a narrative about the item, then optionally add structured details</li>
+          <li>Test with specific facts (e.g., "Made by Homer Laughlin, pattern K45N5") and verify the AI uses them</li>
+          <li>Test with speculative context (e.g., "I think it might be from the 1940s") and verify the AI treats it as a hypothesis</li>
+          <li>Check refinement history: does each round show how the identification improved?</li>
+          <li>Check research tips: do they include relevant subreddits, forums, and databases for your item type?</li>
+          <li>Select multiple photos from library for a single Scout scan</li>
           <li>Use AI Product Assistant for manual/parts lookup</li>
           <li>Try Current Price query</li>
           <li>Verify AI response caching works offline</li>
@@ -458,7 +495,6 @@
 
         <ul>
           <li><strong>Price Watch charts</strong> — Charts may flicker briefly when first loading on older devices</li>
-          <li><strong>iPad rotation</strong> — Rotating between portrait and landscape can reset navigation state (e.g., the sidebar collapses unexpectedly). This is a known layout issue being addressed for the next build.</li>
           <li><strong>Offline AI caching</strong> — Cached responses occasionally show stale provider info</li>
           <li><strong>Go To on macOS</strong> — Some features already had direct access on macOS; Go To improvements primarily affect iOS</li>
         </ul>
