@@ -3,22 +3,22 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>What's New — Stuffolio Changelog</title>
-  <meta name="description" content="See what's new in Stuffolio. Version history, new features, improvements, and bug fixes for each release." />
+  <title>What's New — Stuffolio</title>
+  <meta name="description" content="See what's new in Stuffolio. New features, improvements, and fixes in each release." />
   <meta name="theme-color" content="#0b1220" />
 
   <!-- Open Graph / Social Sharing -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://stuffolio.app/whats-new.html" />
-  <meta property="og:title" content="What's New — Stuffolio Changelog" />
-  <meta property="og:description" content="See what's new in Stuffolio. Version history, new features, improvements, and bug fixes." />
+  <meta property="og:title" content="What's New — Stuffolio" />
+  <meta property="og:description" content="See what's new in Stuffolio. New features, improvements, and fixes." />
   <meta property="og:image" content="https://stuffolio.app/assets/og-image.png" />
   <meta property="og:site_name" content="Stuffolio" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="What's New — Stuffolio Changelog" />
-  <meta name="twitter:description" content="See what's new in Stuffolio. Version history, new features, improvements, and bug fixes." />
+  <meta name="twitter:title" content="What's New — Stuffolio" />
+  <meta name="twitter:description" content="See what's new in Stuffolio. New features, improvements, and fixes." />
   <meta name="twitter:image" content="https://stuffolio.app/assets/og-image.png" />
 
   <!-- Canonical URL -->
@@ -153,7 +153,6 @@
     .change-category.new h4 { color: #22c55e; }
     .change-category.improved h4 { color: #3b82f6; }
     .change-category.fixed h4 { color: #f59e0b; }
-    .change-category.changed h4 { color: #a78bfa; }
 
     .change-category ul {
       margin: 0;
@@ -251,7 +250,7 @@
     <header>
       <a href="index.html" class="site-title">Stuffolio</a>
       <div class="header-right">
-        <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+        <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
 
         <nav>
           <a href="index.html">Home</a>
@@ -262,7 +261,6 @@
               <a href="quick-start.html">Quick Start</a>
               <a href="Stuffolio_Users_Manual.html">User Manual</a>
               <a href="whats-new.html" aria-current="page">What's New</a>
-              <a href="app-map.html">App Map</a>
             </div>
           </div>
           <a href="compare.html">Compare</a>
@@ -277,15 +275,15 @@
         </nav>
 
         <button class="search-toggle" aria-label="Search documentation">
-          <span class="search-icon">🔍</span>
+          <span class="search-icon">&#128269;</span>
           <span class="search-label">Search</span>
-          <kbd class="search-kbd">⌘K</kbd>
+          <kbd class="search-kbd">&#8984;K</kbd>
         </button>
 
         <div class="theme-toggle">
-          <span class="theme-icon">☀️</span>
+          <span class="theme-icon">&#9728;&#65039;</span>
           <button class="theme-toggle-switch" id="themeToggle" aria-label="Toggle light/dark mode"></button>
-          <span class="theme-icon">🌙</span>
+          <span class="theme-icon">&#127769;</span>
         </div>
       </div>
     </header>
@@ -293,16 +291,16 @@
     <main id="main">
       <nav class="breadcrumbs" aria-label="Breadcrumb">
         <a href="index.html">Home</a>
-        <span class="separator">›</span>
+        <span class="separator">&#8250;</span>
         <a href="quick-start.html">Docs</a>
-        <span class="separator">›</span>
+        <span class="separator">&#8250;</span>
         <span class="current">What's New</span>
       </nav>
 
       <div class="card">
         <div class="hero-intro">
           <h1>What's New</h1>
-          <p class="tagline">Version history and changelog for Stuffolio. See new features, improvements, and fixes in each release.</p>
+          <p class="tagline">New features, improvements, and fixes in each Stuffolio release.</p>
         </div>
 
         <!-- SYNC:CURRENT_VERSION -->
@@ -314,7 +312,6 @@
         <!-- /SYNC:CURRENT_VERSION -->
 
         <div class="quick-links">
-          <a href="beta-testing-guide.html">Testing Guide</a>
           <a href="support.html">Report an Issue</a>
           <a href="features.html">All Features</a>
         </div>
@@ -330,51 +327,44 @@
           </div>
 
           <p class="release-summary">
-            Acquisition type tracking, Scout report sharing, adaptive macOS fonts, and a massive data reliability push. CloudKit sync coverage jumped from 21% to 81%, CSV round-trip from 31% to 78%, and the entire UI got a visual refresh with the Insights card pattern.
+            Record how you got each item, share Scout reports, better Mac readability, and much more reliable sync across devices.
           </p>
 
           <div class="highlight-change">
             <p class="label">Highlight</p>
-            <p><strong>Acquisition Type Tracking</strong> -- Record how you got each item: Purchased New, Purchased Used, Inherited, Gifted, Found/Salvaged. Form labels and fields adapt dynamically -- gifts hide the price field, inherited items show provenance options.</p>
-          </div>
-
-          <div class="highlight-change">
-            <p class="label">Highlight</p>
-            <p><strong>CloudKit Sync 81%</strong> -- Sync coverage expanded from 18 to 69 fields. Extended warranties, coverage tiers, and maintenance tasks now sync across devices. Edits propagate reliably between iPhone, iPad, and Mac.</p>
+            <p><strong>Acquisition Type Tracking</strong> -- Record how you got each item: Purchased New, Purchased Used, Inherited, Gifted, or Found. Form labels adapt automatically so gift entries hide the price field and inherited items show provenance options.</p>
           </div>
 
           <div class="change-category new">
             <h4>New</h4>
             <ul>
-              <li><strong>Acquisition Type Tracking</strong> -- 6 types (Purchased New/Used, Inherited, Gifted, Found/Salvaged) with dynamic form labels that adapt per type</li>
-              <li><strong>Scout Report Sharing</strong> -- Save all text fields from Stuff Scout results, copy buttons on each section, full report export for sharing</li>
-              <li><strong>Adaptive macOS Fonts</strong> -- Bumped small fonts for desktop readability so Mac users don't squint at tiny text</li>
-              <li><strong>Cost Basis Tracking</strong> -- Track additional costs beyond purchase price, see total investment, "great find" detection for items acquired below market value</li>
-              <li><strong>Coverage Insights</strong> -- Insured value field on warranties, stale replacement cost detection alerts you when coverage may be outdated</li>
+              <li><strong>Acquisition Types</strong> -- 6 ways to record how you got an item, with form labels that adapt to each type</li>
+              <li><strong>Share Scout Reports</strong> -- Save and share Stuff Scout identification results with copy buttons on each section</li>
+              <li><strong>Better Mac Readability</strong> -- Larger fonts on Mac so you can read comfortably at desktop distance</li>
+              <li><strong>Cost Basis Tracking</strong> -- Track additional costs beyond purchase price and see your total investment</li>
+              <li><strong>Coverage Insights</strong> -- See if your warranty coverage amount has fallen behind replacement costs</li>
             </ul>
           </div>
 
           <div class="change-category improved">
             <h4>Improvements</h4>
             <ul>
-              <li><strong>CloudKit Sync Coverage</strong> -- Expanded from 21% to 81% (18 to 69 fields). Extended warranties, coverage tiers, and maintenance tasks now sync</li>
-              <li><strong>CSV Round-Trip</strong> -- Import/export coverage expanded from 31% to 78% with 9 new columns and 16 round-trip tests</li>
-              <li><strong>Widget Deep Links</strong> -- Tapping widgets now routes correctly to the relevant app section</li>
-              <li><strong>Visual Refresh</strong> -- Insights card pattern (solid category colors, white text, translucent icon circles) applied across 16+ files</li>
-              <li><strong>Accessibility</strong> -- Non-semantic yellow replaced with sf3aYellow for better colorblind contrast throughout the app</li>
-              <li><strong>Scout Valuations</strong> -- Stuff Scout value estimates now automatically flow to market price records</li>
+              <li><strong>Better Sync</strong> -- More of your data now syncs across iPhone, iPad, and Mac, including extended warranties and maintenance tasks</li>
+              <li><strong>Better Import/Export</strong> -- CSV files now carry more of your data when moving between apps</li>
+              <li><strong>Widget Links</strong> -- Tapping widgets now takes you to the right place in the app</li>
+              <li><strong>Visual Refresh</strong> -- Bolder, more colorful cards and sections throughout the app</li>
+              <li><strong>Better Color Accessibility</strong> -- Improved contrast for users with color vision differences</li>
+              <li><strong>Scout Values</strong> -- Value estimates from Stuff Scout now automatically appear in Price Watch</li>
             </ul>
           </div>
 
           <div class="change-category fixed">
             <h4>Bug Fixes</h4>
             <ul>
-              <li><strong>Sync Reliability</strong> -- Fixed edit propagation between devices, resolved sync ghost items and orphaned records</li>
-              <li><strong>Backup Data Safety</strong> -- Fixed coverage tier links lost on restore, beneficiary backup gaps, donation ID tracking</li>
-              <li><strong>SafeDeletionManager</strong> -- Fixed crash on aged iCloud data with nil deletion dates</li>
-              <li><strong>iPhone Navigation</strong> -- Non-tab sidebar sections now present correctly as sheets</li>
-              <li><strong>Time Bomb Fixes</strong> -- 3 deferred operations that would crash on aged data identified and fixed</li>
-              <li><strong>Settings Icon Styling</strong> -- Fixed inconsistent icon styling on macOS Settings view</li>
+              <li><strong>Sync Reliability</strong> -- Edits now propagate more reliably between devices</li>
+              <li><strong>Backup Safety</strong> -- Improved data preservation when restoring from backups</li>
+              <li><strong>iPhone Navigation</strong> -- Fixed some sections not opening correctly on iPhone</li>
+              <li><strong>Long-Term Stability</strong> -- Fixed issues that could appear after using the app for extended periods</li>
             </ul>
           </div>
         </div>
@@ -390,61 +380,40 @@
           </div>
 
           <p class="release-summary">
-            Inline AI alternatives in Repair/Keep/Replace, improved photo collection UX, and 3 waves of workflow audit fixes. The decision tool now fetches product alternatives directly in the view with an animated progress indicator. Adding photos is clearer with contextual button labels and a 5-photo limit.
+            Smarter product replacement recommendations and a better photo-adding experience.
           </p>
 
           <div class="highlight-change">
             <p class="label">Highlight</p>
-            <p><strong>Inline AI Alternatives</strong> — Repair, Keep, or Replace now fetches alternative product recommendations directly in the decision view with an animated progress indicator. No need to leave the screen to research options.</p>
+            <p><strong>Smarter Replacement Suggestions</strong> -- Repair, Keep, or Replace now shows alternative product recommendations right in the decision view, so you can research options without leaving the screen.</p>
           </div>
 
-          <div class="highlight-change">
-            <p class="label">Highlight</p>
-            <p><strong>Better Photo Collection</strong> — After selecting your first photo, the Add Item flow now shows contextual button labels ("Capture another angle"), a photo count badge (1 of 5), and moves the Continue button below the add-more options for a natural flow.</p>
-          </div>
-
-          <!-- SYNC:TESTFLIGHT_CHANGES -->
           <div class="change-category new">
             <h4>New</h4>
             <ul>
-              <li><strong>Inline AI Alternatives</strong> — Repair, Keep, or Replace fetches product alternatives inline with an animated progress indicator showing search phases. Includes source attribution and "Ask More Questions" fallback to the full AI assistant</li>
-              <li><strong>find_alternatives Backend Endpoint</strong> — New Cloudflare Worker query type with Brave/Tavily/Exa provider chain for product alternative recommendations</li>
+              <li><strong>Inline Alternatives</strong> -- See replacement product suggestions while deciding whether to repair, keep, or replace an item</li>
             </ul>
           </div>
 
           <div class="change-category improved">
             <h4>Improvements</h4>
             <ul>
-              <li><strong>Photo Collection UX</strong> — Dynamic subtitle shows photo count, contextual button labels after first photo, prominent "Add More Photos" section header, and 5-photo max enforced client-side</li>
-              <li><strong>Recall History Persistence</strong> — Recall check results now persist in UserDefaults with JSON encoding and deduplication by recall number</li>
-              <li><strong>Onboarding Scroll Fix</strong> — FirstItemSuccessView wrapped in ScrollView to prevent buttons going off-screen at large Dynamic Type sizes</li>
-              <li><strong>Delete Affordances</strong> — Visible delete buttons with confirmations added to Depreciation Tracking, Social Media Links, and RMA views</li>
+              <li><strong>Photo Collection</strong> -- Clearer guidance when adding multiple photos, with a count badge and contextual button labels</li>
+              <li><strong>Recall History</strong> -- Previously checked recall results are now saved for offline reference</li>
+              <li><strong>Accessibility</strong> -- Fixed buttons going off-screen at large text sizes</li>
+              <li><strong>Delete Confirmations</strong> -- Added visible delete buttons with safety confirmations in more places</li>
             </ul>
           </div>
 
           <div class="change-category fixed">
             <h4>Bug Fixes</h4>
             <ul>
-              <li><strong>Photo Library Selection</strong> — Fixed second photo not being added when using "Choose from Library" in collection mode. Added missing onChange handler and reset selectedPhotoItem after processing</li>
-              <li><strong>Spotlight Performance</strong> — Fixed O(n) full table scan in Spotlight indexing</li>
-              <li><strong>Handoff Bug</strong> — Fixed stale itemID in Handoff causing wrong item to open on other devices</li>
-              <li><strong>Deep Link Failures</strong> — Fixed silent deep link failures with proper fallback handling</li>
-              <li><strong>Orphaned Photos</strong> — Fixed orphaned photo attachments and conflict matching in sync</li>
-              <li><strong>Race Conditions</strong> — Fixed sync ghost items, orphaned loans, and concurrent access issues</li>
+              <li>Fixed second photo not being added when choosing from library</li>
+              <li>Improved Spotlight search performance</li>
+              <li>Fixed wrong item opening when using Handoff between devices</li>
+              <li>Fixed deep links sometimes not opening the correct screen</li>
             </ul>
           </div>
-
-          <div class="change-category changed">
-            <h4>Under the Hood</h4>
-            <ul>
-              <li><strong>Workflow Audit</strong> — 3 waves of systematic workflow fixes across navigation, data wiring, and UX dead ends</li>
-              <li><strong>Bug Prospector</strong> — Deep analysis pass finding and fixing assumption bugs, state machine issues, and error path gaps</li>
-              <li><strong>Swift Testing</strong> — New tests use Swift Testing framework (#expect, @Test, @Suite). 10 new unit tests for AI alternatives</li>
-              <li><strong>SwiftUI Modernization</strong> — SwiftData predicate safety, CloudKit model defaults, concurrency fixes</li>
-              <li><strong>Dead Code Removal</strong> — Removed 24 dead code items across 15 files (~265 lines) plus 7 dead files (~2k lines)</li>
-            </ul>
-          </div>
-          <!-- /SYNC:TESTFLIGHT_CHANGES -->
         </div>
       </div>
 
@@ -458,60 +427,38 @@
           </div>
 
           <p class="release-summary">
-            Dashboard redesign, accessibility overhaul, solid-color icons app-wide, and pre-release hardening. The Dashboard gets a fresh layout with an improved search prompt and Customize shortcut. Go To now covers more features and opens them directly. Dynamic Type, Keychain security, and performance improvements across the board.
+            Dashboard redesign, accessibility improvements, and pre-release polish.
           </p>
 
           <div class="change-category new">
             <h4>New</h4>
             <ul>
-              <li><strong>Dashboard Redesign</strong> — Rebuilt Dashboard layout with a tappable search prompt, a visible Customize shortcut, and cleaner card organization throughout</li>
-              <li><strong>Smarter Repair Advisor</strong> — Repair, Keep, or Replace now uses your actual item data — age, warranty status, condition, brand — for more accurate recommendations with clear confidence levels</li>
-              <li><strong>Direct AppleCare+ Editing</strong> — Edit AppleCare+ details (incidents used, service fees, coverage dates) without opening the full item editor. Single Apple-product users skip the picker entirely</li>
-              <li><strong>Enhancements in Settings</strong> — A new Enhancements section in Settings surfaces subscription features in context. Sharing settings now visible alongside other categories</li>
-              <li><strong>iCloud Sync in Empty State</strong> — Empty inventory screen now offers a one-tap option to turn on iCloud Sync</li>
+              <li><strong>Dashboard Redesign</strong> -- Fresh layout with a search prompt and Customize shortcut</li>
+              <li><strong>Smarter Repair Advisor</strong> -- Uses your actual item data for more accurate Repair, Keep, or Replace recommendations</li>
+              <li><strong>Direct AppleCare+ Editing</strong> -- Edit AppleCare+ details without opening the full item editor</li>
+              <li><strong>iCloud Sync in Empty State</strong> -- One-tap option to turn on iCloud Sync when your inventory is empty</li>
             </ul>
           </div>
 
           <div class="change-category improved">
             <h4>Improvements</h4>
             <ul>
-              <li><strong>Colorblind-Friendly Icons</strong> — Icons throughout the app use distinct, solid colors following Apple HIG guidelines. Categories, conditions, and statuses are visually distinct for everyone</li>
-              <li><strong>Shortcuts Grid (iPad &amp; Mac)</strong> — Feature shortcuts now display in a 4-column grid on iPad and Mac for a denser, more efficient layout</li>
-              <li><strong>macOS Theme Toggle</strong> — Light/Dark theme switch is now available directly in the Mac Dashboard header — no trip to Settings required</li>
-              <li><strong>Dynamic Type</strong> — All text throughout the app now respects your preferred text size. Works with the smallest to largest accessibility sizes</li>
-              <li><strong>Go To Navigation</strong> — More features are registered in Go To (⌘K / spotlight), and every result opens its feature directly — no more intermediate pages</li>
-              <li><strong>Legacy Wishes</strong> — Fixed cross-context deletion, added confirmation for bulk operations, and improved iPad rotation handling</li>
-              <li><strong>Consistent Keyboard Dismiss</strong> — Added keyboard dismiss controls to 8+ views that were missing them, using a consistent chevron-icon pattern</li>
-              <li><strong>Sheet Hero Headers</strong> — 7 feature sheets now open with a coloured hero header for a more polished, contextual feel</li>
-              <li><strong>Touch Targets</strong> — Selection card tap areas fixed throughout the app so every card responds reliably</li>
-              <li><strong>Faster Photo Loading</strong> — Item photos load in the background for smoother scrolling</li>
-              <li><strong>Better iCloud Sync</strong> — Duplicate prevention improved; photo syncing is more reliable</li>
+              <li><strong>Color Accessibility</strong> -- Distinct, solid-color icons throughout the app for better visibility</li>
+              <li><strong>Dynamic Type</strong> -- All text respects your preferred text size, from smallest to largest</li>
+              <li><strong>Go To Navigation</strong> -- More features registered and every result opens its destination directly</li>
+              <li><strong>Mac Theme Toggle</strong> -- Light/Dark switch available directly in the Dashboard header on Mac</li>
+              <li><strong>Faster Photo Loading</strong> -- Photos load in the background for smoother scrolling</li>
+              <li><strong>Better iCloud Sync</strong> -- Improved duplicate prevention and photo syncing</li>
             </ul>
           </div>
 
           <div class="change-category fixed">
             <h4>Bug Fixes</h4>
             <ul>
-              <li><strong>Pre-Release Hardening</strong> — Fixed async I/O safety, file protection on sensitive files, backup exclusion for non-user-data files, and CKAsset cleanup on delete</li>
-              <li><strong>Bulk Delete Recovery</strong> — Improved recovery UX when deleting multiple items, preventing data loss on interruption</li>
-              <li><strong>Memory Leaks</strong> — Fixed closure-capture leaks in banner notifications and a macOS observer token</li>
-              <li><strong>Silent Failures</strong> — Cache clear and rescan operations now surface errors instead of failing silently</li>
-              <li><strong>Item Deletion Crashes</strong> — Fixed crashes when deleting items with photos or attachments</li>
-              <li><strong>iCloud Sync Duplicates</strong> — Resolved issue causing duplicate items on other devices after sync</li>
-              <li><strong>Scout Results Dismiss</strong> — Fixed dismiss button not responding after viewing Stuff Scout results</li>
-            </ul>
-          </div>
-
-          <div class="change-category changed">
-            <h4>Under the Hood</h4>
-            <ul>
-              <li><strong>Keychain Security</strong> — Email addresses and phone numbers moved from UserDefaults to Keychain for secure storage</li>
-              <li><strong>iCloud Sync Rewrite</strong> — Sync engine reorganised into focused modules for better reliability</li>
-              <li><strong>Performance</strong> — Replaced DateFormatter/NumberFormatter allocations with Swift FormatStyle for fewer background allocations</li>
-              <li><strong>Architecture</strong> — Migrated several managers (LiveActivity, QuickAdd, SectionPosition) to @Observable for cleaner state management</li>
-              <li><strong>Networking Hardening</strong> — Improved error visibility for Codable parsing failures; added timeout handling</li>
-              <li><strong>Expanded Test Coverage</strong> — 5,068 of 5,073 unit tests now pass. Tests added for Dashboard components, Repair/Keep/Replace logic, and more</li>
-              <li><strong>Code Cleanup</strong> — Removed unused dead code (ScoutBookmarkManager, VersionedSchema migration), simplified guard-let patterns</li>
+              <li>Improved bulk delete recovery to prevent data loss on interruption</li>
+              <li>Fixed crashes when deleting items with photos or attachments</li>
+              <li>Resolved duplicate items appearing on other devices after sync</li>
+              <li>Fixed dismiss button not responding after viewing Stuff Scout results</li>
             </ul>
           </div>
         </div>
@@ -527,28 +474,18 @@
           </div>
 
           <p class="release-summary">
-            Stuff Scout linkage: Items added via Stuff Scout now show a "View Scout Results" button. Plus simplified onboarding, enhanced family sharing safety, and optional encrypted backups.
+            See your original Scout results from any item, simpler onboarding, and new bulk tools.
           </p>
 
           <div class="change-category new">
-            <h4>New Features</h4>
+            <h4>New</h4>
             <ul>
-              <li><strong>View Scout Results from Items</strong> — Items added via Stuff Scout show a "View Scout Results" button to see the original identification and valuation without re-scanning</li>
-              <li><strong>Expanded Siri Shortcuts</strong> — 7 new voice commands: "What's my inventory worth?", "Show maintenance due", "Get items by category", and more</li>
-              <li><strong>Simplified Onboarding</strong> — New "Set Up Your Experience" screen with 3 simple toggles (AI, Online Lookups, iCloud Sync) — all ON by default</li>
-              <li><strong>Encrypted Backups</strong> — Optional password protection for backup files</li>
-              <li><strong>Family Sharing Deletion Safety</strong> — Only the item creator or household Admin can delete shared items</li>
-              <li><strong>Scan Depth Options</strong> — Choose Quick ID (~15s), With Pricing (~25s), or Full Appraisal (~40s)</li>
-              <li><strong>Data Cleanup, Batch Categorize, Bulk Price Update</strong> — New tools to organize and update your inventory in bulk</li>
-              <li><strong>Photo Optimizer</strong> — Reduce photo storage size while keeping quality</li>
-            </ul>
-          </div>
-
-          <div class="change-category fixed">
-            <h4>Bug Fixes</h4>
-            <ul>
-              <li><strong>iCloud Sync Performance</strong> — Faster, more reliable syncing with better error recovery</li>
-              <li><strong>App Store Compliance</strong> — Resolved patterns that could cause App Store rejection</li>
+              <li><strong>View Scout Results</strong> -- Items added via Stuff Scout now show a button to revisit the original identification</li>
+              <li><strong>Siri Shortcuts</strong> -- 7 voice commands including "What's my inventory worth?" and "Show expiring warranties"</li>
+              <li><strong>Simpler Onboarding</strong> -- 3 simple toggles to set up your experience</li>
+              <li><strong>Encrypted Backups</strong> -- Optional password protection for your backup files</li>
+              <li><strong>Scan Depth Options</strong> -- Choose Quick ID, With Pricing, or Full Appraisal when scanning items</li>
+              <li><strong>Bulk Tools</strong> -- Data Cleanup, Batch Categorize, and Bulk Price Update</li>
             </ul>
           </div>
         </div>
@@ -564,32 +501,12 @@
           </div>
 
           <p class="release-summary">
-            New "Send to Apps" feature for seamless integration with Apple Notes, Calendar, and Reminders. Quickly create warranty events, maintenance reminders, and notes from any item.
+            Send item details to Apple Notes, Calendar, and Reminders with one tap.
           </p>
 
           <div class="highlight-change">
             <p class="label">Highlight</p>
-            <p><strong>Send to Apps</strong> — Tap Notes, Calendar, or Reminders chips to quickly send item details to Apple's built-in apps. Perfect for creating warranty expiration events, maintenance reminders, or detailed notes about your items.</p>
-          </div>
-
-          <div class="change-category new">
-            <h4>New Features</h4>
-            <ul>
-              <li><strong>Send to Apps Bar</strong> — New component in item detail views and add/edit forms for quick system app integration</li>
-              <li><strong>Apple Notes Integration</strong> — Send item title, brand, and model to Notes for detailed note-taking</li>
-              <li><strong>Calendar Integration</strong> — Create warranty expiration events with item context pre-filled</li>
-              <li><strong>Reminders Integration</strong> — Add maintenance tasks or follow-up reminders with one tap</li>
-              <li><strong>Quick Links in Tools</strong> — Access Notes, Calendar, and Reminders from the Tools tab</li>
-            </ul>
-          </div>
-
-          <div class="change-category improved">
-            <h4>Improvements</h4>
-            <ul>
-              <li><strong>Clipboard Integration</strong> — Item details automatically copied for easy pasting in destination apps</li>
-              <li><strong>Haptic Feedback</strong> — Tactile confirmation when sending to apps</li>
-              <li><strong>Toast Notifications</strong> — Clear feedback confirming action taken</li>
-            </ul>
+            <p><strong>Send to Apps</strong> -- Create warranty expiration events, maintenance reminders, or detailed notes about your items by tapping Notes, Calendar, or Reminders chips.</p>
           </div>
         </div>
       </div>
@@ -603,25 +520,14 @@
             <span class="release-tag beta">Beta</span>
           </div>
 
-          <p class="release-summary">
-            Bug fixes and polish following the Add Item flow redesign. Improved Quick Find, fixed iOS overlay issues, and enhanced overall stability.
-          </p>
+          <p class="release-summary">Bug fixes and polish following the Add Item redesign.</p>
 
           <div class="change-category fixed">
             <h4>Bug Fixes</h4>
             <ul>
-              <li><strong>Quick Find</strong> — Fixed search functionality for more reliable and consistent results</li>
-              <li><strong>Add Item Overlays (iOS)</strong> — Tips and Quick Start overlays now correctly show and hide based on context</li>
-              <li><strong>Keyboard Dismissal (iOS)</strong> — Further improvements to keyboard dismiss behavior when scrolling forms</li>
-              <li><strong>Error handling</strong> — Fixed various error conditions for improved stability</li>
-            </ul>
-          </div>
-
-          <div class="change-category improved">
-            <h4>Improvements</h4>
-            <ul>
-              <li><strong>UI Polish</strong> — Visual refinements throughout the app for a more consistent experience</li>
-              <li><strong>iOS Platform Fixes</strong> — Platform-specific improvements for iPhone and iPad</li>
+              <li>Improved Quick Find search reliability</li>
+              <li>Fixed overlay display issues on iPhone</li>
+              <li>Better keyboard dismiss behavior when scrolling</li>
             </ul>
           </div>
         </div>
@@ -636,60 +542,16 @@
             <span class="release-tag beta">Beta</span>
           </div>
 
-          <p class="release-summary">
-            Simplified Add Item experience with just 3 clear options. Optimistic AI loading shows the form instantly while analysis runs in the background.
-          </p>
+          <p class="release-summary">Simplified Add Item with just 3 clear options.</p>
 
           <div class="highlight-change">
             <p class="label">Highlight</p>
-            <p><strong>Simplified Add Item Flow</strong> — No more confusion! Choose from just 3 options: <strong>Photo</strong> (AI identifies automatically), <strong>Barcode</strong> (scan UPC), or <strong>Manual</strong> (enter yourself). Clean card-based UI makes the choice obvious.</p>
-          </div>
-
-          <div class="highlight-change">
-            <p class="label">New</p>
-            <p><strong>Optimistic AI Loading</strong> — Take a photo and the form appears <em>instantly</em>. AI analyzes in the background and fields fill in automatically as results arrive. No more waiting 15-30 seconds — start editing immediately!</p>
-          </div>
-
-          <div class="highlight-change">
-            <p class="label">Beta Testers</p>
-            <p><strong>Unlimited AI Access</strong> — Beta testers now have unlimited AI queries for testing. No need to worry about trial limits while helping us improve Stuffolio.</p>
-          </div>
-
-          <div class="change-category new">
-            <h4>New Features</h4>
-            <ul>
-              <li><strong>3-Option Add Item Chooser</strong> — Photo, Barcode, or Manual — that's it</li>
-              <li><strong>Card-Based UI</strong> — Visual card grid makes options clear at a glance</li>
-              <li><strong>Optimistic Form Loading</strong> — Form appears immediately after photo capture</li>
-              <li><strong>Progressive Field Population</strong> — AI results animate into fields as they arrive</li>
-              <li><strong>Beta Tester AI Override</strong> — TestFlight users get unlimited AI access</li>
-            </ul>
-          </div>
-
-          <div class="change-category improved">
-            <h4>Changes</h4>
-            <ul>
-              <li><strong>Removed "Something I just got" / "Something I already have"</strong> — Distinction wasn't helpful; use purchase date in form instead</li>
-              <li><strong>Removed "Use Stuff Scout AI" option</strong> — AI now runs automatically for subscribers when using Photo</li>
-              <li><strong>Moved "Record a donation"</strong> — Now accessible via Dispose Of → Donate (where it logically belongs)</li>
-              <li><strong>Moved "Multiple identical items"</strong> — Use quantity field in the form instead</li>
-              <li><strong>AI messaging based on access</strong> — Photo flow shows accurate messaging: "AI will identify your item" for subscribers/beta testers, or "Add a photo of your item" for others</li>
-            </ul>
-          </div>
-
-          <div class="change-category fixed">
-            <h4>Bug Fixes</h4>
-            <ul>
-              <li><strong>Photo handoff from library</strong> — Photos selected from library now properly appear in the Add Item form immediately</li>
-              <li><strong>Keyboard dismiss on scroll</strong> — Keyboard now dismisses immediately when scrolling the form (was delayed ~30 seconds)</li>
-              <li><strong>Cleaner photo flow</strong> — Tips and Quick Start overlays automatically hide when photos are already added, giving you a clear view of your item</li>
-              <li><strong>Images section auto-expand</strong> — When adding items via photo, the Images section now automatically expands to show your photo</li>
-            </ul>
+            <p><strong>Simplified Add Item</strong> -- Choose Photo (AI identifies automatically), Barcode (scan UPC), or Manual (enter yourself). The form appears instantly after taking a photo while AI works in the background.</p>
           </div>
         </div>
       </div>
 
-      <!-- PREVIOUS RELEASE -->
+      <!-- BUILD 21 -->
       <div class="card">
         <div class="release">
           <div class="release-header">
@@ -699,224 +561,109 @@
           </div>
 
           <p class="release-summary">
-            Major new features: Household Sharing with real-time sync, and Price Watch to see how inflation affects what you own. Plus enhanced AI integrations and improved barcode scanning.
+            Household Sharing and Price Watch.
           </p>
 
           <div class="highlight-change">
             <p class="label">Highlight</p>
-            <p><strong>Household Sharing — Real-Time Collaboration</strong> — Create a household and invite family members. Share appliances, vehicles, and electronics with real-time sync across all devices. See who added each item, resolve conflicts when edits overlap, and work offline with automatic sync when back online.</p>
+            <p><strong>Household Sharing</strong> -- Create a household and invite family members. Share appliances, vehicles, and electronics with real-time sync. See who added each item and resolve conflicts when edits overlap.</p>
           </div>
 
           <div class="highlight-change">
             <p class="label">Also New</p>
-            <p><strong>Price Watch — See How Inflation Affects What You Own</strong> — That mixer you paid $350 for might cost $550 to replace today. Track current market prices, view price history charts, and get alerts when prices drop. Essential for insurance documentation and understanding the real cost of your belongings.</p>
-          </div>
-
-          <div class="highlight-change">
-            <p class="label">New</p>
-            <p><strong>Smart Auto-Fill — AI-Discovered Resources</strong> — When you use the AI Assistant's "Maker Website" query, discovered URLs can now be saved directly to your product. Manufacturer websites, support pages, and documentation links are captured with one tap. A new Resources section appears in item details only when URLs have been saved (progressive disclosure).</p>
-          </div>
-
-          <div class="highlight-change">
-            <p class="label">New</p>
-            <p><strong>Component-Based Warranties</strong> — Some products have different warranty periods per component. Track 3 years on batteries and 5 years on tools for brands like EGO Power+, DeWalt, and more. Coverage Phases is now a top-level section available when adding new items (not just editing).</p>
-          </div>
-
-          <div class="highlight-change">
-            <p class="label">New</p>
-            <p><strong>Legacy Wishes Family Sharing</strong> — Share your Legacy Wishes with family via CloudKit. Real-time sync, offline support, and conflict detection when multiple family members express interest in the same item. Family members can now indicate preferences ("I'd like this" / "I don't need this") to help you make decisions.</p>
+            <p><strong>Price Watch</strong> -- Track current market prices for your items. See how replacement costs change over time, view price history, and get alerts when prices drop.</p>
           </div>
 
           <div class="change-category new">
-            <h4>New Features</h4>
+            <h4>New</h4>
             <ul>
-              <li><strong>Household Sharing</strong> — Create a shared household; invite family members with Viewer, Editor, or Admin permissions</li>
-              <li><strong>Real-Time Sync</strong> — Changes to shared items sync instantly across all family members' devices</li>
-              <li><strong>Owner Attribution</strong> — See who added each shared item and who last modified it</li>
-              <li><strong>Conflict Resolution</strong> — When two people edit the same item, compare versions and choose what to keep</li>
-              <li><strong>Offline Support for Shared Items</strong> — Edit shared items offline; changes sync automatically when back online</li>
-              <li><strong>Price Watch</strong> — Track current replacement costs for any item. Enable per-item to monitor prices from multiple sources</li>
-              <li><strong>Price History Charts</strong> — Visual timeline showing how prices change over weeks or months</li>
-              <li><strong>Price Drop Alerts</strong> — Set target prices and get notified when items drop below your threshold</li>
-              <li><strong>AI "Current Price" Query</strong> — New AI Assistant query finds current retail prices from Amazon, Walmart, Best Buy, Target, and more</li>
-              <li><strong>Stuff Scout → Price Watch</strong> — When applying Scout results, optionally update Price Watch with marketplace values</li>
-              <li><strong>Barcode → Price Watch</strong> — UPC lookup now returns current retail prices; option to auto-enable Price Watch</li>
-              <li><strong>Dashboard Price Watch Card</strong> — See items with significant price changes at a glance</li>
-              <li><strong>Smart Auto-Fill</strong> — AI discovers manufacturer websites and support page URLs during product research. Save them to your product with one tap. A new Resources section appears in item details only when URLs are populated (progressive disclosure)</li>
-              <li><strong>Component-Based Warranties</strong> — Track different warranty periods for different product components (e.g., 3 years on batteries, 5 years on tools). Category-aware suggestions help you quickly add common components</li>
-              <li><strong>Coverage Phases Discoverability</strong> — Coverage Phases is now a top-level section in the add/edit form (no longer nested inside Warranty). Available when creating new items, not just editing</li>
-              <li><strong>Coverage Phase Help</strong> — New in-form help button explains coverage types, component warranties, and when to use phases</li>
-              <li><strong>Legacy Wishes CloudKit Sharing</strong> — Share your Legacy Wishes with family via iCloud with real-time sync across all devices</li>
-              <li><strong>Legacy Wishes Family Input</strong> — Family members can indicate preferences on items: "I'd like this", "No preference", or "I don't need this"</li>
-              <li><strong>Legacy Wishes Conflict Detection</strong> — When multiple family members express interest in the same item, the owner sees a conflict indicator to help start conversations</li>
-              <li><strong>Legacy Wishes Offline Support</strong> — View and work with shared Legacy Wishes even when offline; changes sync automatically when back online</li>
-            </ul>
-          </div>
-
-          <div class="change-category improved">
-            <h4>Improvements</h4>
-            <ul>
-              <li><strong>Barcode Scanner</strong> — Enhanced product lookup with current retail pricing from major retailers</li>
-              <li><strong>AI Response Caching</strong> — Price lookups cached for offline access; reduced API usage</li>
-              <li><strong>Export Enhancements</strong> — Price Watch history now included in CSV and Excel exports</li>
-              <li><strong>Stuff Scout Value Display</strong> — Clearer presentation of market value ranges with source attribution</li>
-              <li><strong>Warranty Help Updated</strong> — Help content now explains Coverage Phases and component-based warranty support</li>
-              <li><strong>Unified AI Progress</strong> — Consistent progress indicators across all AI features with smooth animations</li>
-              <li><strong>Resource URL Editing</strong> — Long-press any resource link to edit or remove incorrect AI-discovered URLs</li>
-            </ul>
-          </div>
-
-          <div class="change-category fixed">
-            <h4>Bug Fixes</h4>
-            <ul>
-              <li>Fixed Scout comparison view layout issues on smaller screens</li>
-              <li>Resolved issue where AI provider fallback wasn't updating UI correctly</li>
-              <li>Fixed price formatting for non-USD currencies in some locales</li>
+              <li><strong>Household Sharing</strong> -- Invite family with Viewer, Editor, or Admin permissions</li>
+              <li><strong>Price Watch</strong> -- Monitor replacement costs from multiple sources</li>
+              <li><strong>Component Warranties</strong> -- Track different warranty periods for different parts of a product</li>
+              <li><strong>Legacy Wishes Sharing</strong> -- Share your Legacy Wishes with family via iCloud</li>
+              <li><strong>Smart Auto-Fill</strong> -- AI-discovered manufacturer websites and support pages saved to your items with one tap</li>
             </ul>
           </div>
         </div>
+      </div>
+
+      <!-- ARCHIVE TOGGLE -->
+      <div class="archive-toggle">
+        <button id="archiveToggle">Show Earlier Builds</button>
+      </div>
+
+      <!-- ARCHIVED RELEASES -->
+      <div class="archived-releases" id="archivedReleases">
 
         <!-- BUILD 18 -->
-        <div class="release">
-          <div class="release-header">
-            <h2 class="release-version">Version 1.0 (Build 18)</h2>
-            <span class="release-date">January 22, 2026</span>
-            <span class="release-tag beta">Beta</span>
-          </div>
+        <div class="card">
+          <div class="release">
+            <div class="release-header">
+              <h2 class="release-version">Version 1.0 (Build 18)</h2>
+              <span class="release-date">January 22, 2026</span>
+              <span class="release-tag beta">Beta</span>
+            </div>
 
-          <p class="release-summary">
-            This build focuses on improved Stuff Scout refinement, Legacy Wishes integration in the Edit Item view, and numerous UI polish updates across the app.
-          </p>
+            <p class="release-summary">Stuff Scout refinement and Legacy Wishes in the item editor.</p>
 
-          <div class="highlight-change">
-            <p class="label">Highlight</p>
-            <p><strong>Stuff Scout Refinement from Edit View</strong> — Re-analyze existing items using your form data (manufacturer, model, notes) as context. Radio button selection lets you choose what to keep for each field. Adding details you know can dramatically improve valuations.</p>
-          </div>
-
-          <div class="change-category new">
-            <h4>New Features</h4>
-            <ul>
-              <li><strong>Legacy Wishes in Edit Item</strong> — Assign items to beneficiaries directly from the Edit Item view without leaving the form</li>
-              <li><strong>Contingency Recipients</strong> — Set a line of succession for Legacy Wishes. If your primary recipient declines, specify who should receive the item next</li>
-              <li><strong>Stuff Scout Refinement</strong> — Re-analyze items from Edit view with form data as context; choose per-field what to keep</li>
-              <li><strong>Receipt Pairing for Scout Results</strong> — Add receipt photo after Scout identification; store, date, and price auto-fill</li>
-              <li><strong>Clickable Source Links</strong> — Tap source links in Recent Sales to view original marketplace listings</li>
-            </ul>
-          </div>
-
-          <div class="change-category improved">
-            <h4>Improvements</h4>
-            <ul>
-              <li><strong>Scout Result Caching</strong> — Recent Scans now cache last 25 analyses for 30-day offline access</li>
-              <li><strong>Scout Bookmarks</strong> — Swipe right on any scan to save permanently; access saved analyses anytime</li>
-              <li><strong>Entry Mode Selection</strong> — New picker when adding items: "Something I just got", "Something I already have", "Multiple identical items", "Record a donation", or "Use Stuff Scout AI"</li>
-              <li><strong>Approximate Date Toggle</strong> — Mark purchase dates as approximate when you don't know the exact date</li>
-              <li><strong>UI Polish</strong> — Numerous interface improvements throughout the app</li>
-            </ul>
-          </div>
-
-          <div class="change-category fixed">
-            <h4>Bug Fixes</h4>
-            <ul>
-              <li>Fixed issue where warranty phase notifications could be delivered at incorrect times</li>
-              <li>Resolved sync conflict dialog not appearing in certain edge cases</li>
-              <li>Fixed keyboard dismissal behavior on iPad when editing notes</li>
-            </ul>
+            <div class="change-category new">
+              <h4>New</h4>
+              <ul>
+                <li><strong>Re-Analyze Items</strong> -- Run Stuff Scout again on existing items using your added details for better valuations</li>
+                <li><strong>Legacy Wishes in Editor</strong> -- Assign items to beneficiaries directly from the Edit view</li>
+                <li><strong>Contingency Recipients</strong> -- Set a line of succession for Legacy Wishes</li>
+              </ul>
+            </div>
           </div>
         </div>
 
         <!-- BUILD 17 -->
-        <div class="release">
-          <div class="release-header">
-            <h2 class="release-version">Version 1.0 (Build 17)</h2>
-            <span class="release-date">January 15, 2026</span>
-            <span class="release-tag beta">Beta</span>
-          </div>
+        <div class="card">
+          <div class="release">
+            <div class="release-header">
+              <h2 class="release-version">Version 1.0 (Build 17)</h2>
+              <span class="release-date">January 15, 2026</span>
+              <span class="release-tag beta">Beta</span>
+            </div>
 
-          <p class="release-summary">
-            Introduced Apple Wallet warranty cards, RMA tracking, and customer support interaction logging.
-          </p>
+            <p class="release-summary">Apple Wallet warranty cards, RMA tracking, and support interaction logging.</p>
 
-          <div class="change-category new">
-            <h4>New Features</h4>
-            <ul>
-              <li><strong>Apple Wallet Warranty Cards</strong> — Generate Wallet passes for warranties; quick proof of coverage at repair shops</li>
-              <li><strong>RMA & Claim Tracking</strong> — Track warranty claims: RMA numbers, status, shipping labels, timeline</li>
-              <li><strong>Support Interaction Logging</strong> — Log customer service calls: rep names, case numbers, promises, follow-ups</li>
-              <li><strong>Value Snapshots</strong> — Track how inventory value changes over time with automatic snapshots</li>
-              <li><strong>Depreciation Calculator</strong> — Estimate current value based on age and depreciation method</li>
-            </ul>
-          </div>
-
-          <div class="change-category improved">
-            <h4>Improvements</h4>
-            <ul>
-              <li><strong>Warranty Coverage Phases</strong> — Enhanced UI for managing Full → Parts Only → Limited transitions</li>
-              <li><strong>Insurance Profile</strong> — Better coverage gap identification and high-value item flagging</li>
-              <li><strong>Export Options</strong> — Added Excel format; improved PDF layout for insurance documentation</li>
-            </ul>
-          </div>
-
-          <div class="change-category fixed">
-            <h4>Bug Fixes</h4>
-            <ul>
-              <li>Fixed crash when adding warranty with no end date on macOS</li>
-              <li>Resolved iCloud sync delay when adding photos on cellular connection</li>
-              <li>Fixed filter presets not persisting across app restarts</li>
-            </ul>
+            <div class="change-category new">
+              <h4>New</h4>
+              <ul>
+                <li><strong>Apple Wallet Cards</strong> -- Generate Wallet passes for warranties as quick proof of coverage</li>
+                <li><strong>RMA Tracking</strong> -- Track warranty claims with RMA numbers, status, and timeline</li>
+                <li><strong>Support Logging</strong> -- Log customer service calls with rep names, case numbers, and follow-ups</li>
+                <li><strong>Value Snapshots</strong> -- Track how your inventory value changes over time</li>
+              </ul>
+            </div>
           </div>
         </div>
 
         <!-- BUILD 16 -->
-        <div class="release">
-          <div class="release-header">
-            <h2 class="release-version">Version 1.0 (Build 16)</h2>
-            <span class="release-date">January 8, 2026</span>
-            <span class="release-tag beta">Beta</span>
-          </div>
+        <div class="card">
+          <div class="release">
+            <div class="release-header">
+              <h2 class="release-version">Version 1.0 (Build 16)</h2>
+              <span class="release-date">January 8, 2026</span>
+              <span class="release-tag beta">Beta</span>
+            </div>
 
-          <p class="release-summary">
-            Added Siri Shortcuts integration, Audit Mode for inventory verification, and the Duplicate Finder.
-          </p>
+            <p class="release-summary">Siri Shortcuts, Audit Mode, and Duplicate Finder.</p>
 
-          <div class="change-category new">
-            <h4>New Features</h4>
-            <ul>
-              <li><strong>Siri Shortcuts</strong> — Voice control: "Add item to Stuffolio", "Show expiring warranties", "Open Stuff Scout"</li>
-              <li><strong>Audit Mode</strong> — Room-by-room verification that physical inventory matches digital records</li>
-              <li><strong>Duplicate Finder</strong> — Scan inventory for items added twice; compare side-by-side or merge</li>
-              <li><strong>Filter Presets</strong> — Save favorite search filters for one-tap access</li>
-            </ul>
-          </div>
-
-          <div class="change-category improved">
-            <h4>Improvements</h4>
-            <ul>
-              <li><strong>Product Ratings</strong> — Added "Would Buy Again" tracking alongside 1-5 star ratings</li>
-              <li><strong>Repair, Keep, or Replace?</strong> — Now shows brand history from your other items</li>
-              <li><strong>Widgets</strong> — New Lock Screen widget for warranty countdown</li>
-            </ul>
-          </div>
-
-          <div class="change-category fixed">
-            <h4>Bug Fixes</h4>
-            <ul>
-              <li>Fixed Spotlight search not indexing newly added items</li>
-              <li>Resolved issue where maintenance reminders could duplicate</li>
-              <li>Fixed category picker scrolling issue on smaller iPhones</li>
-            </ul>
+            <div class="change-category new">
+              <h4>New</h4>
+              <ul>
+                <li><strong>Siri Shortcuts</strong> -- Voice control for common tasks</li>
+                <li><strong>Audit Mode</strong> -- Room-by-room verification that your digital inventory matches reality</li>
+                <li><strong>Duplicate Finder</strong> -- Find items added twice and compare or merge them</li>
+              </ul>
+            </div>
           </div>
         </div>
 
-        <!-- ARCHIVE TOGGLE -->
-        <div class="archive-toggle">
-          <button id="archiveToggle">Show Earlier Builds</button>
-        </div>
-
-        <!-- ARCHIVED RELEASES -->
-        <div class="archived-releases" id="archivedReleases">
-
-          <!-- BUILD 15 -->
+        <!-- BUILD 15 -->
+        <div class="card">
           <div class="release">
             <div class="release-header">
               <h2 class="release-version">Version 1.0 (Build 15)</h2>
@@ -924,29 +671,21 @@
               <span class="release-tag beta">Beta</span>
             </div>
 
-            <p class="release-summary">
-              Introduced Legacy Wishes for estate planning and improved multi-device sync conflict resolution.
-            </p>
+            <p class="release-summary">Legacy Wishes and sync conflict resolution.</p>
 
             <div class="change-category new">
-              <h4>New Features</h4>
+              <h4>New</h4>
               <ul>
-                <li><strong>Legacy Wishes</strong> — Document who should receive your belongings; assign recipients, set fallbacks</li>
-                <li><strong>Sync Conflict Resolution</strong> — Side-by-side comparison when edits conflict; you decide what to keep</li>
-                <li><strong>Photo Quick Add</strong> — AI extracts product info from photos of products, nameplates, receipts, or packaging</li>
-              </ul>
-            </div>
-
-            <div class="change-category improved">
-              <h4>Improvements</h4>
-            <ul>
-                <li><strong>Dashboard Redesign</strong> — New "Needs Attention" section surfaces items requiring action</li>
-                <li><strong>Quick Actions</strong> — Circular buttons for common tasks on Dashboard</li>
+                <li><strong>Legacy Wishes</strong> -- Document who should receive your belongings</li>
+                <li><strong>Sync Conflict Resolution</strong> -- Side-by-side comparison when edits conflict across devices</li>
+                <li><strong>Photo Quick Add</strong> -- AI extracts product info from photos of products, nameplates, or receipts</li>
               </ul>
             </div>
           </div>
+        </div>
 
-          <!-- BUILD 14 -->
+        <!-- BUILD 14 -->
+        <div class="card">
           <div class="release">
             <div class="release-header">
               <h2 class="release-version">Version 1.0 (Build 14)</h2>
@@ -954,28 +693,26 @@
               <span class="release-tag beta">Beta</span>
             </div>
 
-            <p class="release-summary">
-              Initial public beta release with core inventory features, Stuff Scout AI, and warranty tracking.
-            </p>
+            <p class="release-summary">Initial beta release.</p>
 
             <div class="change-category new">
               <h4>Initial Features</h4>
               <ul>
-                <li><strong>Core Inventory</strong> — Add, edit, organize items with photos, categories, and locations</li>
-                <li><strong>Stuff Scout AI</strong> — Identify items from photos; get product details, history, and valuations</li>
-                <li><strong>Warranty Tracking</strong> — Track expiration dates with coverage phases and reminders</li>
-                <li><strong>Maintenance Reminders</strong> — Category-based scheduling for regular upkeep</li>
-                <li><strong>Product Ratings</strong> — Rate items 1-5 stars to remember what's worth buying again</li>
-                <li><strong>iCloud Sync</strong> — Sync across iPhone, iPad, and Mac through your iCloud account</li>
-                <li><strong>Family Sharing</strong> — Share specific items with family members</li>
-                <li><strong>Export</strong> — CSV, PDF formats for insurance documentation</li>
-                <li><strong>Barcode Scanning</strong> — Auto-fill product info by scanning UPC/EAN codes</li>
-                <li><strong>Recall Checker</strong> — Check products against CPSC recall database</li>
+                <li><strong>Home Inventory</strong> -- Add, edit, and organize items with photos, categories, and locations</li>
+                <li><strong>Stuff Scout AI</strong> -- Identify items from photos with product details and valuations</li>
+                <li><strong>Warranty Tracking</strong> -- Track expiration dates with reminders</li>
+                <li><strong>Maintenance Reminders</strong> -- Schedule regular upkeep tasks</li>
+                <li><strong>Product Ratings</strong> -- Rate items to remember what's worth buying again</li>
+                <li><strong>iCloud Sync</strong> -- Sync across iPhone, iPad, and Mac</li>
+                <li><strong>Family Sharing</strong> -- Share items with family members</li>
+                <li><strong>Export</strong> -- CSV and PDF for insurance documentation</li>
+                <li><strong>Barcode Scanning</strong> -- Auto-fill product info by scanning barcodes</li>
+                <li><strong>Recall Checker</strong> -- Check products against the CPSC recall database</li>
               </ul>
             </div>
           </div>
-
         </div>
+
       </div>
 
       <!-- FEEDBACK CTA -->
@@ -984,27 +721,18 @@
         <p style="color:var(--muted);">Help us improve Stuffolio by reporting bugs or suggesting features.</p>
         <div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
           <a href="mailto:dev@stuffolio.app?subject=Stuffolio%20Feedback" style="background:var(--accent); color:#000; padding:12px 24px; border-radius:8px; text-decoration:none; font-weight:600;">Send Feedback</a>
-          <a href="beta-testing-guide.html" style="border:1px solid var(--accent); color:var(--accent); padding:12px 24px; border-radius:8px; text-decoration:none;">Testing Guide</a>
         </div>
       </div>
-
-      <!-- SYNC:LASTCOMMIT -->
-      <div class="card" style="background: var(--card-bg); border: 1px solid var(--border); padding: 16px; margin-bottom: 24px;">
-        <h3 style="margin: 0 0 8px; font-size: 0.9rem; color: var(--muted);">Latest Development Activity</h3>
-        <code style="font-size: 0.85rem; color: var(--text);">Inline AI alternatives, photo UX improvements, workflow audit fixes</code>
-        <p style="margin: 8px 0 0; font-size: 0.8rem; color: var(--muted);">Mar 20, 2026 • Features &amp; UX</p>
-      </div>
-      <!-- /SYNC:LASTCOMMIT -->
 
       <!-- Previous/Next Navigation -->
       <nav class="page-nav" aria-label="Page navigation">
         <a href="Stuffolio_Users_Manual.html">
-          <span class="label">← Previous</span>
+          <span class="label">&larr; Previous</span>
           <span class="title">User Manual</span>
         </a>
-        <a href="app-map.html">
-          <span class="label">Next →</span>
-          <span class="title">App Map</span>
+        <a href="features.html">
+          <span class="label">Next &rarr;</span>
+          <span class="title">Features</span>
         </a>
       </nav>
 
@@ -1026,7 +754,6 @@
           <h4>Docs</h4>
           <ul>
             <li><a href="quick-start.html">Quick Start</a></li>
-            <li><a href="app-map.html">App Map</a></li>
             <li><a href="family-sharing.html">Family Sharing</a></li>
           </ul>
         </div>
@@ -1035,7 +762,6 @@
           <ul>
             <li><a href="support.html">Help & FAQ</a></li>
             <li><a href="Stuffolio_Users_Manual.html">User Manual</a></li>
-            <li><a href="beta-testing-guide.html">Beta Testing</a></li>
             <li><a href="mailto:support@stuffolio.app">Contact Us</a></li>
           </ul>
         </div>
@@ -1054,17 +780,17 @@
           <a href="https://testflight.apple.com/join/TWgM95st" class="download-badge testflight">
             <img src="assets/testflight-badge.svg" alt="Download on TestFlight" width="135" height="40" onerror="this.outerHTML='<span class=badge-fallback>Join TestFlight Beta</span>'" />
           </a>
-          <span class="download-tagline">Free beta • iPhone, iPad, Mac</span>
+          <span class="download-tagline">Free beta &bull; iPhone, iPad, Mac</span>
         </div>
         <!-- END BETA-PERIOD-ONLY -->
-        <div>© <span id="y"></span> Coffee & Code LLC</div>
+        <div>&copy; <span id="y"></span> Coffee & Code LLC</div>
       </div>
 
-      <div class="trust-strip"><span>Privacy-first. No ads. No selling your data. AI when you ask — silent when you don't.</span></div>
+      <div class="trust-strip"><span>Privacy-first. No ads. No selling your data. AI when you ask, silent when you don't.</span></div>
     </footer>
 
     <!-- Back to Top Button -->
-    <button class="back-to-top" aria-label="Back to top">↑</button>
+    <button class="back-to-top" aria-label="Back to top">&uarr;</button>
   </div>
 
   <script>
