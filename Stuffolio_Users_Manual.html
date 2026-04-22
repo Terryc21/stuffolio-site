@@ -585,7 +585,7 @@
         <header>
             <h1>Stuffolio User's Manual</h1>
             <p class="subtitle">Your Personal Product Manager for iOS, iPadOS, and macOS</p>
-            <p class="version">Version 2.1 | April 2026</p>
+            <p class="version">Version 3.3 | April 2026 — synced with Stuffolio Build 33</p>
         </header>
 
         <!-- Documentation Navigation -->
@@ -615,14 +615,14 @@
                 <li><a href="#introduction">Introduction</a></li>
                 <li><a href="#tools-overview">Tools Overview</a></li>
                 <li><a href="#getting-started">Getting Started</a></li>
-                <li><a href="#adding-products">Adding Your First Product</a></li>
-                <li><a href="#adding-photos">Adding Photos to Products</a></li>
+                <li><a href="#adding-products">Adding Your First Item</a></li>
+                <li><a href="#adding-photos">Adding Photos to Items</a></li>
                 <li><a href="#smart-scanner">Using the Smart Scanner</a></li>
                 <li><a href="#batch-scanning">Batch Scanning Mode</a></li>
                 <li><a href="#multi-photo-capture">Multi-Photo Capture</a></li>
                 <li><a href="#stuff-scout">Using Stuff Scout (AI Assistance — When You Ask)</a></li>
-                <li><a href="#browsing">Browsing Your Products</a></li>
-                <li><a href="#ratings">Rating Your Products</a></li>
+                <li><a href="#browsing">Browsing Your Items</a></li>
+                <li><a href="#ratings">Rating Your Items</a></li>
                 <li><a href="#ai-assistant">Using the AI Product Assistant</a></li>
                 <li><a href="#warranties">Managing Warranties</a></li>
                 <li><a href="#maintenance">Scheduling Maintenance</a></li>
@@ -631,7 +631,7 @@
                 <li><a href="#recalls">Checking for Recalls</a></li>
                 <li><a href="#repair-keep-replace">Repair, Keep, or Replace?</a></li>
                 <li><a href="#exporting">Exporting Your Data</a></li>
-                <li><a href="#importing">Importing Products</a></li>
+                <li><a href="#importing">Importing Items</a></li>
                 <li><a href="#data-review">Reviewing Data Quality</a></li>
                 <li><a href="#value-tracking">Value Tracking & Depreciation</a></li>
                 <li><a href="#insurance-profile">Insurance Profile & Claim Prep</a></li>
@@ -740,27 +740,62 @@
                 <li>Tap <strong>Get Started</strong> to enter the app</li>
             </ol>
 
-            <h3>Understanding the Dashboard</h3>
-            <p>The Dashboard is your home screen. Here's what each section shows:</p>
+            <h3>Understanding the Home Tab (iPhone)</h3>
+            <p>The Home tab on iPhone is organized around <strong>Three Phases</strong> — the lifecycle of your stuff. The right tool is in reach at the right moment, and nothing else gets in the way.</p>
+
+            <h4>🛒 Acquire</h4>
+            <p>Everything you reach for when something new enters your life. Fast paths, front and center:</p>
+            <ul>
+                <li><strong>Add Item</strong> — Manual entry with the full form</li>
+                <li><strong>Scan Barcode</strong> — UPC lookup for retail products</li>
+                <li><strong>Photo Quick Add</strong> — Snap a photo and fill in details later</li>
+                <li><strong>Stuff Scout</strong> — AI identification for antiques, collectibles, thrift finds, and anything else you're not sure about</li>
+            </ul>
+
+            <h4>🛠️ Maintain</h4>
+            <p>What you own day-to-day. This phase surfaces only what needs attention — not a wall of inventory:</p>
+            <ul>
+                <li>Warranty status cards for items with coverage expiring soon</li>
+                <li>Overdue and upcoming maintenance tasks</li>
+                <li>Recall alerts pulled from CPSC and manufacturer feeds</li>
+                <li>Price Watch notifications when a replacement cost shifts significantly</li>
+                <li><strong>Borrowed &amp; Lent</strong> entry point — see what you've lent out or borrowed, and who has what</li>
+            </ul>
+
+            <h4>📤 Move On</h4>
+            <p>When it's time to sell, donate, archive, or pass something along:</p>
+            <ul>
+                <li><strong>Legacy Wishes</strong> — Assign items to people in your life</li>
+                <li><strong>Donation Tracking</strong> — Record donations with fair market value for tax records</li>
+                <li><strong>Repair, Keep, or Replace</strong> — AI-assisted decision support when something breaks</li>
+                <li><strong>Disposal</strong> — Mark items as sold, donated, gifted, or discarded, with a reason trail</li>
+            </ul>
+
+            <div class="tip">
+                <strong>Why three phases?</strong> Most inventory apps dump every feature into a single menu. Stuffolio organizes them around how you actually use your stuff — acquiring new things, maintaining what you have, and moving on from what you don't need anymore.
+            </div>
+
+            <h3>Understanding the Dashboard (iPad &amp; Mac)</h3>
+            <p>On iPad and Mac, the Dashboard replaces the Home tab as the primary landing surface. Here's what each section shows:</p>
 
             <h4>Quick Stats Bar (at the top)</h4>
             <ul>
-                <li>Swipe left/right to see: Total Products, Purchase Cost, Current Value, Fun Fact</li>
+                <li>Swipe left/right to see: Total Items, Purchase Cost, Current Value, Fun Fact</li>
                 <li>Tap the chevron to collapse this section</li>
             </ul>
 
             <h4>Needs Attention</h4>
             <ul>
-                <li>Products with warranties expiring in 30 days</li>
+                <li>Items with warranties expiring in 30 days</li>
                 <li>Overdue maintenance tasks</li>
                 <li>Items on loan that are due back</li>
-                <li>Products missing important information</li>
+                <li>Items missing important information</li>
             </ul>
 
             <h4>Recently Added</h4>
             <ul>
-                <li>Your most recently added products</li>
-                <li>Tap any product to view its details</li>
+                <li>Your most recently added items</li>
+                <li>Tap any item to view its details</li>
             </ul>
 
             <h4>Feature Cards</h4>
@@ -769,7 +804,7 @@
         </section>
 
         <section id="adding-products">
-            <h2>Adding Your First Product</h2>
+            <h2>Adding Your First Item</h2>
 
             <h3>Opening the Add Items Menu</h3>
 
@@ -870,7 +905,7 @@
                     <ul>
                         <li>Tap the text field</li>
                         <li>Type the product name (e.g., "Samsung 65-inch TV")</li>
-                        <li>This is how the product appears in your list</li>
+                        <li>This is how the item appears in your list</li>
                     </ul>
                 </li>
                 <li><strong>Manufacturer</strong>
@@ -890,7 +925,7 @@
                     <ul>
                         <li>Tap the text field</li>
                         <li>Enter the serial number (important for warranty claims)</li>
-                        <li>Usually found on a sticker on the product</li>
+                        <li>Usually found on a sticker on the item</li>
                     </ul>
                 </li>
             </ol>
@@ -898,16 +933,19 @@
             <h4>Step 2: Choose a Category</h4>
             <ol>
                 <li>Tap the <strong>Category</strong> field</li>
-                <li>A picker appears with 20+ categories: Electronics, Appliances, Furniture, Tools, Automotive, Sports, etc.</li>
+                <li>A picker appears with 20+ categories: Electronics, Appliances, Furniture, Tools, Automotive, Sports, Kitchen &amp; Dining, Personal Care, Antique/Collectable, <strong>Recreation</strong> (boats, RVs, ATVs, and other recreational vehicles), and more</li>
                 <li>Scroll and tap to select the appropriate category</li>
                 <li>The picker closes automatically</li>
             </ol>
+            <div class="tip">
+                <strong>Tip:</strong> Items can belong to multiple categories (up to 5). A vintage lamp can be both "Antique/Collectable" and "Home &amp; Furniture."
+            </div>
 
             <h4>Step 3: Set Location</h4>
             <ol>
                 <li>Tap the <strong>Location</strong> field</li>
-                <li>Type where the product is stored (e.g., "Living Room", "Garage")</li>
-                <li>This helps you find products later</li>
+                <li>Type where the item is stored (e.g., "Living Room", "Garage")</li>
+                <li>This helps you find items later</li>
             </ol>
 
             <h4>Step 4: Enter Purchase Information</h4>
@@ -965,7 +1003,7 @@
             <ol>
                 <li>Review all entered information</li>
                 <li>Tap the <strong>Save</strong> button (top-right on iOS, toolbar on Mac)</li>
-                <li>The product is added to your inventory</li>
+                <li>The item is added to your inventory</li>
                 <li>You return to the My Items list</li>
             </ol>
 
@@ -993,11 +1031,11 @@
         </section>
 
         <section id="adding-photos">
-            <h2>Adding Photos to Products</h2>
+            <h2>Adding Photos to Items</h2>
             <p>Photos help identify products and serve as documentation for warranty claims. Stuffolio can also analyze your photos to automatically suggest categories and extract product details.</p>
 
             <h3>Quick Start Photo Options</h3>
-            <p>When adding a new product, the <strong>Quick Start</strong> section at the top offers fast ways to add photos with intelligent analysis:</p>
+            <p>When adding a new item, the <strong>Quick Start</strong> section at the top offers fast ways to add photos with intelligent analysis:</p>
             <ol>
                 <li>Tap <strong>Add Photo</strong> in Quick Start</li>
                 <li>Choose a photo from your library or camera</li>
@@ -1167,7 +1205,7 @@
                 <ol>
                     <li>Tap <strong>Take Photo</strong></li>
                     <li>The camera opens</li>
-                    <li>Point at your product</li>
+                    <li>Point at your item</li>
                     <li>Tap the shutter button to capture</li>
                     <li>Review the photo:
                         <ul>
@@ -1227,7 +1265,7 @@
                             <li>From web: Right-click image, select "Copy Image"</li>
                         </ul>
                     </li>
-                    <li>In Stuffolio, open the product for editing</li>
+                    <li>In Stuffolio, open the item for editing</li>
                     <li>Click the <strong>Paste Image</strong> button in the Photos section</li>
                     <li>The copied image appears</li>
                 </ol>
@@ -1332,7 +1370,7 @@
             <ol>
                 <li>Verify all information is correct</li>
                 <li>Tap <strong>Save</strong> in the top-right corner</li>
-                <li>The product is added to your inventory</li>
+                <li>The item is added to your inventory</li>
             </ol>
 
             <h3>If the Barcode Isn't Found</h3>
@@ -1348,7 +1386,7 @@
 
         <section id="batch-scanning">
             <h2>Batch Scanning Mode</h2>
-            <p>Batch Scanning Mode lets you scan multiple product barcodes in rapid succession, perfect for when you need to add several items to your inventory at once. Instead of adding products one by one, you can scan all your items first, review the results, and save them all together.</p>
+            <p>Batch Scanning Mode lets you scan multiple barcodes in rapid succession, perfect for when you need to add several items to your inventory at once. Instead of adding items one by one, you can scan everything first, review the results, and save them all together.</p>
 
             <h3>When to Use Batch Scanning</h3>
             <ul>
@@ -1366,7 +1404,7 @@
             <h3>Step 1: Scanning Multiple Barcodes</h3>
             <ol>
                 <li>The camera view opens with a scanning target rectangle</li>
-                <li>Point your camera at the first product's <strong>UPC barcode</strong></li>
+                <li>Point your camera at the first item's <strong>UPC barcode</strong></li>
                 <li>Hold steady 6-12 inches away from the barcode</li>
                 <li>When detected:
                     <ul>
@@ -1375,8 +1413,8 @@
                         <li>The camera remains active for the next scan</li>
                     </ul>
                 </li>
-                <li>Immediately scan the next product's barcode</li>
-                <li>Continue scanning as many products as you need</li>
+                <li>Immediately scan the next item's barcode</li>
+                <li>Continue scanning as many items as you need</li>
                 <li>The scanner stays open until you tap <strong>Done</strong></li>
             </ol>
 
@@ -1384,7 +1422,7 @@
                 <strong>Scanning Tips:</strong>
                 <ul>
                     <li>Work in good lighting to speed up detection</li>
-                    <li>Keep products organized so you can scan them in sequence</li>
+                    <li>Keep items organized so you can scan them in sequence</li>
                     <li>The scanner automatically looks up each barcode in the background</li>
                     <li>You can scan as many items as needed - there's no limit</li>
                     <li>If a barcode won't scan, skip it and scan manually later</li>
@@ -1426,7 +1464,7 @@
             <ol>
                 <li>Swipe left on any item you want to remove</li>
                 <li>Tap the <strong>Delete</strong> button</li>
-                <li>The item is removed from the batch (doesn't affect saved products)</li>
+                <li>The item is removed from the batch (doesn't affect saved items)</li>
             </ol>
 
             <h4>Retrying Failed Lookups</h4>
@@ -1465,7 +1503,7 @@
             <ol>
                 <li>Go to <strong>My Items</strong></li>
                 <li>Find the newly added items (they appear at the top if sorted by Date Added)</li>
-                <li>Tap a product to open it</li>
+                <li>Tap an item to open it</li>
                 <li>Tap <strong>Edit</strong></li>
                 <li>Add: Photos, Purchase Date, Purchase Price, Warranty Information, Location, Notes</li>
                 <li>Tap <strong>Save</strong></li>
@@ -1497,8 +1535,8 @@
 
             <h4>Product Information Is Incorrect</h4>
             <ul>
-                <li>After saving, you can edit any product to correct the information</li>
-                <li>Go to My Items, tap the product, tap Edit, make changes, and Save</li>
+                <li>After saving, you can edit any item to correct the information</li>
+                <li>Go to My Items, tap the item, tap Edit, make changes, and Save</li>
             </ul>
 
             <h4>I Accidentally Scanned the Same Item Twice</h4>
@@ -1525,8 +1563,8 @@
             <h3>Opening Multi-Photo Capture</h3>
             <p><span class="platform-note">iPhone/iPad</span></p>
             <ol>
-                <li>Open the product you want to photograph (or create a new product)</li>
-                <li>Tap <strong>Edit</strong> if viewing an existing product</li>
+                <li>Open the item you want to photograph (or create a new item)</li>
+                <li>Tap <strong>Edit</strong> if viewing an existing item</li>
                 <li>Scroll to the <strong>Photos</strong> section</li>
                 <li>Tap the <strong>camera icon</strong> or <strong>Add Photos</strong> button</li>
                 <li>Select <strong>Multi-Photo Capture</strong> from the menu</li>
@@ -1535,7 +1573,7 @@
             <p><span class="platform-note">Alternative Quick Access</span></p>
             <ul>
                 <li>From <strong>Tools > Capture > Multi-Photo Capture</strong></li>
-                <li>This creates a new product with photos attached</li>
+                <li>This creates a new item with photos attached</li>
             </ul>
 
             <h3>Step 1: Selecting Photo Type</h3>
@@ -1632,10 +1670,10 @@
             <ol>
                 <li>Review all thumbnails to ensure you have the photos you need</li>
                 <li>Tap <strong>Save Photos</strong> at the bottom of the screen</li>
-                <li>All photos are attached to the product</li>
+                <li>All photos are attached to the item</li>
                 <li>You return to the Edit Product screen</li>
                 <li>The photos appear in the Photos section</li>
-                <li>Tap <strong>Save</strong> at the top to save the product with its new photos</li>
+                <li>Tap <strong>Save</strong> at the top to save the item with its new photos</li>
             </ol>
 
             <h4>If Creating a New Product from Actions Menu</h4>
@@ -1643,8 +1681,8 @@
                 <li>After capturing photos, tap <strong>Done</strong></li>
                 <li>The Add Product form opens</li>
                 <li>All captured photos are already attached (visible in Photos section)</li>
-                <li>Fill in the product details: Name, Manufacturer, Category, etc.</li>
-                <li>Tap <strong>Save</strong> to create the product with photos</li>
+                <li>Fill in the item details: Name, Manufacturer, Category, etc.</li>
+                <li>Tap <strong>Save</strong> to create the item with photos</li>
             </ol>
 
             <h3>Photo Capture Tips</h3>
@@ -1653,7 +1691,7 @@
             <ul>
                 <li>Use good lighting - natural light works best</li>
                 <li>Capture multiple angles: front, back, sides, top</li>
-                <li>Include the entire product in the frame</li>
+                <li>Include the entire item in the frame</li>
                 <li>For large items, step back to get the full view</li>
                 <li>For small items, get close enough to show detail</li>
             </ul>
@@ -1679,7 +1717,7 @@
             <h3>Editing Photo Types After Capture</h3>
             <p>If you assigned the wrong type to a photo:</p>
             <ol>
-                <li>After saving photos to the product, open the product</li>
+                <li>After saving photos to the item, open the item</li>
                 <li>Tap <strong>Edit</strong></li>
                 <li>In the Photos section, tap and hold a photo</li>
                 <li>Select <strong>Change Type</strong> from the menu</li>
@@ -1709,7 +1747,7 @@
             <h4>Wrong Photo Type Was Selected</h4>
             <ul>
                 <li>Before saving: Remove the photo and retake it with correct type</li>
-                <li>After saving: Edit the product and change the photo type as described above</li>
+                <li>After saving: Edit the item and change the photo type as described above</li>
             </ul>
 
             <h4>Photos Didn't Save</h4>
@@ -1717,7 +1755,7 @@
                 <li>Make sure you tapped "Save Photos" in the Multi-Photo Capture screen</li>
                 <li>Then tapped "Save" in the Edit Product screen</li>
                 <li>Check your device has sufficient storage space</li>
-                <li>If photos are missing, return to the product and use Multi-Photo Capture again</li>
+                <li>If photos are missing, return to the item and use Multi-Photo Capture again</li>
             </ul>
 
             <div class="tip">
@@ -1801,36 +1839,61 @@
                 <li><strong>Additional Info</strong> &mdash; Rarity, About, Collector Notes</li>
             </ul>
 
-            <h3>Refining Results</h3>
-            <p>If the AI identification isn't quite right, you can provide additional context to improve it:</p>
-            <ol>
-                <li>Tap <strong>Not quite right?</strong> on the results screen</li>
-                <li>The Refine Results sheet opens with fields for:
-                    <ul>
-                        <li><strong>Product Name</strong> &mdash; If you know the correct name</li>
-                        <li><strong>Manufacturer/Brand</strong> &mdash; The maker if you know it</li>
-                        <li><strong>Model/Pattern</strong> &mdash; Any model numbers or pattern names</li>
-                        <li><strong>Era/Year</strong> &mdash; When it was made</li>
-                        <li><strong>Classification</strong> &mdash; Select from Antique, Vintage, Collectible, etc.</li>
-                        <li><strong>Additional Notes</strong> &mdash; Any other helpful context</li>
-                    </ul>
-                </li>
-                <li><strong>Add Photos</strong> (optional but recommended):
-                    <ul>
-                        <li>Tap <strong>Add</strong> to select photos of maker's marks, labels, or different angles</li>
-                        <li>Tap <strong>Paste</strong> to paste an image from your clipboard</li>
-                        <li>You can add up to 3 additional photos</li>
-                    </ul>
-                </li>
-                <li>Tap <strong>Re-analyze</strong> to get updated results (uses 1 AI query)</li>
-            </ol>
-            <p><strong>Tips for Best Refinement Results:</strong></p>
+            <h3>🎯 Confidence Gate</h3>
+            <p>After every scan, Scout asks <strong>"Is this right?"</strong> with three paths:</p>
             <ul>
-                <li>Add photos of any maker's marks, stamps, or labels</li>
-                <li>Be specific about brand names and model numbers</li>
-                <li>Mention any visible markings or signatures</li>
+                <li><strong>Yes, that's it</strong> — Save the result as-is and continue to Add to Inventory.</li>
+                <li><strong>Almost, I can add more</strong> — Opens the refinement flow (see Story-First Refinement below).</li>
+                <li><strong>No, that's not it</strong> — Start over with a different approach — different photos, better angles, or a fresh identification attempt.</li>
+            </ul>
+            <p>The Confidence Gate exists so you never accept a wrong answer by default. Scout won't stop asking until you tell it the identification is correct.</p>
+
+            <h3>✍️ Story-First Refinement</h3>
+            <p>When you choose <strong>"Almost, I can add more,"</strong> a large text area invites you to describe what you know in plain language:</p>
+            <ul>
+                <li>"This belonged to my grandfather, might be from the 1940s"</li>
+                <li>"Bought at an estate sale in rural Pennsylvania"</li>
+                <li>"The stamp on the bottom looks German to me"</li>
+            </ul>
+            <p>Structured fields — maker's mark, serial number, era, model number — are collapsed as <em>optional</em> extras below the text area. Fill them in only if they help. Story first, form fields second.</p>
+            <p><strong>Tips for best refinement results:</strong></p>
+            <ul>
+                <li>Add photos of any maker's marks, stamps, or labels (tap <strong>Add</strong> or <strong>Paste</strong> from clipboard)</li>
+                <li>Be specific about brand names and model numbers if you know them</li>
+                <li>Mention visible markings, signatures, or patent numbers</li>
                 <li>Include known history or where you found the item</li>
             </ul>
+            <p><em>Each refinement uses 1 AI query from your allowance.</em></p>
+
+            <h3>🧠 Context Veracity</h3>
+            <p>Scout evaluates your notes critically, not as gospel:</p>
+            <ul>
+                <li><strong>Specific facts</strong> (artist names, serial numbers, museum attributions, patent dates) are verified against visual evidence.</li>
+                <li><strong>Speculative guesses</strong> ("I think it might be old," "looks like something from the 1800s") are treated as hypotheses to investigate, not facts to accept.</li>
+            </ul>
+            <p>The effect: speculation won't push Scout off course. You can write freely without worrying that a wrong guess will derail the identification.</p>
+
+            <h3>📜 Refinement History</h3>
+            <p>As you refine, Scout tracks how each round of added context changed the identification and valuation. After refining, you can see:</p>
+            <ul>
+                <li>What Scout got right on the first pass</li>
+                <li>What changed after you added context</li>
+                <li>How your notes shifted the value range or narrowed the era</li>
+            </ul>
+            <p>Refinement History is your record of what the AI figured out on its own vs what you contributed.</p>
+
+            <h3>🛍️ Category-Specific Valuation</h3>
+            <p>Price verification routes to the right marketplaces based on what the item is — apples-to-apples comparisons, not generic listings:</p>
+            <ul>
+                <li><strong>Instruments</strong> — Checks Reverb for guitars, violins, synths, pro audio gear</li>
+                <li><strong>Collectibles &amp; Antiques</strong> — Checks eBay sold listings for dinnerware, figurines, memorabilia</li>
+                <li><strong>Vintage Goods</strong> — Checks Etsy for handmade and vintage items</li>
+                <li><strong>Vehicles</strong> — Checks vehicle-specific sources (KBB-style pricing for RVs, boats, motorcycles)</li>
+            </ul>
+            <p>Scout picks the marketplace that matches your item's category so the value estimate reflects what it would actually sell for.</p>
+
+            <h3>🔬 Research Tips</h3>
+            <p>Scout suggests specific starting points for deeper research — forums, subreddits, reference databases, YouTube channels — matched to your item's category. For a vintage camera, that might include r/AnalogCommunity and CameraQuest. For a violin, the Maestronet forums. Starting points, not a walled garden.</p>
 
             <h3>Saving &amp; Sharing Results</h3>
             <p>After Stuff Scout identifies your item, you can save and share the results:</p>
@@ -1843,7 +1906,7 @@
             <h3>Step 6: Save to Inventory</h3>
             <ol>
                 <li>Tap <strong>Add to Inventory</strong></li>
-                <li>A preview sheet appears showing the pre-filled product details</li>
+                <li>A preview sheet appears showing the pre-filled item details</li>
                 <li><strong>Optional:</strong> Add a receipt photo (see Receipt Pairing below)</li>
                 <li>Tap <strong>Add to Inventory</strong> to open the full form</li>
                 <li>Add any additional information</li>
@@ -1866,9 +1929,9 @@
             </div>
 
             <h3>Auto-fill from Receipt</h3>
-            <p>If you've already attached receipt images to a product, you can extract purchase details without re-scanning:</p>
+            <p>If you've already attached receipt images to an item, you can extract purchase details without re-scanning:</p>
             <ol>
-                <li>Open the product and tap <strong>Edit</strong></li>
+                <li>Open the item and tap <strong>Edit</strong></li>
                 <li>Look for the <strong>Auto-fill from Receipt</strong> button in the Images section</li>
                 <li>Tap it to have Stuffolio analyze your attached receipt images</li>
                 <li>Review the extracted store name, purchase date, and price</li>
@@ -1911,7 +1974,7 @@
 
             <h4>Opening Scout Refinement</h4>
             <ol>
-                <li>Open <strong>Edit</strong> for any existing product</li>
+                <li>Open <strong>Edit</strong> for any existing item</li>
                 <li>Scroll down to find the <strong>Stuff Scout</strong> section</li>
                 <li>Tap to expand the section</li>
                 <li>The section shows guidance: "The more you fill in, the better Scout's analysis"</li>
@@ -1921,7 +1984,7 @@
             <ol>
                 <li>The section shows how many photos are available</li>
                 <li>Tap <strong>Analyze with Stuff Scout</strong></li>
-                <li>Scout analyzes your existing product photos</li>
+                <li>Scout analyzes your existing item photos</li>
                 <li>The comparison view appears showing:
                     <ul>
                         <li><strong>Confidence badge</strong> — How confident Scout is in the identification</li>
@@ -2001,17 +2064,17 @@
         </section>
 
         <section id="browsing">
-            <h2>Browsing Your Products</h2>
+            <h2>Browsing Your Items</h2>
 
             <h3>Accessing My Items</h3>
             <p><span class="platform-note">iPhone</span> Tap <strong>My Items</strong> in the bottom tab bar</p>
             <p><span class="platform-note">iPad/Mac</span> Click <strong>My Items</strong> in the sidebar</p>
 
-            <h3>Understanding the Product List</h3>
-            <p>Each product row shows:</p>
+            <h3>Understanding the Item List</h3>
+            <p>Each item row shows:</p>
             <ul>
-                <li><strong>Photo thumbnail</strong> &mdash; Product image (or category icon if no photo)</li>
-                <li><strong>Product name</strong> &mdash; In bold</li>
+                <li><strong>Photo thumbnail</strong> &mdash; Item image (or category icon if no photo)</li>
+                <li><strong>Item name</strong> &mdash; In bold</li>
                 <li><strong>Manufacturer</strong> &mdash; Below the name</li>
                 <li><strong>Warranty status badge:</strong>
                     <ul>
@@ -2024,7 +2087,14 @@
                 <li><strong>Days remaining</strong> &mdash; Until warranty expires</li>
             </ul>
 
-            <h3>Filtering Products</h3>
+            <h3>Item Detail: Tappable "—" Placeholders</h3>
+            <p>When you open an item, reference rows (serial number, model number, purchase date, etc.) display their value on the right. If the value is missing, you'll see <strong>—</strong> instead of a blank row.</p>
+            <p>Tap the <strong>—</strong> placeholder to jump directly into editing that field. You don't have to open the full edit form and scroll to find it — the placeholder itself is the entry point.</p>
+            <div class="tip">
+                <strong>Tip:</strong> This is the fastest way to backfill missing details on items you've already added. Scan your item list, tap into each item, and fill in any <strong>—</strong> you spot.
+            </div>
+
+            <h3>Filtering Items</h3>
             <ol>
                 <li>Swipe horizontally at the top to see all filter chips</li>
                 <li>Tap a filter to apply it: All, Active, Expiring, Expired, Lifetime, No Warranty, Flagged</li>
@@ -2033,11 +2103,11 @@
             </ol>
 
             <h3>Flagging Items for Review</h3>
-            <p>Flag items you want to focus on &mdash; perfect for batch editing, adding missing details, or creating a &ldquo;working set&rdquo; of products to review.</p>
+            <p>Flag items you want to focus on &mdash; perfect for batch editing, adding missing details, or creating a &ldquo;working set&rdquo; of items to review.</p>
 
             <h4>To flag an item:</h4>
             <ol>
-                <li>Long-press any product in the list</li>
+                <li>Long-press any item in the list</li>
                 <li>Tap <strong>Flag for Review</strong> in the context menu</li>
                 <li>An orange flag icon appears on the item</li>
             </ol>
@@ -2057,7 +2127,7 @@
             <h4>Use cases:</h4>
             <ul>
                 <li>Mark items that need photos added</li>
-                <li>Flag products missing warranty information</li>
+                <li>Flag items missing warranty information</li>
                 <li>Create a &ldquo;to-do&rdquo; list of items needing attention</li>
                 <li>Temporarily group items for a specific task</li>
             </ul>
@@ -2071,11 +2141,11 @@
 
             <h3>Searching for Products</h3>
             <ol>
-                <li>Pull down on the product list to reveal the search bar</li>
+                <li>Pull down on the item list to reveal the search bar</li>
                 <li>Tap the search field and type your search term</li>
                 <li>Stuffolio searches: Product name, Manufacturer, Model number, Serial number, Notes</li>
                 <li>Results appear as you type</li>
-                <li>Tap a result to view the product</li>
+                <li>Tap a result to view the item</li>
             </ol>
 
             <h4>Recent Searches</h4>
@@ -2086,11 +2156,11 @@
                 <li><strong>Clearing history:</strong> Swipe left on a recent search to remove it from history</li>
             </ul>
             <div class="tip">
-                <strong>Tip:</strong> Recent searches save time when you frequently search for the same products or categories. The search history persists between app sessions.
+                <strong>Tip:</strong> Recent searches save time when you frequently search for the same items or categories. The search history persists between app sessions.
             </div>
 
             <h4>Voice Search</h4>
-            <p>Use your device's dictation feature to search for products hands-free.</p>
+            <p>Use your device's dictation feature to search for items hands-free.</p>
             <ol>
                 <li>Pull down to reveal the search bar</li>
                 <li>Tap the <strong>microphone button</strong> on your keyboard</li>
@@ -2105,7 +2175,7 @@
 
             <h5>Creating a Filter Preset</h5>
             <ol>
-                <li>Apply your desired filters in the product list</li>
+                <li>Apply your desired filters in the item list</li>
                 <li>Tap the <strong>filter button</strong> in the toolbar</li>
                 <li>Tap <strong>Save as Preset</strong></li>
                 <li>Give your preset a descriptive name (e.g., "Active Apple Products", "Expiring Home Items")</li>
@@ -2137,27 +2207,27 @@
             </div>
 
             <h3>Using Quick Actions (Swipe)</h3>
-            <p>Swipe left or right on any product to reveal quick action buttons.</p>
+            <p>Swipe left or right on any item to reveal quick action buttons.</p>
 
             <h4>Swipe Left Actions</h4>
             <ul>
-                <li><strong>Delete (red):</strong> Remove the product from your inventory. Requires confirmation</li>
-                <li><strong>Archive (gray):</strong> Move the product to archive without deleting it. Archived products don't appear in your main list but remain accessible</li>
+                <li><strong>Delete (red):</strong> Remove the item from your inventory. Requires confirmation</li>
+                <li><strong>Archive (gray):</strong> Move the item to archive without deleting it. Archived items don't appear in your main list but remain accessible</li>
             </ul>
 
             <h4>Swipe Right Actions</h4>
             <ul>
-                <li><strong>Edit (blue):</strong> Open the product editor to modify details</li>
+                <li><strong>Edit (blue):</strong> Open the item editor to modify details</li>
                 <li><strong>Log Service (green):</strong> Record a maintenance or service event. Opens a form to log maintenance details, service dates, and notes</li>
             </ul>
 
             <div class="tip">
-                <strong>Tip:</strong> Swipe fully across the product for the primary action (Delete when swiping left, Edit when swiping right), or swipe partially to reveal all action buttons and choose one.
+                <strong>Tip:</strong> Swipe fully across the item for the primary action (Delete when swiping left, Edit when swiping right), or swipe partially to reveal all action buttons and choose one.
             </div>
 
             <h3>Using the Context Menu (Long Press)</h3>
             <ol>
-                <li>Touch and hold any product for 1 second</li>
+                <li>Touch and hold any item for 1 second</li>
                 <li>Menu appears: Edit, AI Assistant, Duplicate, Copy, Share, Flag for Review/Remove Flag, Delete</li>
                 <li>Tap your desired action</li>
             </ol>
@@ -2165,7 +2235,7 @@
             <h3>Selecting Multiple Products</h3>
             <ol>
                 <li>Tap <strong>Select</strong> in the toolbar</li>
-                <li>Tap products to select them (checkmarks appear)</li>
+                <li>Tap items to select them (checkmarks appear)</li>
                 <li>Use toolbar buttons: <strong>Delete</strong> or <strong>Export</strong></li>
                 <li>Tap <strong>Done</strong> when finished</li>
             </ol>
@@ -2173,12 +2243,12 @@
         </section>
 
         <section id="ratings">
-            <h2>Rating Your Products</h2>
-            <p>Rate products based on your ownership experience to build "decision memory" for future purchases.</p>
+            <h2>Rating Your Items</h2>
+            <p>Rate items based on your ownership experience to build "decision memory" for future purchases.</p>
 
             <h3>Opening the Rating Sheet</h3>
             <ol>
-                <li>Open any product's detail view</li>
+                <li>Open any item's detail view</li>
                 <li>Scroll to the <strong>Your Rating</strong> section</li>
                 <li>Tap the rating card to open the full rating sheet</li>
             </ol>
@@ -2217,7 +2287,7 @@
                 <li>Go to <strong>Insights > Rating Insights</strong></li>
                 <li>See aggregated data:
                     <ul>
-                        <li>Average rating across products</li>
+                        <li>Average rating across items</li>
                         <li>"Would buy again" percentage</li>
                         <li>Top and bottom rated brands</li>
                         <li>Category performance</li>
@@ -2229,13 +2299,13 @@
 
         <section id="ai-assistant">
             <h2>Using the AI Product Assistant</h2>
-            <p>The AI Assistant provides instant help for any product.</p>
+            <p>The AI Assistant provides instant help for any item.</p>
 
             <h3>Opening the AI Assistant</h3>
             <ul>
-                <li><strong>From a Product:</strong> Open any product's detail view, tap <strong>AI Assistant</strong></li>
-                <li><strong>From My Items List:</strong> Swipe right on a product, tap <strong>AI Help</strong></li>
-                <li>Or long-press a product and select <strong>AI Assistant</strong></li>
+                <li><strong>From an Item:</strong> Open any item's detail view, tap <strong>AI Assistant</strong></li>
+                <li><strong>From My Items List:</strong> Swipe right on an item, tap <strong>AI Help</strong></li>
+                <li>Or long-press an item and select <strong>AI Assistant</strong></li>
             </ul>
 
             <h3>Choosing a Query Type</h3>
@@ -2269,11 +2339,11 @@
             </ul>
 
             <h3>Smart Auto-Fill: Save Links to Product</h3>
-            <p>When the AI discovers useful URLs (like the manufacturer's website or support page), you can save them directly to your product with one tap.</p>
+            <p>When the AI discovers useful URLs (like the manufacturer's website or support page), you can save them directly to your item with one tap.</p>
             <ul>
                 <li><strong>When available:</strong> A "Save Links to Product" button appears in the Maker Website query results</li>
                 <li><strong>What's saved:</strong> Manufacturer website URL and/or support page URL</li>
-                <li><strong>Where it goes:</strong> URLs are saved to the product's Resources section</li>
+                <li><strong>Where it goes:</strong> URLs are saved to the item's Resources section</li>
                 <li><strong>Progressive disclosure:</strong> The Resources section only appears in the product detail view when URLs have been saved</li>
             </ul>
 
@@ -2281,12 +2351,12 @@
             <ol>
                 <li>Run the <strong>Maker Website</strong> query from the AI Assistant</li>
                 <li>When results appear, look for the <strong>Save Links to Product</strong> button</li>
-                <li>Tap the button to save discovered URLs to your product</li>
+                <li>Tap the button to save discovered URLs to your item</li>
                 <li>A confirmation appears and the button changes to a checkmark</li>
             </ol>
 
             <div class="tip">
-                <strong>Tip:</strong> This is a great way to build up useful reference links for your products without extra work. The AI does the research, you just tap to save.
+                <strong>Tip:</strong> This is a great way to build up useful reference links for your items without extra work. The AI does the research, you just tap to save.
             </div>
 
             <h3>Response Caching (Offline Access)</h3>
@@ -2307,13 +2377,13 @@
 
             <p><strong>Managing the Cache:</strong></p>
             <ul>
-                <li><strong>Clear item cache:</strong> Delete cached responses for a specific product in its detail view</li>
+                <li><strong>Clear item cache:</strong> Delete cached responses for a specific item in its detail view</li>
                 <li><strong>Clear all cache:</strong> Go to <strong>Settings > Data Management > Clear AI Cache</strong></li>
                 <li><strong>Automatic cleanup:</strong> Expired entries (older than 30 days) are pruned automatically</li>
             </ul>
 
             <div class="tip">
-                <strong>Tip:</strong> If you frequently travel or have limited connectivity, query your important products while online. The responses will be available offline for the next 30 days.
+                <strong>Tip:</strong> If you frequently travel or have limited connectivity, query your important items while online. The responses will be available offline for the next 30 days.
             </div>
 
             <div class="tip">
@@ -2333,7 +2403,7 @@
             <h2>Managing Warranties</h2>
 
             <h3>Adding Warranty Information</h3>
-            <p><strong>When adding a new product:</strong></p>
+            <p><strong>When adding a new item:</strong></p>
             <ol>
                 <li>In the Add Product form, scroll to <strong>Warranty</strong> section</li>
                 <li>Tap <strong>Warranty Expiration Date</strong> and select the date</li>
@@ -2341,16 +2411,16 @@
                 <li>Optionally add <strong>Warranty Notes</strong></li>
             </ol>
 
-            <p><strong>For existing products:</strong></p>
+            <p><strong>For existing items:</strong></p>
             <ol>
-                <li>Open the product, tap <strong>Edit</strong></li>
+                <li>Open the item, tap <strong>Edit</strong></li>
                 <li>Scroll to Warranty section, fill in fields</li>
                 <li>Tap <strong>Save</strong></li>
             </ol>
 
             <h3>Viewing Warranty Status</h3>
             <ul>
-                <li><strong>On the product list:</strong> Each product shows a status badge</li>
+                <li><strong>On the item list:</strong> Each item shows a status badge</li>
                 <li><strong>On the Dashboard:</strong> <strong>Needs Attention</strong> shows expiring warranties</li>
                 <li><strong>In Reports:</strong> Go to <strong>Insights > Reports > Warranty Report</strong></li>
             </ul>
@@ -2418,7 +2488,7 @@
             <p>The detail view shows your current coverage phase and when the next change occurs.</p>
 
             <h4>Component-Based Warranties</h4>
-            <p>Some products have different warranty periods for different components. For example, EGO Power+ tools offer:</p>
+            <p>Some items have different warranty periods for different components. For example, EGO Power+ tools offer:</p>
             <ul>
                 <li><strong>Batteries & Chargers:</strong> 3 years full coverage</li>
                 <li><strong>Outdoor Equipment:</strong> 5 years full coverage</li>
@@ -2429,7 +2499,7 @@
                 <li>Set the coverage type and dates for that component</li>
                 <li>Add additional phases for other components with different coverage periods</li>
             </ol>
-            <p>Stuffolio suggests common component names based on your product category. You can also enter custom component names.</p>
+            <p>Stuffolio suggests common component names based on your item's category. You can also enter custom component names.</p>
 
             <h3>Tracking Deductibles</h3>
             <p>Record out-of-pocket costs for warranty claims:</p>
@@ -2462,7 +2532,7 @@
             <p>Products with AppleCare+ coverage display a distinctive blue <code> Care+</code> badge:</p>
             <ul>
                 <li>In your <strong>My Items</strong> list — quickly see which devices have AppleCare</li>
-                <li>In the <strong>product detail header</strong> — immediately visible when viewing an item</li>
+                <li>In the <strong>item detail header</strong> — immediately visible when viewing an item</li>
             </ul>
             <p>The badge shows as blue when coverage is active, or gray when expired.</p>
 
@@ -2483,7 +2553,7 @@
             <ol>
                 <li>Go to <strong>Tools > Own > Warranty Manager</strong></li>
                 <li>View tabs: <strong>Active</strong>, <strong>Expiring</strong>, <strong>Expired</strong></li>
-                <li>Tap any product to view details</li>
+                <li>Tap any item to view details</li>
             </ol>
 
             <h3>Apple Wallet Warranty Cards <span class="platform-note">iOS only</span></h3>
@@ -2491,7 +2561,7 @@
 
             <h4>Creating a Wallet Card</h4>
             <ol>
-                <li>Open a product with warranty information</li>
+                <li>Open an item with warranty information</li>
                 <li>Scroll to the <strong>Warranty</strong> section</li>
                 <li>Tap <strong>Add to Apple Wallet</strong></li>
                 <li>Review the pass preview showing:
@@ -2513,7 +2583,7 @@
             </ul>
 
             <div class="tip">
-                <strong>Tip:</strong> Wallet cards are only available for products with warranty expiration dates set. If you don't see the "Add to Apple Wallet" option, add a warranty date first.
+                <strong>Tip:</strong> Wallet cards are only available for items with warranty expiration dates set. If you don't see the "Add to Apple Wallet" option, add a warranty date first.
             </div>
 
             <h3>RMA & Warranty Claim Tracking</h3>
@@ -2521,14 +2591,14 @@
 
             <h4>Starting an RMA</h4>
             <ol>
-                <li>Open the product you're claiming</li>
+                <li>Open the item you're claiming</li>
                 <li>Scroll to <strong>Warranty</strong> section</li>
                 <li>Tap <strong>Track RMA/Claim</strong></li>
                 <li>Enter claim details:
                     <ul>
                         <li><strong>RMA Number:</strong> The authorization number from the manufacturer</li>
                         <li><strong>Claim Date:</strong> When you filed the claim</li>
-                        <li><strong>Issue Description:</strong> What's wrong with the product</li>
+                        <li><strong>Issue Description:</strong> What's wrong with the item</li>
                         <li><strong>Status:</strong> Pending, Approved, Shipped, In Progress, Completed</li>
                     </ul>
                 </li>
@@ -2583,7 +2653,7 @@
 
             <h3>Adding a Maintenance Schedule</h3>
             <ol>
-                <li>Open a product's detail view</li>
+                <li>Open an item's detail view</li>
                 <li>Tap <strong>Edit</strong></li>
                 <li>Scroll to <strong>Maintenance</strong> section</li>
                 <li>Tap <strong>Add Maintenance Task</strong></li>
@@ -2611,11 +2681,11 @@
 
         <section id="smart-maintenance">
             <h2>Smart Maintenance Suggestions</h2>
-            <p>Get automatic maintenance recommendations based on product category.</p>
+            <p>Get automatic maintenance recommendations based on item category.</p>
 
             <h3>Viewing Suggestions</h3>
             <ol>
-                <li>Open a product's detail view</li>
+                <li>Open an item's detail view</li>
                 <li>Scroll to <strong>Maintenance</strong> section</li>
                 <li>Tap <strong>Get Suggestions</strong></li>
                 <li>Review suggested tasks with:
@@ -2650,11 +2720,19 @@
 
         <section id="loans">
             <!-- SYNC:Sources/Features/Loans/ -->
-            <h2>Tracking Loans</h2>
+            <h2>Tracking Loans (Borrowed &amp; Lent)</h2>
+            <p>Track items you've lent to other people and items you've borrowed — who has what, when it's due back, and whether it's overdue.</p>
 
-            <h3>Recording a Loan</h3>
+            <h3>Entry Points</h3>
+            <ul>
+                <li><span class="device-note">iPhone</span> <strong>Home tab → Maintain → Borrowed &amp; Lent</strong> — Surfaced alongside warranties, maintenance, and recalls. Tap to open the full Borrowed &amp; Lent view.</li>
+                <li><span class="device-note">iPhone / iPad</span> <strong>Actions → Own → Loan Tracker</strong> — Full list of all active loans, sortable by due date or borrower.</li>
+                <li><span class="device-note">iPad &amp; Mac</span> <strong>Dashboard</strong> — The "Needs Attention" card surfaces any loan past its expected return date.</li>
+            </ul>
+
+            <h3>Recording a Loan (You're Lending Something Out)</h3>
             <ol>
-                <li>Open the product you're lending</li>
+                <li>Open the item you're lending</li>
                 <li>Tap <strong>Edit</strong></li>
                 <li>Scroll to <strong>Loans</strong> section</li>
                 <li>Tap <strong>Record Loan</strong></li>
@@ -2662,12 +2740,20 @@
                 <li>Tap <strong>Save</strong></li>
             </ol>
 
+            <h3>Viewing Active Loans</h3>
+            <ul>
+                <li><strong>Home tab (iPhone):</strong> Under Maintain, the Borrowed &amp; Lent entry shows a count of active loans and flags anything overdue.</li>
+                <li><strong>Dashboard (iPad &amp; Mac):</strong> Needs Attention shows items due to be returned.</li>
+                <li><strong>Loan Tracker:</strong> Go to <strong>Actions &gt; Own &gt; Loan Tracker</strong> for the full sortable list.</li>
+            </ul>
+
             <h3>Marking a Loan as Returned</h3>
             <ol>
-                <li>Open the loaned product</li>
+                <li>Open the loaned item</li>
                 <li>Scroll to <strong>Loans</strong> section</li>
                 <li>Tap <strong>Mark Returned</strong></li>
             </ol>
+            <p>The loan moves to history on the item's detail view. You can see the full lending history for each item.</p>
             <a href="#toc" class="back-to-top">Back to Contents</a>
             <!-- /SYNC:Sources/Features/Loans/ -->
         </section>
@@ -2681,14 +2767,14 @@
                 <li>Tap <strong>Check All Products</strong></li>
                 <li>Wait for results from the CPSC database</li>
             </ol>
-            <p>Stuffolio automatically searches for recalls matching products in your inventory based on product names and manufacturers.</p>
+            <p>Stuffolio automatically searches for recalls matching items in your inventory based on item names and manufacturers.</p>
 
             <h3>Viewing Recall Results</h3>
             <p>If matches are found, tap any recall to expand details including:</p>
             <ul>
                 <li><strong>Hazard</strong> &mdash; What the danger is</li>
                 <li><strong>Remedy</strong> &mdash; What to do (refund, repair, replacement)</li>
-                <li><strong>Units Affected</strong> &mdash; How many products were recalled</li>
+                <li><strong>Units Affected</strong> &mdash; How many units were recalled</li>
                 <li><strong>More Information</strong> &mdash; Link to official CPSC page</li>
             </ul>
 
@@ -2740,7 +2826,7 @@
             <ul>
                 <li><strong>Repair It</strong> &mdash; The item is worth fixing. Links to repair resources</li>
                 <li><strong>Keep Using</strong> &mdash; The item still has useful life. No action needed</li>
-                <li><strong>Replace with Same</strong> &mdash; Buy the same product again (high brand satisfaction)</li>
+                <li><strong>Replace with Same</strong> &mdash; Buy the same item again (high brand satisfaction)</li>
                 <li><strong>Try an Alternative</strong> &mdash; Consider a different product (low brand satisfaction or better options available)</li>
             </ul>
             <p>Each recommendation shows a confidence level based on how much data is available. More complete item records (purchase price, warranty dates, ratings, maintenance history) produce higher-confidence recommendations.</p>
@@ -2767,7 +2853,7 @@
             <h3>Exporting Selected Products</h3>
             <ol>
                 <li>Go to <strong>My Items</strong>, tap <strong>Select</strong></li>
-                <li>Tap products to select them</li>
+                <li>Tap items to select them</li>
                 <li>Tap <strong>Export</strong> in the toolbar</li>
             </ol>
 
@@ -2789,10 +2875,10 @@
         </section>
 
         <section id="importing">
-            <h2>Importing Products</h2>
+            <h2>Importing Items</h2>
 
             <h3>Preparing Your CSV File</h3>
-            <p>Your CSV needs: a header row, one product per row, and at minimum a <code>name</code> or <code>title</code> column.</p>
+            <p>Your CSV needs: a header row, one item per row, and at minimum a <code>name</code> or <code>title</code> column.</p>
             <p><strong>Supported columns:</strong> name, manufacturer, model, serial, category, location, purchase_date, purchase_price, warranty_expiration, notes</p>
 
             <h3>Importing the File</h3>
@@ -2915,7 +3001,7 @@
 
             <h4>Setting Depreciation</h4>
             <ol>
-                <li>Open a product's detail view</li>
+                <li>Open an item's detail view</li>
                 <li>Tap <strong>Edit</strong></li>
                 <li>Scroll to <strong>Value</strong> section</li>
                 <li>Set <strong>Depreciation Method</strong></li>
@@ -2953,8 +3039,23 @@
                 <li><strong>High-Value Items:</strong> Items exceeding your per-item limit that may need riders</li>
                 <li><strong>Coverage Gaps:</strong> Categories that might need additional coverage</li>
                 <li><strong>Total vs. Limit:</strong> If your inventory exceeds total coverage</li>
-                <li><strong>Stale Replacement Costs:</strong> Alerts when replacement cost data hasn't been updated recently, so you can verify your coverage is still adequate</li>
+                <li><strong>Stale Replacement Costs:</strong> Alerts when replacement cost is inferred from an old purchase price (see below)</li>
             </ul>
+
+            <h3>Stale Replacement Cost Warnings</h3>
+            <p>Stuffolio calculates each item's replacement cost for insurance purposes. If you haven't entered an explicit replacement cost, Stuffolio falls back to the purchase price. That fallback is fine for recent items — but a 5-year-old TV's purchase price isn't what it would actually cost to replace today.</p>
+            <p><strong>When the warning triggers:</strong> You'll see a stale-cost alert on any item that (a) has no explicit replacement cost set and (b) was purchased more than 2 years ago. The warning appears on the item detail view and in Coverage Insights.</p>
+            <p><strong>How to clear the warning:</strong></p>
+            <ol>
+                <li>Open the affected item</li>
+                <li>Tap <strong>Edit</strong></li>
+                <li>Scroll to the <strong>Replacement Cost</strong> field</li>
+                <li>Enter today's cost to replace the item (check current marketplace prices, or use Stuff Scout to get a valuation)</li>
+                <li>Tap <strong>Save</strong></li>
+            </ol>
+            <div class="tip">
+                <strong>Tip:</strong> If you're not sure what the replacement cost is, running Stuff Scout on the item with the "With Pricing" scan depth gives you a current-market estimate in about 25 seconds. Scout valuations flow directly to the replacement cost field.
+            </div>
 
             <h4>Viewing Your Insurance Analysis</h4>
             <ol>
@@ -2969,7 +3070,7 @@
 
             <h4>Creating a Claim Package</h4>
             <ol>
-                <li>Open the affected product(s)</li>
+                <li>Open the affected item(s)</li>
                 <li>Tap <strong>Actions > Prepare Claim</strong></li>
                 <li>Review the gathered information:
                     <ul>
@@ -3229,13 +3330,25 @@
 
             <h3>Disposing of an Item</h3>
             <ol>
-                <li>Open the product's detail view</li>
+                <li>Open the item's detail view</li>
                 <li>Tap the <strong>action menu</strong> (•••)</li>
                 <li>Select <strong>Dispose of Item</strong></li>
                 <li>Choose the disposal method</li>
                 <li>Fill in the relevant details</li>
                 <li>Tap <strong>Confirm</strong></li>
             </ol>
+
+            <h3>Donations: IRS Threshold Prompts</h3>
+            <p>When you mark an item as <strong>Donated</strong>, Stuffolio prompts you to enter a <strong>Fair Market Value</strong> (FMV) — the price the item would sell for between a willing buyer and willing seller on the donation date. FMV is what you'll use on your tax return, not the original purchase price.</p>
+            <p>The donation sheet gives you contextual guidance based on the value:</p>
+            <ul>
+                <li><strong>Under $500:</strong> Standard donation record — organization name, date, FMV, and optional receipt photo are enough for most filings.</li>
+                <li><strong>$500 – $5,000:</strong> IRS Form 8283 Section A territory. Stuffolio flags that you'll need to file this form if your total non-cash donations exceed $500 for the year, and reminds you to save the receipt.</li>
+                <li><strong>Over $5,000:</strong> IRS Form 8283 Section B territory. A qualified written appraisal is typically required. Stuffolio notes this in the donation record and encourages you to attach the appraisal document.</li>
+            </ul>
+            <div class="warning">
+                <strong>Note:</strong> These prompts are general guidance and reflect IRS thresholds at the time this manual was written. Tax rules change. Consult a tax professional or the current IRS Publication 561 ("Determining the Value of Donated Property") for your specific situation.
+            </div>
 
             <h3>Marking Items as Lost</h3>
             <p>For items that have gone missing:</p>
@@ -3300,7 +3413,7 @@
 
             <h4>How Offline Mode Works</h4>
             <ul>
-                <li><strong>Full offline functionality</strong> &mdash; Add, edit, and delete products without an internet connection</li>
+                <li><strong>Full offline functionality</strong> &mdash; Add, edit, and delete items without an internet connection</li>
                 <li><strong>Automatic queuing</strong> &mdash; Changes made offline are saved locally and queued for sync</li>
                 <li><strong>Auto-sync on reconnection</strong> &mdash; When your device regains connectivity, pending changes sync automatically in the background</li>
                 <li><strong>No manual intervention</strong> &mdash; You don't need to trigger sync manually after going back online</li>
@@ -3310,7 +3423,7 @@
             <h4>What Happens When You Go Offline</h4>
             <ol>
                 <li>You lose internet connectivity (airplane mode, no Wi-Fi, cellular data off)</li>
-                <li>Continue using Stuffolio normally - add, edit, or delete products</li>
+                <li>Continue using Stuffolio normally - add, edit, or delete items</li>
                 <li>All changes are saved locally on your device</li>
                 <li>Changes are added to a sync queue automatically</li>
             </ol>
@@ -3368,7 +3481,7 @@
             <h3>Sharing Items</h3>
             <p><strong>To share an item:</strong></p>
             <ol>
-                <li>Open product detail view</li>
+                <li>Open item detail view</li>
                 <li>Scroll to <strong>Sharing</strong> section</li>
                 <li>Toggle <strong>Share with Household</strong> on</li>
             </ol>
@@ -3407,8 +3520,8 @@
             <h3>Spotlight Search</h3>
             <p>Search your inventory directly from your device's home screen or Spotlight.</p>
             <ul>
-                <li><strong>How it works:</strong> Your products are indexed automatically in Spotlight</li>
-                <li><strong>To search:</strong> Swipe down on your home screen and type a product name</li>
+                <li><strong>How it works:</strong> Your items are indexed automatically in Spotlight</li>
+                <li><strong>To search:</strong> Swipe down on your home screen and type an item name</li>
                 <li><strong>Results:</strong> Tap a result to open directly in Stuffolio</li>
             </ul>
             <p><em>Example: Type "vacuum" in Spotlight to find your Dyson without opening the app.</em></p>
@@ -3416,7 +3529,7 @@
             <h3>Handoff</h3>
             <p>Start working on one device, continue on another.</p>
             <ul>
-                <li><strong>How it works:</strong> When viewing a product on iPhone, pick up your iPad or Mac to continue</li>
+                <li><strong>How it works:</strong> When viewing an item on iPhone, pick up your iPad or Mac to continue</li>
                 <li><strong>Where to find it:</strong> Look for the Stuffolio icon in your Dock (Mac) or app switcher (iOS)</li>
                 <li><strong>Requirements:</strong> Same Apple ID, Bluetooth and Wi-Fi enabled, Handoff enabled in Settings</li>
             </ul>
@@ -3427,9 +3540,9 @@
             <h4>Available Widgets</h4>
             <table>
                 <tr><th>Widget</th><th>Sizes</th><th>What It Shows</th></tr>
-                <tr><td><strong>Quick Add</strong></td><td>Small, Medium</td><td>Tap to add a new product instantly</td></tr>
+                <tr><td><strong>Quick Add</strong></td><td>Small, Medium</td><td>Tap to add a new item instantly</td></tr>
                 <tr><td><strong>Expiring Soon</strong></td><td>Small, Medium, Large</td><td>Warranties expiring in the next 30 days</td></tr>
-                <tr><td><strong>Recent Items</strong></td><td>Medium, Large</td><td>Your most recently added products</td></tr>
+                <tr><td><strong>Recent Items</strong></td><td>Medium, Large</td><td>Your most recently added items</td></tr>
                 <tr><td><strong>Inventory Stats</strong></td><td>Small</td><td>Total items and value at a glance</td></tr>
             </table>
 
@@ -3497,8 +3610,8 @@
             <table>
                 <tr><th>Action</th><th>Feedback Type</th><th>Description</th></tr>
                 <tr><td>Successful scan</td><td>Success vibration</td><td>Confirms barcode or QR code was detected</td></tr>
-                <tr><td>Selecting items</td><td>Light tap</td><td>Gentle feedback when tapping products or list items</td></tr>
-                <tr><td>Errors or duplicates</td><td>Warning vibration</td><td>Alert for duplicate products or scan errors</td></tr>
+                <tr><td>Selecting items</td><td>Light tap</td><td>Gentle feedback when tapping items or list rows</td></tr>
+                <tr><td>Errors or duplicates</td><td>Warning vibration</td><td>Alert for duplicate items or scan errors</td></tr>
                 <tr><td>Completing tasks</td><td>Success vibration</td><td>Confirms saved changes or completed actions</td></tr>
                 <tr><td>Swipe actions</td><td>Light tap</td><td>Tactile feedback when revealing swipe action buttons</td></tr>
             </table>
@@ -3515,23 +3628,23 @@
             <p>Stuffolio is designed to be accessible to all users, with enhanced support for assistive technologies.</p>
 
             <h4>VoiceOver Support</h4>
-            <p>Stuffolio provides comprehensive VoiceOver labels that announce complete product information with a single tap.</p>
+            <p>Stuffolio provides comprehensive VoiceOver labels that announce complete item information with a single tap.</p>
 
             <h5>What VoiceOver Announces</h5>
-            <p>When you select a product with VoiceOver enabled, you'll hear a single combined announcement that includes:</p>
+            <p>When you select an item with VoiceOver enabled, you'll hear a single combined announcement that includes:</p>
             <ul>
                 <li><strong>Product name</strong> — The name of the item</li>
-                <li><strong>Manufacturer</strong> — Who made the product</li>
-                <li><strong>Category</strong> — What type of product it is</li>
+                <li><strong>Manufacturer</strong> — Who made the item</li>
+                <li><strong>Category</strong> — What type of item it is</li>
                 <li><strong>Warranty status</strong> — Current warranty state (active, expiring, expired, or lifetime)</li>
             </ul>
             <p><em>Example announcement: "MacBook Pro, Apple, Electronics, Warranty Active"</em></p>
 
             <h5>VoiceOver Navigation Tips</h5>
             <ul>
-                <li><strong>Swipe right/left:</strong> Navigate between products in the list</li>
-                <li><strong>Double-tap:</strong> Open the selected product's detail view</li>
-                <li><strong>Two-finger swipe down:</strong> Read all products from current position</li>
+                <li><strong>Swipe right/left:</strong> Navigate between items in the list</li>
+                <li><strong>Double-tap:</strong> Open the selected item's detail view</li>
+                <li><strong>Two-finger swipe down:</strong> Read all items from current position</li>
                 <li><strong>Rotor gestures:</strong> Use the rotor to navigate by headings, buttons, or custom actions</li>
             </ul>
 
@@ -3582,8 +3695,8 @@
 
             <h3>Default Settings</h3>
             <ul>
-                <li><strong>Default Category:</strong> Pre-selected for new products</li>
-                <li><strong>Default Location:</strong> Pre-filled for new products</li>
+                <li><strong>Default Category:</strong> Pre-selected for new items</li>
+                <li><strong>Default Location:</strong> Pre-filled for new items</li>
                 <li><strong>Depreciation Rate:</strong> Annual percentage for value calculation</li>
                 <li><strong>Currency:</strong> Display currency for prices</li>
             </ul>
@@ -3593,7 +3706,7 @@
             <ul>
                 <li><strong>Save to Photo Library:</strong> When enabled, photos taken with the camera are automatically saved to your Photo Library in addition to being attached to items</li>
             </ul>
-            <p>This setting is useful for keeping backup copies of product photos accessible outside of Stuffolio. Photos selected from your existing Photo Library are not duplicated.</p>
+            <p>This setting is useful for keeping backup copies of item photos accessible outside of Stuffolio. Photos selected from your existing Photo Library are not duplicated.</p>
             <a href="#toc" class="back-to-top">Back to Contents</a>
         </section>
 
@@ -3633,7 +3746,7 @@
 
             <h3>Assigning Items</h3>
             <ol>
-                <li>Open any product's detail view</li>
+                <li>Open any item's detail view</li>
                 <li>Scroll to the <strong>Legacy Wishes</strong> section</li>
                 <li>Tap <strong>Assign This Item</strong></li>
                 <li>Select recipient(s) in priority order</li>
@@ -3641,6 +3754,14 @@
                 <li>Add optional notes</li>
                 <li>Tap <strong>Save</strong></li>
             </ol>
+
+            <h3>Browsing Your Wishes with Thumbnails</h3>
+            <p>The Legacy Wishes list shows a <strong>thumbnail of each assigned item</strong> next to the recipient's name — not just a text label. At a glance you can see what you're giving to whom, which is especially useful when you have a dozen items assigned to the same person or similar items going to different people.</p>
+            <ul>
+                <li>Items without photos show a category icon in place of a thumbnail</li>
+                <li>Tap any row to open that item and review or change the assignment</li>
+                <li>Group by recipient to see the complete list of what each person is receiving</li>
+            </ul>
 
             <h3>Sharing Your Wishes</h3>
             <h4>Export as PDF</h4>
@@ -3824,14 +3945,14 @@
             <h5>Tools (8 commands)</h5>
             <table>
                 <tr><th>Item</th><th>Description</th><th>Keywords</th></tr>
-                <tr><td><strong>Add Product</strong></td><td>Create a new product entry</td><td>new, create, item</td></tr>
-                <tr><td><strong>Scan Barcode</strong></td><td>Add product by scanning UPC/QR code</td><td>camera, upc, qr</td></tr>
-                <tr><td><strong>Import from CSV</strong></td><td>Import products from spreadsheet</td><td>spreadsheet, excel, data</td></tr>
-                <tr><td><strong>Export to CSV</strong></td><td>Export products to spreadsheet</td><td>spreadsheet, download</td></tr>
+                <tr><td><strong>Add Item</strong></td><td>Create a new item entry</td><td>new, create, item</td></tr>
+                <tr><td><strong>Scan Barcode</strong></td><td>Add item by scanning UPC/QR code</td><td>camera, upc, qr</td></tr>
+                <tr><td><strong>Import from CSV</strong></td><td>Import items from spreadsheet</td><td>spreadsheet, excel, data</td></tr>
+                <tr><td><strong>Export to CSV</strong></td><td>Export items to spreadsheet</td><td>spreadsheet, download</td></tr>
                 <tr><td><strong>Export to PDF</strong></td><td>Generate PDF inventory report</td><td>report, print, document</td></tr>
                 <tr><td><strong>Backup Data</strong></td><td>Create a backup of your data</td><td>save, archive, protect</td></tr>
                 <tr><td><strong>Restore Data</strong></td><td>Restore from a previous backup</td><td>recover, undo</td></tr>
-                <tr><td><strong>Bulk Operations</strong></td><td>Edit multiple products at once</td><td>batch, mass, multiple</td></tr>
+                <tr><td><strong>Bulk Operations</strong></td><td>Edit multiple items at once</td><td>batch, mass, multiple</td></tr>
             </table>
 
             <h5>Navigation (6 destinations)</h5>
@@ -3848,8 +3969,8 @@
             <h5>Utilities (3 items)</h5>
             <table>
                 <tr><th>Item</th><th>Description</th><th>Keywords</th></tr>
-                <tr><td><strong>AI Product Assistant</strong></td><td>Get AI-powered help with products</td><td>assistant, manual, troubleshoot</td></tr>
-                <tr><td><strong>Check Recalls</strong></td><td>Check for product safety recalls</td><td>safety, warning, cpsc</td></tr>
+                <tr><td><strong>AI Product Assistant</strong></td><td>Get AI-powered help with items</td><td>assistant, manual, troubleshoot</td></tr>
+                <tr><td><strong>Check Recalls</strong></td><td>Check for item safety recalls</td><td>safety, warning, cpsc</td></tr>
                 <tr><td><strong>Verify Inventory</strong></td><td>Verify and count your inventory</td><td>verify, check, count, audit</td></tr>
             </table>
 
@@ -3866,7 +3987,7 @@
                 <tr><th>Item</th><th>Description</th><th>Keywords</th></tr>
                 <tr><td><strong>Getting Started</strong></td><td>Learn how to use Stuffolio</td><td>guide, tutorial, learn</td></tr>
                 <tr><td><strong>Icon Guide</strong></td><td>What the icons and symbols mean</td><td>symbols, meaning, legend</td></tr>
-                <tr><td><strong>Filter & Sort Help</strong></td><td>How to filter and sort products</td><td>organize, find</td></tr>
+                <tr><td><strong>Filter & Sort Help</strong></td><td>How to filter and sort items</td><td>organize, find</td></tr>
             </table>
 
             <h5>Settings (4 items)</h5>
@@ -3887,7 +4008,7 @@
                 <li><strong>Action words</strong> — "add", "export", "scan" jump to relevant actions</li>
             </ul>
 
-            <p><strong>Note:</strong> Go To helps you navigate to features, tools, and help within Stuffolio. To search your products, go to My Items where the search bar is always visible.</p>
+            <p><strong>Note:</strong> Go To helps you navigate to features, tools, and help within Stuffolio. To search your items, go to My Items where the search bar is always visible.</p>
             <a href="#toc" class="back-to-top">Back to Contents</a>
         </section>
 
@@ -3978,8 +4099,8 @@
         </section>
 
         <footer>
-            <p><strong>Stuffolio User's Manual</strong> | Version 2.0 | January 2026</p>
-            <p>&copy; 2025 Coffee &amp; Code LLC. All rights reserved.</p>
+            <p><strong>Stuffolio User's Manual</strong> | Version 3.3 | April 2026 — synced with Stuffolio Build 33</p>
+            <p>&copy; 2026 Coffee &amp; Code LLC. All rights reserved.</p>
             <p>Stuffolio is a trademark of Coffee &amp; Code LLC.</p>
           <div class="trust-strip"><span>Privacy-first. No ads. No selling your data. AI when you ask — silent when you don't.</span></div>
 </footer>
