@@ -42,12 +42,6 @@ const searchIndex = [
     keywords: "changelog whats new release notes updates version build features improvements fixes"
   },
   {
-    title: "App Map",
-    url: "app-map.html",
-    description: "Visual guide to all screens and features in Stuffolio. Dashboard, item detail, settings, and more.",
-    keywords: "app map screens navigation dashboard item detail settings journey acquire own move on"
-  },
-  {
     title: "Beta Testing Guide",
     url: "beta-testing-guide.html",
     description: "Guide for beta testers. What to test, how to report feedback, testing priorities.",

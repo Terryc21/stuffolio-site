@@ -317,11 +317,11 @@
               <a href="quick-start.html">Quick Start</a>
               <a href="Stuffolio_Users_Manual.html">User Manual</a>
               <a href="whats-new.html">What's New</a>
-              <a href="app-map.html">App Map</a>
             </div>
           </div>
           <a href="compare.html" aria-current="page">Compare</a>
           <a href="use-cases.html">Use Cases</a>
+          <a href="story.html">Our Story</a>
           <div class="nav-dropdown">
             <button class="nav-dropdown-toggle">Support</button>
             <div class="nav-dropdown-menu">
@@ -350,7 +350,7 @@
         <div class="hero-intro">
           <h1>Compare home inventory apps</h1>
           <p class="tagline">
-            Owning things isn't one task. You need to know what you have, take care of it while it's yours, and eventually pass it along or let it go. Most apps handle one piece of that. This page is a calm, honest comparison so you can pick what fits your household.
+            Owning things isn't one task. You need to know what you have, take care of it while it's yours, and eventually pass it along or let it go. Most apps are built around acquiring more. Stuffolio is built around understanding what's already here. This page is a calm, honest comparison so you can pick what fits your household.
           </p>
           <div class="pill-row" aria-label="Page highlights">
             <a class="pill" href="#framing">Snapshot inventory vs lifecycle ownership</a>
@@ -398,7 +398,7 @@
               <li>Acquire &rarr; Own &rarr; Move On</li>
               <li>Warranty phases (what's covered <em>now</em>, not just expiration)</li>
               <li>Support/claim context (case numbers, RMAs, outcomes)</li>
-              <li>Product memory: "Would I buy this again?"</li>
+              <li>Decision memory: "Would I buy this again?"</li>
             </ul>
           </div>
         </div>
@@ -780,9 +780,9 @@
         </div>
 
         <div class="feature-section">
-          <h3>Product memory</h3>
+          <h3>Decision memory</h3>
           <p>
-            Rate every product. Track "Would I buy this again?" Five years from now, you'll remember what held up and what didn't.
+            Rate every item. Track "Would I buy this again?" Five years from now, you'll remember what held up and what didn't.
           </p>
         </div>
 
@@ -805,6 +805,10 @@
             <p>You need proof of what you own and what it would cost to replace. Stuffolio tracks replacement costs over time and generates claim-ready reports with photos and receipts.</p>
           </div>
           <div class="choose-card">
+            <h4>Thrift shoppers and resellers</h4>
+            <p>You find deals at thrift stores, flea markets, and garage sales. Stuff Scout identifies items from photos, Price Watch tracks what they're worth, and the full history travels with the item if you sell it later. Not just a flipping calculator &mdash; a place for everything you decide to keep.</p>
+          </div>
+          <div class="choose-card">
             <h4>People managing warranties</h4>
             <p>You're tired of digging through emails for case numbers and coverage details. Stuffolio keeps the full support history, tracks coverage phases, and puts warranty cards in Apple Wallet.</p>
           </div>
@@ -815,10 +819,6 @@
           <div class="choose-card">
             <h4>Anyone who's been burned by a bad product</h4>
             <p>You wish you'd remembered that the last one from that brand was terrible. Product ratings and the "Would I buy this again?" field build that memory over time.</p>
-          </div>
-          <div class="choose-card">
-            <h4>Thrift shoppers and resellers</h4>
-            <p>You find deals at estate sales, thrift stores, and online marketplaces. Stuff Scout identifies items from photos, Price Watch tracks what they're worth, and the full history travels with the item if you sell it later.</p>
           </div>
           <div class="choose-card">
             <h4>Declutterers</h4>
@@ -894,7 +894,7 @@
               </tr>
               <tr>
                 <td>Category Breadth</td>
-                <td><span class="check">&#10003;</span> Antiques, vintage, collectibles, modern, tools, anything</td>
+                <td><span class="check">&#10003;</span> Thrift finds, vintage, collectibles, modern, tools, anything</td>
                 <td><span class="check">&#10003;</span> Antiques, art, jewelry, collectibles</td>
                 <td><span class="check">&#10003;</span> Antiques, art, collectibles</td>
                 <td><span class="partial">&#9680;</span> Antiques, vintage</td>
@@ -913,6 +913,33 @@
               <tr class="unique-row">
                 <td>Natural Language Refinement</td>
                 <td><span class="check">&#10003;</span> Story-first: "It was my grandmother's, from Germany in the 1940s"</td>
+                <td><span class="cross">&#10007;</span></td>
+                <td><span class="cross">&#10007;</span></td>
+                <td><span class="cross">&#10007;</span></td>
+                <td><span class="cross">&#10007;</span></td>
+                <td><span class="cross">&#10007;</span></td>
+              </tr>
+              <tr class="unique-row">
+                <td>Confidence Gate</td>
+                <td><span class="check">&#10003;</span> Asks "Is this right?" before saving</td>
+                <td><span class="cross">&#10007;</span></td>
+                <td><span class="cross">&#10007;</span></td>
+                <td><span class="cross">&#10007;</span></td>
+                <td><span class="cross">&#10007;</span></td>
+                <td><span class="cross">&#10007;</span></td>
+              </tr>
+              <tr class="unique-row">
+                <td>Context Veracity</td>
+                <td><span class="check">&#10003;</span> Evaluates your notes critically; speculation treated as hypothesis</td>
+                <td><span class="cross">&#10007;</span></td>
+                <td><span class="cross">&#10007;</span></td>
+                <td><span class="cross">&#10007;</span></td>
+                <td><span class="cross">&#10007;</span></td>
+                <td><span class="cross">&#10007;</span></td>
+              </tr>
+              <tr class="unique-row">
+                <td>Category-Specific Valuation</td>
+                <td><span class="check">&#10003;</span> Routes to Reverb, eBay, etc. per item category</td>
                 <td><span class="cross">&#10007;</span></td>
                 <td><span class="cross">&#10007;</span></td>
                 <td><span class="cross">&#10007;</span></td>
@@ -1051,6 +1078,19 @@
         </p>
       </div>
 
+      <div class="card" id="thrift-comparison">
+        <h2 style="margin-top:0;">How Stuff Scout compares to thrift &amp; flipping tools</h2>
+        <p>Dedicated flipping apps help you buy low and sell high. Stuffolio helps you buy, keep, track, and eventually sell or pass along. Different tools for different goals.</p>
+        <ul>
+          <li><strong>Underpriced AI</strong> ($12/mo, 30 scans) pulls resale pricing from eBay, Poshmark, Mercari, and more. Great if flipping is your only goal.</li>
+          <li><strong>ThriftAI</strong> (subscription) offers real-time AI item recognition with profit calculators and fee estimates.</li>
+          <li><strong>WorthPoint</strong> (subscription) is a deep database of sold auction prices going back decades. Best for obscure items with auction history.</li>
+        </ul>
+        <p>
+          Stuff Scout's advantage: identification is just the start. The item flows into your inventory, where you track what you paid vs. what it's worth now, document it for insurance, monitor value over time, and decide when to flip, keep, donate, or pass it on. Not just a flipping calculator &mdash; a place for everything you decide to keep.
+        </p>
+      </div>
+
       <div class="card bridge">
         <p>
           See how it all works together on the <a href="features.html">Features</a> page: warranty phases, AI identification, recall alerts, donation tracking, and more.
@@ -1109,7 +1149,7 @@
       <div class="card" style="text-align:center;">
         <h2 style="margin-top:0;">Take care of what you own</h2>
         <p>
-          The only home inventory app with built-in AI identification, warranty intelligence, and legacy planning.
+          Built around the assumption that you already have enough, and you'd like to make sense of it.
         </p>
         <div style="margin-top:20px; display:flex; gap:14px; justify-content:center; flex-wrap:wrap;">
           <a href="features.html" class="btn" style="background:var(--accent); color:#000; padding:12px 24px; border-radius:8px; text-decoration:none; font-weight:600;">See Features</a>
@@ -1135,7 +1175,6 @@
           <h4>Docs</h4>
           <ul>
             <li><a href="quick-start.html">Quick Start</a></li>
-            <li><a href="app-map.html">App Map</a></li>
             <li><a href="family-sharing.html">Family Sharing</a></li>
           </ul>
         </div>

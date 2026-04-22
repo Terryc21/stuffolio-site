@@ -231,7 +231,7 @@
         "name": "Can I use Siri and Apple Intelligence with Stuffolio?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes! Stuffolio has 25+ Siri voice commands and automations. Ask about warranties, inventory value, maintenance, or search by name -- Siri answers instantly without opening the app. On iOS 26, Siri shows visual status cards, Visual Intelligence lets you point your camera at a product to find it in your inventory, and Apple Intelligence can reason about the item you're currently viewing. All 25+ actions are also available in the Shortcuts app for custom automations."
+          "text": "Yes! Stuffolio has 25+ Siri voice commands and automations. Ask about warranties, inventory value, maintenance, or search by name -- Siri answers instantly without opening the app. On iOS 26, Siri shows visual status cards, Visual Intelligence lets you point your camera at an item to find it in your inventory, and Apple Intelligence can reason about the item you're currently viewing. All 25+ actions are also available in the Shortcuts app for custom automations."
         }
       },
       {
@@ -281,11 +281,11 @@
               <a href="quick-start.html">Quick Start</a>
               <a href="Stuffolio_Users_Manual.html">User Manual</a>
               <a href="whats-new.html">What's New</a>
-              <a href="app-map.html">App Map</a>
             </div>
           </div>
           <a href="compare.html">Compare</a>
           <a href="use-cases.html">Use Cases</a>
+          <a href="story.html">Our Story</a>
           <div class="nav-dropdown">
             <button class="nav-dropdown-toggle" aria-current="page">Support</button>
             <div class="nav-dropdown-menu">
@@ -421,13 +421,14 @@
 
       <details class="faq-item">
         <summary>How can I improve Stuff Scout results?</summary>
-        <p>If Stuff Scout's initial identification isn't quite right, you can refine the results:</p>
-        <ol style="margin-top:10px;">
-          <li><strong>Tap "Not quite right?"</strong> on the results screen</li>
-          <li><strong>Add what you know</strong> — product name, manufacturer, model number, or era</li>
-          <li><strong>Add photos</strong> — snap pictures of maker's marks, labels, stamps, or different angles</li>
-          <li><strong>Tap Re-analyze</strong> — the AI reconsiders with your hints</li>
-        </ol>
+        <p>After every scan, the <strong>Confidence Gate</strong> asks "Is this right?" with three paths:</p>
+        <ul style="margin-top:10px;">
+          <li><strong>Yes, that's it</strong> — save the result as-is</li>
+          <li><strong>Almost, I can add more</strong> — open the refinement flow</li>
+          <li><strong>No, that's not it</strong> — try again with a different approach</li>
+        </ul>
+        <p style="margin-top:10px;">When you choose "Almost, I can add more," <strong>story-first refinement</strong> appears: a large text area invites you to describe what you know in plain language ("This belonged to my grandfather, might be from the 1940s"). Structured fields (maker's mark, serial number, era) are collapsed below as optional extras — fill them in only if they help.</p>
+        <p style="margin-top:10px;"><strong>Context veracity:</strong> Scout now evaluates your notes critically. Specific facts (artist names, serial numbers, museum attributions) are verified against visual evidence. Speculative guesses ("I think it might be old") are treated as hypotheses to investigate, not facts to accept. So speculation won't push Scout off course.</p>
         <p style="margin-top:10px;"><strong>Tips for best results:</strong></p>
         <ul style="margin-top:8px;">
           <li>Photos of maker's marks or signatures are especially helpful</li>
@@ -435,7 +436,7 @@
           <li>Mention where you found it or any known history</li>
           <li>Include visible markings, stamps, or patent numbers</li>
         </ul>
-        <p style="margin-top:10px;">Each refinement uses 1 AI query from your allowance, but it's worth it for accurate identification and valuation.</p>
+        <p style="margin-top:10px;">Each refinement uses 1 AI query from your allowance. Scout shows you exactly how each round of added context improved the identification and valuation.</p>
       </details>
 
       <details class="faq-item">
@@ -481,7 +482,7 @@
         </ul>
         <p style="margin-top:10px;">Some products have different warranty periods for different components. For example, EGO Power+ tools offer 3 years on batteries and 5 years on outdoor equipment.</p>
         <p style="margin-top:10px;">Stuffolio lets you track these phases so you always know what's covered right now. You can add multiple coverage phases to any warranty, each with its own coverage type, date range, component name, and deductible.</p>
-        <p style="margin-top:10px;"><strong>To add coverage phases:</strong> When adding or editing a product, expand the "Coverage Phases" section (it's a top-level section in the form), then tap "Add Coverage Phase." You can optionally specify a component name for component-based warranties. Stuffolio will notify you when coverage is about to change.</p>
+        <p style="margin-top:10px;"><strong>To add coverage phases:</strong> When adding or editing an item, expand the "Coverage Phases" section (it's a top-level section in the form), then tap "Add Coverage Phase." You can optionally specify a component name for component-based warranties. Stuffolio will notify you when coverage is about to change.</p>
       </details>
 
       <details class="faq-item">
@@ -500,7 +501,7 @@
         <summary>Can I track warranty deductibles?</summary>
         <p>Yes. Many warranties (especially extended warranties) require a deductible — an out-of-pocket cost you pay when making a claim.</p>
         <p style="margin-top:10px;">You can set a deductible for the entire warranty, or different deductibles for each coverage phase. For example, an extended warranty might have no deductible for the first year, then a $50 deductible for years 2-5.</p>
-        <p style="margin-top:10px;">The product detail view shows your current deductible based on which coverage phase is active.</p>
+        <p style="margin-top:10px;">The Item detail view shows your current deductible based on which coverage phase is active.</p>
       </details>
       <!-- /SYNC:FAQ:Warranties -->
 
@@ -555,7 +556,7 @@
         <summary>How do I send items to Notes, Calendar, or Reminders?</summary>
         <p>Stuffolio's "Send to Apps" feature lets you quickly share item details with Apple's built-in apps:</p>
         <ul style="margin-top:10px;">
-          <li><strong>Notes</strong> — Creates a note with item title, brand, and model. Great for adding detailed notes about a product, troubleshooting steps, or repair history.</li>
+          <li><strong>Notes</strong> — Creates a note with item title, brand, and model. Great for adding detailed notes about an item, troubleshooting steps, or repair history.</li>
           <li><strong>Calendar</strong> — Creates an event for warranty expiration or scheduled maintenance. Perfect for getting reminded before coverage ends.</li>
           <li><strong>Reminders</strong> — Adds a task for maintenance, follow-up calls, or anything you need to remember about the item.</li>
         </ul>
@@ -584,7 +585,7 @@
         <ul style="margin-top:10px;">
           <li><strong>Stuff Scout (AI)</strong> — Identify items from photos and get product research</li>
           <li><strong>Barcode Lookup</strong> — Auto-fill product info by scanning barcodes</li>
-          <li><strong>Recall Checker</strong> — Check if your products have safety recalls</li>
+          <li><strong>Recall Checker</strong> — Check if your items have safety recalls</li>
           <li><strong>Analytics</strong> — Help improve Stuffolio by sharing anonymous usage data</li>
         </ul>
         <p style="margin-top:10px;">Each feature can be enabled or disabled individually. Core inventory features always work offline — no internet required.</p>
@@ -598,7 +599,7 @@
         <p style="margin-top:10px;"><strong>How it works:</strong></p>
         <ul style="margin-top:8px;">
           <li><strong>Add Recipients</strong> — Family members, friends, charities, or organizations who may receive items</li>
-          <li><strong>Assign Items</strong> — From any product's detail view or the Legacy Wishes hub, assign items to recipients</li>
+          <li><strong>Assign Items</strong> — From any item's detail view or the Legacy Wishes hub, assign items to recipients</li>
           <li><strong>Contingency Recipients</strong> — Set a line of succession — if primary recipient declines, specify who receives the item next</li>
           <li><strong>Set Fallbacks</strong> — Choose what happens if no one accepts (donate, sell, let family decide)</li>
           <li><strong>Share via CloudKit</strong> — Share with family members with real-time sync across all devices</li>
@@ -624,26 +625,26 @@
           <li><strong>Research Tips</strong> — How to find trustworthy product reviews (Consumer Reports, Wirecutter, iFixit, etc.)</li>
         </ul>
         <p style="margin-top:10px;"><strong>Confidence levels:</strong> The advisor tells you how confident its suggestions are — High (complete data), Medium (partial data), or Exploratory (limited data). It won't pretend to know more than it does.</p>
-        <p style="margin-top:10px;"><strong>To access:</strong> Open any product, tap the action menu (•••), and select <strong>Repair, Keep, or Replace?</strong>. You can also find it in Rating Insights for items you've rated.</p>
+        <p style="margin-top:10px;"><strong>To access:</strong> Open any item, tap the action menu (•••), and select <strong>Repair, Keep, or Replace?</strong>. You can also find it in Rating Insights for items you've rated.</p>
         <p style="margin-top:10px; font-size:.9rem;"><strong>Philosophy:</strong> Your own ratings, brand history, and experience are the most trustworthy data you have. This feature surfaces that first, then offers tools to help you think — not shop.</p>
       </details>
       <!-- /SYNC:FAQ:RepairKeepReplace -->
 
       <!-- SYNC:FAQ:Navigation -->
       <details class="faq-item">
-        <summary>What's the difference between Go To and Product Search?</summary>
-        <p><strong>Go To (⌘K)</strong> and <strong>Product Search</strong> serve different purposes:</p>
+        <summary>What's the difference between Go To and the search bar in My Items?</summary>
+        <p><strong>Go To (⌘K)</strong> and the <strong>search bar in My Items</strong> serve different purposes:</p>
         <ul style="margin-top:10px;">
-          <li><strong>Go To</strong> — A command palette for navigating the app. Use it to jump to features, launch actions (Add Product, Export, Backup), access tools (AI Assistant, Recall Check), open settings, or get help. It searches app functions, not your products.</li>
-          <li><strong>Product Search</strong> — Found in My Items, this searches your actual inventory. Use it to find specific items by name, brand, model, category, location, or any other product details.</li>
+          <li><strong>Go To</strong> — A command palette for navigating the app. Use it to jump to features, launch actions (Add Item, Export, Backup), access tools (AI Assistant, Recall Check), open settings, or get help. It searches app functions, not your items.</li>
+          <li><strong>My Items search</strong> — The search bar at the top of My Items. Use it to find specific items by name, brand, model, category, location, or any other detail.</li>
         </ul>
-        <p style="margin-top:10px;"><strong>Quick rule:</strong> Use <strong>Go To</strong> to do something in the app. Use <strong>Product Search</strong> to find something you own.</p>
-        <p style="margin-top:10px;">Go To is available from anywhere via ⌘K (Mac/iPad with keyboard) or the toolbar button. Product Search is always visible at the top of My Items.</p>
+        <p style="margin-top:10px;"><strong>Quick rule:</strong> Use <strong>Go To</strong> to do something in the app. Use <strong>My Items search</strong> to find something you own.</p>
+        <p style="margin-top:10px;">Go To is available from anywhere via ⌘K (Mac/iPad with keyboard) or the toolbar button. The My Items search bar is always visible at the top of My Items.</p>
       </details>
 
       <details class="faq-item">
         <summary>What is Photo mode when adding items?</summary>
-        <p>Photo mode is the fastest way to add items to your inventory. Snap a photo and AI fills in the details for you — product name, manufacturer, estimated value, and more.</p>
+        <p>Photo mode is the fastest way to add items to your inventory. Snap a photo and AI fills in the details for you — item name, manufacturer, estimated value, and more.</p>
         <p style="margin-top:10px;"><strong>How it works:</strong></p>
         <ol style="margin-top:8px;">
           <li>Tap <strong>+ → Photo</strong></li>
@@ -889,7 +890,7 @@
         <p style="margin-top:10px;"><strong>iOS 26 enhancements:</strong></p>
         <ul style="margin-top:8px;">
           <li><strong>Visual status cards</strong> -- Siri shows warranty and inventory summaries as visual cards, not just text</li>
-          <li><strong>Visual Intelligence</strong> -- Point your camera at a product to find it in your inventory</li>
+          <li><strong>Visual Intelligence</strong> -- Point your camera at an item to find it in your inventory</li>
           <li><strong>Onscreen awareness</strong> -- Apple Intelligence knows which item you're viewing and can answer questions about it</li>
           <li><strong>Background answers</strong> -- Queries run without opening the app</li>
         </ul>
@@ -1030,7 +1031,6 @@
           <h4>Docs</h4>
           <ul>
             <li><a href="quick-start.html">Quick Start</a></li>
-            <li><a href="app-map.html">App Map</a></li>
             <li><a href="family-sharing.html">Family Sharing</a></li>
           </ul>
         </div>
