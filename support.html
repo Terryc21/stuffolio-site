@@ -82,6 +82,19 @@
     .light-mode .highlight p { color:#333 !important }
     .light-mode .contact-box { background:rgba(124,58,237,.08) !important; border-color:rgba(124,58,237,.25) !important }
     .light-mode .faq-item summary { color:#1a1a1a !important }
+
+    /* Visually hidden (for accessible heading order) */
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
   </style>
 
   <!-- Structured Data: FAQ Schema -->
@@ -223,7 +236,7 @@
         "name": "What is the Insurance Profile?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "The Insurance Profile helps you understand how your belongings fit with your insurance coverage. It tracks coverage limits, identifies high-value items that exceed per-item limits, and flags coverage gaps before you need to file a claim."
+          "text": "The Insurance Profile helps you understand how your belongings fit with your insurance coverage. It tracks coverage limits, identifies high-value items that exceed per-item limits, and flags coverage gaps so you can have a more informed conversation with your insurance agent. Stuffolio is a tool for organizing your records — your insurer decides what documentation they accept."
         }
       },
       {
@@ -319,6 +332,7 @@
       </div>
     </div>
 
+    <h2 class="visually-hidden">Quick navigation</h2>
     <div class="grid">
       <div class="card">
         <h3>📱 Getting Started</h3>
@@ -857,7 +871,7 @@
 
       <details class="faq-item">
         <summary>What is the Insurance Profile?</summary>
-        <p>The Insurance Profile helps you understand how your belongings fit with your insurance coverage. It identifies potential gaps before you need to file a claim.</p>
+        <p>The Insurance Profile helps you understand how your belongings fit with your insurance coverage. It identifies potential gaps so you can address them with your insurance agent before something goes wrong.</p>
         <p style="margin-top:10px;"><strong>What it tracks:</strong></p>
         <ul style="margin-top:8px;">
           <li><strong>Coverage Limits</strong> — Your policy's total and per-item limits</li>

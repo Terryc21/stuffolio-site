@@ -45,4 +45,4 @@ Before updating, check these in the Xcode project:
 
 - SYNC markers are HTML comments -- they cost nothing and serve as navigation anchors
 - The old `/update-website` skill (in archived xcode-workflow-skills repo) is deprecated
-- Last full sync: April 2, 2026 (Build 30)
+- Last full sync: April 21, 2026 (Build 33)

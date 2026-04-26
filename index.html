@@ -21,22 +21,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="msvalidate.01" content="B16FC24F5B1BA9A05762DF7D50CD40FE" />
 
-  <title>Stuffolio — Know what you own. Take care of what you own.</title>
-  <meta name="description" content="Stuffolio helps you take care of what you own. Track warranties, document for insurance, plan who gets what, and identify anything from a photo with built-in AI. Privacy-first for iPhone, iPad, and Mac." />
+  <title>Stuffolio — The home inventory app built around stewardship — not just another list-maker.</title>
+  <meta name="description" content="The home inventory app built around stewardship — not just another list-maker. Track warranties, document for insurance, plan who gets what, and identify anything from a photo with built-in AI. Privacy-first for iPhone, iPad, and Mac." />
   <meta name="theme-color" content="#0b1220" />
 
   <!-- Open Graph / Social Sharing -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://stuffolio.app/" />
-  <meta property="og:title" content="Stuffolio — Know what you own. Take care of what you own." />
-  <meta property="og:description" content="Track warranties, document for insurance, plan who gets what, and identify anything from a photo. The home inventory app built around stewardship, not just lists." />
+  <meta property="og:title" content="Stuffolio — The home inventory app built around stewardship — not just another list-maker." />
+  <meta property="og:description" content="Track warranties, document for insurance, plan who gets what, and identify anything from a photo. The home inventory app built around stewardship — not just another list-maker." />
   <meta property="og:image" content="https://stuffolio.app/assets/og-image.png" />
   <meta property="og:site_name" content="Stuffolio" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Stuffolio — Know what you own. Take care of what you own." />
-  <meta name="twitter:description" content="The home inventory app built around stewardship. Warranties, insurance, legacy planning, and AI identification." />
+  <meta name="twitter:title" content="Stuffolio — The home inventory app built around stewardship — not just another list-maker." />
+  <meta name="twitter:description" content="The home inventory app built around stewardship — not just another list-maker. Warranties, insurance, legacy planning, and AI identification." />
   <meta name="twitter:image" content="https://stuffolio.app/assets/og-image.png" />
 
   <!-- Canonical URL -->
@@ -53,7 +53,7 @@
   "name": "Stuffolio",
   "operatingSystem": "iOS 17.0+, iPadOS 17.0+, macOS 14.0+",
   "applicationCategory": "UtilitiesApplication",
-  "description": "Stuffolio helps you take care of what you own. Track warranties with coverage phases, document for insurance, plan who gets what with Legacy Wishes, and identify items from photos with built-in AI.",
+  "description": "The home inventory app built around stewardship — not just another list-maker. Track warranties with coverage phases, document for insurance, plan who gets what with Legacy Wishes, and identify items from photos with built-in AI.",
   "author": {
     "@type": "Organization",
     "name": "Coffee & Code LLC",
@@ -95,7 +95,7 @@
     "Recall checking via CPSC database"
   ],
   "screenshot": "https://stuffolio.app/assets/og-image.png",
-  "softwareVersion": "1.0", <!-- SYNC:VERSION -->
+  "softwareVersion": "1.0 (33)", <!-- SYNC:VERSION -->
   "datePublished": "2026-01-01"
 }
 </script>
@@ -130,7 +130,7 @@
     .hero { display: block; }
 
     .gradient-text {
-      background: linear-gradient(135deg, var(--accent), var(--accent2), #a78bfa);
+      background: linear-gradient(135deg, var(--accent), var(--accent2), var(--accent));
       background-size: 200% 200%;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -454,12 +454,15 @@
               <h1 style="margin-top:0;">
                 Know what you own.<br/><span class="gradient-text">Take care of what you own.</span>
               </h1>
+              <p class="tagline" style="font-size:1.05rem; color:var(--muted); margin:8px 0 0; line-height:1.5;">
+                The home inventory app built around stewardship &mdash; not just another list-maker.
+              </p>
               <div class="beta-callout"><strong>Beta testers:</strong> Please use the <a href="beta-testing-guide.html">Beta Testing Guide</a> for setup, what to test, and where to send feedback.</div>
             </div>
           </div>
 
           <p class="lead" style="font-size:1.15rem;">
-            Stuffolio helps you be a better owner. Track warranties, protect what matters, plan who gets what someday. And when you find something new, Stuff Scout identifies it from a photo.
+            Track warranties, protect what matters, plan who gets what someday. And when you find something new, Stuff Scout identifies it from a photo.
           </p>
           <p style="color:var(--muted); font-size:1rem; font-style:italic; margin-top:8px;">Not acquiring more. Understanding what's already here.</p>
 
@@ -556,9 +559,9 @@
             <div class="differentiator-card">
               <div class="diff-icon">&#128270;</div>
               <h3>Stuff Scout AI</h3>
-              <p class="diff-problem">You found something at an estate sale. What is it? What's it worth?</p>
+              <p class="diff-problem">You're in a Goodwill aisle holding a $5 lamp. Is it worth more than $5?</p>
               <p class="diff-others">Other inventory apps can't help until you already know.</p>
-              <p class="diff-stuffolio">Point your camera. Stuff Scout identifies it, estimates the value, and adds it to your inventory in one step.</p>
+              <p class="diff-stuffolio">Point your camera. Stuff Scout identifies it, estimates the value, and knows when to call in a specialist for the rare valuable find.</p>
             </div>
 
             <div class="differentiator-card">
@@ -787,26 +790,6 @@
                 <li>Visual Intelligence (iOS 26)</li>
                 <li>iPhone, iPad, Mac &mdash; seamlessly</li>
               </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- LIGHT/DARK MODE SLIDER -->
-      <section style="margin-top:18px;">
-        <div class="card">
-          <div class="mode-slider-wrap">
-            <h3>Light or dark. Your choice.</h3>
-            <p style="text-align:center; color:var(--muted); margin-bottom:20px;">Drag to compare. Stuffolio follows your system appearance.</p>
-            <div class="mode-slider" data-mode-slider>
-              <!-- TODO: Replace with actual screenshot pairs -->
-              <img class="mode-slider__dark" src="assets/screenshots/dashboard-dark.png" alt="Stuffolio dashboard in dark mode">
-              <img class="mode-slider__light" src="assets/screenshots/dashboard-light.png" alt="Stuffolio dashboard in light mode">
-              <div class="mode-slider__handle"></div>
-            </div>
-            <div class="mode-slider__labels">
-              <span>Light</span>
-              <span>Dark</span>
             </div>
           </div>
         </div>
