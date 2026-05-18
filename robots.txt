@@ -32,7 +32,3 @@ Disallow: /
 
 User-agent: Applebot-Extended
 Disallow: /
-
-# Sitemap intentionally not declared here — we don't advertise our
-# page inventory to competitors. The /sitemap.xml file still exists
-# and is reachable by direct path for crawlers that find it that way.
