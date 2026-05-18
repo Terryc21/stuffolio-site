@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About Coffee &amp; Code LLC — Makers of Stuffolio</title>
+  <meta name="description" content="Stuffolio is built by Coffee &amp; Code LLC, an independent one-person studio in Castle Rock, Colorado. About the company, what we believe, and how to reach support." />
+  <meta name="theme-color" content="#0b1220" />
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://stuffolio.app/about.html" />
+  <meta property="og:title" content="About Coffee &amp; Code LLC — Makers of Stuffolio" />
+  <meta property="og:description" content="Stuffolio is built by Coffee &amp; Code LLC, an independent one-person studio in Castle Rock, Colorado." />
+  <meta property="og:image" content="https://stuffolio.app/assets/og-image.png" />
+  <meta property="og:site_name" content="Stuffolio" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="About Coffee &amp; Code LLC — Makers of Stuffolio" />
+  <meta name="twitter:description" content="Stuffolio is built by Coffee &amp; Code LLC, an independent one-person studio in Castle Rock, Colorado." />
+  <meta name="twitter:image" content="https://stuffolio.app/assets/og-image.png" />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://stuffolio.app/about.html" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
+
+  <!-- Shared Styles -->
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- Page-specific styles -->
+  <style>
+    :root { --max: 900px }
+    h1 { font-size:2.2rem; margin:0 0 8px }
+    h2 { font-size:1.4rem; margin:28px 0 12px; color:var(--accent) }
+    h3 { font-size:1.1rem; margin:0 0 8px; color:var(--accent) }
+    p { margin:0 0 14px; color:var(--muted) }
+    a { color:var(--accent) }
+    a:hover { color:var(--text) }
+
+    .highlight {
+      background: rgba(125,211,252,.08);
+      border:1px solid rgba(125,211,252,.25);
+      border-radius:12px;
+      padding:16px;
+      margin:14px 0;
+      transition: background .3s, border-color .3s;
+    }
+    .highlight p { margin:0; color:var(--text) }
+
+    .contact-box {
+      text-align:center;
+      padding:24px;
+      background: rgba(167,139,250,.08);
+      border:1px solid rgba(167,139,250,.25);
+      border-radius:12px;
+      margin-top:18px;
+      transition: background .3s, border-color .3s;
+    }
+    .contact-box a { font-size:1.2rem; font-weight:600 }
+
+    /* Light mode overrides */
+    .light-mode .highlight { background:rgba(0,102,204,.08) !important; border-color:rgba(0,102,204,.25) !important }
+    .light-mode .highlight p { color:#333 !important }
+    .light-mode .contact-box { background:rgba(124,58,237,.08) !important; border-color:rgba(124,58,237,.25) !important }
+
+    /* Visually hidden (for accessible heading order) */
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+  </style>
+
+  <!-- Structured Data: AboutPage + Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "About Coffee & Code LLC",
+    "url": "https://stuffolio.app/about.html",
+    "description": "Stuffolio is built by Coffee & Code LLC, an independent one-person software studio in Castle Rock, Colorado.",
+    "primaryImageOfPage": "https://stuffolio.app/assets/og-image.png",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Stuffolio",
+      "url": "https://stuffolio.app"
+    },
+    "about": {
+      "@type": "Organization",
+      "name": "Coffee & Code LLC",
+      "legalName": "Coffee & Code LLC",
+      "url": "https://stuffolio.app",
+      "logo": "https://stuffolio.app/assets/apple-touch-icon.png",
+      "foundingDate": "2025",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Castle Rock",
+        "addressRegion": "Colorado",
+        "addressCountry": "US"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "support@stuffolio.app",
+        "contactType": "customer support"
+      },
+      "founder": {
+        "@type": "Person",
+        "name": "Terry Nyberg"
+      },
+      "makesOffer": {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "SoftwareApplication",
+          "name": "Stuffolio",
+          "url": "https://stuffolio.app"
+        }
+      }
+    }
+  }
+  </script>
+
+<style>
+/* Drop-in additions for AI notes + beta callout */
+.ai-footnote,.ai-subtext,.ai-note{opacity:.88;font-size:.95em;line-height:1.4;margin-top:.5rem}
+.ai-footnote:before,.ai-subtext:before,.ai-note:before{content:"† ";opacity:.9}
+.beta-callout{border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.04);border-radius:14px;padding:.8rem 1rem;margin:1rem 0 1.25rem}
+.beta-callout strong{display:block;margin-bottom:.25rem}
+</style>
+
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="wrap">
+    <header>
+      <a href="index.html" class="site-title">Stuffolio</a>
+      <div class="header-right">
+        <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="features.html">Features</a>
+          <div class="nav-dropdown">
+            <button class="nav-dropdown-toggle">Docs</button>
+            <div class="nav-dropdown-menu">
+              <a href="quick-start.html">Quick Start</a>
+              <a href="Stuffolio_Users_Manual.html">User Manual</a>
+              <a href="whats-new.html">What's New</a>
+            </div>
+          </div>
+          <a href="compare.html">Compare</a>
+          <a href="use-cases.html">Use Cases</a>
+          <a href="story.html">Our Story</a>
+          <div class="nav-dropdown">
+            <button class="nav-dropdown-toggle">Support</button>
+            <div class="nav-dropdown-menu">
+              <a href="support.html">Help & FAQ</a>
+              <a href="Stuffolio_Users_Manual.html">User Manual</a>
+            </div>
+          </div>
+        </nav>
+
+        <button class="search-toggle" aria-label="Search documentation">
+          <span class="search-icon">🔍</span>
+          <span class="search-label">Search</span>
+          <kbd class="search-kbd">⌘K</kbd>
+        </button>
+
+        <div class="theme-toggle">
+          <span class="theme-icon">☀️</span>
+          <button class="theme-toggle-switch" id="themeToggle" aria-label="Toggle light/dark mode"></button>
+          <span class="theme-icon">🌙</span>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+    <article>
+    <div class="card">
+      <h1>About Coffee &amp; Code</h1>
+      <address class="byline" itemprop="author"><span itemprop="name">Coffee &amp; Code LLC</span> &middot; <time datetime="2026-04-26">Updated April 2026</time></address>
+      <p class="lead">Stuffolio is built by an independent one-person software studio. This is the company behind the app.</p>
+
+      <h2>The studio</h2>
+      <p>Stuffolio is built by <strong>Coffee &amp; Code LLC</strong>, an independent one-person software studio formed in 2025 and based in Castle Rock, Colorado. Coffee &amp; Code is not venture-backed, not part of a larger company, and not for sale. Coffee &amp; Code exists to ship one thoughtful app at a time and stay close enough to its users to actually answer the email.</p>
+      <p>The studio was founded by Terry Nyberg. Design, support, writing, the website you&rsquo;re reading right now &mdash; it all comes from the same one person. <a href="story.html">Read the story of how it started &rarr;</a></p>
+
+      <h2>One product. On purpose.</h2>
+      <p>Right now there is one product: Stuffolio. That&rsquo;s not a phase. We don&rsquo;t plan to grow into a portfolio. The bet is that one app, paid attention to over years instead of weeks, is more useful than five built in a rush.</p>
+
+      <h2>Why "Coffee &amp; Code"</h2>
+      <p>The name says what the days are made of. Most of the work happens at 4 AM, when the house is quiet and there&rsquo;s a fresh-ground, fresh-brewed cup of dark roast in reach. The work is slow on purpose. Software gets to be calm if the company behind it isn&rsquo;t trying to outrun anybody.</p>
+
+      <h2>What we believe about your stuff</h2>
+      <p>Most home inventory apps are built around acquiring more. We&rsquo;re not. Stuffolio is built around what&rsquo;s already in your house &mdash; what it does, when it needs attention, and what happens to it eventually. That last part is the part most apps skip, and it&rsquo;s the reason this one exists.</p>
+
+      <h2>What we believe about AI</h2>
+      <p>The app uses AI where it earns its keep: identifying a thrift store find (or something you already own) from a photo, estimating its value, locating the user manual, finding DIY repair videos, sourcing replacement parts, and helping you decide whether to keep, sell, or donate it. Outside of that, the app is quiet. Nothing about your inventory is sent anywhere unless you ask for help with a specific item. Stewardship doesn&rsquo;t need an always-listening assistant; it needs a tool you can put down and pick back up.</p>
+
+      <h2>What we believe about ownership</h2>
+      <p>Buy once. Keep using it. No accounts to manage, no servers we can shut off. Your data lives on your devices and in your iCloud. If Coffee &amp; Code went away tomorrow, your inventory wouldn&rsquo;t.</p>
+
+      <h2>Get in touch</h2>
+      <div class="contact-box">
+        <p><a href="mailto:support@stuffolio.app">support@stuffolio.app</a></p>
+        <p style="margin:8px 0 0; font-size:.95rem;">See the <a href="support.html">Support page</a> for FAQs and troubleshooting. Most replies arrive within 24 hours.</p>
+      </div>
+
+      <div class="highlight" style="margin-top:24px;">
+        <p style="text-align:center; margin:0;"><strong>Coffee &amp; Code LLC</strong> &middot; Castle Rock, Colorado &middot; Founded 2025</p>
+      </div>
+    </div>
+    </article>
+    </main>
+
+    <footer>
+      <div class="footer-columns">
+        <div class="footer-column">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="compare.html">Compare</a></li>
+            <li><a href="use-cases.html">Use Cases</a></li>
+            <li><a href="whats-new.html">What's New</a></li>
+            <li><a href="story.html">Our Story</a></li>
+            <li><a href="about.html">About</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Docs</h4>
+          <ul>
+            <li><a href="quick-start.html">Quick Start</a></li>
+            <li><a href="family-sharing.html">Family Sharing</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="support.html">Help & FAQ</a></li>
+            <li><a href="Stuffolio_Users_Manual.html">User Manual</a></li>
+            <li><a href="beta-testing-guide.html">Beta Testing</a></li>
+            <li><a href="mailto:support@stuffolio.app">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Policies</h4>
+          <ul>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <!-- BETA-PERIOD-ONLY: Change to App Store badge after launch -->
+        <div class="download-cta">
+          <a href="https://testflight.apple.com/join/TWgM95st" class="download-badge testflight">
+            <img src="assets/testflight-badge.svg" alt="Download on TestFlight" width="135" height="40" onerror="this.outerHTML='<span class=badge-fallback>Join TestFlight Beta</span>'" />
+          </a>
+          <span class="download-tagline">Free beta • iPhone, iPad, Mac</span>
+        </div>
+        <!-- END BETA-PERIOD-ONLY -->
+        <div>© <span id="y"></span> Coffee & Code LLC</div>
+      </div>
+
+      <div class="trust-strip"><span>Privacy-first. No ads. No selling your data. AI when you ask — silent when you don't.</span></div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Back to top">↑</button>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+
+    // Theme toggle
+    const html = document.documentElement;
+    const toggle = document.getElementById('themeToggle');
+
+    const saved = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const theme = saved || (prefersDark ? 'dark' : 'light');
+
+    if (theme === 'light') {
+      html.classList.add('light-mode');
+    } else {
+      toggle.classList.add('dark');
+    }
+
+    toggle.addEventListener('click', () => {
+      const isLight = html.classList.contains('light-mode');
+      if (isLight) {
+        html.classList.remove('light-mode');
+        toggle.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        html.classList.add('light-mode');
+        toggle.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+      }
+    });
+  </script>
+
+  <!-- Site Search -->
+  <script src="js/search.js"></script>
+
+  <!-- Navigation & Back to Top -->
+  <script>
+    // Back to Top Button
+    const backToTop = document.querySelector('.back-to-top');
+    if (backToTop) {
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 400) {
+          backToTop.classList.add('visible');
+        } else {
+          backToTop.classList.remove('visible');
+        }
+      });
+
+      backToTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+
+    // Dropdown Menu (for mobile)
+    document.querySelectorAll('.nav-dropdown-toggle').forEach(toggle => {
+      toggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        const dropdown = toggle.closest('.nav-dropdown');
+        dropdown.classList.toggle('open');
+      });
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.nav-dropdown')) {
+        document.querySelectorAll('.nav-dropdown.open').forEach(d => d.classList.remove('open'));
+      }
+    });
+  </script>
+</body>
+</html>
