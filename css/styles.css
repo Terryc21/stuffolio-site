@@ -405,6 +405,18 @@
 
 /* ===== Components ===== */
 @layer components {
+  /* Page Byline (publisher attribution after H1) */
+  .byline {
+    font-style: normal;
+    font-size: 0.9rem;
+    color: var(--muted);
+    margin: -8px 0 16px 0;
+    line-height: 1.5;
+  }
+  .byline time {
+    color: var(--muted);
+  }
+
   /* Site Title */
   .site-title {
     text-decoration: none;
