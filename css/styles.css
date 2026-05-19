@@ -2051,12 +2051,12 @@
 @layer components {
   .mode-slider {
     position: relative;
-    max-width: 380px;
+    max-width: 720px;
     margin: 0 auto;
     border-radius: var(--radius);
     overflow: hidden;
     box-shadow: var(--shadow);
-    aspect-ratio: 9 / 19.5;
+    aspect-ratio: 3418 / 2458;
     user-select: none;
     -webkit-user-select: none;
     touch-action: none;
@@ -2117,7 +2117,7 @@
   .mode-slider__labels {
     display: flex;
     justify-content: space-between;
-    max-width: 380px;
+    max-width: 720px;
     margin: 10px auto 0;
     font-size: 0.85rem;
     color: var(--muted);
