@@ -1137,6 +1137,16 @@
               <div class="price" id="sortlyPrice">$864</div>
               <div class="period">$24/month (lowest annual tier)</div>
             </div>
+            <div class="pricing-result-card">
+              <h4>Home Contents</h4>
+              <div class="price" id="homeContentsPrice">$5.99</div>
+              <div class="period">One-time</div>
+            </div>
+            <div class="pricing-result-card">
+              <h4>Nest Egg</h4>
+              <div class="price" id="nestEggPrice">$6.99</div>
+              <div class="period">One-time + IAP</div>
+            </div>
           </div>
 
           <div class="pricing-savings">
@@ -1152,7 +1162,9 @@
 
         <p style="font-size:.85rem; color:var(--muted); margin-top:16px; text-align:center;">
           * Prices based on publicly listed rates as of May 2026. Sortly's $24/mo is their lowest annual plan;
-          monthly plans range up to $299/mo.
+          monthly plans range up to $299/mo. Home Contents and Nest Egg are one-time purchases &mdash; if a simple
+          catalog is what you need, they're hard to beat on price. Stuffolio's value is the lifecycle features
+          beyond a catalog (warranty phases, repair-vs-replace, Decision Memory, Legacy Wishes).
         </p>
       </div>
 
@@ -1253,6 +1265,8 @@
     const sortlyPrice = document.getElementById('sortlyPrice');
     const itemtopiaPrice = document.getElementById('itemtopiaPrice');
     const umrPrice = document.getElementById('umrPrice');
+    const homeContentsPrice = document.getElementById('homeContentsPrice');
+    const nestEggPrice = document.getElementById('nestEggPrice');
     const savingsAmount = document.getElementById('savingsAmount');
     const savingsYears = document.getElementById('savingsYears');
 
@@ -1269,11 +1283,17 @@
       const itemtopia = 79.99 * years;
       // Under My Roof: $34.99/year
       const umr = 34.99 * years;
+      // Home Contents: $5.99 one-time (flat across years)
+      const homeContents = 5.99;
+      // Nest Egg: $6.99 one-time + IAP (flat; IAP varies, not modeled)
+      const nestEgg = 6.99;
 
       stuffolioPrice.textContent = '$' + stuffolio.toFixed(2);
       sortlyPrice.textContent = '$' + sortly.toLocaleString();
       itemtopiaPrice.textContent = '$' + itemtopia.toFixed(2);
       umrPrice.textContent = '$' + umr.toFixed(2);
+      homeContentsPrice.textContent = '$' + homeContents.toFixed(2);
+      nestEggPrice.textContent = '$' + nestEgg.toFixed(2);
 
       // Savings vs Under My Roof (most direct competitor)
       const savings = umr - stuffolio;
