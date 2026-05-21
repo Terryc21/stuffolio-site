@@ -102,10 +102,11 @@ is_allowlisted() {
 check_pricing() {
   echo "# --pricing (POSITIONING_ONE_PAGER:100-103)"
 
-  # Rule 1: ban standalone "no subscription"
-  # Acceptable forms: "no required subscription", "no AI subscription",
-  # "optional subscription". The phrase "no subscription" without one of
-  # those qualifiers on the same line is the violation.
+  # Rule 1: ban standalone "no subscription" / "not a subscription"
+  # POSITIONING:100 forbids both phrasings as standalone claims about
+  # Stuffolio's pricing. Acceptable qualified forms (same-line):
+  # "no required subscription", "no AI subscription",
+  # "not a required subscription", "optional subscription".
   local file line text rel
   for file in $PUBLIC_PAGES; do
     [ -f "$file" ] || continue
@@ -115,13 +116,15 @@ check_pricing() {
         *[Nn]o\ required\ [Ss]ubscription*) continue ;;
         *[Nn]o\ AI\ [Ss]ubscription*) continue ;;
         *[Nn]o\ paid\ [Ss]ubscription*) continue ;;
+        *[Nn]ot\ a\ required\ [Ss]ubscription*) continue ;;
+        *[Nn]ot\ an\ AI\ [Ss]ubscription*) continue ;;
         *[Oo]ptional\ [Ss]ubscription*) continue ;;
       esac
       if is_allowlisted "$file" "$line" "no-subscription"; then
         continue
       fi
       emit "no-subscription" "$file" "$line" "$text"
-    done < <(grep -niE 'no subscription' "$file" 2>/dev/null || true)
+    done < <(grep -niE 'no subscription|not a subscription' "$file" 2>/dev/null || true)
   done
 
   # Rule 2: ban "free trial" framing
