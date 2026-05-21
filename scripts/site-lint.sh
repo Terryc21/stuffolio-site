@@ -48,16 +48,11 @@ IFS='
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 SITE_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 
-# Public HTML pages. Excludes user-manual files which have a per-rule allowlist
-# (Marketing.md:160-163 — in-app docs are a legitimate context for some
-# otherwise-banned phrasings).
-PUBLIC_PAGES=$(find "$SITE_ROOT" -maxdepth 1 -name "*.html" -type f \
-  ! -name "Stuffolio_Users_Manual*.html" \
-  ! -name "Stuffolio_Quick_Start_Guide.html" \
-  | sort)
-
-USER_MANUAL_PAGES=$(find "$SITE_ROOT" -maxdepth 1 -name "Stuffolio_Users_Manual*.html" -type f \
-  | sort)
+# All HTML pages — manuals and guides are now in scope too (Terry 2026-05-21).
+# Marketing.md:160-163 "in-app docs allowlist" still applies on a per-line basis
+# via ALLOWLINT comments where genuinely warranted, but the prior file-level
+# exclusion was masking violations users see when they read the manual.
+PUBLIC_PAGES=$(find "$SITE_ROOT" -maxdepth 1 -name "*.html" -type f | sort)
 
 VIOLATIONS=0
 
@@ -74,14 +69,23 @@ emit() {
 }
 
 # is_allowlisted FILE LINE RULE
-# Returns 0 if the line carries an ALLOWLINT comment for this rule (or for "all").
+# Returns 0 if the line carries an ALLOWLINT comment naming this rule (or "all").
+# Supports multi-rule allowlists: "ALLOWLINT: ai-powered ai-heading (reason)".
+# Match boundaries: rule name must be preceded by space/colon and followed by
+# space/paren/end-of-string, so "ai-heading" doesn't match "ai-heading-foo".
 is_allowlisted() {
   local file="$1" line="$2" rule="$3"
   local content
   content=$(sed -n "${line}p" "$file")
   case "$content" in
-    *"ALLOWLINT: ${rule}"*) return 0 ;;
-    *"ALLOWLINT: all"*) return 0 ;;
+    *ALLOWLINT:*) ;;
+    *) return 1 ;;
+  esac
+  # Strip everything before "ALLOWLINT:" then check for the rule name
+  local after="${content##*ALLOWLINT:}"
+  case " $after " in
+    *" all "*|*" all("*) return 0 ;;
+    *" ${rule} "*|*" ${rule}("*) return 0 ;;
     *) return 1 ;;
   esac
 }
@@ -162,7 +166,8 @@ check_pricing() {
       fi
       emit "queries-vocab" "$file" "$line" "$text"
     done < <(grep -niE '\b[Qq]ueries\b|\b[Qq]uery\b' "$file" 2>/dev/null \
-             | grep -iE 'pric|quota|subscri|allowance|tier|free|\$|month|year' || true)
+             | grep -iE 'pric|quota|subscri|allowance|tier|free|\$|month|year' \
+             | grep -vE '(const |var |let |function |=>|\$\{[^}]+\})' || true)
   done
 }
 
@@ -184,7 +189,7 @@ check_vocab() {
         continue
       fi
       emit "audience-vocab" "$file" "$line" "$text"
-    done < <(grep -niE '\b(hoard|hoarder|hoarding|declutter|decluttering|Marie Kondo|minimalism|minimalist)\b' "$file" 2>/dev/null || true)
+    done < <(grep -niE '\b(hoard[a-z]*|declutter[a-z]*|Marie Kondo|minimalis[a-z]*)\b' "$file" 2>/dev/null || true)
   done
 
   # Rule: banned insurance phrasings (Marketing.md:106-107, 127-131, 162-167)
@@ -290,19 +295,36 @@ check_vocab() {
   done
 
   # Rule: "what it isn't" line presence on AI feature surfaces
-  # Any page that names an AI feature must contain a disavowal sentence.
-  # Implementation: page-level check, not line-level. Flag pages that mention
-  # AI feature names but lack any "Not a" / "Not an" / "Not the" / "is not"
-  # negative-form disavowal.
+  # (Marketing.md "How we talk about AI" sub-rule 3)
+  # Fires only on pages whose PURPOSE is to describe an AI feature, not
+  # pages that merely reference one in passing (release notes, privacy,
+  # quick-reference, walkthroughs, beta CTAs). Heuristic:
+  #   - File is not a release-notes / privacy / cheat-sheet / invite / walkthrough page
+  #   - File mentions an AI feature name 3+ times (signals feature-surface intent)
+  #   - File lacks any negative-form disavowal sentence
+  local rel mention_count
   for file in $PUBLIC_PAGES; do
     [ -f "$file" ] || continue
-    if grep -qiE '\b(Stuff Scout|AI Assistant|AI Product Assistant)\b' "$file" 2>/dev/null; then
-      if ! grep -qiE '\b(Not an?|Not the|is not|does not (diagnose|appraise|substitute|replace))\b' "$file" 2>/dev/null; then
-        local rel="${file#$SITE_ROOT/}"
-        printf '%s:0:what-it-isnt:page mentions AI feature but lacks disavowal sentence\n' "$rel"
-        VIOLATIONS=$((VIOLATIONS + 1))
-      fi
+    rel="${file#$SITE_ROOT/}"
+
+    # Skip non-feature-surface pages by filename
+    case "$rel" in
+      whats-new.html|privacy.html|quick-reference.html|testflight-invite.html|quick-start.html|terms.html|about.html|story.html|story-expanded.html|sitemap.xml|app-map.html|beta-testing-guide.html|family-sharing.html)
+        continue ;;
+    esac
+
+    # Count AI feature mentions
+    mention_count=$(grep -ciE '\b(Stuff Scout|AI Assistant|AI Product Assistant)\b' "$file" 2>/dev/null || echo 0)
+    [ "$mention_count" -lt 3 ] && continue
+
+    # Has disavowal? Skip if yes.
+    if grep -qiE '\b(Not an?|Not the|is not|does not (diagnose|appraise|substitute|replace))\b' "$file" 2>/dev/null; then
+      continue
     fi
+
+    printf '%s:0:what-it-isnt:page describes AI feature (%d mentions) but lacks disavowal sentence\n' \
+      "$rel" "$mention_count"
+    VIOLATIONS=$((VIOLATIONS + 1))
   done
 }
 
