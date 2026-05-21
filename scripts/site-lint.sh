@@ -148,9 +148,11 @@ check_pricing() {
     done < <(grep -niE '\$9\.99 unlocks everything|Pay Once\. Own It\.' "$file" 2>/dev/null || true)
   done
 
-  # Rule 4: ban "queries" in user-facing pricing copy
-  # User-facing copy uses "items" (Stuff Scout) and "searches" (AI Assistant).
-  # "Queries" is internal billing/cost telemetry language only.
+  # Rule 4: ban "queries" in user-facing pricing copy (POSITIONING:102)
+  # Only fires on lines that also mention pricing/quota/subscription/allowance —
+  # POSITIONING:102 scopes this to "user-facing pricing copy" specifically.
+  # General-context "query" mentions (feature descriptions, technical docs) are
+  # out of scope. Enable VOCAB_STRICT=1 in --vocab to flag all uses for review.
   for file in $PUBLIC_PAGES; do
     [ -f "$file" ] || continue
     while IFS=: read -r line text; do
@@ -159,7 +161,8 @@ check_pricing() {
         continue
       fi
       emit "queries-vocab" "$file" "$line" "$text"
-    done < <(grep -niE '\b[Qq]ueries\b|\b[Qq]uery\b' "$file" 2>/dev/null || true)
+    done < <(grep -niE '\b[Qq]ueries\b|\b[Qq]uery\b' "$file" 2>/dev/null \
+             | grep -iE 'pric|quota|subscri|allowance|tier|free|\$|month|year' || true)
   done
 }
 
