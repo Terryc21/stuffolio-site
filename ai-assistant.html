@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>AI Product Assistant — Stuffolio</title>
+  <meta name="description" content="When something just broke and you need to figure out what to do next. Stuffolio's AI Product Assistant organizes what you already own, points at trusted resources, and captures the work. It does not diagnose." />
+  <meta name="theme-color" content="#0b1220" />
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://stuffolio.app/ai-assistant.html" />
+  <meta property="og:title" content="AI Product Assistant — Stuffolio" />
+  <meta property="og:description" content="Organizes what you already own, points at trusted resources, captures the work. Not a diagnosis. Not a substitute for a service call. The dishwasher just broke; here is what you have to work with." />
+  <meta property="og:image" content="https://stuffolio.app/assets/og-image.png" />
+  <meta property="og:site_name" content="Stuffolio" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="AI Product Assistant — Stuffolio" />
+  <meta name="twitter:description" content="Organizes what you own, points at trusted resources, captures the work. Not a diagnosis." />
+  <meta name="twitter:image" content="https://stuffolio.app/assets/og-image.png" />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://stuffolio.app/ai-assistant.html" />
+
+  <!-- Structured Data: WebPage about a software feature -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "AI Product Assistant — Stuffolio",
+  "description": "Layer 1 product assistant inside Stuffolio. Organizes what you already own, points at trusted resources for the product, captures the work as you do it. Does not diagnose the failure.",
+  "url": "https://stuffolio.app/ai-assistant.html",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Stuffolio",
+    "url": "https://stuffolio.app"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "name": "Stuffolio",
+    "operatingSystem": "iOS 17.0+, iPadOS 17.0+, macOS 14.0+",
+    "applicationCategory": "UtilitiesApplication"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Coffee & Code LLC",
+    "url": "https://stuffolio.app"
+  }
+}
+</script>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
+
+  <!-- Shared Styles -->
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- Page-specific styles -->
+  <style>
+    .hero-job {
+      text-align: center;
+      padding: 24px 0 12px;
+    }
+    .hero-job h1 {
+      font-size: 2.0rem;
+      margin: 0 0 12px;
+      line-height: 1.25;
+    }
+    .hero-job .subhead {
+      font-size: 1.15rem;
+      color: var(--muted);
+      max-width: 640px;
+      margin: 0 auto;
+      line-height: 1.55;
+    }
+    .what-it-is, .what-it-isnt {
+      margin-top: 18px;
+    }
+    .what-it-isnt {
+      border-left: 4px solid #f59e0b;
+      padding: 14px 18px;
+      background: rgba(245, 158, 11, 0.06);
+      border-radius: 0 8px 8px 0;
+    }
+    .what-it-isnt h3 {
+      margin: 0 0 10px;
+      color: #f59e0b;
+      font-size: 1.05rem;
+    }
+    .what-it-isnt ul {
+      margin: 0;
+      padding-left: 22px;
+      line-height: 1.7;
+    }
+    .light-mode .what-it-isnt {
+      background: rgba(245, 158, 11, 0.08);
+    }
+    .feature-mapping {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+      margin: 20px 0;
+    }
+    .feature-map-card {
+      padding: 20px;
+      border-radius: 12px;
+      border: 1px solid rgba(125,211,252,.15);
+      background: rgba(125,211,252,.04);
+    }
+    .feature-map-card .problem {
+      font-style: italic;
+      color: var(--muted);
+      margin: 0 0 8px;
+      font-size: 0.95rem;
+    }
+    .feature-map-card .solution {
+      color: var(--text);
+      margin: 0;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+    .feature-map-card .solution strong {
+      color: var(--accent);
+    }
+    .pricing-block {
+      margin-top: 24px;
+      padding: 20px 24px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, rgba(167,139,250,.08), rgba(125,211,252,.05));
+      border: 1px solid rgba(167,139,250,.2);
+    }
+    .pricing-block h3 {
+      margin: 0 0 8px;
+      font-size: 1.1rem;
+    }
+    .pricing-block p {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.55;
+    }
+    .light-mode .feature-map-card { background: rgba(0,102,204,.04); border-color: rgba(0,102,204,.12); }
+    .light-mode .pricing-block { background: linear-gradient(135deg, rgba(124,58,237,.06), rgba(0,102,204,.04)); border-color: rgba(124,58,237,.15); }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="wrap">
+    <header>
+      <a href="index.html" class="site-title">Stuffolio</a>
+
+      <div class="header-right">
+        <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
+
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="features.html">Features</a>
+          <div class="nav-dropdown">
+            <button class="nav-dropdown-toggle">Docs</button>
+            <div class="nav-dropdown-menu">
+              <a href="quick-start.html">Quick Start</a>
+              <a href="Stuffolio_Users_Manual.html">User Manual</a>
+              <a href="whats-new.html">What's New</a>
+            </div>
+          </div>
+          <a href="compare.html">Compare</a>
+          <a href="use-cases.html">Use Cases</a>
+          <a href="story.html">Our Story</a>
+          <div class="nav-dropdown">
+            <button class="nav-dropdown-toggle">Support</button>
+            <div class="nav-dropdown-menu">
+              <a href="support.html">Help & FAQ</a>
+              <a href="Stuffolio_Users_Manual.html">User Manual</a>
+            </div>
+          </div>
+        </nav>
+
+        <button class="search-toggle" aria-label="Search documentation">
+          <span class="search-icon">&#128269;</span>
+          <span class="search-label">Search</span>
+          <kbd class="search-kbd">&#8984;K</kbd>
+        </button>
+
+        <div class="theme-toggle">
+          <span class="theme-icon">&#9728;&#65039;</span>
+          <button class="theme-toggle-switch" id="themeToggle" aria-label="Toggle light/dark mode"></button>
+          <span class="theme-icon">&#127769;</span>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+
+      <!-- HERO: Job clause first -->
+      <div class="card">
+        <div class="hero-job">
+          <h1>When something just broke &mdash; and you need to figure out what to do next.</h1>
+          <p class="subhead">The dishwasher won't drain. The furnace is making a new noise. You can't find the manual. The AI Product Assistant helps you work the problem with what you already own.</p>
+        </div>
+        <address class="byline" itemprop="author" style="display:block; text-align:center; margin-top:12px;">
+          <span itemprop="name">Coffee &amp; Code LLC</span> &middot;
+          <time datetime="2026-05-21">Updated May 2026</time>
+        </address>
+      </div>
+
+      <!-- WHAT THIS PAGE IS (Layer 1 paragraph) -->
+      <div class="card what-it-is">
+        <h2 style="margin-top:0;">What the AI Product Assistant does</h2>
+        <p style="font-size:1.05rem; line-height:1.65;">
+          The AI Product Assistant has a small, useful job: it <strong>organizes what you already own</strong>, <strong>points at trusted external resources</strong> for the product in front of you, and <strong>captures the work</strong> you do as you do it. That's the whole job. It is built on the assumption that the most useful thing AI can do in a broken-appliance moment is find the manual you already have, check whether the item is still under warranty, and surface the manufacturer's repair guide &mdash; not invent a diagnosis from a paragraph of symptoms.
+        </p>
+
+        <!-- "What it isn't" — surfaced early per Marketing.md sub-rule 3 -->
+        <div class="what-it-isnt">
+          <h3>What it isn't</h3>
+          <ul>
+            <li><strong>Not a diagnosis.</strong> It does not name a likely cause for your specific situation, and it will not tell you which part has failed.</li>
+            <li><strong>Not a substitute for a service call</strong> or a licensed technician. When the problem is real, the answer is sometimes "call someone qualified," and the assistant will say so.</li>
+            <li><strong>Not a recommendation to repair or replace.</strong> That decision is yours, with help from the cost calculator on each item's page. The assistant gathers information; it does not make the call.</li>
+            <li><strong>Not unbounded.</strong> Every response cites its sources, declares whether the answer is grounded in manufacturer documentation or general web search, and ends with a one-line disavowal so you know what you're reading.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 4 USE CASES (problem/solution cards) -->
+      <section style="margin-top:18px;">
+        <div class="card">
+          <h2 style="margin-top:0;">Four moments it's built for</h2>
+          <p style="color:var(--muted); margin-bottom:20px;">
+            The assistant lives inside Stuffolio. These are the situations where opening the app and tapping the AI Product Assistant tile is the right move.
+          </p>
+
+          <div class="feature-mapping">
+            <div class="feature-map-card">
+              <p class="problem">"The dishwasher won't drain."</p>
+              <p class="solution"><strong>Common-problem orientation</strong> &mdash; The assistant describes the failure modes that show up for this product category, with source attribution. It will not tell you which one is yours. The next step is the manufacturer's troubleshooting guide, which the assistant surfaces directly.</p>
+            </div>
+            <div class="feature-map-card">
+              <p class="problem">"I can't find the manual."</p>
+              <p class="solution"><strong>Resource retrieval</strong> &mdash; The assistant finds the manufacturer's manual for the product on your shelf and presents it without summarizing. You read it; you decide. If you've already added the manual to the item record, it surfaces what's there first.</p>
+            </div>
+            <div class="feature-map-card">
+              <p class="problem">"What part fits this furnace filter?"</p>
+              <p class="solution"><strong>Compatibility lookup against what you own</strong> &mdash; The assistant uses the model number on your item record to find the manufacturer's compatible-parts page. No guessing from a vague description; the lookup is anchored to the item you already have.</p>
+            </div>
+            <div class="feature-map-card">
+              <p class="problem">"Is this still under warranty?"</p>
+              <p class="solution"><strong>Warranty phase check</strong> &mdash; The item's warranty record tells you whether you're in full coverage, parts only, or out of coverage right now. The assistant surfaces the manufacturer's support contact page if you need to make a call.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- BRIDGE TO STEWARDSHIP -->
+      <section style="margin-top:18px;">
+        <div class="card">
+          <h2 style="margin-top:0;">Why this shape, not another</h2>
+          <p style="line-height:1.65;">
+            Most AI features for "the home" are built around being clever: photo recognition, smart suggestions, a confident-sounding answer. Stuffolio is built around <strong>being a useful filing cabinet at the moment a real thing breaks</strong>. The AI Product Assistant is the shape of that idea: it does not try to be the technician, it tries to be the well-organized homeowner who happens to have the manual, the warranty, and the part number already in hand.
+          </p>
+          <p style="line-height:1.65; margin-top:12px;">
+            That framing is load-bearing. It is the thing that lets us promise the assistant will never tell you to replace an $80 part you don't need &mdash; because we never ask it to recommend a part in the first place.
+          </p>
+          <blockquote class="quotable"><p>"Organize what you already own. Point at trusted resources. Capture the work. Do not diagnose."</p></blockquote>
+        </div>
+      </section>
+
+      <!-- PRICING TRANSPARENCY -->
+      <section style="margin-top:18px;">
+        <div class="card">
+          <h2 style="margin-top:0;">Pricing</h2>
+          <div class="pricing-block">
+            <h3>Stuff Scout and the AI Product Assistant call paid AI services per use.</h3>
+            <p>
+              Free to try at install: <strong>15 AI Product Assistant searches in your first 7 days</strong>, alongside 5 Stuff Scout items. After that, the AI Product Assistant requires an optional <strong>$2.99/mo or $19.99/yr subscription</strong>. The base Stuffolio app is yours forever for $9.99.
+            </p>
+            <p>
+              The subscription exists because each call to the AI Product Assistant has a real per-use cost. We charge for AI separately so the people who use it cover the cost &mdash; and so the people who never touch it never pay for it. The core Stuffolio app (inventory, warranty phases, Decision Memory, Legacy Wishes, Family Sharing, and the rest of the lifecycle product) does not require a subscription, ever.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CROSS-PAGE HANDOFFS -->
+      <section style="margin-top:18px;">
+        <div class="card">
+          <h2 style="margin-top:0;">Keep reading</h2>
+          <ul style="font-size:1.05rem; line-height:1.9; padding-left:22px;">
+            <li><a href="use-cases.html#just-broke">See the "Something just broke" use case</a> &mdash; how the AI Product Assistant fits the moment.</li>
+            <li><a href="features.html">All Stuffolio features</a> &mdash; the full capabilities reference, including the rest of the lifecycle product the base app gives you.</li>
+            <li><a href="story.html">Why this app exists at all</a> &mdash; Terry's essay on building Stuffolio at 73, and how the AI fits into the work.</li>
+            <li><a href="compare.html">How Stuffolio compares to other inventory apps</a> &mdash; including a cost calculator that includes the cheapest competitors honestly.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section style="margin-top:18px;">
+        <!-- BETA-PERIOD-ONLY: Change to App Store badge after launch -->
+        <div class="card" style="text-align:center;">
+          <h2 style="margin-top:0;">Try Stuffolio</h2>
+          <p style="color:var(--muted); max-width:600px; margin:0 auto 20px;">
+            The AI Product Assistant ships inside Stuffolio today. Free to try at install.
+          </p>
+          <div class="ctaRow" style="justify-content:center;">
+            <a class="btn primary" href="https://testflight.apple.com/join/TWgM95st">Join the Beta</a>
+            <a class="btn" href="features.html">See All Features</a>
+          </div>
+        </div>
+        <!-- END BETA-PERIOD-ONLY -->
+      </section>
+
+    </main>
+
+    <footer>
+      <div class="footer-columns">
+        <div class="footer-column">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="compare.html">Compare</a></li>
+            <li><a href="use-cases.html">Use Cases</a></li>
+            <li><a href="ai-assistant.html">AI Product Assistant</a></li>
+            <li><a href="whats-new.html">What's New</a></li>
+            <li><a href="story.html">Our Story</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Docs</h4>
+          <ul>
+            <li><a href="quick-start.html">Quick Start</a></li>
+            <li><a href="family-sharing.html">Family Sharing</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="support.html">Help & FAQ</a></li>
+            <li><a href="Stuffolio_Users_Manual.html">User Manual</a></li>
+            <li><a href="beta-testing-guide.html">Beta Testing</a></li>
+            <li><a href="mailto:support@stuffolio.app">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Policies</h4>
+          <ul>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <!-- BETA-PERIOD-ONLY: Change to App Store badge after launch -->
+        <div class="download-cta">
+          <a href="https://testflight.apple.com/join/TWgM95st" class="download-badge testflight">
+            <img src="assets/testflight-badge.svg" alt="Download on TestFlight" width="135" height="40" onerror="this.outerHTML='<span class=badge-fallback>Join TestFlight Beta</span>'" />
+          </a>
+          <span class="download-tagline">Free beta &bull; iPhone, iPad, Mac</span>
+        </div>
+        <!-- END BETA-PERIOD-ONLY -->
+        <div>&copy; <span id="y"></span> Coffee &amp; Code LLC</div>
+      </div>
+
+      <div class="trust-strip">
+        <span>Privacy-first. No ads. No selling your data. AI when you ask -- silent when you don't.</span>
+      </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Back to top">&uarr;</button>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+
+    const html = document.documentElement;
+    const toggle = document.getElementById('themeToggle');
+    const saved = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const theme = saved || (prefersDark ? 'dark' : 'light');
+
+    if (theme === 'light') {
+      html.classList.add('light-mode');
+    } else {
+      toggle.classList.add('dark');
+    }
+
+    toggle?.addEventListener('click', () => {
+      const isLight = html.classList.toggle('light-mode');
+      toggle.classList.toggle('dark', !isLight);
+      localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    });
+  </script>
+
+  <script src="js/search.js"></script>
+
+  <!-- Navigation & Back to Top -->
+  <script>
+    const backToTop = document.querySelector('.back-to-top');
+    if (backToTop) {
+      window.addEventListener('scroll', () => {
+        backToTop.classList.toggle('visible', window.scrollY > 400);
+      });
+      backToTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+
+    document.querySelectorAll('.nav-dropdown-toggle').forEach(toggle => {
+      toggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        toggle.closest('.nav-dropdown').classList.toggle('open');
+      });
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.nav-dropdown')) {
+        document.querySelectorAll('.nav-dropdown.open').forEach(d => d.classList.remove('open'));
+      }
+    });
+  </script>
+</body>
+</html>
