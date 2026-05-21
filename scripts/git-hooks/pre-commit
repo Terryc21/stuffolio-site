@@ -1,0 +1,49 @@
+#!/bin/bash
+# pre-commit hook for stuffolio-site
+#
+# Auto-stamps byline dates on any staged HTML file that carries an
+# <address class="byline"> + <time datetime> pattern. The stamped change is
+# re-added to the commit so the byline you commit always matches the day
+# you committed.
+#
+# Install: bash scripts/install-hooks.sh
+# Bypass on a single commit: git commit --no-verify
+#
+# This hook complements (does not replace) the byline-drift check in
+# scripts/site-lint.sh --bylines. The lint catches drift between the
+# visible string and the datetime attribute; this hook prevents drift
+# between either of them and today's date.
+
+set -u
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+REPO_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
+STAMP_SCRIPT="$REPO_ROOT/scripts/stamp-bylines.sh"
+
+if [ ! -x "$STAMP_SCRIPT" ]; then
+  echo "pre-commit: $STAMP_SCRIPT not executable or missing — skipping byline stamp"
+  exit 0
+fi
+
+# Collect staged HTML files (added, copied, modified — but not deleted).
+# Use -z + read loop to handle paths with spaces.
+STAGED_HTML=()
+while IFS= read -r -d '' file; do
+  STAGED_HTML+=("$file")
+done < <(git diff --cached --name-only --diff-filter=ACM -z -- '*.html')
+
+if [ ${#STAGED_HTML[@]} -eq 0 ]; then
+  exit 0
+fi
+
+# Run stamp script — it is idempotent and silently skips non-byline files.
+"$STAMP_SCRIPT" "${STAGED_HTML[@]}"
+
+# Re-stage any files the stamp modified, so the byline change rides into
+# the in-flight commit. Files unchanged by the stamp are silently re-staged
+# as no-ops (git add of unchanged content is fine).
+for file in "${STAGED_HTML[@]}"; do
+  git add -- "$file"
+done
+
+exit 0
