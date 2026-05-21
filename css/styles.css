@@ -2187,8 +2187,10 @@
    features descriptions, and comparison rows. Reviewers can copy the text
    directly; the style signals "these are our words, in our voice." */
 blockquote.quotable {
+  position: relative;
   margin: 12px 0;
   padding: 10px 14px;
+  padding-right: 64px;
   border-left: 3px solid var(--accent);
   background: color-mix(in srgb, var(--accent) 6%, transparent);
   border-radius: 4px;
@@ -2200,4 +2202,36 @@ blockquote.quotable {
 blockquote.quotable p { margin: 0; }
 .light-mode blockquote.quotable {
   background: color-mix(in srgb, var(--accent) 8%, transparent);
+}
+
+/* Copy-quote button (UNFORGET S74) */
+.quotable-copy-btn {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  padding: 3px 9px;
+  font-family: inherit;
+  font-size: 0.72rem;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 10%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+  border-radius: 3px;
+  cursor: pointer;
+  opacity: 0.55;
+  transition: opacity 120ms ease, background 120ms ease;
+}
+.quotable-copy-btn:hover,
+.quotable-copy-btn:focus-visible {
+  opacity: 1;
+  background: color-mix(in srgb, var(--accent) 20%, transparent);
+  outline: none;
+}
+.quotable-copy-btn.is-copied {
+  opacity: 1;
+  color: var(--bg);
+  background: var(--accent);
+  border-color: var(--accent);
 }
