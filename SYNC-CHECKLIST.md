@@ -2,6 +2,8 @@
 
 Quick reference for syncing stuffolio.app with the Stuffolio codebase.
 
+> **Beta-to-launch ritual:** when Stuffolio goes from TestFlight beta to public App Store release, see [BETA_TO_LAUNCH_CHECKLIST.md](BETA_TO_LAUNCH_CHECKLIST.md). That document inventories every `BETA-PERIOD-ONLY` marker (15 pairs across 12 files) plus the two product decisions (App Smart Banner ID, TestFlight URL constant) that must land before the flip. The mechanical guard is `./scripts/site-lint.sh --beta-debt` (silent pre-launch, alarms at `LAUNCH_FLIPPED=1`).
+
 ## Find All Sync Points
 
 ```bash
