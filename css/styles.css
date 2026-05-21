@@ -2181,3 +2181,23 @@
     scroll-behavior: auto !important;
   }
 }
+
+/* ===== Quotable pattern (Plan 1a Phase E.1) =====
+   Used to surface verbatim positioning quotes inside differentiator cards,
+   features descriptions, and comparison rows. Reviewers can copy the text
+   directly; the style signals "these are our words, in our voice." */
+blockquote.quotable {
+  margin: 12px 0;
+  padding: 10px 14px;
+  border-left: 3px solid var(--accent);
+  background: color-mix(in srgb, var(--accent) 6%, transparent);
+  border-radius: 4px;
+  font-style: italic;
+  font-size: 0.98rem;
+  line-height: 1.55;
+  color: var(--text);
+}
+blockquote.quotable p { margin: 0; }
+.light-mode blockquote.quotable {
+  background: color-mix(in srgb, var(--accent) 8%, transparent);
+}
