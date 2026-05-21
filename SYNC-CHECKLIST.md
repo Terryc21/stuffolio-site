@@ -28,14 +28,16 @@ This shows every SYNC marker across all HTML files -- use it as your update chec
 
 | Page | SYNC Markers | Content |
 |------|-------------|---------|
-| `index.html` | VERSION | Hero, What's New box (BETA-PERIOD-ONLY), JSON-LD |
+| `index.html` | VERSION | Hero, "What brings you here?" routing block, What's New box (BETA-PERIOD-ONLY), JSON-LD |
 | `features.html` | 19 FEATURE markers | All feature descriptions |
+| `use-cases.html` | None | Four-funnel entry surface (#identify, #pass-along, #take-care-of, #just-broke) + cross-cutting #insurance subsection |
+| `ai-assistant.html` | None | AI Product Assistant dedicated page. Layer 1 voice. Update in lockstep with `Documentation/Architecture/AI_ASSISTANT_LAYER1_CONTRACT.md` in the app repo |
 | `support.html` | 18 FAQ markers | FAQ answers |
 | `whats-new.html` | CURRENT_VERSION, TESTFLIGHT_CHANGES, LASTCOMMIT | Changelog |
 | `Stuffolio_Users_Manual.html` | 5 Sources/* markers | User documentation |
 | `beta-testing-guide.html` | None | Build number, testing focus areas |
 | `testflight-invite.html` | None | Build number, feature highlights |
-| `compare.html` | None | Competitor comparison |
+| `compare.html` | None | Competitor comparison + cost calculator |
 | `app-map.html` | None | Navigation map of all screens |
 
 ## Per-Sync Verification
