@@ -2,6 +2,18 @@
 
 Quick reference for syncing stuffolio.app with the Stuffolio codebase.
 
+## First-time setup (per clone)
+
+Run once after cloning the repo:
+
+```bash
+bash scripts/install-hooks.sh
+```
+
+This installs the pre-commit git hook that auto-stamps byline dates (`<time datetime>` + visible "Updated Month Year") on any HTML page you commit. Without this step, the byline stays at whatever date it was last saved with, and `./scripts/site-lint.sh --bylines` is the only thing catching drift. With the hook, bylines you commit always match the day you committed.
+
+Bypass for a single commit: `git commit --no-verify`. Re-run `install-hooks.sh` to pick up hook updates from `scripts/git-hooks/`.
+
 > **Beta-to-launch ritual:** when Stuffolio goes from TestFlight beta to public App Store release, see [BETA_TO_LAUNCH_CHECKLIST.md](BETA_TO_LAUNCH_CHECKLIST.md). That document inventories every `BETA-PERIOD-ONLY` marker (15 pairs across 12 files) plus the two product decisions (App Smart Banner ID, TestFlight URL constant) that must land before the flip. The mechanical guard is `./scripts/site-lint.sh --beta-debt` (silent pre-launch, alarms at `LAUNCH_FLIPPED=1`).
 
 ## Find All Sync Points
