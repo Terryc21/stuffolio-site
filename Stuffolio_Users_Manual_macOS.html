@@ -601,7 +601,7 @@
         <header>
             <h1>Stuffolio User's Manual</h1>
             <p class="subtitle">Your Personal Product Manager</p>
-            <p class="version">Version 3.3 | April 2026 — synced with Stuffolio Build 33</p>
+            <p class="version">Version 3.4 | May 2026 — synced with Stuffolio Build 35</p>
             <span class="platform-badge">macOS</span>
         </header>
 
@@ -630,6 +630,7 @@
             <h2>Table of Contents</h2>
             <ol>
                 <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#ai-trial-and-pricing">Pricing, AI Trial, and Subscription</a></li>
                 <li><a href="#actions-overview">Actions Overview</a></li>
                 <li><a href="#getting-started">Getting Started</a></li>
                 <li><a href="#adding-products">Adding Your First Item</a></li>
@@ -643,6 +644,7 @@
                 <li><a href="#warranties">Managing Warranties</a></li>
                 <li><a href="#maintenance">Scheduling Maintenance</a></li>
                 <li><a href="#smart-maintenance">Smart Maintenance Suggestions</a></li>
+                <li><a href="#price-watch">Price Watch</a></li>
                 <li><a href="#loans">Tracking Loans</a></li>
                 <li><a href="#recalls">Checking for Recalls</a></li>
                 <li><a href="#exporting">Exporting Your Data</a></li>
@@ -680,6 +682,9 @@
                 <tr><td>Mac</td><td>macOS 14.0 (Sonoma) or later</td></tr>
             </table>
 
+            <h3>Pricing at a Glance</h3>
+            <p>Stuffolio is <strong>$9.99 once for the core app</strong>; the four AI features come with a <strong>7-day free trial</strong> at install and an optional <strong>$2.99/month or $19.99/year subscription</strong> if you want to keep using them afterward. See <a href="#ai-trial-and-pricing">Pricing, AI Trial, and Subscription</a> for the full breakdown.</p>
+
             <h3>Navigation Overview</h3>
             <p>Stuffolio on Mac uses a sidebar navigation layout:</p>
             <ul>
@@ -696,7 +701,43 @@
                         <li><strong>Settings</strong> — Preferences and configuration</li>
                     </ul>
                 </li>
+                <li>Build 35 refreshed the sidebar palette to use the section colors (Dashboard blue, My Items purple, Actions teal, Insights pink, Stuff Scout orange, Settings gray) at the chrome opacity that holds up under colorblind-accessible contrast checks; Stuff Scout's sidebar hierarchy was also reorganized so the most-used scan options surface first</li>
             </ul>
+            <a href="#toc" class="back-to-top">↑ Back to Contents</a>
+        </section>
+
+        <section id="ai-trial-and-pricing">
+            <h2>Pricing, AI Trial, and Subscription</h2>
+            <p>Stuffolio is <strong>$9.99 once for the core app</strong>. That covers inventory, warranties, Decision Memory, repair-keep-replace decisions, donation tracking, Legacy Wishes, Family Sharing, exports, iCloud sync, and the rest of the lifecycle product. The base app does not require a subscription, ever.</p>
+
+            <p>Stuffolio's four AI features call paid AI services per use, so they have a separate <strong>optional subscription: $2.99/month or $19.99/year</strong>. The subscription exists so the people who use AI cover the cost, and so the people who never touch it never pay for it.</p>
+
+            <h3>The 7-Day Free Trial</h3>
+            <p>Your first 7 days at install include four independent free quotas for the four AI features:</p>
+            <ul>
+                <li><strong>Stuff Scout:</strong> 5 free items</li>
+                <li><strong>AI Product Assistant:</strong> 10 free searches</li>
+                <li><strong>Receipt &amp; Label Scans (OCR):</strong> 5 free scans</li>
+                <li><strong>Repair-Keep-Replace alternatives:</strong> 5 free looks</li>
+            </ul>
+            <p>The four counters are independent, not pooled. Running out of Stuff Scout items doesn't touch your AI Assistant searches, and so on. You can pace within the week however suits you.</p>
+
+            <h3>After the 7-Day Trial</h3>
+            <p>If you don't subscribe, you still get <strong>1 free Stuff Scout item per calendar month</strong>, refilling on the 1st. The other three AI features (AI Product Assistant, OCR scans, Repair-Keep-Replace looks) require an active subscription.</p>
+
+            <p>If you subscribe, all four AI features run with unlimited use <em>within fair-use bounds</em>. The bounds are designed to be far above any normal usage pattern, so most subscribers will never see them. The qualifier exists so the cap that does exist (for runaway or commercial-scale use) doesn't surprise anyone.</p>
+
+            <h3>Seeing Your Quota</h3>
+            <p>Your remaining quota is visible from the moment you start using AI, not just at exhaustion:</p>
+            <ul>
+                <li><strong>On each AI feature's entry point</strong> — a small "X of N remaining" indicator (or "Subscribe to use" after trial).</li>
+                <li><strong>In Settings &rarr; Subscription Status</strong> — all four counters listed separately, plus trial days remaining and next monthly Stuff Scout refill date.</li>
+                <li><strong>On the AI Product Assistant view</strong> — a session counter alongside the trial-remaining counter, so you can see how fast a single research session is burning your quota.</li>
+            </ul>
+
+            <h3>If You Run Out</h3>
+            <p>When a quota hits zero, Stuffolio names what you used (e.g., "You've used your 5 trial Stuff Scout items"), names the price, and names the next free affordance where there is one (the monthly Stuff Scout refill date). The choice is yours: subscribe, wait for the monthly refill where applicable, or keep using the rest of the app.</p>
+
             <a href="#toc" class="back-to-top">↑ Back to Contents</a>
         </section>
 
@@ -1295,6 +1336,21 @@
             </ul>
             <p>Scout picks the marketplace that matches your item's category so the value estimate reflects what it would actually sell for.</p>
 
+            <h3>💲 Asking vs. Sold Prices</h3>
+            <p>Scout's pricing display distinguishes two different market signals so you can read them correctly:</p>
+            <ul>
+                <li><strong>Asking prices</strong> — What sellers are currently listing the item for. Useful to see the current shelf reality, but asking prices include unsold items that may never move at that price.</li>
+                <li><strong>Sold prices</strong> — What buyers actually paid in completed transactions. The more reliable signal for "what would this realistically sell for."</li>
+            </ul>
+            <p>When both are available, Scout shows them side-by-side with source attribution (which marketplace each number came from). When only one is available — common for niche categories — Scout names which one it is so you're never reading an asking price as if it were a sold price.</p>
+
+            <h4>Confidence Floor and Hybrid Floor</h4>
+            <p>Scout will refuse to display a price when there aren't enough comparable listings to support a defensible number. Instead of inventing a confident-sounding estimate from one or two cherry-picked listings, you'll see an honest "not enough comps to value this with confidence" note and the option to refine the search with additional context. This is the confidence floor.</p>
+            <p>The hybrid floor handles the middle case: when sold-price data is too thin to stand alone but asking-price data is plentiful, Scout falls back to a wider range derived from both signals, clearly labeled as such. The floor exists so you never see a single-source point estimate dressed up as a market price.</p>
+
+            <h4>Graded Coin Extraction</h4>
+            <p>For coins and graded collectibles, Scout reads the grading-company designation and numeric grade from your photos (e.g., PCGS MS-65) and matches against comps with the same grading. A 1921 Morgan Dollar in PCGS MS-65 is a completely different market from the same coin raw or in a lower grade; Scout's pricing reflects that distinction instead of averaging across grades.</p>
+
             <h3>🔬 Research Tips</h3>
             <p>Scout suggests specific starting points for deeper research — forums, subreddits, reference databases, YouTube channels — matched to your item's category. For a vintage camera, that might include r/AnalogCommunity and CameraQuest. For a violin, the Maestronet forums. Starting points, not a walled garden.</p>
 
@@ -1587,7 +1643,7 @@
 
         <section id="ai-assistant">
             <h2>Using the AI Product Assistant</h2>
-            <p>The AI Assistant provides instant help for any product.</p>
+            <p>The AI Product Assistant has a small, useful job: it <strong>organizes what you already own</strong>, <strong>points at trusted external resources</strong> for the product in front of you, and <strong>captures the work</strong> you do as you do it. It is not a diagnosis, not a substitute for a service call, and not a recommendation to repair or replace.</p>
 
             <h3>Opening the AI Assistant</h3>
             <ul>
@@ -1603,35 +1659,57 @@
                 <tr><td>Find Warranty Info</td><td>Warranty terms, registration page</td></tr>
                 <tr><td>Find Parts</td><td>Replacement parts and where to buy</td></tr>
                 <tr><td>Find Supplies</td><td>Consumables (filters, bags, batteries)</td></tr>
-                <tr><td>Troubleshoot</td><td>Solutions for common problems</td></tr>
+                <tr><td>Troubleshoot</td><td>Common problems described with source attribution — names the failure modes that show up for this product category, points at the manufacturer's troubleshooting guide. Does not name a likely cause for your specific symptom.</td></tr>
                 <tr><td>Maintenance Tips</td><td>Care instructions and schedules</td></tr>
                 <tr><td>How-To Videos</td><td>Tutorial videos for using the product</td></tr>
                 <tr><td>DIY Repair Videos</td><td>Repair guides and videos</td></tr>
                 <tr><td>Maker Website</td><td>Manufacturer's official website</td></tr>
                 <tr><td>Register Product</td><td>Product registration page</td></tr>
+                <tr><td>Set up Product</td><td>Combined workflow — fetches Maker Website, Register Product, and Find Warranty in parallel as one tile (counts as one search)</td></tr>
+                <tr><td>Current Price</td><td>Pricing signal from the marketplace, framed as "not an appraisal"</td></tr>
             </table>
+
+            <h3>Set up Product (Combined Workflow)</h3>
+            <p>The <strong>Set up Product</strong> tile runs three sub-fetches at once — Maker Website, Register Product, and Find Warranty — and presents the results stacked in one view with a single <strong>Save All</strong> button. Use it when you've just added a new item and want to fill in the manufacturer website, registration URL, and basic warranty months in one pass.</p>
+            <ul>
+                <li><strong>Counts as one search</strong> against your trial AI Assistant quota.</li>
+                <li><strong>Partial failure handling:</strong> if one of the three sub-fetches doesn't return useful results, the other two still render normally and you can retry the failed sub-tile individually (which then reads the other two from cache, costing nothing extra).</li>
+                <li><strong>Save All</strong> commits all three results to your item record in one click: manufacturer website and support URL, registration URL, and warranty months. You can correct anything in the item editor afterward.</li>
+            </ul>
+
+            <h3>Honesty Envelope (Layer 1)</h3>
+            <p>Every AI Product Assistant response — especially Troubleshoot results — is wrapped in a three-part honesty envelope so you know what you're reading:</p>
+            <ul>
+                <li><strong>Sources cited:</strong> the trusted external resources the answer was assembled from (manufacturer documentation, support pages, or general web search), with attribution.</li>
+                <li><strong>Bounded by:</strong> what kind of claim the answer is making — product-knowledge orientation, resource retrieval, compatibility lookup against what you own, or warranty phase check.</li>
+                <li><strong>What this is not:</strong> a one-line disavowal — typically "not a diagnosis for your specific situation" or "not a substitute for a licensed technician." This is the load-bearing line that keeps the assistant honest at the moment of use.</li>
+            </ul>
+            <p>The envelope is most visible on Troubleshoot results because that's the query type where confident-sounding AI does the most damage. The assistant will describe common failure modes for your product category, but it will not tell you which one is yours. That decision is yours to make, with the manufacturer's guide and (when needed) a real technician.</p>
 
             <h3>Using Results</h3>
             <ul>
                 <li>Click any blue link to open in your default browser</li>
                 <li>Select text and press <kbd>⌘C</kbd> to copy</li>
+                <li><strong>Save to item:</strong> When the AI surfaces URLs (manufacturer website, support page, registration page, manual link, supplies page), a save button appears so you can attach them directly to the item's Resources section without retyping.</li>
             </ul>
 
             <h3>Smart Auto-Fill: Save Links to Product</h3>
-            <p>When the AI discovers useful URLs, you can save them directly to your item with one click.</p>
+            <p>When the AI discovers useful URLs, you can save them directly to your item with one click. This works for all four URL types the AI surfaces:</p>
             <ul>
-                <li><strong>When available:</strong> A "Save Links to Product" button appears in Maker Website results</li>
-                <li><strong>What's saved:</strong> Manufacturer website and/or support page URLs</li>
-                <li><strong>Where it goes:</strong> URLs appear in the item's Resources section</li>
-                <li><strong>Progressive disclosure:</strong> Resources section only shows when URLs are saved</li>
+                <li><strong>Manufacturer website / support URL</strong> — saved from Maker Website results</li>
+                <li><strong>Registration URL</strong> — saved from Register Product results</li>
+                <li><strong>Manual URL</strong> — saved, picked, or replaced from Find Manual results</li>
+                <li><strong>Supplies URL</strong> — saved from Find Supplies results (consumables page)</li>
             </ul>
+            <p>Saved URLs appear in the item's <strong>Resources</strong> section. The Resources section only shows up once at least one URL is saved (progressive disclosure).</p>
 
-            <p><strong>To save links:</strong></p>
+            <p><strong>To save a link:</strong></p>
             <ol>
-                <li>Run the <strong>Maker Website</strong> query</li>
-                <li>Click <strong>Save Links to Product</strong></li>
+                <li>Run the relevant query (Maker Website, Register Product, Find Manual, or Find Supplies)</li>
+                <li>Click the save button on the result card</li>
                 <li>A confirmation appears and the button shows a checkmark</li>
             </ol>
+            <p>For Find Manual specifically, if the AI surfaces multiple candidate manual URLs you can <strong>pick</strong> which one to save or <strong>replace</strong> a previously saved manual URL.</p>
 
             <h3>Response Caching (Offline Access)</h3>
             <p>AI Product Assistant responses are automatically cached for offline access:</p>
@@ -1639,7 +1717,8 @@
                 <li><strong>Automatic caching:</strong> Every AI response is saved locally for 30 days</li>
                 <li><strong>Offline access:</strong> Previously fetched responses work without internet</li>
                 <li><strong>Instant loading:</strong> Cached results for the same item/query load immediately</li>
-                <li><strong>Cache indicator:</strong> Cached responses show when they were originally fetched</li>
+                <li><strong>Cache badge:</strong> Cached responses show a pinned badge with the original fetch date, so you always know whether you're reading a fresh answer or a stored one.</li>
+                <li><strong>Staleness hint:</strong> When a cached response is more than a week old, the badge surfaces a "may be stale — click to refresh" hint. The cached answer still loads instantly; you choose whether to spend a search refreshing it.</li>
             </ul>
 
             <p><strong>Managing the Cache:</strong></p>
@@ -1677,7 +1756,7 @@
                 <tr><td>Repair Options</td><td>iFixit links, repairability scores, DIY difficulty, repair vs. replace cost comparison</td></tr>
                 <tr><td>Lifespan Analysis</td><td>Item age, expected lifespan, warranty status, estimated remaining value</td></tr>
                 <tr><td>Brand Intelligence</td><td>Your history with this brand — average ratings, would-buy-again rate, other items from same manufacturer</td></tr>
-                <tr><td>AI Alternatives</td><td>Optional: fetch alternative products from trusted review sources (requires network)</td></tr>
+                <tr><td>AI Alternatives</td><td>Optional: fetch alternative products from trusted review sources. Counts as one Repair-Keep-Replace "look" against your trial quota (5 free in the first 7 days); subscription-only after that.</td></tr>
                 <tr><td>Decision Summary</td><td>Confidence level and three clear action paths</td></tr>
             </table>
 
@@ -1802,7 +1881,24 @@
             </ol>
 
             <h3>AppleCare+ Tracking</h3>
-            <p>Stuffolio makes it easy to track AppleCare+ coverage for your Apple products.</p>
+            <p>Stuffolio tracks AppleCare+ coverage with automatic detection and plan-aware incident tracking. Apple sells AppleCare in three shapes today, and each one counts incidents differently — Stuffolio's form asks which one you bought so the remaining-incidents math is honest for your actual plan.</p>
+
+            <h4>The Three AppleCare Plan Families</h4>
+            <p>When you add AppleCare to an item, you pick the plan family. Each has a different cap shape for accidental damage from handling (ADH):</p>
+            <table>
+                <tr><th>Plan family</th><th>What it is</th><th>ADH cap shape</th></tr>
+                <tr><td><strong>Single-Pay (2-year)</strong></td><td>The one-time upfront purchase, typically 2 or 3 years of coverage paid all at once.</td><td>Lifetime cap of 2 incidents over the whole plan</td></tr>
+                <tr><td><strong>Monthly (Pay-As-You-Go)</strong></td><td>The month-to-month subscription that renews until you cancel.</td><td>Rolling 24-month cap of 2 incidents</td></tr>
+                <tr><td><strong>AppleCare One</strong></td><td>The newer multi-device plan that covers several Apple products under one subscription.</td><td>Unlimited (no per-incident cap)</td></tr>
+            </table>
+            <p>Theft and Loss claims, where covered, are always tracked on a rolling 12-month window — 2 claims for Single-Pay or Monthly plans with T+L, and 3 claims for AppleCare One (which always includes T+L).</p>
+
+            <div class="tip">
+                <strong>Why the cap shape matters:</strong> A Single-Pay user who used both ADH incidents in year 1 has no more accidental damage coverage for the rest of the plan. A Monthly user in the same situation gets their cap back 24 months after each incident. An AppleCare One user has no per-incident ceiling at all. Stuffolio's remaining-incident counter reflects these differences instead of treating every AppleCare plan the same.
+            </div>
+
+            <h4>Honest Caveat on Rolling-Window Math</h4>
+            <p>For Monthly plans, the rolling 24-month window math is best-effort: Stuffolio counts the total incidents you've logged but doesn't yet track per-incident timestamps, so the counter is an approximation if you've had a long claim history. For most users on a single Monthly plan, this is honest enough. If you're a heavy claimer with multi-year history, treat the counter as a reminder to check your actual Apple coverage page before assuming an incident is covered.</p>
 
             <h4>Automatic AppleCare+ Prompt</h4>
             <p>When you save an Apple product (iPhone, iPad, Mac, Apple Watch, Apple TV, AirPods, or HomePod), Stuffolio automatically detects it and asks if you want to add AppleCare+ details:</p>
@@ -1810,8 +1906,10 @@
                 <li>A prompt sheet appears after saving</li>
                 <li>Choose <strong>Add AppleCare+</strong> to open the Extended Warranty form</li>
                 <li>The form is pre-filled with "Apple" as the provider and AppleCare+ pre-selected</li>
-                <li>Just add your coverage dates and policy number</li>
+                <li>Pick the plan family in the form (Single-Pay, Monthly, or AppleCare One)</li>
+                <li>Add your coverage dates and policy number</li>
             </ul>
+            <p><strong>Tip:</strong> Existing AppleCare entries from before Build 35 (when the plan-family picker was added) keep their original math until you open them and pick a plan family.</p>
 
             <h4>AppleCare+ Badge</h4>
             <p>Products with AppleCare+ display a distinctive <span style="background: #007AFF; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.85em;"> Care+</span> badge:</p>
@@ -1976,6 +2074,43 @@
             <div class="tip">
                 <strong>Tip:</strong> Smart suggestions learn from common maintenance needs. If you have heavy-use appliances (like in a large family), consider shortening the suggested intervals.
             </div>
+            <a href="#toc" class="back-to-top">↑ Back to Contents</a>
+        </section>
+
+        <section id="price-watch">
+            <h2>Price Watch</h2>
+            <p>Price Watch passively monitors the asking-price signal for items you've marked, so you notice if something you own has drifted significantly in value (up or down) without you having to remember to look. It's quiet by design — no notifications spam, no constant refreshes.</p>
+
+            <h3>Enabling Price Watch on an Item</h3>
+            <ol>
+                <li>Open the item</li>
+                <li>Scroll to the <strong>Price Watch</strong> section in the item detail</li>
+                <li>Click <strong>Enable Price Watch</strong></li>
+                <li>Stuffolio uses the model number and category to set up the watch</li>
+            </ol>
+            <p>Once enabled, the item participates in the scheduled refresh. You don't need to do anything else.</p>
+
+            <h3>What the Chart Shows</h3>
+            <p>The Price Watch section on the item detail displays:</p>
+            <ul>
+                <li><strong>Price history chart</strong> — points over time showing the asking-price signal trajectory</li>
+                <li><strong>Current vs. original purchase price</strong> — how the current market signal compares to what you paid</li>
+                <li><strong>Last refresh date</strong> — when the most recent data point was collected</li>
+            </ul>
+
+            <h3>How Refresh Works on Mac</h3>
+            <p>On the Mac, Price Watch refreshes run on a timer while Stuffolio is open. Keep Stuffolio running in the background for the most up-to-date data points. The schedule is designed to be cheap and respectful:</p>
+            <ul>
+                <li><strong>Tier-by-price cadence:</strong> Higher-value items refresh more often than low-value ones, so the AI cost stays bounded.</li>
+                <li><strong>Monthly cap:</strong> Each item's refresh count is capped per month, regardless of how long it's been watched. This prevents runaway costs on long-watched items.</li>
+                <li><strong>Subscriber-gated:</strong> Price Watch is one of the AI-backed features and is included with the optional subscription. Trial users can enable Price Watch on a small number of items during the 7-day trial.</li>
+            </ul>
+
+            <h3>Kill Switch</h3>
+            <p>Price Watch has a global kill switch in <strong>Settings &rarr; Price Watch</strong>. Use it to pause all watches temporarily without losing per-item configuration — useful if you want to stop background activity for a stretch. Resume from the same setting; watches pick up where they left off.</p>
+
+            <h3>Manual Refresh</h3>
+            <p>If you want a fresh data point right now (e.g., before selling an item), click the refresh button in the Price Watch section on the item detail. This counts against the item's monthly refresh budget.</p>
             <a href="#toc" class="back-to-top">↑ Back to Contents</a>
         </section>
 
@@ -2567,6 +2702,7 @@
                     </ul>
                 </li>
             </ul>
+            <p>The same conflict-resolution UI surfaces for items shared across CloudKit zones (shared-with-me items inside a household), so cross-zone conflicts get the same side-by-side review path as personal-zone conflicts. You won't lose the other person's work to a silent overwrite.</p>
 
             <div class="tip">
                 <strong>Tip:</strong> Use Household Sharing for appliances, vehicles, furniture, and electronics that the whole family uses. Each person can also keep their own personal items private.
@@ -2760,6 +2896,9 @@
                 <li><strong>Light</strong> — Always light mode</li>
                 <li><strong>Dark</strong> — Always dark mode</li>
             </ul>
+
+            <h4>Per-View Theme Toggle</h4>
+            <p>For thirteen of the most-used views (item detail, Add Item, Stuff Scout result, AI Assistant result, and several others), a small theme-toggle button appears in the toolbar. Click it to flip just that window between Light and Dark independently of your global setting — handy when you're reading a photo-heavy item detail at the same time as a dark-mode terminal in a split window. The toggle also appears on recovery views (failed syncs, cache-restore prompts) so you can always read them legibly regardless of ambient theme conditions.</p>
 
             <h3>Notification Settings</h3>
             <p>Click <strong>Notifications</strong> and toggle on:</p>
@@ -3099,6 +3238,16 @@
                 <li>Quit and reopen the app</li>
             </ol>
 
+            <h3>Subscription Says "Not Active" After Network Loss</h3>
+            <p>Stuffolio caches your last-known-good subscription status so brief network drops or App Store outages don't suddenly lock you out of features you paid for. If you see an offline banner ("Subscription status couldn't be verified — using cached status"), your subscription is still active locally. Connect to the network and the banner clears on the next StoreKit sync.</p>
+            <p>If the banner persists after reconnecting:</p>
+            <ol>
+                <li>Go to <strong>Settings &rarr; Subscription Status</strong></li>
+                <li>Click <strong>Restore Purchases</strong></li>
+                <li>Sign in to your Apple ID if prompted</li>
+                <li>Stuffolio re-verifies the subscription with App Store and clears the cached-status banner</li>
+            </ol>
+
             <h3>App Running Slowly</h3>
             <ol>
                 <li>Quit and reopen Stuffolio</li>
@@ -3185,6 +3334,8 @@
             <h2>Version History</h2>
             <table>
                 <tr><th>Version</th><th>Date</th><th>Highlights</th></tr>
+                <tr><td>Build 35</td><td>May 2026</td><td>AppleCare plan-type overhaul (Single-Pay / Monthly / AppleCare One with three distinct cap shapes), AI Product Assistant Layer 1 honesty envelope (sources cited / bounded by / what this is not), Set up Product combined workflow, AI Assistant cache badge with staleness hint, registration &amp; supplies URL fields on Item, per-view Theme Toggle, Stuff Scout dual asking/sold pricing with confidence floor &amp; hybrid floor, graded coin extraction, sidebar palette refresh, cross-zone CloudKit conflict resolution UI, StoreKit last-known-good entitlement cache, Mac Price Watch with timer-based refresh</td></tr>
+                <tr><td>Build 34</td><td>May 2026</td><td>Honest AI pricing disclosure, four-bucket AI trial (Stuff Scout items / AI Assistant searches / Receipt &amp; Label scans / Repair-Keep-Replace looks), 7-day trial window, post-trial monthly Stuff Scout drip, persistent quota visibility in Settings, retroactive-naming trial-expired prompt</td></tr>
                 <tr><td>Build 33</td><td>Apr 2026</td><td>Activity Timeline card on Mac Dashboard, Scout Confidence Gate &amp; Story-First Refinement, Context Veracity, Category-Specific Valuation, Research Tips, Refinement History, Recreation category, Coverage Insights stale-cost warnings, Borrowed &amp; Lent surfaces, IRS-threshold donation guidance, tappable "—" placeholders</td></tr>
                 <tr><td>2.0 - Sprint 5</td><td>Jan 2026</td><td>Progressive Form Disclosure, Offline Mode with Auto-Sync</td></tr>
                 <tr><td>2.0</td><td>Jan 2026</td><td>Mac Excellence: Native experience, keyboard shortcuts, Continuity</td></tr>

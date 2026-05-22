@@ -698,7 +698,7 @@
 
             <h3>Navigation Overview</h3>
             <p><span class="platform-note">iPhone</span> Use the tab bar at the bottom of the screen with five tabs: Dashboard, My Items, Tools, Stuff Scout, Settings. Access Legacy Wishes and Insights from the More menu.</p>
-            <p><span class="platform-note">iPad/Mac</span> Use the sidebar on the left side of the screen. Tap the sidebar icon to show or hide the sidebar. Sections include: Dashboard, My Items, Tools, Insights, Stuff Scout, Legacy Wishes, Settings</p>
+            <p><span class="platform-note">iPad/Mac</span> Use the sidebar on the left side of the screen. Tap the sidebar icon to show or hide the sidebar. Sections include: Dashboard, My Items, Tools, Insights, Stuff Scout, Legacy Wishes, Settings. Build 35 refreshed the sidebar palette to use the section colors (Dashboard blue, My Items purple, Tools/Actions teal, Insights pink, Stuff Scout orange, Settings gray) at the chrome opacity that holds up under colorblind-accessible contrast checks; Stuff Scout's sidebar hierarchy was also reorganized so the most-used scan options surface first.</p>
             <a href="#toc" class="back-to-top">Back to Contents</a>
         </section>
 
@@ -1250,7 +1250,7 @@
                 </tr>
                 <tr>
                     <td><strong>Category</strong></td>
-                    <td>Keywords like "electronics", "furniture", "tools"</td>
+                    <td>Keywords like "electronics", "furniture", "tools" — vehicle keywords like "bicycle", "bike", and "scooter" route to the <strong>Vehicles</strong> category</td>
                 </tr>
             </table>
 
@@ -3859,6 +3859,9 @@
                 <li><strong>App Icon:</strong> Choose from available icons (iPhone/iPad only)</li>
             </ul>
 
+            <h4>Per-View Theme Toggle</h4>
+            <p>For thirteen of the most-used views (item detail, Add Item, Stuff Scout result, AI Assistant result, and several others), a small theme-toggle button appears in the toolbar. Tap it to flip just that view between Light and Dark independently of your global setting — handy when you're reading a photo-heavy item detail outdoors or in a dim room. The toggle also appears on recovery views (failed syncs, cache-restore prompts) so you can always read them legibly regardless of ambient theme conditions.</p>
+
             <h3>Notification Settings</h3>
             <ul>
                 <li>Toggle: Warranty Expiring, Coverage Phase Changes, Maintenance Due, Loan Due</li>
@@ -4209,6 +4212,16 @@
                 <li>Wait 30 seconds and retry</li>
                 <li>If rate limited, wait a few minutes</li>
                 <li>Force quit and reopen the app</li>
+            </ol>
+
+            <h3>Subscription Says "Not Active" After Network Loss</h3>
+            <p>Stuffolio caches your last-known-good subscription status so brief network drops or App Store outages don't suddenly lock you out of features you paid for. If you see an offline banner ("Subscription status couldn't be verified — using cached status"), your subscription is still active locally. Connect to Wi-Fi or cellular and the banner clears on the next StoreKit sync.</p>
+            <p>If the banner persists after reconnecting:</p>
+            <ol>
+                <li>Go to <strong>Settings &rarr; Subscription Status</strong></li>
+                <li>Tap <strong>Restore Purchases</strong></li>
+                <li>Sign in to your Apple ID if prompted</li>
+                <li>Stuffolio re-verifies the subscription with App Store and clears the cached-status banner</li>
             </ol>
 
             <h3>Notifications Not Appearing</h3>
