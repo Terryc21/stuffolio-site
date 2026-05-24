@@ -788,8 +788,8 @@
             <h3>First Launch</h3>
             <p>When you open Stuffolio for the first time:</p>
             <ol>
-                <li><strong>Welcome Screen</strong> appears with feature highlights</li>
-                <li>Swipe through the introduction screens or tap <strong>Skip</strong></li>
+                <li><strong>Welcome Screen</strong> appears. Before you have any items, the home screen embeds the Add Item chooser inline so you can start adding right away &mdash; no extra navigation. <img src="assets/screenshots/add-item/G3-welcome-embedded-chooser.png" alt="The Welcome screen on iPhone, before adding any items: the Add Item chooser is embedded inline below the AI Product Assistant card, with Photo, Stuff Scout, Receipt, and Manual Entry tiles immediately accessible" style="display:block; margin:1rem auto; max-width:320px; border-radius:16px; box-shadow:0 4px 20px rgba(0,0,0,0.3);" loading="lazy" /></li>
+                <li>Swipe through any introduction screens or tap <strong>Skip</strong></li>
                 <li><strong>Accessibility Options</strong> screen appears:
                     <ul>
                         <li>Review available accessibility features</li>
@@ -798,13 +798,14 @@
                 </li>
                 <li><strong>Permissions</strong> screen appears:
                     <ul>
-                        <li>Tap <strong>Allow Camera</strong> if you want to scan barcodes and take photos</li>
+                        <li>Tap <strong>Allow Camera</strong> if you want to scan barcodes, photograph items, and capture receipts</li>
                         <li>Tap <strong>Allow Notifications</strong> if you want warranty and maintenance reminders</li>
                         <li>You can skip these and enable them later in Settings</li>
                     </ul>
                 </li>
-                <li>Tap <strong>Get Started</strong> to enter the app</li>
+                <li>Tap <strong>Get Started</strong> to enter the app. The first thing you'll see is the inline Add Item chooser on your home screen until you've added your first item.</li>
             </ol>
+            <p style="font-size:0.95rem; color:var(--muted)">When you first use Voice entry, you'll be asked for microphone access. You can grant or deny it then; it's not part of the first-launch flow.</p>
 
             <h3>Understanding the Home Tab (iPhone)</h3>
             <p>The Home tab on iPhone is organized around <strong>Three Phases</strong> — the lifecycle of your stuff. The right tool is in reach at the right moment, and nothing else gets in the way.</p>
@@ -812,10 +813,9 @@
             <h4>🛒 Acquire</h4>
             <p>Everything you reach for when something new enters your life. Fast paths, front and center:</p>
             <ul>
-                <li><strong>Add Item</strong> — Manual entry with the full form</li>
-                <li><strong>Scan Barcode</strong> — UPC lookup for retail products</li>
-                <li><strong>Photo Quick Add</strong> — Snap a photo and fill in details later</li>
+                <li><strong>Add Item</strong> — Opens the chooser. Seven entry methods (Photo, Stuff Scout, Receipt, Manual Entry, Barcode, Label, Voice) plus Paste/Drop accelerator</li>
                 <li><strong>Stuff Scout</strong> — AI identification for antiques, collectibles, thrift finds, and anything else you're not sure about</li>
+                <li><strong>Scan Barcode</strong> — Direct shortcut to UPC lookup for retail products</li>
             </ul>
 
             <h4>🛠️ Maintain</h4>
@@ -893,13 +893,45 @@
             </div>
 
             <h3>Choose How to Add</h3>
-            <p>The Add Item menu offers three simple options:</p>
+            <p>The Add Item chooser offers seven entry methods, organized into two tiers plus an always-visible accelerator strip. Pick any of them &mdash; they all route into the same form, and you can switch methods mid-entry.</p>
 
+            <img src="assets/screenshots/add-item/G1-chooser-full-all-7-tiles.png"
+                 alt="Add Item chooser sheet showing all seven entry methods in tiered layout"
+                 style="display:block; margin:1rem auto; max-width:320px; border-radius:16px; box-shadow:0 4px 20px rgba(0,0,0,0.3);"
+                 loading="lazy" />
+
+            <h4>Primary tier</h4>
+            <p>The four tiles you see first:</p>
             <ul>
                 <li><strong>📷 Photo</strong> &mdash; Take or choose a photo. For subscribers, AI automatically identifies your item, estimates its value, and fills in details while you watch the form appear instantly.</li>
-                <li><strong>📱 Barcode</strong> &mdash; Scan a UPC barcode for quick product lookup. Great for items with visible barcodes on packaging.</li>
-                <li><strong>✏️ Manual</strong> &mdash; Enter all details yourself. Best when you know exactly what information you want to record.</li>
+                <li><strong>🔍 Stuff Scout</strong> &mdash; Full AI analysis: identification, pricing, history, and comparable listings. Best for collectibles, thrift finds, and anything you can't identify yourself.</li>
+                <li><strong>🧾 Receipt</strong> &mdash; Photograph a receipt. OCR extracts the store name, purchase date, and price into the form before you start typing.</li>
+                <li><strong>✏️ Manual Entry</strong> &mdash; Enter all details yourself. Best when you know exactly what information you want to record.</li>
             </ul>
+
+            <h4>More ways to add</h4>
+            <p>Three additional entries below the primary tier:</p>
+            <ul>
+                <li><strong>📱 Barcode</strong> &mdash; Scan a UPC barcode for quick product lookup. Great for items with visible barcodes on packaging.</li>
+                <li><strong>🏷️ Label</strong> &mdash; Photograph a nameplate or label. OCR extracts brand, model number, and serial number. Especially useful for appliances and electronics.</li>
+                <li><strong>🎤 Voice</strong> &mdash; Speak the item details. Say "Add coffee maker to kitchen, manufacturer Cuisinart, price 99 dollars" and Voice parses title, room, brand, price, model, and serial. Hands-free from the chooser, or from the mic button next to Product Name in any form.</li>
+            </ul>
+
+            <h4>Paste &amp; Drop accelerator</h4>
+            <p>Always visible at the bottom of the chooser. Skip the picker when you already have an image:</p>
+            <ul>
+                <li><strong>📋 Paste image</strong> &mdash; Tap to paste an image from your clipboard. Works on iPhone, iPad, and Mac. When the clipboard is empty, the button stays visible but disabled so you know the option exists.</li>
+                <li><strong>🖱️ Drop image</strong> &mdash; Drag an image from Photos, Files, or another app into the drop zone. iOS (iPhone and iPad) for now; not yet supported on Mac.</li>
+            </ul>
+
+            <img src="assets/screenshots/add-item/G2-G11-chooser-paste-drop-empty.png"
+                 alt="Chooser scrolled to reveal the Paste and Drop accelerator strip"
+                 style="display:block; margin:1rem auto; max-width:320px; border-radius:16px; box-shadow:0 4px 20px rgba(0,0,0,0.3);"
+                 loading="lazy" />
+
+            <div class="tip-box">
+                <p><strong>💡 Tip:</strong> On iPhone, the chooser scrolls. If you see a "⌄ More below" hint at the bottom of the visible area, swipe up to reveal the Paste/Drop accelerator strip.</p>
+            </div>
 
             <div class="tip-box">
                 <p><strong>💡 Tip:</strong> To record a donation for tax purposes, first add the item using any method above, then go to <strong>Dispose Of → Donate</strong> to mark it as donated and record the recipient organization.</p>
@@ -907,8 +939,12 @@
 
             <h3>Method 1: Photo (Recommended)</h3>
             <p>The fastest way to add items. Capture one or more photos, then the form appears while AI analyzes in the background.</p>
+            <img src="assets/screenshots/add-item/G9-photo-ai-filled-form.png"
+                 alt="Add Item form after AI photo analysis completed: a Fields filled in banner appears with Done and Stuff Scout actions, and the Product Name (Guild D-25 Acoustic Guitar) and Purchase Date are pre-filled"
+                 style="display:block; margin:1rem auto; max-width:280px; border-radius:16px; box-shadow:0 4px 20px rgba(0,0,0,0.3);"
+                 loading="lazy" />
             <ol>
-                <li>Tap <strong>Photo</strong></li>
+                <li>Tap <strong>Photo</strong> in the chooser</li>
                 <li>Choose how to add your first photo:
                     <ul>
                         <li><strong>Take Photo</strong> &mdash; Use your camera to capture the item</li>
@@ -934,29 +970,119 @@
                         <li>Additional details like era and origin</li>
                     </ul>
                 </li>
-                <li>You can start editing other fields while AI works &mdash; no waiting required!</li>
+                <li>You can start editing other fields while AI works &mdash; no waiting required.</li>
             </ol>
 
             <div class="tip-box">
                 <p><strong>💡 Tip:</strong> Adding 2-3 photos from different angles significantly improves AI identification accuracy. Include a close-up of any labels, nameplates, or maker's marks.</p>
             </div>
 
-            <h3>Method 2: Barcode</h3>
+            <h3>Method 2: Stuff Scout</h3>
+            <p>Full AI analysis with pricing and history. Covered in detail in the <a href="#stuff-scout">Stuff Scout</a> section below.</p>
+
+            <h3>Method 3: Receipt</h3>
+            <p>Snap a receipt and let OCR fill in the store, date, and price before you type anything.</p>
+            <img src="assets/screenshots/add-item/G6-receipt-ocr-result.png"
+                 alt="Receipt Scan Results screen showing OCR extracted information from a Target receipt: Store, Date, Payment method, Address, and Receipt number, with Confidence Levels legend"
+                 style="display:block; margin:1rem auto; max-width:280px; border-radius:16px; box-shadow:0 4px 20px rgba(0,0,0,0.3);"
+                 loading="lazy" />
+            <ol>
+                <li>Tap <strong>Receipt</strong> in the chooser</li>
+                <li>Photograph the receipt. Make sure the store name, date, and total are visible and in focus.</li>
+                <li>OCR extracts:
+                    <ul>
+                        <li><strong>Store name</strong> &mdash; pre-fills the Retailer field</li>
+                        <li><strong>Purchase date</strong> &mdash; pre-fills the Purchase Date field</li>
+                        <li><strong>Price</strong> &mdash; pre-fills the Purchase Price field</li>
+                    </ul>
+                </li>
+                <li>The Add Item form appears with those fields already filled in</li>
+                <li>Add the Product Name and any other details you want, then Save</li>
+            </ol>
+
+            <div class="tip-box">
+                <p><strong>💡 Tip:</strong> Already have a receipt photo attached to an existing item? Use <strong>Auto-fill from Receipt</strong> in the form to extract details from photos you've already added.</p>
+            </div>
+
+            <h3>Method 4: Manual Entry</h3>
+            <p>Full control over all fields. Use this when you already know everything and just want to record it.</p>
+            <ol>
+                <li>Tap <strong>Manual Entry</strong> in the chooser</li>
+                <li>The Add Item form opens with no fields pre-filled</li>
+                <li>Fill in the details (see "Filling Out the Product Form" below)</li>
+            </ol>
+
+            <div class="tip-box">
+                <strong>Insurance Tip:</strong> For existing items, enter the <strong>Current Market Value</strong> &mdash; what it would cost to replace the item today. This is what insurance companies need for claims.
+            </div>
+
+            <h3>Method 5: Barcode</h3>
             <p>Quick lookup for products with visible UPC codes.</p>
             <ol>
-                <li>Tap <strong>Barcode</strong></li>
+                <li>Tap <strong>Barcode</strong> in the "More ways to add" tier</li>
                 <li>Point your camera at the barcode</li>
                 <li>Product information fills in automatically from global databases</li>
                 <li>Review and save</li>
             </ol>
 
-            <h3>Method 3: Manual</h3>
-            <p>Full control over all fields.</p>
+            <h3>Method 6: Label</h3>
+            <p>Photograph a nameplate to extract brand, model number, and serial number without typing.</p>
+            <img src="assets/screenshots/add-item/G8-label-ocr-result.png"
+                 alt="Label Scan Results from an LG appliance nameplate: nine fields extracted including Brand, Model, Serial, Part #, Voltage, Wattage, Capacity, Origin, and Certifications"
+                 style="display:block; margin:1rem auto; max-width:280px; border-radius:16px; box-shadow:0 4px 20px rgba(0,0,0,0.3);"
+                 loading="lazy" />
             <ol>
-                <li>Tap <strong>Manual</strong></li>
-                <li>The Add Product form opens</li>
-                <li>Fill in the details (see "Filling Out the Product Form" below)</li>
+                <li>Tap <strong>Label</strong> in the "More ways to add" tier</li>
+                <li>Photograph the product's nameplate, model sticker, or maker's mark</li>
+                <li>OCR extracts brand, model number, and serial number (where visible) into the form</li>
+                <li>Add any remaining details and save</li>
             </ol>
+
+            <div class="tip-box">
+                <p><strong>💡 Tip:</strong> Label scanning is most useful for appliances and electronics where the model and serial number are the hardest parts to type accurately.</p>
+            </div>
+
+            <h3>Method 7: Voice</h3>
+            <p>Hands-free entry. Speak the item details and Stuffolio parses them into form fields.</p>
+            <img src="assets/screenshots/add-item/G7-voice-input-sheet.png"
+                 alt="Voice Input sheet showing the canonical example phrasing: Add coffee maker to kitchen, manufacturer Cuisinart, price 99 dollars"
+                 style="display:block; margin:1rem auto; max-width:280px; border-radius:16px; box-shadow:0 4px 20px rgba(0,0,0,0.3);"
+                 loading="lazy" />
+            <ol>
+                <li>Tap <strong>Voice</strong> in the "More ways to add" tier</li>
+                <li>The first time you use Voice, a tip sheet appears with example phrasings. Tap <strong>Got it</strong> to continue.</li>
+                <li>Tap the microphone and speak naturally. Example: "Add coffee maker to kitchen, manufacturer Cuisinart, price 99 dollars"</li>
+                <li>Voice parses what it heard into:
+                    <ul>
+                        <li>Title (e.g., "coffee maker")</li>
+                        <li>Room / Location ("kitchen")</li>
+                        <li>Manufacturer ("Cuisinart")</li>
+                        <li>Price ("$99.00")</li>
+                        <li>Model number and serial number (if you speak them)</li>
+                    </ul>
+                </li>
+                <li>The form appears with those fields filled in. Review, adjust anything that was misheard, and save.</li>
+            </ol>
+
+            <div class="tip-box">
+                <p><strong>💡 Tip:</strong> Voice is also available inside any Add or Edit form &mdash; tap the mic icon next to the Product Name field to dictate without leaving the form.</p>
+            </div>
+
+            <h3>Paste &amp; Drop shortcuts</h3>
+            <p>If you already have an image (a screenshot of an Amazon order, a saved photo from a friend, an image you copied from a website), you can skip the picker entirely.</p>
+            <ul>
+                <li><strong>Paste</strong> &mdash; Copy an image to your clipboard, then tap the Paste button in the chooser. The image becomes the item's first photo and the form opens. Works on iPhone, iPad, and Mac.</li>
+                <li><strong>Drop</strong> &mdash; Drag an image from Photos, Files, or another app into the drop zone at the bottom of the chooser. iOS only for now.</li>
+            </ul>
+
+            <img src="assets/screenshots/add-item/G2-G11-chooser-paste-drop-empty.png"
+                 alt="The drop zone visible at the bottom of the chooser, ready to receive dragged images"
+                 style="display:block; margin:1rem auto; max-width:280px; border-radius:16px; box-shadow:0 4px 20px rgba(0,0,0,0.3);"
+                 loading="lazy" />
+
+            <div class="tip-box">
+                <p><strong>💡 Tip:</strong> Dropped or pasted images default to the Product Photo type. If the image you dropped is actually a receipt or label, you can change its type inside the form after the item is created.</p>
+            </div>
 
             <div class="tip-box">
                 <strong>Insurance Tip:</strong> For existing items, enter the <strong>Current Market Value</strong> &mdash; what it would cost to replace the item today. This is what insurance companies need for claims.

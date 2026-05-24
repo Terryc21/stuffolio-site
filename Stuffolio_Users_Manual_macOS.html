@@ -792,8 +792,8 @@
             <h3>First Launch</h3>
             <p>When you open Stuffolio for the first time:</p>
             <ol>
-                <li><strong>Welcome Window</strong> appears with feature highlights</li>
-                <li>Click through the introduction screens or click <strong>Skip</strong></li>
+                <li><strong>Welcome Window</strong> appears. Before you have any items, the home screen embeds the Add Item chooser inline so you can start adding right away &mdash; no extra navigation. <img src="assets/screenshots/add-item/G1-chooser-full-all-7-tiles.png" alt="The Add Item chooser shown on iPhone; the layout on Mac is similar but presented in a window" style="display:block; margin:1rem auto; max-width:320px; border-radius:16px; box-shadow:0 4px 20px rgba(0,0,0,0.3);" loading="lazy" /><p style="text-align:center; font-size:0.85rem; color:var(--muted); margin-top:-0.5rem">iPhone shown; the Mac chooser presents the same seven entry methods in a window.</p></li>
+                <li>Click through any introduction screens or click <strong>Skip</strong></li>
                 <li><strong>Accessibility Options</strong> screen appears:
                     <ul>
                         <li>Review available accessibility features</li>
@@ -806,7 +806,7 @@
                         <li>You can skip this and enable it later in Settings</li>
                     </ul>
                 </li>
-                <li>Click <strong>Get Started</strong> to enter the app</li>
+                <li>Click <strong>Get Started</strong> to enter the app. The first thing you'll see is the inline Add Item chooser on your home screen until you've added your first item.</li>
             </ol>
 
             <h3>Understanding the Dashboard</h3>
@@ -862,17 +862,47 @@
             </ul>
 
             <h3>Choose How to Add</h3>
-            <p>The Add Item menu offers three simple options:</p>
+            <p>The Add Item chooser offers seven entry methods, organized into two tiers plus an always-visible accelerator strip. Pick any of them &mdash; they all route into the same form, and you can switch methods mid-entry.</p>
+
+            <img src="assets/screenshots/add-item/G1-chooser-full-all-7-tiles.png" alt="The Add Item chooser shown on iPhone; the layout on Mac is similar but presented in a window" style="display:block; margin:1rem auto; max-width:320px; border-radius:16px; box-shadow:0 4px 20px rgba(0,0,0,0.3);" loading="lazy" /><p style="text-align:center; font-size:0.85rem; color:var(--muted); margin-top:-0.5rem">iPhone shown; the Mac chooser presents the same seven entry methods in a window.</p>
+
+            <h4>Primary tier</h4>
+            <p>The four tiles you see first:</p>
             <ul>
-                <li><strong>📷 Photo</strong> — Choose a photo from your library or paste from clipboard. AI automatically identifies your item and fills in details while the form appears instantly.</li>
-                <li><strong>📱 Barcode</strong> — Scan a UPC barcode for quick product lookup.</li>
-                <li><strong>✏️ Manual</strong> — Enter all details yourself.</li>
+                <li><strong>📷 Photo</strong> — Choose a photo from your library or paste from clipboard. AI automatically identifies your item and fills in details while the form appears instantly (subscribers).</li>
+                <li><strong>🔍 Stuff Scout</strong> — Full AI analysis: identification, pricing, history, and comparable listings. Best for collectibles and "what is this thing?"</li>
+                <li><strong>🧾 Receipt</strong> — Add a receipt image (from clipboard, library, or iCloud sync from iPhone). OCR extracts store, date, and price.</li>
+                <li><strong>✏️ Manual Entry</strong> — Type all details yourself.</li>
             </ul>
+
+            <h4>More ways to add</h4>
+            <p>Three additional entries below the primary tier:</p>
+            <ul>
+                <li><strong>📱 Barcode</strong> — Scan a UPC barcode with your Mac's camera for quick product lookup.</li>
+                <li><strong>🏷️ Label</strong> — Add a nameplate photo; OCR extracts brand, model number, and serial number.</li>
+                <li><strong>🎤 Voice</strong> — Speak the item details: "Add coffee maker to kitchen, manufacturer Cuisinart, price 99 dollars." Voice parses title, room, brand, price, model, and serial.</li>
+            </ul>
+
+            <h4>Paste accelerator</h4>
+            <p>Always visible at the bottom of the chooser. Skip the picker when you already have an image:</p>
+            <ul>
+                <li><strong>📋 Paste image</strong> — Click to paste an image from your clipboard. When the clipboard is empty, the button stays visible but disabled so you know the option exists.</li>
+            </ul>
+
+            <p style="font-size:0.95rem; color:var(--muted)">Drag-and-drop into the chooser is iOS-only for now and not yet supported on Mac. Paste works as the cross-platform equivalent. To bring an image in from another app, use <strong>Edit → Copy</strong> there, then click Paste in the chooser.</p>
+
+            <div class="tip">
+                <strong>💡 Tip:</strong> Use Stuffolio on your iPhone or iPad to take photos with your camera, then access them here via iCloud sync.
+            </div>
+
+            <div class="tip">
+                <strong>💡 Tip:</strong> To record a donation, add the item first, then go to <strong>Dispose Of → Donate</strong> to mark it as donated.
+            </div>
 
             <h3>Photo (Recommended)</h3>
             <p>The fastest way to add items — the form appears immediately while AI works in the background.</p>
             <ol>
-                <li>Click <strong>Photo</strong></li>
+                <li>Click <strong>Photo</strong> in the chooser</li>
                 <li>Choose how to add a photo:
                     <ul>
                         <li><strong>Choose from Library</strong> — Select an existing photo</li>
@@ -881,29 +911,67 @@
                 </li>
                 <li>The form appears <strong>immediately</strong> with your photo attached</li>
                 <li>For subscribers: AI fills in title, manufacturer, and estimated value automatically</li>
-                <li>Start editing other fields while AI works — no waiting!</li>
+                <li>Start editing other fields while AI works — no waiting</li>
+            </ol>
+
+            <h3>Stuff Scout</h3>
+            <p>Full AI analysis. Covered in detail in <a href="#stuff-scout">Using Stuff Scout</a> later in this manual.</p>
+
+            <h3>Receipt</h3>
+            <p>Add a receipt image and let OCR fill in the store, date, and price before you type anything.</p>
+            <ol>
+                <li>Click <strong>Receipt</strong> in the chooser</li>
+                <li>Add the receipt image (paste from clipboard, choose from library, or use a photo synced from iPhone via iCloud)</li>
+                <li>OCR pre-fills the Retailer, Purchase Date, and Purchase Price fields</li>
+                <li>Add the Product Name and any other details you want, then Save</li>
             </ol>
 
             <div class="tip">
-                <strong>💡 Tip:</strong> Use Stuffolio on your iPhone or iPad to take photos with your camera, then access them here via iCloud sync.
+                <strong>💡 Tip:</strong> Capturing receipts on iPhone is usually faster — take the photo with your phone, and it appears in your Mac's photo library via iCloud within seconds.
             </div>
+
+            <h3>Manual Entry</h3>
+            <ol>
+                <li>Click <strong>Manual Entry</strong> in the chooser</li>
+                <li>The Add Item form opens with no fields pre-filled</li>
+                <li>Fill in the details (see "Filling Out the Add Item Form" below)</li>
+            </ol>
 
             <h3>Barcode</h3>
             <ol>
-                <li>Click <strong>Barcode</strong></li>
+                <li>Click <strong>Barcode</strong> in the "More ways to add" tier</li>
                 <li>Use your Mac's camera to scan the UPC barcode</li>
                 <li>Product information fills in automatically</li>
             </ol>
 
-            <h3>Manual</h3>
+            <h3>Label</h3>
+            <p>Add a nameplate photo to extract brand, model number, and serial number without typing.</p>
             <ol>
-                <li>Click <strong>Manual</strong></li>
-                <li>The Add Item form opens</li>
-                <li>Fill in the details (see "Filling Out the Add Item Form" below)</li>
+                <li>Click <strong>Label</strong> in the "More ways to add" tier</li>
+                <li>Add the nameplate image (paste, library, or iCloud-synced photo)</li>
+                <li>OCR extracts brand, model number, and serial number into the form</li>
+                <li>Add any remaining details and save</li>
+            </ol>
+
+            <h3>Voice</h3>
+            <p>Hands-free entry. Speak the item details and Stuffolio parses them into form fields.</p>
+            <ol>
+                <li>Click <strong>Voice</strong> in the "More ways to add" tier</li>
+                <li>First time only: a tip sheet shows example phrasings. Click <strong>Got it</strong> to continue.</li>
+                <li>Speak naturally. Example: "Add coffee maker to kitchen, manufacturer Cuisinart, price 99 dollars"</li>
+                <li>Voice parses title, room, manufacturer, price, model, and serial into form fields</li>
+                <li>The form appears with those fields filled in. Review, adjust anything misheard, and save.</li>
             </ol>
 
             <div class="tip">
-                <strong>💡 Tip:</strong> To record a donation, add the item first, then go to <strong>Dispose Of → Donate</strong> to mark it as donated.
+                <strong>💡 Tip:</strong> Voice is also available inside any Add or Edit form &mdash; click the mic icon next to the Product Name field to dictate without leaving the form.
+            </div>
+
+            <h3>Paste shortcut</h3>
+            <p>If you already have an image on your clipboard (a screenshot, a copied image, an image from another app), click the Paste button in the chooser. The image becomes the item's first photo and the form opens.</p>
+
+            <div class="tip">
+                <strong>💡 Tip:</strong> Pasted images default to the Product Photo type. If the image is actually a receipt or label, you can change its type inside the form after the item is created.
             </div>
 
             <h3>Filling Out the Add Item Form</h3>

@@ -469,7 +469,7 @@
       <div class="card">
         <div class="hero-intro">
           <h1>What Stuffolio Does</h1>
-          <address class="byline" itemprop="author"><span itemprop="name">Coffee &amp; Code LLC</span> · <time datetime="2026-05-21">Updated May 2026</time></address>
+          <address class="byline" itemprop="author"><span itemprop="name">Coffee &amp; Code LLC</span> · <time datetime="2026-05-23">Updated May 2026</time></address>
           <p class="tagline">Every home inventory app tracks what you own. Here's what Stuffolio does that nobody else does &mdash; and yes, all the basics are covered too.</p>
         </div>
 
@@ -826,58 +826,90 @@
             <div class="capability-icon">⚡</div>
             <div>
               <h2>Quick Start &mdash; Fast Data Entry</h2>
-              <div class="subtitle">Multiple ways to add items in seconds, not minutes</div>
+              <div class="subtitle">Seven ways to add an item, organized by how often you'll reach for them</div>
             </div>
           </div>
 
+          <img src="assets/screenshots/add-item/G1-chooser-full-all-7-tiles.png"
+               alt="Add Item chooser showing the new tiered layout: four primary tiles (Photo, Stuff Scout, Receipt, Manual Entry), three secondary entries (Barcode, Label, Voice), and the always-visible Paste/Drop accelerator"
+               style="display:block; margin:1.5rem auto; max-width:320px; border-radius:16px; box-shadow:0 4px 20px rgba(0,0,0,0.3);"
+               loading="lazy" />
+
+          <p>The Add Item chooser is built around a simple idea: the methods you'll use most should be one tap away, and the ones you'll reach for occasionally should be one tap further down. Everything routes into the same form, and you can switch methods mid-entry.</p>
+
+          <h3 style="margin-top:1.5rem">Primary ways to add</h3>
+          <p class="subtitle">The four tiles you see first &mdash; one of these covers almost every new item.</p>
           <div class="capability-grid">
             <div class="capability-item">
-              <h3><span class="item-icon">🎯</span> Simple Add Item</h3>
-              <p>Three clear options: Photo (AI identifies your item automatically), Barcode (scan UPC for instant lookup), or Manual (enter details yourself). No confusing choices — just pick and go.</p>
+              <h3><span class="item-icon">📷</span> Photo</h3>
+              <p>Take or choose a photo. AI identifies your item, fills in details automatically, and the form appears immediately while analysis runs in the background. The fastest path for items you can point a camera at.</p>
             </div>
             <div class="capability-item">
-              <h3><span class="item-icon">⚡</span> Optimistic AI Loading</h3>
-              <p>Take a photo and the form appears instantly. AI analyzes in the background while you can start editing. Fields fill in automatically as results arrive — no waiting!</p>
+              <h3><span class="item-icon">🔍</span> Stuff Scout</h3>
+              <p>Full AI analysis: identification, pricing, history, and comparable listings. Quick ID (~15s), With Pricing (~25s), or Full Appraisal (~40s). Best for collectibles, thrift finds, and "what is this thing?"</p>
             </div>
             <div class="capability-item">
-              <h3><span class="item-icon">📷</span> Scan barcodes</h3>
+              <h3><span class="item-icon">🧾</span> Receipt</h3>
+              <p>Photograph a receipt. OCR extracts store name, purchase date, and price. The store and date you'd otherwise type are already in the form before you start. Promoted to a primary tile because receipt-first entry is faster than UPC lookup for most purchases.</p>
+            </div>
+            <div class="capability-item">
+              <h3><span class="item-icon">✏️</span> Manual Entry</h3>
+              <p>Type details yourself. The classic form. Use this when you already know everything and just want to record it.</p>
+            </div>
+          </div>
+
+          <h3 style="margin-top:1.5rem">More ways to add</h3>
+          <p class="subtitle">Three additional entries below the primary tier &mdash; still one tap from the chooser.</p>
+          <div class="capability-grid">
+            <div class="capability-item">
+              <h3><span class="item-icon">📱</span> Barcode</h3>
               <p>Point your camera at any UPC barcode. Stuffolio looks up product name, brand, and price automatically from global databases.</p>
             </div>
             <div class="capability-item">
-              <h3><span class="item-icon">🧾</span> Scan receipts</h3>
-              <p>Take a photo of your receipt. OCR extracts store name, purchase date, and price — fields fill in automatically.</p>
+              <h3><span class="item-icon">🏷️</span> Label</h3>
+              <p>Photograph the nameplate or label. Extract brand, model number, and serial number without typing. Especially useful for appliances and electronics where the model and serial are the hard parts.</p>
+            </div>
+            <div class="capability-item">
+              <h3><span class="item-icon">🎤</span> Voice</h3>
+              <p>Speak naturally: "Add coffee maker to kitchen, manufacturer Cuisinart, price 99 dollars." Stuffolio parses title, room, brand, price, model, and serial &mdash; hands-free entry from the chooser, or from the mic button next to Product Name in any form.</p>
+            </div>
+          </div>
+
+          <h3 style="margin-top:1.5rem">Paste &amp; Drop accelerator</h3>
+          <p class="subtitle">Always visible at the bottom of the chooser. Skip the picker entirely when you already have an image.</p>
+          <img src="assets/screenshots/add-item/G2-G11-chooser-paste-drop-empty.png"
+               alt="Paste and Drop accelerator visible at the bottom of the chooser, with the disabled No image on clipboard state"
+               style="display:block; margin:1.5rem auto; max-width:320px; border-radius:16px; box-shadow:0 4px 20px rgba(0,0,0,0.3);"
+               loading="lazy" />
+          <div class="capability-grid">
+            <div class="capability-item">
+              <h3><span class="item-icon">📋</span> Paste image</h3>
+              <p>Got an image on your clipboard? Tap Paste. Works on iPhone, iPad, and Mac. When the clipboard is empty, the button stays visible but disabled so you know the option exists.</p>
+            </div>
+            <div class="capability-item">
+              <h3><span class="item-icon">🖱️</span> Drop image</h3>
+              <p>Drag an image from Photos, Files, or another app into the drop zone. Drag-from-Photos is treated as a Photo entry &mdash; you can re-classify it as a receipt or label inside the form. iOS (iPhone and iPad) for now; not yet supported on Mac.</p>
+            </div>
+          </div>
+
+          <h3 style="margin-top:1.5rem">Bonus features that make any path faster</h3>
+          <p class="subtitle">These work with whichever entry method you pick.</p>
+          <div class="capability-grid">
+            <div class="capability-item">
+              <h3><span class="item-icon">⚡</span> Optimistic AI Loading</h3>
+              <p>Take a photo and the form appears instantly. AI analyzes in the background while you can start editing. Fields fill in automatically as results arrive &mdash; no waiting.</p>
             </div>
             <div class="capability-item">
               <h3><span class="item-icon">🔗</span> Receipt Pairing</h3>
-              <p>Use Stuff Scout to identify an item, then tap "Add Receipt Photo" to pair a receipt. Store, date, and price auto-fill from the receipt — complete records in seconds.</p>
+              <p>Use Stuff Scout to identify an item, then attach a receipt photo. Store, date, and price auto-fill from the receipt &mdash; complete records in seconds.</p>
             </div>
             <div class="capability-item">
               <h3><span class="item-icon">🧾</span> Auto-fill from Receipt</h3>
               <p>Already have receipt images attached? Tap "Auto-fill from Receipt" to extract purchase details from existing receipt photos without re-scanning.</p>
             </div>
             <div class="capability-item">
-              <h3><span class="item-icon">🏷️</span> Scan product labels</h3>
-              <p>Photograph the nameplate or label. Extract brand, model number, and serial number without typing.</p>
-            </div>
-            <div class="capability-item">
-              <h3><span class="item-icon">📸</span> Take or choose photos</h3>
-              <p>Capture directly with your camera or choose from your photo library. Photo quality analysis helps you get the best results.</p>
-            </div>
-            <div class="capability-item">
-              <h3><span class="item-icon">📋</span> Paste for OCR</h3>
-              <p>Paste an image from your clipboard (Mac) and extract text automatically. Great for screenshots and copied images.</p>
-            </div>
-            <div class="capability-item">
-              <h3><span class="item-icon">🖱️</span> Drag & drop (iPad)</h3>
-              <p>Drag images from other apps directly into Stuffolio. Split-screen multitasking makes adding photos effortless.</p>
-            </div>
-            <div class="capability-item">
               <h3><span class="item-icon">📋</span> Batch entry</h3>
-              <p>Adding 10 identical items? Enter the details once, set the quantity. No repetitive data entry — perfect for collections or bulk purchases.</p>
-            </div>
-            <div class="capability-item">
-              <h3><span class="item-icon">🎤</span> Voice Input</h3>
-              <p>Tap the mic button next to Product Name and speak naturally: "Add coffee maker to kitchen, manufacturer Cuisinart, price 99 dollars." Voice commands parse title, room, brand, price, model, and serial — hands-free entry in both Add and Edit forms.</p>
+              <p>Adding 10 identical items? Enter the details once, set the quantity. No repetitive data entry &mdash; perfect for collections or bulk purchases.</p>
             </div>
             <div class="capability-item">
               <h3><span class="item-icon">🖼️</span> Photo Optimizer</h3>
