@@ -1,4 +1,4 @@
-/* Copy-quote affordance for blockquote.quotable blocks (UNFORGET S74).
+/* Copy-quote affordance for blockquote.quotable blocks.
    Adds a small "Copy" button to every quotable on the page; on click,
    writes the inner text to the clipboard and flashes "Copied" feedback.
    No-ops if the clipboard API is unavailable (older browsers, insecure context). */

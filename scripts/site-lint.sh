@@ -1,12 +1,9 @@
 #!/bin/bash
 # site-lint.sh - Citation-rule grep automation for stuffolio-site
 #
-# Rule provenance: ../stuffolio-strategy/strategy/SITE_LINT_PROVENANCE.md
-# Plan: PLANS/2026-05-20-plan-1a-plan-3.md Phase A
-#
 # Modes:
-#   --pricing     POSITIONING_ONE_PAGER_2026-05-07.md:100-104 (no-sub / free-trial / standalone-price / queries)
-#   --vocab       Marketing.md:105-110 + "How we talk about AI" sub-section + specialist names
+#   --pricing     User-facing pricing copy: no-sub / free-trial / standalone-price / queries violations
+#   --vocab       Voice/vocabulary rules + "How we talk about AI" sub-section + specialist names
 #   --bylines     "Updated [Month Year]" drift > 60 days from <time datetime="">
 #   --beta-debt   BETA-PERIOD-ONLY comments; silent pre-launch, alarm when LAUNCH_FLIPPED=1
 #   --all         Run every check
@@ -19,18 +16,18 @@
 # rule source. The allowlist is the editorial-judgment surface; the lint is
 # the structural-violation surface.
 #
-# Scoping notes (decisions made during Phase A build):
+# Scoping notes:
 #   - User manual files (Stuffolio_Users_Manual*.html, Stuffolio_Quick_Start_Guide.html)
-#     are excluded from --vocab and --pricing per Marketing.md:160-163 (in-app
-#     docs allowlist). They still get --bylines and --beta-debt checks.
+#     are excluded from --vocab and --pricing per the in-app docs allowlist.
+#     They still get --bylines and --beta-debt checks.
 #   - --bylines is a CONSISTENCY check between the visible "Updated Month Year"
 #     string and the same line's <time datetime="">. It does NOT check freshness
-#     vs. today — that's Phase E.5 (build-time stamping). A datetime+string pair
+#     vs. today — that's a build-time stamping concern. A datetime+string pair
 #     that agree but are both stale will return clean.
-#   - --pricing queries-vocab is broader than POSITIONING:102 strictly requires
-#     (rule says "user-facing pricing copy"); flagging all "queries"/"query"
-#     uses surfaces more than just the price-mention drift, but the noise is
-#     bounded and reviewable. Allowlist documented exceptions.
+#   - --pricing queries-vocab is broader than the underlying rule strictly
+#     requires; flagging all "queries"/"query" uses surfaces more than just the
+#     price-mention drift, but the noise is bounded and reviewable. Allowlist
+#     documented exceptions.
 #   - --vocab three-clause heuristic is gated behind VOCAB_STRICT=1 because it
 #     would otherwise fire on every legitimate AI mention.
 
@@ -49,7 +46,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 SITE_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 
 # All HTML pages — manuals and guides are now in scope too (Terry 2026-05-21).
-# Marketing.md:160-163 "in-app docs allowlist" still applies on a per-line basis
+# The internal voice rule "in-app docs allowlist" still applies on a per-line basis
 # via ALLOWLINT comments where genuinely warranted, but the prior file-level
 # exclusion was masking violations users see when they read the manual.
 PUBLIC_PAGES=$(find "$SITE_ROOT" -maxdepth 1 -name "*.html" -type f | sort)
@@ -96,14 +93,14 @@ is_allowlisted() {
 # effect for the surrounding `for file in $PUBLIC_PAGES` loop.
 
 # -----------------------------------------------------------------------------
-# --pricing checks (POSITIONING_ONE_PAGER_2026-05-07.md:100-103)
+# --pricing checks (internal pricing rule)
 # -----------------------------------------------------------------------------
 
 check_pricing() {
-  echo "# --pricing (POSITIONING_ONE_PAGER:100-103)"
+  echo "# --pricing (internal pricing rule)"
 
   # Rule 1: ban standalone "no subscription" / "not a subscription"
-  # POSITIONING:100 forbids both phrasings as standalone claims about
+  # internal pricing rule forbids both phrasings as standalone claims about
   # Stuffolio's pricing. Acceptable qualified forms (same-line):
   # "no required subscription", "no AI subscription",
   # "not a required subscription", "optional subscription".
@@ -155,9 +152,9 @@ check_pricing() {
     done < <(grep -niE '\$9\.99 unlocks everything|Pay Once\. Own It\.' "$file" 2>/dev/null || true)
   done
 
-  # Rule 4: ban "queries" in user-facing pricing copy (POSITIONING:102)
+  # Rule 4: ban "queries" in user-facing pricing copy (internal pricing rule)
   # Only fires on lines that also mention pricing/quota/subscription/allowance —
-  # POSITIONING:102 scopes this to "user-facing pricing copy" specifically.
+  # internal pricing rule scopes this to "user-facing pricing copy" specifically.
   # General-context "query" mentions (feature descriptions, technical docs) are
   # out of scope. Enable VOCAB_STRICT=1 in --vocab to flag all uses for review.
   for file in $PUBLIC_PAGES; do
@@ -175,13 +172,13 @@ check_pricing() {
 }
 
 # -----------------------------------------------------------------------------
-# --vocab checks (Marketing.md:105-110, "How we talk about AI", specialist names)
+# --vocab checks (internal voice rule + "How we talk about AI" + specialist names)
 # -----------------------------------------------------------------------------
 
 check_vocab() {
-  echo "# --vocab (Marketing.md:105-110 + How we talk about AI + specialist names)"
+  echo "# --vocab (internal voice rule + How we talk about AI + specialist names)"
 
-  # Rule: banned audience-association words (Marketing.md:105)
+  # Rule: banned audience-association words (internal voice rule)
   # hoard / declutter / Marie Kondo / minimalism
   local file line text
   for file in $PUBLIC_PAGES; do
@@ -195,7 +192,7 @@ check_vocab() {
     done < <(grep -niE '\b(hoard[a-z]*|declutter[a-z]*|Marie Kondo|minimalis[a-z]*)\b' "$file" 2>/dev/null || true)
   done
 
-  # Rule: banned insurance phrasings (Marketing.md:106-107, 127-131, 162-167)
+  # Rule: banned insurance phrasings (internal voice rule)
   # insurance-grade / insurance-approved / insurance-ready / claim-ready
   # submit a claim / file a claim / claim system
   for file in $PUBLIC_PAGES; do
@@ -209,7 +206,7 @@ check_vocab() {
     done < <(grep -niE 'insurance[- ](grade|approved|ready)|claim[- ]ready|(submit|file) a claim|claim system' "$file" 2>/dev/null || true)
   done
 
-  # Rule: banned "estate planning" (Marketing.md:108)
+  # Rule: banned "estate planning" (internal voice rule)
   # Replacement: "legal arrangements", "passing things along"
   for file in $PUBLIC_PAGES; do
     [ -f "$file" ] || continue
@@ -222,7 +219,7 @@ check_vocab() {
     done < <(grep -niE 'estate[- ]planning' "$file" 2>/dev/null || true)
   done
 
-  # Rule: banned collector/grade vocab (Marketing.md:109)
+  # Rule: banned collector/grade vocab (internal voice rule)
   for file in $PUBLIC_PAGES; do
     [ -f "$file" ] || continue
     while IFS=: read -r line text; do
@@ -234,7 +231,7 @@ check_vocab() {
     done < <(grep -niE 'antique collector|collector[- ]grade|investment[- ]grade' "$file" 2>/dev/null || true)
   done
 
-  # Rule: "AI-powered" as a hero claim (Marketing.md:110, 123)
+  # Rule: "AI-powered" as a hero claim (internal voice rule)
   # Banned on public pages. User-manual files use a separate allowlist below.
   for file in $PUBLIC_PAGES; do
     [ -f "$file" ] || continue
@@ -282,7 +279,7 @@ check_vocab() {
     done
   fi
 
-  # Rule: specialist names banned on public pages (Marketing.md:158-168)
+  # Rule: specialist names banned on public pages (internal voice rule)
   # NAWCC / PCGS / Heritage Auctions / Pocket Watch DB / Reverb
   # Credibility infrastructure, not marketing claims. User-manual files
   # (in-app docs) are checked separately with allowlist guidance.
@@ -298,7 +295,7 @@ check_vocab() {
   done
 
   # Rule: "what it isn't" line presence on AI feature surfaces
-  # (Marketing.md "How we talk about AI" sub-rule 3)
+  # (internal voice rules "How we talk about AI" sub-rule 3)
   # Fires only on pages whose PURPOSE is to describe an AI feature, not
   # pages that merely reference one in passing (release notes, privacy,
   # quick-reference, walkthroughs, beta CTAs). Heuristic:
@@ -426,11 +423,11 @@ usage() {
 Usage: $(basename "$0") [--pricing] [--vocab] [--bylines] [--beta-debt] [--all]
 
 Lints stuffolio-site HTML pages against rules in
-  ../stuffolio-strategy/strategy/SITE_LINT_PROVENANCE.md
+  (internal strategy docs)
 
 Modes (run individually or combined):
-  --pricing     POSITIONING_ONE_PAGER:100-103
-  --vocab       Marketing.md:105-110 + "How we talk about AI" + specialist names
+  --pricing     internal pricing rule
+  --vocab       internal voice rule+ "How we talk about AI" + specialist names
   --bylines     Drift > 60 days on "Updated Month Year" stamps
   --beta-debt   BETA-PERIOD-ONLY markers (silent unless LAUNCH_FLIPPED=1)
   --all         Run every check
