@@ -1812,8 +1812,8 @@
 
             <h3>Opening Repair, Keep, or Replace?</h3>
             <ul>
-                <li><strong>From the Dashboard:</strong> Click <strong>Repair Advisor</strong> — if you only have one damaged item, it opens the advisor directly without a picker step</li>
-                <li><strong>From an Item:</strong> Open the item, click the <strong>More</strong> button (···) in the toolbar, select <strong>Repair, Keep, or Replace?</strong></li>
+                <li><strong>From the Dashboard:</strong> Click <strong>Keep, Repair, Replace Advisor</strong>. The picker lists any owned item (damaged items surfaced first). If you have just one damaged item, it opens the advisor directly without a picker step.</li>
+                <li><strong>From an Item:</strong> Open the item, go to <strong>Tools > Decisions > Repair, Keep, or Replace?</strong></li>
                 <li><strong>From Rating Insights:</strong> Go to <strong>Insights > Rating Insights</strong>, click <strong>Get Replacement Advice</strong> on any item card</li>
                 <li><strong>Quick Find:</strong> Press <kbd>⌘K</kbd> and search for "repair", "keep", or "replace"</li>
             </ul>
@@ -1827,6 +1827,16 @@
                 <tr><td>AI Alternatives</td><td>Optional: fetch alternative products from trusted review sources. Counts as one Repair-Keep-Replace "look" against your trial quota (5 free in the first 7 days); subscription-only after that.</td></tr>
                 <tr><td>Decision Summary</td><td>Confidence level and three clear action paths</td></tr>
             </table>
+
+            <h3>Finding Alternative Products</h3>
+            <p>Click <strong>Find Alternatives with AI</strong> to search inline. Alternatives are routed by category, not flattened to a generic list:</p>
+            <ul>
+                <li><strong>Same-ecosystem first</strong> for ecosystem-coherent items. A MacBook owner sees Apple alternatives before cross-platform options; cross-ecosystem alternatives appear second and are clearly labeled.</li>
+                <li><strong>Specialists instead of products</strong> for heirlooms, fashion, and luxury items. The Replace branch is hidden for these categories.</li>
+                <li><strong>Grading and restoration impact</strong> for collectibles, instead of generic alternatives.</li>
+                <li><strong>Budget-bracketed options</strong> for commodity items; <strong>durability and parts</strong> for tools and appliances.</li>
+            </ul>
+            <p>Each recommendation carries source attribution (Wirecutter, RTINGS, Reddit, etc.) with credibility tiers. If the AI is uncertain about your specific model, it surfaces that in a visible notes card above the results.</p>
 
             <h3>Confidence Levels</h3>
             <p>The advisor uses your actual item data — age, warranty status, condition, purchase price, and your history with that brand — to score each recommendation. The more data you provide, the better the advice:</p>
@@ -1842,6 +1852,22 @@
                 <li><strong>Keep Using:</strong> Set a reminder to check back later, continue enjoying the item</li>
                 <li><strong>Time to Replace:</strong> View alternatives, consider same brand or explore new options</li>
             </ul>
+
+            <h3>Behavior by Item Type</h3>
+            <p>Not every item is a candidate for "replace." A grandfather clock doesn't have alternatives in the way a laptop does; a Birkin bag doesn't either. The advisor routes by item category so the recommendation matches what kind of thing you own:</p>
+            <table>
+                <tr><th>Category</th><th>What you'll see</th></tr>
+                <tr><td>Consumer electronics (laptops, phones, vacuums, TVs)</td><td>Same-ecosystem alternatives first (Apple suggestions for Apple items); cross-ecosystem options clearly labeled and shown second</td></tr>
+                <tr><td>Heirloom &amp; sentimental (clocks, jewelry, art, instruments)</td><td>Repair specialists and restoration cost guidance. The Replace branch is hidden — these items aren't meant to be swapped out</td></tr>
+                <tr><td>Collectibles (coins, stamps, sports memorabilia)</td><td>Grading and restoration-impact guidance. Restoration often <em>reduces</em> value; the advisor surfaces that instead of recommending it</td></tr>
+                <tr><td>Fashion &amp; luxury (designer bags, watches, shoes)</td><td>Repair specialist directory. Replace branch hidden by default</td></tr>
+                <tr><td>Commodity replacement (toasters, microwaves, basic tools)</td><td>Budget- and size-bracketed options; ecosystem doesn't apply</td></tr>
+                <tr><td>Tools &amp; appliances (drills, mixers, lawnmowers)</td><td>Cross-brand alternatives with focus on durability and parts availability</td></tr>
+                <tr><td>Other (books, photos, kitchen utensils)</td><td>The Keep, Repair, Replace Advisor isn't shown for these categories</td></tr>
+            </table>
+            <div class="tip">
+                <strong>Why this matters:</strong> Earlier versions returned cross-brand alternatives for every item, which made sense for a microwave but not for a vintage guitar. The category routing keeps the suggestion honest — "alternatives" only when alternatives are a coherent question.
+            </div>
 
             <h3>Research Tips</h3>
             <p>The feature includes guidance on finding trustworthy reviews:</p>
