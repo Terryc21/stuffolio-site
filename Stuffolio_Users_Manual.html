@@ -2815,36 +2815,6 @@
                 <li>Tap any item to view details</li>
             </ol>
 
-            <h3>Apple Wallet Warranty Cards <span class="platform-note">iOS only</span></h3>
-            <p>Add warranty cards to Apple Wallet for quick access to proof of coverage at repair shops.</p>
-
-            <h4>Creating a Wallet Card</h4>
-            <ol>
-                <li>Open an item with warranty information</li>
-                <li>Scroll to the <strong>Warranty</strong> section</li>
-                <li>Tap <strong>Add to Apple Wallet</strong></li>
-                <li>Review the pass preview showing:
-                    <ul>
-                        <li>Product name and category icon</li>
-                        <li>Warranty expiration date</li>
-                        <li>Current coverage status</li>
-                    </ul>
-                </li>
-                <li>Tap <strong>Add</strong> to add to your Wallet</li>
-            </ol>
-
-            <h4>Using Wallet Cards</h4>
-            <ul>
-                <li><strong>Quick access:</strong> Open Wallet app or double-click side button to show the card</li>
-                <li><strong>At repair shops:</strong> Show the pass as proof of coverage</li>
-                <li><strong>Auto-expire:</strong> Cards automatically expire when the warranty ends</li>
-                <li><strong>Always current:</strong> Pass reflects the latest warranty status</li>
-            </ul>
-
-            <div class="tip">
-                <strong>Tip:</strong> Wallet cards are only available for items with warranty expiration dates set. If you don't see the "Add to Apple Wallet" option, add a warranty date first.
-            </div>
-
             <h3>RMA & Warranty Claim Tracking</h3>
             <p>Track warranty claims and returns from start to finish with RMA (Return Merchandise Authorization) tracking.</p>
 
@@ -3118,6 +3088,28 @@
                 <li>Each recommendation includes source attribution (e.g., Wirecutter, RTINGS, Reddit) with credibility tiers</li>
                 <li>Tap <strong>Ask More Questions</strong> to open the full AI Product Assistant for deeper research</li>
             </ul>
+            <p>Alternatives are routed by category, not flattened to a generic shopping list:</p>
+            <ul>
+                <li><strong>Same-ecosystem first</strong> for ecosystem-coherent items. A MacBook owner sees Apple alternatives before cross-platform options; cross-ecosystem alternatives appear second and are clearly labeled as such. The AI never assumes you want to switch platforms because you own one.</li>
+                <li><strong>Specialists, not products</strong> for heirlooms, fashion, and luxury items. Replace doesn't make sense for a vintage instrument or a designer bag; the advisor surfaces repair specialists instead.</li>
+                <li><strong>Grading and restoration impact</strong> for collectibles. The advisor flags that restoration often reduces value, rather than recommending it.</li>
+                <li><strong>Budget-bracketed options</strong> for commodity items (toasters, microwaves). Ecosystem doesn't apply; price tier does.</li>
+                <li><strong>Durability and parts focus</strong> for tools and appliances. Cross-brand alternatives are normal here.</li>
+            </ul>
+            <p>If the AI is uncertain about your specific model, it surfaces that uncertainty in a visible notes card — not buried at the bottom of the results.</p>
+
+            <h3>Behavior by Item Type</h3>
+            <p>Not every item is a candidate for "replace." A grandfather clock doesn't have alternatives in the way a laptop does; a Birkin bag doesn't either. The advisor routes by item category so the recommendation matches what kind of thing you own:</p>
+            <table>
+                <tr><th>Category</th><th>What you'll see</th></tr>
+                <tr><td>Consumer electronics (laptops, phones, vacuums, TVs)</td><td>Same-ecosystem alternatives first; cross-ecosystem options clearly labeled and shown second</td></tr>
+                <tr><td>Heirloom &amp; sentimental (clocks, jewelry, art, instruments)</td><td>Repair specialists and restoration cost guidance. Replace branch hidden</td></tr>
+                <tr><td>Collectibles (coins, stamps, sports memorabilia)</td><td>Grading and restoration-impact guidance instead of generic alternatives</td></tr>
+                <tr><td>Fashion &amp; luxury (designer bags, watches, shoes)</td><td>Repair specialist directory. Replace branch hidden by default</td></tr>
+                <tr><td>Commodity replacement (toasters, microwaves, basic tools)</td><td>Budget- and size-bracketed options; ecosystem doesn't apply</td></tr>
+                <tr><td>Tools &amp; appliances (drills, mixers, lawnmowers)</td><td>Cross-brand alternatives with focus on durability and parts availability</td></tr>
+                <tr><td>Other (books, photos, kitchen utensils)</td><td>The Keep, Repair, Replace Advisor isn't shown for these categories</td></tr>
+            </table>
 
             <h3>The Recommendation</h3>
             <p>Based on all available data, the tool suggests one of four paths:</p>
