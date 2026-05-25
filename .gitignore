@@ -8,3 +8,15 @@ comparison.md
 
 # OS files
 .DS_Store
+
+# Planning + continuation artifacts (NEVER in this public repo)
+# Per the 2026-05-25 visibility sanity check: planning docs and
+# continuation prompts belong in the PRIVATE Stuffolio repo
+# (Documentation/Development/Plans/) or the PRIVATE stuffolio-strategy
+# repo, never here. These patterns block accidental staging.
+PLANS/
+plans/
+CONTINUATION-*.md
+*-continuation.md
+*-plan.md
+*-plans.md
