@@ -517,6 +517,13 @@
     .light-mode .aha-box { background: linear-gradient(135deg, rgba(251,191,36,.08), rgba(251,146,60,.06)); }
     .light-mode .lifecycle-strip { background: linear-gradient(90deg, rgba(0,102,204,.06), rgba(124,58,237,.06)); }
   </style>
+  <!-- Plausible analytics (beta-period; swaps to Cloudflare Web Analytics at App Store launch per BETA-PERIOD CLEANUP GUIDE) -->
+  <!-- Privacy-friendly analytics by Plausible -->
+  <script async src="https://plausible.io/js/pa-Aftt9yKgrMWgMXK4cjIa9.js"></script>
+  <script>
+    window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+    plausible.init({ honorDoNotTrack: true })
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -639,7 +646,7 @@
         <p>The warranty I couldn't find became a tracking system that tells me when coverage is about to expire and what's still actually covered when something breaks. The vacuum that broke six months after we bought it became a feature called Repair, Keep, or Replace, which pulls in repair costs, replacement prices, and the item's age to help make that decision without guessing. The dishwasher manual I swore was in the filing cabinet became a product memory that stores manuals, receipts, setup notes, and support contacts in one place.</p>
         <p>And the conversation with our daughters, the one I almost didn't have, became Legacy Wishes.</p>
         <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:20px;">
-          <a class="btn primary" href="https://testflight.apple.com/join/TWgM95st">Try what Terry built</a>
+          <a class="btn primary plausible-event-name=TestFlight+CTA" href="https://testflight.apple.com/join/TWgM95st">Try what Terry built</a>
           <a class="btn" href="features.html">See the features</a>
           <a class="btn" href="compare.html">How it compares</a>
           <a class="btn" href="use-cases.html">What brings you here?</a>
@@ -689,7 +696,7 @@
       <div class="footer-bottom">
         <!-- BETA-PERIOD-ONLY: Change to App Store badge after launch -->
         <div class="download-cta">
-          <a href="https://testflight.apple.com/join/TWgM95st" class="download-badge testflight">
+          <a href="https://testflight.apple.com/join/TWgM95st" class="download-badge testflight plausible-event-name=TestFlight+CTA">
             <img src="assets/testflight-badge.svg" alt="Download on TestFlight" width="135" height="40" onerror="this.outerHTML='<span class=badge-fallback>Join TestFlight Beta</span>'" />
           </a>
           <span class="download-tagline">Free beta &bull; iPhone, iPad, Mac</span>

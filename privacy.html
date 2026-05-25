@@ -72,6 +72,13 @@
     .light-mode .highlight p { color:#333 !important }
     .light-mode .contact-box { background:rgba(124,58,237,.08) !important; border-color:rgba(124,58,237,.25) !important }
   </style>
+  <!-- Plausible analytics (beta-period; swaps to Cloudflare Web Analytics at App Store launch per BETA-PERIOD CLEANUP GUIDE) -->
+  <!-- Privacy-friendly analytics by Plausible -->
+  <script async src="https://plausible.io/js/pa-Aftt9yKgrMWgMXK4cjIa9.js"></script>
+  <script>
+    window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+    plausible.init({ honorDoNotTrack: true })
+  </script>
 </head>
 
 <body>
@@ -129,7 +136,7 @@
         <li><strong>iCloud sync is optional</strong> — Turn it off, everything still works</li>
         <li><strong>AI runs only when you ask</strong> — Silent by default, nothing analyzed without your request</li>
         <li><strong>We can't see your inventory</strong> — It's in YOUR iCloud, not ours</li>
-        <li><strong>No ads, no tracking profiles</strong> — Anonymous analytics only, disable anytime</li>
+        <li><strong>No ads, no tracking profiles</strong> — Anonymous analytics only; in-app analytics disable anytime in Settings, website analytics respect browser Do Not Track</li>
         <li><strong>Export everything anytime</strong> — PDF, CSV, Excel</li>
       </ul>
 
@@ -192,6 +199,14 @@
       </ul>
       <p>We don't see your product names, photos, or personal information through analytics. This feature is on by default. You can disable it at any time in Settings → Privacy, or during onboarding.</p>
 
+      <h3>Website Analytics</h3>
+      <p>Separately from in-app analytics, stuffolio.app uses Plausible to count anonymous page views and outbound link clicks (for example, the number of visitors who tap "Become a Beta Tester"). Plausible is a privacy-friendly analytics service that does not use cookies, does not build profiles, and does not track visitors across sites.</p>
+      <ul>
+        <li>What's collected: anonymous page views, referrer (where you came from), country (not city), browser type, and outbound link clicks</li>
+        <li>What's NOT collected: IP addresses (Plausible hashes them in-memory and discards), cookies, personal identifiers, anything that would let us recognize you on a return visit</li>
+        <li>Honest asymmetry: the "disable anytime" mechanism in Settings → Privacy applies to in-app analytics. Website analytics has no per-visitor toggle today; the closest equivalent is your browser's Do Not Track setting, which Plausible honors automatically for stuffolio.app visitors. Ad-blockers like uBlock Origin also suppress the analytics script if you'd prefer that route.</li>
+      </ul>
+
       <div class="divider"></div>
 
       <h2>What we don't do</h2>
@@ -218,6 +233,7 @@
         <li><strong>Sentry (crash reports)</strong> — <a href="https://sentry.io/privacy/" target="_blank" rel="noopener noreferrer">sentry.io/privacy</a></li>
         <li><strong>Anthropic (AI analysis)</strong> — <a href="https://www.anthropic.com/privacy" target="_blank" rel="noopener noreferrer">anthropic.com/privacy</a></li>
         <li><strong>Cloudflare (AI backend, analytics & subscriber storage)</strong> — <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener noreferrer">cloudflare.com/privacypolicy</a></li>
+        <li><strong>Plausible (website analytics)</strong> — <a href="https://plausible.io/privacy" target="_blank" rel="noopener noreferrer">plausible.io/privacy</a></li>
         <li><strong>Resend (email delivery)</strong> — <a href="https://resend.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">resend.com/legal/privacy-policy</a></li>
         <li><strong>Twilio (SMS delivery)</strong> — <a href="https://www.twilio.com/en-us/legal/privacy" target="_blank" rel="noopener noreferrer">twilio.com/legal/privacy</a></li>
       </ul>

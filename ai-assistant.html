@@ -150,6 +150,13 @@
     .light-mode .feature-map-card { background: rgba(0,102,204,.04); border-color: rgba(0,102,204,.12); }
     .light-mode .pricing-block { background: linear-gradient(135deg, rgba(124,58,237,.06), rgba(0,102,204,.04)); border-color: rgba(124,58,237,.15); }
   </style>
+  <!-- Plausible analytics (beta-period; swaps to Cloudflare Web Analytics at App Store launch per BETA-PERIOD CLEANUP GUIDE) -->
+  <!-- Privacy-friendly analytics by Plausible -->
+  <script async src="https://plausible.io/js/pa-Aftt9yKgrMWgMXK4cjIa9.js"></script>
+  <script>
+    window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+    plausible.init({ honorDoNotTrack: true })
+  </script>
 </head>
 
 <body>
@@ -313,7 +320,7 @@
             The AI Product Assistant ships inside Stuffolio today. Free to try at install.
           </p>
           <div class="ctaRow" style="justify-content:center;">
-            <a class="btn primary" href="https://testflight.apple.com/join/TWgM95st">Join the Beta</a>
+            <a class="btn primary plausible-event-name=TestFlight+CTA" href="https://testflight.apple.com/join/TWgM95st">Join the Beta</a>
             <a class="btn" href="features.html">See All Features</a>
           </div>
         </div>
@@ -363,7 +370,7 @@
       <div class="footer-bottom">
         <!-- BETA-PERIOD-ONLY: Change to App Store badge after launch -->
         <div class="download-cta">
-          <a href="https://testflight.apple.com/join/TWgM95st" class="download-badge testflight">
+          <a href="https://testflight.apple.com/join/TWgM95st" class="download-badge testflight plausible-event-name=TestFlight+CTA">
             <img src="assets/testflight-badge.svg" alt="Download on TestFlight" width="135" height="40" onerror="this.outerHTML='<span class=badge-fallback>Join TestFlight Beta</span>'" />
           </a>
           <span class="download-tagline">Free beta &bull; iPhone, iPad, Mac</span>

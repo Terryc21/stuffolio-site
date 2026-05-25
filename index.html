@@ -393,6 +393,13 @@
       #story .card > div > div:first-child { max-width: 280px; margin: 0 auto; }
     }
   </style>
+  <!-- Plausible analytics (beta-period; swaps to Cloudflare Web Analytics at App Store launch per BETA-PERIOD CLEANUP GUIDE) -->
+  <!-- Privacy-friendly analytics by Plausible -->
+  <script async src="https://plausible.io/js/pa-Aftt9yKgrMWgMXK4cjIa9.js"></script>
+  <script>
+    window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+    plausible.init({ honorDoNotTrack: true })
+  </script>
 </head>
 
 <body>
@@ -416,7 +423,7 @@
               <a href="whats-new.html">What's New</a>
             </div>
           </div>
-          <a href="compare.html">Compare</a>
+          <a href="compare.html" class="plausible-event-name=Compare+from+Home">Compare</a>
           <a href="use-cases.html">Use Cases</a>
           <a href="story.html">Our Story</a>
           <div class="nav-dropdown">
@@ -477,7 +484,7 @@
 
           <!-- BETA-PERIOD-ONLY: Replace with App Store buttons after launch -->
           <div class="ctaRow">
-            <a class="btn primary" href="https://testflight.apple.com/join/TWgM95st">Become a Beta Tester</a>
+            <a class="btn primary plausible-event-name=TestFlight+CTA" href="https://testflight.apple.com/join/TWgM95st">Become a Beta Tester</a>
             <a class="btn" href="quick-start.html">Quick Start Guide</a>
           </div>
 
@@ -720,7 +727,7 @@
               </p>
               <p style="margin:12px 0 0; display:flex; gap:16px; align-items:center; flex-wrap:wrap;">
                 <a href="story.html" style="color:var(--accent); font-weight:500;">Read the full story &rarr;</a>
-                <a class="btn primary" href="https://testflight.apple.com/join/TWgM95st" style="font-size:0.9rem; padding:8px 16px;">Try what Terry built</a>
+                <a class="btn primary plausible-event-name=TestFlight+CTA" href="https://testflight.apple.com/join/TWgM95st" style="font-size:0.9rem; padding:8px 16px;">Try what Terry built</a>
               </p>
             </div>
           </div>
@@ -932,7 +939,7 @@
             Enough information to decide and move on. Clarity, on your own terms.
           </p>
           <div class="ctaRow" style="justify-content:center;">
-            <a class="btn primary" href="https://testflight.apple.com/join/TWgM95st">Join the Beta</a>
+            <a class="btn primary plausible-event-name=TestFlight+CTA" href="https://testflight.apple.com/join/TWgM95st">Join the Beta</a>
             <a class="btn" href="quick-start.html">Quick Start Guide</a>
           </div>
           <p style="color:var(--muted); font-size:.9rem; margin-top:20px; margin-bottom:0;">
@@ -953,7 +960,7 @@
           <h4>Product</h4>
           <ul>
             <li><a href="features.html">Features</a></li>
-            <li><a href="compare.html">Compare</a></li>
+            <li><a href="compare.html" class="plausible-event-name=Compare+from+Home">Compare</a></li>
             <li><a href="use-cases.html">Use Cases</a></li>
             <li><a href="ai-assistant.html">AI Product Assistant</a></li>
             <li><a href="whats-new.html">What's New</a></li>
@@ -989,7 +996,7 @@
       <div class="footer-bottom">
         <!-- BETA-PERIOD-ONLY: Change to App Store badge after launch -->
         <div class="download-cta">
-          <a href="https://testflight.apple.com/join/TWgM95st" class="download-badge testflight">
+          <a href="https://testflight.apple.com/join/TWgM95st" class="download-badge testflight plausible-event-name=TestFlight+CTA">
             <img src="assets/testflight-badge.svg" alt="Download on TestFlight" width="135" height="40" onerror="this.outerHTML='<span class=badge-fallback>Join TestFlight Beta</span>'" />
           </a>
           <span class="download-tagline">Free beta &bull; iPhone, iPad, Mac</span>
