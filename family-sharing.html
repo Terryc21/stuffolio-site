@@ -612,17 +612,18 @@
     </article>
     </main>
 
+    <!-- footer:v1 -->
     <footer>
       <div class="footer-columns">
         <div class="footer-column">
           <h4>Product</h4>
           <ul>
-            <li><a href="features.html">Features</a></li>
-            <li><a href="compare.html">Compare</a></li>
+            <li><a href="features.html" class="plausible-event-name=Features+Entry">Features</a></li>
+            <li><a href="compare.html" class="plausible-event-name=Compare+Entry">Compare</a></li>
             <li><a href="use-cases.html">Use Cases</a></li>
-            <li><a href="ai-assistant.html">AI Product Assistant</a></li>
+            <li><a href="ai-assistant.html" class="plausible-event-name=AI+Assistant+Entry">AI Product Assistant</a></li>
             <li><a href="whats-new.html">What's New</a></li>
-            <li><a href="story.html">Our Story</a></li>
+            <li><a href="story.html" class="plausible-event-name=Story+Entry">Our Story</a></li>
             <li><a href="about.html">About</a></li>
           </ul>
         </div>
@@ -638,21 +639,33 @@
           <ul>
             <li><a href="support.html">Help & FAQ</a></li>
             <li><a href="Stuffolio_Users_Manual.html">User Manual</a></li>
-            <li><a href="beta-testing-guide.html">Testing Guide</a></li>
+            <li><a href="beta-testing-guide.html">Beta Testing</a></li>
             <li><a href="mailto:support@stuffolio.app">Contact Us</a></li>
           </ul>
         </div>
         <div class="footer-column">
           <h4>Policies</h4>
           <ul>
-            <li><a href="privacy.html">Privacy</a></li>
-            <li><a href="terms.html">Terms</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
           </ul>
         </div>
       </div>
+
       <div class="footer-bottom">
+        <!-- BETA-PERIOD-ONLY: Change to App Store badge after launch -->
+        <div class="download-cta">
+          <a href="https://testflight.apple.com/join/TWgM95st" class="download-badge testflight plausible-event-name=TestFlight+CTA">
+            <img src="assets/testflight-badge.svg" alt="Download on TestFlight" width="135" height="40" onerror="this.outerHTML='<span class=badge-fallback>Join TestFlight Beta</span>'" />
+          </a>
+          <span class="download-tagline">Free beta &bull; iPhone, iPad, Mac</span>
+        </div>
+        <!-- END BETA-PERIOD-ONLY -->
         <div>&copy; <span id="y"></span> Coffee &amp; Code LLC</div>
-        <div class="trust-strip"><span>Privacy-first. No ads. No selling your data. AI when you ask — silent when you don't.</span></div>
+      </div>
+
+      <div class="trust-strip">
+        <span>Privacy-first. No ads. No selling your data. AI when you ask — silent when you don't.</span>
       </div>
     </footer>
     <button class="back-to-top" aria-label="Back to top">↑</button>
