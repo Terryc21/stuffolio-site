@@ -21,25 +21,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="msvalidate.01" content="B16FC24F5B1BA9A05762DF7D50CD40FE" />
 
-  <title>Stuffolio - The home inventory app built around stewardship - not just another list-maker.</title>
-  <meta name="description" content="The home inventory app built around stewardship - not just another list-maker. Track warranties, document for insurance, plan who gets what, and identify anything from a photo with built-in AI. Privacy-first for iPhone, iPad, and Mac." />
+  <title>Stuffolio - Know your stuff. Take care of it. Decide what's next.</title>
+  <meta name="description" content="Know your stuff. Take care of it. Decide what's next. The home inventory app built around stewardship: track warranties, document for insurance, plan who gets what, and research anything you own from a photo with built-in AI. Privacy-first for iPhone, iPad, and Mac." />
   <meta name="theme-color" content="#0b1220" />
 
   <!-- Open Graph / Social Sharing -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://stuffolio.app/" />
-  <meta property="og:title" content="Stuffolio - The home inventory app built around stewardship - not just another list-maker." />
-  <meta property="og:description" content="Track warranties, document for insurance, plan who gets what, and identify anything from a photo. The home inventory app built around stewardship - not just another list-maker." />
+  <meta property="og:title" content="Stuffolio - Know your stuff. Take care of it. Decide what's next." />
+  <meta property="og:description" content="Track warranties, document for insurance, plan who gets what, and research anything you own from a photo. The home inventory app built around stewardship." />
   <meta property="og:image" content="https://stuffolio.app/assets/og-image.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Stuffolio: the home inventory app built around stewardship — not just another list-maker." />
+  <meta property="og:image:alt" content="Stuffolio: know your stuff, take care of it, decide what's next. Home inventory built around stewardship." />
   <meta property="og:site_name" content="Stuffolio" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Stuffolio - The home inventory app built around stewardship - not just another list-maker." />
-  <meta name="twitter:description" content="The home inventory app built around stewardship - not just another list-maker. Warranties, insurance, legacy planning, and AI identification." />
+  <meta name="twitter:title" content="Stuffolio - Know your stuff. Take care of it. Decide what's next." />
+  <meta name="twitter:description" content="Know your stuff. Take care of it. Decide what's next. Warranties, insurance, legacy planning, and AI research for what you already own." />
   <meta name="twitter:image" content="https://stuffolio.app/assets/og-image.png" />
 
   <!-- Canonical URL -->
@@ -56,7 +56,7 @@
   "name": "Stuffolio",
   "operatingSystem": "iOS 17.0+, iPadOS 17.0+, macOS 14.0+",
   "applicationCategory": "UtilitiesApplication",
-  "description": "The home inventory app built around stewardship - not just another list-maker. Track warranties with coverage phases, document for insurance, plan who gets what with Legacy Wishes, and identify items from photos with built-in AI.",
+  "description": "Know your stuff. Take care of it. Decide what's next. The home inventory app built around stewardship: track warranties with coverage phases, document for insurance, plan who gets what with Legacy Wishes, and research items from photos with built-in AI.",
   "author": {
     "@type": "Organization",
     "name": "Coffee & Code LLC",
@@ -83,7 +83,7 @@
     }
   ],
   "featureList": [
-    "Item identification with Stuff Scout (uses AI)",
+    "Item enrichment with Stuff Scout: era, maker, value, noteworthiness (uses AI)",
     "Voice input with natural language parsing",
     "Warranty tracking with coverage phases",
     "Maintenance reminders and scheduling",
@@ -360,6 +360,16 @@
     @media (max-width: 700px) {
       .differentiator-grid { grid-template-columns: 1fr; }
     }
+    /* Five-card routing block (index.html "What brings you here?"): step down 5 → 3 → 2 → 1 across breakpoints so cards never get crushed. Inline style="grid-template-columns: repeat(5, 1fr)" on that block wins above 1100px; these rules take over below. */
+    @media (max-width: 1100px) {
+      .differentiator-grid.five-card { grid-template-columns: repeat(3, 1fr) !important; }
+    }
+    @media (max-width: 800px) {
+      .differentiator-grid.five-card { grid-template-columns: repeat(2, 1fr) !important; }
+    }
+    @media (max-width: 560px) {
+      .differentiator-grid.five-card { grid-template-columns: 1fr !important; }
+    }
     .differentiator-card {
       padding: 24px;
       border-radius: 14px;
@@ -462,14 +472,14 @@
             <img loading="lazy" class="stuffolioLogo" src="assets/logo-256.png" alt="Stuffolio logo" width="120" height="120" />
             <div>
               <h1 style="margin-top:0;">
-                The home inventory app built around <span class="gradient-text">stewardship</span> - not just another list-maker.
+                Know your <span class="gradient-text">stuff</span>. Take care of it. Decide what's next.
               </h1>
-              <address class="byline" itemprop="author"><span itemprop="name">Coffee &amp; Code LLC</span> · <time datetime="2026-05-26">Updated May 2026</time></address>
+              <address class="byline" itemprop="author"><span itemprop="name">Coffee &amp; Code LLC</span> · <time datetime="2026-05-27">Updated May 2026</time></address>
             </div>
           </div>
 
           <p class="lead" style="font-size:1.15rem;">
-            Track warranties, protect what matters, plan who gets what someday. And when you find something new, Stuff Scout identifies it from a photo.
+            Built around stewardship: track warranties, protect what matters, plan who gets what someday. And when you want to know more about something you own, Stuff Scout researches its era, maker, approximate value, and what makes it noteworthy.
           </p>
 
           <!-- BETA-PERIOD-ONLY: Replace with App Store buttons after launch -->
@@ -489,19 +499,25 @@
         </div>
       </section>
 
-      <!-- WHAT BRINGS YOU HERE: 4-funnel routing block (promoted into hero region per 2026-05-25 site-engagement plan Phase 4.A / strategy compliance Phase C.5) -->
+      <!-- WHAT BRINGS YOU HERE: 5-funnel routing block (Funnel 2 "just brought home" added 2026-05-27 per POSITIONING_ONE_PAGER + Marketing.md Scout reframe). Originally promoted into hero region per 2026-05-25 site-engagement plan Phase 4.A. -->
       <section id="what-brings-you-here" style="margin-top:18px;">
         <div class="card">
           <h2 style="margin-top:0; text-align:center;">What brings you here?</h2>
           <p class="lead" style="text-align:center; max-width:650px; margin:0 auto 24px; font-size:1.0rem; color:var(--muted);">
-            Four moments lead people to Stuffolio. Pick the one that fits.
+            Five moments lead people to Stuffolio. Pick the one that fits.
           </p>
 
-          <div class="differentiator-grid" style="grid-template-columns: repeat(4, 1fr);">
-            <a href="use-cases.html#identify" class="differentiator-card" style="text-decoration:none; color:inherit; display:block;">
+          <div class="differentiator-grid five-card" style="grid-template-columns: repeat(5, 1fr);">
+            <a href="use-cases.html#learn-about" class="differentiator-card" style="text-decoration:none; color:inherit; display:block;">
               <div class="diff-icon">&#128270;</div>
-              <h3>Something I want to identify</h3>
-              <p style="color:var(--muted);">Thrift store, attic, storage unit, estate. Point your camera. Get a name and a value in about 15 seconds.</p>
+              <h3>Something I want to learn about</h3>
+              <p style="color:var(--muted);">A crystal bowl from Goodwill. A cedar chest from the attic. Stuff Scout researches its era, maker, approximate value, and what makes it noteworthy.</p>
+            </a>
+
+            <a href="use-cases.html#brought-home" class="differentiator-card" style="text-decoration:none; color:inherit; display:block;">
+              <div class="diff-icon">&#128230;</div>
+              <h3>Something I just brought home</h3>
+              <p style="color:var(--muted);">New espresso machine, a gift, an estate-sale find. Capture the receipt, the warranty, and the story before they scatter.</p>
             </a>
 
             <a href="use-cases.html#pass-along" class="differentiator-card" style="text-decoration:none; color:inherit; display:block;">

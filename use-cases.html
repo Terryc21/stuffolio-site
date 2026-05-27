@@ -228,40 +228,46 @@
       <!-- HERO -->
       <div class="card">
         <h1 style="margin-top:0;">What brings you here?</h1>
-        <p class="lead" style="max-width:750px;">Four moments that lead people to Stuffolio. Pick the one that fits — each links to the features that do the work.</p>
+        <p class="lead" style="max-width:750px;">Five moments that lead people to Stuffolio. Pick the one that fits — each links to the features that do the work.</p>
         <p style="color:var(--muted); font-size:1rem; margin-top:8px;">Every feature started the same way: standing in front of something and not having the answer.</p>
 
         <div class="pill-row" aria-label="Jump to section">
-          <a class="pill" href="#identify" style="text-decoration:none;">Something I want to identify</a>
+          <a class="pill" href="#learn-about" style="text-decoration:none;">Something I want to learn about</a>
+          <a class="pill" href="#brought-home" style="text-decoration:none;">Something I just brought home</a>
           <a class="pill" href="#pass-along" style="text-decoration:none;">Something I want to pass along</a>
           <a class="pill" href="#take-care-of" style="text-decoration:none;">Something I want to take care of</a>
           <a class="pill" href="#just-broke" style="text-decoration:none;">Something just broke</a>
         </div>
       </div>
 
-      <!-- FUNNEL 1: IDENTIFY (merged thrift + unknown-items) -->
-      <section class="use-case-section" id="identify">
+      <!-- FUNNEL 1: LEARN ABOUT (Scout reframe — enrichment-first, 2026-05-27 per stuffolio-strategy 202fccd). Old #identify anchor preserved as alias for inbound links. -->
+      <span id="identify" aria-hidden="true"></span>
+      <section class="use-case-section" id="learn-about">
         <div class="card">
           <div class="use-case-header">
             <span class="use-case-icon">&#128270;</span>
             <div>
-              <h2>Something I want to identify</h2>
-              <p class="use-case-audience">For thrift shoppers, estate sorters, attic explorers, and "what is this thing?" moments</p>
+              <h2>Something I want to learn about</h2>
+              <p class="use-case-audience">For curious owners, thrift shoppers, attic explorers, and "tell me more about this" moments</p>
             </div>
           </div>
 
           <p class="use-case-lead">
-            You're holding an item. You don't know what it is, or whether it's worth keeping. Stuff Scout identifies it from a photo and gives you a market-value estimate in about 15 seconds. Whether you flip it, keep it, or pass on it is your call.
+            You're holding something you mostly recognize -- a crystal bowl, a cedar chest, a Goodwill find, a piece you inherited. You know what it is. You don't know its era, its maker, its approximate value, or what makes it noteworthy. Stuff Scout researches that bundle and hands it back to you in about 15 seconds.
           </p>
 
           <div class="feature-mapping">
             <div class="feature-map-card">
-              <p class="problem">"What is this thing?"</p>
-              <p class="solution"><strong>Stuff Scout Quick ID</strong> -- Point your camera. Get a name, a brief history, and an estimated value in about 15 seconds, right in the aisle.</p>
+              <p class="problem">"Tell me more about this."</p>
+              <p class="solution"><strong>Stuff Scout enrichment</strong> -- Point your camera. Scout researches era, maker, approximate value, and what makes the piece noteworthy. Not just a name -- the bundle around it.</p>
             </div>
             <div class="feature-map-card">
               <p class="problem">"I know more than the photo shows."</p>
               <p class="solution"><strong>Story-first refinement.</strong> Tell Scout what you know: "It was my grandmother's, from Germany in the 1940s." The AI sharpens the result. A $300 violin became $4,500 after adding maker's marks and a serial number.</p>
+            </div>
+            <div class="feature-map-card">
+              <p class="problem">"What is this thing actually?"</p>
+              <p class="solution"><strong>Identification as a side-effect</strong> -- For items you genuinely don't recognize, Scout will name them too. But the real work is the bundle of context around the name.</p>
             </div>
             <div class="feature-map-card">
               <p class="problem">"What can I sell it for?"</p>
@@ -270,10 +276,6 @@
             <div class="feature-map-card">
               <p class="problem">"I'm keeping this one."</p>
               <p class="solution"><strong>One-tap save</strong> -- Save the Scout result to your inventory. Track what you paid, add photos, and build provenance over time.</p>
-            </div>
-            <div class="feature-map-card">
-              <p class="problem">"Ready to flip it."</p>
-              <p class="solution"><strong>Price Watch</strong> -- Track purchase price vs. current value over time. Know when the price is right to sell.</p>
             </div>
             <div class="feature-map-card">
               <p class="problem">"What about tax time?"</p>
@@ -291,7 +293,65 @@
           </div>
 
           <div class="use-case-cta">
-            <p>Not an appraiser. A 30-second decision tool for the moment you're holding the item.</p>
+            <p>Not an appraiser. A 30-second research tool for the moment you want to know more.</p>
+            <a class="btn primary plausible-event-name=TestFlight+CTA" href="https://testflight.apple.com/join/TWgM95st">Try Stuffolio</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- FUNNEL 2: BROUGHT HOME (Acquire-stage moment, added 2026-05-27 per POSITIONING_ONE_PAGER 5-funnel architecture). -->
+      <section class="use-case-section" id="brought-home">
+        <div class="card">
+          <div class="use-case-header">
+            <span class="use-case-icon">&#128230;</span>
+            <div>
+              <h2>Something I just brought home</h2>
+              <p class="use-case-audience">For new purchases, gifts, estate-sale finds, and the moment before the receipt disappears</p>
+            </div>
+          </div>
+
+          <p class="use-case-lead">
+            New espresso machine on the counter. A gift you'll want to thank-card-and-track. A find from an estate sale that already has a story. The window to capture the receipt, the warranty, the serial, the photo of the box -- all in one place -- is hours, not weeks. Stuffolio's add-flow is built for that window.
+          </p>
+
+          <div class="feature-mapping">
+            <div class="feature-map-card">
+              <p class="problem">"The receipt is still in the bag."</p>
+              <p class="solution"><strong>Receipt capture</strong> -- Photograph the paper receipt. It becomes searchable inventory in the same record as the item.</p>
+            </div>
+            <div class="feature-map-card">
+              <p class="problem">"There's a card in the box about registering for warranty."</p>
+              <p class="solution"><strong>Warranty start dates</strong> -- Set the purchase date once. Stuffolio tracks the manufacturer warranty and any extended coverage you add later, including AppleCare.</p>
+            </div>
+            <div class="feature-map-card">
+              <p class="problem">"The serial number is on a sticker that's going to peel off."</p>
+              <p class="solution"><strong>Identifiers field</strong> -- Capture the serial, model number, and SKU now so they're not gone in a year.</p>
+            </div>
+            <div class="feature-map-card">
+              <p class="problem">"This was a gift -- I should remember who and when."</p>
+              <p class="solution"><strong>Notes + acquired-from</strong> -- Free-text who gave it, the occasion, and what was said. The story belongs with the object, not in a separate text thread.</p>
+            </div>
+            <div class="feature-map-card">
+              <p class="problem">"I want to know more about it later."</p>
+              <p class="solution"><strong>Stuff Scout from the item record</strong> -- Once the item is saved, Scout can enrich it: era, comparable values, what makes it noteworthy. Same research bundle as Funnel 1, started from something you already own.</p>
+            </div>
+            <div class="feature-map-card">
+              <p class="problem">"Will I remember to do this?"</p>
+              <p class="solution"><strong>Quick-add flows</strong> -- The barcode scanner and Stuff Scout both create a record in seconds. The cost of capturing is low enough to do it the day it arrives.</p>
+            </div>
+          </div>
+
+          <div class="story-callout">
+            <span class="callout-icon">&#128230;</span>
+            <div>
+              <p>
+                <strong>An espresso machine and a manual:</strong> "I unboxed the new espresso machine, took a photo of the receipt before it went in the recycle bin, scanned the barcode, and was done in under two minutes. Six months later when the steam wand started leaking, I had the warranty card, the purchase date, and the manual in one place."
+              </p>
+            </div>
+          </div>
+
+          <div class="use-case-cta">
+            <p>Capture once, when the receipt is still warm. Stuffolio gives you back the documentation a year from now.</p>
             <a class="btn primary plausible-event-name=TestFlight+CTA" href="https://testflight.apple.com/join/TWgM95st">Try Stuffolio</a>
           </div>
         </div>
@@ -463,7 +523,7 @@
       <!-- COMMON NEEDS (cross-cutting sub-section, was a funnel) -->
       <section class="use-case-section" id="insurance">
         <div class="card">
-          <p style="color:var(--muted); font-size:0.85rem; text-transform:uppercase; letter-spacing:0.5px; font-weight:600; margin:0 0 8px;">Common need across all four funnels</p>
+          <p style="color:var(--muted); font-size:0.85rem; text-transform:uppercase; letter-spacing:0.5px; font-weight:600; margin:0 0 8px;">Common need across all five funnels</p>
           <div class="use-case-header">
             <span class="use-case-icon">&#128293;</span>
             <div>
@@ -473,7 +533,7 @@
           </div>
 
           <p class="use-case-lead">
-            Insurance documentation is not a funnel of its own &mdash; it's the side-effect of doing any of the four well. After a fire, flood, or theft, insurance asks you to list everything you lost with photos, receipts, and replacement values. Most people can't. If you've identified your stuff, planned what to pass along, taken care of your warranties, or used the AI Assistant when something broke, the documentation is already there.
+            Insurance documentation is not a funnel of its own &mdash; it's the side-effect of doing any of the five well. After a fire, flood, or theft, insurance asks you to list everything you lost with photos, receipts, and replacement values. Most people can't. If you've researched your stuff, captured what you just brought home, planned what to pass along, taken care of your warranties, or used the AI Assistant when something broke, the documentation is already there.
           </p>
 
           <div class="feature-mapping">
