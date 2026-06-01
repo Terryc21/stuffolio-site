@@ -1335,6 +1335,10 @@
                 <strong>Tip:</strong> Use Quick ID for everyday items you just want to catalog. Reserve Full Appraisal for items where detailed history and accurate valuation matter.
             </div>
 
+            <h3>✍️ Pre-Scan Context (Optional)</h3>
+            <p>Before you click <strong>Identify</strong>, the capture screen offers a collapsible card labeled <strong>"What do you know about this item?"</strong> Click to expand it and type anything you already know — provenance, maker's marks you can read, a date stamped on the back, a brand name printed on the box.</p>
+            <p>Story-First Refinement also exists <em>after</em> a scan, but pre-scan context is the cheaper path when you have details up front. Feeding Scout "Ernst Roth violin, 1945, Markneukirchen" before the first analysis often produces a more accurate result on pass one than scanning blind and refining afterward. Skip it entirely for everyday items where you have nothing to add — the field is optional.</p>
+
             <h3>Identification Results</h3>
             <p>Click the <strong>Identify</strong> button and wait (time depends on your selected scan depth). Results include:</p>
             <ul>
@@ -1357,14 +1361,21 @@
                 <strong>Tip:</strong> Background processing is especially useful for antiques and collectibles that require more detailed analysis.
             </div>
 
+            <h4>Background Results Inbox</h4>
+            <p>Completed background scans collect in a dedicated <strong>Background Results</strong> sheet you can open from the Stuff Scout screen. Each completed scan represents a paid quota item, so the sheet has a confirmation alert before <strong>Clear All</strong> wipes the list — no one-click purge of background work you paid for. Click an individual result to open its full Scout view, or remove rows one at a time without affecting the others.</p>
+
+            <h4>If Analysis Fails</h4>
+            <p>Scout analysis can fail for transient reasons — flaky Wi-Fi, a brief worker hiccup, a request that took too long. The error alert now offers a <strong>Try Again</strong> button that re-runs analysis on the same photos without making you re-import or re-navigate. The retry is suppressed for quota-related errors, since waiting for your refill (not retrying immediately) is the right move there.</p>
+
             <h3>🎯 Confidence Gate</h3>
-            <p>After every scan, Scout asks <strong>"Is this right?"</strong> with three paths:</p>
+            <p>After every fresh scan, Scout asks <strong>"Is this right?"</strong> with three paths:</p>
             <ul>
                 <li><strong>Yes, that's it</strong> — Save the result as-is and continue to Add to Inventory.</li>
                 <li><strong>Almost, I can add more</strong> — Opens the refinement flow (see Story-First Refinement below).</li>
                 <li><strong>No, that's not it</strong> — Start over with a different approach — different photos, better angles, or a fresh identification attempt.</li>
             </ul>
             <p>The Confidence Gate exists so you never accept a wrong answer by default. Scout won't stop asking until you tell it the identification is correct.</p>
+            <p><em>When you open a saved scan from Scout History or follow a deep link to a past result, the gate is hidden — there's no live refinement to launch from a historical view, so the prompt would just be a dismiss trap.</em></p>
 
             <h3>✍️ Story-First Refinement</h3>
             <p>When you choose <strong>"Almost, I can add more,"</strong> a large text area invites you to describe what you know in plain language:</p>
@@ -1418,6 +1429,25 @@
 
             <h4>Graded Coin Extraction</h4>
             <p>For coins and graded collectibles, Scout reads the grading-company designation and numeric grade from your photos (e.g., PCGS MS-65) and matches against comps with the same grading. A 1921 Morgan Dollar in PCGS MS-65 is a completely different market from the same coin raw or in a lower grade; Scout's pricing reflects that distinction instead of averaging across grades.</p>
+
+            <h3>🎯 Curate the Comps (Tier 1 Filter)</h3>
+            <p>Scout shows you the comparable sales it used to build the estimate. Sometimes one or two of those comps clearly don't belong — a damaged piece, a different model, a parts-only listing. The Tier 1 filter lets you exclude individual comps and watch the estimate re-aggregate from the pool you kept.</p>
+            <p><strong>How to exclude a comp:</strong></p>
+            <ul>
+                <li>Right-click (or Control-click) any row in <strong>Recent Sales</strong>, then click <strong>Exclude from estimate</strong>.</li>
+                <li><strong>VoiceOver:</strong> Use the Actions rotor on the row and select <strong>Exclude from estimate</strong>.</li>
+            </ul>
+            <p>Excluded comps move to a desaturated <strong>Excluded (N)</strong> subsection just below the Recent Sales list, so the audit trail of what you removed stays visible. To put a comp back, right-click the excluded row and choose <strong>Restore to estimate</strong>, or click <strong>Restore all</strong> at the top of the Excluded section.</p>
+            <p><strong>The filtered estimate panel.</strong> As soon as you exclude one comp, a blue <em>"Your filtered estimate"</em> panel appears between the Recent Sales list and the story sections. It shows: how many comps you kept ("Using 8 of 10 comps you kept"), the recomputed low-to-high range, and the median. Three result shapes:</p>
+            <ul>
+                <li><strong>Range</strong> — 6 or more comps kept. Full percentile band, same math as Scout's headline estimate.</li>
+                <li><strong>Approximate</strong> — 3 to 5 comps kept. Range collapses to a median with the caveat <em>"Approximate — few comps remaining."</em></li>
+                <li><strong>Too few comps</strong> — fewer than 3 kept. Estimate hides with <em>"Need at least 3 comps to estimate — restore one to continue."</em> Scout won't show a number it can't defend, even on a curated pool.</li>
+            </ul>
+            <p><strong>Save filtered estimate.</strong> When you've been working from an existing item (Scout Refinement, not a fresh scan), the panel includes a <strong>Save filtered estimate</strong> button. It appends the filtered range to that item's price history with a note recording which comps you excluded — so you can reconstruct the decision later.</p>
+            <div class="tip">
+                <strong>When to use it:</strong> Scout already drops a price when the comp pool is too noisy to support one (the confidence floor). The Tier 1 filter is for the case where the floor doesn't trigger but you can still see the contamination yourself — a $45 pickup mixed in with $12k vintage models, say. Stuffolio does the math; you do the categorization.
+            </div>
 
             <h3>🔬 Research Tips</h3>
             <p>Scout suggests specific starting points for deeper research — forums, subreddits, reference databases, YouTube channels — matched to your item's category. For a vintage camera, that might include r/AnalogCommunity and CameraQuest. For a violin, the Maestronet forums. Starting points, not a walled garden.</p>
