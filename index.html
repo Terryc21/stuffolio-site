@@ -131,17 +131,14 @@
   <style>
     .hero { display: block; }
 
-    .gradient-text {
-      background: linear-gradient(135deg, var(--accent), var(--accent2), var(--accent));
-      background-size: 200% 200%;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      animation: gradientShift 8s ease infinite;
+    .brand-name {
+      color: #54D2CA;
     }
-    @keyframes gradientShift {
-      0%, 100% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
+    html.light-mode .brand-name {
+      color: #2BA5A0;
+    }
+    .stuff-accent {
+      color: #5A4BF5;
     }
 
     .lifecycle-strip {
@@ -472,14 +469,14 @@
             <img loading="lazy" class="stuffolioLogo" src="assets/logo-256.png" alt="Stuffolio logo" width="120" height="120" />
             <div>
               <h1 style="margin-top:0;">
-                Know your <span class="gradient-text">stuff</span>. Take care of it. Decide what's next.
+                <span class="brand-name">Stuffolio</span>: Know your <span class="stuff-accent">stuff</span>. Take care of it. Decide what's next.
               </h1>
-              <address class="byline" itemprop="author"><span itemprop="name">Coffee &amp; Code LLC</span> · <time datetime="2026-05-31">Updated May 2026</time></address>
+              <address class="byline" itemprop="author"><span itemprop="name">Coffee &amp; Code LLC</span> · <time datetime="2026-06-01">Updated June 2026</time></address>
             </div>
           </div>
 
           <figure style="margin:24px 0 8px; text-align:center;">
-            <img loading="lazy" src="assets/app-store-showcase.png" alt="Three Stuffolio iPhone screenshots side by side: Know what you own, Scout what it's worth, Track warranties and phases." width="1307" height="920" style="width:100%; max-width:900px; height:auto; border-radius:14px; box-shadow:0 8px 32px rgba(0,0,0,0.18);" />
+            <img loading="lazy" src="assets/app-store-showcase.png" alt="Three Stuffolio iPhone screenshots side by side: Add anything in seconds, Scout what it's worth, Only in Stuffolio." width="1307" height="920" style="width:100%; max-width:900px; height:auto; border-radius:14px; box-shadow:0 8px 32px rgba(0,0,0,0.18);" />
           </figure>
 
           <p class="lead" style="font-size:1.15rem;">
@@ -888,11 +885,11 @@
             <div class="carousel-container">
               <button class="carousel-nav carousel-prev" data-platform="ios" data-dir="prev" aria-label="Previous screenshot">&#10094;</button>
               <div class="carousel-slide">
-                <img loading="lazy" id="ios-carousel-img" src="Lightbox/iOS%20Screenshots/01-know-what-you-own.jpg" alt="Stuffolio iPhone screenshot: Know what you own" class="carousel-img" role="button" aria-label="View iPhone screenshot in lightbox">
+                <img loading="lazy" id="ios-carousel-img" src="Lightbox/iOS%20Screenshots/01-add-anything-in-seconds.jpg" alt="Stuffolio iPhone screenshot: Add anything in seconds" class="carousel-img" role="button" aria-label="View iPhone screenshot in lightbox">
               </div>
               <button class="carousel-nav carousel-next" data-platform="ios" data-dir="next" aria-label="Next screenshot">&#10095;</button>
             </div>
-            <p id="ios-carousel-caption" class="carousel-caption">Know what you own</p>
+            <p id="ios-carousel-caption" class="carousel-caption">Add anything in seconds</p>
             <div id="ios-carousel-dots" class="carousel-dots"></div>
           </div>
 
@@ -1073,12 +1070,16 @@
 
   <script>
     const iosScreenshots = [
-      { thumb: 'Lightbox/iOS%20Screenshots/01-know-what-you-own.jpg', full: 'Lightbox/iOS%20Screenshots/01-know-what-you-own.jpg', caption: 'Know what you own' },
-      { thumb: 'Lightbox/iOS%20Screenshots/02-scout-what-its-worth.jpg', full: 'Lightbox/iOS%20Screenshots/02-scout-what-its-worth.jpg', caption: "Scout what it's worth" },
-      { thumb: 'Lightbox/iOS%20Screenshots/03-track-warranties.jpg', full: 'Lightbox/iOS%20Screenshots/03-track-warranties.jpg', caption: 'Track warranties & phases' },
-      { thumb: 'Lightbox/iOS%20Screenshots/04-ask-about-anything.jpg', full: 'Lightbox/iOS%20Screenshots/04-ask-about-anything.jpg', caption: 'Ask about anything you own' },
-      { thumb: 'Lightbox/iOS%20Screenshots/05-decide-repair-keep-replace.jpg', full: 'Lightbox/iOS%20Screenshots/05-decide-repair-keep-replace.jpg', caption: 'Decide: repair, keep, or replace' },
-      { thumb: 'Lightbox/iOS%20Screenshots/06-pass-it-along-with-care.jpg', full: 'Lightbox/iOS%20Screenshots/06-pass-it-along-with-care.jpg', caption: 'Pass it along with care' }
+      { thumb: 'Lightbox/iOS%20Screenshots/01-add-anything-in-seconds.jpg', full: 'Lightbox/iOS%20Screenshots/01-add-anything-in-seconds.jpg', caption: 'Add anything in seconds' },
+      { thumb: 'Lightbox/iOS%20Screenshots/02-know-what-you-own.jpg', full: 'Lightbox/iOS%20Screenshots/02-know-what-you-own.jpg', caption: 'Know what you own' },
+      { thumb: 'Lightbox/iOS%20Screenshots/03-scout-what-its-worth.jpg', full: 'Lightbox/iOS%20Screenshots/03-scout-what-its-worth.jpg', caption: "Scout what it's worth" },
+      { thumb: 'Lightbox/iOS%20Screenshots/04-track-warranties.jpg', full: 'Lightbox/iOS%20Screenshots/04-track-warranties.jpg', caption: 'Track warranties & phases' },
+      { thumb: 'Lightbox/iOS%20Screenshots/05-ask-about-anything.jpg', full: 'Lightbox/iOS%20Screenshots/05-ask-about-anything.jpg', caption: 'Ask about anything you own' },
+      { thumb: 'Lightbox/iOS%20Screenshots/06-donate-or-sell.jpg', full: 'Lightbox/iOS%20Screenshots/06-donate-or-sell.jpg', caption: 'Donate or sell advisor' },
+      { thumb: 'Lightbox/iOS%20Screenshots/07-pass-it-along-with-care.jpg', full: 'Lightbox/iOS%20Screenshots/07-pass-it-along-with-care.jpg', caption: 'Pass it along with care' },
+      { thumb: 'Lightbox/iOS%20Screenshots/08-scout-thrift-finds.jpg', full: 'Lightbox/iOS%20Screenshots/08-scout-thrift-finds.jpg', caption: 'Scout thrift finds' },
+      { thumb: 'Lightbox/iOS%20Screenshots/09-only-in-stuffolio.jpg', full: 'Lightbox/iOS%20Screenshots/09-only-in-stuffolio.jpg', caption: 'Only in Stuffolio' },
+      { thumb: 'Lightbox/iOS%20Screenshots/10-honest-pricing.jpg', full: 'Lightbox/iOS%20Screenshots/10-honest-pricing.jpg', caption: 'Honest pricing' }
     ];
 
     const macScreenshots = [
