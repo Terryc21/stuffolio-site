@@ -177,7 +177,7 @@
         <p class="lead">Thank you for helping test Stuffolio! Your feedback shapes the app before public release.</p>
 
         <div class="hero-box">
-          <p><strong>Current Beta:</strong> Version 1.0 (Build 33) — Updated April 21, 2026</p>
+          <p><strong>Current Beta:</strong> Version 1.0 (Build 36) — Updated June 3, 2026</p>
         </div>
       </div>
 
@@ -256,8 +256,36 @@
 
       <!-- NEW IN THIS BUILD -->
       <div class="card">
-        <h2 style="margin-top:0">New in Build 33</h2>
-        <p>Builds 31 through 33 bring a redesigned Home tab, major Stuff Scout improvements, a new Recreation category, 38 data safety fixes, and extensive UI polish across the app.</p>
+        <h2 style="margin-top:0">New in Build 36 — Release Polish Pass</h2>
+        <p>Build 36 is the final polish pass before App Store submission. No new features — 12 small UX, copy, and keyboard-behavior fixes from the release-window audit. If you've been testing earlier builds, please re-exercise the flows below and report anything that regressed.</p>
+
+        <h3>What changed</h3>
+        <ul>
+          <li><strong>Stuff Scout "Almost" refine button now surfaces inline</strong> — When Scout returns a low-confidence result, the "Almost, I can add more details" CTA appears directly under the confidence gate instead of buried at the bottom of the result page</li>
+          <li><strong>Scout asking-price results now explain themselves honestly</strong> — Results with only asking-price data (no sold-price comps) now read: "Asking prices only. Actual sold-price data for items like this isn't publicly available." Replaces the older copy that was vague about why the range was a range</li>
+          <li><strong>Keyboard dismisses on scroll</strong> — Bookmark notes (Scout History) and Loan Item view no longer trap the keyboard over the field you're typing in. Swipe down to dismiss</li>
+          <li><strong>macOS: Escape closes the Go To search</strong> — Pressing Esc while the Go To field is focused now closes it cleanly</li>
+          <li><strong>Warranty status: "Expired Expired" stutter fixed</strong> — Accessibility labels for expired warranties no longer double the word</li>
+          <li><strong>Duplicate theme toggle removed from Scout result page</strong> — Was rendering twice in some layouts</li>
+          <li><strong>Claim Prep button hidden for 1.0</strong> — Hidden until the underlying flow ships in a later update; was visible but non-functional</li>
+        </ul>
+
+        <h3>Documentation &amp; copy fixes</h3>
+        <ul>
+          <li>Privacy policy copyright updated (now © 2026)</li>
+          <li>Quick Start guide copyright updated</li>
+          <li>App Store description corrected to accurately reflect in-app purchases</li>
+        </ul>
+
+        <div class="warning-box">
+          <strong>What to focus on:</strong> Hammer the Scout flow (especially the "Almost" path and asking-price results), the bookmark-notes editor in Scout History, and the Loan Item view. If anything regressed from Build 33, please report it — Build 36 is the final pre-submission build.
+        </div>
+      </div>
+
+      <!-- RECENTLY SHIPPED (older builds) -->
+      <div class="card">
+        <h2 style="margin-top:0">Recently Shipped (Builds 31-33)</h2>
+        <p>If you're new to the beta or skipped a few builds, here's what landed in the prior three builds — a redesigned Home tab, major Stuff Scout improvements, a new Recreation category, 38 data safety fixes, and extensive UI polish.</p>
 
         <h3>Added in Build 32 &amp; 33</h3>
         <ul>
@@ -349,6 +377,21 @@
       <div class="card">
         <h2 style="margin-top:0">Testing Checklist</h2>
         <p>Use this checklist to ensure comprehensive coverage:</p>
+
+        <h3>Build 36 Regression Tests</h3>
+        <p style="margin-top:-4px;">Focused tests for the 12 fixes in Build 36. Please run these first.</p>
+        <ul class="checklist">
+          <li>Scout: scan a low-confidence item, verify "Almost, I can add more details" button appears inline directly under the confidence gate (not buried at the bottom)</li>
+          <li>Scout: open a result that returns asking-prices only (e.g., a niche or handmade item) — verify the new copy reads "Asking prices only. Actual sold-price data for items like this isn't publicly available."</li>
+          <li>Scout History → Bookmarks tab → tap a bookmark → tap into the notes field → swipe down on the scroll area → verify the keyboard dismisses</li>
+          <li>Loan Item view: tap any text field → swipe down → verify keyboard dismisses (no longer obscures the input)</li>
+          <li>macOS: open Go To (⌘K), type something, press Esc → verify the search field closes cleanly</li>
+          <li>Open any expired-warranty item with VoiceOver enabled → verify the status reads "Expired" once, not "Expired Expired"</li>
+          <li>Stuff Scout result page: verify only one theme toggle (light/dark) appears, not two</li>
+          <li>Item detail: verify the "Claim Prep" floating action button is no longer visible</li>
+          <li>Settings → About / Documentation: verify all copyright dates read © 2026</li>
+          <li>App Store listing (when live): verify description accurately reflects subscription presence</li>
+        </ul>
 
         <h3>Core Functionality</h3>
         <ul class="checklist">
