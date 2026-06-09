@@ -120,7 +120,7 @@
     <main id="main">
     <div class="card">
       <h1>Privacy Policy</h1>
-      <p class="updated">Last updated: April 2026</p>
+      <p class="updated">Last updated: June 2026</p>
 
       <p class="lead">
         <strong>The short version:</strong> Your stuff is your business. Stuffolio stores your data on your device by default. We don't see it, sell it, or share it.
@@ -157,12 +157,16 @@
       <h3>iCloud Sync</h3>
       <p>If you turn this on, your data syncs across your Apple devices using your personal iCloud account. Apple handles the encryption. We never see this data — it goes directly between your devices and Apple's servers.</p>
 
-      <h3>Stuff Scout (AI Assistance — When You Ask)</h3>
-      <p>Stuffolio's AI is user-initiated and non-ambient. Nothing is analyzed or sent to external services unless you explicitly request help. When you use Stuff Scout to identify items or find product information:</p>
+      <h3>Family Sharing &amp; Legacy Wishes</h3>
+      <p>If you choose to share with a family member, the data you share — beneficiary names, item assignments, and the shared item details — travels through your iCloud account to the person you invite, using Apple's CloudKit sharing (the same mechanism as sharing a Notes folder). Only people you explicitly invite can see it, and you can stop sharing at any time, which removes their access. We never see this data; it goes between your iCloud and theirs.</p>
+
+      <h3>AI Features (Stuff Scout, OCR, Product Assistant — When You Ask)</h3>
+      <p>Stuffolio's AI is user-initiated and non-ambient. Nothing is analyzed or sent to external services unless you explicitly request help. This covers Stuff Scout (item identification), receipt and label text scanning (OCR), and the AI Product Assistant. When you use any of them:</p>
       <ul>
-        <li>Photos you submit are sent to our server for analysis</li>
-        <li>We process the request and immediately discard it</li>
-        <li>We don't store your images or build a profile about you</li>
+        <li>The photos or text you submit are sent to our server, then on to an AI provider, for that one request</li>
+        <li>We process the request and don't keep your images after it completes</li>
+        <li>We don't build a profile about you</li>
+        <li>The AI providers process the request under their own privacy terms (listed under Third-party services below)</li>
       </ul>
 
       <h3>Barcode Lookup</h3>
@@ -195,7 +199,7 @@
       <ul>
         <li>Which features are used (not what data you enter)</li>
         <li>App stability and performance metrics</li>
-        <li>A random identifier to count unique users (not linked to your identity)</li>
+        <li>A persistent anonymous identifier, stored only in your device's Keychain, to count unique users and understand feature usage over time — it is not your name, email, or any personal detail, and it is never linked to your inventory</li>
       </ul>
       <p>We don't see your product names, photos, or personal information through analytics. This feature is on by default. You can disable it at any time in Settings → Privacy, or during onboarding.</p>
 
@@ -222,7 +226,7 @@
       <ul>
         <li><strong>Use Stuffolio completely offline</strong> — No account required</li>
         <li><strong>Export your data</strong> — CSV, PDF, and other formats</li>
-        <li><strong>Delete everything</strong> — Settings → Data Management → Reset All Data</li>
+        <li><strong>Delete everything</strong> — Settings → Data Management → Reset All Data wipes local data. If iCloud sync is on, deletions sync to your other devices; if you've shared with family, stop sharing to revoke their access.</li>
         <li><strong>Turn off any network feature</strong> — At any time in Settings</li>
       </ul>
 
@@ -231,7 +235,7 @@
       <ul>
         <li><strong>Apple (iCloud)</strong> — <a href="https://www.apple.com/privacy/" target="_blank" rel="noopener noreferrer">apple.com/privacy</a></li>
         <li><strong>Sentry (crash reports)</strong> — <a href="https://sentry.io/privacy/" target="_blank" rel="noopener noreferrer">sentry.io/privacy</a></li>
-        <li><strong>Anthropic (AI analysis)</strong> — <a href="https://www.anthropic.com/privacy" target="_blank" rel="noopener noreferrer">anthropic.com/privacy</a></li>
+        <li><strong>AI providers (item identification &amp; product info)</strong> — Photos and text you submit for AI help are processed by one or more of <a href="https://www.anthropic.com/privacy" target="_blank" rel="noopener noreferrer">Anthropic (Claude)</a>, <a href="https://ai.google.dev/gemini-api/terms" target="_blank" rel="noopener noreferrer">Google (Gemini)</a>, and <a href="https://openai.com/policies/privacy-policy/" target="_blank" rel="noopener noreferrer">OpenAI</a>, depending on the request. Each handles your request under its own privacy and data-use terms, linked here.</li>
         <li><strong>Cloudflare (AI backend, analytics & subscriber storage)</strong> — <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener noreferrer">cloudflare.com/privacypolicy</a></li>
         <li><strong>Plausible (website analytics)</strong> — <a href="https://plausible.io/privacy" target="_blank" rel="noopener noreferrer">plausible.io/privacy</a></li>
         <li><strong>Resend (email delivery)</strong> — <a href="https://resend.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">resend.com/legal/privacy-policy</a></li>
