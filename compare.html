@@ -357,7 +357,7 @@
       <div class="card">
         <div class="hero-intro">
           <h1>Compare home inventory apps</h1>
-          <address class="byline" itemprop="author"><span itemprop="name">Coffee &amp; Code LLC</span> · <time datetime="2026-06-04">Updated June 2026</time></address>
+          <address class="byline" itemprop="author"><span itemprop="name">Coffee &amp; Code LLC</span> · <time datetime="2026-06-10">Updated June 2026</time></address>
           <p class="tagline">
             Owning things isn't one task. You need to know what you have, take care of it while it's yours, and eventually pass it along or let it go. Most apps are built around acquiring more. Stuffolio is built around understanding what's already here. This page is a calm, honest comparison so you can pick what fits your household.
           </p>
@@ -693,7 +693,7 @@
               </tr>
               <tr>
                 <td>Pricing</td>
-                <td>$9.99 one-time + optional AI ($2.99/mo or $19.99/yr)</td>
+                <td>Free + optional AI ($3.99/mo or $19.99/yr)</td>
                 <td>Free (10 items) or $34.99/yr</td>
                 <td>Free (20 items) or ~$50&ndash;79/yr</td>
                 <td>Free (25 items) or $5.99 one-time</td>
@@ -988,7 +988,7 @@
               </tr>
               <tr>
                 <td>Pricing</td>
-                <td>Included with $9.99 app + AI ($2.99/mo or $19.99/yr)</td>
+                <td>Included free + AI ($3.99/mo or $19.99/yr)</td>
                 <td>From $9.99/appraisal or subscription</td>
                 <td>$39.99/yr</td>
                 <td>Free + premium</td>
@@ -1077,7 +1077,7 @@
 <!-- PRICING CALCULATOR -->
       <div class="card" id="cost-calculator">
         <h2 style="margin-top:0;">Cost Comparison Calculator</h2>
-        <p>See how costs compare over time. Stuffolio's one-time purchase means you pay once and keep it &mdash; the AI subscription is optional.</p>
+        <p>See how costs compare over time. Stuffolio is <strong>free to download</strong> &mdash; every core inventory feature included, no AI subscription required. The AI subscription is entirely optional; the calculator below adds it in so you can compare like-for-like with competitors that charge for their core app.</p>
 
         <div class="pricing-calc">
           <div class="pricing-slider-wrap">
@@ -1088,9 +1088,9 @@
           <div class="pricing-results">
             <div class="pricing-result-card stuffolio">
               <h4>Stuffolio</h4>
-              <div class="price" id="stuffolioPrice">$29.98</div>
-              <div class="period">One-time + AI subscription</div>
-              <div style="font-size:.8rem; color:var(--muted); margin-top:8px;">$9.99 app + $19.99/yr AI (optional)</div>
+              <div class="price" id="stuffolioPrice">$59.97</div>
+              <div class="period">Free app + optional AI subscription</div>
+              <div style="font-size:.8rem; color:var(--muted); margin-top:8px;">$0 app + $19.99/yr AI (optional). Without AI, Stuffolio is $0.</div>
             </div>
             <div class="pricing-result-card">
               <h4>Under My Roof</h4>
@@ -1116,13 +1116,13 @@
 
           <div class="pricing-savings">
             <div>Stuffolio with AI vs Under My Roof</div>
-            <div class="amount" id="savingsAmount">$75</div>
+            <div class="amount" id="savingsAmount">$45</div>
             <div style="font-size:.9rem; color:var(--muted);">saved over <span id="savingsYears">3</span> years</div>
           </div>
         </div>
 
         <div class="bridge" style="margin-top:18px; text-align:center;">
-          <p style="margin:0; font-size:1.05rem; color:var(--text);"><strong>Stuffolio without AI costs $9.99 total &mdash; once, not annually.</strong> The AI subscription is optional and can be canceled anytime.</p>
+          <p style="margin:0; font-size:1.05rem; color:var(--text);"><strong>Stuffolio without AI costs $0 &mdash; the full inventory app is free, forever.</strong> The optional AI subscription is the only thing you'd ever pay for, and it can be canceled anytime.</p>
         </div>
 
         <p style="font-size:.85rem; color:var(--muted); margin-top:16px; text-align:center;">
@@ -1246,8 +1246,8 @@
       yearsDisplay.textContent = years + ' year' + (years > 1 ? 's' : '');
       savingsYears.textContent = years;
 
-      // Stuffolio: $9.99 one-time + $19.99/yr AI (optional)
-      const stuffolio = 9.99 + (19.99 * years);
+      // Stuffolio: free app + $19.99/yr AI (optional)
+      const stuffolio = 0 + (19.99 * years);
       // Itemtopia: $79.99/year
       const itemtopia = 79.99 * years;
       // Under My Roof: $34.99/year
