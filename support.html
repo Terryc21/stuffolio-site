@@ -193,10 +193,18 @@
       },
       {
         "@type": "Question",
-        "name": "How does the free AI trial work?",
+        "name": "How does the free AI allowance work?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "When you install Stuffolio, you can try the four AI features without subscribing. Your trial includes 5 Stuff Scout identifications, 10 AI Product Assistant searches, 5 OCR receipt scans, and 5 Repair-Keep-Replace recommendations. Quotas expire 7 days after install, or when you reach the cap — whichever comes first. After that, AI features require a $3.99/month or $19.99/year subscription. The free app keeps all non-AI features forever."
+          "text": "When you install Stuffolio, you can try the four AI features without subscribing: 5 Stuff Scout items, 10 AI Assistant searches, 5 receipt & label scans, and 5 Repair-Keep-Replace looks. There is no time limit and no clock — the free amount is a count, not a countdown, and the four allowances are independent. Once you use up a feature's starting allowance, that feature keeps a small free amount every month, refilling on the 1st: 1 Stuff Scout item, 2 AI Assistant searches, 1 receipt & label scan, and 1 Repair-Keep-Replace look (non-accumulating). For unlimited use of all four AI features within fair-use bounds, subscribe for an optional $3.99/month or $19.99/year. The free app keeps all non-AI features forever."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What does \"unlimited within fair-use bounds\" mean?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "An AI subscription gives you unlimited use of all four AI features for everyday use — we don't ration normal activity, and there's no per-day or per-week cap. \"Within fair-use bounds\" means there's an upper ceiling set far above any normal usage pattern, so an extreme case (a runaway loop, or commercial-scale volume the consumer subscription wasn't designed for) can't run up unbounded server costs that would make AI more expensive for everyone. Almost no one reaches it; a heavy power user runs at a small fraction of the ceiling. If you ever hit it in a month, Stuffolio tells you what was used, when it resets, and your options — no silent throttling, no surprise charge."
         }
       },
       {
@@ -459,7 +467,7 @@
           <li>Mention where you found it or any known history</li>
           <li>Include visible markings, stamps, or patent numbers</li>
         </ul>
-        <p style="margin-top:10px;">Each refinement uses 1 AI Assistant search from your allowance. Scout shows you exactly how each round of added context improved the identification and valuation.</p>
+        <p style="margin-top:10px;">Refining is part of the same Stuff Scout item — it doesn't cost an extra item or search, so you can add context and re-analyze freely. Scout shows you exactly how each round of added context improved the identification and valuation.</p>
       </details>
 
       <details class="faq-item">
@@ -603,23 +611,30 @@
       </details>
 
       <details class="faq-item" id="trial-faq">
-        <summary>How does the free AI trial work?</summary>
-        <p>When you install Stuffolio, you can try the four AI features without subscribing. Your trial includes:</p>
+        <summary>How does the free AI allowance work?</summary>
+        <p>When you install Stuffolio, you can try the four AI features without subscribing. Your free allowance is:</p>
         <ul style="margin-top:10px;">
-          <li><strong>5</strong> Stuff Scout identifications</li>
-          <li><strong>10</strong> AI Product Assistant searches</li>
-          <li><strong>5</strong> OCR receipt scans</li>
-          <li><strong>5</strong> Repair-Keep-Replace recommendations</li>
+          <li><strong>5</strong> Stuff Scout items</li>
+          <li><strong>10</strong> AI Assistant searches</li>
+          <li><strong>5</strong> receipt &amp; label scans</li>
+          <li><strong>5</strong> Repair-Keep-Replace looks</li>
         </ul>
-        <p style="margin-top:10px;">Quotas expire <strong>7 days after install</strong>, or when you reach the cap — whichever comes first.</p>
-        <p style="margin-top:10px;">After that, AI features require an optional <strong>$3.99/month</strong> or <strong>$19.99/year</strong> subscription. The free Stuffolio app keeps all non-AI features forever.</p>
+        <p style="margin-top:10px;">There's <strong>no time limit and no clock</strong> — the free amount is a count, not a countdown. Use it whenever you like, at your own pace. The four allowances are independent: using up your Stuff Scout items doesn't touch your AI Assistant searches, and so on.</p>
+        <p style="margin-top:10px;">Once you've used up a feature's starting allowance, that feature keeps a small free amount every month, refilling on the 1st: <strong>1</strong> Stuff Scout item, <strong>2</strong> AI Assistant searches, <strong>1</strong> receipt &amp; label scan, and <strong>1</strong> Repair-Keep-Replace look. (These don't stack — each month starts fresh, not as a running balance.)</p>
+        <p style="margin-top:10px;">For unlimited use of all four AI features (within fair-use bounds — see below), subscribe for an optional <strong>$3.99/month</strong> or <strong>$19.99/year</strong>. The free Stuffolio app keeps all non-AI features forever.</p>
+      </details>
+
+      <details class="faq-item" id="fair-use-faq">
+        <summary>What does "unlimited within fair-use bounds" mean?</summary>
+        <p>An AI subscription gives you unlimited use of all four AI features for everyday use — we don't ration normal activity, and you'll never see a per-day or per-week cap on it. "Within fair-use bounds" simply means there's an upper ceiling set far above any normal usage pattern, so the occasional extreme case (a runaway loop, or commercial-scale volume the consumer subscription wasn't designed for) doesn't run up unbounded server costs that would force the whole AI offering to get more expensive for everyone.</p>
+        <p style="margin-top:10px;">In practice almost no one reaches it — a heavy power user runs at a small fraction of the ceiling. If you ever do hit it in a given month, Stuffolio tells you plainly: what was used, when it resets, and your options. There's no silent throttling and no surprise charge.</p>
       </details>
 
       <details class="faq-item">
         <summary>How do I enable internet features like AI and barcode lookup?</summary>
-        <p>Internet-connected features are disabled by default to protect your privacy. To enable them, go to <strong>Settings → Network Features</strong> and toggle on the features you want to use. You can enable:</p>
+        <p>Internet-connected features are disabled by default to protect your privacy. To enable them, open <strong>Settings → Privacy &amp; Network</strong>, turn on <strong>Enable Network Features</strong>, then toggle on the individual features you want to use. You can enable:</p>
         <ul style="margin-top:10px;">
-          <li><strong>Stuff Scout (AI)</strong> — Identify items from photos and get product research</li>
+          <li><strong>AI Assistant</strong> — Powers Stuff Scout identification and product research</li>
           <li><strong>Barcode Lookup</strong> — Auto-fill product info by scanning barcodes</li>
           <li><strong>Recall Checker</strong> — Check if your items have safety recalls</li>
           <li><strong>Analytics</strong> — Help improve Stuffolio by sharing anonymous usage data</li>
