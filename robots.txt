@@ -4,6 +4,7 @@ User-agent: *
 Allow: /
 Disallow: /app-map.html
 Disallow: /beta-testing-guide.html
+Disallow: /testflight-invite.html
 Disallow: /pitch-
 Disallow: /SYNC-
 Disallow: /story-expanded

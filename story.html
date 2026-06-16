@@ -1,19 +1,10 @@
 <!DOCTYPE html>
 <!--
-  BETA-PERIOD CLEANUP GUIDE
-  =========================
-  When transitioning from beta to public release, search for "BETA-PERIOD-ONLY"
-  comments in this file. Sections marked include:
-
-  1. Hero badge: "Beta Testing Now" → "Available on the App Store"
-  2. Hero CTA row: TestFlight buttons → App Store download buttons
-  3. "What's New in v1.0" section: Remove or convert to release notes
-  4. Final CTA: "Join the Beta" → "Download on the App Store"
-
-  Also consider:
-  - Removing beta-testing-guide.html (or redirect to support.html)
-  - Updating testflight-invite.html (or remove entirely)
-  - Uncommenting the Apple Smart App Banner meta tag (line ~29)
+  LAUNCH-TODO (remaining before/at App Store launch):
+  - Swap every APP_STORE_URL_TBD for the real https://apps.apple.com/app/stuffolio/id<APP_ID>
+  - Add assets/app-store-badge.svg (footer badge currently relies on the onerror text fallback)
+  - Delete the two now-unlinked beta pages: beta-testing-guide.html and testflight-invite.html
+  - Consider uncommenting the Apple Smart App Banner meta tag (line ~29)
 -->
 <html lang="en">
 <head>
@@ -567,7 +558,7 @@
     <article>
       <div class="card">
         <h1 style="margin-top:0;">What I Learned Building an App at 73 — and Why It Changed How I Think About Our Stuff</h1>
-        <address class="byline" itemprop="author"><span itemprop="name">Coffee &amp; Code LLC</span> · <time datetime="2026-06-11">Updated June 2026</time></address>
+        <address class="byline" itemprop="author"><span itemprop="name">Coffee &amp; Code LLC</span> · <time datetime="2026-06-16">Updated June 2026</time></address>
         <p class="lede" style="max-width:850px; font-size:1.15rem;">I'm 73. In October 2025, I didn't know Swift. This is the app I built anyway — and what I learned along the way about building, AI, and the stuff we own.</p>        <p>This wasn’t part of some grand plan. I just wanted something new to work on, something to keep my mind engaged. What I didn’t expect was that it would turn into an actual app.</p>
         <p>It took much longer than I expected, with more than a few “Damn, I think I need to start over” moments along the way. But it became something I’m genuinely excited to share.</p>
         <h2 id="manual-pile">It started with a manual</h2>
@@ -643,7 +634,8 @@
         <p>The warranty I couldn't find became a tracking system that tells me when coverage is about to expire and what's still actually covered when something breaks. The vacuum that broke six months after we bought it became a feature called Repair, Keep, or Replace, which pulls in repair costs, replacement prices, and the item's age to help make that decision without guessing. The dishwasher manual I swore was in the filing cabinet became a product memory that stores manuals, receipts, setup notes, and support contacts in one place.</p>
         <p>And the conversation with our daughters, the one I almost didn't have, became Legacy Wishes.</p>
         <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:20px;">
-          <a class="btn primary plausible-event-name=TestFlight+CTA" href="https://testflight.apple.com/join/TWgM95st">Try what Terry built</a>
+          <!-- LAUNCH-TODO: replace APP_STORE_URL_TBD with the real https://apps.apple.com/app/stuffolio/id<APP_ID> -->
+          <a class="btn primary plausible-event-name=AppStore+CTA" href="APP_STORE_URL_TBD">Try what Terry built</a>
           <a class="btn plausible-event-name=Features+Entry" href="features.html">See the features</a>
           <a class="btn plausible-event-name=Compare+Entry" href="compare.html">How it compares</a>
           <a class="btn" href="use-cases.html">What brings you here?</a>
@@ -679,7 +671,6 @@
           <ul>
             <li><a href="support.html">Help & FAQ</a></li>
             <li><a href="Stuffolio_Users_Manual.html">User Manual</a></li>
-            <li><a href="beta-testing-guide.html">Beta Testing</a></li>
             <li><a href="mailto:support@stuffolio.app">Contact Us</a></li>
           </ul>
         </div>
@@ -693,14 +684,14 @@
       </div>
 
       <div class="footer-bottom">
-        <!-- BETA-PERIOD-ONLY: Change to App Store badge after launch -->
         <div class="download-cta">
-          <a href="https://testflight.apple.com/join/TWgM95st" class="download-badge testflight plausible-event-name=TestFlight+CTA">
-            <img src="assets/testflight-badge.svg" alt="Download on TestFlight" width="135" height="40" onerror="this.outerHTML='<span class=badge-fallback>Join TestFlight Beta</span>'" />
+          <!-- LAUNCH-TODO: replace APP_STORE_URL_TBD with the real https://apps.apple.com/app/stuffolio/id<APP_ID> -->
+          <a href="APP_STORE_URL_TBD" class="download-badge appstore plausible-event-name=AppStore+CTA">
+            <!-- LAUNCH-TODO: add assets/app-store-badge.svg -->
+            <img src="assets/app-store-badge.svg" alt="Download on the App Store" width="135" height="40" onerror="this.outerHTML='<span class=badge-fallback>Download on the App Store</span>'" />
           </a>
-          <span class="download-tagline">Free beta &bull; iPhone, iPad, Mac</span>
+          <span class="download-tagline">Free &bull; iPhone, iPad, Mac</span>
         </div>
-        <!-- END BETA-PERIOD-ONLY -->
         <div>&copy; <span id="y"></span> Coffee &amp; Code LLC</div>
       </div>
 

@@ -102,20 +102,6 @@
     <priority>0.6</priority>
   </url>
 
-  <!-- Beta -->
-  <url>
-    <loc>https://stuffolio.app/testflight-invite.html</loc>
-    <lastmod>2026-04-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://stuffolio.app/beta-testing-guide.html</loc>
-    <lastmod>2026-04-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
   <!-- Legal -->
   <url>
     <loc>https://stuffolio.app/privacy.html</loc>

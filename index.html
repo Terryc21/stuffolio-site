@@ -1,19 +1,10 @@
 <!DOCTYPE html>
 <!--
-  BETA-PERIOD CLEANUP GUIDE
-  =========================
-  When transitioning from beta to public release, search for "BETA-PERIOD-ONLY"
-  comments in this file. Sections marked include:
-
-  1. Hero badge: "Beta Testing Now" → "Available on the App Store"
-  2. Hero CTA row: TestFlight buttons → App Store download buttons
-  3. "What's New in v1.0" section: Remove or convert to release notes
-  4. Final CTA: "Join the Beta" → "Download on the App Store"
-
-  Also consider:
-  - Removing beta-testing-guide.html (or redirect to support.html)
-  - Updating testflight-invite.html (or remove entirely)
-  - Uncommenting the Apple Smart App Banner meta tag (line ~29)
+  LAUNCH-TODO (remaining before/at App Store launch):
+  - Swap every APP_STORE_URL_TBD for the real https://apps.apple.com/app/stuffolio/id<APP_ID>
+  - Add assets/app-store-badge.svg (footer badge currently relies on the onerror text fallback)
+  - Delete the two now-unlinked beta pages: beta-testing-guide.html and testflight-invite.html
+  - Consider uncommenting the Apple Smart App Banner meta tag (line ~29)
 -->
 <html lang="en">
 <head>
@@ -462,8 +453,7 @@
       <!-- HERO -->
       <section class="hero">
         <div class="card">
-          <!-- BETA-PERIOD-ONLY: Change to "Available on the App Store" or similar after launch -->
-          <div class="badge"><span class="dot" aria-hidden="true"></span> Beta Testing Now &bull; iPhone / iPad / Mac</div>
+          <div class="badge"><span class="dot" aria-hidden="true"></span> Available on the App Store &bull; iPhone / iPad / Mac</div>
 
           <div class="heroLogoRow">
             <img loading="lazy" class="stuffolioLogo" src="assets/logo-256.png" alt="Stuffolio logo" width="120" height="120" />
@@ -471,7 +461,7 @@
               <h1 style="margin-top:0;">
                 <span class="brand-name">Stuffolio</span>: Know your <span class="stuff-accent">stuff</span>. Take care of it. Decide what's next.
               </h1>
-              <address class="byline" itemprop="author"><span itemprop="name">Coffee &amp; Code LLC</span> · <time datetime="2026-06-15">Updated June 2026</time></address>
+              <address class="byline" itemprop="author"><span itemprop="name">Coffee &amp; Code LLC</span> · <time datetime="2026-06-16">Updated June 2026</time></address>
             </div>
           </div>
 
@@ -483,16 +473,11 @@
             Built around stewardship: track warranties, protect what matters, plan who gets what someday. And when something you own makes you curious, Stuff Scout researches its era, its maker, its approximate value, and what makes it noteworthy.
           </p>
 
-          <!-- BETA-PERIOD-ONLY: Replace with App Store buttons after launch -->
           <div class="ctaRow">
-            <a class="btn primary plausible-event-name=TestFlight+CTA" href="https://testflight.apple.com/join/TWgM95st">Become a Beta Tester</a>
+            <!-- LAUNCH-TODO: replace APP_STORE_URL_TBD with the real https://apps.apple.com/app/stuffolio/id<APP_ID> -->
+            <a class="btn primary plausible-event-name=AppStore+CTA" href="APP_STORE_URL_TBD">Download on the App Store</a>
             <a class="btn" href="quick-start.html">Quick Start Guide</a>
           </div>
-
-          <!-- BETA-PERIOD-ONLY: Remove beta-testers strip after launch -->
-          <p style="color:var(--muted); font-size:.9rem; margin-top:12px;">
-            <strong>Beta testers:</strong> see the <a href="beta-testing-guide.html">Beta Testing Guide</a> for setup, what to test, and where to send feedback.
-          </p>
 
           <p style="color:var(--muted); font-size:.95rem; margin-top:10px;">
             Works offline by default. Turn on only the features you want.
@@ -749,7 +734,8 @@
               </p>
               <p style="margin:12px 0 0; display:flex; gap:16px; align-items:center; flex-wrap:wrap;">
                 <a href="story.html" class="plausible-event-name=Story+Entry" style="color:var(--accent); font-weight:500;">Read the full story &rarr;</a>
-                <a class="btn plausible-event-name=TestFlight+CTA" href="https://testflight.apple.com/join/TWgM95st" style="font-size:0.9rem; padding:8px 16px;">Try what Terry built</a>
+                <!-- LAUNCH-TODO: replace APP_STORE_URL_TBD with the real https://apps.apple.com/app/stuffolio/id<APP_ID> -->
+                <a class="btn plausible-event-name=AppStore+CTA" href="APP_STORE_URL_TBD" style="font-size:0.9rem; padding:8px 16px;">Try what Terry built</a>
               </p>
             </div>
           </div>
@@ -915,7 +901,7 @@
       <section id="pricing" style="margin-top:18px;">
         <div class="card">
           <h2 style="margin-top:0; text-align:center;">Simple Pricing</h2>
-          <p style="color:var(--muted); text-align:center; font-size:.95rem;"><strong>The TestFlight beta is free.</strong> The pricing below is what to expect at App Store launch &mdash; no surprises later.</p>
+          <p style="color:var(--muted); text-align:center; font-size:.95rem;">Straightforward, honest pricing. The app is free with full inventory management; the optional AI Subscription adds smart identification and valuation.</p>
 
           <div class="pricing-grid">
             <div class="price-card featured">
@@ -953,7 +939,6 @@
       </section>
 
       <!-- FINAL CTA -->
-      <!-- BETA-PERIOD-ONLY: Update CTA buttons to App Store links after launch -->
       <section style="margin-top:18px;">
         <div class="card final-cta">
           <h2>Take care of what you own.</h2>
@@ -961,7 +946,8 @@
             Enough information to decide and move on. Clarity, on your own terms.
           </p>
           <div class="ctaRow" style="justify-content:center;">
-            <a class="btn plausible-event-name=TestFlight+CTA" href="https://testflight.apple.com/join/TWgM95st">Join the Beta</a>
+            <!-- LAUNCH-TODO: replace APP_STORE_URL_TBD with the real https://apps.apple.com/app/stuffolio/id<APP_ID> -->
+            <a class="btn plausible-event-name=AppStore+CTA" href="APP_STORE_URL_TBD">Download on the App Store</a>
             <a class="btn" href="quick-start.html">Quick Start Guide</a>
           </div>
           <p style="color:var(--muted); font-size:.9rem; margin-top:20px; margin-bottom:0;">
@@ -969,7 +955,6 @@
           </p>
         </div>
       </section>
-      <!-- END BETA-PERIOD-ONLY -->
 
       <!-- (Duplicate story card removed -- story teaser in section above is sufficient) -->
 
@@ -1003,7 +988,6 @@
           <ul>
             <li><a href="support.html">Help & FAQ</a></li>
             <li><a href="Stuffolio_Users_Manual.html">User Manual</a></li>
-            <li><a href="beta-testing-guide.html">Beta Testing</a></li>
             <li><a href="mailto:support@stuffolio.app">Contact Us</a></li>
           </ul>
         </div>
@@ -1017,14 +1001,14 @@
       </div>
 
       <div class="footer-bottom">
-        <!-- BETA-PERIOD-ONLY: Change to App Store badge after launch -->
         <div class="download-cta">
-          <a href="https://testflight.apple.com/join/TWgM95st" class="download-badge testflight plausible-event-name=TestFlight+CTA">
-            <img src="assets/testflight-badge.svg" alt="Download on TestFlight" width="135" height="40" onerror="this.outerHTML='<span class=badge-fallback>Join TestFlight Beta</span>'" />
+          <!-- LAUNCH-TODO: replace APP_STORE_URL_TBD with the real https://apps.apple.com/app/stuffolio/id<APP_ID> -->
+          <a href="APP_STORE_URL_TBD" class="download-badge appstore plausible-event-name=AppStore+CTA">
+            <!-- LAUNCH-TODO: add assets/app-store-badge.svg -->
+            <img src="assets/app-store-badge.svg" alt="Download on the App Store" width="135" height="40" onerror="this.outerHTML='<span class=badge-fallback>Download on the App Store</span>'" />
           </a>
-          <span class="download-tagline">Free beta &bull; iPhone, iPad, Mac</span>
+          <span class="download-tagline">Free &bull; iPhone, iPad, Mac</span>
         </div>
-        <!-- END BETA-PERIOD-ONLY -->
         <div>&copy; <span id="y"></span> Coffee &amp; Code LLC</div>
       </div>
 

@@ -314,18 +314,17 @@
 
       <!-- CTA -->
       <section style="margin-top:18px;">
-        <!-- BETA-PERIOD-ONLY: Change to App Store badge after launch -->
         <div class="card" style="text-align:center;">
           <h2 style="margin-top:0;">Try Stuffolio</h2>
           <p style="color:var(--muted); max-width:600px; margin:0 auto 20px;">
             The AI Product Assistant ships inside Stuffolio today. Free to try at install.
           </p>
           <div class="ctaRow" style="justify-content:center;">
-            <a class="btn primary plausible-event-name=TestFlight+CTA" href="https://testflight.apple.com/join/TWgM95st">Join the Beta</a>
+            <!-- LAUNCH-TODO: replace APP_STORE_URL_TBD with the real https://apps.apple.com/app/stuffolio/id<APP_ID> -->
+            <a class="btn primary plausible-event-name=AppStore+CTA" href="APP_STORE_URL_TBD">Download on the App Store</a>
             <a class="btn plausible-event-name=Features+Entry" href="features.html">See All Features</a>
           </div>
         </div>
-        <!-- END BETA-PERIOD-ONLY -->
       </section>
 
     </main>
@@ -357,7 +356,6 @@
           <ul>
             <li><a href="support.html">Help & FAQ</a></li>
             <li><a href="Stuffolio_Users_Manual.html">User Manual</a></li>
-            <li><a href="beta-testing-guide.html">Beta Testing</a></li>
             <li><a href="mailto:support@stuffolio.app">Contact Us</a></li>
           </ul>
         </div>
@@ -371,14 +369,14 @@
       </div>
 
       <div class="footer-bottom">
-        <!-- BETA-PERIOD-ONLY: Change to App Store badge after launch -->
         <div class="download-cta">
-          <a href="https://testflight.apple.com/join/TWgM95st" class="download-badge testflight plausible-event-name=TestFlight+CTA">
-            <img src="assets/testflight-badge.svg" alt="Download on TestFlight" width="135" height="40" onerror="this.outerHTML='<span class=badge-fallback>Join TestFlight Beta</span>'" />
+          <!-- LAUNCH-TODO: replace APP_STORE_URL_TBD with the real https://apps.apple.com/app/stuffolio/id<APP_ID> -->
+          <a href="APP_STORE_URL_TBD" class="download-badge appstore plausible-event-name=AppStore+CTA">
+            <!-- LAUNCH-TODO: add assets/app-store-badge.svg -->
+            <img src="assets/app-store-badge.svg" alt="Download on the App Store" width="135" height="40" onerror="this.outerHTML='<span class=badge-fallback>Download on the App Store</span>'" />
           </a>
-          <span class="download-tagline">Free beta &bull; iPhone, iPad, Mac</span>
+          <span class="download-tagline">Free &bull; iPhone, iPad, Mac</span>
         </div>
-        <!-- END BETA-PERIOD-ONLY -->
         <div>&copy; <span id="y"></span> Coffee &amp; Code LLC</div>
       </div>
 

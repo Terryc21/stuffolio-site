@@ -204,7 +204,7 @@
       <p>We don't see your product names, photos, or personal information through analytics. This feature is on by default. You can disable it at any time in Settings → Privacy, or during onboarding.</p>
 
       <h3>Website Analytics</h3>
-      <p>Separately from in-app analytics, stuffolio.app uses Plausible to count anonymous page views and outbound link clicks (for example, the number of visitors who tap "Become a Beta Tester"). Plausible is a privacy-friendly analytics service that does not use cookies, does not build profiles, and does not track visitors across sites.</p>
+      <p>Separately from in-app analytics, stuffolio.app uses Plausible to count anonymous page views and outbound link clicks (for example, the number of visitors who tap "Download on the App Store"). Plausible is a privacy-friendly analytics service that does not use cookies, does not build profiles, and does not track visitors across sites.</p>
       <ul>
         <li>What's collected: anonymous page views, referrer (where you came from), country (not city), browser type, and outbound link clicks</li>
         <li>What's NOT collected: IP addresses (Plausible hashes them in-memory and discards), cookies, personal identifiers, anything that would let us recognize you on a return visit</li>
@@ -286,7 +286,6 @@
           <ul>
             <li><a href="support.html">Help & FAQ</a></li>
             <li><a href="Stuffolio_Users_Manual.html">User Manual</a></li>
-            <li><a href="beta-testing-guide.html">Beta Testing</a></li>
             <li><a href="mailto:support@stuffolio.app">Contact Us</a></li>
           </ul>
         </div>
@@ -300,14 +299,14 @@
       </div>
 
       <div class="footer-bottom">
-        <!-- BETA-PERIOD-ONLY: Change to App Store badge after launch -->
         <div class="download-cta">
-          <a href="https://testflight.apple.com/join/TWgM95st" class="download-badge testflight plausible-event-name=TestFlight+CTA">
-            <img src="assets/testflight-badge.svg" alt="Download on TestFlight" width="135" height="40" onerror="this.outerHTML='<span class=badge-fallback>Join TestFlight Beta</span>'" />
+          <!-- LAUNCH-TODO: replace APP_STORE_URL_TBD with the real https://apps.apple.com/app/stuffolio/id<APP_ID> -->
+          <a href="APP_STORE_URL_TBD" class="download-badge appstore plausible-event-name=AppStore+CTA">
+            <!-- LAUNCH-TODO: add assets/app-store-badge.svg -->
+            <img src="assets/app-store-badge.svg" alt="Download on the App Store" width="135" height="40" onerror="this.outerHTML='<span class=badge-fallback>Download on the App Store</span>'" />
           </a>
-          <span class="download-tagline">Free beta &bull; iPhone, iPad, Mac</span>
+          <span class="download-tagline">Free &bull; iPhone, iPad, Mac</span>
         </div>
-        <!-- END BETA-PERIOD-ONLY -->
         <div>&copy; <span id="y"></span> Coffee &amp; Code LLC</div>
       </div>
 
