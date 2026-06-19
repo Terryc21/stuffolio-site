@@ -461,7 +461,7 @@
               <h1 style="margin-top:0;">
                 <span class="brand-name">Stuffolio</span>: Know your <span class="stuff-accent">stuff</span>. Take care of it. Decide what's next.
               </h1>
-              <address class="byline" itemprop="author"><span itemprop="name">Coffee &amp; Code LLC</span> · <time datetime="2026-06-16">Updated June 2026</time></address>
+              <address class="byline" itemprop="author"><span itemprop="name">Coffee &amp; Code LLC</span> · <time datetime="2026-06-19">Updated June 2026</time></address>
             </div>
           </div>
 
@@ -860,7 +860,10 @@
 
           <div class="platform-tabs" role="tablist">
             <button class="platform-tab active" role="tab" aria-selected="true" data-platform="ios" id="tab-ios" aria-controls="carousel-ios">
-              <span class="tab-icon">&#128241;</span> iPhone &amp; iPad
+              <span class="tab-icon">&#128241;</span> iPhone
+            </button>
+            <button class="platform-tab" role="tab" aria-selected="false" data-platform="ipad" id="tab-ipad" aria-controls="carousel-ipad">
+              <span class="tab-icon">&#128290;</span> iPad
             </button>
             <button class="platform-tab" role="tab" aria-selected="false" data-platform="mac" id="tab-mac" aria-controls="carousel-mac">
               <span class="tab-icon">&#128187;</span> Mac
@@ -879,15 +882,27 @@
             <div id="ios-carousel-dots" class="carousel-dots"></div>
           </div>
 
+          <div id="carousel-ipad" class="carousel" role="tabpanel" aria-labelledby="tab-ipad" hidden>
+            <div class="carousel-container">
+              <button class="carousel-nav carousel-prev" data-platform="ipad" data-dir="prev" aria-label="Previous screenshot">&#10094;</button>
+              <div class="carousel-slide">
+                <img loading="lazy" id="ipad-carousel-img" src="Lightbox/iPad%20screenshots/01-know-what-you-own.jpg" alt="Stuffolio iPad screenshot: Know what you own" class="carousel-img" role="button" aria-label="View iPad screenshot in lightbox">
+              </div>
+              <button class="carousel-nav carousel-next" data-platform="ipad" data-dir="next" aria-label="Next screenshot">&#10095;</button>
+            </div>
+            <p id="ipad-carousel-caption" class="carousel-caption">Know what you own</p>
+            <div id="ipad-carousel-dots" class="carousel-dots"></div>
+          </div>
+
           <div id="carousel-mac" class="carousel" role="tabpanel" aria-labelledby="tab-mac" hidden>
             <div class="carousel-container">
               <button class="carousel-nav carousel-prev" data-platform="mac" data-dir="prev" aria-label="Previous screenshot">&#10094;</button>
               <div class="carousel-slide">
-                <img loading="lazy" id="mac-carousel-img" src="Lightbox/macOS%20screenshots/macos-dashboard.png" alt="Stuffolio macOS dashboard screenshot" class="carousel-img" role="button" aria-label="View macOS screenshot in lightbox">
+                <img loading="lazy" id="mac-carousel-img" src="Lightbox/macOS%20screenshots/01-know-what-you-own.jpg" alt="Stuffolio macOS screenshot: Know what you own" class="carousel-img" role="button" aria-label="View macOS screenshot in lightbox">
               </div>
               <button class="carousel-nav carousel-next" data-platform="mac" data-dir="next" aria-label="Next screenshot">&#10095;</button>
             </div>
-            <p id="mac-carousel-caption" class="carousel-caption">Dashboard</p>
+            <p id="mac-carousel-caption" class="carousel-caption">Know what you own</p>
             <div id="mac-carousel-dots" class="carousel-dots"></div>
           </div>
 
@@ -1066,32 +1081,39 @@
       { thumb: 'Lightbox/iOS%20Screenshots/10-honest-pricing.jpg', full: 'Lightbox/iOS%20Screenshots/10-honest-pricing.jpg', caption: 'Honest pricing' }
     ];
 
-    const macScreenshots = [
-      { thumb: 'Lightbox/macOS%20screenshots/macos-dashboard.png', full: 'Lightbox/macOS%20screenshots/macos-dashboard.png', caption: 'Dashboard' },
-      { thumb: 'Lightbox/macOS%20screenshots/macos-dashboard-1.png', full: 'Lightbox/macOS%20screenshots/macos-dashboard-1.png', caption: 'Dashboard — Alternate 1' },
-      { thumb: 'Lightbox/macOS%20screenshots/macos-dashboard-2.png', full: 'Lightbox/macOS%20screenshots/macos-dashboard-2.png', caption: 'Dashboard — Alternate 2' },
-      { thumb: 'Lightbox/macOS%20screenshots/macos-my-products.png', full: 'Lightbox/macOS%20screenshots/macos-my-products.png', caption: 'My Items' },
-      { thumb: 'Lightbox/macOS%20screenshots/macos-stuff-scout.png', full: 'Lightbox/macOS%20screenshots/macos-stuff-scout.png', caption: 'Stuff Scout' },
-      { thumb: 'Lightbox/macOS%20screenshots/macos-stuff-scout-2.png', full: 'Lightbox/macOS%20screenshots/macos-stuff-scout-2.png', caption: 'Stuff Scout — Results' },
-      { thumb: 'Lightbox/macOS%20screenshots/macos-item-detail.png', full: 'Lightbox/macOS%20screenshots/macos-item-detail.png', caption: 'Item Detail' },
-      { thumb: 'Lightbox/macOS%20screenshots/macos-ai-assistant.png', full: 'Lightbox/macOS%20screenshots/macos-ai-assistant.png', caption: 'AI Assistant' },
-      { thumb: 'Lightbox/macOS%20screenshots/macos-legacy-wishes.png', full: 'Lightbox/macOS%20screenshots/macos-legacy-wishes.png', caption: 'Legacy Wishes' },
-      { thumb: 'Lightbox/macOS%20screenshots/macos-insights.png', full: 'Lightbox/macOS%20screenshots/macos-insights.png', caption: 'Insights' },
-      { thumb: 'Lightbox/macOS%20screenshots/macos-donate.png', full: 'Lightbox/macOS%20screenshots/macos-donate.png', caption: 'Donate Item' },
-      { thumb: 'Lightbox/macOS%20screenshots/macos-sell.png', full: 'Lightbox/macOS%20screenshots/macos-sell.png', caption: 'Sell Item' },
-      { thumb: 'Lightbox/macOS%20screenshots/macos-sell-detail.png', full: 'Lightbox/macOS%20screenshots/macos-sell-detail.png', caption: 'Sell Item — Detail' },
-      { thumb: 'Lightbox/macOS%20screenshots/macos-settings.png', full: 'Lightbox/macOS%20screenshots/macos-settings.png', caption: 'Settings' },
-      { thumb: 'Lightbox/macOS%20screenshots/macos-data-management.png', full: 'Lightbox/macOS%20screenshots/macos-data-management.png', caption: 'Data Management' }
+    const ipadScreenshots = [
+      { thumb: 'Lightbox/iPad%20screenshots/01-know-what-you-own.jpg', full: 'Lightbox/iPad%20screenshots/01-know-what-you-own.jpg', caption: 'Know what you own' },
+      { thumb: 'Lightbox/iPad%20screenshots/02-scout-what-its-worth.jpg', full: 'Lightbox/iPad%20screenshots/02-scout-what-its-worth.jpg', caption: "Scout what it's worth" },
+      { thumb: 'Lightbox/iPad%20screenshots/03-ask-about-anything.jpg', full: 'Lightbox/iPad%20screenshots/03-ask-about-anything.jpg', caption: 'Ask about anything you own' },
+      { thumb: 'Lightbox/iPad%20screenshots/04-decide-repair-keep-replace.jpg', full: 'Lightbox/iPad%20screenshots/04-decide-repair-keep-replace.jpg', caption: 'Decide: repair, keep, or replace' },
+      { thumb: 'Lightbox/iPad%20screenshots/05-donate-or-sell.jpg', full: 'Lightbox/iPad%20screenshots/05-donate-or-sell.jpg', caption: 'Donate or sell advisor' },
+      { thumb: 'Lightbox/iPad%20screenshots/06-pass-it-along-with-care.jpg', full: 'Lightbox/iPad%20screenshots/06-pass-it-along-with-care.jpg', caption: 'Pass it along with care' },
+      { thumb: 'Lightbox/iPad%20screenshots/07-track-loans-borrows.jpg', full: 'Lightbox/iPad%20screenshots/07-track-loans-borrows.jpg', caption: 'Track loans & borrows' },
+      { thumb: 'Lightbox/iPad%20screenshots/08-only-in-stuffolio.jpg', full: 'Lightbox/iPad%20screenshots/08-only-in-stuffolio.jpg', caption: 'Only in Stuffolio' },
+      { thumb: 'Lightbox/iPad%20screenshots/09-honest-pricing.jpg', full: 'Lightbox/iPad%20screenshots/09-honest-pricing.jpg', caption: 'Honest pricing' }
     ];
 
-    const carouselState = { ios: 0, mac: 0 };
+    const macScreenshots = [
+      { thumb: 'Lightbox/macOS%20screenshots/01-know-what-you-own.jpg', full: 'Lightbox/macOS%20screenshots/01-know-what-you-own.jpg', caption: 'Know what you own' },
+      { thumb: 'Lightbox/macOS%20screenshots/02-add-anything-in-seconds.jpg', full: 'Lightbox/macOS%20screenshots/02-add-anything-in-seconds.jpg', caption: 'Add anything in seconds' },
+      { thumb: 'Lightbox/macOS%20screenshots/03-scout-what-its-worth.jpg', full: 'Lightbox/macOS%20screenshots/03-scout-what-its-worth.jpg', caption: "Scout what it's worth" },
+      { thumb: 'Lightbox/macOS%20screenshots/04-ask-about-anything.jpg', full: 'Lightbox/macOS%20screenshots/04-ask-about-anything.jpg', caption: 'Ask about anything you own' },
+      { thumb: 'Lightbox/macOS%20screenshots/05-see-every-insight.jpg', full: 'Lightbox/macOS%20screenshots/05-see-every-insight.jpg', caption: 'See every insight' },
+      { thumb: 'Lightbox/macOS%20screenshots/06-track-loans-borrows.jpg', full: 'Lightbox/macOS%20screenshots/06-track-loans-borrows.jpg', caption: 'Track loans & borrows' },
+      { thumb: 'Lightbox/macOS%20screenshots/07-pass-it-along-with-care.jpg', full: 'Lightbox/macOS%20screenshots/07-pass-it-along-with-care.jpg', caption: 'Pass it along with care' },
+      { thumb: 'Lightbox/macOS%20screenshots/08-only-in-stuffolio.jpg', full: 'Lightbox/macOS%20screenshots/08-only-in-stuffolio.jpg', caption: 'Only in Stuffolio' },
+      { thumb: 'Lightbox/macOS%20screenshots/09-honest-pricing.jpg', full: 'Lightbox/macOS%20screenshots/09-honest-pricing.jpg', caption: 'Honest pricing' }
+    ];
+
+    const screenshotSets = { ios: iosScreenshots, ipad: ipadScreenshots, mac: macScreenshots };
+    const carouselState = { ios: 0, ipad: 0, mac: 0 };
     let currentPlatform = 'ios';
 
     function initCarousels() {
-      createDots('ios', iosScreenshots.length);
-      createDots('mac', macScreenshots.length);
-      updateCarousel('ios');
-      updateCarousel('mac');
+      Object.keys(screenshotSets).forEach(p => {
+        createDots(p, screenshotSets[p].length);
+        updateCarousel(p);
+      });
     }
 
     function createDots(platform, count) {
@@ -1108,7 +1130,7 @@
     }
 
     function updateCarousel(platform) {
-      const screenshots = platform === 'ios' ? iosScreenshots : macScreenshots;
+      const screenshots = screenshotSets[platform];
       const index = carouselState[platform];
       const img = document.getElementById(platform + '-carousel-img');
       const caption = document.getElementById(platform + '-carousel-caption');
@@ -1123,13 +1145,13 @@
     }
 
     function carouselPrev(platform) {
-      const screenshots = platform === 'ios' ? iosScreenshots : macScreenshots;
+      const screenshots = screenshotSets[platform];
       carouselState[platform] = (carouselState[platform] - 1 + screenshots.length) % screenshots.length;
       updateCarousel(platform);
     }
 
     function carouselNext(platform) {
-      const screenshots = platform === 'ios' ? iosScreenshots : macScreenshots;
+      const screenshots = screenshotSets[platform];
       carouselState[platform] = (carouselState[platform] + 1) % screenshots.length;
       updateCarousel(platform);
     }
@@ -1152,6 +1174,7 @@
         this.setAttribute('aria-selected', 'true');
 
         document.getElementById('carousel-ios').hidden = platform !== 'ios';
+        document.getElementById('carousel-ipad').hidden = platform !== 'ipad';
         document.getElementById('carousel-mac').hidden = platform !== 'mac';
       });
     });
@@ -1160,7 +1183,7 @@
     let currentIndex = 0;
 
     function openLightbox(platform, index) {
-      lightboxScreenshots = platform === 'ios' ? iosScreenshots : macScreenshots;
+      lightboxScreenshots = screenshotSets[platform];
       currentIndex = index;
       updateLightboxImage();
       const lightbox = document.getElementById('lightbox');
@@ -1216,7 +1239,7 @@
     // Carousel image click -> lightbox
     document.querySelectorAll('.carousel-img').forEach(img => {
       img.addEventListener('click', () => {
-        const platform = img.id.startsWith('ios') ? 'ios' : 'mac';
+        const platform = img.id.split('-')[0]; // 'ios' | 'ipad' | 'mac'
         openLightbox(platform, carouselState[platform]);
       });
     });
