@@ -3863,32 +3863,36 @@
             </ul>
 
             <h3>Interactive Widgets</h3>
-            <p>Access your inventory from your Lock Screen or Home Screen without opening the app.</p>
-
-            <h4>Available Widgets</h4>
-            <table>
-                <tr><th>Widget</th><th>Sizes</th><th>What It Shows</th></tr>
-                <tr><td><strong>Quick Add</strong></td><td>Small, Medium</td><td>Tap to add a new item instantly</td></tr>
-                <tr><td><strong>Expiring Soon</strong></td><td>Small, Medium, Large</td><td>Warranties expiring in the next 30 days</td></tr>
-                <tr><td><strong>Recent Items</strong></td><td>Medium, Large</td><td>Your most recently added items</td></tr>
-                <tr><td><strong>Inventory Stats</strong></td><td>Small</td><td>Total items and value at a glance</td></tr>
-            </table>
-
-            <h4>Adding Widgets</h4>
-            <ol>
-                <li>Long-press on your Home Screen</li>
-                <li>Tap the <strong>+</strong> button in the top corner</li>
-                <li>Search for "Stuffolio"</li>
-                <li>Choose a widget and tap <strong>Add Widget</strong></li>
-            </ol>
+            <p>Home Screen and Lock Screen widgets are planned for a future update. They are not available in the current release.</p>
 
             <h3>Focus Filters</h3>
-            <p>Automatically show or hide items based on your current Focus mode.</p>
-            <ul>
-                <li><strong>Work Focus:</strong> Show only work-related equipment</li>
-                <li><strong>Personal Focus:</strong> Hide work items, show home inventory</li>
-                <li><strong>How to set up:</strong> Settings > Focus > [Your Focus] > Add Filter > Stuffolio</li>
-            </ul>
+            <p>Quiet Stuffolio's reminders during a Focus without turning notifications off everywhere. Set it up once per Focus and it applies whenever that Focus is on.</p>
+
+            <h4>Setting It Up</h4>
+            <ol>
+                <li>Go to <strong>Settings &gt; Focus</strong></li>
+                <li>Select a Focus (for example Work or Sleep)</li>
+                <li>Tap <strong>Add Filter</strong>, then choose <strong>Stuffolio</strong></li>
+                <li>Set your preferences, then tap <strong>Add</strong> to save them</li>
+            </ol>
+
+            <h4>What You Can Control</h4>
+            <table>
+                <tr><th>Setting</th><th>Effect</th></tr>
+                <tr><td><strong>Warranty Alerts</strong></td><td>Warranty expiring, warranty expired, and coverage change reminders</td></tr>
+                <tr><td><strong>Loan Reminders</strong></td><td>Return reminders and overdue notices for borrowed and lent items</td></tr>
+                <tr><td><strong>Alert Threshold (Days)</strong></td><td>Only alert when a warranty expires within this many days</td></tr>
+            </table>
+
+            <p>Turning a category off suppresses those reminders while the Focus is active, including ones already scheduled. They are not deleted; they resume when the Focus ends.</p>
+
+            <p>The threshold only ever narrows the window. If an item is set to remind you 60 days ahead and the threshold is 30, you get 30 days. An item set to 7 days stays at 7.</p>
+
+            <div class="tip">
+                <strong>Don't skip the last step:</strong> setting the toggles does nothing until you tap <strong>Add</strong>. If the Focus's Focus Filters section still shows an empty "Add Filter" tile, the filter was never attached and your settings are not in effect.</div>
+
+            <div class="tip">
+                <strong>Note:</strong> Maintenance reminders, RMA updates, Stuff Scout results, and price change alerts are not governed by this filter and continue to arrive normally.</div>
 
             <h3>Siri Shortcuts</h3>
             <p>Use voice commands and automations to interact with your inventory. Stuffolio offers 10+ shortcuts for power users.</p>
@@ -4001,7 +4005,7 @@
                 <li><strong>Spotlight Search:</strong> Toggle to enable/disable indexing</li>
                 <li><strong>Handoff:</strong> Toggle to enable/disable continuity</li>
                 <li><strong>Siri Shortcuts:</strong> Toggle to enable/disable voice commands</li>
-                <li><strong>Focus Filters:</strong> Configured in System Settings, not Stuffolio</li>
+                <li><strong>Focus Filters:</strong> Configured in System Settings under Focus, not in Stuffolio</li>
             </ul>
             <a href="#toc" class="back-to-top">Back to Contents</a>
         </section>
