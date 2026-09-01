@@ -663,7 +663,7 @@
                 <li><a href="#repair-keep-replace">Repair, Keep, or Replace?</a></li>
                 <li><a href="#warranties">Managing Warranties</a></li>
                 <li><a href="#maintenance">Scheduling Maintenance</a></li>
-                <li><a href="#smart-maintenance">Smart Maintenance Suggestions</a></li>
+                <li><a href="#smart-maintenance">Setting Up Maintenance</a></li>
                 <li><a href="#price-watch">Price Watch</a></li>
                 <li><a href="#loans">Tracking Loans</a></li>
                 <li><a href="#recalls">Checking for Recalls</a></li>
@@ -2600,55 +2600,47 @@
         </section>
 
         <section id="smart-maintenance">
-            <h2>Smart Maintenance Suggestions</h2>
-            <p>Stuffolio automatically suggests maintenance schedules based on your item's category — no more guessing when to service your items.</p>
+            <h2>Setting Up Maintenance</h2>
+            <p>Stuffolio does not assign maintenance tasks on its own. You choose which items get a schedule and which tasks apply, then the app tracks due dates and reminds you.</p>
 
-            <h3>How Smart Suggestions Work</h3>
+            <h3>Starting from an item</h3>
             <ol>
-                <li>When you add or edit an item, Stuffolio checks the category</li>
-                <li>If maintenance presets exist for that category, a suggestion appears</li>
-                <li>Tap the suggestion to review the recommended schedule</li>
-                <li>Accept the suggestion or customize it for your needs</li>
+                <li>Open the item and scroll to the <strong>Maintenance</strong> section</li>
+                <li>Tap to set up maintenance</li>
+                <li>Check the suggested tasks that apply to your item</li>
+                <li>Add your own tasks if something is missing</li>
+                <li>Set the interval and reminder preferences, then save</li>
             </ol>
 
-            <h3>Category-Based Presets</h3>
-            <p>Here are some examples of built-in maintenance suggestions:</p>
-            <table>
-                <tr><th>Category</th><th>Suggested Maintenance</th><th>Frequency</th></tr>
-                <tr><td>HVAC Equipment</td><td>Replace air filter</td><td>Every 90 days</td></tr>
-                <tr><td>Appliances</td><td>Clean condenser coils</td><td>Every 6 months</td></tr>
-                <tr><td>Vehicles</td><td>Oil change</td><td>Every 5,000 miles or 6 months</td></tr>
-                <tr><td>Outdoor Power Equipment</td><td>Replace spark plug</td><td>Annually</td></tr>
-                <tr><td>Pool/Spa Equipment</td><td>Check water chemistry</td><td>Weekly</td></tr>
-            </table>
+            <h3>Starting from the Maintenance screen</h3>
+            <p>The Maintenance screen lists items that don't have a schedule yet, so you can work through them without hunting item by item. Tap any item in that list to open the same setup sheet.</p>
 
-            <h3>Accepting a Suggestion</h3>
-            <ol>
-                <li>When the suggestion banner appears, tap <strong>View Suggestion</strong></li>
-                <li>Review the maintenance task and frequency</li>
-                <li>Tap <strong>Add to Schedule</strong> to accept</li>
-                <li>The maintenance task is added with the suggested frequency</li>
-            </ol>
-
-            <h3>Customizing Suggestions</h3>
-            <p>If the default doesn't fit your usage:</p>
-            <ol>
-                <li>Tap <strong>Customize</strong> instead of accepting directly</li>
-                <li>Adjust the frequency (more or less often)</li>
-                <li>Modify the task description if needed</li>
-                <li>Tap <strong>Save</strong> to add your customized schedule</li>
-            </ol>
-
-            <h3>Dismissing Suggestions</h3>
-            <ul>
-                <li>Tap <strong>Dismiss</strong> to hide a suggestion you don't need</li>
-                <li>Dismissed suggestions won't appear again for that item</li>
-                <li>You can still add maintenance manually at any time</li>
-            </ul>
+            <h3>How the suggested tasks are chosen</h3>
+            <p>Suggestions come from your item's category, ordered by how well each one matches the item's title and manufacturer. A cordless drill shows battery and chuck tasks near the top.</p>
+            <p>Tasks that clearly don't apply are hidden rather than just sorted down. A battery isn't offered "sharpen blades" even though both belong to the same category. If nothing in the category fits your item, the list comes back empty and invites you to add your own task instead of showing a canned list.</p>
 
             <div class="tip">
-                <strong>Tip:</strong> Smart suggestions learn from common maintenance needs. If you have heavy-use appliances (like in a large family), consider shortening the suggested intervals.
-            </div>
+                <strong>Nothing is assumed:</strong> checking a task is what creates it. An item you never set up has no maintenance schedule and will never appear as overdue.</div>
+
+            <h3>Adding your own tasks</h3>
+            <p>Every setup sheet has a free-form task row, and <strong>Add another custom task</strong> adds more. Use these for anything the category presets don't cover. Custom tasks work exactly like suggested ones: same intervals, same reminders.</p>
+
+            <h3>What shows up later</h3>
+            <p>Once a schedule exists, the Maintenance screen groups it by urgency:</p>
+            <table>
+                <tr><th>Group</th><th>Meaning</th></tr>
+                <tr><td><strong>Overdue</strong></td><td>The due date has passed</td></tr>
+                <tr><td><strong>Due soon</strong></td><td>Due within 7 days</td></tr>
+                <tr><td><strong>Upcoming</strong></td><td>Due within 30 days</td></tr>
+            </table>
+            <p>Only real schedules appear here. Items you haven't set up are never counted as overdue.</p>
+
+            <h3>Marking work done</h3>
+            <ol>
+                <li>Open the item and scroll to <strong>Maintenance</strong></li>
+                <li>Tap <strong>Mark Complete</strong></li>
+                <li>The next due date is calculated automatically from the interval</li>
+            </ol>
             <a href="#toc" class="back-to-top">↑ Back to Contents</a>
         </section>
 
