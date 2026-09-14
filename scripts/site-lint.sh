@@ -309,7 +309,7 @@ check_vocab() {
 
     # Skip non-feature-surface pages by filename
     case "$rel" in
-      whats-new.html|privacy.html|quick-reference.html|testflight-invite.html|quick-start.html|terms.html|about.html|story.html|story-expanded.html|sitemap.xml|family-sharing.html)
+      whats-new.html|privacy.html|quick-reference.html|quick-start.html|terms.html|about.html|story.html|story-expanded.html|sitemap.xml|family-sharing.html)
         continue ;;
     esac
 

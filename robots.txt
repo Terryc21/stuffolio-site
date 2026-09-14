@@ -2,7 +2,6 @@
 
 User-agent: *
 Allow: /
-Disallow: /testflight-invite.html
 Disallow: /pitch-
 Disallow: /SYNC-
 Disallow: /story-expanded
