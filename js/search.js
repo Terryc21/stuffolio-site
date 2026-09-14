@@ -42,12 +42,6 @@ const searchIndex = [
     keywords: "changelog whats new release notes updates version build features improvements fixes"
   },
   {
-    title: "Beta Testing Guide",
-    url: "beta-testing-guide.html",
-    description: "Guide for beta testers. What to test, how to report feedback, testing priorities.",
-    keywords: "beta testing testflight feedback bugs report checklist priority"
-  },
-  {
     title: "Full User Manual",
     url: "Stuffolio_Users_Manual.html",
     description: "Complete reference manual for all Stuffolio features.",
