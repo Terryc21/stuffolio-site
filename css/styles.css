@@ -635,6 +635,11 @@
     .btn:hover { transform: translateY(-1px); }
   }
 
+  .btn.coming-soon {
+    cursor: default;
+    transform: none;
+  }
+
   /* Callouts */
   .callout {
     border: 1px dashed rgba(125,211,252,.45);
