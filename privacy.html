@@ -42,14 +42,16 @@
     a { color:var(--accent) }
     a:hover { color:var(--text) }
 
-    .highlight {
-      background: rgba(125,211,252,.08);
-      border:1px solid rgba(125,211,252,.25);
-      border-radius:12px;
-      padding:16px;
-      margin:14px 0;
+    .services-table { width:100%; border-collapse:collapse; table-layout:fixed; margin:0 0 20px }
+    .services-table th, .services-table td { padding:12px 10px; text-align:left; vertical-align:top; border-bottom:1px solid var(--line); overflow-wrap:anywhere }
+    .services-table th:first-child { width:36% }
+    .services-table tbody th { font-weight:500 }
+    .services-table td { color:var(--muted) }
+    .services-table a { text-decoration:underline; text-underline-offset:3px }
+    @media (max-width:480px) {
+      .services-table th, .services-table td { padding:10px 6px }
+      .services-table th:first-child { width:40% }
     }
-    .highlight p { margin:0 }
 
     .updated {
       font-size:.9rem;
@@ -68,8 +70,6 @@
     .contact-box a { font-size:1.15rem; font-weight:600 }
 
     /* Light mode overrides */
-    .light-mode .highlight { background:rgba(0,102,204,.08) !important; border-color:rgba(0,102,204,.25) !important }
-    .light-mode .highlight p { color:#333 !important }
     .light-mode .contact-box { background:rgba(124,58,237,.08) !important; border-color:rgba(124,58,237,.25) !important }
   </style>
   <!-- Plausible analytics (beta-period; swaps to Cloudflare Web Analytics at App Store launch per BETA-PERIOD CLEANUP GUIDE) -->
@@ -120,154 +120,104 @@
     <main id="main">
     <div class="card">
       <h1>Privacy Policy</h1>
-      <p class="updated">Last updated: September 2026</p>
+      <p class="updated">Last updated: <time datetime="2026-10-05">October 5, 2026</time></p>
 
-      <p class="lead">
-        <strong>The short version:</strong> Your stuff is your business. Your inventory stays on your device by default. If you allow AI features, the photos and item details you choose to analyze are sent through our server to the providers described below. Price Watch sends watched-item details automatically when you enable it. We don't sell your data.
-      </p>
+      <p class="lead"><strong>Your stuff is your business.</strong> Stuffolio keeps your inventory on your device by default. You choose whether to sync with iCloud, share with family, or use online features. We don’t sell your data, show ads, or track you across apps.</p>
 
-      <div class="highlight">
-        <p><strong>Privacy-first means:</strong> We built Stuffolio so you don't have to trust us with your data. It stays on your device unless you choose otherwise.</p>
-      </div>
-
-      <h2 style="margin-top:20px;">Your Stuff, Your Data</h2>
+      <p>Here’s what matters:</p>
       <ul>
-        <li><strong>Core inventory features work offline</strong> — AI features and other online lookups require internet access</li>
-        <li><strong>iCloud sync is optional</strong> — Turn it off, everything still works</li>
-        <li><strong>AI runs when you ask, and for price checks you turn on</strong> — Nothing is sent until you allow AI features</li>
-        <li><strong>We can't see your inventory</strong> — It's in YOUR iCloud, not ours</li>
-        <li><strong>No ads, no tracking profiles</strong> — Anonymous analytics only; in-app analytics disable anytime in Settings, website analytics respect browser Do Not Track</li>
-        <li><strong>Export everything anytime</strong> — PDF, CSV, Excel</li>
+        <li><strong>Your inventory works offline.</strong> No Stuffolio account is required.</li>
+        <li><strong>Sharing and online lookups are optional.</strong> The app explains what will be sent before you allow them.</li>
+        <li><strong>AI needs your permission.</strong> Most AI features run when you ask. Price Watch checks automatically for items you choose to watch.</li>
+        <li><strong>Usage analytics are on by default.</strong> You can turn them off in Settings.</li>
+        <li><strong>You control your inventory.</strong> Export it, delete it, or stop sharing it.</li>
       </ul>
 
-      <h2>What stays on your device</h2>
-      <p>By default, everything:</p>
+      <h2>Your inventory</h2>
+      <p>Your item names, photos, receipts, prices, warranties, notes, locations, serial numbers, and barcodes are stored on your iPhone, iPad, or Mac.</p>
+      <p>Optional features can sync or send some of that information, as described below.</p>
+
+      <h2>Syncing and sharing</h2>
+      <p><strong>iCloud Sync</strong> keeps your inventory up to date across your Apple devices using your personal iCloud account. Apple handles encryption. The synced inventory goes between your devices and Apple’s servers, not ours.</p>
+      <p><strong>Family Sharing and Legacy Wishes</strong> let you share inventory information, beneficiary names, and item assignments with people you invite through iCloud. You can stop sharing at any time to remove their access.</p>
+
+      <h2>AI help</h2> <!-- ALLOWLINT: ai-heading (factual privacy-policy disclosure; the voice rule targets promotional AI headings) -->
+      <p>Stuff Scout, receipt and label scanning, Repair/Keep/Replace, the Product Assistant, and Price Watch use outside AI services.</p>
+      <p>Before the first use, Stuffolio explains what these features send and asks for permission. You can review that explanation and change your choice in <strong>Settings → Privacy &amp; Network</strong>. Allowing AI does not turn on Price Watch.</p>
+      <p><strong>What gets sent:</strong> Depending on the task, your photo, question, and relevant item details pass through our server to an AI provider. Those details can include the item’s name, maker, model, category, barcode, or serial number.</p>
+      <p>The Product Assistant, Repair/Keep/Replace, and Price Watch may also send your question or relevant item details to a search service to find answers, alternatives, or prices. The providers are <a href="#services">listed below</a>.</p>
+      <p>We don’t link these requests to your name or Apple account or use them to build a personal profile.</p>
+      <p><strong>Automatic price checks:</strong> Most AI features run only when you ask. If you enable Price Watch for an item, its details are sent for background price checks without a new tap each time. You choose which items to watch.</p>
+
+      <h2>Other online lookups</h2>
+      <p><strong>Barcode Lookup</strong> sends only the barcode number when you request product information.</p>
+      <p><strong>Recall Checker</strong> sends only the manufacturer and model when you check for recalls. It does not send serial numbers.</p>
+      <p><strong>Price and value estimates</strong> search for comparable items when you ask Stuff Scout what something is worth. These searches send a short item description, which can include its name, maker, and model, to marketplace, retailer, and search services.</p>
+      <p>For antique pocket watches, the serial number read from the photo is also checked with Pocket Watch Database. These marketplace and valuation searches do not send your photos, purchase price, or notes. Photo analysis by an AI provider is covered in the AI section above.</p>
+
+      <h2>Crash reports and usage analytics</h2>
+      <p><strong>Crash reports</strong> help us find and fix problems. If you allow crash reporting, reports include the app version, device type, operating system, and technical information about what happened before a crash. They do not include your name, email, inventory contents, or photos.</p>
+      <p><strong>Usage analytics</strong> help us understand which features people use and how well the app performs. They include feature-use counts, performance information, and an identifier that lets us recognize usage from the same device over time. This identifier is not linked to your name or inventory.</p>
+      <p>Usage analytics are on by default. You can turn them off in <strong>Settings → Privacy</strong>.</p>
+      <p><strong>Website analytics</strong> are separate. We use Plausible to count page views and link clicks, along with referral sources, country, and browser type. It does not use cookies or track you across websites. IP addresses are briefly processed to create anonymous counts, then discarded.</p>
+      <p>The app’s analytics setting does not control website analytics. On this website, we honor your browser’s <strong>Do Not Track</strong> setting.</p>
+
+      <h2>Optional product updates</h2>
+      <p>If you sign up for updates, we collect the email address or phone number you provide. We use it for occasional Stuffolio news and tips—usually a few times a year.</p>
+      <p>Cloudflare stores this information; Resend delivers emails and Twilio delivers text messages. We don’t sell your contact information.</p>
+      <p>You can unsubscribe through <strong>Settings → Updates</strong> or the link in a message.</p>
+
+      <h2>How long information is kept</h2>
+      <p><strong>Our server</strong> keeps a summary of your most recent AI request. The next request replaces it, and it is kept for no more than seven days. We also keep usage counts per device that are not linked to your name or Apple account.</p>
+      <p><strong>AI providers</strong> may keep submitted content and responses for safety checks, abuse prevention, and legal requirements:</p>
       <ul>
-        <li>Product names, descriptions, and photos</li>
-        <li>Purchase dates, prices, and receipts</li>
-        <li>Warranty information and reminders</li>
-        <li>Locations, notes, and categories</li>
-        <li>Serial numbers and barcodes</li>
+        <li><strong>Anthropic:</strong> Normally deletes requests and responses within 30 days. Some services, agreements, safety investigations, or legal requirements allow longer retention. <a href="https://privacy.claude.com/en/articles/7996866-how-long-do-you-store-my-organization-s-data" target="_blank" rel="noopener noreferrer">Anthropic retention details</a>.</li>
+        <li><strong>OpenAI:</strong> Normally keeps abuse-monitoring records, which may include submitted content, for up to 30 days. Legal or safety needs can extend that period; some features have separate storage rules. <a href="https://developers.openai.com/api/docs/guides/your-data" target="_blank" rel="noopener noreferrer">OpenAI retention details</a>.</li>
+        <li><strong>Google Gemini:</strong> Its paid-service terms allow temporary storage of requests and responses for abuse prevention and legal requirements, without specifying a fixed duration in those terms. <a href="https://ai.google.dev/gemini-api/terms" target="_blank" rel="noopener noreferrer">Google data-use terms</a>.</li>
       </ul>
-      <p>This data never leaves your iPhone, iPad, or Mac unless you turn on optional features.</p>
+      <p>Turning off a feature stops future use of that feature. It does not erase information already retained by a provider.</p>
 
-      <h2>Optional features that use the internet</h2>
-      <p>These features are ready to use, and each one asks first. The first time you use iCloud Sync, a barcode lookup, recall checking, or AI help, Stuffolio shows you exactly what gets sent and you choose whether to continue. Nothing leaves your device until you do. You can turn any of them off at any time in Settings → Privacy. AI features ask once for permission, and nothing is sent to AI providers or search and marketplace services until you allow it. You can review the AI disclosure anytime in Settings → Privacy &amp; Network.</p>
-
-      <h3>iCloud Sync</h3>
-      <p>If you turn this on, your data syncs across your Apple devices using your personal iCloud account. Apple handles the encryption. We never see this data — it goes directly between your devices and Apple's servers.</p>
-
-      <h3>Family Sharing &amp; Legacy Wishes</h3>
-      <p>If you choose to share with a family member, the data you share — beneficiary names, item assignments, and the shared item details — travels through your iCloud account to the person you invite, using Apple's CloudKit sharing (the same mechanism as sharing a Notes folder). Only people you explicitly invite can see it, and you can stop sharing at any time, which removes their access. We never see this data; it goes between your iCloud and theirs.</p>
-
-      <h3>AI Features (Stuff Scout, Scanning, Repair/Keep/Replace, Product Assistant, Price Watch)</h3> <!-- ALLOWLINT: ai-heading ai-powered (factual privacy-policy section label, not a hero/marketing claim; rule targets promotional hero headlines) -->
-      <p>AI features need your permission once, and nothing is sent before you give it. Most of them run only when you ask: Stuff Scout (item identification and value), receipt and label scanning, Repair/Keep/Replace alternatives, and the AI Product Assistant. <strong>Price Watch is the exception:</strong> if you turn it on for an item, Stuffolio checks that item's price automatically in the background, sending its details without a tap each time. Allowing AI features does not turn Price Watch on or add items to it. When these features run:</p>
-      <ul>
-        <li>The details of the item you're asking about are sent to our server, then on to an AI provider. Depending on the feature and what you've filled in, that can include the photo you took, the maker and model, the category, and — if you've entered them and they're relevant to your question — the product name, UPC, or serial number. It's whatever's needed to answer what you asked, and nothing more.</li>
-        <li>To answer product questions, find alternatives, and check prices, the Assistant, Repair/Keep/Replace and Price Watch may also run a web search, so item details can be sent to a search provider (see Third-party services below)</li>
-        <li>We don't build a profile about you, and none of this is tied to your name or Apple account</li>
-        <li>The AI and search providers process the request under their own privacy terms (listed under Third-party services below)</li>
-      </ul>
-      <p><strong>How long it's kept.</strong> AI providers may retain submitted content and responses for safety, abuse prevention, and legal compliance. Retention periods vary by provider:</p>
-      <ul>
-        <li><strong>Anthropic</strong> normally deletes API inputs and outputs within 30 days. Longer retention can apply under an agreement, for usage-policy enforcement, or where the law requires it. (<a href="https://privacy.claude.com/en/articles/7996866-how-long-do-you-store-my-organization-s-data" target="_blank" rel="noopener noreferrer">Anthropic</a>)</li>
-        <li><strong>OpenAI</strong> keeps abuse-monitoring logs, which may contain content, for up to 30 days by default, with exceptions for legal requirements and harm prevention. (<a href="https://developers.openai.com/api/docs/guides/your-data" target="_blank" rel="noopener noreferrer">OpenAI</a>)</li>
-        <li><strong>Google (Gemini)</strong> logs prompts and responses for a limited period for abuse detection and legal compliance. Google does not state a fixed duration. (<a href="https://ai.google.dev/gemini-api/terms" target="_blank" rel="noopener noreferrer">Google</a>)</li>
-      </ul>
-      <p>Our own server keeps limited records: a summary of the most recent request (replaced by the next one, and kept at most 7 days) and usage counts per device that aren't tied to your name or Apple account.</p>
-      <p>We tell you this plainly because our other lookups are narrower on purpose — Barcode Lookup sends only the barcode, and Recall Checker sends only the maker and model. The AI features can send more, because answering a real question sometimes needs more. You start most of them yourself (Price Watch runs on its own once you turn it on for an item), and before any of them sends anything, Stuffolio shows you what gets sent and asks.</p>
-
-      <h3>Barcode Lookup</h3>
-      <p>When you scan a barcode and request product info, only the barcode number is sent. No personal information.</p>
-
-      <h3>Recall Checker</h3>
-      <p>Checking for product recalls sends only the manufacturer and model. No serial numbers or personal data.</p>
-
-      <h3>Price &amp; Value Estimates</h3>
-      <p>When you ask Stuff Scout what something is worth, we look up what similar items are selling for. To do that, a short description of the item (what it is, its maker and model, and any product name you typed) is sent as a search to marketplace and retailer sources, including eBay, Reverb and Discogs, plus Brave Search and Tavily for wider results. For antique pocket watches, the serial number read from the photo is also looked up in Pocket Watch Database. Photos, your purchase price and your notes are never sent to these services. As with everything else here, it happens only when you ask for a value.</p>
-
-      <h3>Product Updates (Opt-in)</h3>
-      <p>You can choose to receive occasional updates about new features, tips, and improvements. This is completely optional.</p>
-      <ul>
-        <li><strong>What we collect:</strong> Email address and/or phone number (only if you provide them)</li>
-        <li><strong>How we use it:</strong> To send you product updates and feature tips — nothing else</li>
-        <li><strong>How often:</strong> Infrequent — just a few times per year</li>
-        <li><strong>What we don't do:</strong> No marketing, no promotions, never sold or shared</li>
-      </ul>
-      <p>Your contact information is stored securely on Cloudflare. Emails are delivered via Resend; text messages via Twilio. You can unsubscribe anytime in Settings → Updates or via the link in any message.</p>
-
-      <h3>Crash Reports</h3>
-      <p>If the app crashes, we collect anonymous technical information to fix bugs:</p>
-      <ul>
-        <li>Device type and operating system version</li>
-        <li>What happened before the crash</li>
-        <li>App version</li>
-      </ul>
-      <p>We don't collect your name, email, inventory data, or photos in crash reports.</p>
-
-      <h3>Usage Analytics (Opt-out)</h3>
-      <p>Stuffolio collects anonymous aggregate data by default to improve the app:</p>
-      <ul>
-        <li>Which features are used (not what data you enter)</li>
-        <li>App stability and performance metrics</li>
-        <li>A persistent anonymous identifier, stored only in your device's Keychain, to count unique users and understand feature usage over time — it is not your name, email, or any personal detail, and it is never linked to your inventory</li>
-      </ul>
-      <p>We don't see your product names, photos, or personal information through analytics. This feature is on by default. You can disable it at any time in Settings → Privacy.</p>
-
-      <h3>Website Analytics</h3>
-      <p>Separately from in-app analytics, stuffolio.app uses Plausible to count anonymous page views and outbound link clicks (for example, the number of visitors who tap "Download on the App Store"). Plausible is a privacy-friendly analytics service that does not use cookies, does not build profiles, and does not track visitors across sites.</p>
-      <ul>
-        <li>What's collected: anonymous page views, referrer (where you came from), country (not city), browser type, and outbound link clicks</li>
-        <li>What's NOT collected: IP addresses (Plausible hashes them in-memory and discards), cookies, personal identifiers, anything that would let us recognize you on a return visit</li>
-        <li>Honest asymmetry: the "disable anytime" mechanism in Settings → Privacy applies to in-app analytics. Website analytics has no per-visitor toggle today; the closest equivalent is your browser's Do Not Track setting, which Plausible honors automatically for stuffolio.app visitors. Ad-blockers like uBlock Origin also suppress the analytics script if you'd prefer that route.</li>
-      </ul>
-
-      <div class="divider"></div>
-
-      <h2>What we don't do</h2>
-      <ul>
-        <li><strong>Sell your data</strong> — Never have, never will</li>
-        <li><strong>Show you ads</strong> — Stuffolio has no advertising</li>
-        <li><strong>Track you across apps</strong> — We don't use tracking SDKs</li>
-        <li><strong>Build a profile about you</strong> — Anonymous identifiers for aggregate statistics are not linked to your identity</li>
-      </ul>
-
-      <h2>Your data, your control</h2>
+      <h2>Your choices</h2>
       <p>You can:</p>
       <ul>
-        <li><strong>Use Stuffolio completely offline</strong> — No account required</li>
-        <li><strong>Export your data</strong> — CSV, PDF, and other formats</li>
-        <li><strong>Delete everything</strong> — Settings → Data Management → Reset All Data wipes local data. If iCloud sync is on, deletions sync to your other devices; if you've shared with family, stop sharing to revoke their access.</li>
-        <li><strong>Turn off any network feature</strong> — At any time in Settings</li>
+        <li><strong>Export your inventory</strong> in formats including CSV, PDF, and Excel.</li>
+        <li><strong>Delete local inventory data</strong> through Settings → Data Management → Reset All Data. If iCloud Sync is on, deletions sync to your other devices.</li>
+        <li><strong>Stop family sharing</strong> to remove invited people’s access.</li>
+        <li><strong>Turn off online features and usage analytics</strong> in Settings.</li>
       </ul>
+      <p>Deleting your local inventory is separate from deleting records held by us or an outside service.</p>
 
-      <h2>Third-party services</h2>
-      <p>When you use optional features, these services may process data according to their own privacy policies:</p>
-      <ul>
-        <li><strong>Apple (iCloud)</strong> — <a href="https://www.apple.com/privacy/" target="_blank" rel="noopener noreferrer">apple.com/privacy</a></li>
-        <li><strong>Sentry (crash reports)</strong> — <a href="https://sentry.io/privacy/" target="_blank" rel="noopener noreferrer">sentry.io/privacy</a></li>
-        <li><strong>AI providers (item identification &amp; product info)</strong> — Photos and text you submit for AI help are processed by one or more of <a href="https://www.anthropic.com/privacy" target="_blank" rel="noopener noreferrer">Anthropic (Claude)</a>, <a href="https://ai.google.dev/gemini-api/terms" target="_blank" rel="noopener noreferrer">Google (Gemini)</a>, and <a href="https://openai.com/policies/privacy-policy/" target="_blank" rel="noopener noreferrer">OpenAI</a>, depending on the request. Each handles your request under its own privacy and data-use terms, linked here.</li>
-        <li><strong>Cloudflare (AI backend, analytics & subscriber storage)</strong> — <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener noreferrer">cloudflare.com/privacypolicy</a></li>
-        <li><strong>Web search (Product Assistant, Repair/Keep/Replace and Price Watch)</strong> — When these features need to look something up, your question and item details may go to a search provider: <a href="https://brave.com/privacy/browser/" target="_blank" rel="noopener noreferrer">Brave Search</a>, <a href="https://tavily.com/privacy" target="_blank" rel="noopener noreferrer">Tavily</a>, or <a href="https://exa.ai/privacy-policy" target="_blank" rel="noopener noreferrer">Exa</a>.</li>
-        <li><strong>Marketplace &amp; retailer sites (price and value estimates)</strong> — To estimate what an item is worth, a short description of the item (what it is, its maker and model) is sent to sites like <a href="https://www.ebay.com/help/policies/member-behaviour-policies/user-privacy-notice-privacy-policy?id=4260" target="_blank" rel="noopener noreferrer">eBay</a>, <a href="https://reverb.com/page/privacy" target="_blank" rel="noopener noreferrer">Reverb</a>, and <a href="https://www.discogs.com/legal/privacy" target="_blank" rel="noopener noreferrer">Discogs</a>, along with specialty and general retailer pages depending on the item, and <a href="https://pocketwatchdatabase.com" target="_blank" rel="noopener noreferrer">Pocket Watch Database</a> for antique pocket-watch serial numbers. Each has its own privacy terms.</li>
-        <li><strong>Plausible (website analytics)</strong> — <a href="https://plausible.io/privacy" target="_blank" rel="noopener noreferrer">plausible.io/privacy</a></li>
-        <li><strong>Resend (email delivery)</strong> — <a href="https://resend.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">resend.com/legal/privacy-policy</a></li>
-        <li><strong>Twilio (SMS delivery)</strong> — <a href="https://www.twilio.com/en-us/legal/privacy" target="_blank" rel="noopener noreferrer">twilio.com/legal/privacy</a></li>
-      </ul>
+      <h2 id="services">Services we use</h2>
+      <p>These services support the features described above. Their policies explain how they handle information:</p>
+      <table class="services-table" aria-labelledby="services">
+        <thead>
+          <tr><th scope="col">Purpose</th><th scope="col">Services</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">Syncing and family sharing</th><td><a href="https://www.apple.com/privacy/" target="_blank" rel="noopener noreferrer">Apple iCloud</a></td></tr>
+          <tr><th scope="row">AI processing</th><td><a href="https://www.anthropic.com/privacy" target="_blank" rel="noopener noreferrer">Anthropic</a>, <a href="https://ai.google.dev/gemini-api/terms" target="_blank" rel="noopener noreferrer">Google Gemini</a>, <a href="https://openai.com/policies/privacy-policy/" target="_blank" rel="noopener noreferrer">OpenAI</a></td></tr>
+          <tr><th scope="row">Web searches</th><td><a href="https://search.brave.com/help/privacy-policy" target="_blank" rel="noopener noreferrer">Brave Search</a>, <a href="https://tavily.com/privacy" target="_blank" rel="noopener noreferrer">Tavily</a>, <a href="https://exa.ai/privacy-policy" target="_blank" rel="noopener noreferrer">Exa</a></td></tr>
+          <tr><th scope="row">Price and value research</th><td><a href="https://www.ebay.com/help/policies/member-behaviour-policies/user-privacy-notice-privacy-policy?id=4260" target="_blank" rel="noopener noreferrer">eBay</a>, <a href="https://reverb.com/page/privacy" target="_blank" rel="noopener noreferrer">Reverb</a>, <a href="https://www.discogs.com/legal/privacy" target="_blank" rel="noopener noreferrer">Discogs</a>, <a href="https://pocketwatchdatabase.com" target="_blank" rel="noopener noreferrer">Pocket Watch Database</a>, and other relevant retailer or specialty sites</td></tr> <!-- ALLOWLINT: specialist-names (privacy disclosure of data recipients, not a promotional specialist claim under the voice rule) -->
+          <tr><th scope="row">Server hosting, app analytics, and subscriber storage</th><td><a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener noreferrer">Cloudflare</a></td></tr>
+          <tr><th scope="row">Crash reporting</th><td><a href="https://sentry.io/privacy/" target="_blank" rel="noopener noreferrer">Sentry</a></td></tr>
+          <tr><th scope="row">Website analytics</th><td><a href="https://plausible.io/privacy" target="_blank" rel="noopener noreferrer">Plausible</a></td></tr>
+          <tr><th scope="row">Email and text delivery</th><td><a href="https://resend.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">Resend</a>, <a href="https://www.twilio.com/en-us/legal/privacy" target="_blank" rel="noopener noreferrer">Twilio</a></td></tr>
+        </tbody>
+      </table>
 
-      <h2>Children's privacy</h2>
-      <p>Stuffolio is a general-audience app and isn't designed for children. In line with COPPA (US), we don't knowingly collect personal information from children under 13; where local law sets a higher age of digital consent (such as 16 in parts of the EU), the same applies at that age. If you believe a child has provided us information, email <a href="mailto:support@stuffolio.app">support@stuffolio.app</a> and we'll delete it.</p>
+      <h2>Children’s privacy</h2>
+      <p>Stuffolio is intended for a general audience and is not designed for children. We don’t knowingly collect personal information from children under 13, or below a higher age required by local law.</p>
+      <p>If you believe a child has provided us personal information, contact us so we can delete it.</p>
 
-      <h2>California residents (CCPA)</h2>
-      <p>You have the right to know what data we collect, request deletion, and opt out of data sales. Since we don't sell data and store almost nothing about you, there's not much to request — but you're welcome to ask.</p>
+      <h2>California residents</h2>
+      <p>California residents have rights to learn what personal information is collected about them and request deletion, subject to applicable exceptions. We do not sell personal information.</p>
 
-      <div class="divider"></div>
-
-      <h2>Questions?</h2>
+      <h2>Questions about your information?</h2>
+      <p>Email <a href="mailto:support@stuffolio.app">support@stuffolio.app</a> to ask what information we hold about you or request its deletion. We may need to confirm your identity before acting. Your inventory stays on your devices and personal iCloud account; you manage it through the app.</p>
       <div class="contact-box">
-        <p style="color:var(--muted); margin-bottom:10px;">We're happy to explain anything.</p>
+        <p style="color:var(--muted); margin-bottom:10px;">We’re happy to explain how your information is handled.</p>
         <a href="mailto:support@stuffolio.app">support@stuffolio.app</a>
-        <p style="margin-top:12px; margin-bottom:0; color:var(--muted); font-size:.9rem;">Coffee & Code LLC</p>
+        <p style="margin-top:12px; margin-bottom:0; color:var(--muted); font-size:.9rem;">Coffee &amp; Code LLC</p>
       </div>
     </div>
     </main>
@@ -321,7 +271,7 @@
       </div>
 
       <div class="trust-strip">
-        <span>Privacy-first. No ads. No selling your data. AI when you ask — silent when you don't.</span>
+        <span>Privacy-first. No ads. No selling your data. Online features are your choice.</span>
       </div>
     </footer>
     <button class="back-to-top" aria-label="Back to top">↑</button>
