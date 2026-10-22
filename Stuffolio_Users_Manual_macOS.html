@@ -649,6 +649,7 @@
                 <li><a href="#recalls">Checking for Recalls</a></li>
                 <li><a href="#exporting">Exporting Your Data</a></li>
                 <li><a href="#importing">Importing Items</a></li>
+                <li><a href="#backup-restore">Backing Up and Restoring</a></li>
                 <li><a href="#data-review">Reviewing Data Quality</a></li>
                 <li><a href="#value-tracking">Value Tracking & Depreciation</a></li>
                 <li><a href="#insurance-profile">Insurance Profile & Claim Prep</a></li>
@@ -2346,14 +2347,71 @@
                 <li>Preview items and click <strong>Import</strong></li>
             </ol>
 
+            <h3>Backups</h3>
+            <p>Looking for backups? Backing up, automatic backups and restoring have their own section: <a href="#backup-restore">Backing Up and Restoring</a>.</p>
+
+            <a href="#toc" class="back-to-top">↑ Back to Contents</a>
+        </section>
+
+        <section id="backup-restore">
+            <h2>Backing Up and Restoring</h2>
+            <p>A backup is a single file that holds your inventory, photos included. With a recent one saved somewhere safe, you can recover from a mistake or move your data to another Mac. Stuffolio gives you two ways to make one: a backup file you create yourself, and an automatic weekly backup.</p>
+            <p>A backup covers your items with their photos, documents, warranty coverage and maintenance records, plus your insurance profile, donation records, Legacy Wishes beneficiaries, value history and Stuff Scout bookmarks.</p>
+
+            <h3 id="backup-restore-creating">Creating a Backup File</h3>
+            <ol>
+                <li>Click <strong>Settings</strong> in the sidebar, then <strong>Data Management</strong></li>
+                <li>Click <strong>Backup &amp; Restore</strong></li>
+                <li>Under <strong>Create Backup</strong>, click <strong>Export Backup File</strong></li>
+                <li>Choose a format:
+                    <ul>
+                        <li><strong>Standard (.json)</strong>: not encrypted, so anyone who gets the file can read your inventory</li>
+                        <li><strong>Password Protected (.stuffolio)</strong>: enter a password and confirm it. You will need it to restore</li>
+                    </ul>
+                </li>
+                <li>Click <strong>Export</strong></li>
+                <li>Choose where to save it in the save panel</li>
+            </ol>
+            <p>Stuffolio remembers the folder you saved into. The next time you open Backup &amp; Restore, the <strong>Import Backup File</strong> row shows where your last backup went, so you know where to look.</p>
+            <div class="tip warning">
+                <strong>Keep your password.</strong> When you create a password-protected backup, Stuffolio saves the password to your Keychain so it can fill it in when you restore. If you lose both the password and your Keychain, that backup cannot be recovered.
+            </div>
+            <p><strong>Export Backup File</strong> is unavailable when you have no items. If iCloud Sync is on and still uploading changes, it is unavailable too, and a <strong>Waiting for iCloud sync</strong> notice explains why. Try again once the upload finishes.</p>
+
             <h3>Automatic Backups</h3>
             <p>Turn on <strong>Auto Backup</strong> in <strong>Settings &gt; Data Management</strong> and Stuffolio quietly saves a backup of your inventory once a week. It keeps the most recent one, replacing the previous each time.</p>
             <p>Two things are worth knowing before you rely on it.</p>
             <div class="tip warning">
-                <strong>These backups live on your Mac, and deleting the app deletes them too.</strong> They're deliberately kept out of iCloud, because a full backup of your inventory would drag your whole photo library into your iCloud storage along with it — an unwelcome surprise if you're on the free tier. The trade is that they don't follow you to a new machine. So treat Auto Backup as protection against a mistake inside the app, not against a lost or failed Mac: for that, use <strong>Export</strong> above and keep the file somewhere separate.
+                <strong>These backups live on your Mac, and deleting the app deletes them too.</strong> They're deliberately kept out of iCloud, because a full backup of your inventory would drag your whole photo library into your iCloud storage along with it, an unwelcome surprise if you're on the free tier. The trade is that they don't follow you to a new machine. So treat Auto Backup as protection against a mistake inside the app, not against a lost or failed Mac. For that, create a backup file as described above and keep it somewhere separate.
             </div>
             <p>The other thing: on the Mac the backup runs while Stuffolio is open, with a catch-up the next time you launch it if a week has gone by. So if you only open Stuffolio occasionally, your most recent backup may be older than the weekly schedule suggests. Opening the app is enough to bring it up to date.</p>
+            <p>When an automatic backup exists, the restore screen offers it as <strong>Restore Automatic Backup</strong>, with the time it was saved. See <a href="#backup-restore-restoring">Restoring from a Backup</a> below.</p>
 
+            <h3 id="backup-restore-restoring">Restoring from a Backup</h3>
+            <ol>
+                <li>Click <strong>Settings</strong> in the sidebar, then <strong>Data Management</strong></li>
+                <li>Click <strong>Backup &amp; Restore</strong></li>
+                <li>Under <strong>Restore from Backup</strong>, click <strong>Import Backup File</strong> (or <strong>Restore Automatic Backup</strong>, which appears once an automatic backup exists)</li>
+                <li>Choose the backup file in the open panel</li>
+                <li>If the backup is password protected, enter its password and click <strong>Decrypt &amp; Restore</strong>. Stuffolio fills it in from your Keychain when it has it</li>
+                <li>Choose how to restore (see below)</li>
+                <li>Wait for the progress bar to finish. A summary shows how many items were restored</li>
+            </ol>
+
+            <h4>Add to Existing or Replace All</h4>
+            <table>
+                <tr><th>Choice</th><th>What happens</th></tr>
+                <tr><td><strong>Add to Existing</strong></td><td>Keeps all your current items and adds the ones from the backup. An item that already has the same name and purchase date is skipped, not overwritten, so changes you made since the backup are kept. The summary reports how many were skipped.</td></tr>
+                <tr><td><strong>Replace All</strong></td><td>Removes every item currently in Stuffolio, then imports the backup. Use it when you want your library to match the backup exactly.</td></tr>
+            </table>
+            <div class="tip warning">
+                <strong>Replace All permanently deletes your current items.</strong> If there is any doubt, create a fresh backup file first. You can cancel while the restore is still preparing, but once your old items have been removed it can no longer be cancelled. Let it finish and keep Stuffolio open until it does.
+            </div>
+            <p>When a restore finishes, Stuffolio rebuilds your Spotlight entries and reschedules your warranty, loan and maintenance reminders.</p>
+
+            <h3>iCloud Sync Is Not a Backup</h3>
+            <p><a href="#icloud">iCloud Sync</a> keeps the devices on your Apple ID matching, all the time. That is useful, but it also means a deletion on one device reaches the others. A backup file is different: it is a snapshot that stays exactly as it was on the day you saved it, whatever happens to your library afterwards.</p>
+            <p>The two work well together. Use iCloud Sync to keep your devices current, and keep a backup file as your way back.</p>
             <a href="#toc" class="back-to-top">↑ Back to Contents</a>
         </section>
 
