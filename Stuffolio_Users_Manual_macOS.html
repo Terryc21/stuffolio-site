@@ -389,6 +389,12 @@
             box-shadow: 0 2px 12px rgba(0,0,0,0.08);
         }
 
+        /* A jumped-to section (TOC, search, or a #anchor link) stops below the
+           fixed theme toggle instead of under it. */
+        section[id], nav[id], h3[id] {
+            scroll-margin-top: 72px;
+        }
+
         h2 {
             font-size: 1.8em;
             font-weight: 600;
