@@ -1,0 +1,3 @@
+# Legacy Wishes share links opened outside Apple platforms (CloudKit Sharing Fallback).
+# Apple appends the share short ID; serve the landing page for any suffix.
+/legacy-invite/*  /legacy-invite  200

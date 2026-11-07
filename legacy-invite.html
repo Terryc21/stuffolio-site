@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Legacy Wishes Invitation - Stuffolio</title>
+  <meta name="description" content="How to open a Legacy Wishes invitation shared through Stuffolio." />
+  <meta name="theme-color" content="#0b1220" />
+
+  <!--
+    Landing page for Legacy Wishes share links opened outside iOS, iPadOS and macOS.
+    CloudKit Console › Production › Sharing Fallback points here; Apple appends the
+    share's short ID to this address, and _redirects serves this page for
+    /legacy-invite/*.
+    🛑 Deliberately unlisted: no inbound links from other pages, not in sitemap.xml,
+    and NOT named in robots.txt (naming it there would advertise it; see SITE-UNFORGET SF3).
+    🛑 No analytics and no-referrer: the short ID in this page's address opens the
+    sender's share, so it must never reach a third-party analytics service or the
+    next page's referrer.
+  -->
+  <meta name="robots" content="noindex" />
+  <meta name="referrer" content="no-referrer" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+
+  <!-- Shared Styles (absolute: this page is also served at /legacy-invite/<id>) -->
+  <link rel="stylesheet" href="/css/styles.css" />
+
+  <!-- Page-specific styles -->
+  <style>
+    :root { --max: 800px }
+    h1 { font-size:2.2rem; margin:0 0 8px }
+    h2 { font-size:1.4rem; margin:28px 0 12px; color:var(--accent) }
+    p { margin:0 0 14px; color:var(--muted) }
+    a { color:var(--accent) }
+    a:hover { color:var(--text) }
+    ol { margin:10px 0 14px 20px; color:var(--muted) }
+    ol li { margin-bottom:8px }
+
+    .highlight {
+      background: rgba(125,211,252,.08);
+      border:1px solid rgba(125,211,252,.25);
+      border-radius:12px;
+      padding:16px;
+      margin:14px 0;
+    }
+    .highlight p { margin:0; color:var(--text) }
+
+    .notice {
+      background: rgba(167,139,250,.08);
+      border:1px solid rgba(167,139,250,.25);
+      border-radius:12px;
+      padding:16px;
+      margin:14px 0;
+    }
+    .notice p { margin:0; color:var(--text) }
+
+    /* Light mode overrides */
+    .light-mode .highlight { background:rgba(0,102,204,.08) !important; border-color:rgba(0,102,204,.25) !important }
+    .light-mode .highlight p { color:#333 !important }
+    .light-mode .notice { background:rgba(124,58,237,.08) !important; border-color:rgba(124,58,237,.25) !important }
+    .light-mode .notice p { color:#333 !important }
+  </style>
+  <!-- No analytics script on this page, deliberately (see the comment above). -->
+</head>
+
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="wrap">
+    <header>
+      <a href="/index.html" class="site-title">Stuffolio</a>
+      <div class="header-right">
+        <nav>
+          <a href="/index.html">Home</a>
+          <a href="/features.html">Features</a>
+          <div class="nav-dropdown">
+            <button class="nav-dropdown-toggle">Docs</button>
+            <div class="nav-dropdown-menu">
+              <a href="/quick-start.html">Quick Start</a>
+              <a href="/Stuffolio_Users_Manual.html">User Manual</a>
+              <a href="/whats-new.html">What's New</a>
+            </div>
+          </div>
+          <a href="/compare.html">Compare</a>
+          <a href="/use-cases.html">Use Cases</a>
+          <a href="/story.html">Our Story</a>
+          <div class="nav-dropdown">
+            <button class="nav-dropdown-toggle">Support</button>
+            <div class="nav-dropdown-menu">
+              <a href="/support.html">Help & FAQ</a>
+              <a href="/Stuffolio_Users_Manual.html">User Manual</a>
+            </div>
+          </div>
+        </nav>
+        <div class="theme-toggle">
+          <span class="theme-icon">☀️</span>
+          <button class="theme-toggle-switch" id="themeToggle" aria-label="Toggle light/dark mode"></button>
+          <span class="theme-icon">🌙</span>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+    <div class="card">
+      <h1>You've received a Legacy Wishes invitation</h1>
+
+      <p class="lead">
+        Someone shared their Legacy Wishes with you through Stuffolio. Legacy Wishes is where a person
+        records who they would like to receive their belongings.
+      </p>
+
+      <div class="highlight">
+        <p><strong>This invitation opens in the Stuffolio app on an iPhone, iPad, or Mac.</strong>
+        It can't be opened in a web browser, or on an Android phone or a Windows computer.</p>
+      </div>
+
+      <h2>How to open it</h2>
+      <ol>
+        <li>Install Stuffolio on your iPhone, iPad, or Mac.</li> <!-- LAUNCH-TODO: link "Install Stuffolio" to the verified App Store listing -->
+        <li>Sign in to iCloud on that device, if you aren't already.</li>
+        <li>On that device, open the invitation link from the message or email you received.</li>
+      </ol>
+
+      <h2>No iPhone, iPad, or Mac?</h2>
+      <p>
+        Ask the person who sent the invitation for a PDF copy. Stuffolio can turn their Legacy Wishes
+        into a PDF they can email or print for you.
+      </p>
+
+      <h2>Please keep the link private</h2>
+      <div class="notice">
+        <p>This invitation is personal. Anyone who has the link can open it, so please don't forward it
+        or post it anywhere. If you think it reached the wrong person, tell the sender: they can stop
+        sharing at any time, which turns the link off.</p>
+      </div>
+
+      <p style="margin-top:22px">
+        Questions about Legacy Wishes? See <a href="/support.html#faq-legacy">Help &amp; FAQ</a>,
+        or <a href="/">learn more about Stuffolio</a>.
+      </p>
+    </div>
+    </main>
+
+    <!-- footer:v1 -->
+    <footer>
+      <div class="footer-columns">
+        <div class="footer-column">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="/features.html">Features</a></li>
+            <li><a href="/compare.html">Compare</a></li>
+            <li><a href="/use-cases.html">Use Cases</a></li>
+            <li><a href="/ai-assistant.html">AI Product Assistant</a></li>
+            <li><a href="/whats-new.html">What's New</a></li>
+            <li><a href="/story.html">Our Story</a></li>
+            <li><a href="/about.html">About</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Docs</h4>
+          <ul>
+            <li><a href="/quick-start.html">Quick Start</a></li>
+            <li><a href="/family-sharing.html">Family Sharing</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="/support.html">Help & FAQ</a></li>
+            <li><a href="/Stuffolio_Users_Manual.html">User Manual</a></li>
+            <li><a href="mailto:support@stuffolio.app">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Policies</h4>
+          <ul>
+            <li><a href="/privacy.html">Privacy Policy</a></li>
+            <li><a href="/terms.html">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="download-cta">
+          <!-- LAUNCH-TODO: replace the coming-soon label with a download link to the verified App Store listing -->
+          <span class="btn coming-soon">Coming soon to the App Store</span>
+          <span class="download-tagline">Free &bull; iPhone, iPad, Mac</span>
+        </div>
+        <div>&copy; <span id="y"></span> Coffee &amp; Code LLC</div>
+      </div>
+
+      <div class="trust-strip">
+        <span>Privacy-first. No ads. No selling your data. AI when you ask — silent when you don't.</span>
+      </div>
+    </footer>
+    <button class="back-to-top" aria-label="Back to top">↑</button>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+
+    // Theme toggle
+    const html = document.documentElement;
+    const toggle = document.getElementById('themeToggle');
+
+    // Check saved preference or system preference
+    const saved = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const theme = saved || (prefersDark ? 'dark' : 'light');
+
+    if (theme === 'light') {
+      html.classList.add('light-mode');
+    } else {
+      toggle.classList.add('dark');
+    }
+
+    toggle.addEventListener('click', () => {
+      const isLight = html.classList.contains('light-mode');
+      if (isLight) {
+        html.classList.remove('light-mode');
+        toggle.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        html.classList.add('light-mode');
+        toggle.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+      }
+    });
+
+    // Back to Top Button
+    const backToTop = document.querySelector('.back-to-top');
+    if (backToTop) {
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 400) {
+          backToTop.classList.add('visible');
+        } else {
+          backToTop.classList.remove('visible');
+        }
+      });
+      backToTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+
+    // Dropdown Menu (for mobile)
+    document.querySelectorAll('.nav-dropdown-toggle').forEach(toggle => {
+      toggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        const dropdown = toggle.closest('.nav-dropdown');
+        dropdown.classList.toggle('open');
+      });
+    });
+  </script>
+</body>
+</html>
